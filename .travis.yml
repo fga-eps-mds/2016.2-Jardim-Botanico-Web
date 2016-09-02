@@ -1,6 +1,15 @@
 language:
   - ruby
   
+before_script:
+ - cd JBB-Web/
+ - gem install rspec rspec-rails simplecov
+ - bundle install
+
+script:
+  - rake db:migrate RAILS_ENV=test
+  - bundle exec rspec spec
+  
 rvm:
   - 2.3.1
   
@@ -10,7 +19,3 @@ notifications:
   email:
     recipients:
       - danieelteles@gmail.com
-      - adailson2@gmail.com
-      - gustavomn93@gmail.com
-      - nicacionetobsb@gmail.com
-      - iamferreirajp@gmail.com
