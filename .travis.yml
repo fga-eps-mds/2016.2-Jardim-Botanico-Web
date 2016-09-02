@@ -8,7 +8,6 @@ before_script:
 
 script:
   - rake db:migrate RAILS_ENV=test
-  - bundle exec rspec spec
   
 rvm:
   - 2.3.1
