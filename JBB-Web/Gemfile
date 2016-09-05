@@ -27,17 +27,21 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#bootstrap
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+#autoprefixer
+gem 'autoprefixer-rails', '~> 6.4', '>= 6.4.1'
 #devise
 gem 'devise'
 
 #cpf
-gem 'cpf_cnpj'
+#gem 'cpf_cnpj'
 
 #validators
 gem 'validators'
 
 #gender
-gem 'gender_detector'
+#gem 'gender_detector'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
