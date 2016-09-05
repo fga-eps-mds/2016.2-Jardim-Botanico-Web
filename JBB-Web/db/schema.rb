@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20160905035732) do
   end
 
   create_table "jbb_spaces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "id_jbb"
     t.string   "space_name"
     t.string   "description"
     t.datetime "created_at",  null: false
