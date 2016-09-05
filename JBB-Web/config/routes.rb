@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'jbb_spaces/new'
+
   get 'events/new'
 
   get 'visitations/new'

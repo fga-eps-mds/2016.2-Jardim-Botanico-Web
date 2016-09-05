@@ -1,0 +1,2 @@
+module JbbSpacesHelper
+end
