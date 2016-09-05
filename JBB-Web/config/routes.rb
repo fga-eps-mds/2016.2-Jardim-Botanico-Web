@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'events/new'
+
   get 'visitations/new'
 
   get 'employees/new'
