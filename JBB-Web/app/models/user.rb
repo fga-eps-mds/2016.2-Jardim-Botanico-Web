@@ -5,9 +5,7 @@ class User < ApplicationRecord
   					length: {maximum: 50}, 
   					uniqueness: true
 
-
   #validation of cpf
-  #validates_cpf_format_of :cpf
 	def check_cpf(cpf=nil)
   return false if cpf.nil?
 
