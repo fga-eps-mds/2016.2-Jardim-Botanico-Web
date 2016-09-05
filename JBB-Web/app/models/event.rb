@@ -19,5 +19,4 @@ class Event < ApplicationRecord
 
 	# validation of cpf
 	validates :is_confirmed, presence: true
-
 end
