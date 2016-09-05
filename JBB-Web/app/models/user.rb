@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
 
   #validating cpf
-  validates_cpf_format_of :cpf
+  #validates_cpf_format_of :cpf
 
   #validating gender
   validates :gender, :presence => { :message => 'Selecione o seu gênero'}
