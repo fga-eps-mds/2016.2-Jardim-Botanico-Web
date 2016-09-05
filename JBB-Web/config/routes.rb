@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'employees/new'
+
   devise_for :users
   get 'users/new'
 
