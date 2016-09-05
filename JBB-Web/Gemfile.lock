@@ -55,6 +55,7 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
+    cpf_cnpj (0.2.1)
     debug_inspector (0.0.2)
     devise (4.2.0)
       bcrypt (~> 3.0)
@@ -178,6 +179,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3, >= 3.3.6)
   byebug
   coffee-rails (~> 4.2)
+  cpf_cnpj
   devise
   jbuilder (~> 2.5)
   jquery-rails
