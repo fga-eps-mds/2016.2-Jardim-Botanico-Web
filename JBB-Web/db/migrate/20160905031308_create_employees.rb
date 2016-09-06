@@ -3,7 +3,7 @@ class CreateEmployees < ActiveRecord::Migration[5.0]
     create_table :employees do |t|
       t.string :cpf
       t.string :employee_name
-      t.string :emai
+      t.string :email
       t.string :birth
       t.string :phone
       t.string :gender

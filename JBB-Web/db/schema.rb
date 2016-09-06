@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20160905045840) do
   create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "cpf"
     t.string   "employee_name"
-    t.string   "emai"
+    t.string   "email"
     t.string   "birth"
     t.string   "phone"
     t.string   "gender"
