@@ -1,5 +1,6 @@
 class Employee < ApplicationRecord
 
+
 	#default_values
 	def set_default
 		self.employee_name = 'no_name'
