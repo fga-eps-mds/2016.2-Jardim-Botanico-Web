@@ -177,9 +177,9 @@ PLATFORMS
   bootstrap-sass (~> 3.3, >= 3.3.6)
   brcpfcnpj
 
-DEPENDENCIES
   autoprefixer-rails (~> 6.4, >= 6.4.1)
   bcrypt (~> 3.1.7)
+  bootstrap-sass (~> 3.3, >= 3.3.6)
   brcpfcnpj
   byebug
   coffee-rails (~> 4.2)
