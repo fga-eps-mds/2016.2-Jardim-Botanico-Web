@@ -36,7 +36,7 @@ gem 'autoprefixer-rails', '~> 6.4', '>= 6.4.1'
 #gem 'devise'
 
 #cpf
-gem 'cpf_cnpj'
+#gem 'cpf_cnpj'
 
 #validators
 gem 'validators'
