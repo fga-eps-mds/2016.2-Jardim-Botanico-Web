@@ -67,5 +67,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'brcpfcnpj'
 
 
-gem 'cpf_cnpj'
-
