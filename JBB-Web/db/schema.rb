@@ -13,10 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160913184454) do
 
-
-#ActiveRecord::Schema.define(version: 20160905043420) do
-#remove users
-
   create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "cpf"
     t.string   "employee_name"
@@ -45,6 +41,15 @@ ActiveRecord::Schema.define(version: 20160913184454) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "trails", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.float    "length",      limit: 24
+    t.string   "locomotion"
+    t.string   "description"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
