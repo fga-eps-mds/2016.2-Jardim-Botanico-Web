@@ -1,6 +1,7 @@
 # JBB-Web
 
-<img src = "https://travis-ci.org/fga-gpp-mds/2016.2-Time06-Jardim-Botanico-Web.svg?branch=development" alt = "Build Status" />https://travis-ci.org/fga-gpp-mds/2016.2-Time06-Jardim-Botanico-Web
+[![Build Status](https://travis-ci.org/fga-gpp-mds/2016.2-Jardim-Botanico-Web.svg?branch=development)](https://travis-ci.org/fga-gpp-mds/2016.2-Jardim-Botanico-Web)
+
 
 [![Code Climate](https://codeclimate.com/github/Nicacioneto/2016.2-Time06-Jardim-Botanico-Web/badges/gpa.svg)](https://codeclimate.com/github/Nicacioneto/2016.2-Time06-Jardim-Botanico-Web)
 
