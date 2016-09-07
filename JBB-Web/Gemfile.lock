@@ -213,11 +213,9 @@ PLATFORMS
 
   autoprefixer-rails (~> 6.4, >= 6.4.1)
   bcrypt (~> 3.1.7)
-  brcpfcnpj
   byebug
   codeclimate-test-reporter
   coffee-rails (~> 4.2)
-  cpf_cnpj
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
