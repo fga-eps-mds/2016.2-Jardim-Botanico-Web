@@ -184,10 +184,6 @@ PLATFORMS
   brcpfcnpj
   byebug
   coffee-rails (~> 4.2)
-<<<<<<< HEAD
-=======
-  cpf_cnpj
->>>>>>> Saving db password
   devise
   jbuilder (~> 2.5)
   jquery-rails
