@@ -2,13 +2,13 @@ class User < ApplicationRecord
 
   #validation of name
   validates :name, :presence => { :message => 'Insira um nome'},
-  					length: {maximum: 50}, 
-  					uniqueness: true
+            length: {maximum: 50}, 
+            uniqueness: true
 
 
   #validation of cpf
   #validates_cpf_format_of :cpf
-	def check_cpf(cpf=nil)
+  def check_cpf(cpf=nil)
   return false if cpf.nil?
 
   winvalidos = %w{12345678909 11111111111 22222222222 33333333333 44444444444 55555555555 66666666666 77777777777 88888888888 99999999999 00000000000}
@@ -29,24 +29,24 @@ class User < ApplicationRecord
   end
   return false # CPF invalidado
 end
-	
+  
 
   #validation of gender
   validates :gender, :presence => { :message => 'Selecione o seu gênero'}
 
   #validation of birth
   validates :birth, :presence => { :message => 'Insira a data de nascimento'},
-  									length: {maximum: 8}
+                    length: {maximum: 8}
 
   #validation of phone
   validates :phone, :presence  => { :message => 'Insira um número de telefone válido'},
-  									length: { minimum: 14, maximum: 15 }
+                    length: { minimum: 14, maximum: 15 }
 
-	#validation of email
-	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-	validates :email, presence: true, length: { maximum: 255 },
-										format: { with: VALID_EMAIL_REGEX },
-										uniqueness: true
-	has_secure_password
-	validates :password, length: { minimum: 6, maximum: 100 }
+  #validation of email
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, length: { maximum: 255 },
+                    format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: true
+  has_secure_password
+  validates :password, length: { minimum: 6, maximum: 100 }
 end
