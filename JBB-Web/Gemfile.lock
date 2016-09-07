@@ -184,17 +184,10 @@ PLATFORMS
 
   autoprefixer-rails (~> 6.4, >= 6.4.1)
   bcrypt (~> 3.1.7)
-<<<<<<< HEAD
-=======
   bootstrap-sass (~> 3.3, >= 3.3.6)
->>>>>>> Employee View
   brcpfcnpj
   byebug
   coffee-rails (~> 4.2)
-<<<<<<< HEAD
-=======
-  cpf_cnpj
->>>>>>> Saving db password
   devise
   jbuilder (~> 2.5)
   jquery-rails
