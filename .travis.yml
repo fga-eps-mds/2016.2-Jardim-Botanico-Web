@@ -1,21 +1,21 @@
-language:
-  - ruby
-  
+language: ruby
+
+rvm:
+  - "2.3.1"
+
 env:
   - DB=mysql
-  
+
+script: "RAILS_ENV=test bundle exec rake"
+
 before_script:
  - cd JBB-Web/
  - gem install rspec rspec-rails simplecov
  - bundle install
- - mysql -e 'create database my_app_test'
- 
-script: "RAILS_ENV=test bundle exec rake"
+ - rake db:setup
+bundler_args: --binstubs=./bundler_stubs
 
-rvm:
-  - 2.3.1
-  
-sudo: required 
+sudo: required
 
 notifications:
   email:
