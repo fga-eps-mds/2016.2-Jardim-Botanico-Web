@@ -28,7 +28,6 @@ class User < ApplicationRecord
   return false # CPF invalidado
 end
 	
-
   #validation of gender
   validates :gender, :presence => { :message => 'Selecione o seu gênero'}
 
