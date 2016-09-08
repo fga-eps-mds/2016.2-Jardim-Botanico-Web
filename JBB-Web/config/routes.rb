@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get 'employees/new'
 
- 
+  devise_for :users, controllers: { sessions: 'users/sessions' }
 
   get 'users/new'
 
