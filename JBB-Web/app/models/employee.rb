@@ -6,14 +6,15 @@ class Employee < ApplicationRecord
 		self.cpf = '01234567890'
 		self.email = 'empty@empty.empty'
 		self.birth = '01/01/01'
-		self.phone = '00000000000'
+		self.phone = '52998224725'
 		self.gender = 'Prefer not to declare'
 		self.password_sieger = 'no_pass'
 	end
 
 
 
-	validate :valid_name, :valid_birth, :valid_phone, :valid_gender, :valid_password, :valid_email
+	validate :valid_name, :valid_birth, :valid_phone, :valid_gender, :valid_password,
+			 :valid_email, :valid_cpf
 
 	#name
   	$SPECIAL_CARACTERS = ['!', '@', '#', '$', '%', '¨', '*', '(', ')', '-', '+', '=', '§', '_',
@@ -45,7 +46,62 @@ class Employee < ApplicationRecord
   		end
  	end
 
+
  	#cpf
+ 	def valid_cpf
+ 		count1 = 10
+ 		count2 = 8
+ 		digit = 0
+ 		invalid_cpf = ['12345678909', '11111111111', '22222222222', '33333333333', '44444444444', 
+ 					   '55555555555', '66666666666', '77777777777', '88888888888', '99999999999', 
+ 					   '00000000000']
+
+ 		unless self.cpf.length == 11
+ 			errors.add(:cpf, "CPF missmatch length.")
+ 			return
+ 		end
+
+ 		invalid_cpf.each do |invalid|
+ 			if (invalid <=> self.cpf)
+ 				errors.add(:cpf, "Invalid sequerence of numbers.")
+ 			end
+ 		end
+
+ 		cpf_splited = self.cpf.split(//)
+ 		int_cpf = cpf_splited.map(&:to_i)
+ 		
+ 		puts "\n\n\n#{int_cpf}\n\n\n"
+ 		
+
+ 		for count1 in 2..10
+ 		#	puts "\ncpf: #{int_cpf[count2]}       num: #{count1}\n"
+ 			digit += int_cpf[count2]*count1
+ 			count2 = count2-1
+ 		end
+ 		puts "#{digit}"
+
+ 		digit = ((digit*10)%11)
+ 		if digit == 10
+ 			digit = 0
+ 		end
+
+ 		puts "\n\ncpf9: #{self.cpf[9]}                      digito: #{digit}\n\n"
+ 		
+ 		if digit == self.cpf[9]
+ 			puts "\n\ndeu ruim\n\n\n"
+ 			errors.add(:cpf, "Invalid CPF.")
+ 			return
+ 		end
+
+ 		if self.cpf[9] == digit
+ 			puts "\n\ndeu erro\n\n"
+ 			errors.add(:cpf, "Invalid CPF.")
+ 		end
+
+ 		puts "\n\n\ncpf correto\n\n\n"
+
+ 	end
+
 
 
 	#email
@@ -57,6 +113,8 @@ class Employee < ApplicationRecord
     		errors.add(:email, "Email invalid")
     	end
     end	
+
+
 
 	#birth
 	def valid_birth
@@ -85,12 +143,16 @@ class Employee < ApplicationRecord
 	end	
 
 
+
+
 	#phone
 	def valid_phone
 		if self.phone.length < 8  || self.phone.length > 15
 			errors.add(:phone, "Invalid Phone")
 		end
 	end
+
+
 
 
 	#gender
@@ -100,6 +162,8 @@ class Employee < ApplicationRecord
 			errors.add(:gender, "Invalid Gender")
 		end
 	end
+
+
 
 	#password_sieger
 	def valid_password
