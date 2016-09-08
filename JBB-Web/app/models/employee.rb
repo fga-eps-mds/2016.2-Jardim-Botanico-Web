@@ -104,6 +104,7 @@ class Employee < ApplicationRecord
 
 
 
+
 	#email
 	def valid_email
 		unless validates_format_of :email, :with => /[0-9a-z][0-9a-z.]+[0-9a-z]@[0-9a-z][0-9a-z.-]+[0-9a-z]/i   
