@@ -43,6 +43,7 @@ GEM
       execjs
     bcrypt (3.1.11)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
     brcpfcnpj (3.3.0)
@@ -51,6 +52,11 @@ GEM
 =======
 >>>>>>> Saving db password
 >>>>>>> Saving db password
+=======
+    brcpfcnpj (3.3.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+>>>>>>> Solving problems of access to the database
     builder (3.2.2)
     byebug (9.0.5)
     codeclimate-test-reporter (0.6.0)
