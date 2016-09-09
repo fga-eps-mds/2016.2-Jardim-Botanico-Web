@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   
 
   resources :users
-  
+
   get 'trails/new'
 
   get 'jbb_spaces/new'
