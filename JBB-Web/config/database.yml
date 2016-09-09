@@ -51,6 +51,6 @@ test:
 #
 production:
   <<: *default
-  database: JBB-Web_production
-  username: JBB-Web
-  password: <%= ENV['JBB-WEB_DATABASE_PASSWORD'] %>
+  database: JBB_Web_production
+  username: JBB_Web
+  password: <%= ENV['JBB_WEB_DATABASE_PASSWORD'] %>
