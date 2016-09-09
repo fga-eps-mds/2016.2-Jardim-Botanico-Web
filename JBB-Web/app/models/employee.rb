@@ -49,29 +49,63 @@ class Employee < ApplicationRecord
 
 
  	#cpf
- 	def check_cpf(cpf=nil)
-	  return false if cpf.nil?
+ 	def valid_cpf
+ 		count1 = 10
+ 		count2 = 8
+ 		digit = 0
+ 		invalid_cpf = ['12345678909', '11111111111', '22222222222', '33333333333', '44444444444', 
+ 					   '55555555555', '66666666666', '77777777777', '88888888888', '99999999999', 
+ 					   '00000000000']
 
-	  winvalidos = %w{12345678909 11111111111 22222222222 33333333333 44444444444 55555555555 66666666666 77777777777 88888888888 99999999999 00000000000}
-	  wvalor = cpf.scan /[0-9]/
-	  if wvalor.length == 11
-	    unless winvalidos.member?(wvalor.join)
-	      wvalor = wvalor.collect{|x| x.to_i}
-	      wsoma = 10*wvalor[0]+9*wvalor[1]+8*wvalor[2]+7*wvalor[3]+6*wvalor[4]+5*wvalor[5]+4*wvalor[6]+3*wvalor[7]+2*wvalor[8]
-	      wsoma = wsoma - (11 * (wsoma/11))
-	      wresult1 = (wsoma == 0 or wsoma == 1) ? 0 : 11 - wsoma
-	      if wresult1 == wvalor[9]
-	        wsoma = wvalor[0]*11+wvalor[1]*10+wvalor[2]*9+wvalor[3]*8+wvalor[4]*7+wvalor[5]*6+wvalor[6]*5+wvalor[7]*4+wvalor[8]*3+wvalor[9]*2
-	        wsoma = wsoma - (11 * (wsoma/11))
-	        wresult2 = (wsoma == 0 or wsoma == 1) ? 0 : 11 - wsoma
-	        return true if wresult2 == wvalor[10] # CPF validado
-	      end
-	    end
-	  end
-	  return false # CPF invalidado
-	end
+ 		unless self.cpf.length == 11
+ 			errors.add(:cpf, "CPF missmatch length.")
+ 			return
+ 		end
 
+ 		invalid_cpf.each do |invalid|
+ 			if (invalid <=> self.cpf) == 0
+ 				errors.add(:cpf, "Invalid sequerence of numbers.")
+ 			end
+ 		end
 
+ 		cpf_splited = self.cpf.split(//)
+ 		int_cpf = cpf_splited.map(&:to_i)
+ 		
+ 		#calculating first digit
+ 		for count1 in 2..10
+ 			digit += int_cpf[count2]*count1
+ 			count2 = count2-1
+ 		end
+ 		
+ 		digit = ((digit*10)%11)
+ 		if digit == 10
+ 			digit = 0
+ 		end
+
+ 		#validating first digit
+ 		unless digit == int_cpf[9]
+ 			errors.add(:cpf, "Invalid CPF.")
+ 			return
+ 		end
+
+ 		#calculating second digit
+ 		count2 = 9
+ 		for count1 in 2..11
+ 			digit += int_cpf[count2]*count1
+ 			count2 = count2-1
+ 		end
+ 		
+ 		digit = ((digit*10)%11)
+ 		if digit == 10
+ 			digit = 0
+ 		end
+
+ 		#validating second digit
+ 		unless digit == int_cpf[10]
+ 			errors.add(:cpf, "Invalid CPF.")
+ 			return
+ 		end
+ 	end
 
 
 	#email
