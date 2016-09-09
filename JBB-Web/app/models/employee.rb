@@ -8,7 +8,7 @@ class Employee < ApplicationRecord
 		self.email = 'empty@empty.empty'
 		self.birth = '01/01/01'
 		self.phone = '52998224725'
-		self.gender = 'Prefer not to declare'
+		self.gender = 'Prefer to not declare'
 		self.password_sieger = 'no_pass'
 	end
 
@@ -17,14 +17,21 @@ class Employee < ApplicationRecord
 	validate :valid_name, :valid_birth, :valid_phone, :valid_gender, :valid_password,
 			 :valid_email, :valid_cpf
 
-	#name
   	$SPECIAL_CARACTERS = ['!', '@', '#', '$', '%', '¨', '*', '(', ')', '-', '+', '=', '§', '_',
   					  	  '²', '¹', '³', '¢', '¬', '{', '[', ']', '}' '?', ':', ';', '.', ',',
   					  	   '°', 'º', '|', '\\', '/', '^', '~', '´', '`', '"', '\'', '<', '>']
   	
   	$NUMBERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
+
+	#employee_name
 	def valid_name
+
+		if self.employee_name == nil
+			errors.add(:employee_name, "Employee's name is null.")
+			return
+		end
+
   		#puts "nome avaliado: #{employee_name}\n\n\n"
   		$SPECIAL_CARACTERS.each do |caracter|
   			if self.employee_name.include? caracter
@@ -50,12 +57,19 @@ class Employee < ApplicationRecord
 
  	#cpf
  	def valid_cpf
+ 		
  		count1 = 10
  		count2 = 8
  		digit = 0
  		invalid_cpf = ['12345678909', '11111111111', '22222222222', '33333333333', '44444444444', 
  					   '55555555555', '66666666666', '77777777777', '88888888888', '99999999999', 
  					   '00000000000']
+
+		if self.cpf == nil
+			errors.add(:cpf, "Employee's cpf is null.")
+			return
+		end
+
 
  		unless self.cpf.length == 11
  			errors.add(:cpf, "CPF missmatch length.")
@@ -110,6 +124,12 @@ class Employee < ApplicationRecord
 
 	#email
 	def valid_email
+
+		if self.email == nil
+			errors.add(:email, "Employee's email is null.")
+			return
+		end
+
 		unless validates_format_of :email, :with => /[0-9a-z][0-9a-z.]+[0-9a-z]@[0-9a-z][0-9a-z.-]+[0-9a-z]/i   
 			errors.add(:email, "Email missformated")
 		end
@@ -122,9 +142,15 @@ class Employee < ApplicationRecord
 
 	#birth
 	def valid_birth
+		
 		cont=0
 		splited_birth = ['', '', '']
 		splited_int_birth = [0, 0, 0]
+
+		if self.birth == nil
+			errors.add(:birth, "Employee's birth is null.")
+			return
+		end
 
 		unless validates_format_of :birth, :with => /[0-9][0-9]\/[0-9][0-9]\/[0-9][0-9]/i   
 			errors.add(:birth, "Birth missformated")
@@ -151,6 +177,12 @@ class Employee < ApplicationRecord
 
 	#phone
 	def valid_phone
+		
+		if self.phone == nil
+			errors.add(:phone, "Employee's phone is null.")
+			return
+		end
+
 		if self.phone.length < 8  || self.phone.length > 15
 			errors.add(:phone, "Invalid Phone")
 		end
@@ -161,8 +193,14 @@ class Employee < ApplicationRecord
 
 	#gender
 	def valid_gender
+		
+		if self.gender == nil
+			errors.add(:gender, "Employee's gender is null.")
+			return
+		end
+
 		unless (gender.capitalize <=> 'Masculin') == 0 || (gender.capitalize <=> 'Feminin') == 0 || 
-			   (gender.capitalize <=> 'Prefer not to declare') == 0
+			   (gender.capitalize <=> 'Prefer to not declare') == 0
 			errors.add(:gender, "Invalid Gender")
 		end
 	end
@@ -171,6 +209,12 @@ class Employee < ApplicationRecord
 
 	#password_sieger
 	def valid_password
+		
+		if self.password_sieger == nil
+			errors.add(:password_sieger, "Employee's password is null.")
+			return
+		end
+
 		if self.password_sieger.length < 8  || self.password_sieger.length > 35
 			errors.add(:password_sieger, "Invalid Password")
 		end
