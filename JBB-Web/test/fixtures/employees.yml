@@ -3,7 +3,7 @@
 one:
   cpf: MyString
   employee_name: MyString
-  emai: MyString
+  email: MyString
   birth: MyString
   phone: MyString
   gender: MyString
@@ -12,7 +12,7 @@ one:
 two:
   cpf: MyString
   employee_name: MyString
-  emai: MyString
+  email: MyString
   birth: MyString
   phone: MyString
   gender: MyString
