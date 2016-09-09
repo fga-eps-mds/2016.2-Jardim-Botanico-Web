@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :visitations
   
 
+  resources :users
+  
   get 'trails/new'
 
   get 'jbb_spaces/new'
