@@ -14,8 +14,6 @@ Rails.application.routes.draw do
 
   get 'employees/new'
 
- 
-
   get 'users/new'
 
   root 'welcome#welcome'
