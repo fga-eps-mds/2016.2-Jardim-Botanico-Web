@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'welcome/new'
 
   resources :users
+  resources :visitations
+  
 
   get 'trails/new'
 

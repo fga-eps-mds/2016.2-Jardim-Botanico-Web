@@ -1,2 +1,62 @@
-<h1>Visitations#new</h1>
-<p>Find me in app/views/visitations/new.html.erb</p>
+<h1>Visitação</h1>
+
+<%= form_for @visitation do |f| %>
+
+<% if @visitation.errors.any? %>
+              <div id="error_explanation">
+                          <div class="alert-error">
+                                     O formulário contém <%= pluralize(@visitation.errors.count, "erro") %>.
+                          </div>
+                          <ul>
+                                     <% @visitation.errors.full_messages.each do |msg| %>
+                                     <li><%= msg %></li>
+                                     <% end %>
+                          </ul>
+              </div>
+  <% end %>
+
+
+  	<p>
+	<div class = "field" >
+		<%= f.label :Data %>
+		<%= f.text_field :date%>
+	</div>
+	</p>
+
+	<p>
+	<div class = "field" >
+		<%= f.label :Horario %>
+		<%= f.text_field :time%>
+	</div>
+	</p>
+
+	<p>
+	<div class = "field" >
+		<%= f.label :CPF %>
+		<%= f.text_field :cpf%>
+	</div>
+	</p>
+
+	<p>
+	<div class = "field" >
+		<%= f.label :Quantidade_de_Visitantes%>
+		<%= f.text_field :visitants_amount %>
+	</div>
+	</p>
+
+	<p>
+	<div class = "field" >
+		<%= f.label :Descrição %>
+		<%= f.text_field :description%>
+	</div>
+	</p>
+
+
+	<p>
+	<div class="actions">
+		<%= f.submit "Cadastrar"%>
+	</div>
+	</p>
+
+<% end %>
+	
