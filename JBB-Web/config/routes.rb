@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
 
-  get 'welcome/new'
 
   resources :users
+
   resources :visitations
   
 
   resources :users
+
+  get    'sign_in'   => 'sessions#new'
+  post   'sign_in'   => 'sessions#create'
+  delete 'sign_out'  => 'sessions#destroy'
+
+  get 'sessions/new'
+
+  get 'welcome/new'
 
   get 'trails/new'
 
@@ -23,6 +31,6 @@ Rails.application.routes.draw do
   get 'users/new'
 
   root 'welcome#welcome'
-  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

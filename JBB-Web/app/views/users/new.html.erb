@@ -1,2 +1,58 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<%= form_for @user do |f| %>
+             <% if @user.errors.any? %>
+             <div id="error_explanation">
+                         <div class="alert-error">
+                                    O formulário contém <%= pluralize(@user.errors.count, "erro") %>.
+                         </div>
+                         <ul>
+                                    <% @user.errors.full_messages.each do |msg| %>
+                                    <li><%= msg %></li>
+                                    <% end %>
+                         </ul>
+             </div>
+ <% end %>
+             <div class="field">
+                         <%= f.label :Nome %>
+                         <%= f.text_field :name %>
+             </div>
+             <div class="field">
+                         <%= f.label :Email %>
+                         <%= f.email_field :email %>
+             </div>
+             <div class="field">
+                         <%= f.label :Senha %>
+                         <%= f.password_field :password_sieger %>
+             </div>
+             <div class="field">
+                         <%= f.label :Confirmação_de_senha %>
+                         <%= f.password_field :password_confirmation %>
+             </div>
+             <div class="field">
+                         <%= f.label :Cpf %>
+                         <%= f.text_field :cpf %>
+             </div>
+             <div class="field">
+                         <%= f.label :Telefone %>
+                         <%= f.text_field :phone %>
+             </div>
+             <div class="field">
+                         <%= f.label :Gênero %>
+                         <%= f.text_field :gender %>
+             </div>
+
+             <label>Nascimento: </label>
+           </td>
+           <td align="left">
+            <input type="text" name="dia" size="2" maxlength="2" value="dd">
+           <input type="text" name="mes" size="2" maxlength="2" value="mm">
+           <input type="text" name="ano" size="4" maxlength="4" value="aaaa">
+           </td>
+          </tr>
+          <tr>
+           <td>
+
+             <div class="actions">
+                         <%= f.submit "Cadastrar"%>
+                         <%= link_to "Boas vindas!", root_path %>
+             </div>
+ <% end %>
