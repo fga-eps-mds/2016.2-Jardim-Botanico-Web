@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   #users
   resources :users
+
   get '/users/new' => 'users#new'
   post '/users/new' => 'users#create', :as => 'create_user'
   get '/users/:id' => 'users#show', :as => 'user_show'
@@ -24,6 +25,9 @@ Rails.application.routes.draw do
   #root 'sessions#new'
 
   get 'sessions/new'
+
+  resources :visitations
+  
 
   get 'trails/new'
 
