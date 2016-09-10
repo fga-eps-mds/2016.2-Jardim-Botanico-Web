@@ -20,7 +20,7 @@ class Employee < ApplicationRecord
   	$SPECIAL_CARACTERS = ['!', '@', '#', '$', '%', '¨', '*', '(', ')', '-', '+', '=', '§', '_',
   					  	  '²', '¹', '³', '¢', '¬', '{', '[', ']', '}' '?', ':', ';', '.', ',',
   					  	   '°', 'º', '|', '\\', '/', '^', '~', '´', '`', '"', '\'', '<', '>']
-  	
+
   	$NUMBERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 
@@ -47,7 +47,7 @@ class Employee < ApplicationRecord
 
   		if self.employee_name.length < 3
   			errors.add(:employee_name, "Employee's name is too short.")
-  		end 	
+  		end
 
   		unless self.employee_name.include? ' '
   			errors.add(:employee_name, "Employee's don't have last name.")
@@ -57,12 +57,12 @@ class Employee < ApplicationRecord
 
  	#cpf
  	def valid_cpf
- 		
+
  		count1 = 10
  		count2 = 8
  		digit = 0
- 		invalid_cpf = ['12345678909', '11111111111', '22222222222', '33333333333', '44444444444', 
- 					   '55555555555', '66666666666', '77777777777', '88888888888', '99999999999', 
+ 		invalid_cpf = ['12345678909', '11111111111', '22222222222', '33333333333', '44444444444',
+ 					   '55555555555', '66666666666', '77777777777', '88888888888', '99999999999',
  					   '00000000000']
 
 		if self.cpf == nil
@@ -84,13 +84,13 @@ class Employee < ApplicationRecord
 
  		cpf_splited = self.cpf.split(//)
  		int_cpf = cpf_splited.map(&:to_i)
- 		
+
  		#calculating first digit
  		for count1 in 2..10
  			digit += int_cpf[count2]*count1
  			count2 = count2-1
  		end
- 		
+
  		digit = ((digit*10)%11)
  		if digit == 10
  			digit = 0
@@ -108,7 +108,7 @@ class Employee < ApplicationRecord
  			digit += int_cpf[count2]*count1
  			count2 = count2-1
  		end
- 		
+
  		digit = ((digit*10)%11)
  		if digit == 10
  			digit = 0
@@ -130,19 +130,19 @@ class Employee < ApplicationRecord
 			return
 		end
 
-		unless validates_format_of :email, :with => /[0-9a-z][0-9a-z.]+[0-9a-z]@[0-9a-z][0-9a-z.-]+[0-9a-z]/i   
+		unless validates_format_of :email, :with => /[0-9a-z][0-9a-z.]+[0-9a-z]@[0-9a-z][0-9a-z.-]+[0-9a-z]/i
 			errors.add(:email, "Email missformated")
 		end
     	if self.email.length < 10 || self.email.length > 255
     		errors.add(:email, "Email invalid")
     	end
-    end	
+    end
 
 
 
 	#birth
 	def valid_birth
-		
+
 		cont=0
 		splited_birth = ['', '', '']
 		splited_int_birth = [0, 0, 0]
@@ -152,14 +152,14 @@ class Employee < ApplicationRecord
 			return
 		end
 
-		unless validates_format_of :birth, :with => /[0-9][0-9]\/[0-9][0-9]\/[0-9][0-9]/i   
+		unless validates_format_of :birth, :with => /[0-9][0-9]\/[0-9][0-9]\/[0-9][0-9]/i
 			errors.add(:birth, "Birth missformated")
 		else
 			splited_birth = self.birth.split('/')
 			for cont in 0..2
 				splited_int_birth[cont] = splited_birth[cont].to_i
 			end
-			
+
 			if splited_int_birth[2] < 1900 || splited_int_birth[2] > 2016
 				errors.add(:birth, "Invalid Year")
 			end
@@ -170,14 +170,14 @@ class Employee < ApplicationRecord
 				errors.add(:birth, "Invalid Day")
 			end
 		end
-	end	
+	end
 
 
 
 
 	#phone
 	def valid_phone
-		
+
 		if self.phone == nil
 			errors.add(:phone, "Employee's phone is null.")
 			return
@@ -193,13 +193,13 @@ class Employee < ApplicationRecord
 
 	#gender
 	def valid_gender
-		
+
 		if self.gender == nil
 			errors.add(:gender, "Employee's gender is null.")
 			return
 		end
 
-		unless (gender.capitalize <=> 'Masculin') == 0 || (gender.capitalize <=> 'Feminin') == 0 || 
+		unless (gender.capitalize <=> 'Masculin') == 0 || (gender.capitalize <=> 'Feminin') == 0 ||
 			   (gender.capitalize <=> 'Prefer to not declare') == 0
 			errors.add(:gender, "Invalid Gender")
 		end
@@ -209,7 +209,7 @@ class Employee < ApplicationRecord
 
 	#password_sieger
 	def valid_password
-		
+
 		if self.password_sieger == nil
 			errors.add(:password_sieger, "Employee's password is null.")
 			return
@@ -222,10 +222,8 @@ class Employee < ApplicationRecord
   			if self.password_sieger.include? caracter
   				errors.add(:password_sieger, "Employee's password has invalid caracters.")
   			end
-  		end
   		if self.password_sieger.include? ' '
   			errors.add(:password_sieger, "Employee's password can't have spaces.")
 		end
-	end
-
+    end
 end
