@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   
 has_secure_password
-validates :password, presence: true, length: {minimum: 6}
+validates :password_digest, presence: true, length: {minimum: 6}
 
   #default_values
   def set_default
@@ -11,7 +11,7 @@ validates :password, presence: true, length: {minimum: 6}
     self.birth = '01/01/01'
     self.phone = '52998224725'
     self.gender = 'Prefer to not declare'
-    self.password = 'no_pass'
+    self.password_digest = 'no_pass'
   end
 
 
@@ -141,34 +141,33 @@ validates :password, presence: true, length: {minimum: 6}
 
   #birth
   def valid_birth
+  #   cont=0
+  #   splited_birth = ['', '', '']
+  #   splited_int_birth = [0, 0, 0]
 
-    cont=0
-    splited_birth = ['', '', '']
-    splited_int_birth = [0, 0, 0]
+  #   if self.birth == nil
+  #     errors.add(:birth, "User's birth is null.")
+  #     return
+  #   end
 
-    if self.birth == nil
-      errors.add(:birth, "User's birth is null.")
-      return
-    end
+  #   unless validates_format_of :birth, :with => /[0-9][0-9]\/[0-9][0-9]\/[0-9][0-9]/i
+  #     errors.add(:birth, "Birth missformated")
+  #   else
+  #     splited_birth = self.birth.split('/')
+  #     for cont in 0..2
+  #       splited_int_birth[cont] = splited_birth[cont].to_i
+  #     end
 
-    unless validates_format_of :birth, :with => /[0-9][0-9]\/[0-9][0-9]\/[0-9][0-9]/i
-      errors.add(:birth, "Birth missformated")
-    else
-      splited_birth = self.birth.split('/')
-      for cont in 0..2
-        splited_int_birth[cont] = splited_birth[cont].to_i
-      end
-
-      if splited_int_birth[2] < 1900 || splited_int_birth[2] > 2016
-        errors.add(:birth, "Invalid Year")
-      end
-      if splited_int_birth[1] <= 0 || splited_int_birth[1] >= 12
-        errors.add(:birth, "Invalid Month")
-      end
-      if splited_int_birth[0] <= 0 || splited_int_birth[0] >= 31
-        errors.add(:birth, "Invalid Day")
-      end
-    end
+  #     if splited_int_birth[2] < 1900 || splited_int_birth[2] > 2016
+  #       errors.add(:birth, "Invalid Year")
+  #     end
+  #     if splited_int_birth[1] <= 0 || splited_int_birth[1] >= 12
+  #       errors.add(:birth, "Invalid Month")
+  #     end
+  #     if splited_int_birth[0] <= 0 || splited_int_birth[0] >= 31
+  #       errors.add(:birth, "Invalid Day")
+  #     end
+  #   end
   end
 
   #phone

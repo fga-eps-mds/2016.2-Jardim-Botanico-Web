@@ -35,18 +35,18 @@ ActiveRecord::Schema.define(version: 20160917142511) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "email"
+    t.string   "email",           default: "", null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.string   "name"
     t.string   "cpf"
     t.boolean  "is_employee"
     t.string   "gender"
     t.date     "birth"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
     t.index ["cpf"], name: "index_users_on_cpf", using: :btree
-    t.index ["email"], name: "index_users_on_email", using: :btree
     t.index ["name"], name: "index_users_on_name", using: :btree
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
   create_table "visitations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
