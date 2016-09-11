@@ -222,8 +222,9 @@ class Employee < ApplicationRecord
   			if self.password_sieger.include? caracter
   				errors.add(:password_sieger, "Employee's password has invalid caracters.")
   			end
-  		if self.password_sieger.include? ' '
-  			errors.add(:password_sieger, "Employee's password can't have spaces.")
+  			if self.password_sieger.include? ' '
+  				errors.add(:password_sieger, "Employee's password can't have spaces.")
+			end
 		end
     end
 end

@@ -6,8 +6,8 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
-  		flash[:sucess] = "Bem vindo ao Jardim Botânico"
-  		redirect_to @user
+      redirect_to @user, notice: "Usuário foi criado com sucesso!"	
+      sign_in(@user)
   	else
   		render 'new'
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   private
 
 	def user_params
-		params.require(:user).permit(:name, :email, :password_sieger, :password_confirmation, :cpf, :gender, :phone, :birth)
+		params.require(:user).permit(:name, :email, :password_digest, :password_digest_confirmation, :cpf, :gender, :phone, :birth)
 	end
 
 end

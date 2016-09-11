@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   post   'sign_in'   => 'sessions#create'
   delete 'sign_out'  => 'sessions#destroy'
 
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
   get 'sessions/new'
 
   get 'welcome/new'
