@@ -19,14 +19,14 @@
   	<p>
 	<div class = "field" >
 		<%= f.label :Data %>
-		<%= f.text_field :date%>
+		<%= f.date_select(:date) %>
 	</div>
 	</p>
 
 	<p>
 	<div class = "field" >
 		<%= f.label :Horario %>
-		<%= f.text_field :time%>
+		<%= f.time_select(:time, minute_step: 15)%>
 	</div>
 	</p>
 
@@ -40,14 +40,14 @@
 	<p>
 	<div class = "field" >
 		<%= f.label :Quantidade_de_Visitantes%>
-		<%= f.text_field :visitants_amount %>
+		<%= f.number_field :visitants_amount %>
 	</div>
 	</p>
 
 	<p>
 	<div class = "field" >
 		<%= f.label :Descrição %>
-		<%= f.text_field :description%>
+		<%= f.text_area :description, :cols => "50", :rows => "5"%>
 	</div>
 	</p>
 

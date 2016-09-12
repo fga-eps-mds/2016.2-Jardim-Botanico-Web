@@ -152,7 +152,7 @@ class Employee < ApplicationRecord
 			return
 		end
 
-		unless validates_format_of :birth, :with => /[0-9][0-9]\/[0-9][0-9]\/[0-9][0-9]/i   
+		unless validates_format_of :birth, :with => /[0-9][0-9]\/[0-9][0-9]\/[0-9][0-9][0-9][0-9]/i   
 			errors.add(:birth, "Birth missformated")
 		else
 			splited_birth = self.birth.split('/')

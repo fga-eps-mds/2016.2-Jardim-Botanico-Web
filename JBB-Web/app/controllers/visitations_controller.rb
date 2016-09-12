@@ -1,4 +1,5 @@
 class VisitationsController < ApplicationController
+  
   def new
   	@visitation = Visitation.new
   end
@@ -13,12 +14,13 @@ class VisitationsController < ApplicationController
   		end
   end
 
-
-
-
-private
-def visitation_params
-    params.require(:visitation).permit(:date, :cpf, :time, :isConfirmed, :visitants_amount, :description)
+def index
+  @visitations = Visitation.all
 end
 
+
+  private
+  def visitation_params
+    params.require(:visitation).permit(:date, :cpf, :time, :isConfirmed, :visitants_amount, :description)
+  end
 end

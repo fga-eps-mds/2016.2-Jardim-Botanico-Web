@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'events/new'
 
   get 'visitations/new'
+  get 'visitations/index'
+
 
   get 'employees/new'
 
