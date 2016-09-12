@@ -35,11 +35,13 @@ end
   end
 
 
-
-
-private
-def visitation_params
+  private
+  def visitation_params
     params.require(:visitation).permit(:date, :cpf, :time, :isConfirmed, :visitants_amount, :description)
+  end
 end
+<<<<<<< HEAD
 
 end
+=======
+>>>>>>> Visitation create and show complete
