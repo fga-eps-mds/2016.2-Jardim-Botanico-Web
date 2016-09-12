@@ -1,19 +1,23 @@
 Rails.application.routes.draw do
 
+  #users
   resources :users
+  get '/users/new' => 'users#new'
+  post '/users/new' => 'users#create', :as => 'create_user'
+  get '/users/:id' => 'users#show', :as => 'user_show'
+  get '/users/edit/:id' => 'users#edit', :as => 'user_edit'
 
+  #sessions_login
   get    'sign_in'   => 'sessions#new'
   post   'sign_in'   => 'sessions#create'
   delete 'sign_out'  => 'sessions#destroy'
 
-  get '/signup' => 'users#new'
-  post '/users' => 'users#create'
+  #root
+  root 'welcome#index', :as => 'home'
 
-  root 'sessions#new'
+  #root 'sessions#new'
 
   get 'sessions/new'
-
-  get 'welcome/new'
 
   get 'trails/new'
 
@@ -25,9 +29,7 @@ Rails.application.routes.draw do
 
   get 'employees/new'
 
-  get 'users/new'
-
-  root 'welcome#welcome'
+  #root 'welcome#welcome'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
