@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+        <h1>Cadastro de Usuários</h1>
+  </div>
+</div>
+<div class = "container">
+  <p>Preencha as informações abaixos:</p>
+</div>
+
+<div class="container">
+	<div class="row">
+		<%= form_for @user do |f| %>
+		  <% if @user.errors.any? %>
+		    <div id="error_explanation">
+		      <div class="alert-error">
+		        O formulário contém <%= pluralize(@user.errors.count, "erro") %>.
+		      </div>
+		      <ul>
+		        <% @user.errors.full_messages.each do |msg| %>
+		          <li><%= msg %></li>
+		        <% end %>
+		      </ul>
+		    </div>
+		  <% end %>
+		  <div class="field">
+		    <%= f.label :Nome %>
+		    <%= f.text_field :name, :required => true %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :Email %>
+		    <%= f.email_field :email, :required => true %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :Senha %>
+		    <%= f.password_field :password_digest, :required => true %>
+		  </div>
+		 <!--  <div class="field">
+		    <%= f.label :Confirmação_de_senha %>
+		    <%= f.password_field :password_confirmation %>
+		  </div> -->
+		  <div class="field">
+		    <%= f.label :CPF %>
+		    <%= f.text_field :cpf, :required => true %>
+		  </div>
+		  <div class="field">
+		   <%= f.label :Telefone %>
+		   <%= f.text_field :phone, :required => true %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :Gênero %>
+		    <%= f.select 'gender', options_for_select(["", "Feminino", "Masculino"]), :select => params[:gender], :required => true %>
+		  </div>
+		  <label> Data de Nascimento: </label>
+		  <td align="left">
+		  </td>
+		  <tr>
+		  </tr>
+		  <td> 
+		  <%= f.text_field :birth, :required => true %>
+
+
+		  <div class="actions">
+		    <%= f.submit "Cadastrar"%>
+		    <%= link_to "Bem Vindos!", root_path %>
+		  </div>
+		<% end %>
+	</div>
+</div>
