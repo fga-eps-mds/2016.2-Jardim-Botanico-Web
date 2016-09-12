@@ -14,10 +14,9 @@ class VisitationsController < ApplicationController
   		end
   end
 
-def index
+def show
   @visitations = Visitation.all
 end
-
 
   private
   def visitation_params
