@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  date_time: MyString
-  name: MyString
-  is_confirmed: false
-  description: MyString
-  peaple_amount: 1
-  cpf: 1
-
-two:
-  date_time: MyString
-  name: MyString
-  is_confirmed: false
-  description: MyString
-  peaple_amount: 1
-  cpf: 1
+#one:
+#  date_time: MyString
+#  name: MyString
+#  #is_confirmed: false
+#  description: MyString
+#  peaple_amount: 1
+#  cpf: 1
+#
+#two:
+#  date_time: MyString
+#  name: MyString
+#  #is_confirmed: false
+#  description: MyString
+#  peaple_amount: 1
+#  cpf: 1

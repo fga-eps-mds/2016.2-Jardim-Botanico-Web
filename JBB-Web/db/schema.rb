@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160911215410) do
+ActiveRecord::Schema.define(version: 20160913184454) do
 
   create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "cpf"
@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 20160911215410) do
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "date_time"
     t.string   "name"
-    t.boolean  "is_confirmed"
     t.string   "description"
     t.integer  "peaple_amount"
     t.integer  "cpf"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "status"
   end
 
   create_table "jbb_spaces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -68,11 +68,11 @@ ActiveRecord::Schema.define(version: 20160911215410) do
     t.string   "date"
     t.string   "cpf"
     t.string   "time"
-    t.boolean  "isConfirmed"
     t.integer  "visitants_amount"
     t.string   "description"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "status"
   end
 
 end
