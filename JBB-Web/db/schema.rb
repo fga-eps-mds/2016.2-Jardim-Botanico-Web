@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 20160917142511) do
     t.string   "status"
     t.date     "date"
     t.time     "time"
+    t.string   "cpf"
+    t.string   "time"
     t.integer  "visitants_amount"
     t.string   "description"
     t.datetime "created_at",       null: false
