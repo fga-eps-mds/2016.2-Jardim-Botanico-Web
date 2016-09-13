@@ -1,15 +1,12 @@
 class UsersController < ApplicationController
   def new
-    if !logged_in?
-  	 @user = User.new
-    end
-    redirect_to home_path
+  	@user = User.new
   end
 
   def create
   	@user = User.new(user_params)
   	if @user.save
-      redirect_to @user, notice: "Usuário foi criado com sucesso!"	
+      redirect_to @user, notice: "Cadastro efetuado com sucesso!"	
   	else
   		render 'new'
     end
