@@ -57,70 +57,29 @@ validates :password_digest, presence: true, length: {minimum: 6}
   end
 
   #cpf_validation
-  def valid_cpf
+  #def self.valid_cpf(cpf = nil)
 
-    count1 = 10
-    count2 = 8
-    digit = 0
-    invalid_cpf = ['12345678909', '11111111111', '22222222222', '33333333333', '44444444444',
-      '55555555555', '66666666666', '77777777777', '88888888888', '99999999999',
-      '00000000000']
+    def check_cpf(cpf=nil)
+    return false if cpf.nil?
 
-    if self.cpf == nil
-      errors.add(:cpf, "User's cpf is null.")
-      return
-    end
-
-    unless self.cpf.length == 11
-      errors.add(:cpf, "CPF missmatch length.")
-      return
-    end
-
-    invalid_cpf.each do |invalid|
-      if (invalid <=> self.cpf) == 0
-        errors.add(:cpf, "Invalid sequerence of numbers.")
+    invalid_cpf = %w{12345678909 11111111111 22222222222 33333333333 44444444444 55555555555 66666666666 77777777777 88888888888 99999999999 00000000000}
+    cpf_numbers = cpf.scan /[0-9]/
+    if cpf_numbers.length == 11
+      unless invalid_cpf.member?(cpf_numbers.join)
+        cpf_numbers = cpf_numbers.collect{|x| x.to_i}
+        sum = 10*cpf_numbers[0]+9*cpf_numbers[1]+8*cpf_numbers[2]+7*cpf_numbers[3]+6*cpf_numbers[4]+5*cpf_numbers[5]+4*cpf_numbers[6]+3*cpf_numbers[7]+2*cpf_numbers[8]
+        sum = sum - (11 * (sum/11))
+        wresult1 = (sum == 0 or sum == 1) ? 0 : 11 - sum
+        if wresult1 == cpf_numbers[9]
+          sum = cpf_numbers[0]*11+cpf_numbers[1]*10+cpf_numbers[2]*9+cpf_numbers[3]*8+cpf_numbers[4]*7+cpf_numbers[5]*6+cpf_numbers[6]*5+cpf_numbers[7]*4+cpf_numbers[8]*3+cpf_numbers[9]*2
+          sum = sum - (11 * (sum/11))
+          wresult2 = (sum == 0 or sum == 1) ? 0 : 11 - sum
+          return true if wresult2 == cpf_numbers[10] # CPF validado
+        end
       end
     end
-
-    cpf_splited = self.cpf.split(//)
-    int_cpf = cpf_splited.map(&:to_i)
-
-    #calculating first digit
-    for count1 in 2..10
-    digit += int_cpf[count2]*count1
-    count2 = count2-1
-    end
-
-    digit = ((digit*10)%11)
-      if digit == 10
-        digit = 0
-      end
-
-    #validating first digit
-    unless digit == int_cpf[9]
-      errors.add(:cpf, "Invalid CPF.")
-      return
-    end
-
-    #calculating second digit
-    count2 = 9
-    for count1 in 2..11
-      digit += int_cpf[count2]*count1
-      count2 = count2-1
-    end
-
-    digit = ((digit*10)%11)
-    if digit == 10
-      digit = 0
-    end
-
-    #validating second digit
-    unless digit == int_cpf[10]
-      errors.add(:cpf, "Invalid CPF.")
-      return
-    end
+    return false
   end
-
 
   #email
   def valid_email
