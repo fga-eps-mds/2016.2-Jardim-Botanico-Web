@@ -12,11 +12,15 @@ class Visitation < ApplicationRecord
 	# validation of visitants amount
 	#validates :visitants_amount, presence: true
 
-	validate :parse_to_int
+	validate :parse_to_int, :set_status_as_default
 	
 	def parse_to_int 
   		self.visitants_amount = self.visitants_amount.to_i
   	  	#errors.add(:visitants_amount, "entrou aqui :)")
+	end
+
+	def set_status_as_default
+		self.status = "Aguardando confirmacao"
 	end
 
 	

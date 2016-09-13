@@ -1,0 +1,23 @@
+<h1>Mostrar Visitações </h1>
+
+<table border=1>
+<tr>
+<th> Data </th>
+<th> Hora </td>
+<th> CPF </td>
+<th> Status </th>
+<th> Quantidade de Visitantes </th>
+<th> Descrição </th>
+</tr>
+
+<% @visitations.each do |visitation| %>
+	<tr>
+	<td> <%= visitation.date %> </td>
+	<td> <%= visitation.time %> </td>
+	<td> <%= visitation.cpf %> </td>
+	<td> <%= visitation.status %> </td>
+	<td> <%= visitation.visitants_amount %> </td>
+	<td> <%= visitation.description %> </td>
+	</tr>
+<% end %>
+</table>

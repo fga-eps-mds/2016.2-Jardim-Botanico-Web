@@ -8,7 +8,7 @@ class VisitationsController < ApplicationController
   def create
   	@visitation = Visitation.new(visitation_params)
   		if @visitation.save 
-  			redirect_to @visitation, notice: "Evento criado"
+  			redirect_to show_visitation_url, notice: "Evento criado"
   		else
   			render action: :new
   		end
@@ -16,6 +16,9 @@ class VisitationsController < ApplicationController
 
 def show
   @visitations = Visitation.all
+end
+
+def home
 end
 
   private

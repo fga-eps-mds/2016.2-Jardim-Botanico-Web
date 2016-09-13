@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
-  get 'welcome/new'
-
-  resources :users
-  resources :visitations
+  
+  #resources :users
+  resources :visitations, :except => [:show, :update, :destroy]
   
 
+  get 'visitations/show', as: 'show_visitation'
+=begin
   get 'trails/new'
+
+  get 'welcome/new'
 
   get 'jbb_spaces/new'
 
@@ -22,6 +25,6 @@ Rails.application.routes.draw do
   get 'users/new'
 
   root 'welcome#welcome'
-  
+=end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
