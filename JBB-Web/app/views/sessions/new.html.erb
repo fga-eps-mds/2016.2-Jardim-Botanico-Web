@@ -1,53 +1,53 @@
 <body id="page-top">
-  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-    <div class ="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-        </button>
-        <a class="navbar-brand page-scroll" href="#page-top">Jardim Botânico Web</a>
-      </div>
+	<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+		<div class ="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand page-scroll" href="#page-top"><font color = "black">Jardim Botânico Web</font></a>
+			</div>
 
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a class="page-scroll" href="#sign_in">Login</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#trails">Trilhas</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#contact">Contato</a>
-          </li>
-           <li>
-            <a class="page-scroll" href="#about">Sobre</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-  <br>
-  <br>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a class="page-scroll" href="#sign_in"><font color = "black">Login</font></a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#about"><font color = "black">Sobre</font></a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#contact"><font color = "black">Contato</font></a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#trails"><font color = "black">Trilhas</font></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-  <div class="container">
-    <div class="row">
-      <h1> Login</h1>
-      <%= form_for :session, url: sign_in_path do |f| %>
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true %>
-        </div>
+	<br>
+	<br>
 
-        <div class="field">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
-        </div>
-        <div class="actions">
-          <%= f.submit "Log in" %>
-        </div>
-        <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
-      <% end %>
-    </div>
-  </div>
+	<div class="container">
+		<div class="row">
+			<h1> Login</h1>
+			<%= form_for :session, url: sign_in_path do |f| %>
+				<div class="field">
+					<%= f.label :email %><br />
+					<%= f.email_field :email, autofocus: true %>
+				</div>
+
+				<div class="field">
+					<%= f.label :password %><br />
+					<%= f.password_field :password, autocomplete: "off" %>
+				</div>
+				<div class="actions">
+					<%= f.submit "Log in" %>
+				</div>
+				<p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+			<% end %>
+		</div>
+	</div>
 </body>
