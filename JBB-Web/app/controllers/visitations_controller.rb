@@ -1,5 +1,9 @@
 class VisitationsController < ApplicationController
   
+  def home
+  end
+
+
   def new
   	@visitation = Visitation.new
   end
@@ -14,12 +18,14 @@ class VisitationsController < ApplicationController
   		end
   end
 
-def show
-  @visitations = Visitation.all
-end
+  def show
+    @visitations = Visitation.all
+  end
 
-def home
-end
+
+  def index
+    @visitation = Visitation.p
+  end
 
   private
   def visitation_params

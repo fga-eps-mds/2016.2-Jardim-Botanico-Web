@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   
 
   get 'visitations/show', as: 'show_visitation'
+  get 'visitations/home', as: 'home_visitation'
+  
 =begin
   get 'trails/new'
 
