@@ -1,21 +1,22 @@
 class Event < ApplicationRecord
 
-	# validation of date_time
-	validates :date_time, presence: true
+	# validation of date
+	validates :date, presence: true
 
-	# validation of name
-	validates :name, presence: true	
+	#validation of time
+	validates :time, presence: true	
 
-	# is_confirmed
-	#validates :is_confirmed, presence: true
+	# status
+	def set_status_as_default 		
+		self.status = "Aguardando confirmacao"
+
+	end
+	validate :set_status_as_default
 
 	# validation of description
-	validates :description, presence: true, length: { maximum: 300}
+	validates :description, presence: true, length: { minimum: 5, maximum: 300 }
 
 	# validation of people_amount
-	validates :is_confirmed, presence: true
-
-	# validation of cpf
-	validates :is_confirmed, presence: true
+	validates :people_amount, presence: true, numericality: { greater_than: 0 }
 
 end

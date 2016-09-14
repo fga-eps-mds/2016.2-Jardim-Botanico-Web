@@ -1,14 +1,13 @@
 class CreateEvents < ActiveRecord::Migration[5.0]
   def change
     create_table :events do |t|
-      t.string :date_time
+      t.date :date
+      t.time :time
       t.string :name
-      t.boolean :is_confirmed
+      t.string :status
       t.string :description
-      t.integer :peaple_amount
-      t.integer :cpf
-
-      t.timestamps
+      t.integer :people_amount
+      t.integer :id_user
     end
   end
 end

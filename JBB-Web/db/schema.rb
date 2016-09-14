@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20160913184454) do
+ActiveRecord::Schema.define(version: 20160905045156) do
 
   create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "cpf"
@@ -26,17 +25,17 @@ ActiveRecord::Schema.define(version: 20160913184454) do
   end
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "date_time"
-    t.string   "name"
-    t.string   "description"
-    t.integer  "peaple_amount"
-    t.integer  "cpf"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.string   "status"
+    t.date    "date"
+    t.time    "time"
+    t.string  "name"
+    t.string  "status"
+    t.string  "description"
+    t.integer "people_amount"
+    t.integer "id_user"
   end
 
   create_table "jbb_spaces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "id_jbb"
     t.string   "space_name"
     t.string   "description"
     t.datetime "created_at",  null: false
@@ -53,27 +52,31 @@ ActiveRecord::Schema.define(version: 20160913184454) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "email",           default: "", null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "name"
-    t.string   "cpf"
-    t.date     "birth"
-    t.string   "phone"
-    t.string   "gender"
-    t.string   "password_digest"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "visitations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "date"
     t.string   "cpf"
     t.string   "time"
+    t.boolean  "isConfirmed"
     t.integer  "visitants_amount"
     t.string   "description"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.string   "status"
   end
 
 end
