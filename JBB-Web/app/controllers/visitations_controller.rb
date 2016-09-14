@@ -22,13 +22,16 @@ class VisitationsController < ApplicationController
     @visitations = Visitation.all
   end
 
-
   def index
-    @visitation = Visitation.p
+    @visitation = Visitation.find(params[:id])
+  end
+
+  def cancel_confirmation
+    @visitation.status = "Cancelado pelo Usuário"
   end
 
   private
   def visitation_params
-    params.require(:visitation).permit(:date, :cpf, :time, :isConfirmed, :visitants_amount, :description)
+    params.require(:visitation).permit(:date, :time, :status, :visitants_amount, :description)
   end
 end

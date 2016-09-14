@@ -19,7 +19,7 @@
   	<p>
 	<div class = "field" >
 		<%= f.label :Data %>
-		<%= f.date_select(:date) %>
+		<%= f.date_select(:date, class: 'form-control') %>
 	</div>
 	</p>
 
@@ -32,15 +32,8 @@
 
 	<p>
 	<div class = "field" >
-		<%= f.label :CPF %>
-		<%= f.text_field :cpf%>
-	</div>
-	</p>
-
-	<p>
-	<div class = "field" >
 		<%= f.label :Quantidade_de_Visitantes%>
-		<%= f.number_field :visitants_amount %>
+		<%= f.number_field :visitants_amount, :required => true %>
 	</div>
 	</p>
 
@@ -54,9 +47,11 @@
 
 	<p>
 	<div class="actions">
-		<%= f.submit "Cadastrar"%>
+		<%= f.submit "Cadastrar", class: "btn btn-primary"%>
+		<%= link_to "Voltar", home_visitation_url, class: "btn btn-primary" %>
 	</div>
 	</p>
+
 
 <% end %>
 	

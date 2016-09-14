@@ -74,10 +74,9 @@ ActiveRecord::Schema.define(version: 20160905045840) do
   end
 
   create_table "visitations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "date"
-    t.string   "cpf"
-    t.string   "time"
-    t.boolean  "isConfirmed"
+    t.date     "date"
+    t.time     "time"
+    t.string   "status"
     t.integer  "visitants_amount"
     t.string   "description"
     t.datetime "created_at",       null: false
