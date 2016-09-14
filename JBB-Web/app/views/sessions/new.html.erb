@@ -14,41 +14,41 @@
 						<a class="page-scroll" href="#sign_in"><font color = "black">Login</font></a>
 					</li>
 					<li>
-						<a class="page-scroll" href="#about"><font color = "black">Sobre</font></a>
+						<a class="page-scroll" href="#trails"><font color = "black">Trilhas</font></a>
 					</li>
 					<li>
 						<a class="page-scroll" href="#contact"><font color = "black">Contato</font></a>
 					</li>
 					<li>
-						<a class="page-scroll" href="#trails"><font color = "black">Trilhas</font></a>
+						<a class="page-scroll" href="#about"><font color = "black">Sobre</font></a>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-
 	<br>
+  
 	<br>
-
 	<div class="container">
 		<div class="row">
       <div class="col-md-6 col-md-offset-3">
-  			<h1> Login</h1>
+  			<h1> Login </h1>
   			<%= form_for :session, url: sign_in_path do |f| %>
   				<div class="field">
-  					<%= f.label :email %><br />
+  					<%= f.label :email %><br/>
   					<%= f.email_field :email, autofocus: true, class: "form-control" %>
   				</div>
           <br>
   				<div class="field">
-  					<%= f.label :password %><br />
-  					<%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+  					<%= f.label :senha %><br/>
+  					<%= f.password_field :password_digest, autocomplete: "off", class: "form-control" %>
   				</div>
           <br>
   				<div class="actions">
-  					<%= f.submit "Log in", class: "btn btn-primary" %>
+  					<%= f.submit "Entre", class: "btn btn-primary" %>
   				</div>
-  				<p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+          <br>
+  				<p>Novo usuário? <%= link_to "Cadastre-se agora!", new_user_path, class: "btn btn-primary.focus" %></p>
   			<% end %>
   		</div>
   	</div>
