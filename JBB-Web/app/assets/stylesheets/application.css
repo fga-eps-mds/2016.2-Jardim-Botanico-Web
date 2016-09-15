@@ -14,4 +14,9 @@
  *= require_self
  */
 
+@font-face {
+    font-family: Oswald-Light;
+    src: url("Oswald-Light.ttf") format("truetype");
+}
 
+font-family: 'Oswald-Light';
