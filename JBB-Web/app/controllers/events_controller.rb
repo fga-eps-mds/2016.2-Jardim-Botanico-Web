@@ -31,6 +31,31 @@ class EventsController < ApplicationController
 		@event = @event.where(status: "Confirmado")
 	end
 
+  def new
+  	@event = Event.new
+  end
+
+  def create
+  	@event = Event.new(event_params)
+  	if @event.save 
+  		redirect_to @event, notice: "Evento criado"
+  	else
+  		render action: :new
+  	end
+  end
+
+  def show
+  	@event = Event.all
+	end
+
+  def index
+    @event = Event.find(params[:id])  
+  end
+
+  def cancel_confirmation
+    @event = Event.find(params[:id])
+    @event.status = "Cancelado pelo Usuário"
+  end
 
 	private
 	def event_params

@@ -19,5 +19,5 @@ private
 		if session[:event_id]
 		end
 	end
-end
+
 
