@@ -60,7 +60,7 @@
 					</div>
 				<%end%>
 				<div class="field">
-					<%= f.label :Nome %>
+					<%= f.label :Nome_do_Evento %>
 					<%= f.text_field :name, :required => true, class: 'form-control' %>
 				</div>
 				<br>
@@ -93,58 +93,3 @@
 	</div>
 </body>
 
-<!-- 
-	<%= form_for @event do |f| %>
-
-	<% if @event.errors.any? %>
-		<div id="error_explanation">
-			<div class="alert-error">
-        O formulário contém <%=pluralize(@event.errors.count, "erro")%>.
-      </div>
-      <ul>
-        <% @event.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-      	<% end %>
-      </ul>
-    </div>
-  <%end%>
-
-  <p>
-		<div class = "field" >
-			<%= f.label :Data %>
-			<%= f.date_select(:date) %>
-		</div>
-	</p>
-
-	<p>
-		<div class = "field" >
-			<%= f.label :Horario %>
-			<%= f.time_select(:time, minute_step: 15)%>
-		</div>
-	</p>
-
-	<p>
-		<div class = "field" >
-			<%= f.label :Quantidade_de_Visitantes%>
-			<%= f.number_field :people_amount %>
-		</div>
-	</p>
-
-	<p>
-		<div class = "field" >
-			<%= f.label :Descrição %>
-			<%= f.text_area :description, :cols => "50", :rows => "5"%>
-		</div>
-	</p>
-
-	<p>
-		<div class="actions">
-			<%= f.submit "Cadastrar"%>
-		</div>
-	</p>
-
-<%end%>
-
-, :required => true, class: 'form-control'
-, :required => true, class: 'form-control'
- -->

@@ -24,20 +24,10 @@ Rails.application.routes.draw do
 
   #root 'sessions#new'
 
-  get 'sessions/new'
-
-  resources :visitations
-  
-
-  resources :users
-  
-  get 'trails/new'
-
-  get 'jbb_spaces/new'
-
 
   resources :events
   get 'events/new'
+  get 'event/show'
 
 
   get 'visitations/new'
