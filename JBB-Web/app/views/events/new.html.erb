@@ -1,2 +1,150 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+<body id="page-top">
+	<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+		<div class ="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand page-scroll" href="#page-top"><font color = "black">Jardim Botânico Web</font></a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a class="page-scroll" href="#sign_in"><font color = "black">Login</font></a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#about"><font color = "black">Sobre</font></a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#contact"><font color = "black">Contato</font></a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#trails"><font color = "black">Trilhas</font></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<br>
+	<br>
+
+	<div class="col-md-6 col-md-offset-3">
+		<div class="container">
+			<div class="row">
+				<h1>Requisição de Evento</h1>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 col-md-offset-3">
+		<div class = "container">
+			<p>Preencha as informações abaixos:</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<%= form_for @event do |f| %>
+					<% if @event.errors.any? %>
+						<div id="error_explanation">
+							<div class="alert-error">
+								O formulário contém <%= pluralize(@event.errors.count, "erro") %>.
+							</div>
+							<ul>
+								<% @event.errors.full_messages.each do |msg| %>
+								<li><%= msg %></li>
+							<%end%>
+						</ul>
+					</div>
+				<%end%>
+				<div class="field">
+					<%= f.label :Nome %>
+					<%= f.text_field :name, :required => true, class: 'form-control' %>
+				</div>
+				<br>
+				<div class = "field" >
+					<%= f.label :Data %>
+					<%= f.date_select (:date)%>
+				</div>
+				<br>
+				<div class="field">
+					<%= f.label :Horário %>
+					<%= f.time_select(:time, minute_step: 15) %>
+				</div>
+				<br>
+				<div class = "field" >
+					<%= f.label :Quantidade_de_Visitantes%>
+					<%= f.number_field :people_amount, :requared => true, class: 'form-control' %>
+				</div>
+				<br>
+				<div class = "field" >
+					<%=f.label :Descrição%>
+					<%=f.text_area :description, :cols => "50", :rows => "5", :requared => true, class: 'form-control'%>
+				</div>
+				<br>
+				<div class="actions">
+					<%= f.submit "Cadastrar", class: "btn btn-primary"%>
+				</div>
+			<% end %>
+			</div>
+		</div>
+	</div>
+</body>
+
+<!-- 
+	<%= form_for @event do |f| %>
+
+	<% if @event.errors.any? %>
+		<div id="error_explanation">
+			<div class="alert-error">
+        O formulário contém <%=pluralize(@event.errors.count, "erro")%>.
+      </div>
+      <ul>
+        <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+      	<% end %>
+      </ul>
+    </div>
+  <%end%>
+
+  <p>
+		<div class = "field" >
+			<%= f.label :Data %>
+			<%= f.date_select(:date) %>
+		</div>
+	</p>
+
+	<p>
+		<div class = "field" >
+			<%= f.label :Horario %>
+			<%= f.time_select(:time, minute_step: 15)%>
+		</div>
+	</p>
+
+	<p>
+		<div class = "field" >
+			<%= f.label :Quantidade_de_Visitantes%>
+			<%= f.number_field :people_amount %>
+		</div>
+	</p>
+
+	<p>
+		<div class = "field" >
+			<%= f.label :Descrição %>
+			<%= f.text_area :description, :cols => "50", :rows => "5"%>
+		</div>
+	</p>
+
+	<p>
+		<div class="actions">
+			<%= f.submit "Cadastrar"%>
+		</div>
+	</p>
+
+<%end%>
+
+, :required => true, class: 'form-control'
+, :required => true, class: 'form-control'
+ -->
