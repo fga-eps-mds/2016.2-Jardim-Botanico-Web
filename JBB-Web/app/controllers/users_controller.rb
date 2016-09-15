@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  helper_method :cancel_confirmation
+
   def new
   	@user = User.new
   end
@@ -13,16 +16,12 @@ class UsersController < ApplicationController
   		render 'new'
   end
 
-  def edit
-  end
 
   def show
   end
 
-  def update
-  end
-
-  def delete
+  def cancel_confirmation
+    @visitation.stuts = "Cancelado pelo usuario"
   end
 
   private

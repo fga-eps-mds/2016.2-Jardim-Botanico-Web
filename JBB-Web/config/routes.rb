@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   get 'visitations/show', as: 'show_visitation'
   get 'visitations/home', as: 'home_visitation'
+  get 'visitations/index', as: 'index_visitation'
+  get 'visitations/cancel_confirmation', as: 'cancel_confirmation'
+ # get 'visitations/edit', as: 'edit_visitation'
   
 =begin
   get 'trails/new'

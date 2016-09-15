@@ -1,5 +1,8 @@
 class VisitationsController < ApplicationController
   
+ 
+ helper_method :cancel_confirmation
+
   def home
   end
 
@@ -23,10 +26,11 @@ class VisitationsController < ApplicationController
   end
 
   def index
-    @visitation = Visitation.find(params[:id])
+    @visitation = Visitation.find(params[:id])  
   end
 
   def cancel_confirmation
+    @visitation = Visitation.find(params[:id])
     @visitation.status = "Cancelado pelo Usuário"
   end
 

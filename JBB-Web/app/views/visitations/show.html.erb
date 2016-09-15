@@ -16,8 +16,8 @@
 	<td> <%= visitation.status %> </td>
 	<td> <%= visitation.visitants_amount %> </td>
 	<td> <%= visitation.description %> </td>
-	<td><%= link_to 'Cancelar Confirmação' %> </td>
-	<td><%= link_to 'Excluir' %> </td>
+	<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
+	<td> <%= link_to 'Cancelar Visitação', action: 'cancel_confirmation', id:visitation %> </td>
 	</tr>
 <% end %>
 </table>
