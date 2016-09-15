@@ -1,25 +1,77 @@
-<h1>Mostrar Visitações </h1>
+<body id="page-top">
+	<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+		<div class ="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand page-scroll" href="#page-top"><font color = "black">Jardim Botânico Web</font></a>
+			</div>
 
-<table border=1>
-<tr>
-<th> Data </th>
-<th> Hora </td>
-<th> Status </th>
-<th> Quantidade de Visitantes </th>
-<th> Descrição </th>
-</tr>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a class="page-scroll" href="#sign_in"><font color = "black">Login</font></a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#about"><font color = "black">Sobre</font></a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#contact"><font color = "black">Contato</font></a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#trails"><font color = "black">Trilhas</font></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-<% @visitations.each do |visitation| %>
-	<tr>
-	<td> <%= visitation.date %> </td>
-	<td> <%= visitation.time %> </td>
-	<td> <%= visitation.status %> </td>
-	<td> <%= visitation.visitants_amount %> </td>
-	<td> <%= visitation.description %> </td>
-	<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
-	<td> <%= link_to 'Cancelar Visitação', action: 'cancel_confirmation', id:visitation %> </td>
-	</tr>
-<% end %>
-</table>
-<p>
-<%= link_to "Voltar", home_visitation_url %>
+	<br>
+	<br>
+
+	<div class="col-md-6 col-md-offset-3">
+		<div class="container">
+			<div class="row">
+				<h1>Mostrar Visitações</h1>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 col-md-offset-3">
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="table-hover">
+					<table border=1 class="table table-bordered" >
+						<br /> <br />
+
+						<tr>
+						<th> Data </th>
+						<th> Hora </td>
+						<th> Status </th>
+						<th> Quantidade de Visitantes </th>
+						<th> Descrição </th>
+						</tr>
+
+						<% @visitations.each do |visitation| %>
+							<tr>
+							<td> <%= visitation.date %> </td>
+							<td> <%= visitation.time %> </td>
+							<td> <%= visitation.status %> </td>
+							<td> <%= visitation.visitants_amount %> </td>
+							<td> <%= visitation.description %> </td>
+							<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
+							<td> <%= link_to 'Cancelar Visitação', action: 'cancel_confirmation', id:visitation %> </td>
+							</tr>
+						<% end %>
+					</table>
+				</div>
+				<br /> <br />
+				<p> <p>
+				<%= link_to "Voltar", home_visitation_url, class: "btn btn-primary" %>
+			</div>
+		</div>
+	</div>
+</body>
