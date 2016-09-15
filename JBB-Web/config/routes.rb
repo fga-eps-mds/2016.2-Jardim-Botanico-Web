@@ -35,7 +35,10 @@ Rails.application.routes.draw do
 
   get 'jbb_spaces/new'
 
+
+  resources :events
   get 'events/new'
+
 
   get 'visitations/new'
   get 'visitations/index'
