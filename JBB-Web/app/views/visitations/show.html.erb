@@ -42,7 +42,7 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
+			<div class="col-md-10 col-md-offset-1">
 				<div class="table-hover">
 					<table border=1 class="table table-bordered" >
 						<br /> <br />
@@ -63,7 +63,8 @@
 							<td> <%= visitation.visitants_amount %> </td>
 							<td> <%= visitation.description %> </td>
 							<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
-							<td> <%= link_to 'Cancelar Visitação', action: 'cancel_confirmation', id:visitation %> </td>
+							<td> <%= link_to "Cancelar Visitação", controller: "visitations", 
+											action: "cancel_visitation", id: visitation%> </td>
 							</tr>
 						<% end %>
 					</table>

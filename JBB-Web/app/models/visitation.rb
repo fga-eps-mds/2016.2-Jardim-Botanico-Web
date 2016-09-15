@@ -1,6 +1,5 @@
 class Visitation < ApplicationRecord
 	
-	validate :set_status_as_default
 	# validation of date
 	validates :date, presence: true
 	
@@ -9,6 +8,7 @@ class Visitation < ApplicationRecord
 	
 	#validation of visitants_amout
 	validates :visitants_amount, presence: true
+
 =begin	
 	validate :validate_visitants_amount
 
@@ -21,11 +21,15 @@ class Visitation < ApplicationRecord
 			errors.add(:visitants_amount, "A quantidade de pessoas não pode ser negativa")
 		end
 	end
-=end
-	#status
-	def set_status_as_default
-		self.status = "Aguardando confirmacao"
+
+
+	def user_cancel_visitation
+		self.status = "Cancelado pelo Usuario"
 	end
+	
+=end
+
+	#status
 	
 	# validation of description
 	validates :description, presence: true, length: { minimum: 5, maximum: 300 }

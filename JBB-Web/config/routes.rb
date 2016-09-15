@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get 'visitations/show', as: 'show_visitation'
   get 'visitations/home', as: 'home_visitation'
   get 'visitations/index', as: 'index_visitation'
-  get 'visitations/cancel_confirmation', as: 'cancel_confirmation'
+  get 'visitations/cancel_visitation', as: 'get_cancel_visitation'
+  post 'visitations/cancel_visitation', as: 'post_cancel_visitation'
+  
  # get 'visitations/edit', as: 'edit_visitation'
   
 =begin
