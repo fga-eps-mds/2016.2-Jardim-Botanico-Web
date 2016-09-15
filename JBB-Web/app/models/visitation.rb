@@ -9,15 +9,12 @@ class Visitation < ApplicationRecord
 	#validation of visitants_amout
 	validates :visitants_amount, presence: true
 
-=begin	
 	validate :validate_visitants_amount
-
-
 
 	def validate_visitants_amount
 		if (self.visitants_amount > 100)
 			errors.add(:visitants_amount, "A quantidade máxima por visitação é de 100 pessoas")
-		else (self.visitants_amount < 1)
+		elsif (self.visitants_amount < 1)
 			errors.add(:visitants_amount, "A quantidade de pessoas não pode ser negativa")
 		end
 	end
@@ -26,8 +23,6 @@ class Visitation < ApplicationRecord
 	def user_cancel_visitation
 		self.status = "Cancelado pelo Usuario"
 	end
-	
-=end
 
 	#status
 	
