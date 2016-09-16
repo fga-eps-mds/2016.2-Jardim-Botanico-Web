@@ -48,22 +48,24 @@
 						<br /> <br />
 
 						<tr>
-						<th> Data </th>
-						<th> Hora </td>
-						<th> Status </th>
-						<th> Quantidade de Visitantes </th>
-						<th> Descrição </th>
+						<th>Nome do Evento</th>
+						<th>Data</th>
+						<th>Hora</td>
+						<th>Status</th>
+						<th>Quantidade de Visitantes</th>
+						<th>Descrição</th>
 						</tr>
 
 						<% @event.each do |event| %>
 							<tr>
+							<td> <%= event.name %> </td>
 							<td> <%= event.date %> </td>
 							<td> <%= event.time %> </td>
 							<td> <%= event.status %> </td>
 							<td> <%= event.people_amount %> </td>
 							<td> <%= event.description %> </td>
 							<td> <%= link_to 'Mostrar', action: 'index', id: event %> </td>
-							
+							<td> <%= link_to 'Cancelar Evento', action: 'cancel_confirmation', id:event %> </td>
 							</tr>
 						<% end %>
 					</table>

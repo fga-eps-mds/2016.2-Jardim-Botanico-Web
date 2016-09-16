@@ -1,5 +1,8 @@
 class Event < ApplicationRecord
 
+	#validate of name
+	validates :name, presence: true
+
 	# validation of date
 	validates :date, presence: true
 

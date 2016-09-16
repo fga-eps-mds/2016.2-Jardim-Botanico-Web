@@ -27,7 +27,11 @@ Rails.application.routes.draw do
 
   resources :events
   get 'events/new'
-  get 'event/show'
+  get 'events/show'
+  get 'events/index'
+  get 'events/cancel_confirmation'
+
+  
 
 
   get 'visitations/new'

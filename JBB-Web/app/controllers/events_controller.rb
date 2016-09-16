@@ -13,11 +13,6 @@ class EventsController < ApplicationController
 		end
 	end
 
-
-	def index
-		@event = Event.all
-	end
-
 	# Metodo para filtrar os eventos de acordo com o status "Aguardando confirmacao"
 	def confirmations_request
 		#@event = Events.all
