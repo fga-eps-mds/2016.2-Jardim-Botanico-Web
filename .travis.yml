@@ -5,7 +5,7 @@ rvm:
 
 env:
   - DB=mysql
-
+  
 script: "RAILS_ENV=test bundle exec rake"
 
 before_script:
@@ -25,3 +25,7 @@ notifications:
       - gustavomn93@gmail.com
       - nicacionetobsb@gmail.com
       - iamferreirajp@gmail.com
+
+addons:
+  code_climate:
+    repo_token:cb4ea7ac2d81c8fe078ceb548d4a19ddcaef0761731ef87525777e4a3ad62044
