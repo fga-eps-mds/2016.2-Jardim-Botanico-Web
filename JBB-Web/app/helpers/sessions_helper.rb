@@ -1,8 +1,6 @@
 module SessionsHelper
   def sign_in(user)
     session[:user_id] = user.id
-    redirect_to user_show_path
-
   end
 
   def current_user

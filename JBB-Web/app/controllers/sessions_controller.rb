@@ -6,13 +6,15 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:email])
       if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      redirect_to user_show_path
+      redirect_to home_path, notice: "Login realizado com sucesso"
     else
+      flash.now[:notice] = 'Login ou senha inválidos'
       render 'new'
     end
   end
   def destroy 
     sign_out
-    redirect_to root_url
+    redirect_to root
   end
+  
 end
