@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   get '/users/edit/:id' => 'users#edit', :as => 'user_edit'
 
   #sessions_login
-  get    'sign_in'   => 'sessions#new'
-  post   'sign_in'   => 'sessions#create'
-  delete 'sign_out'  => 'sessions#destroy'
+  get    '/sign_in'   => 'sessions#new'
+  post   '/sign_in_suceful'   => 'sessions#create'
+  delete '/sign_out'  => 'sessions#destroy'
+
 
   #root
   root 'welcome#index', :as => 'home'

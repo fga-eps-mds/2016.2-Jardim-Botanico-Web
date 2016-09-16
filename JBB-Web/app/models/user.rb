@@ -17,7 +17,7 @@ validates :password_digest, presence: true, length: {minimum: 6}
 
 
 
-  validate :valid_name, :valid_birth, :valid_phone, :valid_gender, :valid_email, :valid_cpf
+  validate :valid_name, :valid_birth, :valid_phone, :valid_email, :valid_cpf
 
   $SPECIAL_CARACTERS = ['!', '@', '#', '$', '%', '¨', '*', '(', ')', '-', '+', '=', '§', '_',
     '²', '¹', '³', '¢', '¬', '{', '[', ']', '}' '?', ':', ';', '.', ',',

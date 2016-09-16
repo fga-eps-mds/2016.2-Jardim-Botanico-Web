@@ -2,34 +2,35 @@
   <br>
   <br>
 
+  <% :id => @user.id %>
+
   <div class="container">
   	<div class="row">
-    	<h1>Perfil de <@= @user.name %></h1>
+    	<h1>Perfil de <%= current_user.name %></h1>
      <!--  <%= @user.email %>
       <% if current_user == @user %> -->
         <p>
           <b> Email: </b>
-          <@= @user.email %>
+          <%= current_user.email %>
         </p>
         <p>
           <b> CPF: </b>
-          <@= @user.cpf %>
+          <%= current_user.cpf %>
         </p>
         <p>
           <b> Telefone: </b>
-          <@= @user.phone %>
+          <%= current_user.phone %>
         </p>
         <p>
           <b> Gênero: </b>
-          <@= @user.gender %>
+          <%= current_user.gender %>
         </p>
         <p>
           <b> Data de Nascimento: </b>
-          <@= @user.birth %>
+          <%= current_user.birth %>
         </p>
         <ul>
           <li><%= link_to "Edit", user_edit_path(current_user), class: "btn btn-primary" %></li>
-          <li><%= link_to "Delete", @user, method :delete, class: "btn btn-primary"%></li>
         </ul>
       <%end%>
 		</div>

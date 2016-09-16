@@ -2,29 +2,18 @@
 
   <br>
 	<br>
-  
+
 	<div class="container">
 		<div class="row">
       <div class="col-md-6 col-md-offset-3">
-  			<h1> Login </h1>
-  			<%= form_for :session, url: sign_in_path do |f| %>
-  				<div class="field">
-  					<%= f.label :email %><br/>
-  					<%= f.email_field :email, autofocus: true, class: "form-control" %>
-  				</div>
-          <br>
-  				<div class="field">
-  					<%= f.label :senha %><br/>
-  					<%= f.password_field :password_digest, autocomplete: "off", class: "form-control" %>
-  				</div>
-          <br>
-  				<div class="actions">
-  					<%= f.submit "Entre", class: "btn btn-primary" %>
-  				</div>
-          <br>
-  				<p>Novo usuário? <%= link_to "Cadastre-se agora!", new_user_path, class: "btn btn-primary.focus" %></p>
-  			<% end %>
-  		</div>
-  	</div>
+       
+       <%= form_for(:session, url: '/sign_in_suceful') do |f| %>
+        <h1>Login</h1></br>
+    <%= f.text_field :email, :class => "text" , :placeholder => "e-mail" %></br></br>
+    <%= f.password_field :password, :class => "text" , :placeholder => "Senha" %></br></br>
+    <%= f.submit "Entrar", :class => "btn btn-primary"%></br></br>
+  <% end %>
+    </div>
   </div>
+</div>
 </body>
