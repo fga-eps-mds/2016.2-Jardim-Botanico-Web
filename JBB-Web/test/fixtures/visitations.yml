@@ -1,14 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  date: date
+  date: date.now.to_s(:db)
   time: time
   status: MyString
   visitants_amount: 1
   description: MyString
 
 two:
-  date: date
+  date: date.now.to_s(:db)
   time: time
   status: MyString
   visitants_amount: 1
