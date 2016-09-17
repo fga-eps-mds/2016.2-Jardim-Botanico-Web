@@ -5,6 +5,8 @@ class VisitationsController < ApplicationController
   end
 
 
+
+                                                  #User
   #new
   def new
   	@visitation = Visitation.new
@@ -13,7 +15,7 @@ class VisitationsController < ApplicationController
 
   def create
   	@visitation = Visitation.new(visitation_params)
-  	@visitation.status = "Aguardando confirmacao"	
+  	@visitation.set_status_default
       if @visitation.save 
   			redirect_to show_visitation_url, notice: "Visitação criada"
   		else
@@ -21,7 +23,18 @@ class VisitationsController < ApplicationController
   		end
   end
 
+   def cancel_visitation_user
+    @visitation = Visitation.find(params[:id]) 
+    @visitation.canceled_by_user
+    if @visitation.save
+      redirect_to show_visitation_url, notice: "Visitação cancelada por usuario"
+    end
+  end
 
+
+
+
+                          #Employee
   #show
   def show
     @visitations = Visitation.all
@@ -34,23 +47,11 @@ class VisitationsController < ApplicationController
   end
 
 
-  #cancel_confirmation
-  helper_method :cancel_visitation_user
-  
-  def cancel_visitation_user
-    @visitation = Visitation.find(params[:id])  
-    @visitation.status = "Cancelado pelo usuario"
-    if @visitation.save
-      redirect_to show_visitation_url, notice: "Visitação cancelada"
-    end
-  end
-
+  #cancel_confirmation 
   def cancel_visitation_employee
-    @visitation = Visitation.find(params[:id])  
-    @visitation.status = "Cancelado por funcionario"
-    if @visitation.save
-      redirect_to show_visitation_url, notice: "Visitação cancelada"
-    end
+    @visitation = Visitation.find(params[:id])   
+    @visitation.canceled_by_employee
+    @visitation.save
   end
 
 

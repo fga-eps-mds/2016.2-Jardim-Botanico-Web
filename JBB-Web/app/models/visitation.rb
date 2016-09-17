@@ -2,10 +2,15 @@ class Visitation < ApplicationRecord
 	
 	# validation of date
 	validates :date, presence: true
+		
 	
+
+
 	# validation of time
-	validates :time, presence: true
+	validates :time, presence: true	
 	
+	
+
 	#validation of visitants_amout
 	validates :visitants_amount, presence: true
 
@@ -20,12 +25,24 @@ class Visitation < ApplicationRecord
 	end
 
 
-	def user_cancel_visitation_user
-		self.status = "Cancelado pelo Usuario"
-	end
 
 	#status
-	
+	def set_status_default
+		self.status = "Aguardando confirmacao"
+	end	
+
+	def canceled_by_employee
+		self.status = "Cancelado por funcionario"
+	end
+
+	def canceled_by_user
+		self.status = "Cancelado pelo usuario"
+	end
+
+
+
+
+
 	# validation of description
 	validates :description, presence: true, length: { minimum: 5, maximum: 300 }
 end
