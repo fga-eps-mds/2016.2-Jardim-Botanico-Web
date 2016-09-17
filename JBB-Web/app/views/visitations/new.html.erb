@@ -62,12 +62,12 @@
 				<br>
 				<div class = "field" >
 					<%= f.label :Data %>
-					<%= f.date_select (:date)%>
+					<%= f.date_select :date, default: Date.today %>
 				</div>
 				<br>
 				<div class="field">
 					<%= f.label :Horário %>
-					<%= f.time_select(:time, minute_step: 15) %>
+					<%= f.time_select :time, minute_step: 15, start_hour: 8, end_hour: 16 %>
 				</div>
 				<br>
 				<div class = "field" >
