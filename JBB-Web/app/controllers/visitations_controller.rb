@@ -35,15 +35,24 @@ class VisitationsController < ApplicationController
 
 
   #cancel_confirmation
-  helper_method :cancel_visitation
+  helper_method :cancel_visitation_user
   
-  def cancel_visitation
+  def cancel_visitation_user
     @visitation = Visitation.find(params[:id])  
     @visitation.status = "Cancelado pelo usuario"
     if @visitation.save
-      redirect_to show_visitation_url, notice: "Visitação criada"
+      redirect_to show_visitation_url, notice: "Visitação cancelada"
     end
   end
+
+  def cancel_visitation_employee
+    @visitation = Visitation.find(params[:id])  
+    @visitation.status = "Cancelado por funcionario"
+    if @visitation.save
+      redirect_to show_visitation_url, notice: "Visitação cancelada"
+    end
+  end
+
 
 
 

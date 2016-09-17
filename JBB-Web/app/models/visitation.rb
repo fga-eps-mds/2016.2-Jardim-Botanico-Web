@@ -20,7 +20,7 @@ class Visitation < ApplicationRecord
 	end
 
 
-	def user_cancel_visitation
+	def user_cancel_visitation_user
 		self.status = "Cancelado pelo Usuario"
 	end
 

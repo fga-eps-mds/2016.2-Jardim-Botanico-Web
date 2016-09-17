@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   get 'visitations/show', as: 'show_visitation'
   get 'visitations/home', as: 'home_visitation'
   get 'visitations/index', as: 'index_visitation'
-  get 'visitations/cancel_visitation', as: 'get_cancel_visitation'
-  post 'visitations/cancel_visitation', as: 'post_cancel_visitation'
+  get 'visitations/cancel_visitation_user', as: 'get_cancel_visitation_user'
+  post 'visitations/cancel_visitation_user', as: 'post_cancel_visitation_user'
+  get 'visitations/cancel_visitation_employee', as: 'get_cancel_visitation_employee'
+  post 'visitations/cancel_visitation_employee', as: 'post_cancel_visitation_employee'
   
  # get 'visitations/edit', as: 'edit_visitation'
   

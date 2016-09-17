@@ -2,7 +2,6 @@
 
 one:
   date: MyString
-  cpf: MyString
   time: MyString
   isConfirmed: false
   visitants_amount: 1
@@ -10,7 +9,6 @@ one:
 
 two:
   date: MyString
-  cpf: MyString
   time: MyString
   isConfirmed: false
   visitants_amount: 1

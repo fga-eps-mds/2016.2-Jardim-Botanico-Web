@@ -1,3 +1,4 @@
+= javascript_include_tag :application
 <body id="page-top">
 	<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
 		<div class ="container-fluid">
@@ -64,7 +65,7 @@
 							<td> <%= visitation.description %> </td>
 							<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
 							<td> <%= link_to "Cancelar Visitação", controller: "visitations", 
-											action: "cancel_visitation", id: visitation%> </td>
+											action: "cancel_visitation_user", id: visitation %> </td>
 							</tr>
 						<% end %>
 					</table>
