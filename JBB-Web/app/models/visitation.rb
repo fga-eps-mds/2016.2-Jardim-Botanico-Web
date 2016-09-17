@@ -43,6 +43,9 @@ class Visitation < ApplicationRecord
 		self.status = "Recusado por funcionario"
 	end
 
+	def accepted_by_employee
+		self.status = "Agendado"
+	end
 
 
 

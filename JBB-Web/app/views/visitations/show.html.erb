@@ -67,12 +67,22 @@
 							<td> <%= visitation.description %> </td>
 							<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
 							
+							<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
+							<td> <%= link_to "Aceitar Visitação", controller: "visitations", 
+											action: "accept_visitation_employee", id: visitation %> </td>
+							<% end %>
+
+							<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
 							<td> <%= link_to "Recusar Visitação", controller: "visitations", 
 											action: "refuse_visitation_employee", id: visitation %> </td>
+							<% end %>
 							
+							<% if (visitation.status <=> "Agendado") == 0 %>
 							<td> <%= link_to "Cancelar Visitação", controller: "visitations", 
 											action: "cancel_visitation_employee", id: visitation %> </td>
 							</tr>
+							<% end %>
+
 						<% end %>
 					</table>
 				</div>
