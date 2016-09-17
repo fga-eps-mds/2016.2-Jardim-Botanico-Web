@@ -1,10 +1,11 @@
 class SessionsController < ApplicationController
+  before_action :block_access, except: [:destroy]
+  
   def new
     render 'new'
   end
   def create  
     @user = User.find_by(email: params[:email])
-    puts(params[:email])
       if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       sign_in(@user)

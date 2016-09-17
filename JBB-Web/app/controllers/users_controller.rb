@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
   
+  before_action :set_user, only:[:edit, :update, :show]
+  # flash[:notice] = "Informações salvas com sucesso"
+  # flash[:warning] =  "Preencha todos os campos obrigatórios"
+  # flash[:error] = "Não foi possível salvar as informações"
+  # flash[:info] = "Alguns itens necessitam da sua atenção"
+
+
   # New user
   def new
     @user = User.new
@@ -10,7 +17,8 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
       session[:user_id] = @user.id
-      redirect_to home_path, notice: "Cadastro efetuado com sucesso!"
+      flash.now[:notice] = "Perfil criado com sucesso"
+      redirect_to home_path
   	else
   		render 'new'
     end
@@ -18,7 +26,6 @@ class UsersController < ApplicationController
 
   # Editing the user profile
   def edit
-    @user = User.find(params[:id])
     if @user != current_user
       redirect_to home_path
     end
@@ -26,18 +33,16 @@ class UsersController < ApplicationController
 
   #Update user
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "Perfil atualizado com sucesso"
+      redirect_to :action => "show",:id => @user.id
     else
       flash[:notice] = "Erro ao atualizar o perfil"
     end  
-    redirect_to :action => "show",:id => @user.id
   end
 
  #Show the user profile  
   def show
-    @user = User.find(params[:id])
     if @user != current_user
       redirect_to home_path
     end
@@ -49,12 +54,15 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     # user.events.delete_all
     # user.visitations.delete_all
+    flash.now[:notice] = "Perfil deletado com sucesso"
     redirect_to home_path
   end
 
-
-
   private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 
 	def user_params
 		params[:user].permit(:name, :email, :password, :cpf, :gender, :phone, :birth)
