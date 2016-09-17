@@ -52,7 +52,7 @@
 						<th> Data </th>
 						<th> Hora </td>
 						<th> Status </th>
-						<th> Quantidade de Visitantes </th>
+						<th> Nº de Visitantes </th>
 						<th> Descrição </th>
 						</tr>
 
@@ -82,6 +82,15 @@
 											action: "cancel_visitation_employee", id: visitation %> </td>
 							</tr>
 							<% end %>
+
+							<% if (visitation.status <=> "Cancelado por funcionario") == 0 || 
+								   (visitation.status <=> "Cancelado pelo usuario") == 0 || 
+								   (visitation.status <=> "Recusado por funcionario") == 0 %>
+							<td> <%= link_to "Deletar Visitação", controller: "visitations", 
+											action: "delete_visitation_employee", id: visitation %> </td>
+							</tr>
+							<% end %>
+
 
 						<% end %>
 					</table>

@@ -63,9 +63,11 @@ class VisitationsController < ApplicationController
   end
 
   #delete_visitation
-  def delet_visitation
-    @visitation = Visitation.find(params[:id])   
-     end
+  def delete_visitation
+    @visitation = Visitation.find(params[:id])
+    #Visitation.destroy(@visitation)
+    @user.destroy
+  end
 
   #acceptd_visitation
   def accept_visitation_employee
