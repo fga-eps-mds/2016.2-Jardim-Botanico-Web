@@ -49,7 +49,7 @@
 				<br>
 				<div class="field">
 					<%= f.label :CPF %>
-					<%= f.text_field :cpf, :required => true, class: 'form-control', placeholder: 'Ex.: 000.000.000-00'%>
+					<%= f.text_field :cpf, :required => true, id: 'cpf', class: 'form-control', placeholder: 'Ex.: 000.000.000-00', maxlength: '14'%>
 				</div>
 				<br>
 				<div class="field">
@@ -64,7 +64,7 @@
 				<br>
 				<div class="field">
 					<%= f.label :Data_de_Nascimento %>
-					<%= f.text_field :birth, :required => true, class: 'form-control', placeholder: 'Ex.: dd/mm/aaaa'%>
+					<%= f.text_field :birth, :required => true, id: 'data',class: 'form-control', placeholder: 'Ex.: dd/mm/aaaa', maxlength: '11'%>
 				</div>
 				<br>
 				<div class="actions">
