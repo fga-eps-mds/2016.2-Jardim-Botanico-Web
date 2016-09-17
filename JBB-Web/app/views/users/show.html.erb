@@ -7,32 +7,35 @@
       <div class="col-md-6 col-md-offset-3">
       	<h1>Perfil de <%= current_user.name %></h1>
        <!--  <%= @user.email %>
-        <% if current_user == @user %> -->
-          <p>
-            <b> Email: </b>
-            <%= current_user.email %>
-          </p>
-          <p>
-            <b> CPF: </b>
-            <%= current_user.cpf %>
-          </p>
-          <p>
-            <b> Telefone: </b>
-            <%= current_user.phone %>
-          </p>
-          <p>
-            <b> Gênero: </b>
-            <%= current_user.gender %>
-          </p>
-          <p>
-            <b> Data de Nascimento: </b>
-            <%= current_user.birth %>
-          </p>
-          <ul>
-            <li><%= link_to "Edit", user_edit_path(current_user), class: "btn btn-primary" %></li>
-          </ul>
-        <%end%>
-      </div>
-		</div>
-	</div>
+       <% if current_user == @user %> -->
+       <p>
+        <b> Email: </b>
+        <%= current_user.email %>
+      </p>
+      <p>
+        <b> CPF: </b>
+        <%= current_user.cpf %>
+      </p>
+      <p>
+        <b> Telefone: </b>
+        <%= current_user.phone %>
+      </p>
+      <p>
+        <b> Gênero: </b>
+        <%= current_user.gender %>
+      </p>
+      <p>
+        <b> Data de Nascimento: </b>
+        <%= current_user.birth %>
+      </p>
+      <ul>
+        <li><%= link_to "Editar", user_edit_path(current_user), class: "btn btn-primary" %></li>
+      </ul>
+      <%= form_for(@user, :url => { :action => "destroy", params: {id: @user.id}} ) do |f| %>
+      <%= f.submit "Excluir minha conta", data: { confirm: "Tem certeza que deseja excluir sua conta?" }, class: "btn btn-warning destroy-btn"%>
+      <% end %>
+      <%end%>
+    </div>
+  </div>
+</div>
 <body>

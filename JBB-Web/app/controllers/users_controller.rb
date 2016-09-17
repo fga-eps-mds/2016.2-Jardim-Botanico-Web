@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
       session[:user_id] = @user.id
-      redirect_to user_show_path , notice: "Cadastro efetuado com sucesso!"
+      redirect_to home_path , notice: "Cadastro efetuado com sucesso!"
   	else
   		render 'new'
     end
@@ -58,9 +58,10 @@ class UsersController < ApplicationController
   def destroy
     session[:user_id] = nil
     user = User.find(params[:id])
-    user.events.delete_all
-    user.visitations.delete_all
+    # user.events.delete_all
+    # user.visitations.delete_all
     user.destroy
+    
     redirect_to home_path
   end
 
@@ -71,5 +72,10 @@ class UsersController < ApplicationController
   def user_params_update
     params[:user].permit(:name, :email, :cpf, :gender, :phone, :birth)
   end   
+
+  def password_params
+    params[:user].permit(:password)
+  end
+
 end
 

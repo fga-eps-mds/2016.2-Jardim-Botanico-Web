@@ -9,11 +9,11 @@ Rails.application.routes.draw do
 
   patch '/users/update/', controller: 'users', action: 'update', :as => 'update_user'
   patch '/users/update/:id', controller: 'users', action: 'update_password', :as => 'update_user_password'
+  patch '/users/destroy/', controller: 'users', action: 'destroy', :as => 'destroy_user'
 
   #sessions_login
   get    '/sign_in'   => 'sessions#new'
   post   '/sign_in_suceful'   => 'sessions#create'
-  delete '/sign_out'  => 'sessions#destroy'
 
   #root
   root 'welcome#index', :as => 'home'
