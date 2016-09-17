@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+		<div class = "actions" >
+          <b>Dia:</b>
+           <%= @visitation.date %>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Hora:</b>
+          <%= @visitation.time %>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Status:</b>
+          <%= @visitation.status %>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Quantidade de Visitantes:</b>
+          <%= @visitation.visitants_amount %>
+        </div>
+        <br>
+        <div class= "actions" >
+          <b>Descrição:</b>
+          <%= @visitation.description %>
+        </div>
+
+
+        <%= link_to "Voltar", show_visitation_url, class: "btn btn-primary" %>
