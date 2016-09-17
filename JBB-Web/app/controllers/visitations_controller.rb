@@ -46,9 +46,23 @@ class VisitationsController < ApplicationController
     @visitation = Visitation.find(params[:id])  
   end
 
+  #refuse_confirmation 
+  def refuse_visitation_employee
+    @visitation = Visitation.find(params[:id])   
+    @visitation.refused_by_employee
+    @visitation.save
+  end
+
 
   #cancel_confirmation 
   def cancel_visitation_employee
+    @visitation = Visitation.find(params[:id])   
+    @visitation.canceled_by_employee
+    @visitation.save
+  end
+
+  #delete_visitation
+  def delet_visitation
     @visitation = Visitation.find(params[:id])   
     @visitation.canceled_by_employee
     @visitation.save

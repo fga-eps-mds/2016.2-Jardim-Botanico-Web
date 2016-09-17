@@ -39,6 +39,10 @@ class Visitation < ApplicationRecord
 		self.status = "Cancelado pelo usuario"
 	end
 
+	def refused_by_employee
+		self.status = "Recusado por funcionario"
+	end
+
 
 
 
