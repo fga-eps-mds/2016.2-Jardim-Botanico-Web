@@ -38,6 +38,7 @@ class VisitationsController < ApplicationController
   #show
   def show
     @visitations = Visitation.all
+    @visitations_sorted = @visitations.sort_by {|visitation| visitation.status}
   end
 
 

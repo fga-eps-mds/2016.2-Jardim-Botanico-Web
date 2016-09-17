@@ -57,7 +57,7 @@
 						</tr>
 
 
-						<% @visitations.each do |visitation| %>
+						<% @visitations_sorted.each do |visitation| %>
 							<tr>
 							<td> <%= visitation.date %> </td>
 							<% timeString = visitation.time.to_s %>
