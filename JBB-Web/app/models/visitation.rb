@@ -1,4 +1,5 @@
 class Visitation < ApplicationRecord
+	belongs_to :user
 	
 	# validation of date
 	validates :date, presence: true
