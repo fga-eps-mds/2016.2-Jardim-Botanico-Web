@@ -25,12 +25,14 @@ Rails.application.routes.draw do
   #root 'sessions#new'
 
 
-  resources :events
-  get 'events/new'
-  get 'events/show'
+  get 'events/new' => 'events#new', as: 'events'
+  post 'events/new' => 'events#create', as: 'events_save'
+  get 'events/show' => 'events#show', as: 'show_event'
   get 'events/index'
   get 'events/cancel_confirmation'
 
+  get 'events/cancel_event_user' => 'events#cancel_event_user'
+  post 'events/cancel_event_user' => 'events#cancel_event_user'
   
 
 
