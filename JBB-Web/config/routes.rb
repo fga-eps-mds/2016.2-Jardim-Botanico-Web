@@ -7,9 +7,6 @@ Rails.application.routes.draw do
   post '/users/new' => 'users#create', :as => 'create_user'
   get '/users/:id' => 'users#show', :as => 'user_show'
   get '/users/edit/:id' => 'users#edit', :as => 'user_edit'
-
-
-  resources :visitations
   
 
   resources :users
@@ -24,25 +21,30 @@ Rails.application.routes.draw do
 
   #root 'sessions#new'
 
-
   get 'events/new' => 'events#new', as: 'events'
   post 'events/new' => 'events#create', as: 'events_save'
   get 'events/show' => 'events#show', as: 'show_event'
   get 'events/index'
-  get 'events/cancel_confirmation'
+  
+  #Event Employee
+  get 'events/accept_event_employee', as: 'get_accept_event_employee'
+  post 'events/accept_event_employee', as: 'post_accept_event_employee'
 
+  get 'events/refuse_event_employee', as: 'get_refuse_event_employee'
+  post 'events/refuse_event_employee', as: 'post_refuse_event_employee'
+  
+  get 'events/cancel_event_employee', as: 'get_cancel_event_employee'
+  post 'events/cancel_event_employee', as: 'post_cancel_event_employee'
+
+  get 'events/delete_event_employee', as: 'get_delete_event_employee'
+  post 'events/delete_event_employee', as: 'post_delete_event_employee'
+
+
+
+  #event User
+ 
   get 'events/cancel_event_user' => 'events#cancel_event_user'
   post 'events/cancel_event_user' => 'events#cancel_event_user'
   
 
-
-  get 'visitations/new'
-  get 'visitations/index'
-
-
-  get 'employees/new'
-
-  #root 'welcome#welcome'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
