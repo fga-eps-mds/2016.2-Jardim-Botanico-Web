@@ -55,13 +55,13 @@
 							<ul>
 								<% @event.errors.full_messages.each do |msg| %>
 								<li><%= msg %></li>
-							<%end%>
-						</ul>
-					</div>
-				<%end%>
+								<%end%>
+							</ul>
+						</div>
+					<%end%>
 				<div class="field">
 					<%= f.label :Nome_do_Evento %>
-					<%= f.text_field :name, :required => true, class: 'form-control' %>
+					<%= f.text_field :name, class: 'form-control' %>
 				</div>
 				<br>
 				<div class = "field" >
@@ -85,7 +85,7 @@
 				</div>
 				<br>
 				<div class="actions">
-					<%= f.submit "Cadastrar", class: "btn btn-primary"%>
+					<%= f.submit "Cadastrar", class: "btn btn-primary" %>
 				</div>
 			<% end %>
 			</div>

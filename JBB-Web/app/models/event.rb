@@ -10,11 +10,7 @@ class Event < ApplicationRecord
 	validates :time, presence: true	
 
 	# status
-	def set_status_as_default 		
-		self.status = "Aguardando confirmacao"
-
-	end
-	validate :set_status_as_default
+	#validate :set_status_as_default
 
 	# validation of description
 	validates :description, presence: true, length: { minimum: 5, maximum: 300 }
