@@ -4,16 +4,18 @@ class SessionsController < ApplicationController
   end
   def create  
     @user = User.find_by(email: params[:email])
-      if @user && @user.authenticate(params[:session][:password])
+    puts(params[:email])
+      if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to :action => "show",:id => @user.id, notice: "Login realizado com sucesso"
+      sign_in(@user)
+      redirect_to home_path 
     else
-      flash.now[:notice] = 'Login ou senha inválidos, por favor verique novamente'
+      flash.now[:notice] = 'Login ou senha inválidos'
       render 'new'
     end
   end
   def destroy 
-    session[:user_id] = nil
+    sign_out
     flash.now[:notice] = 'Logout efetuado com sucesso'
     redirect_to home_path
   end

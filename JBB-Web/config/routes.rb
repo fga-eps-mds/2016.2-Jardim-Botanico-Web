@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   #sessions_login
   get    '/sign_in'   => 'sessions#new'
-  post   '/sign_in_suceful'   => 'sessions#create'
+  post   '/sign_in'   => 'sessions#create', :as => 'sign_in_path'
+  get '/sign_out' => 'sessions#destroy'
+  delete '/sign_out' => 'sessions#destroy'
 
   #root
   root 'welcome#index', :as => 'home'
