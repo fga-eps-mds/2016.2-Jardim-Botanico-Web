@@ -10,78 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160905045840) do
-
-  create_table "employees", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "cpf"
-    t.string   "employee_name"
-    t.string   "emai"
-    t.string   "birth"
-    t.string   "phone"
-    t.string   "gender"
-    t.string   "password_sieger"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
+ActiveRecord::Schema.define(version: 20160917142511) do
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "date_time"
+    t.integer  "user_id"
+    t.string   "status"
+    t.date     "date"
+    t.time     "time"
     t.string   "name"
-    t.boolean  "is_confirmed"
     t.string   "description"
-    t.integer  "peaple_amount"
-    t.integer  "cpf"
+    t.integer  "people_amount"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["status"], name: "index_events_on_status", using: :btree
+    t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
 
-  create_table "jbb_spaces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "space_name"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "trails", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.float    "length",      limit: 24
-    t.string   "locomotion"
-    t.string   "description"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+  create_table "phones", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_phones_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string   "email"
     t.string   "name"
     t.string   "cpf"
-    t.date     "birth"
-    t.string   "phone"
+    t.boolean  "is_employee"
     t.string   "gender"
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.date     "birth"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["cpf"], name: "index_users_on_cpf", using: :btree
+    t.index ["email"], name: "index_users_on_email", using: :btree
+    t.index ["name"], name: "index_users_on_name", using: :btree
   end
 
   create_table "visitations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "date"
-    t.string   "cpf"
-    t.string   "time"
-    t.boolean  "isConfirmed"
+    t.integer  "user_id"
+    t.string   "status"
+    t.date     "date"
+    t.time     "time"
     t.integer  "visitants_amount"
     t.string   "description"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.index ["status"], name: "index_visitations_on_status", using: :btree
+    t.index ["user_id"], name: "index_visitations_on_user_id", using: :btree
   end
 
 end
