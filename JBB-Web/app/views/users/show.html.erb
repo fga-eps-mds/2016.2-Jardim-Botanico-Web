@@ -29,10 +29,8 @@
       <ul>
         <li><%= link_to "Editar", user_edit_path(current_user), class: "btn btn-primary" %></li>
       </ul>
-      <%= form_for(@user, :url => { :action => "destroy", params: {id: @user.id}} ) do |f| %>
-      <%= f.submit "Excluir minha conta", data: { confirm: "Tem certeza que deseja excluir sua conta?" }, class: "btn btn-warning destroy-btn"%>
-      <% end %>
       <%end%>
+      <%= link_to "Excluir minha conta", current_user, method: :delete, data: { confirm: "Tem certeza que deseja excluir sua conta?" }, class: "btn btn-warning destroy-btn"%>
     </div>
   </div>
 </div>

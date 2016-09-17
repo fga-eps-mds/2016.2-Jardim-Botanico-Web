@@ -18,14 +18,20 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+          <li>
+            <a class="page-scroll" href="/sign_out"><font color = "black">Log out</font></a>
+          </li>
+          <% else %>
           <li>
             <a class="page-scroll" href="/sign_in"><font color = "black">Login</font></a>
           </li>
+          <% end %>
           <li>
-            <a class="page-scroll" href="#trails"><font color = "black">Trilhas</font></a>
+            <a class="page-scroll" href="/users/new"><font color = "black">Cadastrar</font></a>
           </li>
           <li>
-            <a class="page-scroll" href="#contact"><font color = "black">Contato</font></a>
+            <a class="page-scroll" href="#trails"><font color = "black">Trilhas</font></a>
           </li>
           <li>
             <a class="page-scroll" href="#about"><font color = "black">Sobre</font></a>

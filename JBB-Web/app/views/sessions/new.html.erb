@@ -6,11 +6,11 @@
 	<div class="container">
 		<div class="row">
       <div class="col-md-6 col-md-offset-3">
-      <%= form_for(:session, url: '/sign_in_suceful') do |f| %>
+      <%= form_tag sign_in_path do |f| %>
       <h1>Login</h1></br>
-      <%= f.text_field :email, :class => "text" , :placeholder => "e-mail" %></br></br>
-      <%= f.password_field :password, :class => "text" , :placeholder => "Senha" %></br></br>
-      <%= f.submit "Entrar", :class => "btn btn-primary"%></br></br>
+      <%= text_field_tag :email,"", :placeholder => "e-mail" %></br></br>
+      <%= password_field_tag :password,"", :placeholder => "Senha" %></br></br>
+      <%= submit_tag "Entrar", :class => "btn btn-primary"%></br></br>
       <% end %>
     </div>
   </div>
