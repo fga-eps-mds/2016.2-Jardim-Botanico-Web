@@ -20,8 +20,8 @@
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
           <li>
-            <a class="page-scroll" href="/sign_out"><font color = "black">Log out</font></a>
-          </li>
+            <a class="page-scroll" href="/user_show"><font color = "black">Minha conta</font></a>
+          </li> 
           <% else %>
           <li>
             <a class="page-scroll" href="/sign_in"><font color = "black">Login</font></a>
@@ -36,6 +36,11 @@
           <li>
             <a class="page-scroll" href="#about"><font color = "black">Sobre</font></a>
           </li>
+          <% if current_user %>
+          <li>
+            <a class="page-scroll" href="/sign_out"><font color = "black">Log Out</font></a>
+          </li> 
+          <%end%>
         </ul>
       </div>
     </div>
@@ -44,6 +49,9 @@
   <body id="aplication-body">
     
   	<%= render 'layouts/header' %>
+    <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
   	<%= yield %>
   </body>
 </html>
