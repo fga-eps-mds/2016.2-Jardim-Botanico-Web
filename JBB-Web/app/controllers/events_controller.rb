@@ -63,7 +63,8 @@ class EventsController < ApplicationController
   #delete_event
   def delete_event_employee
     @event = Event.find(params[:id])
-    @event.destroy   
+    @event.destroy
+    redirect_to show_event_url
   end
 
 
