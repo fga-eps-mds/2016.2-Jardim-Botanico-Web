@@ -1,13 +1,14 @@
 class EventsController < ApplicationController
-	def new
+	
+  #user
+  def new
 		@event = Event.new
 
 	end
 
-
 	def create
 		@event = Event.new(event_params)
-    @event.status = "Aguardando confirmação"
+    @event.set_status_default
 		if @event.save 
 			redirect_to show_event_url, notice: "Evento criado"
 		else
@@ -16,16 +17,58 @@ class EventsController < ApplicationController
 	end
 
   #cancel_confirmation
-  
-
   def cancel_event_user
-    puts "Ola"
     puts (params[:id])
     @event = Event.find(params[:id])  
-    @event.status = "Cancelado pelo Usuário"
+    @event.canceled_by_user
     @event.save
     
   end
+
+
+  #employee
+
+  def show
+    @event = Event.all
+  end
+
+  def index
+    @event = Event.find(params[:id])  
+  end
+
+
+  #refuse_confirmation 
+  def refuse_event_employee
+    @event = Event.find(params[:id])   
+    @event.refused_by_employee
+    @event.save
+  end
+
+
+  #cancel_confirmation 
+  def cancel_event_employee
+    @event = Event.find(params[:id])   
+    @event.canceled_by_employee
+    @event.save
+  end
+
+  
+  #acceptd_event
+  def accept_event_employee
+    @event = Event.find(params[:id])
+    @event.accepted_by_employee
+    @event.save
+  end
+
+  #delete_event
+  def delete_event_employee
+    @event = Event.find(params[:id])
+    @event.destroy   
+  end
+
+
+
+
 
 	# Metodo para filtrar os eventos de acordo com o status "Aguardando confirmacao"
 	def confirmations_request
@@ -33,24 +76,12 @@ class EventsController < ApplicationController
 		@event = @event.where(status: "Aguardando confirmação")
 	end
 
-
 	# Metodo para filtrar os eventos de acordo com o status "Confirmado"
 	def cancel_event
 		#@event = Events.all
 		@event = @event.where(status: "Confirmado")
 	end
-  def show
-  	@event = Event.all
-	end
-
-  def index
-    @event = Event.find(params[:id])  
-  end
-
-  def cancel_confirmation
-    @event = Event.find(params[:id])
-    @event.status = "Cancelado pelo Usuário"
-  end
+  
 
 	private
 	def event_params
