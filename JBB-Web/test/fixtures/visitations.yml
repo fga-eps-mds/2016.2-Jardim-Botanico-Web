@@ -3,13 +3,13 @@
 one:
   date: MyString
   time: MyString
-  isConfirmed: false
+  status: MyString
   visitants_amount: 1
   description: MyString
 
 two:
   date: MyString
   time: MyString
-  isConfirmed: false
+  status: MyString
   visitants_amount: 1
   description: MyString
