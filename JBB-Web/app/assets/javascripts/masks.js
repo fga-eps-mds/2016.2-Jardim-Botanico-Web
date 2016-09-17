@@ -28,9 +28,10 @@ window.onload = function(){
     id('data').onkeypress = function(){
 		mascara_data( this, mdate );
 	}
+    id('cpf').onkeypress = function(){
+		mascara_cpf( this, mcpf );
+	}
 }
-
-
 
 
 function mascara_data(o,f){
@@ -56,46 +57,26 @@ function id( el ){
 }
 
 
-
-
-// function formata_data(obj,prox) {
-//     v = obj.value;
-//     barra = '/';
-//     if($.isNumeric(v) || barra.localeCompare(v)) {
-//         switch (obj.value.length) {
-//         	case 2:
-//                 if($.isNumeric(obj.value)) {
-//         		      obj.value = obj.value + "/";
-//         		      break;
-//                   }
-//         	case 5:
-//                 if($.isNumeric(obj.value)) {
-//         		          obj.value = obj.value + "/";
-//         		          break;
-//                       }
-//         	case 9:
-//         		prox.focus();
-//         		break;
-//         }
-//     }else{
-//
-//     }
-// }
-//
-//
-// function Apenas_Numeros(caracter){
-//     var nTecla = 0;
-//     if (document.all) {
-//       nTecla = caracter.keyCode;
-//     } else {
-//       nTecla = caracter.which;
-//     }
-//     if ((nTecla> 47 && nTecla <58)
-//     || nTecla == 8 || nTecla == 127
-//     || nTecla == 0 || nTecla == 9  // 0 == Tab
-//     || nTecla == 13) { // 13 == Enter
-//       return true;
-//     } else {
-//       return false;
-//     }
-// }
+function mascara_cpf(o,f){
+    v_obj=o
+    v_fun=f
+    setTimeout("execmascaracpf()",1)
+}
+function execmascaracpf(){
+    v_obj.value=v_fun(v_obj.value)
+}
+function mcpf(v){
+    hifen = '-'
+    ponto = '.'
+    if($.isNumeric(v) || hifen.localeCompare(v) || ponto.localeCompare(v)) {
+        v=v.replace(/\D/g,"")                 //Remove tudo o que não é dígito
+        	v=v.replace(/(\d{3})(\d)/,"$1.$2")    //Coloca ponto entre o terceiro e o quarto dígitos
+        	v=v.replace(/(\d{3})(\d)/,"$1.$2")    //Coloca ponto entre o setimo e o oitava dígitos
+        	v=v.replace(/(\d{3})(\d)/,"$1-$2")   //Coloca ponto entre o decimoprimeiro e o decimosegundo dígitos
+        	return v;
+    } else {
+    }
+}
+function id( el ){
+	return document.getElementById( el );
+}
