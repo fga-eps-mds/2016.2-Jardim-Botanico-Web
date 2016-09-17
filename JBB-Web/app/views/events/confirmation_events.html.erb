@@ -1,0 +1,77 @@
+<body id="page-top">
+	<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+		<div class ="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand page-scroll" href="#page-top"><font color = "black">Jardim Botânico Web</font></a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a class="page-scroll" href="#sign_in"><font color = "black">Login</font></a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#about"><font color = "black">Sobre</font></a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#contact"><font color = "black">Contato</font></a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#trails"><font color = "black">Trilhas</font></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<br>
+	<br>
+
+	<div class="col-md-6 col-md-offset-3">
+		<div class="container">
+			<div class="row">
+				<h1>Mostrar Eventos</h1>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 col-md-offset-3">
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="table-hover">
+					<table border=1 class="table table-bordered" >
+						<br /> <br />
+
+						<tr>
+						<th>Nome do Evento</th>
+						<th>Data</th>
+						<th>Hora</td>
+						<th>Status</th>
+						<th>Quantidade de Visitantes</th>
+						<th>Descrição</th>
+						</tr>
+
+						<% @event.each do |event| %>
+							<tr>
+							<td> <%= event.name %> </td>
+							<td> <%= event.date %> </td>
+							<td> <%= event.time %> </td>
+							<td> <%= event.status %> </td>
+							<td> <%= event.people_amount %> </td>
+							<td> <%= event.description %> </td>
+							<td> <%= link_to 'Mostrar', action: 'index', id: event %> </td>
+							<td> <%= link_to 'Cancelar Evento', action: 'cancel_confirmation', id:event %> </td>
+							</tr>
+						<% end %>
+					</table>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
