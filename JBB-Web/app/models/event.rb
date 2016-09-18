@@ -1,5 +1,4 @@
 class Event < ApplicationRecord
-
 	belongs_to :user
 
 	# validation of date_time
@@ -19,6 +18,4 @@ class Event < ApplicationRecord
 
 	# validation of cpf
 	validates :is_confirmed, presence: true
-
-	belongs_to :user
 end

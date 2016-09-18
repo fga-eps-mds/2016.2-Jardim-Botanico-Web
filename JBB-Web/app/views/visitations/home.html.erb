@@ -33,58 +33,25 @@
 	<div class="col-md-6 col-md-offset-3">
 		<div class="container">
 			<div class="row">
-				<h1>Requisição de Visitação</h1>
+				<h1>Gerenciar Visitação	</h1>
 			</div>
 		</div>
 	</div>
 	<div class="col-md-6 col-md-offset-3">
-		<div class = "container">
-			<p>Preencha as informações abaixos:</p>
-		</div>
 	</div>
 
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
-				<%= form_for @visitation do |f| %>
-					<% if @visitation.errors.any? %>
-						<div id="error_explanation">
-							<div class="alert-error">
-								O formulário contém <%= pluralize(@visitation.errors.count, "erro") %>.
-							</div>
-							<ul>
-								<% @visitation.errors.full_messages.each do |msg| %>
-								<li><%= msg %></li>
-							<%end%>
-						</ul>
-					</div>
-				<%end%>
+
 				<br>
-				<div class = "field" >
-					<%= f.label :Data %>
-					<%= f.date_select :date, default: Date.today %>
-				</div>
-				<br>
-				<div class="field">
-					<%= f.label :Horário %>
-					<%= f.time_select :time, minute_step: 15, start_hour: 8, end_hour: 16 %>
-				</div>
-				<br>
-				<div class = "field" >
-					<%= f.label :Quantidade_de_Visitantes%>
-					<%= f.number_field :visitants_amount, :requared => true, class: 'form-control' %>
-				</div>
-				<br>
-				<div class = "field" >
-					<%=f.label :Descrição%>
-					<%=f.text_area :description, :cols => "50", :rows => "5", :requared => true, class: 'form-control'%>
+				<div class = "actions" >
+					<%= link_to "Mostra Todas Visitações", show_visitation_url %>
 				</div>
 				<br>
 				<div class="actions">
-					<%= f.submit "Cadastrar", class: "btn btn-primary"%>
-        			<%= link_to "Voltar", home_visitation_url, class: "btn btn-primary" %>
+					<%= link_to "Nova Visitação", new_visitation_url %> <p>
 				</div>
-			<% end %>
 			</div>
 		</div>
 	</div>

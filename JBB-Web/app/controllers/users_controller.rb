@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   
+<<<<<<< HEAD
   before_action :set_user, only:[:edit, :update, :show]
   # flash[:notice] = "Informações salvas com sucesso"
   # flash[:warning] =  "Preencha todos os campos obrigatórios"
@@ -56,8 +57,8 @@ class UsersController < ApplicationController
     # user.visitations.delete_all
     flash.now[:notice] = "Perfil deletado com sucesso"
     redirect_to home_path
-  end
-
+  
+  
   private
 
   def set_user
@@ -65,7 +66,6 @@ class UsersController < ApplicationController
   end
 
 	def user_params
-		params[:user].permit(:name, :email, :password, :cpf, :gender, :phone, :birth)
+		params.require(:user).permit(:name, :email, :password, :password_confirmation, :cpf, :gender, :phone, :birth)
 	end
 end
-
