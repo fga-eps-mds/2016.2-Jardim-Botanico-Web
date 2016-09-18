@@ -1,23 +1,16 @@
 class SessionsController < ApplicationController
   before_action :block_access, except: [:destroy]
-  
-  def new
-    render 'new'
-  end
-  def create  
-    @user = User.find_by(email: params[:email])
-      if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
+  def create
+    @user = User.find_by(email: params[:session][:email])
+    if @user && @user.authenticate(params[:session][:password_digest])
       sign_in(@user)
-      redirect_to home_path 
+    redirect_to @user
     else
-      flash.now[:notice] = 'Login ou senha inválidos'
       render 'new'
     end
   end
-  def destroy 
+  def destroy
     sign_out
-    flash.now[:notice] = 'Logout efetuado com sucesso'
-    redirect_to home_path
+    redirect_to root_url
   end
 end

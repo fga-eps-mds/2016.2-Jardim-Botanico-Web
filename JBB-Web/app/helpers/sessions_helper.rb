@@ -1,10 +1,10 @@
 module SessionsHelper
-  def sign_in(user)
-    session[:user_id] = user.id
+  def sign_in
+    session[:user_id] = @user.id
   end
 
   def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) 
+    @current_user ||= User.find_by(id: session[:user_id])
   end
 
   def block_access
@@ -15,7 +15,7 @@ module SessionsHelper
 
   def authorize
       redirect_to '/sign_in' unless current_user
-    end
+  end
 
   def logged_in?
     !current_user.nil?

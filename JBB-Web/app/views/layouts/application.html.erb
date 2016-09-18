@@ -6,7 +6,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  
   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class ="container-fluid">
       <div class="navbar-header">
@@ -21,7 +21,7 @@
           <% if current_user %>
           <li>
             <a class="page-scroll" href="/user_show"><font color = "black">Minha conta</font></a>
-          </li> 
+          </li>
           <% else %>
           <li>
             <a class="page-scroll" href="/sign_in"><font color = "black">Login</font></a>
@@ -39,7 +39,7 @@
           <% if current_user %>
           <li>
             <a class="page-scroll" href="/sign_out"><font color = "black">Log Out</font></a>
-          </li> 
+          </li>
           <%end%>
         </ul>
       </div>
@@ -47,7 +47,7 @@
   </nav>
 
   <body id="aplication-body">
-    
+
   	<%= render 'layouts/header' %>
     <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>

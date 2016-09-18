@@ -1,5 +1,5 @@
 class VisitationsController < ApplicationController
-  
+
   #home
   def home
   end
@@ -16,7 +16,7 @@ class VisitationsController < ApplicationController
   def create
   	@visitation = Visitation.new(visitation_params)
   	@visitation.set_status_default
-      if @visitation.save 
+      if @visitation.save
   			redirect_to show_visitation_url, notice: "Visitação criada"
   		else
   			render action: :new
@@ -24,7 +24,7 @@ class VisitationsController < ApplicationController
   end
 
    def cancel_visitation_user
-    @visitation = Visitation.find(params[:id]) 
+    @visitation = Visitation.find(params[:id])
     @visitation.canceled_by_user
     if @visitation.save
       redirect_to show_visitation_url, notice: "Visitação cancelada por usuario"
@@ -44,20 +44,20 @@ class VisitationsController < ApplicationController
 
   #index
   def index
-    @visitation = Visitation.find(params[:id])  
+    @visitation = Visitation.find(params[:id])
   end
 
-  #refuse_confirmation 
+  #refuse_confirmation
   def refuse_visitation_employee
-    @visitation = Visitation.find(params[:id])   
+    @visitation = Visitation.find(params[:id])
     @visitation.refused_by_employee
     @visitation.save
   end
 
 
-  #cancel_confirmation 
+  #cancel_confirmation
   def cancel_visitation_employee
-    @visitation = Visitation.find(params[:id])   
+    @visitation = Visitation.find(params[:id])
     @visitation.canceled_by_employee
     @visitation.save
   end
@@ -83,5 +83,21 @@ class VisitationsController < ApplicationController
   private
   def visitation_params
     params.require(:visitation).permit(:date, :time, :status, :visitants_amount, :description)
+  end
+
+
+  def create
+  	@visitation = Visitation.new(visitation_params)
+  		if @visitation.save
+  			redirect_to @visitation, notice: "Evento criado"
+  		else
+  			render action: :new
+  		end
+  end
+
+
+  private
+  def visitation_params
+    params.require(:visitation).permit(:date, :cpf, :time, :isConfirmed, :visitants_amount, :description)
   end
 end

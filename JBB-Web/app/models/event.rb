@@ -1,21 +1,42 @@
 class Event < ApplicationRecord
 	belongs_to :user
 
-	# validation of date_time
-	validates :date_time, presence: true
+	#validate of name
+	validates :name, presence: true
 
-	# validation of name
-	validates :name, presence: true	
+	# validation of date
+	validates :date, presence: true
 
-	# is_confirmed
-	#validates :is_confirmed, presence: true
+	#validation of time
+	validates :time, presence: true	
+
+	# status
+	#validate :set_status_as_default
+	#status
+	def set_status_default
+		self.status = "Aguardando confirmacao"
+	end	
+
+	def canceled_by_employee
+		self.status = "Cancelado por funcionario"
+	end
+
+	def canceled_by_user
+		self.status = "Cancelado pelo usuario"
+	end
+
+	def refused_by_employee
+		self.status = "Recusado por funcionario"
+	end
+
+	def accepted_by_employee
+		self.status = "Agendado"
+	end
 
 	# validation of description
-	validates :description, presence: true, length: { maximum: 300}
+	validates :description, presence: true, length: { minimum: 5, maximum: 300 }
 
 	# validation of people_amount
-	validates :is_confirmed, presence: true
+	validates :people_amount, presence: true, numericality: { greater_than: 0 }
 
-	# validation of cpf
-	validates :is_confirmed, presence: true
 end

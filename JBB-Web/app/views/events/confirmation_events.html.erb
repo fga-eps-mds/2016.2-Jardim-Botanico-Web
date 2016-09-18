@@ -30,27 +30,48 @@
 	<br>
 	<br>
 
-	<div class="container">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="container">
+			<div class="row">
+				<h1>Mostrar Eventos</h1>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 col-md-offset-3">
+	</div>
+
+	<div class="container-fluid">
 		<div class="row">
-      <div class="col-md-6 col-md-offset-3">
-  			<h1> Login</h1>
-  			<%= form_for :session, url: sign_in_path do |f| %>
-  				<div class="field">
-  					<%= f.label :email %><br />
-  					<%= f.email_field :email, autofocus: true, class: "form-control" %>
-  				</div>
-          <br>
-  				<div class="field">
-  					<%= f.label :password %><br />
-  					<%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-  				</div>
-          <br>
-  				<div class="actions">
-  					<%= f.submit "Log in", class: "btn btn-primary" %>
-  				</div>
-  				<p>New user? <%= link_to "Sign up now!", new_user_path %></p>
-  			<% end %>
-  		</div>
-  	</div>
-  </div>
+			<div class="col-md-6 col-md-offset-3">
+				<div class="table-hover">
+					<table border=1 class="table table-bordered" >
+						<br /> <br />
+
+						<tr>
+						<th>Nome do Evento</th>
+						<th>Data</th>
+						<th>Hora</td>
+						<th>Status</th>
+						<th>Quantidade de Visitantes</th>
+						<th>Descrição</th>
+						</tr>
+
+						<% @event.each do |event| %>
+							<tr>
+							<td> <%= event.name %> </td>
+							<td> <%= event.date %> </td>
+							<td> <%= event.time %> </td>
+							<td> <%= event.status %> </td>
+							<td> <%= event.people_amount %> </td>
+							<td> <%= event.description %> </td>
+							<td> <%= link_to 'Mostrar', action: 'index', id: event %> </td>
+							<td> <%= link_to 'Cancelar Evento', action: 'cancel_confirmation', id:event %> </td>
+							</tr>
+						<% end %>
+					</table>
+				</div>
+				
+			</div>
+		</div>
+	</div>
 </body>
