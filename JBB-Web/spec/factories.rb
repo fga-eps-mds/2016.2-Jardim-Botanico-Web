@@ -9,7 +9,6 @@ FactoryGirl.define do
       birth "16/11/1994"
       password "nomatch"
       password_digest "mUc3m00RsqyRe"
-      association :phone, factory: :phone
    end
 
   factory :visitation do
@@ -32,11 +31,11 @@ FactoryGirl.define do
    factory :trail do
      name "Trilha da Mata"
      length "10km"
-     description "Trilha a pé de mata fechada e habitat típico do cerrado"
+     locomotion "Carro"
+     description "Trilha asfaltada mata fechada e habitat típico do cerrado"
     end
 
     factory :phone do
-      user_id 10
       phone "6181380209"
     end
 
