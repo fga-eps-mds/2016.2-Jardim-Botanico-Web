@@ -22,7 +22,7 @@ CodeClimate::TestReporter.start
 require 'simplecov'
 SimpleCov.start do
   SimpleCov.maximum_coverage_drop 5
-  SimpleCov.minimum_coverage 90
+  SimpleCov.minimum_coverage 30
 end
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods

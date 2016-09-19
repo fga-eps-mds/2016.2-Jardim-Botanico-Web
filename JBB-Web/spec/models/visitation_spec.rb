@@ -1,10 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Visitation, :type => :model do
-  
+
   describe "attribute" do
 
-    subject {FactoryGirl.attributes_for(:visitation, date: "16/11/2016") }
+    subject{
+      FactoryGirl.attributes_for(:visitation, date: "16/11/2016")
+    }
 
     describe "date" do
       it "must be given" do
@@ -40,6 +42,27 @@ RSpec.describe Visitation, :type => :model do
       end
     end
 
-  end
+    visitationObject = subject{
+      FactoryGirl.attributes_for(:visitation, status: "Aguardando confirmacao")
+    }
 
+    # describe "default status" do
+    #   it "should be" do
+    #       subject["status"] = "Aguardando confirmacao"
+    #       expect{
+    #         assigns((Visitation.new(subject)).to eq("Aguardando confirmacao"))
+    #       }
+    #   end
+    # end
+
+    describe "status" do
+      it "must be given" do
+        subject["status"] = "Aguardando confirmacao"
+        expect{
+          (assigns(Visitation.new(subject)).not_to be_valid)
+        }
+      end
+    end
+
+  end
 end
