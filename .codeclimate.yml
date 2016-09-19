@@ -15,16 +15,16 @@ engines:
       - javascript
 ratings:
   paths:
-  - "app/"
+  - "JBB-Web/app/"
 exclude_paths:
-- "bin/"
-- "config/"
-- "db/"
-- "lib/"
-- "log/"
-- "public/"
-- "spec/"
-- "test/"
-- "tmp/"
-- "vendor/assets/"
-- "app/assets/javascripts/"
+- "JBB-Web/bin/"
+- "JBB-Web/config/"
+- "JBB-Web/db/"
+- "JBB-Web/lib/"
+- "JBB-Web/log/"
+- "JBB-Web/public/"
+- "JBB-Web/spec/"
+- "JBB-Web/test/"
+- "JBB-Web/tmp/"
+- "JBB-Web/vendor/assets/"
+- "JBB-Web/app/assets/javascripts/"
