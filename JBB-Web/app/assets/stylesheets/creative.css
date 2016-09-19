@@ -3,13 +3,19 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+ @font-face {
+     font-family: Oswald-Light;
+     src: url("Oswald-Light.ttf") format("truetype");
+ }
+
 html,
 body {
   height: 100%;
   width: 100%;
 }
+
 body {
-  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Oswald-Light';
 }
 hr {
   border-color: #03A678;
@@ -35,7 +41,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Oswald-Light';
 }
 p {
   font-size: 16px;
@@ -64,14 +70,14 @@ aside {
 .navbar-default {
   background-color: white;
   border-color: rgba(34, 34, 34, 0.05);
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Oswald-Light';
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
 }
 .navbar-default .navbar-header .navbar-brand {
   color: #03A678;
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Oswald-Light';
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -155,7 +161,7 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('../img/header.jpg');
+  background-image: url('header.jpg');
   text-align: center;
   color: white;
 }
@@ -233,7 +239,7 @@ header .header-content .header-content-inner p {
   color: white;
   opacity: 0;
   display: block;
-  background: rgba(240, 95, 64, 0.9);
+  background: rgba(3, 166, 120, 0.9);
   position: absolute;
   bottom: 0;
   text-align: center;
