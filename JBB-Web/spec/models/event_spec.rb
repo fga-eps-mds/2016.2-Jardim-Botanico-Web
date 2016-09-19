@@ -1,6 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe Event, :type => :model do
+  before do
+    @user = FactoryGirl.create(:user)
+    @event = FactoryGirl.create(:event,user_id:@user.id)
+  end
+
+  it { expect(@event).to respond_to(:status, :date, :time, :name, :description, :people_amount) }
+
+  it { expect(@event).to be_valid }
+
+
+  describe "instantiation" do
+   it "should create new event and status" do
+      @user = FactoryGirl.create(:user)
+      attrs = FactoryGirl.attributes_for(:event,user_id:@user.id)
+      event = Event.new(attrs)
+      event.save
+      expect(event).to eq(Event.last)
+      expect(event.status).not_to eq(nil)
+    end
+  end
 
   describe "attribute" do
 

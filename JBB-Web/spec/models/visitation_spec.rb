@@ -2,11 +2,25 @@ require 'rails_helper'
 
 RSpec.describe Visitation, :type => :model do
 
+  before do
+    @user = FactoryGirl.create(:user)
+    @visitation = FactoryGirl.create(:visitation,user_id:@user.id)
+  end
+
+  it { expect(@visitation).to respond_to(:status, :date, :time, :visitants_amount, :description) }
+
+  it { expect(@visitation).to be_valid }
+
   describe "attribute" do
 
-    subject{
-      FactoryGirl.attributes_for(:visitation, date: "16/11/2016")
-    }
+    subject {FactoryGirl.attributes_for(:visitation) }
+
+    describe "status" do
+      it "must be given" do
+        subject["status"] = ""
+        expect(Visitation.new(subject)).not_to be_valid
+      end
+    end
 
     describe "date" do
       it "must be given" do
@@ -42,27 +56,6 @@ RSpec.describe Visitation, :type => :model do
       end
     end
 
-    visitationObject = subject{
-      FactoryGirl.attributes_for(:visitation, status: "Aguardando confirmacao")
-    }
-
-    # describe "default status" do
-    #   it "should be" do
-    #       subject["status"] = "Aguardando confirmacao"
-    #       expect{
-    #         assigns((Visitation.new(subject)).to eq("Aguardando confirmacao"))
-    #       }
-    #   end
-    # end
-
-    describe "status" do
-      it "must be given" do
-        subject["status"] = "Aguardando confirmacao"
-        expect{
-          (assigns(Visitation.new(subject)).not_to be_valid)
-        }
-      end
-    end
-
   end
+
 end
