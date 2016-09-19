@@ -27,4 +27,16 @@ FactoryGirl.define do
     description "Federal Music Show"
     people_amount 50
    end
+
+   factory :trail do
+     name "Trilha da Mata"
+     length "10km"
+     description "Trilha a pé de mata fechada e habitat típico do cerrado"
+    end
+
+    factory :phone do
+      user_id 10
+      phone "6181380209"
+    end
+
 end
