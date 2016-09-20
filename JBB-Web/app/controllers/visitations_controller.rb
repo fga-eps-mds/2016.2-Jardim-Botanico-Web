@@ -15,6 +15,7 @@ class VisitationsController < ApplicationController
 
   def create
   	@visitation = Visitation.new(visitation_params)
+		@visitation.user_id = current_user.id
   	@visitation.set_status_default
       if @visitation.save
   			redirect_to show_visitation_url, notice: "Visitação criada"
