@@ -20,7 +20,8 @@
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
           <li>
-            <a class="page-scroll" href="/user_show"><font color = "black"> <%= current_user.name %> </font></a>
+
+            <a class="page-scroll" href="/users/<%= current_user.id - 1%>"><font color = "black"> <%= current_user.name %> </font></a>
           </li>
           <% end %>
           <% if ! current_user %>

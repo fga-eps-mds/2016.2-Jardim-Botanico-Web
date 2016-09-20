@@ -41,6 +41,7 @@ class UsersController < ApplicationController
 
   #Show
   def show
+    @user = User.find(current_user)
     if @user != current_user
       redirect_to home_path
     end
