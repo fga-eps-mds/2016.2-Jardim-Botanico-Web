@@ -20,21 +20,23 @@
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
           <li>
-            <a class="page-scroll" href="/user_show"><font color = "black">Minha conta</font></a>
+            <a class="page-scroll" href="/user_show"><font color = "black"> <%= current_user.name %> </font></a>
           </li>
           <% end %>
           <% if ! current_user %>
           <li>
-            <a class="page-scroll" href="/sign_in"><font color = "black">Login</font></a>
+            <a class="page-scroll" href="/sign_in"><font color = "black">Entrar</font></a>
           </li>
           <% else %>
           <li>
-              <a class="page-scroll" href="/sign_out"><font color = "black">Log Out</font></a>
+              <a class="page-scroll" href="/sign_out"><font color = "black">Sair</font></a>
           </li>
           <% end %>
+          <% if ! current_user %>
           <li>
-            <a class="page-scroll" href="/users/new"><font color = "black">Cadastrar</font></a>
+            <a class="page-scroll" href="/users/new"><font color = "black">Cadastre-se</font></a>
           </li>
+          <% end %>
           <!-- <li>
             <a class="page-scroll" href="#trails"><font color = "black">Trilhas</font></a>
           </li> -->

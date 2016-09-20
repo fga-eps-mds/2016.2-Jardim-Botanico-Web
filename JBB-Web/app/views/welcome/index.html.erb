@@ -77,7 +77,11 @@
       <div class="row">
         <div class="col-lg-3 col-md-6 text-center">
           <div class="service-box">
-              <a href="/visitations/new">
+              <% if current_user %>
+                <a href="/visitations/new">
+              <% else %>
+                <a href="/users/new">
+            <% end %>
             <i class="fa fa-4x fa-map-marker text-primary sr-icons"></i>
             <h3>Agende uma visita</h3>
             <p class="text-muted">Faça uma visita conosco para conhecer melhor as nossas trilhas e a a nossa beleza natural.</p>
@@ -85,7 +89,11 @@
         </div>
       <div class="col-lg-3 col-md-6 text-center">
         <div class="service-box">
-            <a href="/events/new">
+                <% if current_user %>
+                  <a href="/events/new">
+                <% else %>
+                  <a href="/users/new">
+              <% end %>
           <i class="fa fa-4x fa-users text-primary sr-icons"></i>
           <h3>Agende um evento</h3>
           <p class="text-muted">Faça um evento conosco e desfrute dos melhores locais do nosso Jardim Botânico.</p>
