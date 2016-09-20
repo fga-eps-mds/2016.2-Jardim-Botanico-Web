@@ -77,7 +77,7 @@
       <div class="row">
         <div class="col-lg-3 col-md-6 text-center">
           <div class="service-box">
-              <% if current_user %>
+              <% if @user %>
                 <a href="/visitations/new">
               <% else %>
                 <a href="/users/new">
@@ -89,7 +89,7 @@
         </div>
       <div class="col-lg-3 col-md-6 text-center">
         <div class="service-box">
-                <% if current_user %>
+                <% if @user %>
                   <a href="/events/new">
                 <% else %>
                   <a href="/users/new">
