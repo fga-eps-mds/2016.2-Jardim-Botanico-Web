@@ -1,5 +1,5 @@
 <body id="page-top">
-	
+
 	<br>
 	<br>
 
@@ -55,11 +55,13 @@
 				<%= f.label :CPF %>
 				<%= f.text_field :cpf, :required => true, class: 'form-control' %>
 			</div>
+			<%= f.fields_for :phones do |ff| %>
+				<div class="field">
+					<%= ff.label :Telefone %>
+					<%= ff.text_field :phone, :required => true, id: 'telefone', class: 'form-control', placeholder: '(00) 00000-0000' , maxlength: '15'%>
+				</div>
+			<% end %>
 			<br>
-			<div class="field">
-				<%= f.label :Telefone %>
-				<%= f.text_field :phone, :required => true, class: 'form-control' %>
-			</div>
 			<br>
 			<!-- <div class="field">
 				<%= f.label :Gênero %>

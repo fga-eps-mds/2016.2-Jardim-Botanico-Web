@@ -1,5 +1,6 @@
 <body id="aplication-body">
   <br>
+  <br>
 
   <div class="container">
     <div class="row">
@@ -53,10 +54,12 @@
             <%= f.text_field :cpf, :required => true, id: 'cpf', class: 'form-control', placeholder: 'Ex.: 000.000.000-00', maxlength: '14'%>
           </div>
           <br>
-          <div class="field">
-            <%= f.label :Telefone %>
-            <%= f.text_field :phone, :required => true, id: 'telefone', class: 'form-control', placeholder: '(00) 00000-0000' , maxlength: '15'%>
-          </div>
+          <%= f.fields_for :phones do |ff| %>
+            <div class="field">
+              <%= ff.label :Telefone %>
+              <%= ff.text_field :phone, :required => true, id: 'telefone', class: 'form-control', placeholder: '(00) 00000-0000' , maxlength: '15'%>
+            </div>
+          <% end %>
           <br>
           <div class="form-group">
             <label for="gender">Gênero</label>
@@ -75,27 +78,6 @@
         <% end %>
       </div>
     </div>
-    
-    <%= render 'form' %>
-    
-    <%= form_for @user do |f| %>
-      <% if @user.errors.any? %>
-        <div id="error_explanation">
-          <div class="alert-error">
-            O formulário contém <%= pluralize(@user.errors.count, "erro") %>.
-          </div>
-          <ul>
-            <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-      <div class="actions">
-        <%= f.submit "Cadastrar", class: "btn btn-primary"%>
-        <%= link_to "Bem Vindos!", home_path, class: "btn btn-primary.focus" %>
-      </div>
-    <% end %>    
   </div>
-
+  <br>
 </body>
