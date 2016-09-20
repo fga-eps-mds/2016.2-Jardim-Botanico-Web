@@ -1,43 +1,4 @@
 <p id="notice"><%= notice %></p>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <br>
-        <div class = "actions" >
-          <b>Nome do Evento:</b>
-           <%= @event.name %>
-        </div>
-        <div class = "actions" >
-          <b>Dia:</b>
-           <%= @event.date %>
-        </div>
-        <br>
-        <div class = "actions" >
-          <b>Hora:</b>
-          <%= @event.time %>
-        </div>
-        <br>
-        <div class = "actions" >
-          <b>Status:</b>
-          <%= @event.status %>
-        </div>
-        <br>
-        <div class = "actions" >
-          <b>Quantidade de Visitantes:</b>
-          <%= @event.people_amount %>
-        </div>
-        <br>
-        <div class= "actions" >
-          <b>Descrição:</b>
-          <%= @event.description %>
-        </div>
 
-        <br> <p> <br>
-        <div class= "actions" >
-           <%= link_to 'Voltar', show_event_url, class: "btn btn-primary"  %>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
+<%= controller.redirect_to show_event_url%>
