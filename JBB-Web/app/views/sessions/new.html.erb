@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="row">
       <div class="col-md-6 col-md-offset-3">
-  			<h1> Login</h1>
+  			<h1> Entrar</h1>
   			<%= form_for :session, url: sign_in_path do |f| %>
   				<div class="field">
   					<%= f.label :email %><br />
@@ -19,9 +19,9 @@
   				</div>
           <br>
   				<div class="actions">
-  					<%= f.submit "Log in", class: "btn btn-primary" %>
+  					<%= f.submit "Entrar", class: "btn btn-primary" %>
   				</div>
-  				<p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+  				<p>Novo Usuario? <%= link_to "Cadastre-se agora", new_user_path %></p>
   			<% end %>
   		</div>
   	</div>
