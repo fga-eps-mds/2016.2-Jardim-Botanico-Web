@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   get 'visitations/home', as: 'home_visitation'
   get 'visitations/show', as: 'show_visitation'
+  get 'visitations/show_user', as: 'show_visitation_user'
   get 'visitations/index', as: 'index_visitation'
 
   #Visitation Employee
@@ -64,6 +65,7 @@ Rails.application.routes.draw do
   get 'events/new' => 'events#new', as: 'events'
   post 'events/new' => 'events#create', as: 'events_save'
   get 'events/show' => 'events#show', as: 'show_event'
+  get 'events/show_user', as: 'show_event_user'
   get 'events/index'
 
   #Event Employee
