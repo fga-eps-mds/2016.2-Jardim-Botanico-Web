@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
-  
+
   #New user
   def new
     @user = User.new
 		@phone = @user.phones.build
   end
 
-  
+
   #Creating a new user
   def create
   	@user = User.new(user_params)
