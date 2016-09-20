@@ -45,12 +45,12 @@
         </div>
 
         <br> <p>
-        <% if (visitation.is_employee <=> "true") == 0 %>
+        <% if (current_user.is_employee <=> "true") == 0 %>
           <div class= "actions" >
              <%= link_to 'Voltar', show_visitation_url, class: "btn btn-primary"  %>
           </div>
         <%end%>
-        <% if (visitation.is_employee <=> "false") == 0 %>
+        <% if (current_user.is_employee <=> "false") == 0 %>
           <div class= "actions" >
              <%= link_to 'Voltar', show_visitation_user_url, class: "btn btn-primary"  %>
           </div>
