@@ -19,7 +19,7 @@ class VisitationsController < ApplicationController
   	@visitation.set_status_default
       if @visitation.save
         flash[:success] = "Solicitação de visita efetuada com sucesso!"
-  			redirect_to show_visitation_user_url
+  			redirect_to show_visitation_user_url, notice: "Visitação criada"r
   		else
         flash[:warning] = "Solicitação não efetuada"
   			render action: :new
@@ -31,7 +31,7 @@ class VisitationsController < ApplicationController
     @visitation.canceled_by_user
     if @visitation.save
       flash[:warning] = "Visitação cancelada pelo usuário"
-      redirect_to show_visitation_user_url
+      redirect_to show_visitation_user_url, notice: "Visitação cancelada pelo usuário"
     end
   end
 

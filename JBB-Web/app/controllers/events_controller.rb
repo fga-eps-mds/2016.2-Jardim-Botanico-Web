@@ -13,7 +13,7 @@ class EventsController < ApplicationController
     @event.set_status_default
 		if @event.save
       flash[:success] = "Solicitação de evento efetuada com sucesso!"
-			redirect_to show_event_user_url
+			redirect_to show_event_user_url, notice: "Evento criado"
 		else
       flash[:warning] = "Solicitação não efetuada"
 			render action: :new
@@ -33,7 +33,7 @@ class EventsController < ApplicationController
     @event.canceled_by_user
 		if @event.save
        flash[:warning] = "Evento cancelado"
-			redirect_to show_event_user_url
+			redirect_to show_event_user_url, notice: "Evento cancelado pelo usuário"
 		end
   end
 
@@ -101,7 +101,7 @@ class EventsController < ApplicationController
          redirect_to show_event_url
     end
   end
-
+  
 	private
 	def event_params
 		params.require(:event).permit(:name, :date, :time, :status, :description, :people_amount)
