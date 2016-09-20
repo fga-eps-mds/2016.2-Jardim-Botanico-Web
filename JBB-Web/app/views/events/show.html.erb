@@ -1,32 +1,5 @@
 <body id="page-top">
-	<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-		<div class ="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-				</button>
-				<a class="navbar-brand page-scroll" href="#page-top"><font color = "black">Jardim Botânico Web</font></a>
-			</div>
-
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<a class="page-scroll" href="#sign_in"><font color = "black">Login</font></a>
-					</li>
-					<li>
-						<a class="page-scroll" href="#about"><font color = "black">Sobre</font></a>
-					</li>
-					<li>
-						<a class="page-scroll" href="#contact"><font color = "black">Contato</font></a>
-					</li>
-					<li>
-						<a class="page-scroll" href="#trails"><font color = "black">Trilhas</font></a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
+	
 	<br>
 	<br>
 
@@ -66,32 +39,32 @@
 							<td> <%= link_to 'Mostrar', action: 'index', id: event.id %> </td>
 
 							<% if (event.status <=> "Aguardando confirmacao") == 0 %>
-								<td> <%= link_to "Aceitar Evento", controller: "events", 
+								<td> <%= link_to "Aceitar Evento", controller: "events",
 																	action: "accept_event_employee", id: event %> </td>
 							<% end %>
 
 							<% if (event.status <=> "Aguardando confirmacao") == 0 %>
-								<td> <%= link_to "Recusar Evento", controller: "events", 
+								<td> <%= link_to "Recusar Evento", controller: "events",
 																	action: "refuse_event_employee", id: event %> </td>
 							<% end %>
-							
+
 							<% if (event.status <=> "Agendado") == 0 %>
-								<td> <%= link_to "Cancelar Evento", controller: "events", 
+								<td> <%= link_to "Cancelar Evento", controller: "events",
 																	action: "cancel_event_employee", id: event %> </td>
 								</tr>
 							<% end %>
 
-							<% if (event.status <=> "Cancelado por funcionario") == 0 || 
-								   	(event.status <=> "Cancelado pelo usuario") == 0 || 
+							<% if (event.status <=> "Cancelado por funcionario") == 0 ||
+								   	(event.status <=> "Cancelado pelo usuario") == 0 ||
 								   	(event.status <=> "Recusado por funcionario") == 0 %>
-								<td> <%= link_to "Deletar Evento", controller: "events", 
+								<td> <%= link_to "Deletar Evento", controller: "events",
 																	action: "delete_event_employee", id: event %> </td>
 								</tr>
 							<% end %>
 						<% end %>
 					</table>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>
