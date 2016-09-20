@@ -1,5 +1,4 @@
 <body id="page-top">
-	
 	<br>
 	<br>
 
@@ -15,6 +14,10 @@
 
 	<div class="container-fluid">
 		<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+			<% flash.each do |key, value| %>
+	      <div class="alert alert-<%= key %>"><%= value %></div>
+	    <% end %>
 			<div class="col-md-10 col-md-offset-1">
 				<div class="table-hover">
 					<table border=1 class="table table-bordered" >
@@ -40,18 +43,14 @@
 							<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
 							<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
 							<td> <%= link_to "Cancelar Visitação", controller: "visitations",
-              action: "cancel_visitation_user", id: visitation %> </td>
+																action: "cancel_visitation_user", id: visitation %> </td>
 							<% end %>
 						<% end %>
 					</table>
 				</div>
-<<<<<<< HEAD:JBB-Web/app/views/visitations/show_user.html.erb
 				<br>
 				<p>
-				<%= link_to "Voltar", home_visitation_url, class: "btn btn-primary" %>
-=======
-
->>>>>>> Frontend:JBB-Web/app/views/events/confirmation_events.html.erb
+				<%= link_to "Voltar", home_url, class: "btn btn-primary" %>
 			</div>
 		</div>
 	</div>
