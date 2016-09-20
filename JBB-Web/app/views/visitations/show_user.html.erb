@@ -56,7 +56,7 @@
 						</tr>
 
 
-						<% @visitations_sorted.each do |visitation| %>
+						<% @visitation.each do |visitation| %>
 							<tr>
 							<td> <%= visitation.date %> </td>
 							<% timeString = visitation.time.to_s %>
@@ -66,7 +66,7 @@
 							<td> <%= visitation.description %> </td>
 							<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
 							<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
-							<td> <%= link_to "Cancelar Visitação", controller: "visitations", 
+							<td> <%= link_to "Cancelar Visitação", controller: "visitations",
 																action: "cancel_visitation_user", id: visitation %> </td>
 							<% end %>
 						<% end %>
