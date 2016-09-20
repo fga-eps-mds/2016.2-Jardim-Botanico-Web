@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   #Creating a new user
   def create
   	@user = User.new(user_params)
+    @user.set_as_not_emplyee
   	if @user.save
 			@phone = @user.phones.build(params[:phone])
       

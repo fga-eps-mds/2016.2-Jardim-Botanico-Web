@@ -16,6 +16,7 @@ validates :password_digest, presence: true, length: {minimum: 6}
     self.birth = '01/01/01'
     self.gender = 'Prefer to not declare'
     self.password_digest = 'no_pass'
+    self.is_employee = false
   end
 
   validate :valid_name, :valid_birth, :valid_gender, :valid_email, :valid_cpf #:valid_phone,
@@ -27,6 +28,11 @@ validates :password_digest, presence: true, length: {minimum: 6}
 
   $NUMBERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
+
+  #is employee
+  def set_as_not_emplyee
+    self.is_employee = false
+  end
 
   #user_name
   def valid_name
