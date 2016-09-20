@@ -43,7 +43,7 @@
 							<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
 							<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
 							<td> <%= link_to "Cancelar Visitação", controller: "visitations",
-              action: "cancel_visitation_user", id: visitation %> </td>
+																action: "cancel_visitation_user", id: visitation %> </td>
 							<% end %>
 						<% end %>
 					</table>
