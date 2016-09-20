@@ -18,15 +18,12 @@ class UsersController < ApplicationController
   # Editing the user profile
   def edit
     @user = User.find(params[:id])
-		@phone = @user.phones.find(:all)
+    @phone = User.find(params[:id]).phones
   end
 
   def show
     @user = User.find(params[:id])
-		@phone = @user.phones.find(:all)
-    if @user != current_user
-      redirect_to home_path
-    end
+    @phone = User.find(params[:id]).phones
   end
 
   def update
@@ -38,16 +35,9 @@ class UsersController < ApplicationController
     end
   end
 
- #Show the user profile
-  def show
-    if @user != current_user
-      redirect_to home_path
-    end
-  end
-
   #Delete the user
   def destroy
-    current_user.destroy
+    user.destroy
     session[:user_id] = nil
     # user.events.delete_all
     # user.visitations.delete_all
