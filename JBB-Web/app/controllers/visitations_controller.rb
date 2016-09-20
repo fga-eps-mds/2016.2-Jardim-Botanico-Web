@@ -18,7 +18,7 @@ class VisitationsController < ApplicationController
 		@visitation.user_id = current_user.id
   	@visitation.set_status_default
       if @visitation.save
-  			redirect_to show_visitation_url, notice: "Visitação criada"
+  			redirect_to show_visitation_user_url, notice: "Visitação criada"
   		else
   			render action: :new
   		end
@@ -28,8 +28,13 @@ class VisitationsController < ApplicationController
     @visitation = Visitation.find(params[:id])
     @visitation.canceled_by_user
     if @visitation.save
-      redirect_to show_visitation_url, notice: "Visitação cancelada por usuario"
+      redirect_to show_visitation_user_url, notice: "Visitação cancelada pelo usuário"
     end
+  end
+
+
+	def show_user
+    @visitation = Visitation.where(user_id: current_user.id)
   end
 
 

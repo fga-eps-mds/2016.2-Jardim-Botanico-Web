@@ -6,24 +6,32 @@ class EventsController < ApplicationController
 
 	end
 
+
 	def create
 		@event = Event.new(event_params)
 		@event.user_id = current_user.id
     @event.set_status_default
 		if @event.save
-			redirect_to show_event_url, notice: "Evento criado"
+			redirect_to show_event_user_url, notice: "Evento criado"
 		else
 			render action: :new
 		end
 	end
+
+
+	def show_user
+    @event = Event.where(user_id: current_user.id)
+  end
+
 
   #cancel_confirmation
   def cancel_event_user
     puts (params[:id])
     @event = Event.find(params[:id])
     @event.canceled_by_user
-    @event.save
-
+		if @event.save
+			redirect_to show_event_user_url, notice: "Evento cancelado pelo usuário"
+		end
   end
 
 
@@ -33,7 +41,7 @@ class EventsController < ApplicationController
     @event = Event.all
   end
 
-  def index
+	def index
     @event = Event.find(params[:id])
   end
 
@@ -67,9 +75,6 @@ class EventsController < ApplicationController
     @event.destroy
     redirect_to show_event_url
   end
-
-
-
 
 
 	# Metodo para filtrar os eventos de acordo com o status "Aguardando confirmacao"
