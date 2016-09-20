@@ -1,12 +1,12 @@
 <body id="page-top">
-	
+
 	<br>
 	<br>
 
 	<div class="col-md-6 col-md-offset-3">
 		<div class="container">
 			<div class="row">
-				<h1>Mostrar Eventos</h1>
+				<h1>Mostrar Visitações</h1>
 			</div>
 		</div>
 	</div>
@@ -42,7 +42,7 @@
 							<td> <%= event.description %> </td>
 							<td> <%= link_to 'Mostrar', action: 'index', id: event.id %> </td>
 							<% if (event.status <=> "Aguardando confirmacao") == 0 %>
-								<td> <%= link_to "Cancelar Evento", controller: "events", 
+								<td> <%= link_to "Cancelar Evento", controller: "events",
 																	action: "cancel_event_user", id: event %></td>
 							<% end %>
 						<% end %>
