@@ -15,7 +15,10 @@ engines:
       - javascript
 ratings:
   paths:
-  - "JBB-Web/app/"
+  - "JBB-Web/app/controllers/"
+  - "JBB-Web/app/helpers/"
+  - "JBB-Web/app/models/"
+  - "JBB-Web/app/views/"
 exclude_paths:
 - "JBB-Web/bin/"
 - "JBB-Web/config/"
@@ -27,4 +30,10 @@ exclude_paths:
 - "JBB-Web/test/"
 - "JBB-Web/tmp/"
 - "JBB-Web/vendor/assets/"
+- "JBB-Web/app/assets/"
+- "JBB-Web/app/assets/channels/"
 - "JBB-Web/app/assets/javascripts/"
+- "JBB-Web/app/assets/javascripts/bootstrap.js"
+- "JBB-Web/app/assets/javascripts/masks.js"
+- "JBB-Web/app/assets/jobs/"
+- "JBB-Web/app/assets/mailers/"
