@@ -6,14 +6,14 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  
+
   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class ="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand page-scroll" href="#page-top"><font color = "black">Jardim Botânico Web</font></a>
+        <a class="navbar-brand page-scroll" href="/"><font color = "black">Jardim Botânico Web</font></a>
       </div>
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -22,25 +22,25 @@
           <li>
             <a class="page-scroll" href="/user_show"><font color = "black">Minha conta</font></a>
           </li>
-          <% else %>
+          <% end %>
+          <% if ! current_user %>
           <li>
             <a class="page-scroll" href="/sign_in"><font color = "black">Login</font></a>
+          </li>
+          <% else %>
+          <li>
+              <a class="page-scroll" href="/sign_out"><font color = "black">Log Out</font></a>
           </li>
           <% end %>
           <li>
             <a class="page-scroll" href="/users/new"><font color = "black">Cadastrar</font></a>
           </li>
-          <li>
+          <!-- <li>
             <a class="page-scroll" href="#trails"><font color = "black">Trilhas</font></a>
-          </li>
-          <li>
+          </li> -->
+          <!-- <li>
             <a class="page-scroll" href="#about"><font color = "black">Sobre</font></a>
-          </li>
-          <% if current_user %>
-          <li>
-            <a class="page-scroll" href="/sign_out"><font color = "black">Log Out</font></a>
-          </li>
-          <%end%>
+          </li> -->
         </ul>
       </div>
     </div>
