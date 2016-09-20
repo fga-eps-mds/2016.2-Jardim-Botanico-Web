@@ -3,6 +3,9 @@ class User < ApplicationRecord
 has_secure_password
 has_many :events
 has_many :visitations
+has_many :phones, :inverse_of => :user
+
+accepts_nested_attributes_for :phones
 
 validates :password_digest, presence: true, length: {minimum: 6}
   #default_values
@@ -11,12 +14,11 @@ validates :password_digest, presence: true, length: {minimum: 6}
     self.cpf = '01234567890'
     self.email = 'empty@empty.empty'
     self.birth = '01/01/01'
-    self.phone = '52998224725'
     self.gender = 'Prefer to not declare'
     self.password_digest = 'no_pass'
   end
 
-  validate :valid_name, :valid_birth, :valid_phone, :valid_gender, :valid_email, :valid_cpf
+  validate :valid_name, :valid_birth, :valid_gender, :valid_email, :valid_cpf #:valid_phone,
 
   $SPECIAL_CARACTERS = ['!', '@', '#', '$', '%', '¨', '*', '(', ')', '-', '+', '=', '§', '_',
     '²', '¹', '³', '¢', '¬', '{', '[', ']', '}' '?', ':', ';', '.', ',',
@@ -25,12 +27,14 @@ validates :password_digest, presence: true, length: {minimum: 6}
 
   $NUMBERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
+
   #user_name
   def valid_name
     if self.name == nil
       errors.add(:name, "User's name is null.")
       return
     end
+
 
   #puts "nome avaliado: #{name}\n\n\n"
     $SPECIAL_CARACTERS.each do |caracter|
@@ -54,7 +58,8 @@ validates :password_digest, presence: true, length: {minimum: 6}
     end
   end
 
-    def valid_cpf(cpf=nil)
+
+  def valid_cpf(cpf=nil)
     return false if cpf.nil?
 
     invalid_cpf = %w{12345678909 11111111111 22222222222 33333333333 44444444444 55555555555 66666666666 77777777777 88888888888 99999999999 00000000000}
@@ -76,6 +81,7 @@ validates :password_digest, presence: true, length: {minimum: 6}
     return false
   end
 
+
   #email
   def valid_email
 
@@ -91,6 +97,7 @@ validates :password_digest, presence: true, length: {minimum: 6}
       errors.add(:email, "Email invalid")
     end
   end
+
 
   #birth
   def valid_birth
@@ -123,18 +130,6 @@ validates :password_digest, presence: true, length: {minimum: 6}
   #   end
   end
 
-  #phone
-  def valid_phone
-
-    if self.phone == nil
-      errors.add(:phone, "z's phone is null.")
-      return
-    end
-
-    if self.phone.length < 8  || self.phone.length > 15
-      errors.add(:phone, "Invalid Phone")
-    end
-  end
 
   #gender
   def valid_gender
