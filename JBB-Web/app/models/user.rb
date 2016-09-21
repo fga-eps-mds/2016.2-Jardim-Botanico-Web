@@ -138,6 +138,8 @@ validates :password_digest, presence: true, length: {minimum: 6}
       return
     end
 
+    digit = 0
+
     #calculating second digit
     count2 = 9
     for count1 in 2..11

@@ -32,7 +32,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.canceled_by_user
 		if @event.save
-       flash[:warning] = "Evento cancelado"
+       flash[:warning] = "Evento cancelada pelo usuário"
 			redirect_to show_event_user_url, notice: "Evento cancelado pelo usuário"
 		end
   end
@@ -101,6 +101,18 @@ class EventsController < ApplicationController
          redirect_to show_event_url
     end
   end
+
+	# Metodo para filtrar os eventos de acordo com o status "Aguardando confirmacao"
+	def confirmations_request
+		#@event = Events.all
+		@event = @event.where(status: "Aguardando confirmação")
+	end
+
+	# Metodo para filtrar os eventos de acordo com o status "Confirmado"
+	def cancel_event
+		#@event = Events.all
+		@event = @event.where(status: "Confirmado")
+	end
 
 	private
 	def event_params
