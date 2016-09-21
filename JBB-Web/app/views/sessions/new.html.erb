@@ -2,28 +2,33 @@
 
 	<br>
 	<br>
+  <br>
 
-	<div class="container">
-		<div class="row">
+  <div class="container">
+    <div class="row">
       <div class="col-md-6 col-md-offset-3">
-  			<h1> Entrar</h1>
-  			<%= form_for :session, url: sign_in_path do |f| %>
-  				<div class="field">
-  					<%= f.label :email %><br />
-  					<%= f.email_field :email, autofocus: true, class: "form-control" %>
-  				</div>
-          <br>
-  				<div class="field">
-  					<%= f.label :password %><br />
-  					<%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-  				</div>
-          <br>
-  				<div class="actions">
-  					<%= f.submit "Entrar", class: "btn btn-primary" %>
-  				</div>
-  				<p>Novo Usuario? <%= link_to "Cadastre-se agora", new_user_path %></p>
-  			<% end %>
-  		</div>
-  	</div>
-  </div>
-</body>
+        <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
+        <h1> Entrar</h1>
+        <%= form_for :session, url: sign_in_path do |f| %>
+        <div class="field">
+         <%= f.label :email %><br />
+         <%= f.email_field :email, autofocus: true, :required => true, class: "form-control" %>
+       </div>
+       <br>
+       <div class="field">
+         <%= f.label :senha %><br />
+         <%= f.password_field :password, autocomplete: "off", :required => true, class: "form-control" %>
+       </div>
+       <br>
+       <div class="actions">
+         <%= f.submit "Entrar", class: "btn btn-primary" %>
+       </div>
+       <br>
+       <p>Novo Usuario? <%= link_to "Cadastre-se agora", new_user_path %></p>
+         <% end %>
+       </div>
+     </div>
+   </div>
+ </body>

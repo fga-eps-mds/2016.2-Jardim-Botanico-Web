@@ -1,35 +1,38 @@
 <body id="aplication-body">
   <br>
   <br>
-
+  <br>
   <div class="container">
   	<div class="row">
       <div class="col-md-6 col-md-offset-3">
-      	<h1>Perfil de <%= @user.name %></h1>
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+      	<h1>Perfil de <%= current_user.name %></h1>
        <p>
         <b> Email: </b>
-        <%= @user.email %>
+        <%= current_user.email %>
       </p>
       <p>
         <b> CPF: </b>
-        <%= @user.cpf %>
+        <%= current_user.cpf %>
       </p>
       <p>
         <b> Telefone: </b>
-        <%= @user.phones %>
+        <%= current_user.phones %>
       </p>
       <p>
         <b> Gênero: </b>
-        <%= @user.gender %>
+        <%= current_user.gender %>
       </p>
       <p>
         <b> Data de Nascimento: </b>
-        <%= @user.birth %>
+        <%= current_user.birth %>
       </p>
       <ul>
-        <%= link_to "Editar", user_edit_path(@user), class: "btn btn-primary" %>   
-        <%= link_to "Excluir minha conta", @user, method: :delete, data: { confirm: "Tem certeza que deseja excluir sua conta?" }, class: "btn btn-warning destroy-btn"%>
-      
+        <%= link_to "Editar", user_edit_path(current_user), class: "btn btn-primary" %>
+        <%= link_to "Voltar", home_path, class: "btn btn-primary" %>   
+        <%= link_to "Excluir minha conta", current_user, method: :delete, data: { confirm: "Tem certeza que deseja excluir sua conta?" }, class: "btn btn-warning destroy-btn"%>
       </ul>
       </div>
     </div>

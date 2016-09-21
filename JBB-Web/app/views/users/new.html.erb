@@ -1,10 +1,13 @@
 <body id="aplication-body">
   <br>
   <br>
-
+  <br>
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
+        <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
         <h1>Cadastro de Usuários</h1>
       </div>
     </div>
@@ -13,7 +16,7 @@
   <div class="container">
     <div class = "row">
       <div class="col-md-6 col-md-offset-3">
-        <p>Preencha as informações abaixos:</p>
+        <p>Preencha as informações abaixo:</p>
       </div>
     </div>
   </div>
@@ -22,59 +25,58 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <%= form_for @user, url: '/users' do |f| %>
-          <% if @user.errors.any? %>
-            <div id="error_explanation">
-              <div class="alert-error">
-                O formulário contém <%= pluralize(@user.errors.count, "erro") %>.
-              </div>
-              <ul>
-                <% @user.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-                <% end %>
-              </ul>
-            </div>
-          <% end %>
-          <div class="field">
-            <%= f.label :Nome %>
-            <%= f.text_field :name, :required => true, class: 'form-control', placeholder: 'Digite seu nome e sobrenome' %>
+        <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert-error">
+            O formulário contém <%= pluralize(@user.errors.count, "erro") %>.
           </div>
-          <br>
-          <div class="field">
-            <%= f.label :Email %>
-            <%= f.email_field :email, :required => true, class: 'form-control', placeholder: 'Digite seu email, ex: example@host.com' %>
-          </div>
-          <br>
-          <div class="field">
-            <%= f.label :Senha %>
-            <%= f.password_field :password, :required => true, class: 'form-control' , placeholder: 'Digite sua senha, minimo 5 caracteres' %>
-          </div>
-          <br>
-          <div class="field">
-            <%= f.label :CPF %>
-            <%= f.text_field :cpf, :required => true, id: 'cpf', class: 'form-control', placeholder: 'Ex.: 000.000.000-00', maxlength: '14'%>
-          </div>
-          <br>
-          <%= f.fields_for :phones do |ff| %>
-            <div class="field">
-              <%= ff.label :Telefone %>
-              <%= ff.text_field :phone, :required => true, id: 'telefone', class: 'form-control', placeholder: '(00) 00000-0000' , maxlength: '15'%>
-            </div>
-          <% end %>
-          <br>
-          <div class="form-group">
-            <label for="gender">Gênero</label>
-            <%= f.select :gender, ["", "Feminino", "Masculino", "Outro"], :required => true, class: 'form-control' %>
-          </div>
-          <br>
-          <div class="field">
-            <%= f.label :Data_de_Nascimento %>
-            <%= f.text_field :birth, :required => true, id: 'data',class: 'form-control', placeholder: 'Ex.: dd/mm/aaaa', maxlength: '11'%>
-          </div>
-          <br>
-          <div class="actions">
-            <%= f.submit "Cadastrar", class: "btn btn-primary"%>
-            <%= link_to "Voltar", home_path, class: "btn btn-primary.focus" %>
-          </div>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+        <div class="field">
+          <%= f.label :Nome %>
+          <%= f.text_field :name, :required => true, class: 'form-control', placeholder: 'Digite seu nome e sobrenome' %>
+        </div>
+        <br>
+        <div class="field">
+          <%= f.label :Email %>
+          <%= f.email_field :email, :required => true, class: 'form-control', placeholder: 'Digite seu email, ex: example@host.com' %>
+        </div>
+        <br>
+        <div class="field">
+          <%= f.label :Senha %>
+          <%= f.password_field :password, :required => true, class: 'form-control' , placeholder: 'Digite sua senha, minimo 5 caracteres' %>
+        </div>
+        <br>
+        <div class="field">
+          <%= f.label :CPF %>
+          <%= f.text_field :cpf, :required => true, id: 'cpf', class: 'form-control', placeholder: 'Ex.: 000.000.000-00', maxlength: '14'%>
+        </div>
+        <br>
+        <%= f.fields_for :phones do |ff| %>
+        <div class="field">
+          <%= ff.label :Telefone %>
+          <%= ff.text_field :phone, :required => true, id: 'telefone', class: 'form-control', placeholder: '(00) 00000-0000' , maxlength: '15'%>
+        </div>
+        <% end %>
+        <br>
+        <div class="form-group">
+          <label for="gender">Gênero</label>
+          <%= f.select :gender, ["", "Feminino", "Masculino", "Outro"], :required => true, class: 'form-control' %>
+        </div>
+        <div class="field">
+          <%= f.label :Data_de_Nascimento %>
+          <%= f.text_field :birth, :required => true, id: 'data',class: 'form-control', placeholder: 'Ex.: dd/mm/aaaa', maxlength: '11'%>
+        </div>
+        <br>
+        <div class="actions">
+          <%= f.submit "Cadastrar", class: "btn btn-primary"%>
+          <%= link_to "Voltar", home_path, class: "btn btn-primary.focus" %>
+        </div>
         <% end %>
       </div>
     </div>
