@@ -166,7 +166,7 @@ validates :password_digest, presence: true, length: {minimum: 6}
     end
 
     unless validates_format_of :email, :with => /[0-9a-z][0-9a-z.]+[0-9a-z]@[0-9a-z][0-9a-z.-]+[0-9a-z]/i
-      errors.add(:email, "Formtatação de email errada")
+      errors.add(:email, "Formatatação de email errada")
     end
     if self.email.length < 10 || self.email.length > 255
       errors.add(:email, "Email inválido")
