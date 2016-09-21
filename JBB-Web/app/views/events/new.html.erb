@@ -18,22 +18,22 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
-			<% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
+				<% flash.each do |key, value| %>
+				<div class="alert alert-<%= key %>"><%= value %></div>
+				<% end %>
 				<%= form_for @event do |f| %>
-					<% if @event.errors.any? %>
-						<div id="error_explanation">
-							<div class="alert-error">
-								O formulário contém <%= pluralize(@event.errors.count, "erro") %>.
-							</div>
-							<ul>
-								<% @event.errors.full_messages.each do |msg| %>
-								<li><%= msg %></li>
-								<%end%>
-							</ul>
-						</div>
-					<%end%>
+				<% if @event.errors.any? %>
+				<div id="error_explanation">
+					<div class="alert-error">
+						O formulário contém <%= pluralize(@event.errors.count, "erro") %>.
+					</div>
+					<ul>
+						<% @event.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+						<%end%>
+					</ul>
+				</div>
+				<%end%>
 				<div class="field">
 					<%= f.label :Nome_do_Evento %>
 					<%= f.text_field :name, class: 'form-control' %>
@@ -51,19 +51,19 @@
 				<br>
 				<div class = "field" >
 					<%= f.label :Quantidade_de_Visitantes%>
-					<%= f.number_field :people_amount, :requared => true, class: 'form-control' %>
+					<%= f.number_field :people_amount, :required => true, class: 'form-control' %>
 				</div>
 				<br>
 				<div class = "field" >
 					<%=f.label :Descrição%>
-					<%=f.text_area :description, :cols => "50", :rows => "5", :requared => true, class: 'form-control'%>
+					<%=f.text_area :description, :cols => "50", :rows => "5", :required => true, class: 'form-control'%>
 				</div>
 				<br>
 				<div class="actions">
 					<%= f.submit "Cadastrar", class: "btn btn-primary" %>
-                    <%= link_to "Voltar", root_url , class: "btn btn-primary" %>
+					<%= link_to "Voltar", root_url , class: "btn btn-primary" %>
 				</div>
-			<% end %>
+				<% end %>
 			</div>
 		</div>
 	</div>
