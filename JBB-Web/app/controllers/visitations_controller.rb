@@ -30,7 +30,10 @@ class VisitationsController < ApplicationController
     @visitation = Visitation.find(params[:id])
     @visitation.canceled_by_user
     if @visitation.save
-      redirect_to show_visitation_user_url, notice: "Visitação cancelada pelo usuário"
+      flash[:warning] = "Visitação cancelada pelo usuário"
+      redirect_to show_visitation_user_url
+
+      
     end
   end
 

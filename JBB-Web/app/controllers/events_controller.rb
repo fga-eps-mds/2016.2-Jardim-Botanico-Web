@@ -32,7 +32,8 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.canceled_by_user
 		if @event.save
-			redirect_to show_event_user_url, notice: "Evento cancelado pelo usuário"
+       flash[:warning] = "Evento cancelada pelo usuário"
+			redirect_to show_event_user_url
 		end
   end
 
