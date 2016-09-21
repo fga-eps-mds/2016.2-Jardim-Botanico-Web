@@ -13,10 +13,9 @@ class UsersController < ApplicationController
     @user.set_as_not_emplyee
   	if @user.save
 			@phone = @user.phones.build(params[:phone])
-      
-
       session[:user_id] = @user.id
-      redirect_to @user, notice: "Cadastro efetuado com sucesso!"
+      flash[:success] = "Cadastro efetuado com sucesso!"
+      redirect_to home_path
   	else
   		render 'new'
     end
@@ -24,6 +23,7 @@ class UsersController < ApplicationController
 
   # Editing the user profile
   def edit
+    @user = User.find(params[:id])
     if @user != current_user
       redirect_to home_path
     end
@@ -31,30 +31,28 @@ class UsersController < ApplicationController
 
   #Update User
   def update
+    @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = "Perfil atualizado com sucesso"
-      redirect_to :action => "show",:id => @user.id
+      flash[:success] = "Perfil atualizado com sucesso"
+      redirect_to @user
     else
-      flash[:notice] = "Erro ao atualizar o perfil"
+      flash[:warning] = "Erro ao atualizar o perfil"
     end
   end
-
 
   #Show
   def show
-    @user = User.find(current_user)
-    if @user != current_user
-      redirect_to home_path
-    end
+    @user = User.find(params[:id])
+     if @user != current_user
+       redirect_to home_path
+     end
   end
 
-  
   #Delete the user
   def destroy
     current_user.destroy
     session[:user_id] = nil
-
-    flash.now[:notice] = "Perfil deletado com sucesso"
+    flash[:warning] = "Perfil deletado com sucesso"
     redirect_to home_path
   end
 
