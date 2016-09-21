@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Event, :type => :model do
   before do
-    @user = FactoryGirl.create(:user)
+    @user = FactoryGirl.create(:user, :cpf => "042.828.201.60", :email => "nicacio@gmail.com")
     @event = FactoryGirl.create(:event,user_id:@user.id)
   end
 
