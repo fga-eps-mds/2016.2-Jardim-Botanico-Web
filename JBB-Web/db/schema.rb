@@ -62,4 +62,22 @@ ActiveRecord::Schema.define(version: 20160917142511) do
     t.index ["user_id"], name: "index_visitations_on_user_id", using: :btree
   end
 
+
+  create_table "jbb_spaces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "id_jbb"
+    t.string   "space_name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "trails", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.float    "length",      limit: 24
+    t.string   "locomotion"
+    t.string   "description"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+end
+
 end
