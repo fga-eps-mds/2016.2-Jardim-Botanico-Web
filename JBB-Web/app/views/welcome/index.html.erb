@@ -78,25 +78,53 @@
         <div class="col-lg-3 col-md-6 text-center">
           <div class="service-box">
               <% if current_user %>
-                <a href="/visitations/new">
+                <% if current_user.is_employee %>
+                  <a href="/visitations/show">
+                  <% else %>
+                  <a href="/visitations/new">
+                  <% end%>
               <% else %>
                 <a href="/users/new">
             <% end %>
             <i class="fa fa-4x fa-map-marker text-primary sr-icons"></i>
+            <% if current_user %>
+             <% if current_user.is_employee %>
+             <h3>Gerencie visitas</h3>
+            <p class="text-muted">Gerencie visitas agendadas.</p>
+             <% else %>
             <h3>Agende uma visita</h3>
             <p class="text-muted">Faça uma visita conosco para conhecer melhor as nossas trilhas e a nossa beleza natural.</p>
+            <% end%>
+            <% else %>
+            <h3>Agende uma visita</h3>
+            <p class="text-muted">Faça uma visita conosco para conhecer melhor as nossas trilhas e a nossa beleza natural.</p>
+            <% end%>
           </div>
         </div>
       <div class="col-lg-3 col-md-6 text-center">
         <div class="service-box">
                 <% if current_user %>
+                  <% if current_user.is_employee %>
+                  <a href="/events/show">
+                  <% else %>
                   <a href="/events/new">
+                  <% end%>
                 <% else %>
                   <a href="/users/new">
               <% end %>
           <i class="fa fa-4x fa-users text-primary sr-icons"></i>
-          <h3>Agende um evento</h3>
-          <p class="text-muted">Faça um evento conosco e desfrute dos melhores locais do nosso Jardim Botânico.</p>
+          <% if current_user %>
+             <% if current_user.is_employee %>
+             <h3>Gerencie eventos</h3>
+            <p class="text-muted">Gerencie visitas agendadas.</p>
+             <% else %>
+            <h3>Agende um evento</h3>
+            <p class="text-muted">Faça um evento conosco e desfrute dos melhores locais do nosso Jardim Botânico.</p>
+            <% end%>
+            <% else %>
+            <h3>Agende um evento</h3>
+            <p class="text-muted">Faça um evento conosco e desfrute dos melhores locais do nosso Jardim Botânico.</p>
+            <% end%>
         </div>
       </div>
         <div class="col-lg-3 col-md-6 text-center">
