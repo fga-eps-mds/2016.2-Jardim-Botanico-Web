@@ -3,7 +3,7 @@ FactoryGirl.define do
   factory :user do
       email "testuser@email.com"
       name "Test User"
-      cpf "065.693.025.42"
+      cpf "041.861.791.07"
       is_employee true
       gender "Masculino"
       birth "16/11/1994"
