@@ -101,7 +101,7 @@ class EventsController < ApplicationController
          redirect_to show_event_url
     end
   end
-  
+
 	private
 	def event_params
 		params.require(:event).permit(:name, :date, :time, :status, :description, :people_amount)
