@@ -65,7 +65,7 @@ class VisitationsController < ApplicationController
         redirect_to show_visitation_url
     else
         flash[:warning] = "Visitação não pode ser recusada"
-        redirect_to show_visitation_user_url
+        redirect_to show_visitation_url
     end
   end
 
@@ -76,10 +76,10 @@ class VisitationsController < ApplicationController
     @visitation.canceled_by_employee
     if @visitation.save
       flash[:success] = "Visitação cancelada"
-      redirect_to show_visitation_user_url
+      redirect_to show_visitation_url
     else
         flash[:warning] = "Visitação não pode ser cancelada"
-        redirect_to show_visitation_user_url
+        redirect_to show_visitation_url
     end
   end
 
@@ -91,7 +91,7 @@ class VisitationsController < ApplicationController
          redirect_to show_visitation_url
     else
         flash[:warning] = "Visitação não pode ser deletada"
-        redirect_to show_visitation_user_url
+        redirect_to show_visitation_url
     end
   end
 
@@ -104,7 +104,7 @@ class VisitationsController < ApplicationController
          redirect_to show_visitation_url
     else
          flash[:warning] = "Visitação não pode ser confirmada"
-         redirect_to show_visitation_user_url
+         redirect_to show_visitation_url
     end
   end
 

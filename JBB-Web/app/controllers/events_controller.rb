@@ -102,20 +102,6 @@ class EventsController < ApplicationController
     end
   end
 
-
-	# Metodo para filtrar os eventos de acordo com o status "Aguardando confirmacao"
-	def confirmations_request
-		#@event = Events.all
-		@event = @event.where(status: "Aguardando confirmação")
-	end
-
-	# Metodo para filtrar os eventos de acordo com o status "Confirmado"
-	def cancel_event
-		#@event = Events.all
-		@event = @event.where(status: "Confirmado")
-	end
-
-
 	private
 	def event_params
 		params.require(:event).permit(:name, :date, :time, :status, :description, :people_amount)
