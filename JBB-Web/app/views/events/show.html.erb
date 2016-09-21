@@ -32,7 +32,8 @@
 							<tr>
 							<td> <%= event.name %> </td>
 							<td> <%= event.date %> </td>
-							<td> <%= event.time %> </td>
+							<% timeString = event.time.to_s %>
+							<td> <%= timeString[11..18] %> </td>
 							<td> <%= event.status %> </td>
 							<td> <%= event.people_amount %> </td>
 							<td> <%= event.description %> </td>

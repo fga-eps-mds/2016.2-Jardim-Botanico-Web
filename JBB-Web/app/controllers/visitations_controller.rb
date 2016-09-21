@@ -63,6 +63,7 @@ class VisitationsController < ApplicationController
     @visitation = Visitation.find(params[:id])
     @visitation.refused_by_employee
     @visitation.save
+    redirect_to show_visitation_url
   end
 
 
@@ -71,6 +72,7 @@ class VisitationsController < ApplicationController
     @visitation = Visitation.find(params[:id])
     @visitation.canceled_by_employee
     @visitation.save
+    redirect_to show_visitation_url
   end
 
   #delete_visitation
@@ -80,11 +82,12 @@ class VisitationsController < ApplicationController
     redirect_to show_visitation_url
   end
 
-  #acceptd_visitation
+  #accept_visitation
   def accept_visitation_employee
     @visitation = Visitation.find(params[:id])
     @visitation.accepted_by_employee
     @visitation.save
+    redirect_to show_visitation_url
   end
 
 
