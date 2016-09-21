@@ -13,7 +13,7 @@
   <div class="container">
     <div class = "row">
       <div class="col-md-6 col-md-offset-3">
-        <p>Preencha as informações abaixos:</p>
+        <p>Preencha as informações abaixo:</p>
       </div>
     </div>
   </div>
@@ -21,7 +21,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <%= form_for @user, url: '/users' do |f| %>
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+        <%= form_for @user do |f| %>
           <% if @user.errors.any? %>
             <div id="error_explanation">
               <div class="alert-error">
@@ -69,7 +72,6 @@
             <label for="gender">Gênero</label>
             <%= f.select :gender, ["", "Feminino", "Masculino", "Outro"], :required => true, class: 'form-control' %>
           </div>
-          <br>
           <div class="field">
             <%= f.label :Data_de_Nascimento %>
             <%= f.text_field :birth, :required => true, autocomplete: "off", id: 'date',class: 'form-control',
