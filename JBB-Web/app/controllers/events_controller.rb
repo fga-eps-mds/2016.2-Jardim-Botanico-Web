@@ -12,8 +12,10 @@ class EventsController < ApplicationController
 		@event.user_id = current_user.id
     @event.set_status_default
 		if @event.save
-			redirect_to show_event_user_url, notice: "Evento criado"
+      flash[:success] = "Solicitação de evento efetuada com sucesso!"
+			redirect_to show_event_user_url
 		else
+      flash[:warning] = "Solicitação não efetuada"
 			render action: :new
 		end
 	end

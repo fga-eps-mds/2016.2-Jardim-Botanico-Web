@@ -18,6 +18,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
+			<% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
 				<%= form_for @visitation do |f| %>
 					<% if @visitation.errors.any? %>
 						<div id="error_explanation">

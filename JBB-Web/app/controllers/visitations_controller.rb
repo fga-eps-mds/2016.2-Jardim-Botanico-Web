@@ -18,8 +18,10 @@ class VisitationsController < ApplicationController
 		@visitation.user_id = current_user.id
   	@visitation.set_status_default
       if @visitation.save
-  			redirect_to show_visitation_user_url, notice: "Visitação criada"
+        flash[:success] = "Solicitação de visita efetuada com sucesso!"
+  			redirect_to show_visitation_user_url
   		else
+        flash[:warning] = "Solicitação não efetuada"
   			render action: :new
   		end
   end
