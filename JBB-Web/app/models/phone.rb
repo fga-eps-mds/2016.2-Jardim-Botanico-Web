@@ -13,7 +13,7 @@ class Phone < ApplicationRecord
     end
 
     if self.phone.length < 8  || self.phone.length > 15
-      errors.add(:phone, "Invalid Phone")
+      errors.add(:phone, "Telefone inválido")
     end
   end
 

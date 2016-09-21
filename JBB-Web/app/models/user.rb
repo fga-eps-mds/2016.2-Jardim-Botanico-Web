@@ -37,7 +37,7 @@ validates :password_digest, presence: true, length: {minimum: 6}
   #user_name
   def valid_name
     if self.name == nil
-      errors.add(:name, "User's name is null.")
+      errors.add(:name, "Preencha o nome corretamente.")
       return
     end
 
@@ -45,22 +45,22 @@ validates :password_digest, presence: true, length: {minimum: 6}
   #puts "nome avaliado: #{name}\n\n\n"
     $SPECIAL_CARACTERS.each do |caracter|
       if self.name.include? caracter
-        errors.add(:name, "User's name has invalid caracters.")
+        errors.add(:name, "Nome do usuário possui caracteres inválidos.")
       end
     end
 
     $NUMBERS.each do |number|
       if self.name.include? number
-        errors.add(:name, "User's name has invalid number caracters.")
+        errors.add(:name, "Usuário possui números errados de caracteres.")
       end
     end
 
     if self.name.length < 3
-      errors.add(:name, "User's name is too short.")
+      errors.add(:name, "Usuário possui nome muito curto.")
     end
 
     unless self.name.include? ' '
-      errors.add(:name, "User's don't have last name.")
+      errors.add(:name, "Usuário não possui último nome.")
     end
   end
 
@@ -82,13 +82,13 @@ validates :password_digest, presence: true, length: {minimum: 6}
 
 
     if self.cpf == nil
-      errors.add(:cpf, "Employee's cpf is null.")
+      errors.add(:cpf, "Preencha o CPF corretamente.")
       return
     end
 
     invalid_cpf.each do |invalid|
       if (invalid <=> self.cpf) == 0
-        errors.add(:cpf, "Invalid sequerence of numbers.")
+        errors.add(:cpf, "Número de CPF errado.")
       end
     end
 
@@ -131,7 +131,7 @@ validates :password_digest, presence: true, length: {minimum: 6}
 
     #validating first digit
     unless digit == int_cpf[9]
-      errors.add(:cpf, "Invalid CPF.")
+      errors.add(:cpf, "CPF inválido.")
       return
     end
 
@@ -149,7 +149,7 @@ validates :password_digest, presence: true, length: {minimum: 6}
 
     #validating second digit
     unless digit == int_cpf[10]
-      errors.add(:cpf, "Invalid CPF.")
+      errors.add(:cpf, "CPF inválido.")
       return
     end
   
@@ -157,22 +157,19 @@ validates :password_digest, presence: true, length: {minimum: 6}
   end
 
 
-
-
-
   #email
   def valid_email
 
     if self.email == nil
-      errors.add(:email, "User's email is null.")
+      errors.add(:email, "Preencha o email corretamente.")
       return
     end
 
     unless validates_format_of :email, :with => /[0-9a-z][0-9a-z.]+[0-9a-z]@[0-9a-z][0-9a-z.-]+[0-9a-z]/i
-      errors.add(:email, "Email missformated")
+      errors.add(:email, "Formtatação de email errada")
     end
     if self.email.length < 10 || self.email.length > 255
-      errors.add(:email, "Email invalid")
+      errors.add(:email, "Email inválido")
     end
   end
 
@@ -213,13 +210,13 @@ validates :password_digest, presence: true, length: {minimum: 6}
   def valid_gender
 
     if self.gender == nil
-      errors.add(:gender, "User's gender is null.")
+      errors.add(:gender, "Preencha o gênero corretamente.")
       return
     end
 
     unless (gender.capitalize <=> 'Masculino') == 0 || (gender.capitalize <=> 'Feminino') == 0 ||
-      (gender.capitalize <=> 'Prefer to not declare') == 0
-      errors.add(:gender, "Invalid Gender")
+      (gender.capitalize <=> 'Outro') == 0
+      errors.add(:gender, "Gênero inválido")
     end
   end
 end
