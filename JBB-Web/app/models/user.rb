@@ -19,6 +19,7 @@ validates :password_digest, presence: true, length: {minimum: 6}
     self.is_employee = false
   end
 
+
   validate :valid_name, :valid_birth, :valid_gender, :valid_email, :valid_cpf
 
   $SPECIAL_CARACTERS = ['!', '@', '#', '$', '%', '¨', '*', '(', ')', '-', '+', '=', '§', '_',
@@ -68,6 +69,8 @@ validates :password_digest, presence: true, length: {minimum: 6}
 
 
   #cpf
+  validates :cpf, uniqueness: { message: "CPF já cadastrado e não pode ser usado novamente." }
+
   def valid_cpf
 
     int_cpf = [1,2,3,4,5,6,7,8,9,0,0]
@@ -114,7 +117,7 @@ validates :password_digest, presence: true, length: {minimum: 6}
     digit = 0
 
     puts int_cpf
-    
+
     #calculating first digit
     for count1 in 2..10
       digit += int_cpf[count2]*count1
@@ -124,7 +127,7 @@ validates :password_digest, presence: true, length: {minimum: 6}
     puts digit
 
     digit = ((digit*10)%11)
-    
+
     if digit == 10
       digit = 0
     end
@@ -152,12 +155,14 @@ validates :password_digest, presence: true, length: {minimum: 6}
       errors.add(:cpf, "CPF inválido.")
       return
     end
-  
+
     return true
   end
 
 
   #email
+  validates :email, uniqueness: { message: "Email já cadastrado e não pode ser usado novamente." }
+
   def valid_email
 
     if self.email == nil
