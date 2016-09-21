@@ -1,5 +1,5 @@
 <body id="page-top">
-	
+
 	<br>
 	<br>
 
@@ -15,6 +15,10 @@
 
 	<div class="container-fluid">
 		<div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= value %></div>
+          <% end %>
 			<div class="col-md-10 col-md-offset-1">
 				<div class="table-hover">
 					<table border=1 class="table table-bordered" >

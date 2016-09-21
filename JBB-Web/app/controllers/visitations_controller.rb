@@ -32,8 +32,6 @@ class VisitationsController < ApplicationController
     if @visitation.save
       flash[:warning] = "Visitação cancelada pelo usuário"
       redirect_to show_visitation_user_url
-
-      
     end
   end
 
@@ -62,8 +60,13 @@ class VisitationsController < ApplicationController
   def refuse_visitation_employee
     @visitation = Visitation.find(params[:id])
     @visitation.refused_by_employee
-    @visitation.save
-    redirect_to show_visitation_url
+    if @visitation.save
+        flash[:success] = "Visitação recusada"
+        redirect_to show_visitation_url
+    else
+        flash[:warning] = "Visitação não pode ser recusada"
+        redirect_to show_visitation_user_url
+    end
   end
 
 
@@ -71,23 +74,38 @@ class VisitationsController < ApplicationController
   def cancel_visitation_employee
     @visitation = Visitation.find(params[:id])
     @visitation.canceled_by_employee
-    @visitation.save
-    redirect_to show_visitation_url
+    if @visitation.save
+      flash[:success] = "Visitação cancelada"
+      redirect_to show_visitation_user_url
+    else
+        flash[:warning] = "Visitação não pode ser cancelada"
+        redirect_to show_visitation_user_url
+    end
   end
 
   #delete_visitation
   def delete_visitation_employee
     @visitation = Visitation.find(params[:id])
-    @visitation.destroy
-    redirect_to show_visitation_url
+    if @visitation.destroy
+         flash[:success] = "Visitação deletada"
+         redirect_to show_visitation_url
+    else
+        flash[:warning] = "Visitação não pode ser deletada"
+        redirect_to show_visitation_user_url
+    end
   end
 
   #accept_visitation
   def accept_visitation_employee
     @visitation = Visitation.find(params[:id])
     @visitation.accepted_by_employee
-    @visitation.save
-    redirect_to show_visitation_url
+    if @visitation.save
+         flash[:success] = "Visitação confirmada"
+         redirect_to show_visitation_url
+    else
+         flash[:warning] = "Visitação não pode ser confirmada"
+         redirect_to show_visitation_user_url
+    end
   end
 
 

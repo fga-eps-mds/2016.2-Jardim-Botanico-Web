@@ -32,7 +32,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.canceled_by_user
 		if @event.save
-       flash[:warning] = "Evento cancelada pelo usuário"
+       flash[:warning] = "Evento cancelado"
 			redirect_to show_event_user_url
 		end
   end
@@ -53,7 +53,13 @@ class EventsController < ApplicationController
   def refuse_event_employee
     @event = Event.find(params[:id])
     @event.refused_by_employee
-    @event.save
+    if @event.save
+        flash[:success] = "Evento recusado"
+        redirect_to show_event_url
+    else
+        flash[:warning] = "Evento não pode ser recusado"
+        redirect_to show_event_url
+    end
   end
 
 
@@ -61,7 +67,13 @@ class EventsController < ApplicationController
   def cancel_event_employee
     @event = Event.find(params[:id])
     @event.canceled_by_employee
-    @event.save
+    if @event.save
+         flash[:success] = "Evento cancelado"
+         redirect_to show_event_url
+     else
+         flash[:warning] = "Evento não pode ser cancelado"
+         redirect_to show_event_url
+    end
   end
 
 
@@ -69,14 +81,25 @@ class EventsController < ApplicationController
   def accept_event_employee
     @event = Event.find(params[:id])
     @event.accepted_by_employee
-    @event.save
+    if @event.save
+        flash[:success] = "Evento confirmado"
+        redirect_to show_event_url
+    else
+        flash[:warning] = "Evento não pode ser confirmado"
+        redirect_to show_event_url
+   end
   end
 
   #delete_event
   def delete_event_employee
     @event = Event.find(params[:id])
-    @event.destroy
-    redirect_to show_event_url
+     if @event.destroy
+         flash[:success] = "Evento deletado"
+         redirect_to show_event_url
+     else
+         flash[:warning] = "Evento não pode ser deletado"
+         redirect_to show_event_url
+    end
   end
 
 
