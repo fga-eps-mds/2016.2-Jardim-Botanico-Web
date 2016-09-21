@@ -447,9 +447,9 @@ fieldset[disabled] .btn-danger.active {
   border-color: #dca7a7;
 }
 .progress {
-  background-image: -webkit-linear-gradient(top, #ebebeb 0%, #f5f5f5 100%);
-  background-image:      -o-linear-gradient(top, #ebebeb 0%, #f5f5f5 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ebebeb), to(#f5f5f5));
+  background-image: -webkit-linear-gradient(top, #ebebeb 0%, ##03A678 100%);
+  background-image:      -o-linear-gradient(top, #ebebeb 0%, ##03A678 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ebebeb), to(#03A678));
   background-image:         linear-gradient(to bottom, #ebebeb 0%, #f5f5f5 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb', endColorstr='#fff5f5f5', GradientType=0);
   background-repeat: repeat-x;

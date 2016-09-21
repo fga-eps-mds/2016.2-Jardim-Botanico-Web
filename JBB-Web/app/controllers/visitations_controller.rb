@@ -84,3 +84,4 @@ class VisitationsController < ApplicationController
   def visitation_params
     params.require(:visitation).permit(:date, :time, :status, :visitants_amount, :description)
   end
+end

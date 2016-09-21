@@ -8,18 +8,20 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(email: params[:session][:email])
     
-    if @user && @user.authenticate(params[:session][:password_digest])
+    if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       sign_in(@user)
       redirect_to home_path
     else
+      flash[:warning] = 'Email ou senha inválidos'
       render 'new'
     end
   end
   
   def destroy
     sign_out
-    redirect_to root_url
+    flash[:success] = 'Logout efetuado com sucesso'
+    redirect_to home_path
   end
 
 end
