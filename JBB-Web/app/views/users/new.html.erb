@@ -31,7 +31,7 @@
             O formulário contém <%= pluralize(@user.errors.count, "erro") %>.
           </div>
           <ul>
-            <% @user.errors.full_messages.each do |msg| %>
+            <% @user.errors.each do |attr,msg| %>
             <li><%= msg %></li>
             <% end %>
           </ul>
