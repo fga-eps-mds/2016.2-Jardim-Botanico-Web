@@ -8,7 +8,7 @@
   <div class="col-md-6 col-md-offset-3">
     <div class="container">
       <div class="row">
-        <h1>Informação do Evento</h1>
+        <h1>Informação da Visita</h1>
       </div>
     </div>
   </div>
@@ -45,12 +45,11 @@
         </div>
 
         <br> <p>
-        <% if (current_user.is_employee <=> "true") == 0 %>
+        <% if (current_user.is_employee)%>
           <div class= "actions" >
              <%= link_to 'Voltar', show_visitation_url, class: "btn btn-primary"  %>
           </div>
-        <%end%>
-        <% if (current_user.is_employee <=> "false") == 0 %>
+        <%else%>
           <div class= "actions" >
              <%= link_to 'Voltar', show_visitation_user_url, class: "btn btn-primary"  %>
           </div>

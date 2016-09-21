@@ -48,13 +48,13 @@
           <%= @event.description %>
         </div>
 
-        <br> <p>
-        <% if (current_user.is_employee <=> "true") == 0 %>
+       <br> <p>
+        <% if (current_user.is_employee)%>
           <div class= "actions" >
-             <%= link_to 'Voltar', show_event_url, class: "btn btn-primary"  %>
+             <%= link_to 'Voltar', show_user_url, class: "btn btn-primary"  %>
           </div>
-        <%end%>
-        <% if (current_user.is_employee <=> "false") == 0 %>
+
+        <%else%>
           <div class= "actions" >
              <%= link_to 'Voltar', show_event_user_url, class: "btn btn-primary"  %>
           </div>
