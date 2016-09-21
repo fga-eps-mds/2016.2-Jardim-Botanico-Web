@@ -1,83 +1,81 @@
-function mascara(o,f){
-    v_obj=o
-    v_fun=f
-    setTimeout("execmascara()",1)
-}
-function execmascara(){
-    v_obj.value=v_fun(v_obj.value)
-}
-function mtel(v){
-    hifen = '-'
-    if($.isNumeric(v) || hifen.localeCompare(v)) {
-        v=v.replace(/\D/g,"");             //Remove tudo o que não é dígito
-        v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
-        v=v.replace(/(\d)(\d{4})$/,"$1-$2");    //Coloca hífen entre o quarto e o quinto dígitos
-        return v;
-    } else {
-    }
-}
-function id( el ){
-	return document.getElementById( el );
-}
-
-
 window.onload = function(){
-	id('telefone').onkeypress = function(){
-		mascara( this, mtel );
+	id('phone').onkeypress = function(){
+        break;
+        PhoneMask(this);
 	}
-    id('data').onkeypress = function(){
-		mascara_data( this, mdate );
+    id('date').onkeypress = function(){
+		DateMask(this);
 	}
     id('cpf').onkeypress = function(){
-		mascara_cpf( this, mcpf );
+		CpfMask(this);
 	}
 }
 
+//adiciona mascara de date
+function DateMask(date){
+        if(IntegerMask(date)==false){
+                event.returnValue = false;
+        }
+        return FormatField(date, '00/00/0000', event);
+}
 
-function mascara_data(o,f){
-    v_obj=o
-    v_fun=f
-    setTimeout("execmascaradate()",1)
+//adiciona mascara ao phone
+function PhoneMask(phone){
+        if(IntegerMask(phone)==false){
+                event.returnValue = false;
+        }
+        return FormatField(phone, '(00)00000-0000', event);
 }
-function execmascaradate(){
-    v_obj.value=v_fun(v_obj.value)
+
+//adiciona mascara ao CPF
+function CpfMask(cpf){
+        if(IntegerMask(cpf)==false){
+                event.returnValue = false;
+        }
+        return FormatField(cpf, '000.000.000-00', event);
 }
-function mdate(v){
-    hifen = '-'
-    if($.isNumeric(v) || hifen.localeCompare(v)) {
-        v=v.replace(/\D/g,"");             //Remove tudo o que não é dígito
-        v=v.replace(/^(\d{2})(\d)/g,"$1/$2");
-        v=v.replace(/^(\d{2})(\d)/g,"$1/$2"); //Coloca parênteses em volta dos dois primeiros dígitos
-        v=v.replace(/(\d)(\d{4})$/,"$1/$2");    //Coloca hífen entre o quarto e o quinto dígitos
-        return v;
-    } else {
+
+//valida numero inteiro com mascara
+function IntegerMask(){
+        if (event.keyCode < 48 || event.keyCode > 57){
+                event.returnValue = false;
+                return false;
+        }
+        return true;
+}
+
+//formata de forma generica os fields
+function FormatField(field, mask, evento) {
+    var mask_boolean;
+
+    var string_received = evento.keyCode;
+    exp = /\-|\.|\/|\(|\)| /g
+    only_numbers = field.value.toString().replace( exp, "" );
+
+    var field_position = 0;
+    var field_new_valor="";
+    var size_mask = only_numbers.length;;
+
+    if (string_received != 8) {
+        for(i=0; i<= size_mask; i++) {
+            mask_boolean  = ((mask.charAt(i) == "-")
+                              || (mask.charAt(i) == ".")
+                              || (mask.charAt(i) == "/"))
+            mask_boolean  = mask_boolean
+                              || ((mask.charAt(i) == "(")
+                              || (mask.charAt(i) == ")")
+                              || (mask.charAt(i) == " "))
+            if (mask_boolean) {
+                field_new_valor += mask.charAt(i);
+                size_mask++;
+            }else {
+                field_new_valor += only_numbers.charAt(field_position);
+                field_position++;
+            }
+        }
+        field.value = field_new_valor;
+        return true;
+    }else{
+        return true;
     }
-}
-function id( el ){
-	return document.getElementById( el );
-}
-
-
-function mascara_cpf(o,f){
-    v_obj=o
-    v_fun=f
-    setTimeout("execmascaracpf()",1)
-}
-function execmascaracpf(){
-    v_obj.value=v_fun(v_obj.value)
-}
-function mcpf(v){
-    hifen = '-'
-    ponto = '.'
-    if($.isNumeric(v) || hifen.localeCompare(v) || ponto.localeCompare(v)) {
-        v=v.replace(/\D/g,"")                 //Remove tudo o que não é dígito
-        	v=v.replace(/(\d{3})(\d)/,"$1.$2")    //Coloca ponto entre o terceiro e o quarto dígitos
-        	v=v.replace(/(\d{3})(\d)/,"$1.$2")    //Coloca ponto entre o setimo e o oitava dígitos
-        	v=v.replace(/(\d{3})(\d)/,"$1-$2")   //Coloca ponto entre o decimoprimeiro e o decimosegundo dígitos
-        	return v;
-    } else {
-    }
-}
-function id( el ){
-	return document.getElementById( el );
 }
