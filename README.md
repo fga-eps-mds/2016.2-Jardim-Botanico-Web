@@ -8,8 +8,12 @@
 
 # Ambiente de desenvolvimento
 
-Para contribuir com o projeto você deve baixar a box com o ambiente de desenvolvimento. Para isso utilize os seguintes comandos:
-> vagrant init danielteles/mdsBox; vagrant up --provider virtualbox
+Para contribuir com o projeto você deve fazer o download dos seguintes arquivos disponíveis neste repositório:
+> ***install-ruby.sh***
+>
+> ***install-rvm.sh***
+>
+> ***Vagrantfile***
 
-Feito isso substitua o Vagrantfile pelo que está disponível neste repositório e execute o seguinte comando:
-> vagrant provision
+Após o download e com todos os arquivos salvos no mesmo diretório execute o seguinte comando:
+> `vagrant up --provider virtualbox`
