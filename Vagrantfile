@@ -70,12 +70,12 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", inline: <<-SHELL, privileged: false
     sudo apt-get update
-    sudo apt-get install -y nodejs nodejs-legacy postgresql postgresql-contrib
+    sudo apt-get install -y nodejs nodejs-legacy postgresql postgresql-contrib git
     rvm default ruby-2.3.1
     gem install bundler
     gem install rails
     sudo apt-get update
-    cd /vagrant
+    cd /vagrant/
     bundle install
   SHELL
 end
