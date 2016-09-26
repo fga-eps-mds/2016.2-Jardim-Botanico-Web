@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20160917142511) do
 
-  create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "status"
     t.date     "date"
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 20160917142511) do
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
 
-  create_table "phones", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "phones", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "phone"
     t.datetime "created_at", null: false
@@ -34,7 +37,7 @@ ActiveRecord::Schema.define(version: 20160917142511) do
     t.index ["user_id"], name: "index_phones_on_user_id", using: :btree
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "name"
     t.string   "cpf"
@@ -49,7 +52,7 @@ ActiveRecord::Schema.define(version: 20160917142511) do
     t.index ["name"], name: "index_users_on_name", using: :btree
   end
 
-  create_table "visitations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "visitations", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "status"
     t.date     "date"
@@ -61,23 +64,5 @@ ActiveRecord::Schema.define(version: 20160917142511) do
     t.index ["status"], name: "index_visitations_on_status", using: :btree
     t.index ["user_id"], name: "index_visitations_on_user_id", using: :btree
   end
-
-
-  create_table "jbb_spaces", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "id_jbb"
-    t.string   "space_name"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "trails", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.float    "length",      limit: 24
-    t.string   "locomotion"
-    t.string   "description"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-end
 
 end
