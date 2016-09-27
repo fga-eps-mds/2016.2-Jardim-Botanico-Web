@@ -2,24 +2,21 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: travis
-  password: jbbweb123
-  socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
   database: JBB_Web_development
   username: travis
-  password: jbbweb123
+  password:
 
 test:
   <<: *default
-  database: JBB_Web_test
+  database: travis_ci_test
   username: travis
-  password: jbbweb123
+  password:
 
 production:
   <<: *default
   database: JBB_Web_production
-  username: JBB_Web
+  username: travis
   password: <%= ENV['JBB_WEB_DATABASE_PASSWORD'] %>
