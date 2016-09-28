@@ -43,6 +43,7 @@ class UsersController < ApplicationController
   #Show
   def show
     @user = User.find(params[:id])
+    @phone = @user.phones.all
      if @user != current_user
        redirect_to home_path
      end
@@ -59,6 +60,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params[:user].permit(:name, :email, :password, :is_employee, :cpf, :gender, :phone, :birth)
+    params[:user].permit(:name, :email, :password, :is_employee, :cpf, :birth, :gender, phones_attributes: :phone)
 	end
 end

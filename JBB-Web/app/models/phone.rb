@@ -1,5 +1,5 @@
 class Phone < ApplicationRecord
-	belongs_to :user
+	belongs_to :user, inverse_of: :phones
 
 	validate :valid_phone
 

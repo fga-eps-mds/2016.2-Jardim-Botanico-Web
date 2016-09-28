@@ -19,7 +19,9 @@
       </p>
       <p>
         <b> Telefone: </b>
-        <%= current_user.phones %>
+        <% current_user.phones.each do |p| %>
+          <%= p.phone %>
+        <% end %>
       </p>
       <p>
         <b> Gênero: </b>
