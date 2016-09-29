@@ -16,35 +16,13 @@ Quando a box estiver ativa use:
 
 `vagrant ssh`
 
-Siga os comandos a seguir para configurar a box com ós requisitos do projeto:
-
-`sudo apt-get update`
-
-`sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev libgdbm-dev libncurses5-dev automake libtool bison libffi-dev libpq-dev`
-
-`gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3`
-
-`curl -sSL https://get.rvm.io | bash -s stable`
-
-`source ~/.rvm/scripts/rvm`
-
-`rvm install 2.3.1`
-
-`rvm use 2.3.1 --default`
-
-`gem install bundler`
-
-`gem install nokogiri -v '1.6.8'`
+Siga os comandos a seguir para configurar o banco de dados com os requisitos do projeto:
 
 `sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' > /etc/apt/sources.list.d/pgdg.list"`
 
 `wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -`
 
 `sudo apt-get update`
-
-`sudo apt-get install postgresql-common`
-
-`sudo apt-get install postgresql-9.5 libpq-dev`
 
 Entre no modo root:
 
@@ -64,7 +42,7 @@ local	all	postgres	peer
 
 local	all	all	peer
 
-para: 
+para:
 
 local	all	postgres	trust
 
