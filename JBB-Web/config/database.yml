@@ -8,15 +8,18 @@ development:
   database: JBB_Web_development
   username: travis
   password:
+  socket: /var/run/postgresql
 
 test:
   <<: *default
   database: travis_ci_test
   username: travis
   password:
+  socket: /var/run/postgresql/.s.PGSQL.5432
 
 production:
   <<: *default
   database: JBB_Web_production
   username: travis
   password: <%= ENV['JBB_WEB_DATABASE_PASSWORD'] %>
+  socket: /var/run/postgresql

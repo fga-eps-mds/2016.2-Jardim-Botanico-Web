@@ -4,18 +4,14 @@ rvm:
   - "2.3.1"
 
 addons:
-  postgresql: "9.3"
+  postgresql: "9.5.4"
   code_climate:
     repo_token:cb4ea7ac2d81c8fe078ceb548d4a19ddcaef0761731ef87525777e4a3ad62044
 
 script: "RAILS_ENV=test bundle exec rake"
 
 before_script:
- - psql --version
- - psql -c 'SELECT version();' -U postgres
- - cp config/database.ci.yml config/database.yml
- - cp .env.example .env
- - psql -c 'create database orientation_test;' -U postgres
+ - sudo service postgresql start
  - cd JBB-Web/
  - gem install rspec rspec-rails simplecov
  - bundle install
