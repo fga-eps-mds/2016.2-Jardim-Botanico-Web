@@ -84,13 +84,13 @@ Gemfile.lock
 ### Rails ###
 *.rbc
 capybara-*.html
-/log
-/tmp
-/db/*.sqlite3
-/db/*.sqlite3-journal
-/public/system
-/coverage/
-/spec/tmp
+JBB-Web/log
+JBB-Web/tmp
+JBB-Web/db/*.sqlite3
+JBB-Web/db/*.sqlite3-journal
+JBB-Web/public/system
+JBB-Web/coverage/
+JBB-Web/spec/tmp
 **.orig
 rerun.txt
 pickle-email-*.html
@@ -138,3 +138,8 @@ bower.json
 
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
+
+# Created by https://www.gitignore.io/api/vagrant
+
+### Vagrant ###
+.vagrant/
