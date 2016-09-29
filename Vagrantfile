@@ -67,6 +67,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, path: "install-rvm.sh", args: "stable", privileged: false
   config.vm.provision :shell, path: "install-ruby.sh", args: "2.3.1", privileged: false
   config.vm.provision :shell, path: "install-ruby.sh", args: "2.3.1 rails haml", privileged: false
+  config.vm.provision :shell, path: "install-postgresql.sh", args: "9.5.4", privileged: false
 
   config.vm.provision "shell", inline: <<-SHELL, privileged: false
     sudo apt-get update
