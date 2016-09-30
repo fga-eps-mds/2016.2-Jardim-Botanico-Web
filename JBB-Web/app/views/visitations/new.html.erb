@@ -33,20 +33,58 @@
 				<%end%>
 				<br>
 				<div class = "field" >
-					<%= f.label :Data %>
+					<%= f.label :Data %> &nbsp
 					<%= f.date_select :date, default: Date.today %>
 				</div>
 				<br>
 				<div class="field">
-					<%= f.label :Horário %>
+					<%= f.label :Horário %> &nbsp
 					<%= f.time_select :time, minute_step: 15, start_hour: 8, end_hour: 16 %>
 				</div>
 				<br>
-				<div class = "field" >
+				<div class = "field" style="width: 200px">
 					<%= f.label :Quantidade_de_Visitantes%>
-					<%= f.number_field :visitants_amount, :required => true, class: 'form-control' %>
+					<%= f.number_field :visitants_amount, min: 1, max: 100, :required => true, class: 'form-control' %>
 				</div>
 				<br>
+				<div class = "field" style="width: 200px">
+					<%= f.label :Faixa_etária_dos_visitantes%>
+					<%= f.number_field :groups_age, :required => true, min: 0, max: 100, class: 'form-control' %>
+				</div>
+				<br>
+				<div class = "field"  >
+					<%= f.label :Instituição %> <br>
+					<%= radio_button_tag(:visitation_type, "Pessoa fisica") %>
+					<%= label_tag(:visitation_type, "Pessoa fisica") %>
+					&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+					<%= radio_button_tag(:visitation_type, "Escola publica") %>
+					<%= label_tag(:visitation_type, "Escola publica") %>
+					&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+					<%= radio_button_tag(:visitation_type, "Escola privada") %>
+					<%= label_tag(:visitation_type, "Escola privada") %>
+				</div>
+
+				<br>
+				<div class="field">
+		    		<label for="objective">Objetivo</label>
+		   			<select class="form-control" >
+		      			<option> </option>
+		      			<option>Educacao</option>
+		      			<option>Pesquisa</option>
+		      			<option>Lazer</option>
+		    		</select>
+		    	</div>
+		    	<br>
+		    	<div class="field">
+		    		<label for="spaces">Espaços que irá utilizar</label>
+					<select class="form-control">
+		      			<option> </option>
+		      			<option>Trilhas</option>
+		      			<option>Espaco JBB</option>
+		      			<option>Amboas</option>
+		    		</select>
+		    	</div>
+		    	<br>
 				<div class = "field" >
 					<%=f.label :Descrição%>
 					<%=f.text_area :description, :cols => "50", :rows => "5", :required => true, class: 'form-control'%>

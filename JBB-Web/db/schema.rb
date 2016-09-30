@@ -60,8 +60,17 @@ ActiveRecord::Schema.define(version: 20161001184633) do
     t.time     "time"
     t.integer  "visitants_amount"
     t.string   "description"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "visitation_type"
+    t.string   "add_groups_age_to_visitations"
+    t.integer  "groups_age"
+    t.string   "add_objective_to_visitations"
+    t.string   "objective"
+    t.string   "add_spaces_to_visitations"
+    t.string   "spaces"
+    t.string   "add_has_guide_to_visitations"
+    t.boolean  "has_guide"
     t.index ["status"], name: "index_visitations_on_status", using: :btree
     t.index ["user_id"], name: "index_visitations_on_user_id", using: :btree
   end
