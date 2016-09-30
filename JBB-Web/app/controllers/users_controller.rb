@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   #Creating a new user
   def create
   	@user = User.new(user_params)
-    @user.set_as_not_emplyee
+    @user.set_as_not_employee
   	if @user.save
 			@phone = @user.phones.build(params[:phone])
       session[:user_id] = @user.id

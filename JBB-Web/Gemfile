@@ -30,6 +30,8 @@ gem 'validators'
 gem 'coveralls', require: false
 
 gem 'metric_fu', '~> 4.12'
+
+gem "cpf_cnpj"
 #bootstrap
 #gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
