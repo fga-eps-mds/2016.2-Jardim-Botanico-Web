@@ -45,8 +45,6 @@
 				<div class = "form-inline" >
 					<div class = "form-group">
 						<%= f.label :Objetivo %>
-
-
 						<%objectives = [["Educação", "Educacao"],["Pesquisa", "Pesquisa"], ["Lazer", "Lazer"]] %>
 						&nbsp &nbsp
 						<%= f.select :objective, objectives%>
@@ -75,16 +73,26 @@
 					</div>
 				</div>
 				<br>
-				<div class = "field"  >
+				<div class = "field">
 					<%= f.label :Instituição %> <br>
-					<%= radio_button_tag(:visitation_type, "Pessoa fisica") %>
-					<%= label_tag(:visitation_type, "Pessoa fisica") %>
+					<%= f.radio_button(:visitation_type, "Pessoa fisica") %>
+					<%= f.label(:visitation_type, "Pessoa fisica") %>
 					&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-					<%= radio_button_tag(:visitation_type, "Escola publica") %>
-					<%= label_tag(:visitation_type, "Escola publica") %>
+					<%= f.radio_button(:visitation_type, "Escola publica", :onclick=>"showMe('Escolas')") %>
+					<%= f.label(:visitation_type, "Escola publica") %>
 					&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-					<%= radio_button_tag(:visitation_type, "Escola privada") %>
-					<%= label_tag(:visitation_type, "Escola privada") %>
+					<%= f.radio_button(:visitation_type, "Escola privada", :onclick=>"showMe('Escolas')") %>
+					<%= f.label(:visitation_type, "Escola privada") %>
+				</div>
+				<br>
+				<div id="Escolas">
+				<div class = "field">
+					 <%= f.label :Deseja_acompanhamento_de_guia? %> &nbsp &nbsp &nbsp
+					 <%= f.radio_button(:has_guide, true, :checked => true) %>
+					 <%= f.label :Sim %>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+					 <%= f.radio_button(:has_guide, false) %>
+					 <%= f.label :Não %>
+				</div>
 				</div>
 				<br>
 				<div class = "field" >
