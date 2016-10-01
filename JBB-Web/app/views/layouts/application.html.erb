@@ -6,7 +6,6 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class ="container-fluid">
       <div class="navbar-header">
@@ -15,7 +14,6 @@
         </button>
         <a class="navbar-brand page-scroll" href="/"><font color = "black">Jardim Botânico Web</font></a>
       </div>
-
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
@@ -41,9 +39,7 @@
       </div>
     </div>
   </nav>
-
   <body id="aplication-body">
-
   	<%= render 'layouts/header' %>
     <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
