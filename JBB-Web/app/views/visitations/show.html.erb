@@ -27,34 +27,38 @@
 						<th> Descrição </th>
 						</tr>
 						<% @visitations_sorted.each do |visitation| %>
-						<tr>
-						<td> <%= visitation.date %> </td>
-						<% timeString = visitation.time.to_s %>
-						<td> <%= timeString[11..18] %> </td>
-						<td> <%= visitation.status %> </td>
-						<td> <%= visitation.visitants_amount %> </td>
-						<td> <%= visitation.description %> </td>
-						<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
-						<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
-						<td> <%= link_to "Aceitar Visitação", controller: "visitations",
-										action: "accept_visitation_employee", id: visitation %> </td>
-						<% end %>
-						<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
-						<td> <%= link_to "Recusar Visitação", controller: "visitations",
-										action: "refuse_visitation_employee", id: visitation %> </td>
-						<% end %>
-						<% if (visitation.status <=> "Agendado") == 0 %>
-						<td> <%= link_to "Cancelar Visitação", controller: "visitations",
-										action: "cancel_visitation_employee", id: visitation %> </td>
-						</tr>
-						<% end %>
-						<% if (visitation.status <=> "Evento cancelado por funcionario") == 0 ||
-							   (visitation.status <=> "Evento cancelado pelo usuario") == 0 ||
-							   (visitation.status <=> "Evento recusado por funcionario") == 0 %>
-						<td> <%= link_to "Deletar Visitação", controller: "visitations",
-										action: "delete_visitation_employee", id: visitation %> </td>
-						</tr>
-						<% end %>
+							<tr>
+							<td> <%= visitation.date %> </td>
+							<% timeString = visitation.time.to_s %>
+							<td> <%= timeString[11..18] %> </td>
+							<td> <%= visitation.status %> </td>
+							<td> <%= visitation.visitants_amount %> </td>
+							<td> <%= visitation.description %> </td>
+							<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
+
+							<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
+							<td> <%= link_to "Aceitar Visitação", controller: "visitations",
+											action: "accept_visitation_employee", id: visitation %> </td>
+							<% end %>
+
+							<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
+							<td> <%= link_to "Recusar Visitação", controller: "visitations",
+											action: "refuse_visitation_employee", id: visitation %> </td>
+							<% end %>
+
+							<% if (visitation.status <=> "Agendado") == 0 %>
+							<td> <%= link_to "Cancelar Visitação", controller: "visitations",
+											action: "cancel_visitation_employee", id: visitation %> </td>
+							</tr>
+							<% end %>
+
+							<% if (visitation.status <=> "Evento cancelado por funcionario") == 0 ||
+								   (visitation.status <=> "Evento cancelado pelo usuario") == 0 ||
+								   (visitation.status <=> "Evento recusado por funcionario") == 0 %>
+							<td> <%= link_to "Deletar Visitação", controller: "visitations",
+											action: "delete_visitation_employee", id: visitation %> </td>
+							</tr>
+							<% end %>
 						<% end %>
 					</table>
 				</div>
