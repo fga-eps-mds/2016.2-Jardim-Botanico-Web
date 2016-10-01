@@ -18,21 +18,21 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
-			<% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
+				<% flash.each do |key, value| %>
+				<div class="alert alert-<%= key %>"><%= value %></div>
+				<% end %>
 				<%= form_for @visitation do |f| %>
-					<% if @visitation.errors.any? %>
-						<div id="error_explanation">
-							<div class="alert-error">
-								O formulário contém <%= pluralize(@visitation.errors.count, "erro") %>.
-							</div>
-							<ul>
-								<% @visitation.errors.full_messages.each do |msg| %>
-								<li><%= msg %></li>
-							<%end%>
-						</ul>
+				<% if @visitation.errors.any? %>
+				<div id="error_explanation">
+					<div class="alert-error">
+						O formulário contém <%= pluralize(@visitation.errors.count, "erro") %>.
 					</div>
+					<ul>
+						<% @visitation.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+						<%end%>
+					</ul>
+				</div>
 				<%end%>
 				<br>
 				<div class = "field" >
@@ -57,9 +57,9 @@
 				<br>
 				<div class="actions">
 					<%= f.submit "Cadastrar", class: "btn btn-primary"%>
-        			<%= link_to "Voltar", root_url , class: "btn btn-primary" %>
+					<%= link_to "Voltar", root_url , class: "btn btn-primary" %>
 				</div>
-			<% end %>
+				<% end %>
 			</div>
 		</div>
 	</div>

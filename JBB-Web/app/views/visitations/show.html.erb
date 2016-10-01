@@ -15,23 +15,21 @@
 
 	<div class="container-fluid">
 		<div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <% flash.each do |key, value| %>
-            <div class="alert alert-<%= key %>"><%= value %></div>
-          <% end %>
+      <div class="col-md-10 col-md-offset-1">
+        <% flash.each do |key, value| %>
+      		<div class="alert alert-<%= key %>"><%= value %></div>
+    		<% end %>
 			<div class="col-md-10 col-md-offset-1">
 				<div class="table-hover">
 					<table border=1 class="table table-bordered" >
 						<br /> <br />
-
 						<tr>
 						<th> Data </th>
 						<th> Hora </td>
 						<th> Status </th>
-						<th> Nº de Visitantes </th>
+						<th> Quantidade de Visitantes </th>
 						<th> Descrição </th>
 						</tr>
-
 
 						<% @visitations_sorted.each do |visitation| %>
 							<tr>
@@ -59,15 +57,13 @@
 							</tr>
 							<% end %>
 
-							<% if (visitation.status <=> "Cancelado por funcionario") == 0 ||
-								   (visitation.status <=> "Cancelado pelo usuario") == 0 ||
-								   (visitation.status <=> "Recusado por funcionario") == 0 %>
+							<% if (visitation.status <=> "Evento cancelado por funcionario") == 0 ||
+								   (visitation.status <=> "Evento cancelado pelo usuario") == 0 ||
+								   (visitation.status <=> "Evento recusado por funcionario") == 0 %>
 							<td> <%= link_to "Deletar Visitação", controller: "visitations",
 											action: "delete_visitation_employee", id: visitation %> </td>
 							</tr>
 							<% end %>
-
-
 						<% end %>
 					</table>
 				</div>
