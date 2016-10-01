@@ -1,7 +1,5 @@
 <body id="page-top">
-	<br>
-	<br>
-
+	<br><br>
 	<div class="col-md-6 col-md-offset-3">
 		<div class="container">
 			<div class="row">
@@ -11,7 +9,6 @@
 	</div>
 	<div class="col-md-6 col-md-offset-3">
 	</div>
-
 	<div class="container-fluid">
 		<div class="row">
 		<div class="col-md-10 col-md-offset-1">
@@ -22,7 +19,6 @@
 				<div class="table-hover">
 					<table border=1 class="table table-bordered" >
 						<br /> <br />
-
 						<tr>
 						<th> Data </th>
 						<th> Hora </td>
@@ -30,21 +26,19 @@
 						<th> Nº de Visitantes </th>
 						<th> Descrição </th>
 						</tr>
-
-
 						<% @visitation.each do |visitation| %>
-							<tr>
-							<td> <%= visitation.date %> </td>
-							<% timeString = visitation.time.to_s %>
-							<td> <%= timeString[11..18] %> </td>
-							<td> <%= visitation.status %> </td>
-							<td> <%= visitation.visitants_amount %> </td>
-							<td> <%= visitation.description %> </td>
-							<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
-							<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
-							<td> <%= link_to "Cancelar Visitação", controller: "visitations",
-																action: "cancel_visitation_user", id: visitation %> </td>
-							<% end %>
+						<tr>
+						<td> <%= visitation.date %> </td>
+						<% timeString = visitation.time.to_s %>
+						<td> <%= timeString[11..18] %> </td>
+						<td> <%= visitation.status %> </td>
+						<td> <%= visitation.visitants_amount %> </td>
+						<td> <%= visitation.description %> </td>
+						<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
+						<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
+						<td> <%= link_to "Cancelar Visitação", controller: "visitations",
+															action: "cancel_visitation_user", id: visitation %> </td>
+						<% end %>
 						<% end %>
 					</table>
 				</div>
