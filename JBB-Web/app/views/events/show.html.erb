@@ -1,8 +1,5 @@
 <body id="page-top">
-
-	<br>
-	<br>
-
+	<br><br>
 	<div class="col-md-6 col-md-offset-3">
 		<div class="container">
 			<div class="row">
@@ -12,7 +9,6 @@
 	</div>
 	<div class="col-md-6 col-md-offset-3">
 	</div>
-
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
@@ -29,8 +25,7 @@
 							<th>Status</th>
 							<th>Quantidade de Eventos</th>
 							<th>Descrição</th>
-							</tr>
-
+						</tr>
 						<% @event.each do |event| %>
 						<tr>
 							<td> <%= event.name %> </td>
@@ -41,23 +36,19 @@
 							<td> <%= event.people_amount %> </td>
 							<td> <%= event.description %> </td>
 							<td> <%= link_to 'Mostrar', action: 'index', id: event.id %> </td>
-
 							<% if (event.status <=> "Aguardando confirmacao") == 0 %>
 							<td> <%= link_to "Aceitar Evento", controller: "events",
 								action: "accept_event_employee", id: event %> </td>
 							<% end %>
-
 							<% if (event.status <=> "Aguardando confirmacao") == 0 %>
 							<td> <%= link_to "Recusar Evento", controller: "events",
 								action: "refuse_event_employee", id: event %> </td>
 							<% end %>
-
 							<% if (event.status <=> "Agendado") == 0 %>
 							<td> <%= link_to "Cancelar Evento", controller: "events",
 								action: "cancel_event_employee", id: event %> </td>
 							</tr>
 							<% end %>
-
 							<% if (event.status <=> "Cancelado por funcionario") == 0 ||
 								(event.status <=> "Cancelado pelo usuario") == 0 ||
 								(event.status <=> "Recuado por funcionario") == 0 %>
@@ -65,11 +56,11 @@
 									action: "delete_event_employee", id: event %> </td>
 								</tr>
 							<% end %>
-							<% end %>
-						</table>
-					</div>
-					<%= link_to "Voltar", home_url, class: "btn btn-primary" %>
+						<% end %>
+					</table>
 				</div>
+				<%= link_to "Voltar", home_url, class: "btn btn-primary" %>
 			</div>
 		</div>
-	</body>
+	</div>
+</body>
