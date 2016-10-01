@@ -16,23 +16,23 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-                <% flash.each do |key, value| %>
-            <div class="alert alert-<%= key %>"><%= value %></div>
-          <% end %>
+				<% flash.each do |key, value| %>
+				<div class="alert alert-<%= key %>"><%= value %></div>
+				<% end %>
 				<div class="table-hover">
 					<table border=1 class="table table-bordered" >
 						<br /> <br />
 						<tr>
-						<th>Nome do Evento</th>
-						<th>Data</th>
-						<th>Hora</td>
-						<th>Status</th>
-						<th>Quantidade de Visitantes</th>
-						<th>Descrição</th>
-						</tr>
+							<th>Nome do Evento</th>
+							<th>Data</th>
+							<th>Hora</td>
+							<th>Status</th>
+							<th>Quantidade de Visitantes</th>
+							<th>Descrição</th>
+							</tr>
 
 						<% @event.each do |event| %>
-							<tr>
+						<tr>
 							<td> <%= event.name %> </td>
 							<td> <%= event.date %> </td>
 							<% timeString = event.time.to_s %>
@@ -43,33 +43,33 @@
 							<td> <%= link_to 'Mostrar', action: 'index', id: event.id %> </td>
 
 							<% if (event.status <=> "Aguardando confirmacao") == 0 %>
-								<td> <%= link_to "Aceitar Evento", controller: "events",
-																	action: "accept_event_employee", id: event %> </td>
+							<td> <%= link_to "Aceitar Evento", controller: "events",
+								action: "accept_event_employee", id: event %> </td>
 							<% end %>
 
 							<% if (event.status <=> "Aguardando confirmacao") == 0 %>
-								<td> <%= link_to "Recusar Evento", controller: "events",
-																	action: "refuse_event_employee", id: event %> </td>
+							<td> <%= link_to "Recusar Evento", controller: "events",
+								action: "refuse_event_employee", id: event %> </td>
 							<% end %>
 
 							<% if (event.status <=> "Agendado") == 0 %>
-								<td> <%= link_to "Cancelar Evento", controller: "events",
-																	action: "cancel_event_employee", id: event %> </td>
-								</tr>
+							<td> <%= link_to "Cancelar Evento", controller: "events",
+								action: "cancel_event_employee", id: event %> </td>
+							</tr>
 							<% end %>
 
 							<% if (event.status <=> "Cancelado por funcionario") == 0 ||
-								   	(event.status <=> "Cancelado pelo usuario") == 0 ||
-								   	(event.status <=> "Recusado por funcionario") == 0 %>
+								(event.status <=> "Cancelado pelo usuario") == 0 ||
+								(event.status <=> "Recuado por funcionario") == 0 %>
 								<td> <%= link_to "Deletar Evento", controller: "events",
-																	action: "delete_event_employee", id: event %> </td>
+									action: "delete_event_employee", id: event %> </td>
 								</tr>
 							<% end %>
-						<% end %>
-					</table>
+							<% end %>
+						</table>
+					</div>
+					<%= link_to "Voltar", home_url, class: "btn btn-primary" %>
 				</div>
-				<%= link_to "Voltar", home_url, class: "btn btn-primary" %>
 			</div>
 		</div>
-	</div>
-</body>
+	</body>
