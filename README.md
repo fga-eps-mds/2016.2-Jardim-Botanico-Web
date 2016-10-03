@@ -8,68 +8,62 @@
 
 # Ambiente de desenvolvimento
 
-Para contribuir com o projeto faça o download do repositório e na pasta raiz do projeto execute:
 
-`vagrant up --provider virtualbox`
+Para contribuir com o projeto você deve fazer o download dos seguintes arquivos disponíveis neste repositório:
+> ***install-ruby.sh***
+>
+> ***install-rvm.sh***
+>
+> ***Vagrantfile***
 
-Quando a box estiver ativa use:
 
-`vagrant ssh`
+Após o download e com todos os arquivos salvos no mesmo diretório execute o seguinte comando:
+> `vagrant up --provider virtualbox`
 
-Siga os comandos a seguir para configurar o banco de dados com os requisitos do projeto:
+Logo após o download da box, já dentro do ambiente de desenvolvimento você deve alterar o ***.bashrc*** para ele entrar na pasta compartilhada entre os SO's sempre que a máquina for iniciada, para isso:
 
-`sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main' > /etc/apt/sources.list.d/pgdg.list"`
+> `vim ~/.bashrc`
 
-`wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -`
+No final do arquivo, adicione:
 
-`sudo apt-get update`
+> `cd /vagrant/`
 
-Entre no modo root:
+Feito isso salve e feche o arquivo, agora toda vez que o ambiente for ligado ele já estará na pasta compartilhada.
 
-`sudo su`
+Para configurar o banco de dados execute os seguintes passos:
 
-vá para a pasta base:
+> `sudo su`
 
-`cd`
+> `cd`
 
-encontre o arquivo pg_hba.conf
+> `nano /etc/postgresql/9.5/main/pg_hba.conf`
 
-`nano /etc/postgresql/9.5/pg_hba.conf`
+Feito isso altere as linhas abaixo:
 
-modifique as linhas no documento:
+> local	all	postgres	peer
 
-local	all	postgres	peer
-
-local	all	all	peer
+> local	all	all	peer
 
 para:
 
-local	all	postgres	trust
+> local	all	postgres	trust
 
-local	all	all	trust
+> local	all	all	trust
 
-Feito isso ainda no usuário root reinicie o serviço postgresql:
+Feito isso ainda no usuário root reinicie o serviço postgresql e saia do modo root:
 
-`service postgresql reload`
+> `service postgresql reload`
 
-Saia do usuário root:
-
-`exit`
+> `exit`
 
 Entre no serviço postgresql com o usuário postgres e crie o usuário travis para a aplicação:
 
-`psql -U postgres`
+> `psql -U postgres`
 
-`create user travis with createdb;`
+> `create user travis with createdb;`
 
-Então o banco de dados estará devidamente instalado e configurado. Para sair execute \q.
+Após isso é só executar os seguintes comandos:
 
-Entre na pasta do projeto e execute:
+> `bundle install`
 
-`bundle install`
-
-`rake db:setup`
-
-E por fim:
-
-`rails s`
+> `rake db:setup`
