@@ -1,13 +1,11 @@
 class Event < ApplicationRecord
 	belongs_to :user
 
-	# validation of dates
-	validates :date_start, presence: true
-	validates :date_end, presence: true
+	# validation of date
+	validates :date, presence: true
 
 	# validation of times
-	validates :time_start, presence: true
-	validates :time_end, presence: true
+	validates :time, presence: true
 
 	# validation of description
 	validates :description, presence: true, length: { minimum: 5, maximum: 500 }
@@ -20,11 +18,6 @@ class Event < ApplicationRecord
 
 	# validation of JBB_response_to_request
 	validates :JBB_response_to_request, length: { minimum: 5, maximum: 500 }
-
-	# validation of Institute
-	validates :name_institute, presence: true, length: { minimum: 3, maximum: 100 }
-	validates :institute_address, presence: true, length: { minimum: 5, maximum: 250 }
-	validates :institute_cnpj, presence: true
 
 
 	def set_status_default
