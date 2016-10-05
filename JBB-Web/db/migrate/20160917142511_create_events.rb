@@ -14,6 +14,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.boolean :need_clean_service
       t.boolean :has_photographer
       t.integer :estimated_public
+      t.string :description
       t.string :other_informations
       t.string :JBB_response_to_request
 
