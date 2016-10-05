@@ -22,19 +22,19 @@ class Event < ApplicationRecord
 	validates :JBB_response_to_request, length: { minimum: 5, maximum: 500 }
 
 	# validation of Institute
-	validates :name_institute, presence: true, { minimum: 3, maximum: 100 }
-	validates :institute_address, presence: true, { minimum: 5, maximum: 250 }
+	validates :name_institute, presence: true, length: { minimum: 3, maximum: 100 }
+	validates :institute_address, presence: true, length: { minimum: 5, maximum: 250 }
 	validates :institute_cnpj, presence: true
 
 
 	def set_status_default
-		self.status = "Aguardando confirmacao"
+    self.status = "Aguardando analise"
 	end
 	def canceled_by_employee
 		self.status = "Cancelado por funcionario"
 	end
-	def awaiting_analysis
-		self.status = "Aguardando analise"
+	def awaiting_user_confirmation
+    self.status = "Aguardando confirmacao do usuario"
 	end
 	def canceled_by_user
 		self.status = "Cancelado pelo usuario"

@@ -15,44 +15,54 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
-				<% flash.each do |key, value| %>
+				<%flash.each do |key, value|%>
 				<div class="alert alert-<%= key %>"><%= value %></div>
-				<% end %>
-				<%= form_for @event do |f| %>
-				<% if @event.errors.any? %>
+				<%end%>
+				<%=form_for @event do |f|%>
+				<%if @event.errors.any?%>
 				<div id="error_explanation">
 					<div class="alert-error">
-						O formulário contém <%= pluralize(@event.errors.count, "erro") %>.
+						O formulário contém <%=pluralize(@event.errors.count, "erro")%>.
 					</div>
 					<ul>
-						<% @event.errors.full_messages.each do |msg| %>
+						<%@event.errors.full_messages.each do |msg|%>
 						<li><%= msg %></li>
 						<%end%>
 					</ul>
 				</div>
 				<%end%>
-				<div class="field">
-					<%= f.label :Nome_do_Evento %>
-					<%= f.text_field :name, class: 'form-control' %>
+				<div class = "field" >
+					<%=f.label :Data_de_início_do_evento%>
+					<%=f.date_select(:date_start)%>
+				</div>
+				<br>
+                <div class="field">
+                    <%=f.label :Horário_de_início_do_evento%>
+                    <%=f.time_select(:time_start, minute_step: 15)%>
+                </div>
+                <br>
+                <div class = "field" >
+					<%=f.label :Data_do_fim_do_evento%>
+					<%=f.date_select(:date_end)%>
+				</div>
+				<br>
+                <div class="field">
+					<%=f.label :Horário_de_fim_do_evento%>
+					<%=f.time_select(:time_end, minute_step: 15)%>
+				</div>
+				<br>
+                <div class = "field" >
+                    <%=f.label :Espaço_do_JBB_solicitado%>
+                    <%=f.text_field :JBB_space_requested, class: 'form-control'%>
+                </div>
+                <br>
+				<div class = "field" >
+					<%=f.label :Público_estimado%>
+					<%=f.number_field :estimated_public, :required => true, class: 'form-control'%>
 				</div>
 				<br>
 				<div class = "field" >
-					<%= f.label :Data %>
-					<%= f.date_select (:date)%>
-				</div>
-				<br>
-				<div class="field">
-					<%= f.label :Horário %>
-					<%= f.time_select(:time, minute_step: 15) %>
-				</div>
-				<br>
-				<div class = "field" >
-					<%= f.label :Quantidade_de_Visitantes%>
-					<%= f.number_field :people_amount, :required => true, class: 'form-control' %>
-				</div>
-				<br>
-				<div class = "field" >
-					<%=f.label :Descrição%>
+					<%=f.label :Descrição_do_evento%>
 					<%=f.text_area :description, :cols => "50", :rows => "5", :required => true, class: 'form-control'%>
 				</div>
 				<br>
