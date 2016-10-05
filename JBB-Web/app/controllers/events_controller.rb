@@ -2,9 +2,8 @@ class EventsController < ApplicationController
 
   #user
   def new
-		@event = Event.new
-
-	end
+  	@event = Event.new
+  end
 
 
 	def create
@@ -21,7 +20,7 @@ class EventsController < ApplicationController
 	end
 
 
-	def show_user
+  def show_user
     @event = Event.where(user_id: current_user.id)
   end
 
@@ -44,7 +43,7 @@ class EventsController < ApplicationController
     @event = Event.all
   end
 
-	def index
+  def index
     @event = Event.find(params[:id])
   end
 
@@ -87,18 +86,18 @@ class EventsController < ApplicationController
     else
         flash[:warning] = "Evento não pode ser confirmado"
         redirect_to show_event_url
-   end
+    end
   end
 
   #delete_event
   def delete_event_employee
     @event = Event.find(params[:id])
-     if @event.destroy
-         flash[:success] = "Evento deletado"
-         redirect_to show_event_url
-     else
-         flash[:warning] = "Evento não pode ser deletado"
-         redirect_to show_event_url
+    if @event.destroy
+       flash[:success] = "Evento deletado"
+       redirect_to show_event_url
+    else
+       flash[:warning] = "Evento não pode ser deletado"
+       redirect_to show_event_url
     end
   end
 
