@@ -43,6 +43,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'factory_girl_rails'
   gem 'simplecov'
+  gem 'email_spec'
 end
 
 group :development do
