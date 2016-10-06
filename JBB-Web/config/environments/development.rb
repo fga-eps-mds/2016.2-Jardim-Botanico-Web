@@ -52,23 +52,17 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.delivery_method = :sendmail
-# Defaults to:
-  config.action_mailer.sendmail_settings = {
-    location: '/usr/sbin/sendmail',
-    arguments: '-i -t'
-  }
 config.action_mailer.perform_deliveries = true
 
-config.action_mailer.default_options = {from: 'jbb@teste.com'}
+config.action_mailer.default_options = {from: 'jbb.teste@gmail.com'}
 
-  config.web_console.whitelisted_ips = '10.0.2.2'
-  ActionMailer::Base.smtp_settings = {
-  address:        'localhost', # default: localhost
-  port:           '25',
+config.web_console.whitelisted_ips = '10.0.2.2'
+ActionMailer::Base.smtp_settings = {
+  address:        'smtp.gmail.com', 
+  port:           '587',
   domain:               'example.com',
-  user_name:      'jbb@teste.com',
-  password:       'Teste123#',
+  user_name:      'jbb.teste@gmail.com',
+  password:       'teste1234',
   authentication: :plain,                # :plain, :login or :cram_md5
   enable_starttls_auto: true,
   :openssl_verify_mode => 'none'

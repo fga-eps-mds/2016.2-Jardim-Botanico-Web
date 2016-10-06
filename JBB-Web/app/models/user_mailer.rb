@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: 'jbb@teste.com'
+  default from: 'jbb.teste@gmail.com'
 
   def welcome(user_email)
     #@user = User.find(params[user_id])
