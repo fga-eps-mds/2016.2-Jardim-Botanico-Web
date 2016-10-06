@@ -1,0 +1,111 @@
+<p id="notice"><%= notice %></p>
+  <body id="page-top">
+  <br><br>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="container">
+      <div class="row">
+        <h1>Informação do Evento</h1>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-md-offset-3">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <br>
+        <div class = "actions">
+          <b>Dia:</b>
+           <%= @event.date %>
+        </div>
+        <br>
+        <div class = "actions">
+          <b>Hora:</b>
+          <%= @event.time %>
+        </div>
+        <br>
+        <div class = "actions">
+          <b>Status:</b>
+          <%= @event.status %>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Periodo de Aluguel:</b>
+          <%= @event.rental_period%>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Espaço Solicitado:</b>
+          <%= @event.JBB_space_requested%>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Publico Estimado:</b>
+          <%= @event.estimated_public%>
+        </div>
+        <br>
+        <div class= "actions" >
+          <b>Descrição:</b>
+          <%= @event.description %>
+        </div>
+       <br>
+       <br>
+      <table border=0 class="table table-bordered" >
+        <tr>
+          <% if (event.status <=> "Aguardando analise") == 0 %>
+            <td>
+              <div class = "field" >
+                <%=f.label :Resposta_da_Requisição%>
+                <%=f.text_area :JBB_response_to_request, :cols => "50", :rows => "5", class: 'form-control'%>
+              </div>
+            </td>
+            <td>
+              <%= link_to "Aceitar Evento", controller: "events",
+              action: "accept_event_employee", id: event %>
+            </td>
+          <%end%>
+          <%if (event.status <=> "Aguardando analise") == 0 %>
+            <td>
+              <div class = "field" >
+                <%=f.label :Resposta_da_Requisição%>
+                <%=f.text_area :JBB_response_to_request, :cols => "50", :rows => "5", class: 'form-control'%>
+              </div>
+            </td>
+            <td>
+              <%= link_to "Recusar Evento", controller: "events",
+              action: "refuse_event_employee", id: event %>
+            </td>
+          <%end%>
+          <%if (event.status <=> "Agendado") == 0%>
+            <td>
+              <div class = "field" >
+                <%=f.label :Resposta_da_Requisição%>
+                <%=f.text_area :JBB_response_to_request, :cols => "50", :rows => "5", class: 'form-control'%>
+              </div>
+            </td>
+            <td>
+              <%= link_to "Cancelar Evento", controller: "events",
+              action: "cancel_event_employee", id: event %>
+            </td>
+          <%end%>
+        </tr>
+          <% if (event.status <=> "Cancelado por funcionario") == 0 ||
+                (event.status <=> "Cancelado pelo usuario") == 0 ||
+                (event.status <=> "Recuado por funcionario") == 0 %>
+            <td> <%= link_to "Deletar Evento", controller: "events",
+            action: "delete_event_employee", id: event %> </td>
+        <%end%>
+      </table>
+        <% if (current_user.is_employee)%>
+          <div class= "actions" >
+             <%= link_to 'Voltar', show_user_url, class: "btn btn-primary"%>
+          </div>
+        <%else%>
+          <div class= "actions" >
+             <%= link_to 'Voltar', show_event_user_url, class: "btn btn-primary"%>
+          </div>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</body>
