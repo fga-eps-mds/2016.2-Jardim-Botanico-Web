@@ -91,6 +91,10 @@ GEM
     docile (1.1.5)
     domain_name (0.5.20160826)
       unf (>= 0.0.5, < 1.0.0)
+    email_spec (2.1.0)
+      htmlentities (~> 4.3.3)
+      launchy (~> 2.1)
+      mail (~> 2.6.3)
     equalizer (0.0.11)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -113,6 +117,7 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hirb (0.7.3)
+    htmlentities (4.3.4)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
@@ -321,6 +326,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   coveralls
   cpf_cnpj
+  email_spec
   factory_girl_rails
   jbuilder (~> 2.5)
   jquery-rails
@@ -343,4 +349,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.13.1
+   1.13.2
