@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link href="css/creative.min.css" rel="stylesheet">
+    <!-- Awesome Icons   -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="aplication-body">
+  <section id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Minhas requisições</h2>
+          <hr class="primary">
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="c   ol-lg-3 col-md-6 text-center">
+          <div class="service-box">
+                <% if current_user.is_employee %>
+                    <a href="/visitations/show">
+                  <% else %>
+                    <a href="/visitations/show_user">
+                  <% end%>
+            <i class="fa fa-4x fa-map-marker text-primary sr-icons"></i>
+            <% if current_user %>
+             <% if current_user.is_employee %>
+             <h3>Gerencie visitas</h3>
+            <p class="text-muted">Gerencie visitas agendadas.</p>
+             <% else %>
+            <h3>Gerencie visitas</h3>
+            <p class="text-muted">Visualize e edite suas visitas facilmente</p>
+            <% end%>
+          </div>
+        </div>
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-box">
+                <% if current_user.is_employee %>
+                    <a href="/events/show">
+                  <% else %>
+                    <a href="/events/show_user">
+                  <% end%>
+          <i class="fa fa-4x fa-users text-primary sr-icons"></i>
+          <% if current_user %>
+             <% if current_user.is_employee %>
+             <h3>Gerencie eventos</h3>
+            <p class="text-muted">Gerencie eventos agendados.</p>
+             <% else %>
+            <h3>Gerencie seus eventos</h3>
+            <p class="text-muted">Visualize e edite seus eventos facilmente</p>
+            <% end%>
+            <% end%>
+        </div>
+      </div>
+      <% end %>
+</section>
+
+</body>
+</html>
