@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       sign_in(@user)
+      params[:session][:remember_me] == '1' ? remember_me(@user) : forget(@user)
       redirect_to home_path
     else
       flash[:warning] = 'Email ou senha inválidos'
@@ -19,9 +20,8 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    sign_out
+    sign_out if logged_in?
     flash[:success] = 'Logout efetuado com sucesso'
     redirect_to home_path
   end
-
 end

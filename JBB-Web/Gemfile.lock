@@ -311,6 +311,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionpack
+  actionview
+  activejob
   autoprefixer-rails (~> 6.4, >= 6.4.1)
   bcrypt (~> 3.1.7)
   byebug
@@ -322,10 +325,12 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  mail
   metric_fu (~> 4.12)
   pg
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
+  rails-dom-testing
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   simplecov

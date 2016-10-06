@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
     @user.set_as_not_employee
   	if @user.save
+      UserMailer.welcome(@user).deliver_now
 			@phone = @user.phones.build(params[:phone])
       session[:user_id] = @user.id
       flash[:success] = "Cadastro efetuado com sucesso!"
