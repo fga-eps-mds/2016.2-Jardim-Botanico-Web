@@ -24,6 +24,10 @@ class EventsController < ApplicationController
     @event = Event.where(user_id: current_user.id)
   end
 
+  def index_user
+    @event = Event.find(params[:id])
+  end
+
 
   #cancel_confirmation
   def cancel_event_user

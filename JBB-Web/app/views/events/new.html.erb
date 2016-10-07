@@ -114,24 +114,24 @@
 					<br><br>
 					<p>Em Caso de Instituição:</p>
 					<div class="field">
-	          <%= f.label :Nome %>
-	          <%= f.text_field :name_institute, autocomplete: "off", class: 'form-control', placeholder: 'Digite o nome da instituição'%>
-	        </div>
-	        <br>
-	        <div class="field">
-	          <%= f.label :Endereço%>
-	          <%= f.text_field :institute_address, autocomplete: "off", class: 'form-control', placeholder: 'Digite o endereço'%>
-	        </div>
-	        <br>
-	        <div class="field">
-	          <%= f.label :CNPJ%>
-	          <%= f.text_field :institute_cnpj, autocomplete: "off", class: 'form-control', placeholder: 'Digite o CNPJ, Ex: 00.000.000/0000-00'%>
-	        </div>
-					<br>
-					<div class="actions">
-						<%= f.submit "Cadastrar", class: "btn btn-primary"%>
-						<%= link_to "Voltar", root_url , class: "btn btn-primary"%>
-					</div>
+			        	<%= f.label :Nome %>
+			        	<%= f.text_field :name_institute, autocomplete: "off", class: 'form-control', placeholder: 'Digite o nome da instituição'%>
+			        </div>
+			        <br>
+			        <div class="field">
+			          <%= f.label :Endereço%>
+			          <%= f.text_field :institute_address, autocomplete: "off", class: 'form-control', placeholder: 'Digite o endereço'%>
+			        </div>
+			        <br>
+			        <div class="field">
+			          <%= f.label :CNPJ%>
+			          <%= f.text_field :institute_cnpj, autocomplete: "off", class: 'form-control', placeholder: 'Digite o CNPJ, Ex: 000.000.000/0000-00'%>
+			        </div>
+				<br>
+				<div class="actions">
+					<%= f.submit "Cadastrar", class: "btn btn-primary"%>
+					<%= link_to "Voltar", root_url , class: "btn btn-primary"%>
+				</div>
 				<%end%>
 			</div>
 		</div>
