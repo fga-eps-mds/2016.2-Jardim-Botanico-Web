@@ -39,11 +39,11 @@ class EventsController < ApplicationController
 
   #employee
 
-  def show
+  def show_employee
     @event = Event.all
   end
 
-  def index
+  def index_employee
     @event = Event.find(params[:id])
   end
 
@@ -52,12 +52,13 @@ class EventsController < ApplicationController
   def refuse_event_employee
     @event = Event.find(params[:id])
     @event.refused_by_employee
+    @event.jbb_response_to_request = (params[:jbb_response_to_request])
     if @event.save
         flash[:success] = "Evento recusado"
-        redirect_to show_event_url
+        redirect_to show_event_employee_url
     else
         flash[:warning] = "Evento não pode ser recusado"
-        redirect_to show_event_url
+        redirect_to show_event_employee_url
     end
   end
 
@@ -68,10 +69,10 @@ class EventsController < ApplicationController
     @event.canceled_by_employee
     if @event.save
          flash[:success] = "Evento cancelado"
-         redirect_to show_event_url
+         redirect_to show_event_employee_url
      else
          flash[:warning] = "Evento não pode ser cancelado"
-         redirect_to show_event_url
+         redirect_to show_event_employee_url
     end
   end
 
@@ -80,12 +81,13 @@ class EventsController < ApplicationController
   def accept_event_employee
     @event = Event.find(params[:id])
     @event.accepted_by_employee
+    @event.jbb_response_to_request = (params[:jbb_response_to_request])
     if @event.save
         flash[:success] = "Evento confirmado"
-        redirect_to show_event_url
+        redirect_to show_event_employee_url
     else
         flash[:warning] = "Evento não pode ser confirmado"
-        redirect_to show_event_url
+        redirect_to show_event_employee_url
     end
   end
 
@@ -94,10 +96,10 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     if @event.destroy
        flash[:success] = "Evento deletado"
-       redirect_to show_event_url
+       redirect_to show_event_employee_url
     else
        flash[:warning] = "Evento não pode ser deletado"
-       redirect_to show_event_url
+       redirect_to show_event_employee_url
     end
   end
 
@@ -115,7 +117,8 @@ class EventsController < ApplicationController
 
 	private
 	def event_params
-		params.require(:event).permit(:name, :date, :time, :status, :description, :people_amount)
+		params.require(:event).permit(:name, :date, :time, :status, :description, :rental_period, :need_eletricity, :need_water, :need_clean_service, 
+                                  :people_amount, :jbb_space_requested, :estimated_public, :commercial_use_photos, :other_informations, :jbb_response_to_request)
 	end
 
 end

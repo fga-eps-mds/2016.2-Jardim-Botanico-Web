@@ -66,8 +66,10 @@ Rails.application.routes.draw do
   post 'events/new' => 'events#create', as: 'events_save'
   get 'events/show' => 'events#show', as: 'show_event'
   get 'events/show_user', as: 'show_event_user'
+  get 'events/show_employee', as: 'show_event_employee'
   get 'events/index_user'
-  get 'events/index_employee'
+  get 'events/index_employee', as: 'index_event_employee'
+  post 'events/index_employee', as: 'index_event_employee_save'
 
   #Event Employee
   get 'events/accept_event_employee', as: 'get_accept_event_employee'
