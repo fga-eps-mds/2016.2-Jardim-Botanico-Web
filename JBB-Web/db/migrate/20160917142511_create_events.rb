@@ -5,7 +5,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.date :date
       t.time :time
       t.string :status
-      t.string :JBB_space_requested
+      t.string :jbb_space_requested
       t.integer :estimated_public
       t.integer :rental_period
       t.boolean :need_eletricity
@@ -14,7 +14,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.boolean :commercial_use_photos
       t.string :description
       t.string :other_informations
-      t.string :JBB_response_to_request
+      t.string :jbb_response_to_request
 
 
       # necessary information if the requester is a institute
