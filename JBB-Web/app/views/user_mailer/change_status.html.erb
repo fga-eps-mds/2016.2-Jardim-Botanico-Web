@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Olá, <%= @user.name %></h1>
+    <p>
+      <% if (@visitation.status <=> 'Aguardando confirmacao') == 0 %>
+      Uma visita foi criado em <%= @visitation.date %>
+      <% else %>
+       Sua visita do dia <%= @visitation.date %> teve o status alterado para: <%= @visitation.status %>
+      <% end %>
+    </p>
+    <p>
+      Para usar sua conta acesse esse link: <%= @url %>. <br>
+      Para contatar o JBB: (061) 3366-5597
+    </p>
+    <p>Atenciosamente, Jardim Botânico de Brasília.</p>
+  </body>
+</html>
+
