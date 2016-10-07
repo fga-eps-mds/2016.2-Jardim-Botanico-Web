@@ -51,7 +51,11 @@
           <div class= "actions" >
              <%= link_to 'Voltar', show_event_user_url, class: "btn btn-primary"  %>
           </div>
+
         <%end%>
+        <% if (@event.status <=> "Aguardando confirmacao") == 0 %>
+        <%= link_to "Cancelar Evento", class: "btn btn-warning destroy-btn", controller: "events", action: "cancel_event_user", id: @event %>
+        <% end %>
       </div>
     </div>
   </div>
