@@ -1,0 +1,12 @@
+Olá, <%= @user.name %>
+
+	<% if (@event.status <=> 'Aguardando confirmacao') == 0 %>
+	Uma visita foi criado em <%= @event.date %>
+	<% else %>
+	Sua visita do dia <%= @event.date %> teve o status alterado para: <%= @event.status %>
+  <% end %>
+
+  Para usar sua conta acesse esse link: <%= @url %>.
+  Para contatar o JBB: (061) 3366-5597
+
+	Atenciosamente, Jardim Botânico de Brasília.

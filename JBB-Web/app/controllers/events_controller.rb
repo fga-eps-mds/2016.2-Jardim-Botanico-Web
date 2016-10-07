@@ -11,6 +11,7 @@ class EventsController < ApplicationController
 		@event.user_id = current_user.id
     @event.set_status_default
 		if @event.save
+      UserMailer.change_status_event(@event).deliver_now
       flash[:success] = "Solicitação de evento efetuada com sucesso!"
 			redirect_to show_event_user_url, notice: "Evento criado"
 		else
@@ -35,6 +36,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.canceled_by_user
 		if @event.save
+      UserMailer.change_status_event(@event).deliver_now
        flash[:warning] = "Evento cancelada pelo usuário"
 			redirect_to show_event_user_url, notice: "Evento cancelado pelo usuário"
 		end
@@ -58,8 +60,9 @@ class EventsController < ApplicationController
     @event.refused_by_employee
     @event.jbb_response_to_request = (params[:jbb_response_to_request])
     if @event.save
-        flash[:success] = "Evento recusado"
-        redirect_to show_event_employee_url
+      UserMailer.change_status_event(@event).deliver_now
+      flash[:success] = "Evento recusado"
+      redirect_to show_event_employee_url
     else
         flash[:warning] = "Evento não pode ser recusado"
         redirect_to show_event_employee_url
@@ -72,8 +75,9 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.canceled_by_employee
     if @event.save
-         flash[:success] = "Evento cancelado"
-         redirect_to show_event_employee_url
+      UserMailer.change_status_event(@event).deliver_now
+      flash[:success] = "Evento cancelado"
+      redirect_to show_event_employee_url
      else
          flash[:warning] = "Evento não pode ser cancelado"
          redirect_to show_event_employee_url
@@ -87,8 +91,9 @@ class EventsController < ApplicationController
     @event.accepted_by_employee
     @event.jbb_response_to_request = (params[:jbb_response_to_request])
     if @event.save
-        flash[:success] = "Evento confirmado"
-        redirect_to show_event_employee_url
+      UserMailer.change_status_event(@event).deliver_now
+      flash[:success] = "Evento confirmado"
+      redirect_to show_event_employee_url
     else
         flash[:warning] = "Evento não pode ser confirmado"
         redirect_to show_event_employee_url
@@ -99,25 +104,14 @@ class EventsController < ApplicationController
   def delete_event_employee
     @event = Event.find(params[:id])
     if @event.destroy
-       flash[:success] = "Evento deletado"
-       redirect_to show_event_employee_url
+      UserMailer.change_status_event(@event).deliver_now
+      flash[:success] = "Evento deletado"
+      redirect_to show_event_employee_url
     else
        flash[:warning] = "Evento não pode ser deletado"
        redirect_to show_event_employee_url
     end
   end
-
-	# Metodo para filtrar os eventos de acordo com o status "Aguardando confirmacao"
-	def confirmations_request
-		#@event = Events.all
-		@event = @event.where(status: "Aguardando confirmação")
-	end
-
-	# Metodo para filtrar os eventos de acordo com o status "Confirmado"
-	def cancel_event
-		#@event = Events.all
-		@event = @event.where(status: "Confirmado")
-	end
 
 	private
 	def event_params
