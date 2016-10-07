@@ -51,7 +51,7 @@
 							<% end %>
 							<% if (event.status <=> "Cancelado por funcionario") == 0 ||
 								(event.status <=> "Cancelado pelo usuario") == 0 ||
-								(event.status <=> "Recuado por funcionario") == 0 %>
+								(event.status <=> "Recusado por funcionario") == 0 %>
 								<td> <%= link_to "Deletar Evento", controller: "events",
 									action: "delete_event_employee", id: event %> </td>
 								</tr>
