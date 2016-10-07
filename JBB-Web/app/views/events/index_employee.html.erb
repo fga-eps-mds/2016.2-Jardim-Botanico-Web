@@ -70,6 +70,9 @@
             <%=f.label :Resposta_da_Requisição%>
             <%=f.text_area :jbb_response_to_request, :cols => "50", :rows => "5", class: 'form-control'%>
           </div>
+          <div class="actions">
+            <%= f.submit "Cadastrar", class: "btn btn-primary"%>
+          </div>
         <%end%>
         <table border=0 class="table table-bordered" >
           <tr>
@@ -95,9 +98,11 @@
             <% if (@event.status <=> "Cancelado por funcionario") == 0 ||
                   (@event.status <=> "Cancelado pelo usuario") == 0 ||
                   (@event.status <=> "Recusado por funcionario") == 0 %>
-              <td> <%= link_to "Deletar Evento", controller: "events",
-              action: "delete_event_employee", id: @event %> </td>
-          <%end%>
+              <td>
+                <%= link_to "Deletar Evento", controller: "events",
+                action: "delete_event_employee", id: @event %>
+              </td>
+            <%end%>
         </table>
           <div class= "actions" >
              <%= link_to 'Voltar', show_event_employee_url, :required => true, class: "btn btn-primary"%>
