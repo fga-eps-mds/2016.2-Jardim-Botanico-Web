@@ -33,7 +33,11 @@ class Visitation < ApplicationRecord
 
   #status
 	def set_visitation_cost
-		self.visitation_cost = (self.visitants_paying * 5)
+    if (self.visitation_type <=> "Escola publica")
+      self.visitation_cost = 0
+    else
+      self.visitation_cost = (self.visitants_paying * 5)
+    end
 	end
 
 	def canceled_by_employee

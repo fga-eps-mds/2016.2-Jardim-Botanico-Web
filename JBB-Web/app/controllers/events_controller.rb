@@ -3,9 +3,7 @@ class EventsController < ApplicationController
   #user
   def new
 		@event = Event.new
-
 	end
-
 
 	def create
 		@event = Event.new(event_params)
@@ -20,11 +18,9 @@ class EventsController < ApplicationController
 		end
 	end
 
-
 	def show_user
     @event = Event.where(user_id: current_user.id)
   end
-
 
   #cancel_confirmation
   def cancel_event_user
@@ -37,7 +33,6 @@ class EventsController < ApplicationController
 		end
   end
 
-
   #employee
 
   def show
@@ -47,7 +42,6 @@ class EventsController < ApplicationController
 	def index
     @event = Event.find(params[:id])
   end
-
 
   #refuse_confirmation
   def refuse_event_employee
@@ -62,7 +56,6 @@ class EventsController < ApplicationController
     end
   end
 
-
   #cancel_confirmation
   def cancel_event_employee
     @event = Event.find(params[:id])
@@ -75,7 +68,6 @@ class EventsController < ApplicationController
          redirect_to show_event_url
     end
   end
-
 
   #acceptd_event
   def accept_event_employee
