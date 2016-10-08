@@ -8,10 +8,10 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.string :jbb_space_requested
       t.integer :estimated_public
       t.integer :rental_period
-      t.boolean :need_eletricity
-      t.boolean :need_water
-      t.boolean :need_clean_service
-      t.boolean :commercial_use_photos
+      t.string :need_eletricity
+      t.string :need_water
+      t.string :need_clean_service
+      t.string :commercial_use_photos
       t.string :description
       t.string :other_informations
       t.string :jbb_response_to_request

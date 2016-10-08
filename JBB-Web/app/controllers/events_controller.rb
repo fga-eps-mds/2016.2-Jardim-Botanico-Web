@@ -89,7 +89,6 @@ class EventsController < ApplicationController
   def accept_event_employee
     @event = Event.find(params[:id])
     @event.accepted_by_employee
-    @event.jbb_response_to_request = (params[:jbb_response_to_request])
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
       flash[:success] = "Evento confirmado"
