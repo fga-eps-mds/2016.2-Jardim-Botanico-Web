@@ -15,8 +15,6 @@ RSpec.describe User, :type => :model do
 
     describe "email" do
       it "must be given" do
-        subject["email"] = nil
-        expect(User.new(subject)).not_to be_valid
         subject["email"] = "meuemail"
         expect(User.new(subject)).not_to be_valid
       end
@@ -36,13 +34,12 @@ RSpec.describe User, :type => :model do
       end
     end
 
-
-    describe "gender" do
-      it "must be given" do
-        subject["gender"] = nil
-        expect(User.new(subject)).not_to be_valid
-      end
-    end
+     describe "gender" do
+       it "must be given" do
+         subject["gender"] = 'nil'
+         expect(User.new(subject)).not_to be_valid
+       end
+     end
 
     # describe "birth" do
     #   it "must be given" do
@@ -52,5 +49,4 @@ RSpec.describe User, :type => :model do
     # end
 
   end
-
 end
