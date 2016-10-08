@@ -24,6 +24,7 @@
 						<th> Hora </td>
 						<th> Status </th>
 						<th> Quantidade de Visitantes </th>
+                        <th> Quantidade de Pagantes </th>
 						<th> Descrição </th>
 						</tr>
 						<% @visitations_sorted.each do |visitation| %>
@@ -33,6 +34,7 @@
 							<td> <%= timeString[11..18] %> </td>
 							<td> <%= visitation.status %> </td>
 							<td> <%= visitation.visitants_amount %> </td>
+                            <td> <%= visitation.visitants_paying %> </td>
 							<td> <%= visitation.description %> </td>
 							<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
 
