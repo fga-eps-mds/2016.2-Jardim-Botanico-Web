@@ -36,7 +36,7 @@
 						<td> <%= visitation.status %> </td>
 						<td> <%= visitation.visitants_amount %> </td>
                         <td> <%= visitation.visitants_paying %> </td>
-                        <td> <%= visitation.visitation_cost %> </td>
+                        <td> <%= visitation.visitants_paying * 5 %> </td>
 						<td> <%= visitation.description %> </td>
 						<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
 						<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
