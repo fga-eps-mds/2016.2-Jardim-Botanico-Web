@@ -32,7 +32,7 @@ class Visitation < ApplicationRecord
 	end
 
   #status
-	def set_visitaion_cost
+	def set_visitation_cost
 		self.visitation_cost = (self.visitants_paying * 5)
 	end
 

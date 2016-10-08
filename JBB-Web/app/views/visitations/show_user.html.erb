@@ -17,7 +17,7 @@
 	    <% end %>
 			<div class="col-md-10 col-md-offset-1">
 				<div class="table-hover">
-					<table border=1 class="table table-bordered" >
+					<table border=0 class="table" >
 						<br /> <br />
 						<tr>
 						<th> Data </th>
@@ -36,7 +36,7 @@
 						<td> <%= visitation.status %> </td>
 						<td> <%= visitation.visitants_amount %> </td>
                         <td> <%= visitation.visitants_paying %> </td>
-                        <td> <%= visitation.visitants_paying * 5 %> </td>
+                        <td> <%= visitation.visitation_cost %> </td>
 						<td> <%= visitation.description %> </td>
 						<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
 						<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>

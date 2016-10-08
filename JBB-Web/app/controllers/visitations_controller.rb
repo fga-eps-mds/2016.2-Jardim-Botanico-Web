@@ -15,6 +15,7 @@ class VisitationsController < ApplicationController
   	@visitation = Visitation.new(visitation_params)
 		@visitation.user_id = current_user.id
   	@visitation.set_status_default
+    @visitation.set_visitation_cost
       if @visitation.save
         flash[:success] = "Solicitação de visita efetuada com sucesso!"
   			redirect_to show_visitation_user_url, notice: "Visitação criada"
@@ -105,6 +106,6 @@ class VisitationsController < ApplicationController
   private
   def visitation_params
     params.require(:visitation).permit(:date, :time, :status, :visitants_amount,:visitation_type, :groups_age,
-                                        :objective, :spaces, :has_guide, :description, :visitants_paying)
+                                        :objective, :spaces, :has_guide, :description, :visitants_paying, :visitation_cost)
   end
 end
