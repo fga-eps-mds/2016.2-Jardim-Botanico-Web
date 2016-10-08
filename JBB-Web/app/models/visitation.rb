@@ -31,6 +31,11 @@ class Visitation < ApplicationRecord
 		self.status = "Aguardando confirmacao"
 	end
 
+  #status
+	def set_visitaion_cost
+		self.visitation_cost = (self.visitants_paying * 5)
+	end
+
 	def canceled_by_employee
 		self.status = "Cancelado por funcionario"
 	end

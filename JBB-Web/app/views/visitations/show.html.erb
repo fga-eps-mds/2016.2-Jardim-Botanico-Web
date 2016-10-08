@@ -25,6 +25,7 @@
 						<th> Status </th>
 						<th> Quantidade de Visitantes </th>
                         <th> Quantidade de Pagantes </th>
+                        <th> Preço da Visita </th>
 						<th> Descrição </th>
 						</tr>
 						<% @visitations_sorted.each do |visitation| %>
@@ -35,6 +36,7 @@
 							<td> <%= visitation.status %> </td>
 							<td> <%= visitation.visitants_amount %> </td>
                             <td> <%= visitation.visitants_paying %> </td>
+                            <td> <%= visitation.visitation_cost %> </td>
 							<td> <%= visitation.description %> </td>
 							<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
 
