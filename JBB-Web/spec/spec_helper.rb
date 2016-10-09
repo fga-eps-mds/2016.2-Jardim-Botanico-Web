@@ -24,6 +24,9 @@ SimpleCov.start do
   SimpleCov.maximum_coverage_drop 5
   SimpleCov.minimum_coverage 30
 end
+require 'email_spec'
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
+  config.include(EmailSpec::Helpers)
+  config.include(EmailSpec::Matchers)
 end

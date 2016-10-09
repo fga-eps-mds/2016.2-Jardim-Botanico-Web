@@ -18,8 +18,9 @@ class VisitationsController < ApplicationController
 		@visitation.user_id = current_user.id
   	@visitation.set_status_default
       if @visitation.save
+        UserMailer.change_status(@visitation).deliver_now
         flash[:success] = "Solicitação de visita efetuada com sucesso!"
-  			redirect_to show_visitation_user_url, notice: "Visitação criada"
+  			redirect_to show_visitation_user_url
   		else
         flash[:warning] = "Solicitação não efetuada"
   			render action: :new
@@ -30,8 +31,9 @@ class VisitationsController < ApplicationController
     @visitation = Visitation.find(params[:id])
     @visitation.canceled_by_user
     if @visitation.save
+      UserMailer.change_status(@visitation).deliver_now
       flash[:warning] = "Visitação cancelada pelo usuário"
-      redirect_to show_visitation_user_url, notice: "Visitação cancelada pelo usuário"
+      redirect_to show_visitation_user_url
     end
   end
 
@@ -61,6 +63,7 @@ class VisitationsController < ApplicationController
     @visitation = Visitation.find(params[:id])
     @visitation.refused_by_employee
     if @visitation.save
+        UserMailer.change_status(@visitation).deliver_now
         flash[:success] = "Visitação recusada"
         redirect_to show_visitation_url
     else
@@ -75,6 +78,7 @@ class VisitationsController < ApplicationController
     @visitation = Visitation.find(params[:id])
     @visitation.canceled_by_employee
     if @visitation.save
+      UserMailer.change_status(@visitation).deliver_now
       flash[:success] = "Visitação cancelada"
       redirect_to show_visitation_url
     else
@@ -100,6 +104,7 @@ class VisitationsController < ApplicationController
     @visitation = Visitation.find(params[:id])
     @visitation.accepted_by_employee
     if @visitation.save
+         UserMailer.change_status(@visitation).deliver_now
          flash[:success] = "Visitação confirmada"
          redirect_to show_visitation_url
     else

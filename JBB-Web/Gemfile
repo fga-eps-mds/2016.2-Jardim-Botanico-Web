@@ -43,6 +43,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'factory_girl_rails'
   gem 'simplecov'
+  gem 'email_spec'
 end
 
 group :development do
@@ -62,3 +63,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Email
+gem 'actionpack'
+gem 'actionview'
+gem 'activejob'
+gem 'mail'
+gem 'rails-dom-testing'

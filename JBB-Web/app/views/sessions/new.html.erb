@@ -17,6 +17,9 @@
         <%= f.label :senha %><br />
         <%= f.password_field :password, autocomplete: "off", :required => true, class: "form-control" %>
         </div>
+         <div class="checkbox">
+          <label><input type="checkbox">Lembrar-me</label>
+        </div>
         <br>
         <div class="actions">
          <%= f.submit "Entrar", class: "btn btn-primary" %>

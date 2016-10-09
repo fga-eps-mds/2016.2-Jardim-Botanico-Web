@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  #mailer
+  get '/user_mailers/welcome'
+  post '/user_mailers/welcome'
+
   #users
   resources :users
   get '/users/new' => 'users#new'

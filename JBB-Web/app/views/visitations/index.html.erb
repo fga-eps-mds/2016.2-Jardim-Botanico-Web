@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<body>
   <br><br>
   <div class="col-md-6 col-md-offset-3">
     <div class="container">
@@ -15,7 +15,7 @@
         <br>
         <div class = "actions" >
           <b>Dia:</b>
-           <%= @visitation.date %>
+          <%= @visitation.date %>
         </div>
         <br>
         <div class = "actions" >
@@ -40,15 +40,15 @@
 
         <br> <p>
         <% if (current_user.is_employee)%>
-          <div class= "actions" >
-             <%= link_to 'Voltar', show_visitation_url, class: "btn btn-primary"  %>
-          </div>
-        <%else%>
-          <div class= "actions" >
-             <%= link_to 'Voltar', show_visitation_user_url, class: "btn btn-primary"  %>
-          </div>
-        <%end%>
-      </div>
-    </div>
-  </div>
+        <div class= "actions" >
+         <%= link_to 'Voltar', show_visitation_url, class: "btn btn-primary"  %>
+       </div>
+       <%else%>
+       <div class= "actions" >
+         <%= link_to 'Voltar', show_visitation_user_url, class: "btn btn-primary"  %>
+       </div>
+       <%end%>
+     </div>
+   </div>
+ </div>
 </body>

@@ -14,6 +14,8 @@ Para contribuir com o projeto você deve fazer o download dos seguintes arquivos
 >
 > ***install-rvm.sh***
 >
+> ***install-postgresql.sh***
+>
 > ***Vagrantfile***
 
 
