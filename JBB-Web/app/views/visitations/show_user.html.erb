@@ -1,17 +1,45 @@
-<body id="page-top">
-	<br>
-	<br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link href="css/creative.min.css" rel="stylesheet">
+    <!-- Awesome Icons   -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body id="aplication-body">
+  <section id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Minhas visitações</h2>
+          <hr class="primary">
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
 	<div class="col-md-6 col-md-offset-3">
-		<div class="container">
-			<div class="row">
-				<h1>Mostrar Visitações</h1>
-			</div>
-		</div>
 	</div>
-	<div class="col-md-6 col-md-offset-3">
-	</div>
-
 	<div class="container-fluid">
 		<div class="row">
 		<div class="col-md-10 col-md-offset-1">
@@ -19,10 +47,10 @@
 	      <div class="alert alert-<%= key %>"><%= value %></div>
 	    <% end %>
 			<div class="col-md-10 col-md-offset-1">
-				<div class="table-hover">
-					<table border=1 class="table table-bordered" >
+                <% if !@visitation.empty?%>
+                <div class="table-hover">
+					<table border=0 class="table" >
 						<br /> <br />
-
 						<tr>
 						<th> Data </th>
 						<th> Hora </td>
@@ -30,24 +58,29 @@
 						<th> Nº de Visitantes </th>
 						<th> Descrição </th>
 						</tr>
-
-
 						<% @visitation.each do |visitation| %>
-							<tr>
-							<td> <%= visitation.date %> </td>
-							<% timeString = visitation.time.to_s %>
-							<td> <%= timeString[11..18] %> </td>
-							<td> <%= visitation.status %> </td>
-							<td> <%= visitation.visitants_amount %> </td>
-							<td> <%= visitation.description %> </td>
-							<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
-							<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
-							<td> <%= link_to "Cancelar Visitação", controller: "visitations",
-																action: "cancel_visitation_user", id: visitation %> </td>
-							<% end %>
+						<tr>
+						<td> <%= visitation.date %> </td>
+						<% timeString = visitation.time.to_s %>
+						<td> <%= timeString[11..18] %> </td>
+						<td> <%= visitation.status %> </td>
+						<td> <%= visitation.visitants_amount %> </td>
+						<td> <%= visitation.description %> </td>
+						<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
+						<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
+						<td> <%= link_to "Cancelar Visitação", controller: "visitations",
+															action: "cancel_visitation_user", id: visitation %> </td>
+						<% end %>
 						<% end %>
 					</table>
 				</div>
+                <% else %>
+                <div class="container">
+                    <div class="row">
+                        <h1>Você não tem visitas agendadas</h1>
+                    </div>
+                </div>
+                <% end%>
 				<br>
 				<p>
 				<%= link_to "Voltar", home_url, class: "btn btn-primary" %>

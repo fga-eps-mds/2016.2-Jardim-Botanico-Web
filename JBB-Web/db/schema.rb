@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160917142511) do
+ActiveRecord::Schema.define(version: 20161008181353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 20160917142511) do
     t.index ["user_id"], name: "index_phones_on_user_id", using: :btree
   end
 
+  create_table "trails", force: :cascade do |t|
+    t.string   "trail_name"
+    t.float    "length"
+    t.string   "locomotion"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "name"
@@ -47,6 +56,7 @@ ActiveRecord::Schema.define(version: 20160917142511) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "user_type"
     t.index ["cpf"], name: "index_users_on_cpf", using: :btree
     t.index ["email"], name: "index_users_on_email", using: :btree
     t.index ["name"], name: "index_users_on_name", using: :btree
@@ -59,8 +69,17 @@ ActiveRecord::Schema.define(version: 20160917142511) do
     t.time     "time"
     t.integer  "visitants_amount"
     t.string   "description"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "visitation_type"
+    t.string   "add_groups_age_to_visitations"
+    t.integer  "groups_age"
+    t.string   "add_objective_to_visitations"
+    t.string   "objective"
+    t.string   "add_spaces_to_visitations"
+    t.string   "spaces"
+    t.string   "add_has_guide_to_visitations"
+    t.boolean  "has_guide"
     t.index ["status"], name: "index_visitations_on_status", using: :btree
     t.index ["user_id"], name: "index_visitations_on_user_id", using: :btree
   end

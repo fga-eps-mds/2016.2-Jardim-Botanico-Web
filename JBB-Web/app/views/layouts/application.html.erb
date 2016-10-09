@@ -6,7 +6,6 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class ="container-fluid">
       <div class="navbar-header">
@@ -15,12 +14,14 @@
         </button>
         <a class="navbar-brand page-scroll" href="/"><font color = "black">Jardim Botânico Web</font></a>
       </div>
-
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
           <li>
             <a class="page-scroll" href="/users/<%= current_user.id %>"><font color = "black"> Olá <%= current_user.name %></font></a>
+          </li>
+          <li>
+            <a class="page-scroll"  href="/users/my_requests/<%= current_user.id %>"><font color = "black"> Minhas requisições </font></a>
           </li>
           <% end %>
           <% if ! current_user %>
@@ -37,19 +38,11 @@
             <a class="page-scroll" href="/users/new"><font color = "black">Cadastre-se</font></a>
           </li>
           <% end %>
-          <!-- <li>
-            <a class="page-scroll" href="#trails"><font color = "black">Trilhas</font></a>
-          </li> -->
-          <!-- <li>
-            <a class="page-scroll" href="#about"><font color = "black">Sobre</font></a>
-          </li> -->
         </ul>
       </div>
     </div>
   </nav>
-
   <body id="aplication-body">
-
   	<%= render 'layouts/header' %>
     <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>

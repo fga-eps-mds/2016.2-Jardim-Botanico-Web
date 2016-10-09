@@ -1,16 +1,16 @@
 class Visitation < ApplicationRecord
 	belongs_to :user
-	
+
 	# validation of date
 	validates :date, presence: true
-		
-	
+
+
 
 
 	# validation of time
-	validates :time, presence: true	
-	
-	
+	validates :time, presence: true
+
+
 
 	#validation of visitants_amout
 	validates :visitants_amount, presence: true
@@ -30,7 +30,7 @@ class Visitation < ApplicationRecord
 	#status
 	def set_status_default
 		self.status = "Aguardando confirmacao"
-	end	
+	end
 
 	def canceled_by_employee
 		self.status = "Cancelado por funcionario"

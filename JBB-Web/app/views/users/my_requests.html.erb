@@ -30,7 +30,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Meus eventos</h2>
+          <h2 class="section-heading">Minhas requisições</h2>
           <hr class="primary">
         </div>
       </div>
@@ -38,54 +38,47 @@
     <br>
     <br>
     <br>
-	<div class="col-md-6 col-md-offset-3">
-	</div>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<% flash.each do |key, value| %>
-				<div class="alert alert-<%= key %>"><%= value %></div>
-				<% end %>
-                <% if !@event.empty?%>
-				<div class="table-hover">
-					<table border=1 class="table table-bordered" >
-						<br /> <br />
-						<tr>
-						<th>Nome do Evento</th>
-						<th>Data</th>
-						<th>Hora</td>
-						<th>Status</th>
-						<th>Quantidade de Eventos</th>
-						<th>Descrição</th>
-						</tr>
-						<% @event.each do |event| %>
-						<tr>
-						<td> <%= event.name %> </td>
-						<td> <%= event.date %> </td>
-						<% timeString = event.time.to_s %>
-						<td> <%= timeString[11..18] %> </td>
-						<td> <%= event.status %> </td>
-						<td> <%= event.people_amount %> </td>
-						<td> <%= event.description %> </td>
-						<td> <%= link_to 'Mostrar', action: 'index', id: event.id %> </td>
-						<% if (event.status <=> "Aguardando confirmacao") == 0 %>
-						<td> <%= link_to "Cancelar Evento", controller: "events",
-						action: "cancel_event_user", id: event %></td>
-						<% end %>
-						<% end %>
-					</table>
-				</div>
-                <% else %>
-                <div class="container">
-                    <div class="row">
-                        <h1>Você não tem eventos agendadas</h1>
-                    </div>
-                </div>
-                <% end%>
-				<br>
-				<p>
-				<%= link_to "Voltar", home_url, class: "btn btn-primary" %>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+      <div class="row">
+        <div class="c   ol-lg-3 col-md-6 text-center">
+          <div class="service-box">
+                <% if current_user.is_employee %>
+                    <a href="/visitations/show">
+                  <% else %>
+                    <a href="/visitations/show_user">
+                  <% end%>
+            <i class="fa fa-4x fa-map-marker text-primary sr-icons"></i>
+            <% if current_user %>
+             <% if current_user.is_employee %>
+             <h3>Gerencie visitas</h3>
+            <p class="text-muted">Gerencie visitas agendadas.</p>
+             <% else %>
+            <h3>Gerencie visitas</h3>
+            <p class="text-muted">Visualize e edite suas visitas facilmente</p>
+            <% end%>
+          </div>
+        </div>
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="service-box">
+                <% if current_user.is_employee %>
+                    <a href="/events/show">
+                  <% else %>
+                    <a href="/events/show_user">
+                  <% end%>
+          <i class="fa fa-4x fa-users text-primary sr-icons"></i>
+          <% if current_user %>
+             <% if current_user.is_employee %>
+             <h3>Gerencie eventos</h3>
+            <p class="text-muted">Gerencie eventos agendados.</p>
+             <% else %>
+            <h3>Gerencie seus eventos</h3>
+            <p class="text-muted">Visualize e edite seus eventos facilmente</p>
+            <% end%>
+            <% end%>
+        </div>
+      </div>
+      <% end %>
+</section>
+
 </body>
+</html>

@@ -11,6 +11,37 @@ RSpec.describe Visitation, :type => :model do
 
   it { expect(@visitation).to be_valid }
 
+  describe "set_status_default" do
+
+  it{ expect("Aguardando confirmacao") }
+
+  end
+
+  describe "canceled_by_employee" do
+
+  it{ expect("Cancelado por funcionario") }
+
+  end
+
+  describe "canceled_by_user" do
+
+  it{ expect("Cancelado pelo usuario") }
+
+  end
+
+  describe "refused_by_employee" do
+
+  it{ expect("Recusado por funcionario") }
+
+  end
+
+  describe "accepted_by_employee" do
+
+  it{ expect("Agendado") }
+
+  end
+
+
   describe "attribute" do
 
     subject {FactoryGirl.attributes_for(:visitation) }

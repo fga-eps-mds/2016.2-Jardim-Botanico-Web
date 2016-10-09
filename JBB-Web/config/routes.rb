@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post '/users/new' => 'users#create', :as => 'create_user'
   get '/users/:id' => 'users#show', :as => 'user_show'
   get '/users/edit/:id' => 'users#edit', :as => 'user_edit'
+  get '/users/my_requests/:id' => 'users#my_requests', :as =>'user_my_requests'
+
 
   patch '/users/update/', controller: 'users', action: 'update', :as => 'update_user'
   patch '/users/update/:id', controller: 'users', action: 'update_password', :as => 'update_user_password'

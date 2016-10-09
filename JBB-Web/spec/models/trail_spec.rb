@@ -6,7 +6,7 @@ RSpec.describe Trail, :type => :model do
     @trail = FactoryGirl.create(:trail)
   end
 
-  it { expect(@trail).to respond_to(:name, :length, :locomotion, :description) }
+  it { expect(@trail).to respond_to(:trail_name, :length, :locomotion, :description) }
 
   it { expect(@trail).to be_valid }
 
@@ -15,11 +15,11 @@ RSpec.describe Trail, :type => :model do
 
     subject {FactoryGirl.attributes_for(:trail) }
 
-    describe "name" do
+    describe "trail_name" do
       it "must be given" do
-        subject["name"] = ""
+        subject["trail_name"] = ""
         expect(Trail.new(subject)).not_to be_valid
-        subject["name"] = "A"
+        subject["trail_name"] = "A"
         expect(Trail.new(subject)).not_to be_valid
       end
     end

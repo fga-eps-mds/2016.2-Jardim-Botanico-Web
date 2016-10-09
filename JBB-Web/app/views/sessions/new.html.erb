@@ -1,9 +1,5 @@
 <body id="page-top">
-
-	<br>
-	<br>
-  <br>
-
+  <br><br><br>
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
@@ -15,20 +11,20 @@
         <div class="field">
          <%= f.label :email %><br />
          <%= f.email_field :email, autofocus: true, :required => true, class: "form-control" %>
-       </div>
-       <br>
-       <div class="field">
-         <%= f.label :senha %><br />
-         <%= f.password_field :password, autocomplete: "off", :required => true, class: "form-control" %>
-       </div>
-       <br>
-       <div class="actions">
+        </div>
+        <br>
+        <div class="field">
+        <%= f.label :senha %><br />
+        <%= f.password_field :password, autocomplete: "off", :required => true, class: "form-control" %>
+        </div>
+        <br>
+        <div class="actions">
          <%= f.submit "Entrar", class: "btn btn-primary" %>
-       </div>
-       <br>
-       <p>Novo Usuário? <%= link_to "Cadastre-se agora", new_user_path %></p>
-         <% end %>
-       </div>
-     </div>
-   </div>
- </body>
+        </div>
+        <br>
+        <p>Novo Usuário? <%= link_to "Cadastre-se agora", new_user_path %></p>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</body>
