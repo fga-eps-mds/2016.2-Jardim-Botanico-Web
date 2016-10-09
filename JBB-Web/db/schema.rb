@@ -17,12 +17,13 @@ ActiveRecord::Schema.define(version: 20161005111835) do
 
   create_table "events", force: :cascade do |t|
     t.integer  "user_id"
-    t.date     "date"
-    t.time     "time"
+    t.date     "date_start"
+    t.date     "date_end"
+    t.time     "time_start"
+    t.time     "time_end"
     t.string   "status"
     t.string   "jbb_space_requested"
     t.integer  "estimated_public"
-    t.integer  "rental_period"
     t.string   "need_eletricity"
     t.string   "need_water"
     t.string   "need_clean_service"
