@@ -13,130 +13,109 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
+        <b>Data e hora de início</b>
+        <div class = "actions">
+          <b>Dia: </b>
+           <%= @event.date_start%>
+        </div>
+        <div class = "actions">
+          <b>Hora: </b>
+          <%= @event.time_start %>
+        </div>
         <br>
-        <table border = '0' >
-          <tr>
-            <td>
-              <div class = "actions">
-                <b>Dia:</b>
-                &nbsp
-                 <%= @event.date %>
-              </div>
-            </td>
-            <td>
-
-              <div class = "actions">
-                &nbsp&nbsp&nbsp&nbsp
-                <b>Hora:</b>
-                <%= @event.time %>
-              </div>
-            </td>
-            <td>
-              <div class = "actions" >
-                &nbsp&nbsp&nbsp&nbsp
-                <b>Periodo de Aluguel:</b>
-                <%= @event.rental_period%>
-              </div>
-            </td>
-            <td>
-              <div class = "actions">
-                &nbsp&nbsp&nbsp&nbsp
-                <b>Status:</b>
-                <%= @event.status %>
-              </div>
-            </td>
-          </tr>
-        </table>
+        <b>Data e hora de fim</b>
+        <div class = "actions">
+          <b>Dia:</b>
+           <%= @event.date_end%>
+        </div>
+        <div class = "actions">
+          <b>Hora:</b>
+          <%= @event.time_end %>
+        </div>
         <br>
-        <table>
-          <tr>
-            <td>
-              <div class = "actions" >
-                <b>Espaço Solicitado:</b>
-                <%= @event.jbb_space_requested%>
-              </div>
-            </td>
-            <td>
-              <div class = "actions" >
-                &nbsp&nbsp&nbsp&nbsp
-                <b>Publico Estimado:</b>
-                <%= @event.estimated_public%>
-              </div>
-            </td>
-            <td>
-              <div class = "actions" >
-                &nbsp&nbsp&nbsp&nbsp
-                <b>Uso Comercial de Imagem:</b>
-                <%= @event.commercial_use_photos%>
-              </div>
-            </td>
-          </tr>
-        </table>
+        <div class = "actions">
+          <b>Status:</b>
+          <%= @event.status %>
+        </div>
         <br>
-        <div class= "actions" >
+        <div class = "actions" >
+          <b>Espaço solicitado:</b>
+          <%= @event.jbb_space_requested%>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Publico estimado:</b>
+          <%= @event.estimated_public%>
+        </div>
+        <br>
+        <div class= "actions spacing" >
           <b>Descrição:</b>
           <%= @event.description %>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Espaço solicitado:</b>
+          <%= @event.jbb_space_requested%>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Publico estimado:</b>
+          <%= @event.estimated_public%>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Uso Comercial de imagem:</b>
+          <%= @event.commercial_use_photos%>
         </div>
         <br>
         <table>
           <tr>
             <td>
-              <div class= "actions" >
-                <b>Uso de Eletricidade?</b>
-                <%= @event.need_eletricity %>
+              <div class = "actions" >
+                <b>Precisa de energia elétrica?</b>
+                <%= @event.need_eletricity%>
               </div>
             </td>
             <td>
-              <div class= "actions" >
+              <div class = "actions" >
                 &nbsp&nbsp&nbsp&nbsp
-                <b>Ponto de Água?</b>
-                <%= @event.need_water %>
+                <b>Precisa de água?</b>
+                <%= @event.need_water%>
               </div>
             </td>
             <td>
-              <div class= "actions" >
+              <div class = "actions" >
                 &nbsp&nbsp&nbsp&nbsp
-                <b>Serviços de Limpeza?</b>
-                <%= @event.need_clean_service %>
+                <b>Precisa de servico de limpeza?</b>
+                <%= @event.need_clean_service%>
               </div>
             </td>
           </tr>
         </table>
-        <table width=200 height=100>
-          <tr>
-            <div class= "actions" >
-              <b>Outras Informações:</b>
-              <%= @event.other_informations %>
-            </div>
-          </tr>
-        </table>
+        <br>
+        <div class= "actions sp" >
+          <b>Outras informações:</b>
+          <%= @event.other_informations %>
+        </div>
         <br>
-        <p>Detalhes da Escola:</p>
-        <table>
-          <tr>
-            <td>
-              <div class= "actions" >
-                &nbsp&nbsp&nbsp&nbsp
-                <b>Nome:</b>
-                <%= @event.name_institute %>
-              </div>
-            </td>
-            <td>
-              <div class= "actions" >
-                &nbsp&nbsp&nbsp&nbsp
-                <b>Endereço:</b>
-                <%= @event.institute_address %>
-              </div>
-            </td>
-             <td>
-              <div class= "actions" >
-                &nbsp&nbsp&nbsp&nbsp
-                <b>CNPJ:</b>
-                <%= @event.institute_cnpj %>
-              </div>
-            </td>
-          </tr>
-        </table>
+        <div class= "actions spacing" >
+          <b>Uso comercial de imagens:</b>
+          <%= @event.commercial_use_photos %>
+        </div>
+        <br>
+        <div class= "actions spacing" >
+          <b>Nome da instituição:</b>
+          <%= @event.name_institute %>
+        </div>
+        <div class= "actions spacing" >
+          <b>Endereço da instituição:</b>
+          <%= @event.institute_address %>
+        </div>
+        <div class= "actions spacing" >
+          <b>CNPJ da instituição:</b>
+          <%= @event.institute_cnpj %>
+        </div>
+        <br>
         <br>
         <%flash.each do |key, value|%>
           <div class="alert alert-<%= key %>"><%= value %></div>
@@ -158,25 +137,26 @@
             <%=f.label :Resposta_da_Requisição%>
             <%=f.text_area :jbb_response_to_request, :cols => "50", :rows => "5", class: 'form-control'%>
           </div>
+
           <div class="actions">
             <table border=0>
               <tr>
                 <% if (@event.status <=> "Aguardando analise") == 0 %>
                   <td>
-                    <%= f.submit "Aceitar Evento", controller: "events",
-                    action: "accept_event_employee", id: @event, class: "btn btn-primary"%>
+                    <%= link_to "Aceitar Evento", controller: "events",
+                    action: "accept_event_employee", id: @event%>
                   </td>
                 <%end%>
                 <%if (@event.status <=> "Aguardando analise") == 0 %>
                   <td>
-                    <%= f.submit "Recusar Evento", controller: "events",
-                    action: "refuse_event_employee", id: @event, class: "btn btn-primary" %>
+                    <%= link_to "Recusar Evento", controller: "events",
+                    action: "refuse_event_employee", id: @event%>
                   </td>
                 <%end%>
                 <%if (@event.status <=> "Agendado") == 0%>
                   <td>
                     <%= link_to "Cancelar Evento", controller: "events",
-                    action: "cancel_event_employee", id: @event, class: "btn btn-primary" %>
+                    action: "cancel_event_employee", id: @event%>
                   </td>
                 <%end%>
               </tr>
