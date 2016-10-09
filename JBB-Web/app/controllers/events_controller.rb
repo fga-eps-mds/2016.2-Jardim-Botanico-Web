@@ -20,6 +20,10 @@ class EventsController < ApplicationController
 		end
 	end
 
+  def edit
+    @event = Event.find(params[:id])
+  end
+
 
   def show_user
     @event = Event.where(user_id: current_user.id)
@@ -89,6 +93,7 @@ class EventsController < ApplicationController
   def accept_event_employee
     @event = Event.find(params[:id])
     @event.accepted_by_employee
+    @event.jbb_response_to_request = (params[:jbb_response_to_request])
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
       flash[:success] = "Evento confirmado"
@@ -114,8 +119,9 @@ class EventsController < ApplicationController
 
 	private
 	def event_params
-		params.require(:event).permit(:name, :date, :time, :status, :description, :rental_period, :need_eletricity, :need_water, :need_clean_service, 
-                                  :people_amount, :jbb_space_requested, :estimated_public, :commercial_use_photos, :other_informations, :jbb_response_to_request)
+		params.require(:event).permit(:name, :date_start, :date_end, :time_start,:time_end, :status, :description, :need_eletricity, :need_water, :need_clean_service, 
+                                  :people_amount, :jbb_space_requested, :estimated_public, :commercial_use_photos, :other_informations, :jbb_response_to_request
+                                  :name_institute, :institute_address, :institute_cnpj)
 	end
 
 end
