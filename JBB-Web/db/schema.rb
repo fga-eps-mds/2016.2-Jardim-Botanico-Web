@@ -17,14 +17,24 @@ ActiveRecord::Schema.define(version: 20161008181353) do
 
   create_table "events", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "status"
     t.date     "date"
     t.time     "time"
-    t.string   "name"
+    t.string   "status"
+    t.string   "jbb_space_requested"
+    t.integer  "estimated_public"
+    t.integer  "rental_period"
+    t.boolean  "need_eletricity"
+    t.boolean  "need_water"
+    t.boolean  "need_clean_service"
+    t.boolean  "commercial_use_photos"
     t.string   "description"
-    t.integer  "people_amount"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "other_informations"
+    t.string   "jbb_response_to_request"
+    t.string   "name_institute"
+    t.string   "institute_address"
+    t.string   "institute_cnpj"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.index ["status"], name: "index_events_on_status", using: :btree
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
