@@ -1,24 +1,32 @@
 class Event < ApplicationRecord
 	belongs_to :user
 
-	#validate of name
-	validates :name, presence: true
-
 	# validation of date
 	validates :date, presence: true
 
-	#validation of time
-	validates :time, presence: true	
+	# validation of times
+	validates :time, presence: true
 
-	# status
-	#validate :set_status_as_default
-	#status
+	# validation of description
+	validates :description, presence: true, length: { minimum: 5, maximum: 500 }
+
+	# validation of estimated_public
+	validates :estimated_public, presence: true, numericality: { greater_than: 0 }
+
+
+
+
+
 	def set_status_default
-		self.status = "Aguardando confirmacao"
-	end	
+    self.status = "Aguardando analise"
+	end
 
 	def canceled_by_employee
 		self.status = "Cancelado por funcionario"
+	end
+
+	def awaiting_user_confirmation
+    self.status = "Aguardando confirmacao do usuario"
 	end
 
 	def canceled_by_user
@@ -33,10 +41,7 @@ class Event < ApplicationRecord
 		self.status = "Agendado"
 	end
 
-	# validation of description
-	validates :description, presence: true, length: { minimum: 5, maximum: 300 }
+	
 
-	# validation of people_amount
-	validates :people_amount, presence: true, numericality: { greater_than: 0 }
 
 end

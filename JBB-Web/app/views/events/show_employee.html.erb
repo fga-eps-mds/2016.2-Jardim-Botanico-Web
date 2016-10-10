@@ -1,5 +1,6 @@
 <body id="page-top">
-	<br><br><br>
+	<br><br>
+	<div class="col-md-6 col-md-offset-3">
 		<div class="container">
 			<div class="row">
 				<h1>Mostrar Eventos</h1>
@@ -14,19 +15,19 @@
 				<% flash.each do |key, value| %>
 				<div class="alert alert-<%= key %>"><%= value %></div>
 				<% end %>
-					<div class="table-hover">
-						<table border=1 class="table table-bordered" >
-							<br> <br>
-							<tr>
-								<th>Data</th>
+				<div class="table-hover">
+					<table border=1 class="table table-bordered" >
+						<br /> <br />
+						<tr>
+							<th>Data</th>
 								<th>Hora</th>
 								<th>Status</th>
 								<th>Periodo de Aluguel</th>
 								<th>Espaço Solicitado</th>
 								<th>quantidade de Pessoas</th>
 								<th>Descrição</th>
-							</tr>
-							<% @event.each do |event| %>
+						</tr>
+						<% @event.each do |event| %>
 							<tr>
 								<td> <%= event.date %> </td>
 								<% timeString = event.time.to_s %>
@@ -36,19 +37,12 @@
 								<td> <%= event.jbb_space_requested %> </td>
 								<td> <%= event.estimated_public %> </td>
 								<td> <%= event.description %> </td>
-								<td><%= link_to 'Mostrar', action: 'index_user', id: event.id %></td>
-								<% if (event.status <=> "Aguardando analise") == 0 %>
-									<td>
-										<%= link_to "Cancelar Evento", controller: "events",
-										action: "cancel_event_user", id: event %>
-									</td>
-								<%end%>
+								<td> <%= link_to 'Mostrar', action: 'index_employee', id: event.id %> </td>
 							</tr>
-							<%end%>
-						</table>
-					</div>
-					<%= link_to "Voltar", home_url, class: "btn btn-primary" %>
+						<%end%>
+					</table>
 				</div>
+				<%= link_to "Voltar", home_url, class: "btn btn-primary" %>
 			</div>
 		</div>
 	</div>
