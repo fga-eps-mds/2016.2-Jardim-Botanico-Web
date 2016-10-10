@@ -1,56 +1,57 @@
 class Visitation < ApplicationRecord
-	belongs_to :user
+  belongs_to :user
 
-	# validation of date
-	validates :date, presence: true
+  # validation of date
+  validates :date, presence: true
 
+  # validation of time
+  validates :time, presence: true
 
+  #validation of visitants_paying
+  validates :visitants_paying, presence: true
 
+  # validation of description
+  validates :description, presence: true, length: { minimum: 5, maximum: 300 }
 
-	# validation of time
-	validates :time, presence: true
+  #validation of visitants_amout
+  validates :visitants_amount, presence: true
 
+  def validate_visitants_amount
+    if (self.visitants_amount > 100)
+      errors.add(:visitants_amount, "A quantidade máxima por visitação é de 100 pessoas")
+    elsif (self.visitants_amount < 1)
+      errors.add(:visitants_amount, "A quantidade de pessoas não pode ser negativa")
+    end
+  end
 
+  #status
+  def set_status_default
+    self.status = "Aguardando confirmacao"
+  end
 
-	#validation of visitants_amout
-	validates :visitants_amount, presence: true
+  #status
+  def set_visitation_cost
+    if (self.visitation_type <=> "Escola publica")
+      self.visitation_cost = 0
+    else
+      self.visitation_cost = (self.visitants_paying * 5)
+    end
+  end
 
-	validate :validate_visitants_amount
+  def canceled_by_employee
+    self.status = "Cancelado por funcionario"
+  end
 
-	def validate_visitants_amount
-		if (self.visitants_amount > 100)
-			errors.add(:visitants_amount, "A quantidade máxima por visitação é de 100 pessoas")
-		elsif (self.visitants_amount < 1)
-			errors.add(:visitants_amount, "A quantidade de pessoas não pode ser negativa")
-		end
-	end
+  def canceled_by_user
+    self.status = "Cancelado pelo usuario"
+  end
 
+  def refused_by_employee
+    self.status = "Recusado por funcionario"
+  end
 
+  def accepted_by_employee
+    self.status = "Agendado"
+  end
 
-	#status
-	def set_status_default
-		self.status = "Aguardando confirmacao"
-	end
-
-	def canceled_by_employee
-		self.status = "Cancelado por funcionario"
-	end
-
-	def canceled_by_user
-		self.status = "Cancelado pelo usuario"
-	end
-
-	def refused_by_employee
-		self.status = "Recusado por funcionario"
-	end
-
-	def accepted_by_employee
-		self.status = "Agendado"
-	end
-
-
-
-
-	# validation of description
-	validates :description, presence: true, length: { minimum: 5, maximum: 300 }
 end
