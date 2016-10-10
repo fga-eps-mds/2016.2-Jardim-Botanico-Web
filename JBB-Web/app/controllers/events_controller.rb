@@ -107,8 +107,11 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:name, :date, :time, :status, :description, :rental_period, :need_eletricity, :need_water, :need_clean_service,
-                                  :people_amount, :jbb_space_requested, :estimated_public, :commercial_use_photos, :other_informations, :jbb_response_to_request)
+    params.require(:event).permit(:name, :date, :time, :status, :description,
+                                  :need_eletricity, :need_water, :need_clean_service,
+                                  :people_amount, :jbb_space_requested,
+                                  :estimated_public, :commercial_use_photos,
+                                  :other_informations, :jbb_response_to_request)
   end
 
 end

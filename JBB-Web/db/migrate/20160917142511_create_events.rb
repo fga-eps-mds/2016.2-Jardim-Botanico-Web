@@ -7,7 +7,6 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.string :status
       t.string :jbb_space_requested
       t.integer :estimated_public
-      t.integer :rental_period
       t.boolean :need_eletricity
       t.boolean :need_water
       t.boolean :need_clean_service
@@ -21,7 +20,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.string :name_institute
       t.string :institute_address
       t.string :institute_cnpj
-      
+
 
       t.timestamps
     end

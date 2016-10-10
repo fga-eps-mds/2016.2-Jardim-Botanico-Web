@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20161008010813) do
     t.string   "status"
     t.string   "jbb_space_requested"
     t.integer  "estimated_public"
-    t.integer  "rental_period"
     t.boolean  "need_eletricity"
     t.boolean  "need_water"
     t.boolean  "need_clean_service"
