@@ -4,19 +4,18 @@ class VisitationsController < ApplicationController
   def home
   end
 
+  #User
 
-
-                                                  #User
   #new
   def new
   	@visitation = Visitation.new
   end
 
-
   def create
   	@visitation = Visitation.new(visitation_params)
 		@visitation.user_id = current_user.id
   	@visitation.set_status_default
+    @visitation.set_visitation_cost
       if @visitation.save
         UserMailer.change_status(@visitation).deliver_now
         flash[:success] = "Solicitação de visita efetuada com sucesso!"
@@ -37,21 +36,17 @@ class VisitationsController < ApplicationController
     end
   end
 
-
 	def show_user
     @visitation = Visitation.where(user_id: current_user.id)
   end
 
+  #Employee
 
-
-
-                          #Employee
   #show
   def show
     @visitations = Visitation.all
     @visitations_sorted = @visitations.sort_by {|visitation| visitation.status}
   end
-
 
   #index
   def index
@@ -71,7 +66,6 @@ class VisitationsController < ApplicationController
         redirect_to show_visitation_url
     end
   end
-
 
   #cancel_confirmation
   def cancel_visitation_employee
@@ -113,13 +107,10 @@ class VisitationsController < ApplicationController
     end
   end
 
-
-
-
   #parameters
   private
   def visitation_params
     params.require(:visitation).permit(:date, :time, :status, :visitants_amount,:visitation_type, :groups_age,
-                                        :objective, :spaces, :has_guide, :description)
+                                        :objective, :spaces, :has_guide, :description, :visitants_paying, :visitation_cost)
   end
 end

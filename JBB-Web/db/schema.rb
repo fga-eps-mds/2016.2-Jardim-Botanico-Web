@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005111835) do
+ActiveRecord::Schema.define(version: 20161008010813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(version: 20161005111835) do
     t.string   "spaces"
     t.string   "add_has_guide_to_visitations"
     t.boolean  "has_guide"
+    t.integer  "visitants_paying"
+    t.integer  "visitation_cost"
     t.index ["status"], name: "index_visitations_on_status", using: :btree
     t.index ["user_id"], name: "index_visitations_on_user_id", using: :btree
   end

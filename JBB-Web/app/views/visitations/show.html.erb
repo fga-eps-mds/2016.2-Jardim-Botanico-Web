@@ -17,13 +17,15 @@
     		<% end %>
 			<div class="col-md-10 col-md-offset-1">
 				<div class="table-hover">
-					<table border=1 class="table table-bordered" >
+					<table border=0 class="table" >
 						<br /> <br />
 						<tr>
 						<th> Data </th>
 						<th> Hora </td>
 						<th> Status </th>
 						<th> Quantidade de Visitantes </th>
+                        <th> Quantidade de Pagantes </th>
+                        <th> Preço da Visita </th>
 						<th> Descrição </th>
 						</tr>
 						<% @visitations_sorted.each do |visitation| %>
@@ -33,6 +35,8 @@
 							<td> <%= timeString[11..18] %> </td>
 							<td> <%= visitation.status %> </td>
 							<td> <%= visitation.visitants_amount %> </td>
+                            <td> <%= visitation.visitants_paying %> </td>
+                            <td> <%= visitation.visitation_cost %> </td>
 							<td> <%= visitation.description %> </td>
 							<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
 
