@@ -93,4 +93,8 @@ Rails.application.routes.draw do
   #event User
   get 'events/cancel_event_user' => 'events#cancel_event_user'
   post 'events/cancel_event_user' => 'events#cancel_event_user'
+
+  #Map
+  get 'maps/jbb_map', as: 'get_jbb_map'
+  post 'maps/jbb_map', as: 'post_jbb_map'
 end
