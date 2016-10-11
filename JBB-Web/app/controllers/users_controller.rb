@@ -50,6 +50,10 @@ class UsersController < ApplicationController
      end
   end
 
+  def my_requests
+    @user = current_user
+  end
+
   #Delete the user
   def destroy
     current_user.destroy
@@ -57,7 +61,6 @@ class UsersController < ApplicationController
     flash[:warning] = "Perfil deletado com sucesso"
     redirect_to home_path
   end
-
 
   private
   def user_params

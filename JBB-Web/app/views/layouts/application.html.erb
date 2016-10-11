@@ -20,6 +20,9 @@
           <li>
             <a class="page-scroll" href="/users/<%= current_user.id %>"><font color = "black"> Olá <%= current_user.name %></font></a>
           </li>
+          <li>
+            <a class="page-scroll"  href="/users/my_requests/<%= current_user.id %>"><font color = "black"> Minhas requisições </font></a>
+          </li>
           <% end %>
           <% if ! current_user %>
           <li>

@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-  <body id="page-top">
+<body id="page-top">
   <br><br>
   <div class="col-md-6 col-md-offset-3">
     <div class="container">
@@ -16,7 +16,7 @@
         <br>
         <div class = "actions">
           <b>Dia:</b>
-           <%= @event.date %>
+          <%= @event.date %>
         </div>
         <br>
         <div class = "actions">
@@ -38,6 +38,8 @@
         <div class = "actions" >
           <b>Publico Estimado:</b>
           <%= @event.estimated_public%>
+          <b>Quantidade de Pessoas:</b>
+          <%= @event.people_amount %>
         </div>
         <br>
         <div class= "actions" >
@@ -48,8 +50,8 @@
           <b>Resposta do JBB:</b>
           <%= @event.jbb_response_to_request%>
         </div>
-       <br>
-       <br>
+        <br>
+        <br>
         <div class= "actions" >
           <%= link_to 'Voltar', show_event_user_url, class: "btn btn-primary"%>
         </div>
