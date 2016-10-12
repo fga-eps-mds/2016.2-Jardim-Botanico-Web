@@ -18,8 +18,7 @@ function addJapaneseGardenMarker(){
 
     //set the infowindow with japanese garden info
     var infowindow = new google.maps.InfoWindow({
-        content: japaneseGardenInfowindowContentString,
-        maxWidth: 200
+        content: japaneseGardenInfowindowContentString
     });
 
     //set the position in latitude and longitude of the marker
