@@ -7,9 +7,9 @@
     <h1>Olá, <%= @user.name %></h1>
     <p>
       <% if (@event.status <=> 'Aguardando confirmacao') == 0 %>
-      Uma visita foi criado em <%= @event.date %>
+      Uma visita foi criada em <%= @event.date_start %>
       <% else %>
-       Sua visita do dia <%= @event.date %> teve o status alterado para: <%= @event.status %>
+       Sua visita do dia <%= @event.date_start %> teve o status alterado para: <%= @event.status %>
       <% end %>
     </p>
     <p>
@@ -19,4 +19,3 @@
     <p>Atenciosamente, Jardim Botânico de Brasília.</p>
   </body>
 </html>
-

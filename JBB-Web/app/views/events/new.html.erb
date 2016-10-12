@@ -32,14 +32,23 @@
                 </div>
                 <%end%>
                 <div class = "field">
-                    <%=f.label :Data%>
-                    <%=f.date_select(:date)%>
+                    <%=f.label :Data_de_inicio%>
+                    <%=f.date_select(:date_start)%>
+                </div>
+                <div class="field">
+                    <%=f.label :Horário_de_inicio%>
+                    <%=f.time_select(:time_start, minute_step: 15, start_hour: 8, end_hour: 16)%>
                 </div>
                 <br>
-                <div class="field">
-                    <%=f.label :Horário%>
-                    <%=f.time_select(:time, minute_step: 15, start_hour: 8, end_hour: 16)%>
+                <div class = "field">
+                    <%=f.label :Data_de_fim%>
+                    <%=f.date_select(:date_end)%>
                 </div>
+                <div class="field">
+                    <%=f.label :Horário_de_fim%>
+                    <%=f.time_select(:time_end, minute_step: 15, start_hour: 8, end_hour: 16)%>
+                </div>
+                <br>
                 <div class = "field" >
                     <%=f.label :Espaço_do_jbb_solicitado%>
                     <%=f.text_field :jbb_space_requested, class: 'form-control', placeholder: 'Digite o nome do espaço'%>

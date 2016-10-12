@@ -17,26 +17,20 @@
                 <% end %>
                 <div class="table-hover">
                     <table border=1 class="table table-bordered" >
-                        <br /> <br />
                         <tr>
                             <th>Data</th>
                             <th>Hora</th>
                             <th>Status</th>
-                            <th>Periodo de Aluguel</th>
                             <th>Espaço Solicitado</th>
-                            <th>quantidade de Pessoas</th>
-                            <th>Descrição</th>
                         </tr>
                         <% @event.each do |event| %>
                         <tr>
-                            <td> <%= event.date %> </td>
-                            <% timeString = event.time.to_s %>
+                            <td> <%= event.date_start %> </td>
+                            <% timeString = event.time_start.to_s %>
                             <td> <%= timeString[11..18] %> </td>
                             <td> <%= event.status %> </td>
                             <td> <%= event.jbb_space_requested %> </td>
-                            <td> <%= event.estimated_public %> </td>
-                            <td> <%= event.description %> </td>
-                            <td> <%= link_to 'Mostrar', action: 'index_employee', id: event.id %> </td>
+                            <td><%= link_to 'Mostrar', action: 'index_employee', id: event.id %></td>
                         </tr>
                         <%end%>
                     </table>

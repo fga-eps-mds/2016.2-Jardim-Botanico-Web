@@ -2,15 +2,17 @@ class CreateEvents < ActiveRecord::Migration[5.0]
   def change
     create_table :events do |t|
       t.belongs_to :user
-      t.date :date
-      t.time :time
+      t.date :date_start
+      t.date :date_end
+      t.time :time_start
+      t.time :time_end
       t.string :status
       t.string :jbb_space_requested
       t.integer :estimated_public
-      t.boolean :need_eletricity
-      t.boolean :need_water
-      t.boolean :need_clean_service
-      t.boolean :commercial_use_photos
+      t.string :need_eletricity
+      t.string :need_water
+      t.string :need_clean_service
+      t.string :commercial_use_photos
       t.string :description
       t.string :other_informations
       t.string :jbb_response_to_request

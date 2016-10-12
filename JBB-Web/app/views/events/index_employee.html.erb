@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-  <body id="page-top">
+<body id="page-top">
   <br><br>
   <div class="col-md-6 col-md-offset-3">
     <div class="container">
@@ -13,15 +13,24 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <br>
+        <b>Data e hora de início</b>
         <div class = "actions">
-          <b>Dia:</b>
-           <%= @event.date %>
+          <b>Dia: </b>
+          <%= @event.date_start%>
+        </div>
+        <div class = "actions">
+          <b>Hora: </b>
+          <%= @event.time_start %>
         </div>
         <br>
+        <b>Data e hora de fim</b>
+        <div class = "actions">
+          <b>Dia:</b>
+          <%= @event.date_end%>
+        </div>
         <div class = "actions">
           <b>Hora:</b>
-          <%= @event.time %>
+          <%= @event.time_end %>
         </div>
         <br>
         <div class = "actions">
@@ -29,81 +38,144 @@
           <%= @event.status %>
         </div>
         <br>
-        <br>
         <div class = "actions" >
-          <b>Espaço Solicitado:</b>
+          <b>Espaço solicitado:</b>
           <%= @event.jbb_space_requested%>
         </div>
         <br>
         <div class = "actions" >
-          <b>Publico Estimado:</b>
+          <b>Publico estimado:</b>
           <%= @event.estimated_public%>
         </div>
         <br>
-        <div class= "actions" >
+        <div class= "actions spacing" >
           <b>Descrição:</b>
           <%= @event.description %>
         </div>
         <br>
+        <div class = "actions" >
+          <b>Espaço solicitado:</b>
+          <%= @event.jbb_space_requested%>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Publico estimado:</b>
+          <%= @event.estimated_public%>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Uso Comercial de imagem:</b>
+          <%= @event.commercial_use_photos%>
+        </div>
+        <br>
+        <table>
+          <tr>
+            <td>
+              <div class = "actions" >
+                <b>Precisa de energia elétrica?</b>
+                <%= @event.need_eletricity%>
+              </div>
+            </td>
+            <td>
+              <div class = "actions" >
+                &nbsp&nbsp&nbsp&nbsp
+                <b>Precisa de água?</b>
+                <%= @event.need_water%>
+              </div>
+            </td>
+            <td>
+              <div class = "actions" >
+                &nbsp&nbsp&nbsp&nbsp
+                <b>Precisa de servico de limpeza?</b>
+                <%= @event.need_clean_service%>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <div class= "actions sp" >
+          <b>Outras informações:</b>
+          <%= @event.other_informations %>
+        </div>
+        <br>
+        <div class= "actions spacing" >
+          <b>Uso comercial de imagens:</b>
+          <%= @event.commercial_use_photos %>
+        </div>
+        <br>
+        <div class= "actions spacing" >
+          <b>Nome da instituição:</b>
+          <%= @event.name_institute %>
+        </div>
+        <div class= "actions spacing" >
+          <b>Endereço da instituição:</b>
+          <%= @event.institute_address %>
+        </div>
+        <div class= "actions spacing" >
+          <b>CNPJ da instituição:</b>
+          <%= @event.institute_cnpj %>
+        </div>
+        <br>
         <br>
         <%flash.each do |key, value|%>
-          <div class="alert alert-<%= key %>"><%= value %></div>
+        <div class="alert alert-<%= key %>"><%= value %></div>
         <%end%>
         <%=form_for @event, url: '/events' do |f|%>
-          <%if @event.errors.any?%>
-            <div id="error_explanation">
-              <div class="alert-error">
-                O formulário contém <%=pluralize(@event.errors.count, "erro")%>.
-              </div>
-              <ul>
-                <%@event.errors.full_messages.each do |msg|%>
-                  <li><%= msg %></li>
-                <%end%>
-              </ul>
-            </div>
-          <%end%>
-          <div class = "field" >
-            <%=f.label :Resposta_da_Requisição%>
-            <%=f.text_area :jbb_response_to_request, :cols => "50", :rows => "5", class: 'form-control'%>
+        <%if @event.errors.any?%>
+        <div id="error_explanation">
+          <div class="alert-error">
+            O formulário contém <%=pluralize(@event.errors.count, "erro")%>.
           </div>
-          <div class="actions">
-            <%= f.submit "Cadastrar", class: "btn btn-primary"%>
-          </div>
+          <ul>
+            <%@event.errors.full_messages.each do |msg|%>
+            <li><%= msg %></li>
+            <%end%>
+          </ul>
+        </div>
         <%end%>
-        <table border=0 class="table table-bordered" >
-          <tr>
-            <% if (@event.status <=> "Aguardando analise") == 0 %>
+        <div class = "field" >
+          <%=f.label :Resposta_da_Requisição%>
+          <%=f.text_area :jbb_response_to_request, :cols => "50", :rows => "5", class: 'form-control'%>
+        </div>
+
+        <div class="actions">
+          <table border=0>
+            <tr>
+              <% if (@event.status <=> "Aguardando analise") == 0 %>
               <td>
                 <%= link_to "Aceitar Evento", controller: "events",
-                action: "accept_event_employee", id: @event %>
+                action: "accept_event_employee", id: @event%>
               </td>
-            <%end%>
-            <%if (@event.status <=> "Aguardando analise") == 0 %>
+              <%end%>
+              <%if (@event.status <=> "Aguardando analise") == 0 %>
               <td>
                 <%= link_to "Recusar Evento", controller: "events",
-                action: "refuse_event_employee", id: @event %>
+                action: "refuse_event_employee", id: @event%>
               </td>
-            <%end%>
-            <%if (@event.status <=> "Agendado") == 0%>
+              <%end%>
+              <%if (@event.status <=> "Agendado") == 0%>
               <td>
                 <%= link_to "Cancelar Evento", controller: "events",
-                action: "cancel_event_employee", id: @event %>
+                action: "cancel_event_employee", id: @event%>
               </td>
-            <%end%>
-          </tr>
+              <%end%>
+            </tr>
             <% if (@event.status <=> "Cancelado por funcionario") == 0 ||
-                  (@event.status <=> "Cancelado pelo usuario") == 0 ||
-                  (@event.status <=> "Recusado por funcionario") == 0 %>
+              (@event.status <=> "Cancelado pelo usuario") == 0 ||
+              (@event.status <=> "Recusado por funcionario") == 0 %>
               <td>
                 <%= link_to "Deletar Evento", controller: "events",
-                action: "delete_event_employee", id: @event %>
+                action: "delete_event_employee", id: @event, class: "btn btn-primary" %>
               </td>
-            <%end%>
-        </table>
-          <div class= "actions" >
-             <%= link_to 'Voltar', show_event_employee_url, :required => true, class: "btn btn-primary"%>
+              <%end%>
+            </table>
           </div>
+          <%end%>
+          <br><br>
+          <div class= "actions" >
+            <%= link_to 'Voltar', show_event_employee_url, :required => true, class: "btn btn-primary"%>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>

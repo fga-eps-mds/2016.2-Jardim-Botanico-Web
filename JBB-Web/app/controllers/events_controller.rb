@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   #user
   def new
     @event = Event.new
+    @jbb_response = params[:jbb_response_to_request]
   end
 
   def create
@@ -17,6 +18,10 @@ class EventsController < ApplicationController
       flash[:warning] = "Solicitação não efetuada"
       render action: :new
     end
+  end
+
+  def edit
+    @event = Event.find(params[:id])
   end
 
   def show_user
@@ -77,11 +82,13 @@ class EventsController < ApplicationController
     end
   end
 
-  #acceptd_event
+  #accept_event
   def accept_event_employee
     @event = Event.find(params[:id])
     @event.accepted_by_employee
-    @event.jbb_response_to_request = (params[:jbb_response_to_request])
+    puts "====================================================================="
+    puts (@jbb_response)
+    @event.jbb_response_to_request = (@jbb_response)
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
       flash[:success] = "Evento confirmado"
@@ -107,11 +114,13 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:name, :date, :time, :status, :description,
-                                  :need_eletricity, :need_water, :need_clean_service,
-                                  :people_amount, :jbb_space_requested,
-                                  :estimated_public, :commercial_use_photos,
-                                  :other_informations, :jbb_response_to_request)
+    params.require(:event).permit(:name, :date_start, :date_end, :time_start,
+                                  :time_end, :status, :description, :need_eletricity,
+                                  :need_water, :need_clean_service, :people_amount,
+                                  :jbb_space_requested, :estimated_public,
+                                  :commercial_use_photos, :other_informations,
+                                  :jbb_response_to_request, :name_institute,
+                                  :institute_address, :institute_cnpj)
   end
 
 end
