@@ -120,7 +120,7 @@ class EventsController < ApplicationController
                                   :jbb_space_requested, :estimated_public,
                                   :commercial_use_photos, :other_informations,
                                   :jbb_response_to_request, :name_institute,
-                                  :institute_address, :institute_cnpj)
+                                  :institute_address, :institute_cnpj, :price_payment)
   end
 
 end
