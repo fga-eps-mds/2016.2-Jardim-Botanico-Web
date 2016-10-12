@@ -21,6 +21,10 @@ function initialize() {
     //add jbb space markers at map
     addJapaneseGardenMarker();
     addTeaHouseMarker();
+    addVisitantCenterMaker();
+    addOrchidGardenMaker();
+    addSunWatchMarker();
+    addAmphitheaterMarker();
 }
 
 function loadScript() {
