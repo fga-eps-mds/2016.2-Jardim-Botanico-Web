@@ -16,8 +16,7 @@ function addTeaHouseMarker(){
 
     //set the infowindow with japanese garden info
     var infowindow = new google.maps.InfoWindow({
-        content: teaHouseInfowindowContentString,
-        maxWidth: 200
+        content: teaHouseInfowindowContentString
     });
 
     //set the position in latitude and longitude of the marker
@@ -26,12 +25,9 @@ function addTeaHouseMarker(){
     //add the marker at the map in the position previously defined
     var teaHouseMarker = new google.maps.Marker({
         position: teaHouseLatLng,
-        label: labels[labelIndex++ % labels.length],
         map: map,
         title: 'Casa de Chá'
     });
-
-    google.maps.event.addDomListener(window, 'load', initialize);
 
     //add a listener to verify if the marker is clicked
     teaHouseMarker.addListener('click', function() {

@@ -27,8 +27,9 @@ function loadScript() {
 console.log("map loading ...");
 var script = document.createElement('script');
 script.type = 'text/javascript';
-script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp' +
+script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCWLcEV1-tSCf5oUTnjsny_ubD4oZmTmOc' +
 '&libraries=drawing'+
 '&callback=initialize';
+// src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWLcEV1-tSCf5oUTnjsny_ubD4oZmTmOc&callback=initMap
 document.body.appendChild(script);
 }
