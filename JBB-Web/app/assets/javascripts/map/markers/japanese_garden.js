@@ -4,14 +4,14 @@ function addJapaneseGardenMarker(){
         '<div id="content">'+
         '<div id="siteNotice">'+
         '</div>'+
-        '<h1 id="firstHeading" class="firstHeading">Jardim Botanico - Jardim Japonês</h1>'+
+        '<h1 id="firstHeading" class="firstHeading">Jardim Japonês</h1>'+
         '<div id="bodyContent">'+
         '<p>O <b>Jardim Japonês</b>, Um jardim japonês manifesta a intenção de equilíbrio ' +
         'e harmonia entre seus elementos compostos no espaço. '+
         'Os elementos filosóficos e simbólicos - a água, as pedras, as plantas'+
         '- são mais importantes que seus aspectos visuais. '+
         'É um convite à contemplação, transmite paz e espiritualidade. '+
-        '<p>Leia mais em: <a href="/jbb_spaces/space_name">'+
+        '<p>Leia mais em: <a href="/jbb_spaces/japapnese_garden">'+
         'Jardim Japonês</a> '+
         '</div>'+
         '</div>';
