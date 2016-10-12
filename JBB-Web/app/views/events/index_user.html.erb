@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-  <body id="page-top">
+<body id="page-top">
   <br><br>
   <div class="col-md-6 col-md-offset-3">
     <div class="container">
@@ -16,7 +16,7 @@
         <b>Data e hora de início</b>
         <div class = "actions">
           <b>Dia: </b>
-           <%= @event.date_start%>
+          <%= @event.date_start%>
         </div>
         <div class = "actions">
           <b>Hora: </b>
@@ -26,7 +26,7 @@
         <b>Data e hora de fim</b>
         <div class = "actions">
           <b>Dia:</b>
-           <%= @event.date_end%>
+          <%= @event.date_end%>
         </div>
         <div class = "actions">
           <b>Hora:</b>
@@ -119,8 +119,8 @@
           <b>Resposta do Jardim Botânico:</b>
           <%= @event.jbb_response_to_request%>
         </div>
-       <br>
-       <br>
+        <br>
+        <br>
         <div class= "actions" >
           <%= link_to 'Voltar', show_event_user_url, class: "btn btn-primary"%>
         </div>

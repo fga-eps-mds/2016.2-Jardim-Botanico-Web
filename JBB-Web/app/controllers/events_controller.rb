@@ -2,23 +2,24 @@ class EventsController < ApplicationController
 
   #user
   def new
-  	@event = Event.new
+    @event = Event.new
+    @jbb_response = params[:jbb_response_to_request]
   end
 
 
-	def create
-		@event = Event.new(event_params)
-		@event.user_id = current_user.id
+  def create
+    @event = Event.new(event_params)
+    @event.user_id = current_user.id
     @event.set_status_default
-		if @event.save
+    if @event.save
       UserMailer.change_status_event(@event).deliver_now
       flash[:success] = "Solicitação de evento efetuada com sucesso!"
-			redirect_to show_event_user_url, notice: "Evento criado"
-		else
+      redirect_to show_event_user_url, notice: "Evento criado"
+    else
       flash[:warning] = "Solicitação não efetuada"
-			render action: :new
-		end
-	end
+      render action: :new
+    end
+  end
 
   def edit
     @event = Event.find(params[:id])
@@ -39,11 +40,11 @@ class EventsController < ApplicationController
     puts (params[:id])
     @event = Event.find(params[:id])
     @event.canceled_by_user
-		if @event.save
+    if @event.save
       UserMailer.change_status_event(@event).deliver_now
-       flash[:warning] = "Evento cancelada pelo usuário"
-			redirect_to show_event_user_url, notice: "Evento cancelado pelo usuário"
-		end
+      flash[:warning] = "Evento cancelada pelo usuário"
+      redirect_to show_event_user_url, notice: "Evento cancelado pelo usuário"
+    end
   end
 
 
@@ -68,8 +69,8 @@ class EventsController < ApplicationController
       flash[:success] = "Evento recusado"
       redirect_to show_event_employee_url
     else
-        flash[:warning] = "Evento não pode ser recusado"
-        redirect_to show_event_employee_url
+      flash[:warning] = "Evento não pode ser recusado"
+      redirect_to show_event_employee_url
     end
   end
 
@@ -82,25 +83,27 @@ class EventsController < ApplicationController
       UserMailer.change_status_event(@event).deliver_now
       flash[:success] = "Evento cancelado"
       redirect_to show_event_employee_url
-     else
-         flash[:warning] = "Evento não pode ser cancelado"
-         redirect_to show_event_employee_url
+    else
+      flash[:warning] = "Evento não pode ser cancelado"
+      redirect_to show_event_employee_url
     end
   end
 
 
-  #acceptd_event
+  #accept_event
   def accept_event_employee
     @event = Event.find(params[:id])
     @event.accepted_by_employee
-    @event.jbb_response_to_request = (params[:jbb_response_to_request])
+    puts "====================================================================="
+    puts (@jbb_response)
+    @event.jbb_response_to_request = (@jbb_response)
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
       flash[:success] = "Evento confirmado"
       redirect_to show_event_employee_url
     else
-        flash[:warning] = "Evento não pode ser confirmado"
-        redirect_to show_event_employee_url
+      flash[:warning] = "Evento não pode ser confirmado"
+      redirect_to show_event_employee_url
     end
   end
 
@@ -112,16 +115,20 @@ class EventsController < ApplicationController
       flash[:success] = "Evento deletado"
       redirect_to show_event_employee_url
     else
-       flash[:warning] = "Evento não pode ser deletado"
-       redirect_to show_event_employee_url
+      flash[:warning] = "Evento não pode ser deletado"
+      redirect_to show_event_employee_url
     end
   end
 
-	private
-	def event_params
-		params.require(:event).permit(:name, :date_start, :date_end, :time_start,:time_end, :status, :description, :need_eletricity, :need_water, :need_clean_service, 
-                                  :people_amount, :jbb_space_requested, :estimated_public, :commercial_use_photos, :other_informations, :jbb_response_to_request
-                                  :name_institute, :institute_address, :institute_cnpj)
-	end
+  private
+  def event_params
+    params.require(:event).permit(:name, :date_start, :date_end, :time_start,
+                                  :time_end, :status, :description, :need_eletricity,
+                                  :need_water, :need_clean_service, :people_amount,
+                                  :jbb_space_requested, :estimated_public,
+                                  :commercial_use_photos, :other_informations,
+                                  :jbb_response_to_request, :name_institute,
+                                  :institute_address, :institute_cnpj)
+  end
 
 end

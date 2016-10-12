@@ -22,7 +22,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.string :name_institute
       t.string :institute_address
       t.string :institute_cnpj
-      
+
 
       t.timestamps
     end
