@@ -25,6 +25,12 @@ function initialize() {
     addOrchidGardenMaker();
     addSunWatchMarker();
     addAmphitheaterMarker();
+    addHealingGardenMarker();
+    addGreeHouseMarker();
+    addInfantParkMarker();
+    addCactusBoskMarker();
+    addLibaryMarker();
+
 }
 
 function loadScript() {
