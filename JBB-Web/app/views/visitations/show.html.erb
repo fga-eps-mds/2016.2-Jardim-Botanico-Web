@@ -1,75 +1,99 @@
+<script type="text/javascript">
+$(document).on('click', '.dropdown-menu li a', function () {
+    console.log("Selected Option:"+$(this).text());
+});
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
 <body id="page-top">
-<br><br>
-	<div class="col-md-6 col-md-offset-3">
-		<div class="container">
-			<div class="row">
-				<h1>Mostrar Visitações</h1>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-6 col-md-offset-3">
-	</div>
-	<div class="container-fluid">
-		<div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <% flash.each do |key, value| %>
-      		<div class="alert alert-<%= key %>"><%= value %></div>
-    		<% end %>
-			<div class="col-md-10 col-md-offset-1">
-				<div class="table-hover">
-					<table border=0 class="table" >
-						<br /> <br />
-						<tr>
-						<th> Data </th>
-						<th> Hora </td>
-						<th> Status </th>
-						<th> Quantidade de Visitantes </th>
-                        <th> Quantidade de Pagantes </th>
-                        <th> Preço da Visita </th>
-						<th> Descrição </th>
-						</tr>
-						<% @visitations_sorted.each do |visitation| %>
-							<tr>
-							<td> <%= visitation.date %> </td>
-							<% timeString = visitation.time.to_s %>
-							<td> <%= timeString[11..18] %> </td>
-							<td> <%= visitation.status %> </td>
-							<td> <%= visitation.visitants_amount %> </td>
-                            <td> <%= visitation.visitants_paying %> </td>
-                            <td> <%= visitation.visitation_cost %> </td>
-							<td> <%= visitation.description %> </td>
-							<td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
+    <br><br>
+    <div class="col-md-6 col-md-offset-3">
+        <div class="container">
+            <div class="row">
+                <h1>Mostrar Visitações</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-md-offset-3">
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <% flash.each do |key, value| %>
+                <div class="alert alert-<%= key %>"><%= value %></div>
+                <% end %>
+                <div class="container">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tipos de visitações
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <% @visitation_types.each do |p| %>
+                                <li><a href="#"> <%= p.visitation_type %> </a></li>
+                                <%end%>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="table-hover">
+                            <table border=0 class="table" >
+                                <br /> <br />
+                                <tr>
+                                    <th> Data </th>
+                                    <th> Hora </td>
+                                        <th> Status </th>
+                                        <th> Quantidade de Visitantes </th>
+                                        <th> Quantidade de Pagantes </th>
+                                        <th> Preço da Visita </th>
+                                        <th> Descrição </th>
+                                    </tr>
+                                    <% @visitations_sorted.each do |visitation| %>
+                                    <tr>
+                                        <td> <%= visitation.date %> </td>
+                                        <% timeString = visitation.time.to_s %>
+                                        <td> <%= timeString[11..18] %> </td>
+                                        <td> <%= visitation.status %> </td>
+                                        <td> <%= visitation.visitants_amount %> </td>
+                                        <td> <%= visitation.visitants_paying %> </td>
+                                        <td> <%= visitation.visitation_cost %> </td>
+                                        <td> <%= visitation.description %> </td>
+                                        <td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
 
-							<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
-							<td> <%= link_to "Aceitar Visitação", controller: "visitations",
-											action: "accept_visitation_employee", id: visitation %> </td>
-							<% end %>
+                                        <% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
+                                        <td> <%= link_to "Aceitar Visitação", controller: "visitations",
+                                        action: "accept_visitation_employee", id: visitation %> </td>
+                                        <% end %>
 
-							<% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
-							<td> <%= link_to "Recusar Visitação", controller: "visitations",
-											action: "refuse_visitation_employee", id: visitation %> </td>
-							<% end %>
+                                        <% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
+                                        <td> <%= link_to "Recusar Visitação", controller: "visitations",
+                                        action: "refuse_visitation_employee", id: visitation %> </td>
+                                        <% end %>
 
-							<% if (visitation.status <=> "Agendado") == 0 %>
-							<td> <%= link_to "Cancelar Visitação", controller: "visitations",
-											action: "cancel_visitation_employee", id: visitation %> </td>
-							</tr>
-							<% end %>
+                                        <% if (visitation.status <=> "Agendado") == 0 %>
+                                        <td> <%= link_to "Cancelar Visitação", controller: "visitations",
+                                        action: "cancel_visitation_employee", id: visitation %> </td>
+                                    </tr>
+                                    <% end %>
 
-							<% if (visitation.status <=> "Cancelado por funcionario") == 0 ||
-								(visitation.status <=> "Cancelado pelo usuario") == 0 ||
-								(visitation.status <=> "Recusado por funcionario") == 0 %>
-							<td> <%= link_to "Deletar Visitação", controller: "visitations",
-											action: "delete_visitation_employee", id: visitation %> </td>
-							</tr>
-							<% end %>
-						<% end %>
-					</table>
-				</div>
-				<br>
-				<p>
-				<%= link_to "Voltar", home_url, class: "btn btn-primary" %>
-			</div>
-		</div>
-	</div>
-</body>
+                                    <% if (visitation.status <=> "Cancelado por funcionario") == 0 ||
+                                        (visitation.status <=> "Cancelado pelo usuario") == 0 ||
+                                        (visitation.status <=> "Recusado por funcionario") == 0 %>
+                                        <td> <%= link_to "Deletar Visitação", controller: "visitations",
+                                        action: "delete_visitation_employee", id: visitation %> </td>
+                                    </tr>
+                                    <% end %>
+                                    <% end %>
+                                </table>
+                            </div>
+                            <br>
+                            <p>
+                                <%= link_to "Voltar", home_url, class: "btn btn-primary" %>
+                            </div>
+                        </div>
+                    </div>
+                </body>
