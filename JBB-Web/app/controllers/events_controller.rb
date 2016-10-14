@@ -47,6 +47,7 @@ class EventsController < ApplicationController
   #employee
   def show_employee
     @event = Event.all
+    @sum_of_payments = Event.total
   end
 
   def index_employee

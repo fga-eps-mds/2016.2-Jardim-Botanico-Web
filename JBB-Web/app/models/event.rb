@@ -19,6 +19,10 @@ class Event < ApplicationRecord
     self.status = "Aguardando analise"
 	end
 
+	def self.total
+	  self.sum(:price_payment)
+	end
+
 	def canceled_by_employee
 		self.status = "Cancelado por funcionario"
 	end
