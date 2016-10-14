@@ -36,8 +36,7 @@ function initialize() {
     addPermacultureMarker();
     addHammockPlaceMarker();
     addCenterOfExcellenceMarker();
-    //addNatureLibraryMarker();
-
+    addNaturalLibraryMarker();
 }
 
 function loadScript() {
