@@ -112,6 +112,12 @@ class EventsController < ApplicationController
     end
   end
 
+
+  # schedule filter
+  def index_calendar
+    @events = Event.all
+  end
+
   private
   def event_params
     params.require(:event).permit(:name, :date_start, :date_end, :time_start,
