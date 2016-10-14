@@ -1,8 +1,8 @@
 <body id="page-top">
   <br><br><br><br>
   <div class="col-md-6 col-md-offset-3">
-  <h2>Calendário de Visitas</h2>
-    <%= month_calendar visitations: @visitations do |date, visitations| %>
+  <h2>Calenário de Visitas</h2>
+    <%= week_calendar number_of_weeks: 1 do |date, visitations| %>
     <%= date %>
     <% visitations.each do |visitations| %>
     <div>
@@ -13,7 +13,7 @@
    <div class= "actions" >
     <%= link_to 'Voltar', new_visitation_url, class: "btn btn-primary"%>
     &nbsp&nbsp&nbsp&nbsp
-    <%= link_to 'Pesquisar por semana', show_visitation_calendar_week_url, class: "btn btn-primary"%>
+    <%= link_to 'Pesquisar por mês', show_visitation_calendar_url, class: "btn btn-primary"%>
     </div>
   </div>
 </body>

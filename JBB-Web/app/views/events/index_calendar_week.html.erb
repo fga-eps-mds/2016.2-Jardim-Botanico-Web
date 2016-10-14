@@ -1,0 +1,19 @@
+<body id="page-top">
+  <br><br><br><br>
+  <div class="col-md-6 col-md-offset-3">
+  <h2>Calendário de Eventos</h2>
+    <%= week_calendar number_of_weeks: 1 do |date, events| %>
+    <%= date %>
+    <% events.each do |event| %>
+    <div>
+     <%= event.jbb_space_requested %>
+   </div>
+   <% end %>
+   <% end %>
+   <div class= "actions" >
+    <%= link_to 'Voltar', events_url, class: "btn btn-primary"%>
+    &nbsp&nbsp&nbsp&nbsp
+    <%= link_to 'Pesquisar por mês', show_event_calendar_url, class: "btn btn-primary"%>
+    </div>
+    </div>
+</body>

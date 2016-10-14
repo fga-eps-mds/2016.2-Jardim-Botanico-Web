@@ -96,5 +96,8 @@ Rails.application.routes.draw do
 
   # schedule route
   get 'events/index_calendar_month' => 'events#index_calendar_month', as: 'show_event_calendar'
-  get 'visitations/index_calendar_month' => 'visitations#index_calendar_month', as: 'show__visitation_calendar'
+  get 'visitations/index_calendar_month' => 'visitations#index_calendar_month', as: 'show_visitation_calendar'
+
+  get 'events/index_calendar_week' => 'events#index_calendar_week', as: 'show_event_calendar_week'
+  get 'visitations/index_calendar_week' => 'visitations#index_calendar_week', as: 'show_visitation_calendar_week'
 end
