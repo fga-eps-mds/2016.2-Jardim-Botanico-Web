@@ -115,7 +115,7 @@ class EventsController < ApplicationController
 
   # schedule filter
   def index_calendar_month
-    @events = Event.all
+    @events = Event.where(status: "Agendado")
   end
 
   private
