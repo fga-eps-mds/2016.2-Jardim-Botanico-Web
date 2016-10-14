@@ -3,12 +3,9 @@ class Visitation < ApplicationRecord
 
 	 # schedule
   def start_time
-    self.date_start
+    self.date
   end
 
-  def end_time
-    self.date_end
-  end
 
 	# validation of date
 	validates :date, presence: true
