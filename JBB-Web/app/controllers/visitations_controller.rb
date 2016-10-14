@@ -43,11 +43,20 @@ class VisitationsController < ApplicationController
     @visitations = Visitation.all
     @visitations_sorted = @visitations.sort_by {|visitation| visitation.status}
     @visitation_types = Visitation.all.select(:id, :visitation_type)
+
   end
 
   #index
   def index
     @visitation = Visitation.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = VisitationsPdf.new(@visitation)
+        send_data pdf.render, filename: 'formularios.pdf', type: "application/pdf",
+        disposition: "inline"
+      end  
+    end 
   end
 
   #refuse_confirmation

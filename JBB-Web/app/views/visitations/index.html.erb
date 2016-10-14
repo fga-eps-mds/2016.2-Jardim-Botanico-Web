@@ -55,7 +55,8 @@
        </div>
        <%else%>
        <div class= "actions" >
-         <%= link_to 'Voltar', show_visitation_user_url, class: "btn btn-primary"  %>
+        <%= link_to "Gerar PDF", visitations_path(format: 'pdf', :id => @visitation.id), class: "btn btn-primary"%>
+        <%= link_to 'Voltar', show_visitation_user_url, class: "btn btn-primary"  %>
        </div>
        <%end%>
      </div>
