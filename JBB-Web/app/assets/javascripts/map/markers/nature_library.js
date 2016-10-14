@@ -1,6 +1,6 @@
-function addNatureLibaryMarker(){
+function addNatureLibraryMarker(){
     //set tea house info, will be used at infowindow
-    var natureLibaryInfowindowContentString =
+    var natureLibraryInfowindowContentString =
         '<div id="content">'+
         '<div id="siteNotice">'+
         '</div>'+
@@ -16,24 +16,24 @@ function addNatureLibaryMarker(){
 
     //set the infowindow with japanese garden info
     var infowindow = new google.maps.InfoWindow({
-        content: natureLibaryInfowindowContentString
+        content: natureLibraryInfowindowContentString
     });
 
     //set the position in latitude and longitude of the marker
-    var natureLibaryLatLng = {lat: -15.875422, lng: -47.836901};
+    var natureLibraryLatLng = {lat: -15.875422, lng: -47.836901};
 
     //add the marker at the map in the position previously defined
-    var natureLibaryMarker = new google.maps.Marker({
-        position: natureLibaryLatLng,
+    var natureLibraryMarker = new google.maps.Marker({
+        position: natureLibraryLatLng,
         title: 'Bilioteca da Natureza'
         map: map,
     });
 
     //add a listener to verify if the marker is clicked
-    natureLibaryMarker.addListener('click', function() {
-        infowindow.open(map, natureLibaryMarker);
+    natureLibraryMarker.addListener('click', function() {
+        infowindow.open(map, natureLibraryMarker);
     });
 
     //set the marker on map
-    natureLibaryMarker.setMap(map);
+    natureLibraryMarker.setMap(map);
 }
