@@ -16,5 +16,10 @@ module JBBWeb
 
     # configure path to /lib
     config.autoload_paths += %W(#{config.root}/lib)
+
+    # configure time zone and first day of the week in calendar
+    config.time_zone = 'Brasilia'
+    config.beginning_of_week = :sunday
+
   end
 end
