@@ -29,7 +29,14 @@ function initialize() {
     addGreeHouseMarker();
     addInfantParkMarker();
     addCactusBoskMarker();
-    addLibaryMarker();
+    addParkingMarker();
+    addContemplationGardenMarker();
+    addEvolutionaryGardenMarker();
+    addSmellsGardenMarker();
+    addPermacultureMarker();
+    addHammockPlaceMarker();
+    addCenterOfExcellenceMarker();
+    //addNatureLibraryMarker();
 
 }
 
