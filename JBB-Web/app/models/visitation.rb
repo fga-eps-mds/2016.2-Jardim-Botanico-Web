@@ -26,6 +26,10 @@ class Visitation < ApplicationRecord
 		end
 	end
 
+	def self.total
+    self.sum(:visitation_cost)
+  end
+
 	#status
 	def set_status_default
 		self.status = "Aguardando confirmacao"
