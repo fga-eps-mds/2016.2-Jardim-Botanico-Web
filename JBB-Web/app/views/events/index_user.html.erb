@@ -16,21 +16,21 @@
         <b>Data e hora de início</b>
         <div class = "actions">
           <b>Dia: </b>
-          <%= @event.date_start%>
+          <%= @event.date_start.strftime("%d/%m/%Y") %>
         </div>
         <div class = "actions">
           <b>Hora: </b>
-          <%= @event.time_start %>
+          <%= @event.time_start.to_s(:time) %>
         </div>
         <br>
         <b>Data e hora de fim</b>
         <div class = "actions">
           <b>Dia:</b>
-          <%= @event.date_end%>
+          <%= @event.date_end.strftime("%d/%m/%Y") %>
         </div>
         <div class = "actions">
           <b>Hora:</b>
-          <%= @event.time_end %>
+          <%= @event.time_end.to_s(:time) %>
         </div>
         <br>
         <div class = "actions">
