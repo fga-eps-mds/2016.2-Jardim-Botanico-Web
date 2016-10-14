@@ -95,6 +95,6 @@ Rails.application.routes.draw do
   post 'events/cancel_event_user' => 'events#cancel_event_user'
 
   # schedule route
-  get 'events/index_calendar_month' => 'events#index_calendar_month', as: 'show_calendar'
-  post 'events/index_calendar' => 'events#index_calendar', as: 'post_show_calendar'
+  get 'events/index_calendar_month' => 'events#index_calendar_month', as: 'show_event_calendar'
+  get 'visitations/index_calendar_month' => 'visitations#index_calendar_month', as: 'show__visitation_calendar'
 end

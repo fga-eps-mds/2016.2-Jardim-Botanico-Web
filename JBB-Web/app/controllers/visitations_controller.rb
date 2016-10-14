@@ -109,7 +109,7 @@ class VisitationsController < ApplicationController
 
   # schedule filter
   def index_calendar
-    @visitation = Visitaion.where(:has_guide = :true)
+    @visitation = Visitaion.all
   end
 
   #parameters
