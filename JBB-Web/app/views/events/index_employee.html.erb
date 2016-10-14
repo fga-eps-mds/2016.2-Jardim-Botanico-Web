@@ -53,21 +53,6 @@
           <%= @event.description %>
         </div>
         <br>
-        <div class = "actions" >
-          <b>Espaço solicitado:</b>
-          <%= @event.jbb_space_requested%>
-        </div>
-        <br>
-        <div class = "actions" >
-          <b>Publico estimado:</b>
-          <%= @event.estimated_public%>
-        </div>
-        <br>
-        <div class = "actions" >
-          <b>Uso Comercial de imagem:</b>
-          <%= @event.commercial_use_photos%>
-        </div>
-        <br>
         <table>
           <tr>
             <td>
@@ -177,6 +162,7 @@
         <%end%>
           <br><br>
           <div class= "actions" >
+            <%= link_to "Gerar PDF", events_path(format: 'pdf', :id => @event.id), class: "btn btn-primary"%>
             <%= link_to 'Voltar', show_event_employee_url, :required => true, class: "btn btn-primary"%>
           </div>
         </div>

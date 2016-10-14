@@ -51,6 +51,14 @@ class EventsController < ApplicationController
 
   def index_employee
     @event = Event.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = EventssPdf.new(@event)
+        send_data pdf.render, filename: 'formularios.pdf', type: "application/pdf",
+        disposition: "inline"
+      end  
+    end 
   end
 
   #refuse_confirmation
