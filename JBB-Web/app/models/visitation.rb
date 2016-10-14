@@ -1,6 +1,15 @@
 class Visitation < ApplicationRecord
 	belongs_to :user
 
+	 # schedule
+  def start_time
+    self.date_start
+  end
+
+  def end_time
+    self.date_end
+  end
+
 	# validation of date
 	validates :date, presence: true
 
