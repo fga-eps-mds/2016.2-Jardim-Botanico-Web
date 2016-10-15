@@ -3,6 +3,7 @@ loadScript();
 });
 
 var map;
+var markers;
 
 function initialize() {
     var mapOptions = {
@@ -18,25 +19,43 @@ function initialize() {
     // initializing map
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
 
+
+    // markers = new  Markers(map);
+    // markers.setMap();
+    // markers.setNull();
+    // markers.setMap();
+    // // markers.setNull;
+
     //add jbb space markers at map
-    addJapaneseGardenMarker();
-    addTeaHouseMarker();
-    addVisitantCenterMaker();
-    addOrchidGardenMaker();
-    addSunWatchMarker();
-    addAmphitheaterMarker();
-    addHealingGardenMarker();
-    addGreeHouseMarker();
-    addInfantParkMarker();
-    addCactusBoskMarker();
-    addParkingMarker();
-    addContemplationGardenMarker();
-    addEvolutionaryGardenMarker();
-    addSmellsGardenMarker();
-    addPermacultureMarker();
-    addHammockPlaceMarker();
-    addCenterOfExcellenceMarker();
-    addNaturalLibraryMarker();
+    // addAmphitheaterMarker();
+    // addCactusBoskMarker();
+
+    // addJapaneseGardenMarker();
+    // addTeaHouseMarker();
+    // addVisitantCenterMaker();
+    // addOrchidGardenMaker();
+    // addSunWatchMarker();
+    // addHealingGardenMarker();
+    // addGreeHouseMarker();
+    // addInfantParkMarker();
+    // addParkingMarker();
+    // addContemplationGardenMarker();
+    // addEvolutionaryGardenMarker();
+    // addSmellsGardenMarker();
+    // addPermacultureMarker();
+    // addHammockPlaceMarker();
+    // addCenterOfExcellenceMarker();
+    // addNaturalLibraryMarker();
+}
+
+function setJbbSpaces(){
+  markers = new  Markers(map);
+  markers.setMap();
+  markers.setListener();
+}
+
+function removeJbbSpaces(){
+  markers.setNull();
 }
 
 function loadScript() {
