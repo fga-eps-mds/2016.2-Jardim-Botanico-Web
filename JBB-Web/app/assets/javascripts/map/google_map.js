@@ -19,33 +19,7 @@ function initialize() {
     // initializing map
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
 
-
-    // markers = new  Markers(map);
-    // markers.setMap();
-    // markers.setNull();
-    // markers.setMap();
-    // // markers.setNull;
-
-    //add jbb space markers at map
-    // addAmphitheaterMarker();
-    // addCactusBoskMarker();
-
-    // addJapaneseGardenMarker();
-    // addTeaHouseMarker();
-    // addVisitantCenterMaker();
-    // addOrchidGardenMaker();
-    // addSunWatchMarker();
-    // addHealingGardenMarker();
-    // addGreeHouseMarker();
-    // addInfantParkMarker();
-    // addParkingMarker();
-    // addContemplationGardenMarker();
-    // addEvolutionaryGardenMarker();
-    // addSmellsGardenMarker();
-    // addPermacultureMarker();
-    // addHammockPlaceMarker();
-    // addCenterOfExcellenceMarker();
-    // addNaturalLibraryMarker();
+    addJbbTotalAreaPolygon()
 }
 
 function setJbbSpaces(){
