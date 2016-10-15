@@ -32,9 +32,10 @@
 					</ul>
 				</div>
 				<%end%>
+				<br>
 				<div class = "field">
-					<%=f.label :Data_de_inicio%>
-					<%=f.date_select(:date_start)%>
+					<%=f.label :Data_de_inicio %>
+					<%=f.date_select(:date_start) %> 
 				</div>
 				<div class="field">
 					<%=f.label :Horário_de_inicio%>
@@ -139,8 +140,8 @@
 				<br>
 				<div class="actions">
 					<%= f.submit "Cadastrar", class: "btn btn-primary"%>
-					&nbsp&nbsp&nbsp&nbsp 
-					<%= link_to "Visualizar agenda", show_event_calendar_url , class: "btn btn-primary"%>
+					&nbsp&nbsp&nbsp&nbsp
+					<%= link_to "Visualizar agenda", show_event_calendar_url , class: "btn btn-primary" %>  
 					&nbsp&nbsp&nbsp&nbsp 
 					<%= link_to "Voltar", root_url , class: "btn btn-primary"%>
 				</div>
