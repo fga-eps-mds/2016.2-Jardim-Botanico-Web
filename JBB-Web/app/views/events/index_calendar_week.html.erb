@@ -3,7 +3,7 @@
   <div class="col-md-6 col-md-offset-3">
   <h2>Calendário de Eventos</h2>
     <%= week_calendar number_of_weeks: 1 do |date, events| %>
-    <%= date %>
+    <b><%= date.strftime("%d") %> </div></b>
     <% events.each do |event| %>
     <div>
      <%= event.jbb_space_requested %>

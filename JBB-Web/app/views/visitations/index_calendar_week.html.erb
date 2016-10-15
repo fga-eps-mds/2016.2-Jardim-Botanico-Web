@@ -3,7 +3,7 @@
   <div class="col-md-6 col-md-offset-3">
   <h2>Calenário de Visitas</h2>
     <%= week_calendar number_of_weeks: 1 do |date, visitations| %>
-    <%= date %>
+    <b> <%= date.strftime("%d")  %> </b>
     <% visitations.each do |visitations| %>
     <div>
      <%= visitations.description %>
