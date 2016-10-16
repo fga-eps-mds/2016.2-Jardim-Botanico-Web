@@ -6,7 +6,8 @@ RSpec.describe Event, :type => :model do
     @event = FactoryGirl.create(:event,user_id:@user.id)
   end
 
-  it { expect(@event).to respond_to(:status, :date, :time, :name, :description, :people_amount) }
+  it { expect(@event).to respond_to(:status, :date_start, :date_end, :time_start, :time_end, :description,
+                                    :estimated_public) }
 
   it { expect(@event).to be_valid }
 
@@ -28,21 +29,14 @@ RSpec.describe Event, :type => :model do
 
     describe "date" do
       it "must be given" do
-        subject["date"] = ""
+        subject["date_start"] = ""
         expect(Event.new(subject)).not_to be_valid
       end
     end
 
     describe "time" do
       it "must be given" do
-        subject["time"] = ""
-        expect(Event.new(subject)).not_to be_valid
-      end
-    end
-
-    describe "name" do
-      it "must be given" do
-        subject["name"] = ""
+        subject["time_start"] = ""
         expect(Event.new(subject)).not_to be_valid
       end
     end
@@ -75,7 +69,7 @@ RSpec.describe Event, :type => :model do
 
     describe "people_amount" do
       it "must be given" do
-        subject["people_amount"] = "0"
+        subject["estimated_public"] = 10
         expect(Event.new(subject)).not_to be_valid
       end
     end

@@ -1,15 +1,11 @@
 module Features
   module SessionHelpers
-    def sign_up (name, email, password, cpf, phone, gender, birth)
-      visit create_user
-      fill_in 'user_name', with: name
-      fill_in 'user_email', with: email
-      fill_in 'user_password', with: password
-      fill_in 'user_cpf', with: cpf
-      fill_in 'user_phone', with: phone
-      fill_in 'user_gender', with: gender
-      fill_in 'user_birth', with: birth
-      click_button 'Sign up'
+
+    def sign_up
+      expect {
+        post :create, user: FactoryGirl.attributes_for(:user)
+        response.should be_redirect
+      }.should change(User, :count).by(1)
     end
 
     def sign_in(user)
