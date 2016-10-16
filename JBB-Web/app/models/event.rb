@@ -1,6 +1,16 @@
 class Event < ApplicationRecord
 	belongs_to :user
 
+  # schedule
+  def start_time
+    self.date_start
+  end
+
+  def end_time
+    self.date_end
+  end
+
+
 	# validation of dates
 	validates :date_start, presence: true
 	validates :date_end, presence: true
@@ -38,5 +48,4 @@ class Event < ApplicationRecord
 	def accepted_by_employee
 		self.status = "Agendado"
 	end
-
 end

@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   get '/users/edit/:id' => 'users#edit', :as => 'user_edit'
   get '/users/my_requests/:id' => 'users#my_requests', :as =>'user_my_requests'
 
-
   patch '/users/update/', controller: 'users', action: 'update', :as => 'update_user'
   patch '/users/update/:id', controller: 'users', action: 'update_password', :as => 'update_user_password'
   patch '/users/destroy/', controller: 'users', action: 'destroy', :as => 'destroy_user'
@@ -28,7 +27,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'trails/new'
 
-                                                    #VISITATIONS
+  #Visitations
   resources :visitations, :except => [:show, :update, :destroy]
 
   get 'visitations/home', as: 'home_visitation'
@@ -97,4 +96,12 @@ Rails.application.routes.draw do
   #Map
   get 'maps/jbb_map', as: 'get_jbb_map'
   post 'maps/jbb_map', as: 'post_jbb_map'
+
+  # schedule route
+  get 'events/index_calendar_month' => 'events#index_calendar_month', as: 'show_event_calendar'
+  get 'visitations/index_calendar_month' => 'visitations#index_calendar_month', as: 'show_visitation_calendar'
+
+  get 'events/index_calendar_week' => 'events#index_calendar_week', as: 'show_event_calendar_week'
+  get 'visitations/index_calendar_week' => 'visitations#index_calendar_week', as: 'show_visitation_calendar_week'
+
 end

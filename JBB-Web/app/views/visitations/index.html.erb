@@ -15,12 +15,12 @@
         <br>
         <div class = "actions" >
           <b>Dia:</b>
-          <%= @visitation.date %>
+          <%= @visitation.date.strftime("%d/%m/%Y") %>
         </div>
         <br>
         <div class = "actions" >
           <b>Hora:</b>
-          <%= @visitation.time %>
+          <%= @visitation.time.to_s(:time) %>
         </div>
         <br>
         <div class = "actions" >

@@ -17,15 +17,17 @@ FactoryGirl.define do
     status "Aguardando confirmacao"
     visitants_amount 10
     description "Visita marcada ao JBB sábado"
+    visitants_paying 200
   end
 
   factory :event do
     status "Confirmado"
-    date "16/11/2016"
-    time "12:50"
-    name "Federal"
+    date_start "16/11/2016"
+    date_end "16/11/2016"
+    time_start "12:50"
+    time_end "18:50"
     description "Passeio escolar"
-    people_amount 50
+    estimated_public 50
    end
 
    factory :trail do
