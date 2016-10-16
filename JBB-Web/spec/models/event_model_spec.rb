@@ -74,6 +74,61 @@ RSpec.describe Event, :type => :model do
       end
     end
 
-  end
+    describe "set_status_default" do
+      it "must return the default status" do
+        event = Event.new
+        event.set_status_default == "Aguardando analise"
+      end
+    end
 
+    describe "canceled_by_employee" do
+      it "must return the canceled by employee status" do
+        event = Event.new
+        event.canceled_by_employee == "Cancelado por funcionario"
+      end
+    end
+
+    describe "awaiting_user_confirmation" do
+      it "must return the wanting status" do
+        event = Event.new
+        event.awaiting_user_confirmation == "Aguardando confirmacao do usuario"
+      end
+    end
+
+    describe "canceled_by_user" do
+      it "must return the canceled by user status" do
+        event = Event.new
+        event.canceled_by_user == "Cancelado pelo usuario"
+      end
+    end
+
+    describe "refused_by_employee" do
+      it "must return the refused by employee status" do
+        event = Event.new
+        event.refused_by_employee == "Recusado por funcionario"
+      end
+    end
+
+    describe "accepted_by_employee" do
+      it "must return the accepted by employee status" do
+        event = Event.new
+        event.accepted_by_employee == "Agendado"
+      end
+    end
+
+    describe "start_time" do
+      it "must return the initial time" do
+        event = Event.new
+        event.date_start
+      end
+    end
+
+    describe "end_time" do
+      it "must return the final time" do
+        event = Event.new
+        event.date_end
+      end
+    end
+
+  end
 end
