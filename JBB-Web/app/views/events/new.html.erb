@@ -1,6 +1,7 @@
 <body id="page-top">
 	<br><br>
-	<div class="col-md-6 col-md-offset-3">
+	<div class="col-md-6 col-md-offset-3"><br><br>
+		<div class='calendar'></div>
 		<div class="container">
 			<div class="row">
 				<h1>Requisição de Evento</h1>
@@ -16,120 +17,132 @@
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<%flash.each do |key, value|%>
-					<div class="alert alert-<%= key %>"><%= value %></div>
+				<div class="alert alert-<%= key %>"><%= value %></div>
 				<%end%>
 				<%=form_for @event do |f|%>
-					<%if @event.errors.any?%>
-					<div id="error_explanation">
-						<div class="alert-error">
-							O formulário contém <%=pluralize(@event.errors.count, "erro")%>.
-						</div>
-						<ul>
-							<%@event.errors.full_messages.each do |msg|%>
-							<li><%= msg %></li>
-							<%end%>
-						</ul>
+				<%if @event.errors.any?%>
+				<div id="error_explanation">
+					<div class="alert-error">
+						O formulário contém <%=pluralize(@event.errors.count, "erro")%>.
 					</div>
-					<%end%>
-					<div class = "field">
-						<%=f.label :Data%>
-						<%=f.date_select(:date)%>
+					<ul>
+						<%@event.errors.full_messages.each do |msg|%>
+						<li><%= msg %></li>
+						<%end%>
+					</ul>
+				</div>
+				<%end%>
+				<br>
+				<div class = "field">
+					<%=f.label :Data_de_inicio %>
+					<%=f.date_select(:date_start) %> 
+				</div>
+				<div class="field">
+					<%=f.label :Horário_de_inicio%>
+					<%=f.time_select(:time_start, minute_step: 15, start_hour: 8, end_hour: 16)%>
+				</div>
+				<br>
+				<div class = "field">
+					<%=f.label :Data_de_fim%>
+					<%=f.date_select(:date_end)%>
+				</div>
+				<div class="field">
+					<%=f.label :Horário_de_fim%>
+					<%=f.time_select(:time_end, minute_step: 15, start_hour: 8, end_hour: 16)%>
+				</div>
+				<br>
+				<div class = "field" >
+					<%=f.label :Espaço_do_jbb_solicitado%>
+					<%=f.text_field :jbb_space_requested, class: 'form-control', placeholder: 'Digite o nome do espaço'%>
+				</div>
+				<br>
+				<div class="form-inline">
+					<%= f.label :Quantidade_de_Pessoas%>
+					<div class = "form-group" style="width: 200px">
+						<%= f.number_field :estimated_public, min: 1, width: 10, :required => true, class: 'form-control'%>
 					</div>
-					<br>
-	        <div class="field">
-						<%=f.label :Horário%>
-						<%=f.time_select(:time, minute_step: 15, start_hour: 8, end_hour: 16)%>
-					</div>
-					<br>
-					<div class="form-inline">
-						<%= f.label :Periodo_de_Aluguel_em_dias%>
-						<div class = "form-group" style="width: 200px">
-							<%= f.number_field :rental_period, min: 1, max: 1000, width: 10, :required => true, class: 'form-control'%>
-						</div>
-					</div>
-					<br>
-					<div class = "field" >
-						<%=f.label :Espaço_do_jbb_solicitado%>
-						<%=f.text_field :jbb_space_requested, class: 'form-control', placeholder: 'Digite o nome do espaço'%>
-					</div>
-					<br>
-					<div class="form-inline">
-						<%= f.label :Quantidade_de_Pessoas%>
-						<div class = "form-group" style="width: 200px">
-							<%= f.number_field :estimated_public, min: 1, width: 10, :required => true, class: 'form-control'%>
-						</div>
-					</div>
-					<br>
-					<div class = "field">
-						<table border = '0'>
-							<td>
-								<tr>
-									<%= f.label :Energia_Elétrica?%>
-									&nbsp
-									<%= f.radio_button(:need_eletricity, "Sim")%>
-									<%= f.label(:need_eletricity, "Sim")%>
-									<%= f.radio_button(:need_eletricity, "Nao") %>
-									<%= f.label(:need_eletricity, "Não") %>
-								</tr>
-								<tr>
-									&nbsp&nbsp&nbsp&nbsp
-									<%= f.label :Ponto_de_Água?%>
-									&nbsp
-									<%= f.radio_button(:need_water, "Sim")%>
-									<%= f.label(:need_water, "Sim")%>
-									<%= f.radio_button(:need_water, "Nao") %>
-									<%= f.label(:need_water, "Não") %>
-								</tr>
-								<tr>
-									&nbsp&nbsp&nbsp&nbsp
-									<%= f.label :Serviços_de_Limpeza?%>
-									&nbsp
-									<%= f.radio_button(:need_clean_service, "Sim")%>
-									<%= f.label(:need_clean_service, "Sim")%>
-									<%= f.radio_button(:need_clean_service, "Nao") %>
-									<%= f.label(:need_clean_service, "Não") %>
-								</tr>
-							</td>
-						</table>	
-					</div>
-					<br>
-					<div class = "field" >
-						<%=f.label :Em_caso_especifico_detalhar%>
-						<%=f.text_area :other_informations, :cols => "50", :rows => "5", class: 'form-control'%>
-					</div>
-					<br>
-					<div class = "field" >
-						<%= f.label :Uso_comercial_de_imagens?%>
-						&nbsp
-						<%= f.radio_button(:commercial_use_photos, "Sim")%>
-						<%= f.label(:commercial_use_photos, "Sim")%>
-						<%= f.radio_button(:commercial_use_photos, "Nao") %>
-						<%= f.label(:commercial_use_photos, "Não") %>
-					</div>
-					<br>
-					<div class = "field" >
-						<%=f.label :Descrição_do_evento%>
-						<%=f.text_area :description, :cols => "50", :rows => "5", :required => true, class: 'form-control'%>
-					</div>
-					<br><br>
-					<p>Em Caso de Instituição:</p>
-					<div class="field">
-			        	<%= f.label :Nome %>
-			        	<%= f.text_field :name_institute, autocomplete: "off", class: 'form-control', placeholder: 'Digite o nome da instituição'%>
-			        </div>
-			        <br>
-			        <div class="field">
-			          <%= f.label :Endereço%>
-			          <%= f.text_field :institute_address, autocomplete: "off", class: 'form-control', placeholder: 'Digite o endereço'%>
-			        </div>
-			        <br>
-			        <div class="field">
-			          <%= f.label :CNPJ%>
-			          <%= f.text_field :institute_cnpj, autocomplete: "off", class: 'form-control', placeholder: 'Digite o CNPJ, Ex: 000.000.000/0000-00'%>
-			        </div>
+				</div>
+				<br>
+				<div class = "field">
+					<table border = '0'>
+						<td>
+							<tr>
+								<%= f.label :Energia_Elétrica?%>
+								&nbsp
+								<br>
+								<%= f.radio_button(:need_eletricity, "Sim")%>
+								<%= f.label(:need_eletricity, "Sim")%><br>
+								<%= f.radio_button(:need_eletricity, "Nao") %>
+								<%= f.label(:need_eletricity, "Não") %>
+							</tr>
+							<tr>
+								&nbsp&nbsp&nbsp&nbsp
+								<br>
+								<%= f.label :Ponto_de_Água?%>
+								&nbsp
+								<br>
+								<%= f.radio_button(:need_water, "Sim")%>
+								<%= f.label(:need_water, "Sim")%>
+								<br>
+								<%= f.radio_button(:need_water, "Nao") %>
+								<%= f.label(:need_water, "Não") %>
+							</tr>
+							<tr>
+								&nbsp&nbsp&nbsp&nbsp
+								<br>
+								<%= f.label :Serviços_de_Limpeza?%>
+								&nbsp
+								<br>
+								<%= f.radio_button(:need_clean_service, "Sim")%>
+								<%= f.label(:need_clean_service, "Sim")%>
+								<br>
+								<%= f.radio_button(:need_clean_service, "Nao") %>
+								<%= f.label(:need_clean_service, "Não") %>
+							</tr>
+						</td>
+					</table>
+				</div>
+				<br>
+				<div class = "field" >
+					<%=f.label :Em_caso_especifico_detalhar%>
+					<%=f.text_area :other_informations, :cols => "50", :rows => "5", class: 'form-control'%>
+				</div>
+				<br>
+				<div class = "field" >
+					<%= f.label :Uso_comercial_de_imagens?%>
+					&nbsp
+					<%= f.radio_button(:commercial_use_photos, "Sim")%>
+					<%= f.label(:commercial_use_photos, "Sim")%>
+					<%= f.radio_button(:commercial_use_photos, "Nao") %>
+					<%= f.label(:commercial_use_photos, "Não") %>
+				</div>
+				<br>
+				<div class = "field" >
+					<%=f.label :Descrição_do_evento%>
+					<%=f.text_area :description, :cols => "50", :rows => "5", :required => true, class: 'form-control'%>
+				</div>
+				<br><br>
+				<p>Em Caso de Instituição:</p>
+				<div class="field">
+					<%= f.label :Nome %>
+					<%= f.text_field :name_institute, autocomplete: "off", class: 'form-control', placeholder: 'Digite o nome da instituição'%>
+				</div>
+				<br>
+				<div class="field">
+					<%= f.label :Endereço%>
+					<%= f.text_field :institute_address, autocomplete: "off", class: 'form-control', placeholder: 'Digite o endereço'%>
+				</div>
+				<br>
+				<div class="field">
+					<%= f.label :CNPJ%>
+					<%= f.text_field :institute_cnpj, autocomplete: "off", class: 'form-control', placeholder: 'Digite o CNPJ, Ex: 000.000.000/0000-00'%>
+				</div>
 				<br>
 				<div class="actions">
 					<%= f.submit "Cadastrar", class: "btn btn-primary"%>
+					&nbsp&nbsp&nbsp&nbsp
+					<%= link_to "Visualizar agenda", show_event_calendar_url , class: "btn btn-primary" %>  
+					&nbsp&nbsp&nbsp&nbsp 
 					<%= link_to "Voltar", root_url , class: "btn btn-primary"%>
 				</div>
 				<%end%>

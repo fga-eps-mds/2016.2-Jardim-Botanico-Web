@@ -13,15 +13,24 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <br>
+        <b>Data e hora de início</b>
         <div class = "actions">
-          <b>Dia:</b>
-          <%= @event.date %>
+          <b>Dia: </b>
+          <%= @event.date_start.strftime("%d/%m/%Y") %>
+        </div>
+        <div class = "actions">
+          <b>Hora: </b>
+          <%= @event.time_start.to_s(:time) %>
         </div>
         <br>
+        <b>Data e hora de fim</b>
+        <div class = "actions">
+          <b>Dia:</b>
+          <%= @event.date_end.strftime("%d/%m/%Y") %>
+        </div>
         <div class = "actions">
           <b>Hora:</b>
-          <%= @event.time %>
+          <%= @event.time_end.to_s(:time) %>
         </div>
         <br>
         <div class = "actions">
@@ -30,25 +39,81 @@
         </div>
         <br>
         <div class = "actions" >
-          <b>Quantidade de Pessoas:</b>
-          <%= @event.people_amount %>
-          <b>Periodo de Aluguel:</b>
-          <%= @event.rental_period%>
-        </div>
-        <br>
-        <div class = "actions" >
-          <b>Espaço Solicitado:</b>
+          <b>Espaço solicitado:</b>
           <%= @event.jbb_space_requested%>
         </div>
         <br>
         <div class = "actions" >
-          <b>Publico Estimado:</b>
+          <b>Publico estimado:</b>
           <%= @event.estimated_public%>
         </div>
         <br>
-        <div class= "actions" >
+        <div class= "actions spacing" >
           <b>Descrição:</b>
           <%= @event.description %>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Espaço solicitado:</b>
+          <%= @event.jbb_space_requested%>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Publico estimado:</b>
+          <%= @event.estimated_public%>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Uso Comercial de imagem:</b>
+          <%= @event.commercial_use_photos%>
+        </div>
+        <br>
+        <table>
+          <tr>
+            <td>
+              <div class = "actions" >
+                <b>Precisa de energia elétrica?</b>
+                <%= @event.need_eletricity%>
+              </div>
+            </td>
+            <td>
+              <div class = "actions" >
+                &nbsp&nbsp&nbsp&nbsp
+                <b>Precisa de água?</b>
+                <%= @event.need_water%>
+              </div>
+            </td>
+            <td>
+              <div class = "actions" >
+                &nbsp&nbsp&nbsp&nbsp
+                <b>Precisa de servico de limpeza?</b>
+                <%= @event.need_clean_service%>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <div class= "actions sp" >
+          <b>Outras informações:</b>
+          <%= @event.other_informations %>
+        </div>
+        <br>
+        <div class= "actions spacing" >
+          <b>Uso comercial de imagens:</b>
+          <%= @event.commercial_use_photos %>
+        </div>
+        <br>
+        <div class= "actions spacing" >
+          <b>Nome da instituição:</b>
+          <%= @event.name_institute %>
+        </div>
+        <div class= "actions spacing" >
+          <b>Endereço da instituição:</b>
+          <%= @event.institute_address %>
+        </div>
+        <div class= "actions spacing" >
+          <b>CNPJ da instituição:</b>
+          <%= @event.institute_cnpj %>
         </div>
         <br> <p>
         <% if (current_user.is_employee)%>
@@ -65,7 +130,7 @@
           <%= link_to "Cancelar Evento", class: "btn btn-warning destroy-btn", controller: "events", action: "cancel_event_user", id: @event %>
         <% end %>
         <div class= "actions" >
-          <b>Resposta do JBB:</b>
+          <b>Resposta do Jardim Botânico:</b>
           <%= @event.jbb_response_to_request%>
         </div>
         <br>

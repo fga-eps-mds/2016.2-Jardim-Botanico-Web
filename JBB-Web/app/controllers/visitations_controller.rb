@@ -107,6 +107,13 @@ class VisitationsController < ApplicationController
     end
   end
 
+  # schedule filter
+  def index_calendar_month
+    @visitations = Visitation.where("status = ? AND has_guide = ?", "Agendado", true)
+    # @visitation = Visitation.where(status: "agendado")
+    # @visitation = @visitation.where(has_guide: true)
+  end
+
   #parameters
   private
   def visitation_params
