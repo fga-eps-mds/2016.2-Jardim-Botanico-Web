@@ -56,6 +56,48 @@ RSpec.describe Visitation, :type => :model do
       end
     end
 
-  end
+    describe "set_status_default" do
+      it "must return the default status" do
+        visitation = Visitation.new
+        visitation.set_status_default == "Aguardando analise"
+      end
+    end
 
+    describe "canceled_by_employee" do
+      it "must return the canceled by employee status" do
+        visitation = Visitation.new
+        visitation.canceled_by_employee == "Cancelado por funcionario"
+      end
+    end
+
+    describe "canceled_by_user" do
+      it "must return the canceled by user status" do
+        visitation = Visitation.new
+        visitation.canceled_by_user == "Cancelado pelo usuario"
+      end
+    end
+
+    describe "refused_by_employee" do
+      it "must return the refused by employee status" do
+        visitation = Visitation.new
+        visitation.refused_by_employee == "Recusado por funcionario"
+      end
+    end
+
+    describe "accepted_by_employee" do
+      it "must return the accepted by employee status" do
+        visitation = Visitation.new
+        visitation.accepted_by_employee == "Agendado"
+      end
+    end
+
+    describe "set visitation cost" do
+      it "must retun 0 to public schools" do
+        visitation = Visitation.new
+        visitation.visitation_type <=> "Escola publica"
+        expect(visitation.visitation_cost).to be_nil
+      end
+    end
+
+  end
 end
