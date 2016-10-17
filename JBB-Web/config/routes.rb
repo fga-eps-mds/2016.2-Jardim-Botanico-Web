@@ -42,13 +42,11 @@ Rails.application.routes.draw do
   get 'visitations/refuse_visitation_employee', as: 'get_refuse_visitation_employee'
   post 'visitations/refuse_visitation_employee', as: 'post_refuse_visitation_employee'
 
-
   get 'visitations/cancel_visitation_employee', as: 'get_cancel_visitation_employee'
   post 'visitations/cancel_visitation_employee', as: 'post_cancel_visitation_employee'
 
   get 'visitations/delete_visitation_employee', as: 'get_delete_visitation_employee'
   post 'visitations/delete_visitation_employee', as: 'post_delete_visitation_employee'
-
 
   #Visitation User
   get 'visitations/cancel_visitation_user', as: 'get_cancel_visitation_user'
