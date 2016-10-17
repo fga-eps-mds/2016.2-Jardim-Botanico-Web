@@ -1,8 +1,10 @@
 class Markers {
 
+
   constructor(map) {
     this.map = map;
     this.infowindow;
+    this.markers_on = false;
 
     //Initializing Markers
     this.amphitheaterMarker = new google.maps.Marker();
@@ -30,33 +32,111 @@ class Markers {
   setListener(){
     //add a listener to verify if the marker is clicked
     this.amphitheaterMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(amphitheaterInfowindowContentString);
-      this.infowindow.setPosition(amphitheaterLatLng);
-      this.infowindow.open(map, this.amphitheaterMarker);
+      infowindow.setContent(amphitheaterInfowindowContentString);
+      infowindow.setPosition(amphitheaterLatLng);
+      infowindow.open(map, this.amphitheaterMarker);
     });
 
     this.cactusBoskMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(cactusBoskInfowindowContentString);
-      this.infowindow.setPosition(cactusBoskLatLng);
-      this.infowindow.open(map, this.cactusBoskMarker);
+      infowindow.setPosition(cactusBoskLatLng);
+      infowindow.setContent(cactusBoskInfowindowContentString);
+      infowindow.open(map, this.cactusBoskMarker);
     });
 
-    //add a listener to verify if the marker is clicked
     this.centerOfExcellenceMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(centerOfExcellenceInfowindowContentString);
-      this.infowindow.setPosition(centerOfExcellenceLatLng);
-      this.infowindow.open(map, this.centerOfExcellenceMarker);
+      infowindow.setContent(centerOfExcellenceInfowindowContentString);
+      infowindow.setPosition(centerOfExcellenceLatLng);
+      infowindow.open(map, this.centerOfExcellenceMarker);
     });
 
-    //add a listener to verify if the marker is clicked
     this.contemplationGardenMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(contemplationGardenInfowindowContentString);
-      this.infowindow.setPosition(contemplationGardenLatLng);
-      this.infowindow.open(map, this.contemplationGardenMarker);
+      infowindow.setContent(contemplationGardenInfowindowContentString);
+      infowindow.setPosition(contemplationGardenLatLng);
+      infowindow.open(map, this.contemplationGardenMarker);
+    });
+
+    this.evolutionaryGardenMarker.addListener('click', function() {
+      infowindow.setContent(evolutionaryGardenInfowindowContentString);
+      infowindow.setPosition(evolutionaryGardenLatLng);
+      infowindow.open(map, this.evolutionaryGardenMarker);
+    });
+
+    this.greenHouseMarker.addListener('click', function() {
+      infowindow.setContent(greenHouseInfowindowContentString);
+      infowindow.setPosition(greenHouseLatLng);
+      infowindow.open(map, this.greenHouseMarker);
+    });
+
+    this.hammockPlaceMarker.addListener('click', function() {
+      infowindow.setContent(hammockPlaceInfowindowContentString);
+      infowindow.setPosition(hammockPlaceLatLng);
+      infowindow.open(map, this.hammockPlaceMarker);
+    });
+
+    this.healingGardenMarker.addListener('click', function() {
+      infowindow.setContent(healingGardenInfowindowContentString);
+      infowindow.setPosition(healingGardenLatLng);
+      infowindow.open(map, this.healingGardenMarker);
+    });
+
+    this.infantParkMarker.addListener('click', function() {
+      infowindow.setContent(infantParkInfowindowContentString);
+      infowindow.setPosition(infantParkLatLng);
+      infowindow.open(map, this.infantParkMarker);
+    });
+
+    this.japaneseGardenMarker.addListener('click', function() {
+      infowindow.setContent(japaneseGardenInfowindowContentString);
+      infowindow.setPosition(japaneseGardenLatLng);
+      infowindow.open(map, this.japaneseGardenMarker);
+    });
+
+    this.naturalLibraryMarker.addListener('click', function() {
+      infowindow.setContent(naturalLibraryInfowindowContentString);
+      infowindow.setPosition(naturalLibraryLatLng);
+      infowindow.open(map, this.naturalLibraryMarker);
+    });
+
+    this.orchidGardenMarker.addListener('click', function() {
+      infowindow.setContent(orchidGardenInfowindowContentString);
+      infowindow.setPosition(orchidGardenLatLng);
+      infowindow.open(map, this.orchidGardenMarker);
+    });
+
+    this.parkingMarker.addListener('click', function() {
+      infowindow.setContent(parkingInfowindowContentString);
+      infowindow.setPosition(parkingLatLng);
+      infowindow.open(map, this.parkingMarker);
+    });
+
+    this.permacultureMarker.addListener('click', function() {
+      infowindow.setContent(permacultureInfowindowContentString);
+      infowindow.setPosition(permacultureLatLng);
+      infowindow.open(map, this.permacultureMarker);
+    });
+
+    this.smellsGardenMarker.addListener('click', function() {
+      infowindow.setContent(smellsGardenInfowindowContentString);
+      infowindow.setPosition(smellsGardenLatLng);
+      infowindow.open(map, this.smellsGardenMarker);
+    });
+
+    this.sunWatchMarker.addListener('click', function() {
+      infowindow.setContent(sunWatchInfowindowContentString);
+      infowindow.setPosition(sunWatchLatLng);
+      infowindow.open(map, this.sunWatchMarker);
+    });
+
+    this.teaHouseMarker.addListener('click', function() {
+      infowindow.setContent(teaHouseInfowindowContentString);
+      infowindow.setPosition(teaHouseLatLng);
+      infowindow.open(map, this.teaHouseMarker);
+    });
+
+    this.visitantCenterMarker.addListener('click', function() {
+      infowindow.setContent(visitantsCenterInfowindowContentString);
+      infowindow.setPosition(visitantCenterLatLng);
+      infowindow.open(map, this.visitantCenterMarker);
     });
 
   }
@@ -90,8 +170,8 @@ class Markers {
     this.centerOfExcellenceMarker.setMap(this.map);
     this.contemplationGardenMarker.setMap(this.map);
     this.evolutionaryGardenMarker.setMap(this.map);
-    this.greenHouseMarker.setMap(this.map);
     this.hammockPlaceMarker.setMap(this.map);
+    this.greenHouseMarker.setMap(this.map);
     this.healingGardenMarker.setMap(this.map);
     this.infantParkMarker.setMap(this.map);
     this.japaneseGardenMarker.setMap(this.map);
@@ -103,6 +183,29 @@ class Markers {
     this.sunWatchMarker.setMap(this.map);
     this.teaHouseMarker.setMap(this.map);
     this.visitantCenterMarker.setMap(this.map);
+
+    //Set Marker's Name
+    this.amphitheaterMarker.setTitle("Anfiteatro");
+    this.cactusBoskMarker.setTitle("Cactário");
+    this.centerOfExcellenceMarker.setTitle("Mirante");
+    this.contemplationGardenMarker.setTitle("Jardim de Contemplação");
+    this.evolutionaryGardenMarker.setTitle("Jardim Evolutivo");
+    this.hammockPlaceMarker.setTitle("Redário");
+    this.greenHouseMarker.setTitle("Estufas");
+    this.healingGardenMarker.setTitle("Jardim Medicinal");
+    this.infantParkMarker.setTitle("Parque Infantil");
+    this.japaneseGardenMarker.setTitle("Jardim Japonês");
+    this.naturalLibraryMarker.setTitle("Biblioteca da Natureza");
+    this.orchidGardenMarker.setTitle("Orquidário");
+    this.parkingMarker.setTitle("Estacionamento");
+    this.permacultureMarker.setTitle("Permacultura");
+    this.smellsGardenMarker.setTitle("Jardim de Cheiros");
+    this.sunWatchMarker.setTitle("Relógio de Sol");
+    this.teaHouseMarker.setTitle("Casa de Chá");
+    this.visitantCenterMarker.setTitle("Centro de Visitantes");
+
+    //Set markers as on
+    this.markers_on = true;
   };
 
 
@@ -125,8 +228,8 @@ class Markers {
     this.sunWatchMarker.setMap(null);
     this.teaHouseMarker.setMap(null);
     this.visitantCenterMarker.setMap(null);
+
+    //Set markers as off
+    this.markers_on = false;
   };
-
-
-
 };
