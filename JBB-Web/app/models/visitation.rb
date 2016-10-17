@@ -29,7 +29,10 @@ class Visitation < ApplicationRecord
     self.status = "Aguardando confirmacao"
   end
 
-  #status
+  def self.total
+    self.sum(:visitation_cost)
+  end
+
   def set_visitation_cost
     if (self.visitation_type <=> "Escola publica")
       self.visitation_cost = 0

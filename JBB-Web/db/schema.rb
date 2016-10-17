@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20161008181353) do
     t.string   "description"
     t.string   "other_informations"
     t.string   "jbb_response_to_request"
+    t.float    "price_payment"
     t.string   "name_institute"
     t.string   "institute_address"
     t.string   "institute_cnpj"

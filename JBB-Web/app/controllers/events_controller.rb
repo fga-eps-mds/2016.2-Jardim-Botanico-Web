@@ -47,10 +47,19 @@ class EventsController < ApplicationController
   #employee
   def show_employee
     @event = Event.all
+    @sum_of_payments = Event.total
   end
 
   def index_employee
     @event = Event.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = EventssPdf.new(@event)
+        send_data pdf.render, filename: 'formularios.pdf', type: "application/pdf",
+        disposition: "inline"
+      end  
+    end 
   end
 
   #refuse_confirmation
@@ -126,7 +135,7 @@ class EventsController < ApplicationController
                                   :jbb_space_requested, :estimated_public,
                                   :commercial_use_photos, :other_informations,
                                   :jbb_response_to_request, :name_institute,
-                                  :institute_address, :institute_cnpj)
+                                  :institute_address, :institute_cnpj, :price_payment)
   end
 
 end
