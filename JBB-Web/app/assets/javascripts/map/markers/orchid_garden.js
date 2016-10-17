@@ -1,5 +1,5 @@
 //set visitants info to use at infowindow
-var orchidGardenContentString =
+var orchidGardenInfowindowContentString =
 	'<div id="content">'+
 	'<div id="siteNotice">'+
 	'</div>'+

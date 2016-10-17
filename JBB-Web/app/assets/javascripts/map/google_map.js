@@ -18,19 +18,23 @@ function initialize() {
 
     // initializing map
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+    markers = new Markers(map);
 
-    addJbbTotalAreaPolygon()
+    addJbbTotalAreaPolygon();
 }
 
-function setJbbSpaces(){
-  markers = new  Markers(map);
-  markers.setMap();
-  markers.setListener();
+
+function setJbbSpaces() {
+  if(markers.markers_on) {
+      markers.setNull();
+  }
+  else {
+    markers.setMap();
+    markers.setListener();
+  }
+
 }
 
-function removeJbbSpaces(){
-  markers.setNull();
-}
 
 function loadScript() {
 console.log("map loading ...");
