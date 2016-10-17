@@ -16,6 +16,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.string :description
       t.string :other_informations
       t.string :jbb_response_to_request
+      t.float :price_payment
 
 
       # necessary information if the requester is a institute
