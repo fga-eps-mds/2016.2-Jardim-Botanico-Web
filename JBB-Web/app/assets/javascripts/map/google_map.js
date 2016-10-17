@@ -4,6 +4,7 @@ loadScript();
 
 var map;
 var markers;
+var infowindow = new google.maps.InfoWindow();
 
 function initialize() {
     var mapOptions = {
@@ -18,9 +19,14 @@ function initialize() {
 
     // initializing map
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+    infowindow = new google.maps.InfoWindow();
+    addJbbTotalAreaPolygon();
+
+    //initializing markers
     markers = new Markers(map);
 
-    addJbbTotalAreaPolygon();
+
+
 }
 
 

@@ -32,129 +32,111 @@ class Markers {
   setListener(){
     //add a listener to verify if the marker is clicked
     this.amphitheaterMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(amphitheaterInfowindowContentString);
-      this.infowindow.setPosition(amphitheaterLatLng);
-      this.infowindow.open(map, this.amphitheaterMarker);
+      infowindow.setContent(amphitheaterInfowindowContentString);
+      infowindow.setPosition(amphitheaterLatLng);
+      infowindow.open(map, this.amphitheaterMarker);
     });
 
     this.cactusBoskMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(cactusBoskInfowindowContentString);
-      this.infowindow.setPosition(cactusBoskLatLng);
-      this.infowindow.open(map, this.cactusBoskMarker);
+      infowindow.setPosition(cactusBoskLatLng);
+      infowindow.setContent(cactusBoskInfowindowContentString);
+      infowindow.open(map, this.cactusBoskMarker);
     });
 
     this.centerOfExcellenceMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(centerOfExcellenceInfowindowContentString);
-      this.infowindow.setPosition(centerOfExcellenceLatLng);
-      this.infowindow.open(map, this.centerOfExcellenceMarker);
+      infowindow.setContent(centerOfExcellenceInfowindowContentString);
+      infowindow.setPosition(centerOfExcellenceLatLng);
+      infowindow.open(map, this.centerOfExcellenceMarker);
     });
 
     this.contemplationGardenMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(contemplationGardenInfowindowContentString);
-      this.infowindow.setPosition(contemplationGardenLatLng);
-      this.infowindow.open(map, this.contemplationGardenMarker);
+      infowindow.setContent(contemplationGardenInfowindowContentString);
+      infowindow.setPosition(contemplationGardenLatLng);
+      infowindow.open(map, this.contemplationGardenMarker);
     });
 
     this.evolutionaryGardenMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(evolutionaryGardenInfowindowContentString);
-      this.infowindow.setPosition(evolutionaryGardenLatLng);
-      this.infowindow.open(map, this.evolutionaryGardenMarker);
+      infowindow.setContent(evolutionaryGardenInfowindowContentString);
+      infowindow.setPosition(evolutionaryGardenLatLng);
+      infowindow.open(map, this.evolutionaryGardenMarker);
     });
 
     this.greenHouseMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(greenHouseInfowindowContentString);
-      this.infowindow.setPosition(greenHouseLatLng);
-      this.infowindow.open(map, this.greenHouseMarker);
+      infowindow.setContent(greenHouseInfowindowContentString);
+      infowindow.setPosition(greenHouseLatLng);
+      infowindow.open(map, this.greenHouseMarker);
     });
 
     this.hammockPlaceMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(hammockPlaceInfowindowContentString);
-      this.infowindow.setPosition(hammockPlaceLatLng);
-      this.infowindow.open(map, this.hammockPlaceMarker);
+      infowindow.setContent(hammockPlaceInfowindowContentString);
+      infowindow.setPosition(hammockPlaceLatLng);
+      infowindow.open(map, this.hammockPlaceMarker);
     });
 
     this.healingGardenMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(healingGardenInfowindowContentString);
-      this.infowindow.setPosition(healingGardenLatLng);
-      this.infowindow.open(map, this.healingGardenMarker);
+      infowindow.setContent(healingGardenInfowindowContentString);
+      infowindow.setPosition(healingGardenLatLng);
+      infowindow.open(map, this.healingGardenMarker);
     });
 
     this.infantParkMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(infantParkInfowindowContentString);
-      this.infowindow.setPosition(infantParkLatLng);
-      this.infowindow.open(map, this.infantParkMarker);
+      infowindow.setContent(infantParkInfowindowContentString);
+      infowindow.setPosition(infantParkLatLng);
+      infowindow.open(map, this.infantParkMarker);
     });
 
     this.japaneseGardenMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(japaneseGardenInfowindowContentString);
-      this.infowindow.setPosition(japaneseGardenLatLng);
-      this.infowindow.open(map, this.japaneseGardenMarker);
+      infowindow.setContent(japaneseGardenInfowindowContentString);
+      infowindow.setPosition(japaneseGardenLatLng);
+      infowindow.open(map, this.japaneseGardenMarker);
     });
 
     this.naturalLibraryMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(naturalLibraryInfowindowContentString);
-      this.infowindow.setPosition(naturalLibraryLatLng);
-      this.infowindow.open(map, this.naturalLibraryMarker);
+      infowindow.setContent(naturalLibraryInfowindowContentString);
+      infowindow.setPosition(naturalLibraryLatLng);
+      infowindow.open(map, this.naturalLibraryMarker);
     });
 
     this.orchidGardenMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(orchidGardenInfowindowContentString);
-      this.infowindow.setPosition(orchidGardenLatLng);
-      this.infowindow.open(map, this.orchidGardenMarker);
+      infowindow.setContent(orchidGardenInfowindowContentString);
+      infowindow.setPosition(orchidGardenLatLng);
+      infowindow.open(map, this.orchidGardenMarker);
     });
 
     this.parkingMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(parkingInfowindowContentString);
-      this.infowindow.setPosition(parkingLatLng);
-      this.infowindow.open(map, this.parkingMarker);
+      infowindow.setContent(parkingInfowindowContentString);
+      infowindow.setPosition(parkingLatLng);
+      infowindow.open(map, this.parkingMarker);
     });
 
     this.permacultureMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(permacultureInfowindowContentString);
-      this.infowindow.setPosition(permacultureLatLng);
-      this.infowindow.open(map, this.permacultureMarker);
+      infowindow.setContent(permacultureInfowindowContentString);
+      infowindow.setPosition(permacultureLatLng);
+      infowindow.open(map, this.permacultureMarker);
     });
 
     this.smellsGardenMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(smellsGardenInfowindowContentString);
-      this.infowindow.setPosition(smellsGardenLatLng);
-      this.infowindow.open(map, this.smellsGardenMarker);
+      infowindow.setContent(smellsGardenInfowindowContentString);
+      infowindow.setPosition(smellsGardenLatLng);
+      infowindow.open(map, this.smellsGardenMarker);
     });
 
     this.sunWatchMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(sunWatchInfowindowContentString);
-      this.infowindow.setPosition(sunWatchLatLng);
-      this.infowindow.open(map, this.sunWatchMarker);
+      infowindow.setContent(sunWatchInfowindowContentString);
+      infowindow.setPosition(sunWatchLatLng);
+      infowindow.open(map, this.sunWatchMarker);
     });
 
     this.teaHouseMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(teaHouseInfowindowContentString);
-      this.infowindow.setPosition(teaHouseLatLng);
-      this.infowindow.open(map, this.teaHouseMarker);
+      infowindow.setContent(teaHouseInfowindowContentString);
+      infowindow.setPosition(teaHouseLatLng);
+      infowindow.open(map, this.teaHouseMarker);
     });
 
     this.visitantCenterMarker.addListener('click', function() {
-      this.infowindow = new google.maps.InfoWindow();
-      this.infowindow.setContent(visitantsCenterInfowindowContentString);
-      this.infowindow.setPosition(visitantCenterLatLng);
-      this.infowindow.open(map, this.visitantCenterMarker);
+      infowindow.setContent(visitantsCenterInfowindowContentString);
+      infowindow.setPosition(visitantCenterLatLng);
+      infowindow.open(map, this.visitantCenterMarker);
     });
 
   }
