@@ -1,11 +1,18 @@
 <body id="page-top">
-    <br><br><br>
-    <div class="container">
-        <div class="row">
-            <h1>Mostrar Eventos</h1>
+    <head>
+      <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+      <link href="css/creative.css" rel="stylesheet">
+    </head>
+    <body id="aplication-body">
+      <section id="services">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading">Mostrar Eventos</h2>
+              <hr class="primary">
+            </div>
+          </div>
         </div>
-    </div>
-</div>
 <div class="col-md-6 col-md-offset-3">
 </div>
 <div class="container-fluid">
@@ -15,7 +22,7 @@
             <div class="alert alert-<%= key %>"><%= value %></div>
             <% end %>
             <div class="table-hover">
-                <table border=1 class="table table-bordered" >
+                <table border=0 class="table" >
                     <tr>
                         <th>Data</th>
                         <th>Hora</th>

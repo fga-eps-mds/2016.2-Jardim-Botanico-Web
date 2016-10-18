@@ -1,5 +1,5 @@
 $(window).load(function() {
-loadScript();
+    loadScript();
 });
 
 var map;
@@ -33,6 +33,7 @@ function initialize() {
 function setJbbSpaces() {
   if(markers.markers_on) {
       markers.setNull();
+      infowindow.setMap(null);
   }
   else {
     markers.setMap();
@@ -43,12 +44,11 @@ function setJbbSpaces() {
 
 
 function loadScript() {
-console.log("map loading ...");
-var script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCWLcEV1-tSCf5oUTnjsny_ubD4oZmTmOc' +
-'&libraries=drawing'+
-'&callback=initialize';
-// src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWLcEV1-tSCf5oUTnjsny_ubD4oZmTmOc&callback=initMap
-document.body.appendChild(script);
+    console.log("map loading ...");
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCWLcEV1-tSCf5oUTnjsny_ubD4oZmTmOc' +
+    '&libraries=drawing'+
+    '&callback=initialize';
+    document.body.appendChild(script);
 }

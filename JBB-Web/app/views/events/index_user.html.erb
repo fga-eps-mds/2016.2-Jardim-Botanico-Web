@@ -1,13 +1,19 @@
 <p id="notice"><%= notice %></p>
 <body id="page-top">
-  <br><br>
-  <div class="col-md-6 col-md-offset-3">
-    <div class="container">
-      <div class="row">
-        <h1>Informação do Evento</h1>
+  <head>
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
+  </head>
+  <body id="aplication-body">
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Informação do Evento</h2>
+            <hr class="primary">
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
   <div class="col-md-6 col-md-offset-3">
   </div>
   <div class="container">
@@ -116,16 +122,6 @@
           <%= @event.institute_cnpj %>
         </div>
         <br> <p>
-        <% if (current_user.is_employee)%>
-          <div class= "actions" >
-            <%= link_to 'Voltar', show_user_url, class: "btn btn-primary"  %>
-          </div>
-        <%else%>
-          <div class= "actions" >
-            <%= link_to 'Voltar', show_event_user_url, class: "btn btn-primary"  %>
-          </div>
-
-        <%end%>
         <% if (@event.status <=> "Aguardando confirmacao") == 0 %>
           <%= link_to "Cancelar Evento", class: "btn btn-warning destroy-btn", controller: "events", action: "cancel_event_user", id: @event %>
         <% end %>
@@ -137,11 +133,17 @@
           <b>Pagamento:</b>
           <%= @event.price_payment%>
         </div>
-        <br>
-        <br>
+        <% if (current_user.is_employee)%>
         <div class= "actions" >
-          <%= link_to 'Voltar', show_event_user_url, class: "btn btn-primary"%>
+            <%= link_to 'Voltar', show_event_url, class: "btn btn-primary"  %>
         </div>
+        <%else%>
+        <div class= "actions" >
+            <%= link_to 'Voltar', show_event_user_url, class: "btn btn-primary"  %>
+        </div>
+        <%end%>
+        <br>
+        <br>
       </div>
     </div>
   </div>
