@@ -229,7 +229,8 @@ class Markers {
     this.teaHouseMarker.setMap(null);
     this.visitantCenterMarker.setMap(null);
 
-    //Set markers as off
+    //Set markers and infowindow as off
     this.markers_on = false;
+    infowindow.setMap(null);
   };
 };

@@ -43,5 +43,26 @@ function addJbbTotalAreaPolygon(){
         fillOpacity: 0.35
     });
 
+    // Add a listener for the click event.
+    jbbTotalAreaPolygon.addListener('click', showPosition);
+
     jbbTotalAreaPolygon.setMap(map);
+}
+
+var coordenadasLat = [];
+var coordenadasLng = [];
+var i=0;
+var k=0;
+var l=0;
+var j=0;
+
+function showPosition(event) {
+    coordenadasLat[i++] = event.latLng.lat();
+    coordenadasLng[j++] = event.latLng.lng();
+    if (i > 2){
+        for (j = 0; j < i; j++) {
+            window.document.write("{lat: ",coordenadasLat[j], ",");
+            window.document.write(" lng: ",coordenadasLng[j], "},<br>");
+        }
+    }
 }
