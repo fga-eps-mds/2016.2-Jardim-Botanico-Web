@@ -4,6 +4,7 @@ $(window).load(function() {
 
 var map;
 var markers;
+var trails;
 var infowindow;
 
 function initialize() {
@@ -24,9 +25,11 @@ function initialize() {
 
   //initializing markers
   markers = new Markers(map);
+  trails = new Trails(map);
 }
 
 
+//Shows or remove JBB spaces at the map
 function setJbbSpaces() {
   if(markers.markers_on) {
       markers.setNull();
@@ -34,6 +37,17 @@ function setJbbSpaces() {
   else {
     markers.setMap();
     markers.setListener();
+  }
+}
+
+//Shows or remove trails at map
+function setTrails() {
+  if(trails.trails_on) {
+    trails.setNull();
+  }
+  else {
+    trails.setMap();
+    trails.setListener();
   }
 }
 
