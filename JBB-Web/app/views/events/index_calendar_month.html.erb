@@ -2,21 +2,27 @@
  <br><br><br><br>
  <div class="col-md-6 col-md-offset-3">
   <div id="simple_calendar"></div>
-    <h2>Calendário de Eventos</h2>
-       <%= month_calendar events: @events do |date, events| %>
-       <b><%= date.strftime("%d") %></b>
-       <% events.each do |event| %>
-       <div>
-           <br>
-           <%= event.jbb_space_requested %>
-       </div>
-       <% end %>
-       <% end %>
-    <div class= "actions" >
-        <%= link_to 'Voltar', events_url, class: "btn btn-primary"%>
-        &nbsp&nbsp&nbsp&nbsp
-        <%= link_to 'Pesquisar por semana', show_event_calendar_week_url, class: "btn btn-primary"%>
-     </div>
-   </div>
+  <h2>Calendário de Eventos</h2>
+  <br>
+  <div class="actions">
+    <%= link_to 'Pesquisar por semana', show_event_calendar_week_url, class: "btn btn-primary"%>
   </div>
+  <br>
+  <%= month_calendar events: @events do |date, events| %>
+  <b><%= date.strftime("%d") %></b>
+  <% events.each do |event| %>
+  <div>
+   <br>
+   <%= event.jbb_space_requested %>
+ </div>
+ <% end %>
+ <% end %>
+ <div class= "actions" >
+    <%= link_to 'Criar evento', events_url, class: "btn btn-primary"%>
+    <a id="back_space" >
+      <%= link_to 'Voltar', home_url, class: "btn btn-primary"%>
+    </div>
+    <br>
+  </div>
+</div>
 </body>

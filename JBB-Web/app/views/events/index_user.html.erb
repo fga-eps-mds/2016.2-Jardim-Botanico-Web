@@ -135,11 +135,13 @@
         </div>
         <% if (current_user.is_employee)%>
         <div class= "actions" >
-            <%= link_to 'Voltar', show_event_url, class: "btn btn-primary"  %>
+          <a id="back_space" >
+          <%= link_to 'Voltar', show_event_url, class: "btn btn-primary"  %>
         </div>
         <%else%>
         <div class= "actions" >
-            <%= link_to 'Voltar', show_event_user_url, class: "btn btn-primary"  %>
+          <a id="back_space" >
+          <%= link_to 'Voltar', show_event_user_url, class: "btn btn-primary"  %>
         </div>
         <%end%>
         <br>
