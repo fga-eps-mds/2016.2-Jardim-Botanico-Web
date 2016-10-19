@@ -58,7 +58,6 @@
         <% if (current_user.is_employee)%>
         <div class= "actions" >
          <%= link_to 'Voltar', show_visitation_url, class: "btn btn-primary"  %>
-       </div>
        <% if (@visitation.status <=> "Aguardando confirmacao") == 0 %>
            <%= link_to "Aceitar Visita", get_accept_visitation_employee_url(:id => @visitation.id), class: "btn btn-primary" %>
            <%= link_to "Recusar Visita", get_refuse_visitation_employee_url(:id => @visitation.id), class: "btn btn-warning destroy-btn" %>
@@ -72,7 +71,6 @@
            <%= link_to "Deletar Visita", get_delete_visitation_employee_url(:id => @visitation.id), class: "btn btn-warning destroy-btn" %>
        <%end%>
        <%else%>
-       <div class= "actions" >
         <%= link_to "Gerar PDF", visitations_path(format: 'pdf', :id => @visitation.id), class: "btn btn-primary"%>
         <a id="back_space_new" >
         <%= link_to 'Voltar', show_visitation_user_url, class: "btn btn-primary"  %>
