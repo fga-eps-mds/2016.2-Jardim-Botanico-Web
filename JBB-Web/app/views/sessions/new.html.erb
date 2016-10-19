@@ -23,9 +23,11 @@
         <br>
         <div class="actions">
          <%= f.submit "Entrar", class: "btn btn-primary" %>
+          <a id="back_space" >
+          <%= link_to "Voltar", home_url, class: "btn btn-primary" %>
         </div>
         <br>
-        <p>Novo Usuário? <%= link_to "Cadastre-se agora", new_user_path %></p>
+        <p>Novo Usuário? <%= link_to "Cadastre-se agora", new_user_path %></p>  
         <%end%>
       </div>
     </div>

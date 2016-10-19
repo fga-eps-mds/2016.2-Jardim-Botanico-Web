@@ -13,7 +13,11 @@
           </div>
         </div>
       </div>
-  <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-6 col-md-offset-3">
+    <div class="actions">
+      <%= link_to 'Pesquisar por semana', show_visitation_calendar_week_url, class: "btn btn-primary"%>
+    </div>
+    <br>
       <%= month_calendar events: @visitations do |date, visitations| %>
       <b><%= date.strftime("%d") %></b>
       <% visitations.each do |visitation| %>
@@ -23,8 +27,9 @@
       <% end %>
       <% end %>
    <div class= "actions" >
-    <%= link_to 'Voltar', new_visitation_url, class: "btn btn-primary"%>
-    &nbsp&nbsp&nbsp&nbsp
-    <%= link_to 'Pesquisar por semana', show_visitation_calendar_week_url, class: "btn btn-primary"%>
+      <%= link_to 'Criar visita', new_visitation_url, class: "btn btn-primary"%>
+    <a id="back_space" >
+      <%= link_to 'Voltar', home_url, class: "btn btn-primary"%>
     </div>
+    <br>
 </body>
