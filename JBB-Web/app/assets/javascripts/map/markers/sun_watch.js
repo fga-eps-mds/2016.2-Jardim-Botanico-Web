@@ -1,5 +1,27 @@
-//set tea house info, will be used at infowindow
-var sunWatchInfowindowContentString =
+var sunWatchMarker;
+
+function addSunWatchMarker(){
+
+    //set the position in latitude and longitude of the marker
+    var sunWatchLatLng = {lat: -15.873392, lng: -47.836761};
+
+    //add the marker at the map in the position previously defined
+    sunWatchMarker = new google.maps.Marker({
+        position: sunWatchLatLng,
+        map: map,
+        title: 'Relógio de Sol'
+    });
+
+    //add a listener to verify if the marker is clicked
+    sunWatchMarker.addListener('click', addSunWatchInfowindow);
+
+    //set the marker on map
+    sunWatchMarker.setMap(map);
+}
+
+function addSunWatchInfowindow (){
+    //set tea house info, will be used at infowindow
+    var sunWatchInfowindowContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -10,5 +32,10 @@ var sunWatchInfowindowContentString =
     '</div>'+
     '</div>';
 
-//set the position in latitude and longitude of the marker
-var sunWatchLatLng = {lat: -15.873392, lng: -47.836761};
+    infowindow.close();
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(sunWatchInfowindowContentString);
+
+    infowindow.open(map, sunWatchMarker);
+}
