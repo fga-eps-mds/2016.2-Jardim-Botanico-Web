@@ -1,5 +1,5 @@
 class EventsPdf < Prawn::Document
-	def initialize(Event)
+	def initialize(event)
 		super(top_margin: 70)
 		text "Relatório de Evento", :align => :center, :size => 18
 		@event = event
