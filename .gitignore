@@ -27,7 +27,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-
 ### Ruby ###
 *.gem
 *.rbc
@@ -40,7 +39,6 @@ Temporary Items
 /test/tmp/
 /test/version_tmp/
 /tmp/
-/public/
 
 # Used by dotenv library to load environment variables.
 # .env
@@ -81,7 +79,6 @@ Gemfile.lock
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
 
-
 ### Rails ###
 *.rbc
 capybara-*.html
@@ -89,9 +86,10 @@ JBB-Web/log
 JBB-Web/tmp
 JBB-Web/db/*.sqlite3
 JBB-Web/db/*.sqlite3-journal
-JBB-Web/public/system
+JBB-Web/public/*
 JBB-Web/coverage/
 JBB-Web/spec/tmp
+JBB-Web/shared/*
 **.orig
 rerun.txt
 pickle-email-*.html
@@ -100,7 +98,7 @@ pickle-email-*.html
 config/initializers/secret_token.rb
 
 # Only include if you have production secrets in this file, which is no longer a Rails default
-# config/secrets.yml
+config/secrets.yml
 
 # dotenv
 # TODO Comment out this rule if environment variables can be committed
