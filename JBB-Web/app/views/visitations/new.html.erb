@@ -1,12 +1,18 @@
 <body id="page-top">
-	<br><br>
-	<div class="col-md-6 col-md-offset-3">
-		<div class="container">
-			<div class="row">
-				<h1>Requisição de Visitação</h1>
-			</div>
-		</div>
-	</div>
+    <head>
+      <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+      <link href="css/creative.css" rel="stylesheet">
+    </head>
+    <body id="aplication-body">
+      <section id="services">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading">Requisição de Visita</h2>
+              <hr class="primary">
+            </div>
+          </div>
+        </div>
 	<div class="col-md-6 col-md-offset-3">
 		<div class = "container">
 			<p>Preencha as informações abaixo:</p>
@@ -59,9 +65,9 @@
 				<br>
 				<div class="form-inline">
 					<%= f.label :Quantidade_de_Visitantes%>
-					&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+					&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
 					<%= f.label :Faixa_etária_dos_visitantes%>
-                    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+                    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
                     <%= f.label :Visitantes_acima_de_12_anos%>
 				</div>
 					<div class="form-inline">
@@ -105,9 +111,9 @@
 				<br>
 				<div class="actions">
 					<%= f.submit "Cadastrar", class: "btn btn-primary"%>
-					&nbsp&nbsp&nbsp&nbsp
-					<%= link_to "Visualizar agenda", show_visitation_calendar_url , class: "btn btn-primary"%> 
-					&nbsp&nbsp&nbsp&nbsp
+					<a id="space" >
+					<%= link_to "Visualizar agenda", show_visitation_calendar_url , class: "btn btn-primary"%>
+					<a id="back_space_new" >
 					<%= link_to "Voltar", root_url , class: "btn btn-primary" %>
 				</div>
 				<% end %>
@@ -115,3 +121,4 @@
 		</div>
 	</div>
 </body>
+	

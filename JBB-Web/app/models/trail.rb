@@ -2,7 +2,7 @@ class Trail < ApplicationRecord
 
 #validating name of trail
 #required field, maximum size 50 characters , minimum size 3 characters
-validates :name, presence: true, length: { minimum: 3, maximum: 50 }
+validates :trail_name, presence: true, length: { minimum: 3, maximum: 50 }
 
 #validating length
 #required field, number positive

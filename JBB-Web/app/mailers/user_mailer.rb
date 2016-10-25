@@ -17,7 +17,7 @@ class UserMailer < ApplicationMailer
   def change_status_event(event)
     @user = User.find(event.user_id)
     @event = event
-    @url  = 'http://localhost:3000/event/show_user'
+    @url  = 'http://localhost:3000/events/show_user'
     mail(to: @user.email, subject: "Seu status de agendamento foi alterado")
   end
 

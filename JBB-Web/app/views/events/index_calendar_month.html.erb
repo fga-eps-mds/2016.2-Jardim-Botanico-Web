@@ -1,22 +1,39 @@
 <body id="page-top">
- <br><br><br><br>
- <div class="col-md-6 col-md-offset-3">
-  <div id="simple_calendar"></div>
-    <h2>Calendário de Eventos</h2>
-       <%= month_calendar events: @events do |date, events| %>
-       <b><%= date.strftime("%d") %></b>
-       <% events.each do |event| %>
-       <div>
-           <br>
-           <%= event.jbb_space_requested %>
+  <head>
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
+  </head>
+  <body id="aplication-body">
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Calendário de Eventos</h2>
+            <hr class="primary">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-md-offset-3">
+        <div class="actions">
+          <%= link_to 'Pesquisar por semana', show_event_calendar_week_url, class: "btn btn-primary"%>
+        </div>
+        <br>
+        <%= month_calendar events: @events do |date, events| %>
+        <b><%= date.strftime("%d") %></b>
+        <% events.each do |event| %>
+        <div>
+         <br>
+         <%= event.jbb_space_requested %>
        </div>
        <% end %>
        <% end %>
-    <div class= "actions" >
-        <%= link_to 'Voltar', events_url, class: "btn btn-primary"%>
-        &nbsp&nbsp&nbsp&nbsp
-        <%= link_to 'Pesquisar por semana', show_event_calendar_week_url, class: "btn btn-primary"%>
-     </div>
-   </div>
-  </div>
+       <div class= "actions" >
+        <%= link_to 'Criar evento', events_url, class: "btn btn-primary"%>
+        <a id="calendar" >
+          <%= link_to 'Voltar', home_url, class: "btn btn-primary"%>
+        </div>
+        <br>
+      </div>
+    </section>
+  </body>
 </body>

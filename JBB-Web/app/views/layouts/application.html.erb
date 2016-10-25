@@ -21,21 +21,17 @@
             <a class="page-scroll" href="/users/<%= current_user.id %>"><font color = "black"> Olá <%= current_user.name %></font></a>
           </li>
           <li>
-            <a class="page-scroll"  href="/users/my_requests/<%= current_user.id %>"><font color = "black"> Minhas requisições </font></a>
+            <a class="page-scroll" href="/users/my_requests/<%= current_user.id %>"><font color = "black"> Minhas requisições </font></a>
           </li>
-          <% end %>
-          <% if ! current_user %>
-          <li>
-            <a class="page-scroll" href="/sign_in"><font color = "black">Entrar</font></a>
-          </li>
-          <% else %>
           <li>
               <a class="page-scroll" href="/sign_out"><font color = "black">Sair</font></a>
           </li>
-          <% end %>
-          <% if ! current_user %>
+          <% else %>
           <li>
-            <a class="page-scroll" href="/users/new"><font color = "black">Cadastre-se</font></a>
+            <a class="page-scroll" href="/sign_in"><font color = "black">Entrar</font></a>
+          </li>
+          <li>
+              <a class="page-scroll" href="/users/new"><font color = "black">Cadastre-se</font></a>
           </li>
           <% end %>
         </ul>

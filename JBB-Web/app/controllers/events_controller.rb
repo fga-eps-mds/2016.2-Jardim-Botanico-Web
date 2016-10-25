@@ -13,7 +13,7 @@ class EventsController < ApplicationController
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
       flash[:success] = "Solicitação de evento efetuada com sucesso!"
-      redirect_to show_event_user_url, notice: "Evento criado"
+      redirect_to show_event_user_url
     else
       flash[:warning] = "Solicitação não efetuada"
       render action: :new
@@ -40,7 +40,7 @@ class EventsController < ApplicationController
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
       flash[:warning] = "Evento cancelada pelo usuário"
-      redirect_to show_event_user_url, notice: "Evento cancelado pelo usuário"
+      redirect_to show_event_user_url
     end
   end
 

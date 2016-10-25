@@ -585,7 +585,48 @@ fieldset[disabled] .btn-danger.active {
           box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 1px 0 rgba(255, 255, 255, .1);
 }
 
-#facebook_icon, #instagram_icon, #twitter_icon, #calendar {
+#facebook_icon, #instagram_icon, #twitter_icon, #calendar_index {
   margin: 5px;
 }
+
+#space {
+  margin: 10px;
+}
+
+#back_space {
+  margin: 190px;
+}
+
+#back_space_new{
+  margin: 80px;
+}
+
+#back {
+  margin: 400px;
+}
+
+#back_button {
+  margin: 450px;
+}
+
+#update {
+  margin: 180px;
+}
+
+#map {
+  margin: 640px;
+}
+
+#new {
+  margin: 70px;
+}
+
+#calendar {
+  margin: 250px;
+}
+
+#show {
+  margin: 500px;
+}
+
 /*# sourceMappingURL=bootstrap-theme.css.map */

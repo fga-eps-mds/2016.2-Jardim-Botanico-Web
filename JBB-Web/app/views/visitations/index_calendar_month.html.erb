@@ -1,7 +1,23 @@
 <body id="page-top">
-  <br><br><br><br>
-  <div class="col-md-6 col-md-offset-3">
-  <h2>Calendário de Visitas</h2>
+  <head>
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
+  </head>
+  <body id="aplication-body">
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Calendário de Visitas</h2>
+            <hr class="primary">
+          </div>
+        </div>
+      </div>
+    <div class="col-md-6 col-md-offset-3">
+    <div class="actions">
+      <%= link_to 'Pesquisar por semana', show_visitation_calendar_week_url, class: "btn btn-primary"%>
+    </div>
+    <br>
       <%= month_calendar events: @visitations do |date, visitations| %>
       <b><%= date.strftime("%d") %></b>
       <% visitations.each do |visitation| %>
@@ -11,8 +27,10 @@
       <% end %>
       <% end %>
    <div class= "actions" >
-    <%= link_to 'Voltar', new_visitation_url, class: "btn btn-primary"%>
-    &nbsp&nbsp&nbsp&nbsp
-    <%= link_to 'Pesquisar por semana', show_visitation_calendar_week_url, class: "btn btn-primary"%>
+      <%= link_to 'Criar visita', new_visitation_url, class: "btn btn-primary"%>
+    <a id="calendar" >
+      <%= link_to 'Voltar', home_url, class: "btn btn-primary"%>
     </div>
+    <br>
+  </body>
 </body>

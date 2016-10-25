@@ -6,7 +6,10 @@
         <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
         <% end %>
-        <h1> Entrar</h1>
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Entrar</h2>
+          <hr class="primary">
+        </div>
         <%= form_for :session, url: sign_in_path do |f| %>
         <div class="field">
          <%= f.label :email %><br />
@@ -23,9 +26,11 @@
         <br>
         <div class="actions">
          <%= f.submit "Entrar", class: "btn btn-primary" %>
+          <a id="back_space" >
+          <%= link_to "Voltar", home_url, class: "btn btn-primary" %>
         </div>
         <br>
-        <p>Novo Usuário? <%= link_to "Cadastre-se agora", new_user_path %></p>
+        <%= link_to "Cadastre-se agora", new_user_path , class: "btn btn-primary"%>
         <%end%>
       </div>
     </div>

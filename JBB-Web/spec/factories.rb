@@ -31,7 +31,7 @@ FactoryGirl.define do
    end
 
    factory :trail do
-     name "Trilha da Mata"
+     trail_name "Trilha da Mata"
      length 5.5
      locomotion "Carro"
      description "Trilha asfaltada mata fechada e habitat típico do cerrado"

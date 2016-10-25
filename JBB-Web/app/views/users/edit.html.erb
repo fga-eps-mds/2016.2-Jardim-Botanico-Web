@@ -1,15 +1,18 @@
 <body id="aplication-body">
-  <br>
-  <br>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h1>Atualização de Perfil</h1>
-      </div>
-    </div>
-  </div>
-
+    <head>
+      <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+      <link href="css/creative.css" rel="stylesheet">
+    </head>
+    <body id="aplication-body">
+      <section id="services">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading">Atualização de Perfil</h2>
+              <hr class="primary">
+            </div>
+          </div>
+        </div>
   <div class="container">
     <div class = "row">
       <div class="col-md-6 col-md-offset-3">
@@ -17,7 +20,6 @@
       </div>
     </div>
   </div>
-
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
@@ -81,6 +83,7 @@
           <br>
           <div class="actions">
             <%= f.submit "Atualizar", class: "btn btn-primary"%>
+            <a id="update" >
             <%= link_to "Voltar", home_path, class: "btn btn-primary" %>
           </div>
         <% end %>

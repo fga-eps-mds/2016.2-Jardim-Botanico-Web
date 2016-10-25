@@ -1,13 +1,19 @@
 <p id="notice"><%= notice %></p>
 <body id="page-top">
-  <br><br>
-  <div class="col-md-6 col-md-offset-3">
-    <div class="container">
-      <div class="row">
-        <h1>Informação do Evento</h1>
+  <head>
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
+  </head>
+  <body id="aplication-body">
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Informação do Evento</h2>
+            <hr class="primary">
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
   <div class="col-md-6 col-md-offset-3">
   </div>
   <div class="container">
@@ -63,14 +69,14 @@
             </td>
             <td>
               <div class = "actions" >
-                &nbsp&nbsp&nbsp&nbsp
+                <a id="space" >
                 <b>Precisa de água?</b>
                 <%= @event.need_water%>
               </div>
             </td>
             <td>
               <div class = "actions" >
-                &nbsp&nbsp&nbsp&nbsp
+                <a id="space" >
                 <b>Precisa de servico de limpeza?</b>
                 <%= @event.need_clean_service%>
               </div>
@@ -128,43 +134,22 @@
           </div>
 
           <div class="actions">
-            <table border=0>
-              <tr>
-                <% if (@event.status <=> "Aguardando analise") == 0 %>
-                <td>
-                  <%= link_to "Aceitar Evento", controller: "events",
-                  action: "accept_event_employee", id: @event%>
-                </td>
-                <%end%>
-                <%if (@event.status <=> "Aguardando analise") == 0 %>
-                <td>
-                  <%= link_to "Recusar Evento", controller: "events",
-                  action: "refuse_event_employee", id: @event%>
-                </td>
-                <%end%>
-                <%if (@event.status <=> "Agendado") == 0%>
-                <td>
-                  <%= link_to "Cancelar Evento", controller: "events",
-                  action: "cancel_event_employee", id: @event%>
-                </td>
-                <%end%>
-              </tr>
-              <% if (@event.status <=> "Cancelado por funcionario") == 0 ||
-                (@event.status <=> "Cancelado pelo usuario") == 0 ||
-                (@event.status <=> "Recusado por funcionario") == 0 %>
-                <td>
-                  <%= link_to "Deletar Evento", controller: "events",
-                  action: "delete_event_employee", id: @event, class: "btn btn-primary" %>
-                </td>
+              <%= link_to 'Voltar', show_event_employee_url, :required => true, class: "btn btn-primary"%>
+              <% if (@event.status <=> "Aguardando analise") == 0 %>
+                  <%= link_to "Aceitar Evento", get_accept_event_employee_url(:id => @event.id), class: "btn btn-primary" %>
+                  <%= link_to "Recusar Evento", get_refuse_event_employee_url(:id => @event.id), class: "btn btn-warning destroy-btn" %>
               <%end%>
-            </table>
+              <%if (@event.status <=> "Agendado") == 0%>
+                 <%= link_to "Cancelar Evento", get_cancel_event_employee_url(:id => @event.id), class: "btn btn-warning destroy-btn" %>
+              <%end%>
+              <% if (@event.status <=> "Cancelado por funcionario") == 0 ||
+                  (@event.status <=> "Cancelado pelo usuario") == 0 ||
+                  (@event.status <=> "Recusado por funcionario") == 0 %>
+                  <%= link_to "Deletar Evento", get_delete_event_employee_url(:id => @event.id), class: "btn btn-warning destroy-btn" %>
+              <%end%>
+              <%= link_to "Gerar PDF", events_path(format: 'pdf', :id => @event.id), class: "btn btn-primary"%>
           </div>
         <%end%>
-          <br><br>
-          <div class= "actions" >
-            <%= link_to "Gerar PDF", events_path(format: 'pdf', :id => @event.id), class: "btn btn-primary"%>
-            <%= link_to 'Voltar', show_event_employee_url, :required => true, class: "btn btn-primary"%>
-          </div>
         </div>
       </div>
     </div>
