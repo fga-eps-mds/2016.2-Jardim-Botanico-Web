@@ -5,11 +5,11 @@ $(window).load(function() {
 var map;
 var markers;
 var infowindow = new google.maps.InfoWindow();
-
 function initialize() {
     var mapOptions = {
+        // center: new google.maps.LatLng(37.783, -122.403),
         center: new google.maps.LatLng(-15.872652, -47.836588),
-        zoom: 14,
+        zoom: 15,
         mapTypeId: google.maps.MapTypeId.NORMAL,
         panControl: true,
         scaleControl: false,
@@ -21,12 +21,10 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
     infowindow = new google.maps.InfoWindow();
     addJbbTotalAreaPolygon();
+    addJbbEcologicalStationPolygon();
 
     //initializing markers
     markers = new Markers(map);
-
-
-
 }
 
 
