@@ -30,34 +30,46 @@ function setVegetation() {
   if(vegetation_on) {
     visitantsCenterAdministrativeAreaPolygon.setMap(null);
     dryForestPolygon.setMap(null);
+    nurseryPolygon.setMap(null);
+    cleanCampPolygon.setMap(null);
     urbanAreaPolygon.setMap(null);
     administrateAreaEvolutionGardemPolygon.setMap(null);
     anthropicAreaPolygon.setMap(null);
     anthropicAreaAdministratePolygon.setMap(null);
     anthropicAreaEvolutionGardemPolygon.setMap(null);
     denseCerradoPolygon.setMap(null);
+    smallDenseCerradoPolygon.setMap(null);
     pinusEvolutionGardemPolygon.setMap(null);
     pinusAdministrateAreaPolygon.setMap(null);
     pinusUrbanAreaPolygon.setMap(null);
     smallPinusPolygon.setMap(null);
     eucalyptusTypicalCerrado.setMap(null);
+    dirtyFieldTypicalCerrado.setMap(null);
+    TypicalCerradoDryForest.setMap(null);
+    TypicalCerradoCleanCamp.setMap(null);
     vegetation_on = false;
     infowindow.close();
   }
   else {
     addVisitantsCenterAdministrativeAreaPolygon();
     addDryForestPolygon();
+    addNurseryPolygon();
+    addCleanCampPolygon();
     addUrbanAreaPolygon();
     addAdministrateAreaEvolutionGardemPolygon();
     addAnthropicAreaPolygon();
     addAnthropicAreaEvolutionGardemPolygon();
     addAnthropicAreaAdministratePolygon();
     addDenseCerradoPolygon();
+    addSmallDenseCerradoPolygon();
     addPinusEvolutionGardemPolygon();
     addPinusAdministrateAreaPolygon();
     addPinusUrbanAreaPolygon();
     addSmallPinusPolygon();
     addEucalyptusTypicalCerradoPolygon();
+    addDirtyFieldTypicalCerradoPolygon();
+    addTypicalCerradoDryForestPolygon();
+    addTypicalCerradoCleanCampPolygon();
     vegetation_on = true;
   }
 }
