@@ -32,12 +32,12 @@ function addDryForestPolygon(){
     // Construct the polygon.
     dryForestPolygon = new google.maps.Polygon({
       paths: dryForestPolygonCoords,
-      strokeColor: '##87B591',
+      strokeColor: '#87B591',
       strokeOpacity: 0.1,
       strokeWeight: 3,
-      fillColor: '##87B591',
+      fillColor: '#87B591',
       fillOpacity: 0.35
     });
 
-  dryForestPolygon.setMap(map);
+    dryForestPolygon.setMap(map);
 }

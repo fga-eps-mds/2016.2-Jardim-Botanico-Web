@@ -33,7 +33,12 @@ function setVegetation() {
   if(vegetation_on) {
       visitantsCenterAdministrativeAreaPolygon.setMap(null);
       dryForestPolygon.setMap(null);
-      administrateArea.setMap(null);
+      administrateAreaPolygon.setMap(null);
+      administrateAreaEvolutionGardemPolygon.setMap(null);
+      anthropicAreaPolygon.setMap(null);
+      anthropicAreaAdministratePolygon.setMap(null);
+      anthropicAreaEvolutionGardemPolygon.setMap(null);
+      denseCerradoPolygon.setMap(null);
       vegetation_on = false;
       infowindow.close();
   }
@@ -41,6 +46,11 @@ function setVegetation() {
       addVisitantsCenterAdministrativeAreaPolygon();
       addDryForestPolygon();
       addAdministrateAreaPolygon();
+      addAdministrateAreaEvolutionGardemPolygon();
+      addAnthropicAreaPolygon();
+      addAnthropicAreaEvolutionGardemPolygon();
+      addAnthropicAreaAdministratePolygon();
+      addDenseCerradoPolygon();
      
       vegetation_on = true;
   }

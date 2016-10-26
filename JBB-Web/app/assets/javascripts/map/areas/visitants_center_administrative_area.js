@@ -23,10 +23,10 @@ function addVisitantsCenterAdministrativeAreaPolygon(){
     // Construct the polygon.
     visitantsCenterAdministrativeAreaPolygon = new google.maps.Polygon({
         paths: visitantsCenterAdministrativeAreaPolygonCoords,
-        strokeColor: '#03a678',
+        strokeColor: '#DCDA7D',
         strokeOpacity: 0.1,
         strokeWeight: 3,
-        fillColor: '#03a678',
+        fillColor: '#DCDA7D',
         fillOpacity: 0.35
     });
 
