@@ -11,7 +11,7 @@ function addEucalyptusTypicalCerradoPolygon(){
   {lat: -15.879554046724508, lng: -47.83952593803406},
   {lat: -15.87945085256747, lng: -47.83919334411621},
   {lat: -15.87935797778096, lng: -47.83893585205078},
-  {lat: -15.87890392265257, lng: -47.83912897109985},
+  {lat: -15.87890392265257, lng: -47.83912897109985}
   ];
 
   // Construct the polygon.
@@ -21,7 +21,7 @@ function addEucalyptusTypicalCerradoPolygon(){
     strokeOpacity: 0.1,
     strokeWeight: 3,
     fillColor: '#A1BF77',
-    fillOpacity: 0.35
+    fillOpacity: 0.50
   });
   
   eucalyptusTypicalCerradoPolygon.setMap(map);

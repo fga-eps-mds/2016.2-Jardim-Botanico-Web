@@ -10,7 +10,7 @@ function addDenseCerradoPolygon(){
     strokeOpacity: 0.1,
     strokeWeight: 3,
     fillColor: '#87B591',
-    fillOpacity: 0.35
+    fillOpacity: 0.50
   });
 
   denseCerradoPolygon.setMap(map);

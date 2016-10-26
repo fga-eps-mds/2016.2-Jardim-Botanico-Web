@@ -20,7 +20,7 @@ function addAdministrateAreaEvolutionGardemPolygon(){
     strokeOpacity: 0.1,
     strokeWeight: 3,
     fillColor: '#DBDA7D',
-    fillOpacity: 0.35
+    fillOpacity: 0.50
   });
   
   administrateAreaEvolutionGardemPolygon.setMap(map);

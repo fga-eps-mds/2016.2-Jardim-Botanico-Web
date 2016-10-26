@@ -27,7 +27,7 @@ function addVisitantsCenterAdministrativeAreaPolygon(){
     strokeOpacity: 0.1,
     strokeWeight: 3,
     fillColor: '#DCDA7D',
-    fillOpacity: 0.35
+    fillOpacity: 0.50
   });
 
   visitantsCenterAdministrativeAreaPolygon.setMap(map);

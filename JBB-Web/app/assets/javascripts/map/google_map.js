@@ -43,10 +43,13 @@ function setVegetation() {
     pinusAdministrateAreaPolygon.setMap(null);
     pinusUrbanAreaPolygon.setMap(null);
     smallPinusPolygon.setMap(null);
-    eucalyptusTypicalCerrado.setMap(null);
-    dirtyFieldTypicalCerrado.setMap(null);
-    TypicalCerradoDryForest.setMap(null);
-    TypicalCerradoCleanCamp.setMap(null);
+    eucalyptusTypicalCerradoPolygon.setMap(null);
+    addDirtyFieldTypicalCerradoPolygon.setMap(null);
+    addTypicalCerradoDryForestPolygon.setMap(null);
+    addTypicalCerradoCleanCampPolygon.setMap(null);
+    eucalyptusTypicalCerradoPolygon.setMap(null);
+    southAnthropicAreaPolygon.setMap(null);
+    southBypassAreaPolygon.setMap(null);
     vegetation_on = false;
     infowindow.close();
   }
@@ -70,6 +73,8 @@ function setVegetation() {
     addDirtyFieldTypicalCerradoPolygon();
     addTypicalCerradoDryForestPolygon();
     addTypicalCerradoCleanCampPolygon();
+    addSouthAnthropicAreaPolygon();
+    addSouthBypassAreaPolygon();
     vegetation_on = true;
   }
 }

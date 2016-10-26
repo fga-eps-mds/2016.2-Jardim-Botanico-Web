@@ -26,7 +26,7 @@ function addAnthropicAreaAdministratePolygon(){
     strokeOpacity: 0.1,
     strokeWeight: 3,
     fillColor: '#589C5F',
-    fillOpacity: 0.35
+    fillOpacity: 0.50
   });
 
   anthropicAreaAdministratePolygon.setMap(map);

@@ -34,7 +34,7 @@ function addPinusAdministrateAreaPolygon(){
     strokeOpacity: 0.1,
     strokeWeight: 3,
     fillColor: '#BAE3A9',
-    fillOpacity: 0.35
+    fillOpacity: 0.50
   });
   
   pinusAdministrateAreaPolygon.setMap(map);
