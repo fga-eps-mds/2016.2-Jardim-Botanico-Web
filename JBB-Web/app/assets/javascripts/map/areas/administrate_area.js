@@ -1,22 +1,25 @@
 var administrateAreaPolygon;
 function addAdministrateAreaPolygon(){
-    var administrateAreaPolygonCoords = [
-    {lat: -15.861463303526785, lng: -47.828829288482666},
-    {lat: -15.86111241168077, lng: -47.82876491546631},
-    {lat: -15.860875043321057, lng: -47.82893657684326},
-    {lat: -15.86088536369034, lng: -47.829322814941406},
-    {lat: -15.861669710209835, lng: -47.829108238220215},
-    ];
+  var administrateAreaPolygonCoords = [
+{lat: -15.861607788227095, lng: -47.82845377922058},
+{lat: -15.861318818722955, lng: -47.82856106758118},
+{lat: -15.86108145060621, lng: -47.82880783081055},
+{lat: -15.860967926625523, lng: -47.829140424728394},
+{lat: -15.861040169166078, lng: -47.82971978187561},
+{lat: -15.861339459415559, lng: -47.82945156097412},
+{lat: -15.861731632173543, lng: -47.82905459403992},
+{lat: -15.861855476043925, lng: -47.828625440597534},
+  ];
 
     // Construct the polygon.
     administrateAreaPolygon = new google.maps.Polygon({
-        paths: administrateAreaPolygonCoords,
-        strokeColor: '#DBDA7D',
-        strokeOpacity: 0.1,
-        strokeWeight: 3,
-        fillColor: '##DBDA7D',
-        fillOpacity: 0.35
+      paths: administrateAreaPolygonCoords,
+      strokeColor: '#DBDA7D',
+      strokeOpacity: 0.1,
+      strokeWeight: 3,
+      fillColor: '#DBDA7D',
+      fillOpacity: 0.35
     });
-
-  administrateAreaPolygon.setMap(map);
+    
+    administrateAreaPolygon.setMap(map);
 }
