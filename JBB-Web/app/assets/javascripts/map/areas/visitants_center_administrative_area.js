@@ -24,7 +24,7 @@ var visitantsCenterAdministrativeAreaColor = '#DCDA7D';
 
 function addVisitantsCenterAdministrativeArea(){
   visitantsCenterAdministrativeArea = createVegetation(visitantsCenterAdministrativeAreaCoordinates,
-                                      visitantsCenterAdministrativeAreaColor);  
+                                      visitantsCenterAdministrativeAreaColor);
 
   visitantsCenterAdministrativeArea.setMap(map);
-} 
+}
