@@ -1,10 +1,11 @@
 $(window).load(function() {
-loadScript();
+    loadScript();
 });
 
 var map;
 var markers;
 var infowindow = new google.maps.InfoWindow();
+var vegetation_on = false;
 
 function initialize() {
     var mapOptions = {
@@ -21,7 +22,6 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
     infowindow = new google.maps.InfoWindow();
     addJbbTotalAreaPolygon();
-
     //initializing markers
     markers = new Markers(map);
 
@@ -29,10 +29,24 @@ function initialize() {
 
 }
 
+function setVegetation() {
+  if(vegetation_on) {
+      visitantsCenterAdministrativeAreaPolygon.setMap(null);
+      vegetation_on = false;
+      infowindow.close();
+  }
+  else {
+      addVisitantsCenterAdministrativeAreaPolygon();
+      
+      vegetation_on = true;
+  }
+}
+
 
 function setJbbSpaces() {
   if(markers.markers_on) {
       markers.setNull();
+      infowindow.setMap(null);
   }
   else {
     markers.setMap();
@@ -43,12 +57,11 @@ function setJbbSpaces() {
 
 
 function loadScript() {
-console.log("map loading ...");
-var script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCWLcEV1-tSCf5oUTnjsny_ubD4oZmTmOc' +
-'&libraries=drawing'+
-'&callback=initialize';
-// src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWLcEV1-tSCf5oUTnjsny_ubD4oZmTmOc&callback=initMap
-document.body.appendChild(script);
+    console.log("map loading ...");
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCWLcEV1-tSCf5oUTnjsny_ubD4oZmTmOc' +
+    '&libraries=drawing'+
+    '&callback=initialize';
+    document.body.appendChild(script);
 }
