@@ -7,7 +7,7 @@ var typicalCerradoDryForestColor = '#D3D6A1';
 
 function addTypicalCerradoDryForest(){
   typicalCerradoDryForest = createVegetation(typicalCerradoDryForestCoordinates,
-                                      typicalCerradoDryForestColor);  
-  
+                                      typicalCerradoDryForestColor);
+
   typicalCerradoDryForest.setMap(map);
 }
