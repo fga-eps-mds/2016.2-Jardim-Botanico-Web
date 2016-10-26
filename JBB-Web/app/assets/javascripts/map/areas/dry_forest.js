@@ -29,15 +29,15 @@ function addDryForestPolygon(){
   {lat: -15.861122732037892, lng: -47.829580307006836},
   ];
 
-    // Construct the polygon.
-    dryForestPolygon = new google.maps.Polygon({
-      paths: dryForestPolygonCoords,
-      strokeColor: '#87B591',
-      strokeOpacity: 0.1,
-      strokeWeight: 3,
-      fillColor: '#87B591',
-      fillOpacity: 0.35
-    });
+  // Construct the polygon.
+  dryForestPolygon = new google.maps.Polygon({
+    paths: dryForestPolygonCoords,
+    strokeColor: '#87B591',
+    strokeOpacity: 0.1,
+    strokeWeight: 3,
+    fillColor: '#87B591',
+    fillOpacity: 0.35
+  });
 
-    dryForestPolygon.setMap(map);
+  dryForestPolygon.setMap(map);
 }
