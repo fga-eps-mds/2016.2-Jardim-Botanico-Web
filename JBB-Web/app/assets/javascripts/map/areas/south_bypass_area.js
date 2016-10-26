@@ -20,4 +20,4 @@ function addSouthBypassArea(){
                                               southBypassArea);
 
   southBypassArea.setMap(map);
-} 
+}
