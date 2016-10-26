@@ -15,6 +15,6 @@ var pinusUrbanAreaColor = '#BAE3A9';
 function addPinusUrbanArea(){
   pinusUrbanArea = createVegetation(pinusUrbanAreaCoordinates,
                                        pinusUrbanAreaColor);
-  
+
   pinusUrbanArea.setMap(map);
 }

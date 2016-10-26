@@ -33,6 +33,6 @@ function addPinusAdministrateArea(){
   pinusAdministrateArea = createVegetation(pinusAdministrateAreaCoordinates,
                                         pinusAdministrateAreaColor);
 
-  
+
   pinusAdministrateArea.setMap(map);
 }

@@ -15,7 +15,7 @@ var urbanAreaColor = '#DADA84';
 
 function addUrbanArea(){
   urbanArea = createVegetation(urbanAreaCoordinates,
-                                      urbanAreaColor);  
-  
+                                      urbanAreaColor);
+
   urbanArea.setMap(map);
 }
