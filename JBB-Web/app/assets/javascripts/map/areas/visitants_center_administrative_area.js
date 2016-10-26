@@ -1,4 +1,4 @@
- var visitantsCenterAdministrativeAreaPolygon;
+var visitantsCenterAdministrativeAreaPolygon;
 function addVisitantsCenterAdministrativeAreaPolygon(){
     var visitantsCenterAdministrativeAreaPolygonCoords = [
         {lat: -15.873764772807835, lng: -47.836993932724},

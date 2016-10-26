@@ -32,12 +32,16 @@ function initialize() {
 function setVegetation() {
   if(vegetation_on) {
       visitantsCenterAdministrativeAreaPolygon.setMap(null);
+      dryForestPolygon.setMap(null);
+      administrateArea.setMap(null);
       vegetation_on = false;
       infowindow.close();
   }
   else {
       addVisitantsCenterAdministrativeAreaPolygon();
-      
+      addDryForestPolygon();
+      addAdministrateAreaPolygon();
+     
       vegetation_on = true;
   }
 }
