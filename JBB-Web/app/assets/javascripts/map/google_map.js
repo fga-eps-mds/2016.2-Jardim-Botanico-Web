@@ -5,6 +5,8 @@ $(window).load(function() {
 var map;
 var markers;
 var infowindow = new google.maps.InfoWindow();
+var rivers_on = false;
+
 function initialize() {
     var mapOptions = {
         // center: new google.maps.LatLng(37.783, -122.403),
@@ -21,10 +23,23 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
     infowindow = new google.maps.InfoWindow();
     addJbbTotalAreaPolygon();
-    addJbbEcologicalStationPolygon();
+    // addJbbEcologicalStationPolygon();
+
 
     //initializing markers
     markers = new Markers(map);
+}
+
+function setJbbRivers() {
+    if(rivers_on) {
+        taperaRiverPolyline.setMap(null);
+        rivers_on = false;
+        infowindow.close();
+    }
+    else {
+        addTaperaRiver();
+        rivers_on = true;
+    }
 }
 
 
@@ -37,7 +52,6 @@ function setJbbSpaces() {
     markers.setMap();
     markers.setListener();
   }
-
 }
 
 
