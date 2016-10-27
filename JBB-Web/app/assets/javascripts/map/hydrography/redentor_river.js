@@ -156,7 +156,6 @@ function addRedentorCristRiver(){
         {lat: -15.917721935895681, lng: -47.8905819542706},
         {lat: -15.917536221615967, lng: -47.890517581254244},
         {lat: -15.917484634285568, lng: -47.890506852418184},
-        {lat: -15.917484634285568, lng: -47.890506852418184},
     ];
 
     //add the river at the map in the position previously defined

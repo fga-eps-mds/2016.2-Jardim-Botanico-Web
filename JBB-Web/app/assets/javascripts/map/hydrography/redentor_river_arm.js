@@ -3,6 +3,7 @@ var redentorCristRiverArm;
 function addRedentorCristRiverArm(){
 
     var redentorCristRiverArmCoordinates = [
+        {lat: -15.921745703131183, lng: -47.893264163285494},
       {lat: -15.921745703131183, lng: -47.893242705613375},
       {lat: -15.921776654874442, lng: -47.89316760376096},
       {lat: -15.92180760661293, lng: -47.89307104423642},

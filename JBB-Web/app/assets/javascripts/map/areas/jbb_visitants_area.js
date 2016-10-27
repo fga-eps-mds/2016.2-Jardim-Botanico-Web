@@ -1,5 +1,11 @@
 function addJbbVisitantsAreaPolygon(){
     var jbbVisitantsAreaPolygonCoords = [
+        //area do df
+        // {lat: -15.504777, lng: -48.193033},
+        // {lat: -15.504011, lng: -47.417881},
+        // {lat: -16.049211, lng: -47.417881},
+        // {lat: -16.049211, lng: -48.193033},
+
         //border between JBB visitants area and JBB ecological station
         {lat: -15.866386, lng: -47.842951},
         {lat: -15.870276680765596, lng: -47.84938892349601},
