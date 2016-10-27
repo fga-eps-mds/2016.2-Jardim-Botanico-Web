@@ -36,6 +36,8 @@ function setJbbRivers() {
         redentorCristRiver.setMap(null);
         cochoRiver.setMap(null);
         taperaRiverArm.setMap(null);
+        deerHeadRiver.setMap(null);
+
         infowindow.close();
         rivers_on = false;
     }
@@ -44,6 +46,8 @@ function setJbbRivers() {
         addRedentorCristRiver();
         addCochoRiver();
         addTaperaRiverArm();
+        addDeerHeadRiver();
+
         rivers_on = true;
     }
 }
