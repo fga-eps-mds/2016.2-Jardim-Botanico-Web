@@ -566,14 +566,37 @@ function addTaperaRiver(){
         //end tapera river
     ];
 
+    var lineSymbol = {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 8,
+        strokeColor: '#393'
+    };
+
     //add the river at the map in the position previously defined
     taperaRiver = new google.maps.Polyline({
         path: taperaRiverCoordinates,
         map: map,
         strokeColor: '#366ED4',
-        strokeWidth: 0.3
+        strokeWidth: 0.3,
+        icons: [{
+            icon: lineSymbol,
+            offset: '100%'
+        }]
     });
 
     //set the river on map
     taperaRiver.setMap(map);
+
+    animateCircle(taperaRiver);
+}
+
+function animateCircle(taperaRiver) {
+    var count = 0;
+    window.setInterval(function() {
+      count = (count + 1) % 200;
+
+      var icons = taperaRiver.get('icons');
+      icons[0].offset = (count / 2) + '%';
+      taperaRiver.set('icons', icons);
+    }, 20);
 }

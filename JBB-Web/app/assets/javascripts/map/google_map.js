@@ -23,7 +23,7 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
     infowindow = new google.maps.InfoWindow();
     addJbbVisitantsAreaPolygon();
-    addJbbEcologicalStationPolygon();
+    // addJbbEcologicalStationPolygon();
 
 
     //initializing markers
@@ -35,6 +35,7 @@ function setJbbRivers() {
         taperaRiver.setMap(null);
         redentorCristRiver.setMap(null);
         cochoRiver.setMap(null);
+        taperaRiverArm.setMap(null);
         infowindow.close();
         rivers_on = false;
     }
@@ -42,6 +43,7 @@ function setJbbRivers() {
         addTaperaRiver();
         addRedentorCristRiver();
         addCochoRiver();
+        addTaperaRiverArm();
         rivers_on = true;
     }
 }
