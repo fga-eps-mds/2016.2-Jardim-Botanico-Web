@@ -27,7 +27,7 @@ function addSouthRupestresAreaTopPolygon(){
     strokeOpacity: 0.1,
     strokeWeight: 3,
     fillColor: '#407489',
-    fillOpacity: 0.50
+    fillOpacity: 0.55
   });
 
   southRupestresAreaTopPolygon.setMap(map);

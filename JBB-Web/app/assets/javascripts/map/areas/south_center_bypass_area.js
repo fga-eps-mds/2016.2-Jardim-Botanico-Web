@@ -32,7 +32,7 @@ function addSouthCenterBypassAreaPolygon(){
     strokeOpacity: 0.1,
     strokeWeight: 3,
     fillColor: '#BAEE5F',
-    fillOpacity: 0.50
+    fillOpacity: 0.55
   });
 
   southCenterBypassAreaPolygon.setMap(map);

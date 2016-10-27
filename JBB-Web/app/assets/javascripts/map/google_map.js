@@ -54,6 +54,8 @@ function setVegetation() {
     southLeftBypassAreaPolygon.setMap(null);
     southCenterBypassAreaPolygon.setMap(null);
     southRupestresAreaTopPolygon.setMap(null);
+    southCleanCampPolygon.setMap(null);
+    centerVivariumAreaPolygon.setMap(null);
     vegetation_on = false;
     infowindow.close();
   }
@@ -83,6 +85,8 @@ function setVegetation() {
     addSouthLeftBypassAreaPolygon();
     addSouthCenterBypassAreaPolygon();
     addSouthRupestresAreaTopPolygon();
+    addSouthCleanCampPolygon();
+    addCenterVivariumAreaPolygon();
     vegetation_on = true;
   }
 }
