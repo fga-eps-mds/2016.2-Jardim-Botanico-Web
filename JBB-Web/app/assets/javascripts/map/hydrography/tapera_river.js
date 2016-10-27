@@ -1,4 +1,4 @@
-var taperaRiverPolyline;
+var taperaRiver;
 
 function addTaperaRiver(){
     //set the path of the river
@@ -567,7 +567,7 @@ function addTaperaRiver(){
     ];
 
     //add the river at the map in the position previously defined
-    taperaRiverPolyline = new google.maps.Polyline({
+    taperaRiver = new google.maps.Polyline({
         path: taperaRiverCoordinates,
         map: map,
         strokeColor: '#366ED4',
@@ -575,5 +575,5 @@ function addTaperaRiver(){
     });
 
     //set the river on map
-    taperaRiverPolyline.setMap(map);
+    taperaRiver.setMap(map);
 }
