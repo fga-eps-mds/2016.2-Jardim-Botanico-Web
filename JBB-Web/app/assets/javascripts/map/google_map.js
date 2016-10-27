@@ -33,11 +33,13 @@ function initialize() {
 function setJbbRivers() {
     if(rivers_on) {
         taperaRiverPolyline.setMap(null);
+        redentorCristPolyline.setMap(null);
         rivers_on = false;
         infowindow.close();
     }
     else {
         addTaperaRiver();
+        addRedentorCristRiver();
         rivers_on = true;
     }
 }
