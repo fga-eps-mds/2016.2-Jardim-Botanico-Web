@@ -38,6 +38,7 @@ function setJbbRivers() {
         cochoRiver.setMap(null);
         taperaRiverArm.setMap(null);
         deerHeadRiver.setMap(null);
+        caesb1River.setMap(null);
 
         infowindow.close();
         rivers_on = false;
@@ -49,6 +50,7 @@ function setJbbRivers() {
         addCochoRiver();
         addTaperaRiverArm();
         addDeerHeadRiver();
+        addCaesb1River();
 
         rivers_on = true;
     }
