@@ -28,6 +28,6 @@ var southDirtyFieldAreaColor = '#6AC5CB';
 function addSouthDirtyFieldArea(){
   southDirtyFieldArea = createVegetation(southDirtyFieldAreaCoordinates,
                                         southDirtyFieldAreaColor);
-  
+
   southDirtyFieldArea.setMap(map);
-} 
+}

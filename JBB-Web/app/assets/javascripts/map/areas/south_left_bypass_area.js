@@ -27,4 +27,4 @@ function addSouthLeftBypassArea(){
                                               southLeftBypassAreaColor);
 
   southLeftBypassArea.setMap(map);
-} 
+}
