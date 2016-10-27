@@ -19,7 +19,6 @@ test:
 
 production:
   <<: *default
-  database: JBB_Web_production
-  username: travis
-  password: <%= ENV['JBB_WEB_DATABASE_PASSWORD'] %>
-  socket: /var/run/postgresql
+  database: jbbweb
+  username: jbbweb
+  password: <%= ENV['jbbweb_PASSWORD'] %>

@@ -43,5 +43,11 @@ function addJbbTotalAreaPolygon(){
         fillOpacity: 0.35
     });
 
+    jbbTotalAreaPolygon.addListener('click', removeInfowindow);
+
     jbbTotalAreaPolygon.setMap(map);
+}
+
+function removeInfowindow (){
+    infowindow.close();
 }

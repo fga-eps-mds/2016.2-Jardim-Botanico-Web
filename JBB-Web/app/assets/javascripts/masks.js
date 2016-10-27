@@ -1,6 +1,5 @@
 window.onload = function(){
     id('phone').onkeypress = function(){
-        break;
         PhoneMask(this);
     }
     id('date').onkeypress = function(){

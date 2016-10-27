@@ -1,5 +1,27 @@
-//set smells garden info, will be used at infowindow
-var permacultureInfowindowContentString =
+var permacultureMarker;
+
+function addPermacultureMarker(){
+
+    //set the position in latitude and longitude of the marker
+    var permacultureLatLng = {lat: -15.875759, lng: -47.836626};
+
+    //add the marker at the map in the position previously defined
+    permacultureMarker = new google.maps.Marker({
+        position: permacultureLatLng,
+        map: map,
+        title: 'Permacultura'
+    });
+
+    //add a listener to verify if the marker is clicked
+    permacultureMarker.addListener('click', addPermacultureInfowindow);
+
+    //set the marker on map
+    permacultureMarker.setMap(map);
+}
+
+function addPermacultureInfowindow (){
+    //set smells garden info, will be used at infowindow
+    var permacultureInfowindowContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -17,5 +39,10 @@ var permacultureInfowindowContentString =
     '</div>'+
     '</div>';
 
-//set the position in latitude and longitude of the marker
-var permacultureLatLng = {lat: -15.875759, lng: -47.836626};
+    infowindow.close();
+
+    //set the infowindow with smells garden info
+    infowindow.setContent(permacultureInfowindowContentString);
+
+    infowindow.open(map, permacultureMarker);
+}

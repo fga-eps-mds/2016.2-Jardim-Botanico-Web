@@ -35,7 +35,9 @@ gem "cpf_cnpj"
 
 gem 'prawn', '~> 1.2.1'
 
-gem 'prawn-table', '~> 0.1.0' 
+gem 'prawn-table', '~> 0.1.0'
+
+gem 'unicorn'
 #bootstrap
 #gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
@@ -45,7 +47,7 @@ gem 'prawn-table', '~> 0.1.0'
 # simple calendar gem
 gem "simple_calendar", "~> 2.0"
 
-gem 'capybara', '~> 2.4' 
+gem 'capybara', '~> 2.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -68,6 +70,10 @@ end
 
 group :test do
   gem "codeclimate-test-reporter"
+end
+
+group :assets do
+  gem 'therubyracer'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -1,5 +1,26 @@
-//set tea house info, will be used at infowindow
-var cactusBoskInfowindowContentString =
+var cactusBoskMarker;
+
+function addCactusBoskMarker(){
+    //set the position in latitude and longitude of the marker
+    var cactusBoskLatLng = {lat: -15.875259, lng: -47.836627};
+
+    //add the marker at the map in the position previously defined
+    cactusBoskMarker = new google.maps.Marker({
+        position: cactusBoskLatLng,
+        map: map,
+        title: 'Cactário'
+    });
+
+    //add a listener to verify if the marker is clicked
+    cactusBoskMarker.addListener('click', addCactusBoskInfowindow);
+
+    //set the marker on map
+    cactusBoskMarker.setMap(map);
+}
+
+function addCactusBoskInfowindow(){
+    //set tea house info, will be used at infowindow
+    var cactusBoskInfowindowContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -13,5 +34,10 @@ var cactusBoskInfowindowContentString =
     '</div>'+
     '</div>';
 
-//set the position in latitude and longitude of the marker
-var cactusBoskLatLng = {lat: -15.875259, lng: -47.836627};
+    infowindow.close();
+
+    //set the infowindow with japanese garden info
+    infowindow.setContent(cactusBoskInfowindowContentString);
+
+    infowindow.open(map, cactusBoskMarker);
+}
