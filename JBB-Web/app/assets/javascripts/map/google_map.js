@@ -41,6 +41,7 @@ function setJbbRivers() {
         caesb1River.setMap(null);
         caesb2River.setMap(null);
         caesb3River.setMap(null);
+        caesb4River.setMap(null);
 
         infowindow.close();
         rivers_on = false;
@@ -55,6 +56,7 @@ function setJbbRivers() {
         addCaesb1River();
         addCaesb2River();
         addCaesb3River();
+        addCaesb4River();  
 
         rivers_on = true;
     }
