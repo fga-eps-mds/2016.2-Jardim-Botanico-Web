@@ -19,12 +19,12 @@ var southRupestresAreaTop;
   {lat: -15.916588161245773, lng: -47.88946613698499},
   {lat: -15.916051649830587, lng: -47.88826450734632},
 ];
-  
+
 var southRupestresAreaTopColor = '#407489';
 
 function addSouthRupestresAreaTop(){
   southRupestresAreaTop = createVegetation(southRupestresAreaTopCoordinates,
-                                      southRupestresAreaTopColor);  
+                                      southRupestresAreaTopColor);
 
   southRupestresAreaTop.setMap(map);
-} 
+}
