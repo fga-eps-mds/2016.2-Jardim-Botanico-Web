@@ -18,6 +18,6 @@ var southPathColor = '#C3DD9E';
 function addSouthPath(){
   southPath = createVegetation(southPathCoordinates,
                                       southPathColor);
-  
+
   southPath.setMap(map);
 }
