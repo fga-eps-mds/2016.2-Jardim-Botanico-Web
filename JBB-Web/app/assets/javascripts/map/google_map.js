@@ -56,6 +56,8 @@ function setVegetation() {
     southRupestresAreaTopPolygon.setMap(null);
     southCleanCampPolygon.setMap(null);
     centerVivariumAreaPolygon.setMap(null);
+    drainCerradoSouth.setMap(null);
+    smallRockCerrado.setMap(null);
     vegetation_on = false;
     infowindow.close();
   }
@@ -87,6 +89,8 @@ function setVegetation() {
     addSouthRupestresAreaTopPolygon();
     addSouthCleanCampPolygon();
     addCenterVivariumAreaPolygon();
+    addDrainCerradoSouthPolygon();
+    addSmallRockCerradoPolygon();
     vegetation_on = true;
   }
 }
