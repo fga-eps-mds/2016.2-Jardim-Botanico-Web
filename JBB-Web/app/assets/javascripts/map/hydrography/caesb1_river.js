@@ -51,7 +51,7 @@ function addCaesb1River(){
     ];
 
     //add the river at the map in the position previously defined
-    caeb1River = new google.maps.Polyline({
+    caesb1River = new google.maps.Polyline({
         path: caesb1RiverCoordinates,
         map: map,
         strokeColor: '#366ED4',
