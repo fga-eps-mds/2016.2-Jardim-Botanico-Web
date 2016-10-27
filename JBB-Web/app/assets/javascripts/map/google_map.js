@@ -34,6 +34,7 @@ function setJbbRivers() {
     if(rivers_on) {
         taperaRiver.setMap(null);
         redentorCristRiver.setMap(null);
+        redentorCristRiverArm.setMap(null);
         cochoRiver.setMap(null);
         taperaRiverArm.setMap(null);
         deerHeadRiver.setMap(null);
@@ -44,6 +45,7 @@ function setJbbRivers() {
     else {
         addTaperaRiver();
         addRedentorCristRiver();
+        addRedentorCristRiverArm();
         addCochoRiver();
         addTaperaRiverArm();
         addDeerHeadRiver();

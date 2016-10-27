@@ -1,10 +1,10 @@
 function addJbbVisitantsAreaPolygon(){
     var jbbVisitantsAreaPolygonCoords = [
         //area do df
-        // {lat: -15.504777, lng: -48.193033},
-        // {lat: -15.504011, lng: -47.417881},
-        // {lat: -16.049211, lng: -47.417881},
-        // {lat: -16.049211, lng: -48.193033},
+        {lat: -15.504777, lng: -48.193033},
+        {lat: -15.504011, lng: -47.417881},
+        {lat: -16.049211, lng: -47.417881},
+        {lat: -16.049211, lng: -48.193033},
 
         //JBB visitants area
         {lat: -15.859791, lng: -47.830873},
