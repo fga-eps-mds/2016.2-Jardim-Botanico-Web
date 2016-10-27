@@ -23,7 +23,7 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
     infowindow = new google.maps.InfoWindow();
     addJbbVisitantsAreaPolygon();
-    // addJbbEcologicalStationPolygon();
+    addJbbEcologicalStationPolygon();
 
 
     //initializing markers
@@ -56,7 +56,7 @@ function setJbbRivers() {
         addCaesb1River();
         addCaesb2River();
         addCaesb3River();
-        addCaesb4River();  
+        addCaesb4River();
 
         rivers_on = true;
     }
