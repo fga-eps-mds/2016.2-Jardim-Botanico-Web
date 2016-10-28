@@ -26,8 +26,8 @@
                         </tr>
                         <% @event.each do |event| %>
                         <tr>
-                            <td> <%= event.date_start.strftime("%d/%m/%Y") %> </td>
-                            <td> <%= event.time_start.to_s(:time) %> </td>
+                            <td> <%= l(event.date_start, format: :long) %> </td>
+                            <td> <%= l(event.time_start, format: :short) %> </td>
                             <td> <%= event.status %> </td>
                             <td> <%= event.jbb_space_requested %> </td>
                             <td><%= link_to 'Mostrar', action: 'index_employee', id: event.id %></td>
