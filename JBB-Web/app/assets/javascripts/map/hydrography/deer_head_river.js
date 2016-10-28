@@ -237,4 +237,26 @@ function addDeerHeadRiver(){
 
     //set the river on map
     deerHeadRiver.setMap(map);
+    google.maps.event.addListener(deerHeadRiver, 'click', addDeerHeadRiverInfowindow);
+}
+
+function addDeerHeadRiverInfowindow(event){
+    var deerHeadRiverContentString =
+    '<div id="content">'+
+    '<div id="siteNotice">'+
+    '</div>'+
+    '<h1 id="firstHeading" class="firstHeading">Ribeirão Cabeça de Veado</h1>'+
+    '<div id="bodyContent">'+
+    '<p>O <b>Ribeirão Cabeça de Veado</b>, serve de ponto de captação de ' +
+    'água para a CAESB. '+
+    'Esse ribeirão tem 4 braços que dão em 4 estações de captação de recursos hidricos da CAESB'+
+    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
+    'Rio</a> '+
+    '</div>'+
+    '</div>';
+
+    infoWindow.close();
+    infoWindow.setContent(deerHeadRiverContentString);
+    infoWindow.setPosition(event.latLng);
+    infoWindow.open(map);
 }

@@ -231,4 +231,25 @@ function addCochoRiver(){
 
     //set the river on map
     cochoRiver.setMap(map);
+
+    google.maps.event.addListener(cochoRiver, 'click', addCochoRiverInfowindow);
 }
+
+    function addCochoRiverInfowindow(event){
+    var cochoRiverContentString =
+    '<div id="content">'+
+    '<div id="siteNotice">'+
+    '</div>'+
+    '<h1 id="firstHeading" class="firstHeading">Corrego do Cocho</h1>'+
+    '<div id="bodyContent">'+
+    '<p>O <b>Corrego do Cocho</b>, faz divisa com a QI 17 do lago sul' +
+    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
+    'Rio</a> '+
+    '</div>'+
+    '</div>';
+
+    infoWindow.close();
+    infoWindow.setContent(cochoRiverContentString);
+    infoWindow.setPosition(event.latLng);
+    infoWindow.open(map);
+    }
