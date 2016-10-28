@@ -167,4 +167,23 @@ function addRedentorCristRiver(){
     });
 
     redentorCristRiver.setMap(map);
-  }
+    google.maps.event.addListener(redentorCristRiver, 'click', addRedentorCristRiverInfowindow);
+}
+
+function addRedentorCristRiverInfowindow(event){
+    var redentorCristRiverContentString =
+    '<div id="content">'+
+    '<div id="siteNotice">'+
+    '</div>'+
+    '<h1 id="firstHeading" class="firstHeading">Cristo redentor</h1>'+
+    '<div id="bodyContent">'+
+    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
+    'Rio</a> '+
+    '</div>'+
+    '</div>';
+
+    infoWindow.close();
+    infoWindow.setContent(redentorCristRiverContentString);
+    infoWindow.setPosition(event.latLng);
+    infoWindow.open(map);
+}
