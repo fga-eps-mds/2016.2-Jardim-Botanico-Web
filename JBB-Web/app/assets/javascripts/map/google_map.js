@@ -55,7 +55,7 @@ function setVegetation() {
     southLeftBypassAreaPolygon.setMap(null);
     southCenterBypassAreaPolygon.setMap(null);
     southRupestresAreaTopPolygon.setMap(null);
-    southCleanCampPolygon.setMap(null);=
+    southCleanCampPolygon.setMap(null);
     southPathPolygon.setMap(null);
     southEucalyptusOnePolygon.setMap(null);
     southEucalyptusTwoPolygon.setMap(null);
