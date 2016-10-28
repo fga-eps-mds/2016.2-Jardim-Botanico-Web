@@ -58,9 +58,14 @@ function setVegetation() {
     southPathPolygon.setMap(null);
     southGalleryBushPolygon.setMap(null);
     centerVivariumAreaPolygon.setMap(null);
-    drainCerradoSouth.setMap(null);
-    drainSmallCerrado.setMap(null);
-    smallRockCerrado.setMap(null);
+    drainCerradoSouthPolygon.setMap(null);
+    smallDrainCerradoPolygon.setMap(null);
+    smallRockCerradoPolygon.setMap(null);
+    centerThickAreaPolygon.setMap(null);
+    centerBypassAreaRightPolygon.setMap(null);
+    centerBypassAreaLeftPolygon.setMap(null);
+    centerCerradoSparseAreaRightPolygon.setMap(null);
+    centerCerradoSparseAreaLeftPolygon.setMap(null);
     vegetation_on = false;
     infowindow.close();
   }
@@ -97,6 +102,11 @@ function setVegetation() {
     addDrainCerradoSouthPolygon();
     addSmallDrainCerradoPolygon();
     addSmallRockCerradoPolygon();
+    addCenterThickAreaPolygon();
+    addCenterBypassAreaRightPolygon();
+    addCenterBypassAreaLeftPolygon();
+    addCenterCerradoSparseAreaRightPolygon();
+    addcenterCerradoSparseAreaLeftPolygon();
     vegetation_on = true;
   }
 }
