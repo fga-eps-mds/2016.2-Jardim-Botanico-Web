@@ -96,4 +96,25 @@ function addTaperaRiverArm(){
 
     //set the river on map
     taperaRiverArm.setMap(map);
+    google.maps.event.addListener(taperaRiverArm, 'click', addTaperaRiverArmInfowindow);
+}
+
+function addTaperaRiverArmInfowindow(event){
+    var taperaRiverArmContentString =
+    '<div id="content">'+
+    '<div id="siteNotice">'+
+    '</div>'+
+    '<h1 id="firstHeading" class="firstHeading">Corrego Tapera</h1>'+
+    '<div id="bodyContent">'+
+    '<p>O <b>Corrego Tapera</b>, fica na divisa da estação ecologica do JBB ' +
+    'o território da aeronáutica'+
+    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
+    'Rio</a> '+
+    '</div>'+
+    '</div>';
+
+    infoWindow.close();
+    infoWindow.setContent(taperaRiverArmContentString);
+    infoWindow.setPosition(event.latLng);
+    infoWindow.open(map);
 }

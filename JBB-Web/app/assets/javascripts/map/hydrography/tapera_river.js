@@ -566,37 +566,36 @@ function addTaperaRiver(){
         //end tapera river
     ];
 
-    var lineSymbol = {
-        path: google.maps.SymbolPath.CIRCLE,
-        scale: 8,
-        strokeColor: '#393'
-    };
-
     //add the river at the map in the position previously defined
     taperaRiver = new google.maps.Polyline({
         path: taperaRiverCoordinates,
         map: map,
         strokeColor: '#366ED4',
         strokeWidth: 0.3,
-        icons: [{
-            icon: lineSymbol,
-            offset: '100%'
-        }]
     });
 
     //set the river on map
     taperaRiver.setMap(map);
 
-    animateCircle(taperaRiver);
+    google.maps.event.addListener(taperaRiver, 'click', addTaperaRiverInfowindow);
 }
 
-function animateCircle(taperaRiver) {
-    var count = 0;
-    window.setInterval(function() {
-      count = (count + 1) % 200;
+function addTaperaRiverInfowindow(event){
+    var taperaRiverContentString =
+    '<div id="content">'+
+    '<div id="siteNotice">'+
+    '</div>'+
+    '<h1 id="firstHeading" class="firstHeading">Corrego Tapera</h1>'+
+    '<div id="bodyContent">'+
+    '<p>O <b>Corrego Tapera</b>, fica na divisa da estação ecologica do JBB ' +
+    'o território da aeronáutica'+
+    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
+    'Rio</a> '+
+    '</div>'+
+    '</div>';
 
-      var icons = taperaRiver.get('icons');
-      icons[0].offset = (count / 2) + '%';
-      taperaRiver.set('icons', icons);
-    }, 20);
+    infoWindow.close();
+    infoWindow.setContent(taperaRiverContentString);
+    infoWindow.setPosition(event.latLng);
+    infoWindow.open(map);
 }
