@@ -59,6 +59,10 @@ function setVegetation() {
     southPathPolygon.setMap(null);
     southEucalyptusOne.setMap(null);
     southEucalyptusTwo.setMap(null);
+    southEucalyptusThree.setMap(null);
+    southEucalyptusFour.setMap(null);
+    southEucalyptusFive.setMap(null);
+    southEucalyptusFive.setMap(null);
     southGalleryBushPolygon.setMap(null);
     southTypicalCerradoArea.setMap(null);
     drainCerradoSouthPolygon.setMap(null);
@@ -112,7 +116,11 @@ function setVegetation() {
     addSouthCenterBypassAreaPolygon();
     addSouthRupestresAreaTopPolygon();
     addSouthEucalyptusOnePolygon();
-    addSouthEucalyptusTwoPolygon()
+    addSouthEucalyptusTwoPolygon();
+    addSouthEucalyptusThreePolygon();
+    addSouthEucalyptusFourPolygon();
+    addSouthEucalyptusFivePolygon();
+    addSouthEucalyptusSixPolygon();
     addSouthCleanCampPolygon();
     addSouthTypicalCerradoAreaPolygon();
     addSouthGalleryBushPolygon();
