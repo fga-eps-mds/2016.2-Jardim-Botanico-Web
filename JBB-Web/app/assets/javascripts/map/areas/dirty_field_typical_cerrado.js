@@ -27,7 +27,7 @@ function addDirtyFieldTypicalCerradoPolygon(){
   // Construct the polygon.
   dirtyFieldTypicalCerradoPolygon = new google.maps.Polygon({
     paths: dirtyFieldTypicalCerradoPolygonCoords,
-    strokeColor: '##A7E3D9',
+    strokeColor: '#A7E3D9',
     strokeOpacity: 0.1,
     strokeWeight: 3,
     fillColor: '#A7E3D9',

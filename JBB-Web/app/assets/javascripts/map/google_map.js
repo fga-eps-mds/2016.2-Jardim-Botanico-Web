@@ -51,6 +51,7 @@ function setVegetation() {
     southAnthropicAreaPolygon.setMap(null);
     southBypassAreaPolygon.setMap(null);
     southDirtyFieldAreaPolygon.setMap(null);
+    southDirtyFieldPolygon.setMap(null);
     southLeftBypassAreaPolygon.setMap(null);
     southCenterBypassAreaPolygon.setMap(null);
     southRupestresAreaTopPolygon.setMap(null);
@@ -71,6 +72,11 @@ function setVegetation() {
     centerGroundAreaRightPolygon.setMap(null);
     centerForestGaleriaAreaPolygon.setMap(null);
     centerGroundMurundunsAreaPolygon.setMap(null);
+    centerGalleryBushPolygon.setMap(null);
+    centerVivariumAreaPolygon.setMap(null);
+    drainCerradoSouth.setMap(null);
+    drainSmallCerrado.setMap(null);
+    smallRockCerrado.setMap(null);
     vegetation_on = false;
     infowindow.close();
   }
@@ -96,12 +102,14 @@ function setVegetation() {
     addTypicalCerradoCleanCampPolygon();
     addSouthAnthropicAreaPolygon();
     addSouthBypassAreaPolygon();
+    addSouthDirtyFieldPolygon();
     addSouthDirtyFieldAreaPolygon();
     addSouthLeftBypassAreaPolygon();
     addSouthCenterBypassAreaPolygon();
     addSouthRupestresAreaTopPolygon();
     addSouthCleanCampPolygon();
     addSouthGalleryBushPolygon();
+    addCenterGalleryBushPolygon();
     addSouthPathPolygon();
     addCenterTypicalCerradoAreaPolygon();
     addDrainCerradoSouthPolygon();
