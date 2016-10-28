@@ -51,12 +51,23 @@ function addCaesb3River(){
       {lat: -15.891544847667186, lng: -47.85411464050412},
     ];
 
+    var lineSymbol = {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 8,
+        strokeWeight: 4,
+        strokeColor: '#393'
+    };
+
     //add the river at the map in the position previously defined
     caesb3River = new google.maps.Polyline({
         path: caesb3RiverCoordinates,
         map: map,
         strokeColor: '#366ED4',
-        strokeWidth: 0.3
+        strokeWidth: 0.3,
+        icons: [{
+            icon: lineSymbol,
+            offset: '100%'
+        }]
     });
 
     google.maps.event.addListener(caesb3River, 'click', addCaesb3RiverInfowindow);

@@ -1,7 +1,6 @@
 var caesb1;
 
 function addCaesb1River(){
-
     var caesb1RiverCoordinates = [
       {lat: -15.891771861105648, lng: -47.8432122990489},
       {lat: -15.891771861105648, lng: -47.843209637794644},
@@ -52,12 +51,23 @@ function addCaesb1River(){
       {lat: -15.906197007941506, lng: -47.836908772587776},
     ];
 
+    var lineSymbol = {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 8,
+        strokeWeight: 4,
+        strokeColor: '#393'
+    };
+
     //add the river at the map in the position previously defined
     caesb1River = new google.maps.Polyline({
         path: caesb1RiverCoordinates,
         map: map,
         strokeColor: '#366ED4',
-        strokeWidth: 0.3
+        strokeWidth: 0.3 ,
+        icons: [{
+            icon: lineSymbol,
+            offset: '100%'
+        }]
     });
 
     caesb1River.setMap(map);
