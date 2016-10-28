@@ -1,4 +1,9 @@
 en:
+    time:
+        formats:
+            short: "%I:%M %P"
+
+    # translations
     welcome_to_jbb: "WELCOME TO JARDIM BOTÂNICO"
     jbb: "Jardim Botânico de Brasilía"
     know_more: "Learn more about us!"
