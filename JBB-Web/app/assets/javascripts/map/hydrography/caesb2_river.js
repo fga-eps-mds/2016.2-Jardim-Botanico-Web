@@ -76,21 +76,23 @@ function addCaesb2River(){
     caesb2River.setMap(map);
   }
 
-function addCaesb2RiverInfowindow(event){
-    var caesb2RiverContentString =
-    '<div id="content">'+
-    '<div id="siteNotice">'+
-    '</div>'+
-    '<h1 id="firstHeading" class="firstHeading">Rio Qualquer</h1>'+
-    '<div id="bodyContent">'+
-    '<p>O <b>Rio x</b>, corre agua ' +
-    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
-    'Rio</a> '+
-    '</div>'+
-    '</div>';
+  function addCaesb2RiverInfowindow(event){
+      var caesb2RiverContentString =
+      '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Captação da CAESB 2</h1>'+
+      '<div id="bodyContent">'+
+      '<p>O <b>Ribeirão Cabeça de Veado</b>, serve de ponto de captação de ' +
+      'água para a CAESB. '+
+      'Esse braço do ribeirão da na estação de captação de recursos hidricos Cabeça de Veado II'+
+      '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
+      'Rio</a> '+
+      '</div>'+
+      '</div>';
 
-    infoWindow.close();
-    infoWindow.setContent(caesb2RiverContentString);
-    infoWindow.setPosition(event.latLng);
-    infoWindow.open(map);
-}
+      infoWindow.close();
+      infoWindow.setContent(caesb2RiverContentString);
+      infoWindow.setPosition(event.latLng);
+      infoWindow.open(map);
+  }

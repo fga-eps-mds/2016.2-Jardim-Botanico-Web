@@ -61,4 +61,27 @@ function addCaesb1River(){
     });
 
     caesb1River.setMap(map);
-  }
+
+    google.maps.event.addListener(caesb1River, 'click', addCaesb1RiverInfowindow);
+}
+
+function addCaesb1RiverInfowindow(event){
+    var caesb1RiverContentString =
+    '<div id="content">'+
+    '<div id="siteNotice">'+
+    '</div>'+
+    '<h1 id="firstHeading" class="firstHeading">Captação da CAESB 1</h1>'+
+    '<div id="bodyContent">'+
+    '<p>O <b>Ribeirão Cabeça de Veado</b>, serve de ponto de captação de ' +
+    'água para a CAESB. '+
+    'Esse braço do ribeirão da na estação de captação de recursos hidricos Cabeça de Veado I'+
+    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
+    'Rio</a> '+
+    '</div>'+
+    '</div>';
+
+    infoWindow.close();
+    infoWindow.setContent(caesb1RiverContentString);
+    infoWindow.setPosition(event.latLng);
+    infoWindow.open(map);
+}
