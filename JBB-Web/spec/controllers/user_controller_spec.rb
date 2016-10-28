@@ -26,7 +26,45 @@ RSpec.describe UsersController, type: :controller do
         :password_digest=>"mUc3m00RsqyRe"
 			}
       expect(response).to have_http_status(:success)
-
       end
   end
+
+  # describe "GET edit" do
+  #   it "should GET a edit user profile" do
+  #     get :edit
+  #   end
+  # end
+
+  describe "PUT update/:id" do
+  let(:attr) do
+    {
+      :email=>"nicacionetobsb@gmail.com",
+      :name=>"Second User",
+      :cpf=>"041.861.791.07",
+      :is_employee=>true,
+      :gender=>"Masculino",
+      :birth=>"16/11/1994",
+      :password=>"nomatch",
+      :password_digest=>"mUc3m00RsqyRe"
+    }
+  end
+
+  before(:each) do
+    put :update, :id => @user.id, :user => attr
+    @user.reload
+  end
+
+  it { expect(response).to redirect_to(@user) }
+  it { expect(@user.email).to eql attr[:email] }
+  it { expect(@user.name).to eql attr[:name] }
+  it { expect(@user.cpf).to eql attr[:cpf] }
+  it { expect(@user.is_employee).to eql attr[:is_employee] }
+  it { expect(@user.gender).to eql attr[:gender] }
+  it { expect(@user.password).to eql attr[:password] }
+
+end
+
+
+
+
 end
