@@ -19,6 +19,6 @@ function addSmallTypicalCerradoArea(){
   smallTypicalCerradoArea = createVegetation(smallTypicalCerradoAreaCoordinatess,
                                         smallTypicalCerradoAreaColor);
 
-  
+
   smallTypicalCerradoArea.setMap(map);
 }
