@@ -32,3 +32,8 @@ pt:
     contact2: "Gostaria de entrar em contato com a gente?"
     contact3: "Assessoria de Comunicação Social: "
     phone: "Telefone:"
+    hello: "Olá, "
+    requests: "Minhas Requisições"
+    sign_out: "Sair"
+    sign_in: "Entrar"
+    sign_up: "Cadastrar"

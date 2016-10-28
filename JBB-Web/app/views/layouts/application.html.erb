@@ -12,26 +12,26 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand page-scroll" href="/"><font color = "black">Jardim Botânico Web</font></a>
+        <a class="navbar-brand page-scroll" href="/<%= @language %>/"><font color = "black">Jardim Botânico Web</font></a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
           <li>
-            <a class="page-scroll" href="/users/<%= current_user.id %>"><font color = "black"> Olá <%= current_user.name %></font></a>
+            <a class="page-scroll" href="/<%= @language %>/users/<%= current_user.id %>"><font color = "black"> <%=t(:hello)%> <%= current_user.name %></font></a>
           </li>
           <li>
-            <a class="page-scroll" href="/users/my_requests/<%= current_user.id %>"><font color = "black"> Minhas requisições </font></a>
+            <a class="page-scroll" href="/<%= @language %>/users/my_requests/<%= current_user.id %>"><font color = "black"><%=t(:requests)%> </font></a>
           </li>
           <li>
-              <a class="page-scroll" href="/sign_out"><font color = "black">Sair</font></a>
+              <a class="page-scroll" href="/<%= @language %>/sign_out"><font color = "black"><%=t(:sign_out)%></font></a>
           </li>
           <% else %>
           <li>
-            <a class="page-scroll" href="/sign_in"><font color = "black">Entrar</font></a>
+            <a class="page-scroll" href="/<%= @language %>/sign_in"><font color = "black"><%=t(:sign_in)%></font></a>
           </li>
           <li>
-              <a class="page-scroll" href="/users/new"><font color = "black">Cadastre-se</font></a>
+              <a class="page-scroll" href="/<%= @language %>/users/new"><font color = "black"><%=t(:sign_up)%></font></a>z
           </li>
           <% end %>
         </ul>
