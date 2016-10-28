@@ -23,7 +23,7 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
     infowindow = new google.maps.InfoWindow();
     addJbbVisitantsAreaPolygon();
-    addJbbEcologicalStationPolygon();
+    //addJbbEcologicalStationPolygon();
 
 
     //initializing markers
@@ -43,6 +43,8 @@ function setJbbRivers() {
         caesb3River.setMap(null);
         caesb4River.setMap(null);
         deerHeadRiverArm.setMap(null);
+        deerHeadRiverArm2.setMap(null);
+        deerHeadRiverArm3.setMap(null);
 
         infowindow.close();
         rivers_on = false;
@@ -59,6 +61,8 @@ function setJbbRivers() {
         addCaesb3River();
         addCaesb4River();
         addDeerHeadRiverArm();
+        addDeerHeadRiverArm2();
+        addDeerHeadRiverArm3();
 
         rivers_on = true;
     }
