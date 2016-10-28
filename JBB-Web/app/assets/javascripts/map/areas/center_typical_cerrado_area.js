@@ -1,6 +1,6 @@
-var centerVivariumAreaPolygon;
-function addCenterVivariumAreaPolygon(){
-  var centerVivariumAreaPolygonCoords = [
+var centerTypicalCerradoAreaPolygon;
+function addCenterTypicalCerradoAreaPolygon(){
+  var centerTypicalCerradoAreaPolygonCoords = [
   {lat: -15.88934807785589, lng: -47.83908352284925},
   {lat: -15.885658460189136, lng: -47.82289497568854},
   {lat: -15.892138750829927, lng: -47.82122127726325},
@@ -296,6 +296,7 @@ function addCenterVivariumAreaPolygon(){
   {lat: -15.90939099116274, lng: -47.84370891756225},
   {lat: -15.908978275421171, lng: -47.84325830644775},
   {lat: -15.909102090232606, lng: -47.842399999562986},
+  
   {lat: -15.909927520359934, lng: -47.84158460802246},
 
   {lat: -15.910216420733473, lng: -47.84162752328484},
@@ -363,8 +364,8 @@ function addCenterVivariumAreaPolygon(){
   ];
 
     // Construct the polygon.
-  centerVivariumAreaPolygon = new google.maps.Polygon({
-    paths: centerVivariumAreaPolygonCoords,
+  centerTypicalCerradoAreaPolygon = new google.maps.Polygon({
+    paths: centerTypicalCerradoAreaPolygonCoords,
     strokeColor: '#22B373',
     strokeOpacity: 0.1,
     strokeWeight: 3,
@@ -372,5 +373,5 @@ function addCenterVivariumAreaPolygon(){
     fillOpacity: 0.50
   });
 
-  centerVivariumAreaPolygon.setMap(map);
+  centerTypicalCerradoAreaPolygon.setMap(map);
 } 
