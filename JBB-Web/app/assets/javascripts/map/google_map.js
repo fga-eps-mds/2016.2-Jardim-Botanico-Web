@@ -23,7 +23,7 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
     infowindow = new google.maps.InfoWindow();
     addJbbVisitantsAreaPolygon();
-    //addJbbEcologicalStationPolygon();
+    addJbbEcologicalStationPolygon();
 
 
     //initializing markers
@@ -37,6 +37,7 @@ function setJbbRivers() {
         redentorCristRiverArm.setMap(null);
         cochoRiver.setMap(null);
         taperaRiverArm.setMap(null);
+        taperaRiverArm2.setMap(null);
         deerHeadRiver.setMap(null);
         caesb1River.setMap(null);
         caesb2River.setMap(null);
@@ -55,6 +56,7 @@ function setJbbRivers() {
         addRedentorCristRiverArm();
         addCochoRiver();
         addTaperaRiverArm();
+        addTaperaRiverArm2();
         addDeerHeadRiver();
         addCaesb1River();
         addCaesb2River();
