@@ -93,3 +93,6 @@ gem 'mail'
 #Testing
 gem 'rails-dom-testing'
 gem 'rails-controller-testing'
+
+#locale
+gem 'rails-i18n'
