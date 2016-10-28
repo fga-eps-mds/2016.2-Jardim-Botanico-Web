@@ -1,23 +1,34 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  welcome_to_jbb: "WELCOME TO JARDIM BOTÂNICO"
+    welcome_to_jbb: "WELCOME TO JARDIM BOTÂNICO"
+    jbb: "Jardim Botânico de Brasilía"
+    know_more: "Learn more about us!"
+    know_trails: "Learn a bit more about our trails!"
+    know_trails2: "The Jardim Botânico de Brasília mostly composed by Cerrado vegetation, in an excellent conservation state that can be enjoyed at Interpretative Trails open to visitation. By this properties, the JBB is know as the “Cerrado's Garden”. The visitation area is composed by the Visitant's Center, Cerrado's Excelence Center, Picknick area, Orchids' Garden, Cactuses' Garden, Libary, Permaculture, Amphitheater, Interpretative Trails e Tematic Gardens."
+    where_walk: "Learn where to walk"
+    appointment_book: "Look our appointment book and check the best day for your visit/event"
+    visit: "Visit"
+    event: "Event"
+    slogan: "We are more than a simple garden"
+    manage_visit: "Manage visits"
+    manage_visit2: "Manage scheduled visits."
+    make_visit: "Schedule a visit"
+    make_visit2: "Make a visit with us to experience better our trails and our natual beauty."
+    manage_event: "Manage events"
+    manage_event2: "Manage scheduled events."
+    make_event: "Schedule an event"
+    make_event2: "Make an event with us and enjoy our best Jadim Botânico's spaces."
+    education: "Ambiental Education"
+    education2: "Contact nature and lear how to preserv it."
+    spaces: "JBB Spaces"
+    all_spaces: "Amphitheater, Nature Libary, Visitants' Center, Trails, Restaurans and many others attractions."
+    space1: "Japonese Garden"
+    space2: "Evolutive Garden"
+    space3: "Sun Watch"
+    space4: "Green Houses"
+    space5: "Tea House"
+    space6: "Cactuses' Garden"
+    social_media: "Follow us at social medias"
+    contact: "Talk with us!"
+    contact2: "Would you like to contact us?"
+    contact3: "Social Press Ofice: "
+    phone: "Phone:"
