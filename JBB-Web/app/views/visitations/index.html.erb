@@ -21,12 +21,12 @@
         <br>
         <div class = "actions" >
           <b>Dia:</b>
-          <%= @visitation.date.strftime("%d/%m/%Y") %>
+          <%= l(@visitation.date, format: :long) %>
         </div>
         <br>
         <div class = "actions" >
           <b>Hora:</b>
-          <%= @visitation.time.to_s(:time) %>
+          <%= l(@visitation.time, format: :short) %>
         </div>
         <br>
         <div class = "actions" >

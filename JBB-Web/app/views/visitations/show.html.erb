@@ -53,9 +53,8 @@ $(document).on('click', '.dropdown-menu li a', function () {
                 </tr>
                 <% @visitations_sorted.each do |visitation| %>
                   <tr>
-                    <td> <%= visitation.date %> </td>
-                    <% timeString = visitation.time.to_s %>
-                    <td> <%= timeString[11..18] %> </td>
+                    <td> <%= l(visitation.date, format: :long) %> </td>
+                    <td> <%= l(visitation.time, format: :short) %> </td>
                     <td> <%= visitation.status %> </td>
                     <td> <%= visitation.visitants_amount %> </td>
                     <td> <%= visitation.visitants_paying %> </td>
