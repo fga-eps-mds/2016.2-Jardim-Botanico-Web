@@ -29,7 +29,7 @@
           <h2 class="section-heading"><%=t(:know_trails)%></h2>
           <hr class="light">
           <p class="text-faded"><%=t(:know_trails2)%></p>
-          <a href ="/maps/jbb_map/" class="page-scroll btn btn-default btn-xl sr-button"><%=t(:where_walk)%></a>
+          <a href ="/<%= @language %>/maps/jbb_map/" class="page-scroll btn btn-default btn-xl sr-button"><%=t(:where_walk)%></a>
         </div>
       </div>
     </div>
@@ -39,8 +39,8 @@
       <div class="call-to-action">
         <h2><%=t(:appointment_book)%></h2>
       </div>
-      <a  id="calendar_index" href="http://localhost:3000/events/index_calendar_month" class="fa fa-calendar fa-3x sr-icons"> <h4><b><font color ="white"><%=t(:event)%></font></b></h4></a>
-      <a  id="calendar_index" href="http://localhost:3000/visitations/index_calendar_month" class="fa fa-calendar-o fa-3x sr-icons"> <h4><b><font color ="white"><%=t(:visit)%></font></b></h4> </a>
+      <a  id="calendar_index" href="/<%= @language %>/events/index_calendar_month" class="fa fa-calendar fa-3x sr-icons"> <h4><b><font color ="white"><%=t(:event)%></font></b></h4></a>
+      <a  id="calendar_index" href="/<%= @language %>/visitations/index_calendar_month" class="fa fa-calendar-o fa-3x sr-icons"> <h4><b><font color ="white"><%=t(:visit)%></font></b></h4> </a>
     </div>
   </aside>
   <section id="services">
@@ -61,12 +61,12 @@
           <div class="service-box">
               <% if current_user %>
                 <% if current_user.is_employee %>
-                  <a href="/visitations/show">
+                  <a href="/<%= @language %>/visitations/show">
                   <% else %>
-                  <a href="/visitations/new">
+                  <a href="/<%= @language %>/visitations/new">
                   <% end%>
               <% else %>
-                <a href="/sign_in">
+                <a href="/<%= @language %>/sign_in">
             <% end %>
             <i class="fa fa-4x fa-map-marker text-primary sr-icons"></i>
             <% if current_user %>
@@ -87,12 +87,12 @@
         <div class="service-box">
                 <% if current_user %>
                   <% if current_user.is_employee %>
-                  <a href="/events/show_employee">
+                  <a href="/<%= @language %>/events/show_employee">
                   <% else %>
-                  <a href="/events/new">
+                  <a href="/<%= @language %>/events/new">
                   <% end%>
                 <% else %>
-                  <a href="/sign_in">
+                  <a href="/<%= @language %>/sign_in">
               <% end %>
           <i class="fa fa-4x fa-users text-primary sr-icons"></i>
           <% if current_user %>
@@ -120,7 +120,7 @@
         <div class="service-box">
           <i class="fa fa-4x fa-map-signs text-pri/maps/jbb_mapmary sr-icons"></i>
           <h3><%=t(:spaces)%></h3>
-          <a href="/maps/jbb_map/">
+          <a href="/<%= @language %>/maps/jbb_map/">
           <p class="text-muted"><%=t(:all_spaces)%></p>
         </div>
       </div>
