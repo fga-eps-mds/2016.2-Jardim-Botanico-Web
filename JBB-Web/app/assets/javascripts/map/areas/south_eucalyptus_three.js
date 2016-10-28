@@ -33,6 +33,6 @@ var southEucalyptusThreeColor = '#A1BF77';
 function addSouthEucalyptusThree(){
   southEucalyptusThree = createVegetation(southEucalyptusThreeCoordinates,
                                         southEucalyptusThreeColor);
-  
+
   southEucalyptusThree.setMap(map);
 }
