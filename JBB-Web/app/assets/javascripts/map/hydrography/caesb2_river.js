@@ -71,5 +71,26 @@ function addCaesb2River(){
         strokeWidth: 0.3
     });
 
+    google.maps.event.addListener(caesb2River, 'click', addCaesb2RiverInfowindow);
+
     caesb2River.setMap(map);
   }
+
+function addCaesb2RiverInfowindow(event){
+    var caesb2RiverContentString =
+    '<div id="content">'+
+    '<div id="siteNotice">'+
+    '</div>'+
+    '<h1 id="firstHeading" class="firstHeading">Rio Qualquer</h1>'+
+    '<div id="bodyContent">'+
+    '<p>O <b>Rio x</b>, corre agua ' +
+    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
+    'Rio</a> '+
+    '</div>'+
+    '</div>';
+
+    infoWindow.close();
+    infoWindow.setContent(caesb2RiverContentString);
+    infoWindow.setPosition(event.latLng);
+    infoWindow.open(map);
+}
