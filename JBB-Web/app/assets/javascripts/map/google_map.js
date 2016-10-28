@@ -76,6 +76,7 @@ function setVegetation() {
     centerVivariumAreaPolygon.setMap(null);
     drainCerradoSouth.setMap(null);
     drainSmallCerrado.setMap(null);
+    smallTypicalCerradoArea.setMap(null);
     smallRockCerrado.setMap(null);
     vegetation_on = false;
     infowindow.close();
@@ -114,6 +115,7 @@ function setVegetation() {
     addCenterTypicalCerradoAreaPolygon();
     addDrainCerradoSouthPolygon();
     addSmallDrainCerradoPolygon();
+    addSmallTypicalCerradoAreaPolygon();
     addSmallRockCerradoPolygon();
     addCenterThickAreaPolygon();
     addCenterBypassAreaRightPolygon();
