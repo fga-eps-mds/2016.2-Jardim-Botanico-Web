@@ -45,7 +45,7 @@ var southTypicalCerradoAreaColor = '#D3D6A1';
 
 function addSouthTypicalCerradoArea(){
   southTypicalCerradoArea = createVegetation(southTypicalCerradoAreaCoordinates,
-                                      southTypicalCerradoAreaColor);  
-  
+                                      southTypicalCerradoAreaColor);
+
   southTypicalCerradoArea.setMap(map);
 }
