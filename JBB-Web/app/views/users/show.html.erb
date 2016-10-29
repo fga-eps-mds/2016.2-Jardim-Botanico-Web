@@ -43,7 +43,7 @@
         <a id="space" >
         <a href="/<%= @language %>/" class="btn btn-primary"><%=t(:back)%></a>
         <a id="new" >
-        <%= link_to t(:exclude), current_user, method: :delete, data: { confirm: "Tem certeza que deseja excluir sua conta?" }, class: "btn btn-warning destroy-btn"%>
+        <%= link_to t(:exclude), current_user, method: :delete, data: { confirm: t(:confirm_delete_user) }, class: "btn btn-warning destroy-btn"%>
       </div>
       </div>
     </div>
