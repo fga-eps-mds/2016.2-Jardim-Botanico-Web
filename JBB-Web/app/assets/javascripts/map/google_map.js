@@ -3,13 +3,15 @@ loadScript();
 });
 
 var map;
-var markers_on = false;
-var infowindow;
+var infowindow = new google.maps.InfoWindow();
+var rivers_on = false;
+var markers_on  = false;
 
 function initialize() {
     var mapOptions = {
+        // center: new google.maps.LatLng(37.783, -122.403),
         center: new google.maps.LatLng(-15.872652, -47.836588),
-        zoom: 14,
+        zoom: 15,
         mapTypeId: google.maps.MapTypeId.NORMAL,
         panControl: true,
         scaleControl: false,
@@ -20,8 +22,48 @@ function initialize() {
     // initializing map
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
     infowindow = new google.maps.InfoWindow();
+    addJbbVisitantsAreaPolygon();
+    addJbbEcologicalStationPolygon();
+}
 
-    addJbbTotalAreaPolygon();
+function setJbbRivers() {
+    if(rivers_on) {
+        taperaRiver.setMap(null);
+        redentorCristRiver.setMap(null);
+        redentorCristRiverArm.setMap(null);
+        cochoRiver.setMap(null);
+        taperaRiverArm.setMap(null);
+        taperaRiverArm2.setMap(null);
+        deerHeadRiver.setMap(null);
+        caesb1River.setMap(null);
+        caesb2River.setMap(null);
+        caesb3River.setMap(null);
+        caesb4River.setMap(null);
+        deerHeadRiverArm.setMap(null);
+        deerHeadRiverArm2.setMap(null);
+        deerHeadRiverArm3.setMap(null);
+
+        infowindow.close();
+        rivers_on = false;
+    }
+    else {
+        addTaperaRiver();
+        addRedentorCristRiver();
+        addRedentorCristRiverArm();
+        addCochoRiver();
+        addTaperaRiverArm();
+        addTaperaRiverArm2();
+        addDeerHeadRiver();
+        addCaesb1River();
+        addCaesb2River();
+        addCaesb3River();
+        addCaesb4River();
+        addDeerHeadRiverArm();
+        addDeerHeadRiverArm2();
+        addDeerHeadRiverArm3();
+
+        rivers_on = true;
+    }
 }
 
 function setJbbSpaces() {
