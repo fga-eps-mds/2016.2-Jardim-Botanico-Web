@@ -51,3 +51,6 @@ pt:
     fill_update: "Preencha as informações abaixo: "
     form_has: "O formulário contém"
     confirm_delete_user: "Tem certeza que deseja excluir sua conta?"
+    sign_up_user: "Cadastro de Usuários"
+    remember_me: "Lembrar-me"
+    sign_up_now: "Cadastre-se agora"

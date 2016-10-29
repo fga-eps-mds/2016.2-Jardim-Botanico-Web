@@ -56,3 +56,6 @@ en:
     fill_update: "Fill the form below: "
     form_has: "The form contains"
     confirm_delete_user: "Do you really want to delete your account?"
+    sign_up_user: "Sign Up User"
+    remember_me: "Remember me"
+    sign_up_now: "Sign Up Now"
