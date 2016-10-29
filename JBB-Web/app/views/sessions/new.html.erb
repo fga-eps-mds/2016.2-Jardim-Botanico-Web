@@ -7,30 +7,30 @@
         <div class="alert alert-<%= key %>"><%= value %></div>
         <% end %>
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Entrar</h2>
+          <h2 class="section-heading"><%= t(:sign_in) %></h2>
           <hr class="primary">
         </div>
         <%= form_for :session, url: sign_in_path do |f| %>
         <div class="field">
-         <%= f.label :email %><br />
+         <%= f.label t(:mail) %><br />
          <%= f.email_field :email, autofocus: true, :required => true, class: "form-control" %>
         </div>
         <br>
         <div class="field">
-        <%= f.label :senha %><br />
+        <%= f.label t(:password) %><br />
         <%= f.password_field :password, autocomplete: "off", :required => true, class: "form-control" %>
         </div>
          <div class="checkbox">
-          <label><input type="checkbox">Lembrar-me</label>
+          <label><input type="checkbox"><%= t(:remember_me) %></label>
         </div>
         <br>
-        <div class="actions">
-         <%= f.submit "Entrar", class: "btn btn-primary" %>
+        <div class="form-in line">
+         <%= f.submit t(:sign_in), class: "btn btn-primary" %>
           <a id="back_space" >
-          <%= link_to "Voltar", home_url, class: "btn btn-primary" %>
+          <%= link_to t(:back), "/" + (@language).to_s + "/", class: "btn btn-primary" %>
         </div>
         <br>
-        <%= link_to "Cadastre-se agora", new_user_path , class: "btn btn-primary"%>
+        <%= link_to t(:sign_up_now), "/" + (@language).to_s + "/users/new" , class: "btn btn-warning destroy-btn"%>
         <%end%>
       </div>
     </div>
