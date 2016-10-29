@@ -1,40 +1,4 @@
 pt:
-    # date and time formats and names in portuguese
-    date:
-        formats:
-            # Use the strftime parameters for formats.
-            # When no format has been given, it uses default.
-            # You can provide other formats here if you like!
-            default: "%d-%m-%Y"
-            short: "%d %b %Y"
-            long: "%d de %B de %Y"
-
-            day_names: [Domingo, Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
-            abbr_day_names: [Dom, Seg, Ter, Qua, Qui, Sex, Sáb]
-
-            # Don't forget the nil at the beginning; there's no such thing as a 0th month
-            month_names: [~, "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
-            abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
-            # Used in date_select and datetime_select.
-            order:
-                - day
-                - month
-                - year
-
-                time:
-                    formats:
-                        default: "%a, %d %b %Y %H:%M:%S %z"
-                        short: "%H:%M"
-                        long: "%d %B %Y, %H:%M"
-
-                        number:
-                            format:
-                                # Sets the separator between the units, for more precision (e.g. 1.0 / 2.0 == 0.5)
-                                separator: ","
-                                # Delimits thousands (e.g. 1,000,000 is a million) (always in groups of three)
-                                delimiter: "."
-
-    #translations
     welcome_to_jbb: "BEM VINDO AO JARDIM BOTÂNICO"
     jbb: "Jardim Botânico de Brasilía"
     know_more: "Saiba mais sobre nós!"
@@ -73,3 +37,10 @@ pt:
     sign_out: "Sair"
     sign_in: "Entrar"
     sign_up: "Cadastrar"
+    profile: "Perfil de "
+    gender: "Genero: "
+    birth: "Data de Nascimento: "
+    mail: "Email: "
+    edit: "Editar"
+    back: "Voltar"
+    exclude: "Excluir minha conta"

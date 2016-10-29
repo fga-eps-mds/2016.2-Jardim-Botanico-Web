@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get '/user_mailers/welcome'
   post '/user_mailers/welcome'
 
+  resources :users
+
+
   scope "(:locale)", locale: /en|pt/ do
 
     #root
@@ -14,7 +17,6 @@ Rails.application.routes.draw do
 
 
     #users
-    resources :users
     get '/users/new' => 'users#new'
     post '/users/new' => 'users#create', :as => 'create_user'
     get '/users/:id' => 'users#show', :as => 'user_show'
@@ -29,7 +31,6 @@ Rails.application.routes.draw do
     get    '/sign_in'   => 'sessions#new'
     post   '/sign_in'   => 'sessions#create', :as => 'sign_in_path'
     get '/sign_out' => 'sessions#destroy'
-    delete '/sign_out' => 'sessions#destroy'
 
     #root
     get 'sessions/new'
@@ -66,6 +67,7 @@ Rails.application.routes.draw do
 
     get    'sign_in'   => 'sessions#new'
     post   'sign_in'   => 'sessions#create'
+    delete '/sign_out' => 'sessions#destroy'
     delete 'sign_out'  => 'sessions#destroy'
 
 
