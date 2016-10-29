@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 			@phone = @user.phones.build(params[:phone])
       session[:user_id] = @user.id
       flash[:success] = "Cadastro efetuado com sucesso!"
-      redirect_to home_path
+      redirect_to "/" + (@language).to_s + "/"
   	else
   		render 'new'
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   # Editing the user profile
   def edit
     if @user != current_user
-      redirect_to home_path
+      redirect_to "/" + (@language).to_s + "/"
     end
   end
 
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   def show
     @phone = @user.phones.all
      if @user != current_user
-       redirect_to home_path
+       redirect_to "/" + (@language).to_s + "/"
      end
   end
 
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
     current_user.destroy
     session[:user_id] = nil
     flash[:warning] = "Perfil deletado com sucesso"
-    redirect_to home_path
+    redirect_to "/" + (@language).to_s + "/"
   end
 
   private
