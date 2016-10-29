@@ -8,7 +8,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12 text-center">
-              <h2 class="section-heading">Atualização de Perfil</h2>
+              <h2 class="section-heading"><%=t(:update_profile)%></h2>
               <hr class="primary">
             </div>
           </div>
@@ -16,7 +16,7 @@
   <div class="container">
     <div class = "row">
       <div class="col-md-6 col-md-offset-3">
-        <p>Preencha as informações abaixo:</p>
+        <p><%=t(:fill_update)%></p>
       </div>
     </div>
   </div>
@@ -30,7 +30,7 @@
           <% if @user.errors.any? %>
             <div id="error_explanation">
               <div class="alert-error">
-                O formulário contém <%= pluralize(@user.errors.count, "erro") %>.
+                <%=t(:form_has)%> <%= pluralize(@user.errors.count, "erro") %>.
               </div>
               <ul>
                 <% @user.errors.full_messages.each do |msg| %>
@@ -40,17 +40,17 @@
             </div>
           <% end %>
           <div class="field">
-            <%= f.label :Nome %>
+            <%= f.label t(:name) %>
             <%= f.text_field :name, :required => true, autocomplete: "off", class: 'form-control', placeholder: 'Digite seu nome e sobrenome' %>
           </div>
           <br>
           <div class="field">
-            <%= f.label :Email %>
+            <%= f.label t(:mail) %>
             <%= f.email_field :email, :required => true, autocomplete: "off", class: 'form-control', placeholder: 'Digite seu email, ex: example@host.com' %>
           </div>
           <br>
           <div class="field">
-            <%= f.label :Senha %>
+            <%= f.label t(:password) %>
             <%= f.password_field :password, :required => true, autocomplete: "off", class: 'form-control' , placeholder: 'Digite sua senha, minimo 5 caracteres' %>
           </div>
           <br>
@@ -63,7 +63,7 @@
           <br>
           <%= f.fields_for :phones do |ff| %>
             <div class="field">
-              <%= ff.label :Telefone %>
+              <%= ff.label t(:phone) %>
               <%= ff.text_field :phone, :required => true, autocomplete: "off", id: 'phone', class: 'form-control',
                                 placeholder: '(00)00000-0000' , maxlength: '14',
                                 :onkeypress => "PhoneMask(this)", :onblur => "ValidatePhone(this)"%>
@@ -71,20 +71,20 @@
           <% end %>
           <br>
           <div class="form-group">
-            <label for="gender">Gênero</label>
+            <label for="gender"><%=t(:gender)%></label>
             <%= f.select :gender, ["", "Feminino", "Masculino", "Outro"], :required => true, class: 'form-control' %>
           </div>
           <div class="field">
-            <%= f.label :Data_de_Nascimento %>
+            <%= f.label t(:birth) %>
             <%= f.text_field :birth, :required => true, autocomplete: "off", id: 'date',class: 'form-control',
                              placeholder: 'Ex.: dd/mm/aaaa', maxlength: '10',
                              :onkeypress => "DateMask(this)", :onblur => "ValidateDate(this)"%>
           </div>
           <br>
           <div class="actions">
-            <%= f.submit "Atualizar", class: "btn btn-primary"%>
+            <%= f.submit t(:update), class: "btn btn-primary"%>
             <a id="update" >
-            <%= link_to "Voltar", home_path, class: "btn btn-primary" %>
+            <a href="/<%= @language %>/users/<%= current_user.id %>" class="btn btn-primary"><%=t(:back)%></a>
           </div>
         <% end %>
       </div>
