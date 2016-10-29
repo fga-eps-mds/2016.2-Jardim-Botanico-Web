@@ -66,6 +66,34 @@ function setJbbRivers() {
     }
 
 var vegetation_on = false;
+  loadScript();
+});
+
+var map;
+var markers;
+var trails;
+var infowindow;
+
+function initialize() {
+  var mapOptions = {
+      center: new google.maps.LatLng(-15.872652, -47.836588),
+      zoom: 14,
+      mapTypeId: google.maps.MapTypeId.NORMAL,
+      panControl: true,
+      scaleControl: false,
+      streetViewControl: true,
+      overviewMapControl: true
+  };
+
+  // initializing map
+  map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  infowindow = new google.maps.InfoWindow();
+  addJbbTotalAreaPolygon();
+
+  //initializing markers
+  markers = new Markers(map);
+  trails = new Trails(map);
+}
 
 function setVegetation() {
   if(vegetation_on) {
@@ -204,6 +232,7 @@ function setVegetation() {
   }
 }
 
+//Shows or remove JBB spaces at the map
 function setJbbSpaces() {
   if(markers_on) {
       amphitheaterMarker.setMap(null);
@@ -247,6 +276,17 @@ function setJbbSpaces() {
       addTeaHouseMarker();
       addVisitantCenterMaker();
       markers_on = true;
+  }
+}
+
+//Shows or remove trails at map
+function setTrails() {
+  if(trails.trails_on) {
+    trails.setNull();
+  }
+  else {
+    trails.setMap();
+    trails.setListener();
   }
 }
 
