@@ -1,4 +1,8 @@
 class EventsController < ApplicationController
+   before_action except: [:new, :create, :show_user, :show_employee, :index_calendar_month] do 
+    @event = Event.find(params[:id])
+  end
+
 
   #user
   def new
@@ -21,7 +25,6 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
   end
 
   def show_user
@@ -29,13 +32,11 @@ class EventsController < ApplicationController
   end
 
   def index_user
-    @event = Event.find(params[:id])
   end
 
   #cancel_confirmation
   def cancel_event_user
     puts (params[:id])
-    @event = Event.find(params[:id])
     @event.canceled_by_user
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
@@ -51,7 +52,6 @@ class EventsController < ApplicationController
   end
 
   def index_employee
-    @event = Event.find(params[:id])
     respond_to do |format|
       format.html
       format.pdf do
@@ -64,7 +64,6 @@ class EventsController < ApplicationController
 
   #refuse_confirmation
   def refuse_event_employee
-    @event = Event.find(params[:id])
     @event.refused_by_employee
     @event.jbb_response_to_request = (params[:jbb_response_to_request])
     if @event.save
@@ -79,7 +78,6 @@ class EventsController < ApplicationController
 
   #cancel_confirmation
   def cancel_event_employee
-    @event = Event.find(params[:id])
     @event.canceled_by_employee
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
@@ -93,7 +91,6 @@ class EventsController < ApplicationController
 
   #accept_event
   def accept_event_employee
-    @event = Event.find(params[:id])
     @event.accepted_by_employee
     puts "====================================================================="
     puts (@jbb_response)
@@ -110,7 +107,6 @@ class EventsController < ApplicationController
 
   #delete_event
   def delete_event_employee
-    @event = Event.find(params[:id])
     if @event.destroy
       UserMailer.change_status_event(@event).deliver_now
       flash[:success] = "Evento deletado"
