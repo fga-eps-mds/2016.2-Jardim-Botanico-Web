@@ -1,7 +1,7 @@
 en:
     time:
         formats:
-            short: "%I:%M %P"
+            time_only: "%I:%M %P"
 
     # translations
     welcome_to_jbb: "WELCOME TO JARDIM BOTÂNICO"
