@@ -1,4 +1,7 @@
 class VisitationsController < ApplicationController
+  before_action except: [:home, :new, :create, :show_user, :show, :index_calendar_month] do 
+    @visitation = Visitation.find(params[:id])
+  end
 
   #home
   def home
@@ -25,7 +28,6 @@ class VisitationsController < ApplicationController
   end
 
   def cancel_visitation_user
-    @visitation = Visitation.find(params[:id])
     @visitation.canceled_by_user
     if @visitation.save
       UserMailer.change_status(@visitation).deliver_now
@@ -48,7 +50,6 @@ class VisitationsController < ApplicationController
 
   #index
   def index
-    @visitation = Visitation.find(params[:id])
     respond_to do |format|
       format.html
       format.pdf do
@@ -61,7 +62,6 @@ class VisitationsController < ApplicationController
 
   #refuse_confirmation
   def refuse_visitation_employee
-    @visitation = Visitation.find(params[:id])
     @visitation.refused_by_employee
     if @visitation.save
       UserMailer.change_status(@visitation).deliver_now
@@ -75,7 +75,6 @@ class VisitationsController < ApplicationController
 
   #cancel_confirmation
   def cancel_visitation_employee
-    @visitation = Visitation.find(params[:id])
     @visitation.canceled_by_employee
     if @visitation.save
       UserMailer.change_status(@visitation).deliver_now
@@ -89,7 +88,6 @@ class VisitationsController < ApplicationController
 
   #delete_visitation
   def delete_visitation_employee
-    @visitation = Visitation.find(params[:id])
     if @visitation.destroy
       flash[:success] = "Visitação deletada"
       redirect_to show_visitation_url
@@ -101,7 +99,6 @@ class VisitationsController < ApplicationController
 
   #accept_visitation
   def accept_visitation_employee
-    @visitation = Visitation.find(params[:id])
     @visitation.accepted_by_employee
     if @visitation.save
       UserMailer.change_status(@visitation).deliver_now
@@ -116,8 +113,6 @@ class VisitationsController < ApplicationController
   # schedule filter
   def index_calendar_month
     @visitations = Visitation.where("status = ? AND has_guide = ?", "Agendado", true)
-    # @visitation = Visitation.where(status: "agendado")
-    # @visitation = @visitation.where(has_guide: true)
   end
 
   #parameters
