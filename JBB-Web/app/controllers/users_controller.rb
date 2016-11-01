@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action only: [:edit, :update, :show] do 
+    @user = User.find(params[:id])
+  end
 
   #New user
   def new
@@ -24,7 +27,6 @@ class UsersController < ApplicationController
 
   # Editing the user profile
   def edit
-    @user = User.find(params[:id])
     if @user != current_user
       redirect_to home_path
     end
@@ -32,7 +34,6 @@ class UsersController < ApplicationController
 
   #Update User
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:success] = "Perfil atualizado com sucesso"
       redirect_to @user
@@ -41,15 +42,15 @@ class UsersController < ApplicationController
     end
   end
 
-  #Show
+  #Show the User
   def show
-    @user = User.find(params[:id])
     @phone = @user.phones.all
      if @user != current_user
        redirect_to home_path
      end
   end
 
+  #Visitation's and event's request
   def my_requests
     @user = current_user
   end
