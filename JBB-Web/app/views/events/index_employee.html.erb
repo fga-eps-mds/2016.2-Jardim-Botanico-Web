@@ -26,7 +26,7 @@
         </div>
         <div class = "actions">
           <b>Hora: </b>
-          <%= l(@event.time_start, format: :short) %>
+          <%= l(@event.time_start, format: :time_only) %>
         </div>
         <br>
         <b>Data e hora de fim</b>
@@ -36,7 +36,7 @@
         </div>
         <div class = "actions">
           <b>Hora:</b>
-          <%= @event.time_end, format: :short) %>
+          <%= @event.time_end, format: :time_only) %>
         </div>
         <br>
         <div class = "actions">
