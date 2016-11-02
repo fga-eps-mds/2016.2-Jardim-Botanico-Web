@@ -1,6 +1,5 @@
-var southCleanCampPolygon;
-function addSouthCleanCampPolygon(){
-  var southCleanCampPolygonCoords = [
+var southCleanCamp;
+var southCleanCampCoordinates = [
   {lat: -15.930706606597253, lng: -47.901322767284},
   {lat: -15.923072038230673, lng: -47.90544264164055},
   {lat: -15.92265820451425, lng: -47.90575621649623},
@@ -34,7 +33,6 @@ function addSouthCleanCampPolygon(){
   {lat: -15.912000252313337, lng: -47.90075657889247},
   {lat: -15.911948090483365, lng: -47.899743877351284},
   {lat: -15.911937772731424, lng: -47.89814528077841},
-
   {lat: -15.91174345533817, lng: -47.89700970053673},
   {lat: -15.912197436361708, lng: -47.89612993597984},
   {lat: -15.911887903956906, lng: -47.89497122168541},
@@ -61,17 +59,13 @@ function addSouthCleanCampPolygon(){
   {lat: -15.921545089724852, lng: -47.884821742773056},
   {lat: -15.921916510700134, lng: -47.88480028510094},
   {lat: -15.922414030382978, lng: -47.884666845366155}
-  ];
+];
 
-    // Construct the polygon.
-  southCleanCampPolygon = new google.maps.Polygon({
-    paths: southCleanCampPolygonCoords,
-    strokeColor: '#8BB2C1',
-    strokeOpacity: 0.1,
-    strokeWeight: 3,
-    fillColor: '#8BB2C1',
-    fillOpacity: 0.50
-  });
+var southCleanCampColor = '#7ED9D1';
 
-  southCleanCampPolygon.setMap(map);
+function addSouthCleanCamp(){
+  southCleanCamp = createVegetation(southCleanCampCoordinates,
+                                        southCleanCampColor);
+
+  southCleanCamp.setMap(map);
 } 
