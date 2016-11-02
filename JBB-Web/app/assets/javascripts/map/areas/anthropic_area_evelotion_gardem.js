@@ -1,6 +1,6 @@
 var anthropicAreaEvolutionGardem;
 
-var anthropicAreaEvolutionGardemCoords = [
+var anthropicAreaEvolutionGardemCoordinates = [
     {lat: -15.874719343686692, lng: -47.838855385780334},
     {lat: -15.874672905208056, lng: -47.839069962501526},
     {lat: -15.874595507719864, lng: -47.83944547176361},
@@ -17,7 +17,7 @@ var anthropicAreaEvolutionGardemCoords = [
 var anthropicAreaEvolutionGardemColor = '#589C5F';
 
 function addAnthropicAreaEvolutionGardem(){
-  anthropicAreaEvolutionGardem = createVegetation(anthropicAreaEvolutionGardemCoords,
+  anthropicAreaEvolutionGardem = createVegetation(anthropicAreaEvolutionGardemCoordinates,
                                         anthropicAreaEvolutionGardemColor);
 
   anthropicAreaEvolutionGardem.setMap(map);
