@@ -1,5 +1,5 @@
 var smallDrainCerrado;
-var smallDrainCerradoCoords = [
+var smallDrainCerradoCoordinates = [
   {lat: -15.869069250222964, lng: -47.84749746322632},
   {lat: -15.868883491035929, lng: -47.84771203994751},
   {lat: -15.868615171907937, lng: -47.84799098968506},
@@ -27,7 +27,7 @@ var smallDrainCerradoCoords = [
 var smallDrainCerradoColor = '#65B494';
 
 function addSmallDrainCerrado(){
-  smallDrainCerrado = createVegetation(smallDrainCerradoCoords,
+  smallDrainCerrado = createVegetation(smallDrainCerradoCoordinates,
                                        smallDrainCerradoColor);
   
   smallDrainCerrado.setMap(map);

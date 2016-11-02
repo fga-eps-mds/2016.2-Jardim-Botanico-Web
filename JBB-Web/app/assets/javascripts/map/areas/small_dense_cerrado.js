@@ -1,6 +1,6 @@
 var smallDenseCerrado;
 
-var smallDenseCerradoCoords = [ 
+var smallDenseCerradoCoordinates = [ 
   {lat: -15.876406601150908, lng: -47.84322738647461},
   {lat: -15.876158931215373, lng: -47.843613624572754},
   {lat: -15.875663590430824, lng: -47.84402132034302},
@@ -25,7 +25,7 @@ var smallDenseCerradoCoords = [
 var smallDenseCerradoColor = '#639E9A';
 
 function addSmallDenseCerrado(){
-  smallDenseCerrado = createVegetation(smallDenseCerradoCoords,
+  smallDenseCerrado = createVegetation(smallDenseCerradoCoordinates,
                                        smallDenseCerradoColor);
 
   smallDenseCerrado.setMap(map);

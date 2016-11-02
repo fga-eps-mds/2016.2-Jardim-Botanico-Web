@@ -1,6 +1,6 @@
 var pinusUrbanArea;
 
-var pinusUrbanAreaCoords = [
+var pinusUrbanAreaCoordinates = [
   {lat: -15.867211650648583, lng: -47.839858531951904},
   {lat: -15.867108450170285, lng: -47.840309143066406},
   {lat: -15.867727652247583, lng: -47.84048080444336},
@@ -13,7 +13,7 @@ var pinusUrbanAreaCoords = [
 var pinusUrbanAreaColor = '#BAE3A9';
 
 function addPinusUrbanArea(){
-  pinusUrbanArea = createVegetation(pinusUrbanAreaCoords,
+  pinusUrbanArea = createVegetation(pinusUrbanAreaCoordinates,
                                        pinusUrbanAreaColor);
   
   pinusUrbanArea.setMap(map);

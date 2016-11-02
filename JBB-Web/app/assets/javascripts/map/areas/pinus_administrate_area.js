@@ -1,6 +1,6 @@
 var pinusAdministrateArea;
 
-var pinusAdministrateAreaCoords = [
+var pinusAdministrateAreaCoordinates = [
   {lat: -15.870235401208355, lng: -47.834858894348145},
   {lat: -15.870235401208355, lng: -47.83514857292175},
   {lat: -15.870524357931512, lng: -47.836071252822876},
@@ -30,7 +30,7 @@ var pinusAdministrateAreaCoords = [
 var pinusAdministrateAreaColor = '#BAE3A9';
 
 function addPinusAdministrateArea(){
-  pinusAdministrateArea = createVegetation(pinusAdministrateAreaCoords,
+  pinusAdministrateArea = createVegetation(pinusAdministrateAreaCoordinates,
                                         pinusAdministrateAreaColor);
 
   

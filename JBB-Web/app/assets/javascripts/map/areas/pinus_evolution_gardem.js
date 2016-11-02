@@ -1,6 +1,6 @@
 var pinusEvolutionGardem;
 
-var pinusEvolutionGardemCoords = [
+var pinusEvolutionGardemCoordinates = [
   {lat: -15.872732799202867, lng: -47.83627510070801},
   {lat: -15.872722479440124, lng: -47.83642530441284},
   {lat: -15.872939194346685, lng: -47.83644676208496},
@@ -29,7 +29,7 @@ var pinusEvolutionGardemCoords = [
 var pinusEvolutionGardemColor = '#BAE3A9';
 
 function addPinusEvolutionGardem(){
-  pinusEvolutionGardem = createVegetation(pinusEvolutionGardemCoords,
+  pinusEvolutionGardem = createVegetation(pinusEvolutionGardemCoordinates,
                                         pinusEvolutionGardemColor);
     
   pinusEvolutionGardem.setMap(map);
