@@ -70,6 +70,10 @@ end
 
 group :test do
   gem "codeclimate-test-reporter"
+  gem 'cucumber'
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
 end
 
 group :assets do
