@@ -12,6 +12,7 @@ class VisitationsController < ApplicationController
     @visitation = Visitation.new
   end
 
+  #Create a visit
   def create
     @visitation = Visitation.new(visitation_params)
     @visitation.user_id = current_user.id
@@ -27,6 +28,7 @@ class VisitationsController < ApplicationController
     end
   end
 
+  #cancel visitation
   def cancel_visitation_user
     @visitation.canceled_by_user
     if @visitation.save
