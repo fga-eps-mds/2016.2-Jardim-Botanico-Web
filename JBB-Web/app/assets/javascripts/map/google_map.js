@@ -6,6 +6,8 @@ var map;
 var infowindow;
 var rivers_on = false;
 var markers_on  = false;
+var vegetation_on = false;
+var trails;
 
 function initialize() {
     var mapOptions = {
@@ -64,35 +66,6 @@ function setJbbRivers() {
 
         rivers_on = true;
     }
-
-var vegetation_on = false;
-  loadScript();
-});
-
-var map;
-var markers;
-var trails;
-var infowindow;
-
-function initialize() {
-  var mapOptions = {
-      center: new google.maps.LatLng(-15.872652, -47.836588),
-      zoom: 14,
-      mapTypeId: google.maps.MapTypeId.NORMAL,
-      panControl: true,
-      scaleControl: false,
-      streetViewControl: true,
-      overviewMapControl: true
-  };
-
-  // initializing map
-  map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-  infowindow = new google.maps.InfoWindow();
-  addJbbTotalAreaPolygon();
-
-  //initializing markers
-  markers = new Markers(map);
-  trails = new Trails(map);
 }
 
 function setVegetation() {
@@ -116,7 +89,7 @@ function setVegetation() {
     dirtyFieldTypicalCerradoPolygon.setMap(null);
     typicalCerradoDryForestPolygon.setMap(null);
     typicalCerradoCleanCampPolygon.setMap(null);
-    eucalyptusTypicalCerradPolygonoPolygon.setMap(null);
+    eucalyptusTypicalCerradoPolygon.setMap(null);
     southAnthropicAreaPolygon.setMap(null);
     southBypassAreaPolygon.setMap(null);
     southDirtyFieldAreaPolygon.setMap(null);
@@ -138,7 +111,7 @@ function setVegetation() {
     southEucalyptusTenPolygon.setMap(null);
     southEucalyptusElevenPolygon.setMap(null);
     southGalleryBushPolygon.setMap(null);
-    southTypicalCerradoArea.setMap(null);
+    southTypicalCerradoAreaPolygon.setMap(null);
     drainCerradoSouthPolygon.setMap(null);
     smallDrainCerradoPolygon.setMap(null);
     smallRockCerradoPolygon.setMap(null);
