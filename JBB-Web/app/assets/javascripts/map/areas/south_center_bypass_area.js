@@ -1,6 +1,5 @@
-var southCenterBypassAreaPolygon;
-function addSouthCenterBypassAreaPolygon(){
-  var southCenterBypassAreaPolygonCoords = [
+var southCenterBypassArea;
+var southCenterBypassAreaCoordinates = [
   {lat: -15.923175211267734, lng: -47.89915546774864},
   {lat: -15.924227560372081, lng: -47.8987692296505},
   {lat: -15.924433902687065, lng: -47.89653763175011},
@@ -23,17 +22,15 @@ function addSouthCenterBypassAreaPolygon(){
   {lat: -15.921792705044117, lng: -47.89400562644005},
   {lat: -15.922143491106322, lng: -47.89454206824303},
   {lat: -15.92263871744525, lng: -47.895314544439316}
-  ];
+];
 
-    // Construct the polygon.
-  southCenterBypassAreaPolygon = new google.maps.Polygon({
-    paths: southCenterBypassAreaPolygonCoords,
-    strokeColor: '#BAEE5F',
-    strokeOpacity: 0.1,
-    strokeWeight: 3,
-    fillColor: '#BAEE5F',
-    fillOpacity: 0.55
-  });
+var southCenterBypassAreaColor = '#BAEE5F';
 
-  southCenterBypassAreaPolygon.setMap(map);
+function addSouthCenterBypassArea(){
+  southCenterBypassArea = createVegetation(southCenterBypassAreaCoordinates,
+                                              southCenterBypassArea);
+
+  southCenterBypassArea.setMap(map);
+
+  southCenterBypassArea.setMap(map);
 } 
