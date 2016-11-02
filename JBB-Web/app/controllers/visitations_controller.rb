@@ -21,7 +21,7 @@ class VisitationsController < ApplicationController
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = "Solicitação de visita efetuada com sucesso!"
-      redirect_to show_visitation_user_url
+      redirect_to "/#{I18n.locale}/visitations/show_user"
     else
       flash[:warning] = "Solicitação não efetuada"
       render action: :new
