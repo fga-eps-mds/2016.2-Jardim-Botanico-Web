@@ -1,6 +1,5 @@
-var smallTypicalCerradoAreaPolygon;
-function addSmallTypicalCerradoAreaPolygon(){
-  var smallTypicalCerradoAreaPolygonCoords = [
+var smallTypicalCerradoArea;
+  var smallTypicalCerradoAreaCoordinatess = [
 {lat: -15.876189889973968, lng: -47.84364581108093},
 {lat: -15.876932898752948, lng: -47.8445041179657},
 {lat: -15.877283763057088, lng: -47.84479379653931},
@@ -13,15 +12,13 @@ function addSmallTypicalCerradoAreaPolygon(){
 {lat: -15.876365322849475, lng: -47.84347414970398},
   ];
 
-  // Construct the polygon.
-  smallTypicalCerradoAreaPolygon = new google.maps.Polygon({
-    paths: smallTypicalCerradoAreaPolygonCoords,
-    strokeColor: '#D3D6A1',
-    strokeOpacity: 0.1,
-    strokeWeight: 3,
-    fillColor: '#D3D6A1',
-    fillOpacity: 0.35
-  });
+
+var smallTypicalCerradoAreaColor = '#D3D6A1';
+
+function addSmallTypicalCerradoArea(){
+  smallTypicalCerradoArea = createVegetation(smallTypicalCerradoAreaCoordinatess,
+                                        smallTypicalCerradoAreaColor);
+
   
-  smallTypicalCerradoAreaPolygon.setMap(map);
+  smallTypicalCerradoArea.setMap(map);
 }
