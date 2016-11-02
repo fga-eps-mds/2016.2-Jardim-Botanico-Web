@@ -1,5 +1,8 @@
 language: ruby
-cache: bundler
+cache:
+  bundler: true
+  directories:
+    - tmp/cache/assets/test/sprockets
 
 rvm:
   - "2.3.1"
@@ -7,20 +10,19 @@ rvm:
 addons:
   postgresql: "9.5.4"
 
-script: "RAILS_ENV=test bundle exec rake"
-
 before_script:
  - sudo service postgresql start
  - cd JBB-Web/
- - gem install rspec rspec-rails simplecov
+ - gem install bundler
+ - gem install rspec rspec-rails simplecov codeclimate-test-reporter
  - bundle install
- - rake db:setup
-bundler_args: --binstubs=./bundler_stubs
 
-sudo: required
+script:
+  - bundle exec rake db:setup RAILS_ENV=test
+  - bundle exec rspec spec
 
 after_success:
-  - CODECLIMATE_REPO_TOKEN=cb4ea7ac2d81c8fe078ceb548d4a19ddcaef0761731ef87525777e4a3ad62044 bundle exec rake 
+  - CODECLIMATE_REPO_TOKEN=cb4ea7ac2d81c8fe078ceb548d4a19ddcaef0761731ef87525777e4a3ad62044 bundle exec rake
 
 notifications:
   email:
