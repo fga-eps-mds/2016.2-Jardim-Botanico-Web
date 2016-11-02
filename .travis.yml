@@ -6,8 +6,6 @@ rvm:
 
 addons:
   postgresql: "9.5.4"
-  code_climate:
-    repo_token:cb4ea7ac2d81c8fe078ceb548d4a19ddcaef0761731ef87525777e4a3ad62044
 
 script: "RAILS_ENV=test bundle exec rake"
 
@@ -20,6 +18,9 @@ before_script:
 bundler_args: --binstubs=./bundler_stubs
 
 sudo: required
+
+after_success:
+  - CODECLIMATE_REPO_TOKEN=cb4ea7ac2d81c8fe078ceb548d4a19ddcaef0761731ef87525777e4a3ad62044 bundle exec rake 
 
 notifications:
   email:
