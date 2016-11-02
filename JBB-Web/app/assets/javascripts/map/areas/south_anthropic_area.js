@@ -1,6 +1,5 @@
-var southAnthropicAreaPolygon;
-function addSouthAnthropicAreaPolygon(){
-  var southAnthropicAreaPolygonCoords = [
+var southAnthropicArea;
+  var southAnthropicAreaCoordinates = [
   {lat: -15.930706606597253, lng: -47.901322767284},
   {lat: -15.929778093519312, lng: -47.902717515971744},
   {lat: -15.928808308608147, lng: -47.9033397884632},
@@ -90,15 +89,11 @@ function addSouthAnthropicAreaPolygon(){
   {lat: -15.930440663249286, lng: -47.90204759694461}
   ];
 
-    // Construct the polygon.
-  southAnthropicAreaPolygon = new google.maps.Polygon({
-    paths: southAnthropicAreaPolygonCoords,
-    strokeColor: '#26922E',
-    strokeOpacity: 0.1,
-    strokeWeight: 3,
-    fillColor: '#26922E',
-    fillOpacity: 0.50
-  });
+var southAnthropicAreaColor = '#26922E';
 
-  southAnthropicAreaPolygon.setMap(map);
+function addSouthAnthropicArea(){
+  southAnthropicArea = createVegetation(southAnthropicAreaCoordinates,
+                                        southAnthropicAreaColor);
+
+  southAnthropicArea.setMap(map);
 } 
