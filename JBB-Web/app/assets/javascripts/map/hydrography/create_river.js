@@ -1,6 +1,6 @@
 function createRiver(riverCoordinates){
     //add the river at the map in the position previously defined
-    river = new google.maps.Polyline({
+    var river = new google.maps.Polyline({
         path: riverCoordinates,
         map: map,
         strokeColor: '#366ED4',
