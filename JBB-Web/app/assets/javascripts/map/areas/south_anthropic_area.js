@@ -1,5 +1,5 @@
 var southAnthropicArea;
-  var southAnthropicAreaCoordinates = [
+var southAnthropicAreaCoordinates = [
   {lat: -15.930706606597253, lng: -47.901322767284},
   {lat: -15.929778093519312, lng: -47.902717515971744},
   {lat: -15.928808308608147, lng: -47.9033397884632},
@@ -87,7 +87,7 @@ var southAnthropicArea;
   {lat: -15.930355836754186, lng: -47.901945039775455},
   {lat: -15.930479638389752, lng: -47.90190212443122},
   {lat: -15.930440663249286, lng: -47.90204759694461}
-  ];
+];
 
 var southAnthropicAreaColor = '#26922E';
 

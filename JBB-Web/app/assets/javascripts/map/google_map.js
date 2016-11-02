@@ -110,7 +110,7 @@ function setVegetation() {
     typicalCerradoDryForestPolygon.setMap(null);
     typicalCerradoCleanCampPolygon.setMap(null);
     southAnthropicArea.setMap(null);
-    southBypassAreaPolygon.setMap(null);
+    southBypassArea.setMap(null);
     southDirtyFieldAreaPolygon.setMap(null);
     southDirtyFieldPolygon.setMap(null);
     southLeftBypassAreaPolygon.setMap(null);
@@ -178,7 +178,7 @@ function setVegetation() {
     addTypicalCerradoDryForestPolygon();
     addTypicalCerradoCleanCampPolygon();
     addSouthAnthropicArea();
-    addSouthBypassAreaPolygon();
+    addSouthBypassArea();
     addSouthDirtyFieldPolygon();
     addSouthDirtyFieldAreaPolygon();
     addSouthLeftBypassAreaPolygon();
