@@ -114,7 +114,7 @@ function setVegetation() {
     southTypicalCerradoAreaPolygon.setMap(null);
     drainCerradoSouthPolygon.setMap(null);
     smallDrainCerrado.setMap(null);
-    smallRockCerradoPolygon.setMap(null);
+    smallRockCerrado.setMap(null);
     centerThickAreaPolygon.setMap(null);
     centerTypicalCerradoAreaPolygon.setMap(null);
     centerBypassAreaRightPolygon.setMap(null);
@@ -182,7 +182,7 @@ function setVegetation() {
     addDrainCerradoSouthPolygon();
     addSmallDrainCerrado();
     addSmallTypicalCerradoAreaPolygon();
-    addSmallRockCerradoPolygon();
+    addSmallRockCerrado();
     addCenterThickAreaPolygon();
     addCenterBypassAreaRightPolygon();
     addCenterBypassAreaLeftPolygon();
