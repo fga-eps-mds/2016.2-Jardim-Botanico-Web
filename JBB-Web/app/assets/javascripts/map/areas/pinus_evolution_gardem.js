@@ -1,6 +1,6 @@
-var pinusEvolutionGardemPolygon;
-function addPinusEvolutionGardemPolygon(){
-  var pinusEvolutionGardemPolygonCoords = [
+var pinusEvolutionGardem;
+
+var pinusEvolutionGardemCoords = [
   {lat: -15.872732799202867, lng: -47.83627510070801},
   {lat: -15.872722479440124, lng: -47.83642530441284},
   {lat: -15.872939194346685, lng: -47.83644676208496},
@@ -24,16 +24,13 @@ function addPinusEvolutionGardemPolygon(){
   {lat: -15.874425233141194, lng: -47.835835218429565},
   {lat: -15.873950527495413, lng: -47.83595323562622},
   {lat: -15.873609977104032, lng: -47.83601760864258},
-  ];
-    // Construct the polygon.
-    pinusEvolutionGardemPolygon = new google.maps.Polygon({
-      paths: pinusEvolutionGardemPolygonCoords,
-      strokeColor: '#BAE3A9',
-      strokeOpacity: 0.1,
-      strokeWeight: 3,
-      fillColor: '#BAE3A9',
-      fillOpacity: 0.50
-    });
+];
+
+var pinusEvolutionGardemColor = '#BAE3A9';
+
+function addPinusEvolutionGardem(){
+  pinusEvolutionGardem = createVegetation(pinusEvolutionGardemCoords,
+                                        pinusEvolutionGardemColor);
     
-    pinusEvolutionGardemPolygon.setMap(map);
+  pinusEvolutionGardem.setMap(map);
 }

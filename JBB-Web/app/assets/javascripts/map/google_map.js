@@ -81,8 +81,8 @@ function setVegetation() {
     anthropicAreaEvolutionGardem.setMap(null);
     denseCerradoPolygon.setMap(null);
     smallDenseCerradoPolygon.setMap(null);
-    pinusEvolutionGardemPolygon.setMap(null);
-    pinusAdministrateAreaPolygon.setMap(null);
+    pinusEvolutionGardem.setMap(null);
+    pinusAdministrateArea.setMap(null);
     pinusUrbanAreaPolygon.setMap(null);
     smallPinusPolygon.setMap(null);
     eucalyptusTypicalCerradoPolygon.setMap(null);
@@ -149,8 +149,8 @@ function setVegetation() {
     addAnthropicAreaAdministratePolygon();
     addDenseCerradoPolygon();
     addSmallDenseCerradoPolygon();
-    addPinusEvolutionGardemPolygon();
-    addPinusAdministrateAreaPolygon();
+    addPinusEvolutionGardem();
+    addPinusAdministrateArea();
     addPinusUrbanAreaPolygon();
     addSmallPinusPolygon();
     addEucalyptusTypicalCerradoPolygon();
