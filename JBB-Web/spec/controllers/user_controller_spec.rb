@@ -13,6 +13,15 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe "destroy" do
+    it "deletes users" do
+      sign_in(@user)
+      get :destroy
+      expect(session[:user_id]).to be(nil)
+      expect(response).to redirect_to(home_path)
+    end
+  end
+
   describe "POST create" do
   	it "should successfull create a user" do
   		post :create, :user => {
