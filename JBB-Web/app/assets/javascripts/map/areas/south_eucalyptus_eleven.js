@@ -1,6 +1,6 @@
-var southEucalyptusElevenPolygon;
-function addSouthEucalyptusElevenPolygon(){
-  var southEucalyptusElevenPolygonCoords = [
+var southEucalyptusEleven;
+{
+  var southEucalyptusElevenCoordinates = [
 {lat: -15.868630651867337, lng: -47.84074366092682},
 {lat: -15.8728359968012, lng: -47.84200429916382},
 {lat: -15.872990793099614, lng: -47.84165024757385},
@@ -17,15 +17,11 @@ function addSouthEucalyptusElevenPolygon(){
 {lat: -15.86875965148277, lng: -47.84051835536957},
 ];
 
-  // Construct the polygon.
-  southEucalyptusElevenPolygon = new google.maps.Polygon({
-    paths: southEucalyptusElevenPolygonCoords,
-    strokeColor: '#A1BF77',
-    strokeOpacity: 0.1,
-    strokeWeight: 3,
-    fillColor: '#A1BF77',
-    fillOpacity: 0.50
-  });
+ var southEucalyptusElevenColor = '#A1BF77';
+
+function addSouthEucalyptusEleven(){
+  southEucalyptusEleven = createVegetation(southEucalyptusElevenCoordinates,
+                                        southEucalyptusElevenColor);
   
-  southEucalyptusElevenPolygon.setMap(map);
+  southEucalyptusEleven.setMap(map);
 }

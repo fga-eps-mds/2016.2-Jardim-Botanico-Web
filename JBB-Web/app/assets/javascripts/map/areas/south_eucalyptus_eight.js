@@ -12,7 +12,7 @@ var southEucalyptusEightCoordinates = [
   {lat: -15.87313526953749, lng: -47.84318447113037},
 ];
 
-var southEucalyptusEightaColor = '#6AC5CB';
+var southEucalyptusEightColor = '#A1BF77';
 
 function addSouthEucalyptusEight(){
   southEucalyptusEight = createVegetation(southEucalyptusEightCoordinates,
