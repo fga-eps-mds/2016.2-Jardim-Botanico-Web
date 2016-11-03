@@ -1,6 +1,6 @@
-var southEucalyptusSevenPolygon;
+var southEucalyptusSeven;
 
-var southEucalyptusSevenPolygonCoordinates = [
+var southEucalyptusSevenCoordinates = [
   {lat: -15.87211361250299, lng: -47.842551469802856},
   {lat: -15.87220649062926, lng: -47.842358350753784},
   {lat: -15.872237449995177, lng: -47.84218668937683},

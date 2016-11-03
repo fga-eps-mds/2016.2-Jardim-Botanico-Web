@@ -1,5 +1,5 @@
 var southEucalyptusEleven;
-{
+
 var southEucalyptusElevenCoordinates = [
   {lat: -15.868630651867337, lng: -47.84074366092682},
   {lat: -15.8728359968012, lng: -47.84200429916382},

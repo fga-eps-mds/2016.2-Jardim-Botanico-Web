@@ -1,6 +1,6 @@
 var southEucalyptusSix;
 
-var southEucalyptusSixCoords = [
+var southEucalyptusSixCoordinates = [
   {lat: -15.871122909825797, lng: -47.842594385147095},
   {lat: -15.871226108248594, lng: -47.842369079589844},
   {lat: -15.871411865276427, lng: -47.8418755531311},
