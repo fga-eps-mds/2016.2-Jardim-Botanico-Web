@@ -62,10 +62,10 @@ var typicalCerradoCleanCampCoordinates = [
   {lat: -15.86552947626413, lng: -47.841092348098755},
 ];
 
-var TypicalCerradoCleanCampColor = '#D3D6A1';
+var typicalCerradoCleanCampColor = '#D3D6A1';
 
 function addTypicalCerradoCleanCamp(){
-  TypicalCerradoCleanCamp = createVegetation(TypicalCerradoCleanCampCoordinates,
-                                      TypicalCerradoCleanCampColor);  
+  typicalCerradoCleanCamp = createVegetation(typicalCerradoCleanCampCoordinates,
+                                      typicalCerradoCleanCampColor);  
   typicalCerradoCleanCamp.setMap(map);
 }
