@@ -113,7 +113,7 @@ function initialize() {
       southBypassArea.setMap(null);
       southDirtyFieldArea.setMap(null);
       southDirtyField.setMap(null);
-      southLeftBypassAreaPolygon.setMap(null);
+      southLeftBypassArea.setMap(null);
       southCenterBypassArea.setMap(null);
       southRupestresAreaTopPolygon.setMap(null);
       southCleanCamp.setMap(null);

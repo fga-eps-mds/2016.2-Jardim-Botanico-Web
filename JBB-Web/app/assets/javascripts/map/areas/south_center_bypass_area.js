@@ -1,4 +1,5 @@
 var southCenterBypassArea;
+
 var southCenterBypassAreaCoordinates = [
   {lat: -15.923175211267734, lng: -47.89915546774864},
   {lat: -15.924227560372081, lng: -47.8987692296505},
@@ -29,8 +30,6 @@ var southCenterBypassAreaColor = '#BAEE5F';
 function addSouthCenterBypassArea(){
   southCenterBypassArea = createVegetation(southCenterBypassAreaCoordinates,
                                               southCenterBypassArea);
-
-  southCenterBypassArea.setMap(map);
 
   southCenterBypassArea.setMap(map);
 } 
