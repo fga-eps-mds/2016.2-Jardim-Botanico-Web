@@ -8,7 +8,7 @@ RSpec.describe VisitationsController, type: :controller do
   end
 
   #CREATE
-  describe "POST create" do
+  describe "POST create" do  #Still dont test Mailer
   	it "should successfull create a visitation" do
   		post :create, :visitation => {  #PRECISO SABER O PORQUE ISSO ACONTECE
         :status => "Agendado",
@@ -18,33 +18,13 @@ RSpec.describe VisitationsController, type: :controller do
         :description => "Descrição da visitação",
         :visitants_paying => 200
 			}
-      # expect(response).to change{ ActionMailer::Base.deliveries.count }.by(1)
       expect(response).to have_http_status(:success)
       end
-
-      # it "should send and email" do
-      #   expect(post :create, :visitation => {  #PRECISO SABER O PORQUE ISSO ACONTECE
-      #     :status => "Agendado",
-      #     :visitants_amount => "50",
-      #     :groups_age => "20",
-      #     :has_guide => "true",
-      #     :description => "Descrição da visitação",
-      #     :visitants_paying => 200
-  		# 	}).to change{ ActionMailer::Base.deliveries.count }.by(1)
-      # end
   end
 
-  #USER CHANGE STATUS
-  describe "User change visitation status" do
-  	it "should successfull cancel a visitation" do
-  		get :cancel_visitation_user, :id => @visitation.id
-      @visitation.reload
-      expect(@visitation.status).to eq("Cancelado pelo usuario")
-    end
-  end
 
   #EMPLOYEE CHANGE STATUS
-  describe "Employee change visitation status" do
+  describe "Employee change visitation status" do #Dont test if doesn't work
     it "should successfull refuse a visitation" do
       get :refuse_visitation_employee, :id => @visitation.id
       @visitation.reload
@@ -65,7 +45,36 @@ RSpec.describe VisitationsController, type: :controller do
   end
 
 
-  # 100% COVERAGE
+  #DELETE
+  describe "Destroy visitation" do #Dont test if doesn't work
+    it "should delete a visitation" do
+      expect{
+          get :delete_visitation_employee, :id  => @visitation.id
+      }.to change(Visitation,:count).by(-1)
+    end
+  end
+
+
+  #INDEX
+  describe "Index visitation" do  #Dont test PDF
+    it "should show each visitation" do
+      get :index, :id => @visitation.id
+      expect(response).to have_http_status(:success)
+      expect(response).to render_template("visitations/index")
+    end
+  end
+
+
+                                                            # 100% COVERAGE
+    #USER CHANGE STATUS
+    describe "User change visitation status" do
+    	it "should successfull cancel a visitation" do
+    		get :cancel_visitation_user, :id => @visitation.id
+        @visitation.reload
+        expect(@visitation.status).to eq("Cancelado pelo usuario")
+      end
+    end
+
 
   #NEW
   describe "New visitation" do
@@ -75,11 +84,11 @@ RSpec.describe VisitationsController, type: :controller do
     end
   end
 
+
   #SHOW VISITS
   describe "Show visits" do
     it "should display all user's visits" do
       get :show
-
       expect(response).to have_http_status(:success)
       expect(response).to render_template("visitations/show")
     end
@@ -91,6 +100,7 @@ RSpec.describe VisitationsController, type: :controller do
       expect(response).to render_template("visitations/show_user")
     end
   end
+
 
   #CALENDAR
   describe "Index calendar month" do
