@@ -88,4 +88,7 @@ gem 'actionpack'
 gem 'actionview'
 gem 'activejob'
 gem 'mail'
+
+#Testing
 gem 'rails-dom-testing'
+gem 'rails-controller-testing'
