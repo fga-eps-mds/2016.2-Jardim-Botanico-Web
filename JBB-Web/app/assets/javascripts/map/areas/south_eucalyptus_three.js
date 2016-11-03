@@ -1,6 +1,6 @@
 var southEucalyptusThree;
 
-var southEucalyptusThreeCoordinatess = [
+var southEucalyptusThreeCoordinates = [
   {lat: -15.867851492434792, lng: -47.841076254844666},
   {lat: -15.86783601241556, lng: -47.84114062786102},
   {lat: -15.867841172422098, lng: -47.84123182296753},
