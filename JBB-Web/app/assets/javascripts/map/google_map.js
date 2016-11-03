@@ -129,7 +129,7 @@ function initialize() {
       southEucalyptusNine.setMap(null);
       southEucalyptusTen.setMap(null);
       southEucalyptusEleven.setMap(null);
-      southGalleryBushPolygon.setMap(null);
+      southGalleryBush.setMap(null);
       southTypicalCerradoAreaPolygon.setMap(null);
       smallDrainCerrado.setMap(null);
       smallRockCerrado.setMap(null);
