@@ -124,7 +124,7 @@ function initialize() {
       southEucalyptusFivePolygon.setMap(null);
       southEucalyptusSixPolygon.setMap(null);
       southEucalyptusSevenPolygon.setMap(null);
-      southEucalyptusEightPolygon.setMap(null);
+      southEucalyptusEight.setMap(null);
       southEucalyptusNinePolygon.setMap(null);
       southEucalyptusTenPolygon.setMap(null);
       southEucalyptusElevenPolygon.setMap(null);
@@ -189,7 +189,7 @@ function initialize() {
       addSouthEucalyptusFivePolygon();
       addSouthEucalyptusSixPolygon();
       addSouthEucalyptusSevenPolygon();
-      addSouthEucalyptusEightPolygon();
+      addSouthEucalyptusEight();
       addSouthEucalyptusNinePolygon();
       addSouthEucalyptusTenPolygon();
       addSouthEucalyptusElevenPolygon();
