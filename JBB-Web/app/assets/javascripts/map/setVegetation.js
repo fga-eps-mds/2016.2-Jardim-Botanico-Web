@@ -1,11 +1,6 @@
-var vegetation_on = false;
+var vegetation_on = false ;
 
-function setVegetation() {
-  if(vegetation_on) {
-    administrateAreaEvolutionGardem.setMap(null);
-    anthropicAreaEvolutionGardem.setMap(null);
-    anthropicArea.setMap(null);
-    anthropicAreaAdministrate.setMap(null);
+function removeVegetationEcologicalStation(){
     centerBypassAreaCenter.setMap(null);
     centerBypassAreaLeft.setMap(null);
     centerBypassAreaRight.setMap(null);
@@ -13,9 +8,8 @@ function setVegetation() {
     centerCerradoSparseAreaLeft.setMap(null);
     centerCerradoSparseAreaRightUp.setMap(null);
     centerCerradoSparseAreaRight.setMap(null);
-    centerCerradoSparseArea.setMap(null);
-    centerForestGaleriaArea.setMap(null);
-    centerGalleryBush.setMap(null);
+    centerCerradoSparseArea.setMap(null); 
+    centerForestGalleryArea.setMap(null);
     centerGroundAreaRight.setMap(null);
     centerGroundMurundunsAreaCenter.setMap(null);
     centerGroundMurundunsAreaLeft.setMap(null);
@@ -24,10 +18,60 @@ function setVegetation() {
     centerThickArea.setMap(null);
     centerTypicalCerradoAreaUp.setMap(null);
     centerTypicalCerradoArea.setMap(null);
+    drainCerradoSouth.setMap(null);
+    dirtyFieldTypicalCerrado.setMap(null);
+    smallDrainCerrado.setMap(null);
+    smallRockCerrado.setMap(null);
+    southAnthropicArea.setMap(null);
+    southBypassArea.setMap(null);
+    southCenterBypassArea.setMap(null);
+    southCleanCamp.setMap(null);
+    southGalleryBush.setMap(null);
+    southLeftBypassArea.setMap(null);
+    southPath.setMap(null);
+    southRupestresAreaTop.setMap(null);
+}
+
+function addVegetationEcologicalStation(){
+    addCenterBypassAreaCenter();
+    addCenterBypassAreaLeft();
+    addCenterBypassAreaRight();
+    addCenterBypassAreaUp();
+    addCenterCerradoSparseAreaLeft();
+    addCenterCerradoSparseAreaRightUp();
+    addCenterCerradoSparseAreaRight();
+    addCenterCerradoSparseArea();
+    addCenterForestGalleryArea();
+    addCenterGroundAreaRight();
+    addCenterGroundMurundunsAreaCenter();
+    addCenterGroundMurundunsAreaLeft();
+    addCenterGroundMurundunsAreaRight();
+    addCenterGroundMurundunsArea();
+    addCenterThickArea();
+    addCenterTypicalCerradoAreaUp();
+    addCenterTypicalCerradoArea();
+    addDrainCerradoSouth();
+    addDirtyFieldTypicalCerrado();
+    addSmallDrainCerrado();
+    addSmallRockCerrado();
+    addSouthAnthropicArea();
+    addSouthBypassArea();
+    addSouthCenterBypassArea();
+    addSouthCleanCamp();
+    addSouthGalleryBush();
+    addSouthLeftBypassArea();
+    addSouthPath();
+    addSouthRupestresAreaTop();
+}
+
+function removeVegetationVisitantsArea(){
+    administrateAreaEvolutionGardem.setMap(null);
+    anthropicAreaEvolutionGardem.setMap(null);
+    anthropicArea.setMap(null);
+    anthropicAreaAdministrate.setMap(null);
+    centerGalleryBush.setMap(null);
     cleanCamp.setMap(null);
     denseCerrado.setMap(null);
-    dirtyFieldTypicalCerrado.setMap(null);
-    drainCerradoSouth.setMap(null);
     dryForest.setMap(null);
     eucalyptusTypicalCerrado.setMap(null);
     nursery.setMap(null);
@@ -35,21 +79,12 @@ function setVegetation() {
     pinusEvolutionGardem.setMap(null);
     pinusUrbanArea.setMap(null);
     smallDenseCerrado.setMap(null);
-    smallDrainCerrado.setMap(null);
     smallTypicalCerradoArea.setMap(null);
     smallPinus.setMap(null);
-    smallRockCerrado.setMap(null);
     typicalCerradoDryForest.setMap(null);
     typicalCerradoCleanCamp.setMap(null);
-    southAnthropicArea.setMap(null);
-    southBypassArea.setMap(null);
     southDirtyFieldArea.setMap(null);
     southDirtyField.setMap(null);
-    southLeftBypassArea.setMap(null);
-    southCenterBypassArea.setMap(null);
-    southRupestresAreaTop.setMap(null);
-    southCleanCamp.setMap(null);
-    southPath.setMap(null);
     southEucalyptusOne.setMap(null);
     southEucalyptusTwo.setMap(null);
     southEucalyptusThree.setMap(null);
@@ -61,60 +96,30 @@ function setVegetation() {
     southEucalyptusNine.setMap(null);
     southEucalyptusTen.setMap(null);
     southEucalyptusEleven.setMap(null);
-    southGalleryBush.setMap(null);
     southTypicalCerradoArea.setMap(null);
     visitantsCenterAdministrativeArea.setMap(null);
     urbanArea.setMap(null);
-    vegetation_on = false;
-    infowindow.close();
-  }
-  else {
+}
+
+function addVegetationVisitantsArea(){
     addAdministrateAreaEvolutionGardem();
     addAnthropicAreaEvolutionGardem();
     addAnthropicArea();
     addAnthropicAreaAdministrate();
-    addCenterBypassAreaCenter();
-    addCenterBypassAreaLeft();
-    addCenterBypassAreaRight();
-    addCenterBypassAreaUp();
-    addCenterCerradoSparseAreaLeft();
-    addCenterCerradoSparseAreaRightUp();
-    addCenterCerradoSparseAreaRight();
-    addCenterCerradoSparseArea();
-    addCenterForestGaleriaArea();
     addCenterGalleryBush();
-    addCenterGroundAreaRight();
-    addCenterGroundMurundunsAreaCenter();
-    addCenterGroundMurundunsAreaLeft();
-    addCenterGroundMurundunsAreaRight();
-    addCenterGroundMurundunsArea();
-    addCenterThickArea();
-    addCenterTypicalCerradoAreaUp();
-    addCenterTypicalCerradoArea();
     addCleanCamp();
     addDenseCerrado();
-    addDirtyFieldTypicalCerrado();
-    addDrainCerradoSouth();
     addDryForest();
     addEucalyptusTypicalCerrado();
     addNursery();
-    addSmallDenseCerrado();
-    addPinusEvolutionGardem();
     addPinusAdministrateArea();
+    addPinusEvolutionGardem();
     addPinusUrbanArea();
-    addSmallPinus();
-    addSmallDrainCerrado();
+    addSmallDenseCerrado();
     addSmallTypicalCerradoArea();
-    addSmallRockCerrado();
-    addTypicalCerradoDryForest();
-    addTypicalCerradoCleanCamp();
-    addSouthAnthropicArea();
-    addSouthBypassArea();
-    addSouthDirtyField();
+    addSmallPinus();
     addSouthDirtyFieldArea();
-    addSouthLeftBypassArea();
-    addSouthCenterBypassArea();
-    addSouthRupestresAreaTop();
+    addSouthDirtyField();
     addSouthEucalyptusOne();
     addSouthEucalyptusTwo();
     addSouthEucalyptusThree();
@@ -126,12 +131,23 @@ function setVegetation() {
     addSouthEucalyptusNine();
     addSouthEucalyptusTen();
     addSouthEucalyptusEleven();
-    addSouthCleanCamp();
     addSouthTypicalCerradoArea();
-    addSouthGalleryBush();
-    addSouthPath();
-    addUrbanArea();
+    addTypicalCerradoDryForest();
+    addTypicalCerradoCleanCamp();
     addVisitantsCenterAdministrativeArea();
+    addUrbanArea();
+}
+
+function setVegetation() {
+  if(vegetation_on) {
+    removeVegetationVisitantsArea();
+    removeVegetationEcologicalStation();
+    vegetation_on = false;
+    infowindow.close();
+  }
+  else {
+    addVegetationVisitantsArea();
+    addVegetationEcologicalStation();
     vegetation_on = true;
   }
 }
