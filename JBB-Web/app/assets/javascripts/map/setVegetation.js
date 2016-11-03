@@ -62,7 +62,7 @@ function setVegetation() {
     southEucalyptusTen.setMap(null);
     southEucalyptusEleven.setMap(null);
     southGalleryBush.setMap(null);
-    southTypicalCerradoAreaPolygon.setMap(null);
+    southTypicalCerradoArea.setMap(null);
     smallDrainCerrado.setMap(null);
     smallRockCerrado.setMap(null);
     smallTypicalCerradoArea.setMap(null);
