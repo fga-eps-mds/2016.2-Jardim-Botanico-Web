@@ -1,5 +1,5 @@
 function createVegetation(vegetationCoordinates, vegetationColor){
-  vegetation = new google.maps.Polygon({
+  var vegetation = new google.maps.Polygon({
     paths: vegetationCoordinates,
     strokeColor: vegetationColor,
     strokeOpacity: 0.1,
