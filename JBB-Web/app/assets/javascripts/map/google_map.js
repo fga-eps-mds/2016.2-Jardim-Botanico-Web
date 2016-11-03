@@ -24,9 +24,9 @@ function initialize() {
     // initializing map
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
     infowindow = new google.maps.InfoWindow();
-    addJbbVisitantsAreaPolygon();
-    addJbbEcologicalStationPolygon();
-  }
+    addJbbVisitantsArea();
+    addJbbEcologicalStation();
+}
 
   function setJbbRivers() {
     if(rivers_on) {
@@ -99,6 +99,7 @@ function initialize() {
       dryForest.setMap(null);
       eucalyptusTypicalCerrado.setMap(null);
       nursery.setMap(null);
+
       pinusAdministrateArea.setMap(null);
       pinusEvolutionGardem.setMap(null);
       visitantsCenterAdministrativeAreaPolygon.setMap(null);
@@ -202,7 +203,7 @@ function initialize() {
       addSmallRockCerrado();
       vegetation_on = true;
     }
-  }
+}
 
 //Shows or remove JBB spaces at the map
 function setJbbSpaces() {
