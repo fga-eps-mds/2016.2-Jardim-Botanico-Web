@@ -47,7 +47,7 @@ function setVegetation() {
     southDirtyField.setMap(null);
     southLeftBypassArea.setMap(null);
     southCenterBypassArea.setMap(null);
-    southRupestresAreaTopPolygon.setMap(null);
+    southRupestresAreaTop.setMap(null);
     southCleanCamp.setMap(null);
     southPath.setMap(null);
     southEucalyptusOne.setMap(null);
