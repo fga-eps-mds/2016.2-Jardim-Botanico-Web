@@ -72,17 +72,17 @@
         <br>
         <div class="form-group">
           <label for="gender">Gênero</label>
-          <%= f.select :gender, ["", "Feminino", "Masculino", "Outro"], :required => true, class: 'form-control' %>
+          <%= f.select :gender, ["", "Feminino", "Masculino", "Outro"], :required => true, id: 'gender', class: 'form-control' %>
         </div>
         <div class="field">
           <%= f.label :Data_de_Nascimento %>
-          <%= f.text_field :birth, :required => true, autocomplete: "off", id: 'date',class: 'form-control',
+          <%= f.text_field :birth, :required => true, autocomplete: "off", id: 'date', class: 'form-control',
           placeholder: 'Ex.: dd/mm/aaaa', maxlength: '10',
           :onkeypress => "DateMask(this)", :onblur => "ValidateDate(this)"%>
         </div>
         <br>
         <div class="actions">
-          <%= f.submit "Cadastrar", class: "btn btn-primary"%>
+          <%= f.submit "Cadastrar", id: 'registration', class: "btn btn-primary"%>
           <a id="update" >
           <%= link_to "Voltar", home_path, class: "btn btn-primary" %>
         </div>
