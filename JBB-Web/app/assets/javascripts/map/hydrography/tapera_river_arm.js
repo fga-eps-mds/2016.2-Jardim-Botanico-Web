@@ -113,8 +113,8 @@ function addTaperaRiverArmInfowindow(event){
     '</div>'+
     '</div>';
 
-    infoWindow.close();
-    infoWindow.setContent(taperaRiverArmContentString);
-    infoWindow.setPosition(event.latLng);
-    infoWindow.open(map);
+    infowindow.close();
+    infowindow.setContent(taperaRiverArmContentString);
+    infowindow.setPosition(event.latLng);
+    infowindow.open(map);
 }

@@ -590,8 +590,8 @@ function addTaperaRiverInfowindow(event){
     '</div>'+
     '</div>';
 
-    infoWindow.close();
-    infoWindow.setContent(taperaRiverContentString);
-    infoWindow.setPosition(event.latLng);
-    infoWindow.open(map);
+    infowindow.close();
+    infowindow.setContent(taperaRiverContentString);
+    infowindow.setPosition(event.latLng);
+    infowindow.open(map);
 }

@@ -90,8 +90,8 @@ function addCaesb1RiverInfowindow(event){
     '</div>'+
     '</div>';
 
-    infoWindow.close();
-    infoWindow.setContent(caesb1RiverContentString);
-    infoWindow.setPosition(event.latLng);
-    infoWindow.open(map);
+    infowindow.close();
+    infowindow.setContent(caesb1RiverContentString);
+    infowindow.setPosition(event.latLng);
+    infowindow.open(map);
 }

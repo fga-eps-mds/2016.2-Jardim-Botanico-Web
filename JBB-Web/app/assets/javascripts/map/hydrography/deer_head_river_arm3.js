@@ -48,8 +48,8 @@ function addDeerHeadRiverArm3Infowindow(event){
     '</div>'+
     '</div>';
 
-    infoWindow.close();
-    infoWindow.setContent(deerHeadRiverArm3ContentString);
-    infoWindow.setPosition(event.latLng);
-    infoWindow.open(map);
+    infowindow.close();
+    infowindow.setContent(deerHeadRiverArm3ContentString);
+    infowindow.setPosition(event.latLng);
+    infowindow.open(map);
 }

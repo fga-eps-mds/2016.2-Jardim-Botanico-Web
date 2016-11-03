@@ -257,8 +257,8 @@ function addDeerHeadRiverInfowindow(event){
     '</div>'+
     '</div>';
 
-    infoWindow.close();
-    infoWindow.setContent(deerHeadRiverContentString);
-    infoWindow.setPosition(event.latLng);
-    infoWindow.open(map);
+    infowindow.close();
+    infowindow.setContent(deerHeadRiverContentString);
+    infowindow.setPosition(event.latLng);
+    infowindow.open(map);
 }

@@ -70,8 +70,8 @@ function addTaperaRiverArm2Infowindow(event){
     '</div>'+
     '</div>';
 
-    infoWindow.close();
-    infoWindow.setContent(taperaRiverArm2ContentString);
-    infoWindow.setPosition(event.latLng);
-    infoWindow.open(map);
+    infowindow.close();
+    infowindow.setContent(taperaRiverArm2ContentString);
+    infowindow.setPosition(event.latLng);
+    infowindow.open(map);
 }

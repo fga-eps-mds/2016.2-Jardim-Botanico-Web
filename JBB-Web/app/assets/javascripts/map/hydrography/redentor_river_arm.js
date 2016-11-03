@@ -57,8 +57,8 @@ function addRedentorCristRiverArmInfowindow(event){
     '</div>'+
     '</div>';
 
-    infoWindow.close();
-    infoWindow.setContent(redentorCristRiverArmContentString);
-    infoWindow.setPosition(event.latLng);
-    infoWindow.open(map);
+    infowindow.close();
+    infowindow.setContent(redentorCristRiverArmContentString);
+    infowindow.setPosition(event.latLng);
+    infowindow.open(map);
 }

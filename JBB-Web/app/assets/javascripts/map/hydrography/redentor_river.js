@@ -182,8 +182,8 @@ function addRedentorCristRiverInfowindow(event){
     '</div>'+
     '</div>';
 
-    infoWindow.close();
-    infoWindow.setContent(redentorCristRiverContentString);
-    infoWindow.setPosition(event.latLng);
-    infoWindow.open(map);
+    infowindow.close();
+    infowindow.setContent(redentorCristRiverContentString);
+    infowindow.setPosition(event.latLng);
+    infowindow.open(map);
 }

@@ -1,6 +1,6 @@
 function addInfowindow(latLng, information){
-    infoWindow.close();
-    infoWindow.setContent(information);
-    infoWindow.setPosition(latLng);
-    infoWindow.open(map);
+    infowindow.close();
+    infowindow.setContent(information);
+    infowindow.setPosition(latLng);
+    infowindow.open(map);
 }
