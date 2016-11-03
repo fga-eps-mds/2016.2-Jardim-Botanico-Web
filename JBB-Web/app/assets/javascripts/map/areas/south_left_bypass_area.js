@@ -24,7 +24,7 @@ var southLeftBypassAreaColor = '#BAEE5F';
 
 function addSouthLeftBypassArea(){
   southLeftBypassArea = createVegetation(southLeftBypassAreaCoordinates,
-                                              southLeftBypassArea);
+                                              southLeftBypassAreaColor);
 
   southLeftBypassArea.setMap(map);
 } 
