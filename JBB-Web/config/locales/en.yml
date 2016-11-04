@@ -121,4 +121,11 @@ en:
     event_information: "Event information"
     date_time_start: "Date and time to start"
     date_time_end: "Date and time to end"
-    
+    event_request: "Event Request"
+    date_to_start: "Date to start"
+    date_to_end: "Date to end"
+    time_to_start: "Time to start"
+    time_to_end: "Time to end"
+    case_institution: "In case Institution:"
+    show_event: "Show Event"
+    cancel_event: "Cancel event"
