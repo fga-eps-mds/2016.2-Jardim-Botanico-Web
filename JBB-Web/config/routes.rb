@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|pt/ do
 
     #root
-    get '/:locale' => 'welcome#index', :as => 'home'
-    get '/:locale' => 'welcome#index', :as => 'root'
-    # root 'welcome#index', :as => 'home'
-    # root 'welcome#index', :as => 'root'
+    # get '/:locale' => 'welcome#index', :as => 'home'
+    # get '/:locale' => 'welcome#index', :as => 'root'
+    root 'welcome#index', :as => 'home'
+    root 'welcome#index', :as => 'root'
 
 
     #users
