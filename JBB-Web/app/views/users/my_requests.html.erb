@@ -10,7 +10,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Minhas requisições</h2>
+          <h2 class="section-heading"><%= t(:requests) %></h2>
           <hr class="primary">
         </div>
       </div>
@@ -28,11 +28,11 @@
             <i class="fa fa-4x fa-map-marker text-primary sr-icons"></i>
             <% if current_user %>
              <% if current_user.is_employee %>
-             <h3>Gerencie visitas</h3>
-            <p class="text-muted">Gerencie visitas agendadas.</p>
+             <h3><%= t(:manage_visit) %></h3>
+            <p class="text-muted"><%= t(:manage_visit2) %></p>
              <% else %>
-            <h3>Gerencie visitas</h3>
-            <p class="text-muted">Visualize e edite suas visitas facilmente</p>
+            <h3><%= t(:manage_visit) %></h3>
+            <p class="text-muted"><%= t(:viewing_editing_visits)%></p>
             <% end%>
           </div>
         </div>
@@ -46,11 +46,11 @@
           <i class="fa fa-4x fa-users text-primary sr-icons"></i>
           <% if current_user %>
              <% if current_user.is_employee %>
-             <h3>Gerencie eventos</h3>
-            <p class="text-muted">Gerencie eventos agendados.</p>
+             <h3><%= t(:manage_visit) %></h3>
+            <p class="text-muted"><%= t(:manage_event2)%></p>
              <% else %>
-            <h3>Gerencie seus eventos</h3>
-            <p class="text-muted">Visualize e edite seus eventos facilmente</p>
+            <h3><%= t(:manage_visit) %></h3>
+            <p class="text-muted"><%= t(:viewing_editing_events)%></p>
             <% end%>
             <% end%>
         </div>
