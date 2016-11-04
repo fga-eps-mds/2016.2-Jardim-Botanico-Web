@@ -9,7 +9,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Minhas visitações</h2>
+          <h2 class="section-heading"><%= t(:my_visitations) %></h2>
           <hr class="primary">
           <div class="container-fluid">
             <div class="row">
@@ -31,13 +31,13 @@
         <table border=0 class="table" >
           <br /> <br />
           <tr>
-            <th> Data </th>
-            <th> Hora </th>
-            <th> Status </th>
-            <th> Nº de Visitantes </th>
-            <th> Nº de Pagantes </th>
-            <th> Preço da Visita </th>
-            <th> Descrição </th>
+            <th><%= t(:date_schedule) %></th>
+            <th><%= t(:time_schedule) %></td>
+            <th><%= t(:status) %></th>
+            <th><%= t(:number_visitors) %></th>
+            <th><%= t(:number_paying_visitors) %></th>
+            <th><%= t(:visit_price) %></th>
+            <th><%= t(:description) %></th>
           </tr>
           <% @visitation.each do |visitation| %>
           <tr>
@@ -48,20 +48,20 @@
             <td> <%= visitation.visitants_paying %> </td>
             <td> <%= visitation.visitation_cost %> </td>
             <td> <%= visitation.description %> </td>
-            <td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
+            <td> <%= link_to t(:show), action: 'index', id: visitation %> </td>
             <% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
-            <td> <%= link_to "Cancelar Visitação", controller: "visitations",
+            <td> <%= link_to t(:cancel_visit), controller: "visitations",
               action: "cancel_visitation_user", id: visitation %> </td>
               <% end %>
             </tr>
             <% end %>
           </table>
           <a id="show" >
-          <%= link_to "Voltar", home_url, class: "btn btn-primary" %>
+          <%= link_to t(:back), "/#{I18n.locale}", class: "btn btn-primary" %>
           <% else %>
           <div class="container">
             <div class="row">
-              <h1>Você não tem visitas agendadas</h1>
+              <h1><%= t(:no_scheduled_visits) %></h1>
             </div>
           </div>
           <br>

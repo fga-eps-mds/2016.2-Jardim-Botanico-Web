@@ -21,7 +21,7 @@ class VisitationsController < ApplicationController
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = "Solicitação de visita efetuada com sucesso!"
-      redirect_to "/#{I18n.locale}/visitations/show_user"
+      redirect_to "/#{I18n.locale}"+show_visitation_user_path
     else
       flash[:warning] = "Solicitação não efetuada"
       render action: :new
@@ -34,7 +34,7 @@ class VisitationsController < ApplicationController
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:warning] = "Visitação cancelada pelo usuário"
-      redirect_to show_visitation_user_url
+      redirect_to "/#{I18n.locale}"+show_visitation_user_path
     end
   end
 
@@ -68,10 +68,10 @@ class VisitationsController < ApplicationController
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = "Visitação recusada"
-      redirect_to show_visitation_url
+      redirect_to "/#{I18n.locale}"+show_visitation_path
     else
       flash[:warning] = "Visitação não pode ser recusada"
-      redirect_to show_visitation_url
+      redirect_to "/#{I18n.locale}"+show_visitation_path
     end
   end
 
@@ -84,7 +84,7 @@ class VisitationsController < ApplicationController
       redirect_to show_visitation_url
     else
       flash[:warning] = "Visitação não pode ser cancelada"
-      redirect_to show_visitation_url
+      redirect_to "/#{I18n.locale}"+show_visitation_path
     end
   end
 
@@ -95,7 +95,7 @@ class VisitationsController < ApplicationController
       redirect_to show_visitation_url
     else
       flash[:warning] = "Visitação não pode ser deletada"
-      redirect_to show_visitation_url
+      redirect_to "/#{I18n.locale}"+show_visitation_path
     end
   end
 
@@ -105,10 +105,10 @@ class VisitationsController < ApplicationController
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = "Visitação confirmada"
-      redirect_to show_visitation_url
+      redirect_to "/#{I18n.locale}"+show_visitation_path
     else
       flash[:warning] = "Visitação não pode ser confirmada"
-      redirect_to show_visitation_url
+      redirect_to "/#{I18n.locale}"+show_visitation_path
     end
   end
 
