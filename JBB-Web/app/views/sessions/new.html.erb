@@ -12,7 +12,7 @@
         </div>
         <%= form_for :session, url: sign_in_path do |f| %>
         <div class="field">
-         <%= f.label t(:mail) %><br />
+         <%= f.label t(:email) %><br />
          <%= f.email_field :email, autofocus: true, :required => true, class: "form-control" %>
         </div>
         <br>
