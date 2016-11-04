@@ -179,4 +179,11 @@ pt:
     event_information: "Informação do Evento"
     date_time_start: "Data e hora de início"
     date_time_end: "Data e hora de fim"
-    
+    event_request: "Requisição de Evento"
+    date_to_start: "Data do inicio"
+    date_to_end: "Data do fim"
+    time_to_start: "Hora do inicio"
+    time_to_end: "Hora do fim"
+    case_institution: "Em Caso de Instituição"
+    show_event: "Mostrar Eventos"
+    cancel_event: "Cancelar evento"
