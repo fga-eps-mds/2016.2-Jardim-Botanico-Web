@@ -9,7 +9,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Informação do Evento</h2>
+            <h2 class="section-heading"><%= t(:event_information) %></h2>
             <hr class="primary">
           </div>
         </div>
@@ -19,65 +19,70 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <b>Data e hora de início</b>
+        <b><%= t(:date_time_start) %></b>
         <div class = "actions">
-          <b>Dia: </b>
+          <b><%= t(:date_schedule) %></b>
           <%= l(@event.date_start, format: :long) %>
         </div>
         <div class = "actions">
-          <b>Hora: </b>
+          <b><%= t(:time_schedule) %></b>
           <%= l(@event.time_start, format: :time_only) %>
         </div>
         <br>
-        <b>Data e hora de fim</b>
+        <b><%= t(:date_time_end) %></b>
         <div class = "actions">
-          <b>Dia:</b>
+          <b><%= t(:date_schedule) %></b>
           <%= l(@event.date_end, format: :long) %>
         </div>
         <div class = "actions">
-          <b>Hora:</b>
-          <%= @event.time_end, format: :time_only) %>
+          <b><%= t(:time_schedule) %></b>
+          <%= l(@event.time_end, format: :time_only) %>
         </div>
         <br>
         <div class = "actions">
-          <b>Status:</b>
+          <b><%= t(:status) %></b>
           <%= @event.status %>
         </div>
         <br>
         <div class = "actions" >
-          <b>Espaço solicitado:</b>
+          <b><%= t(:space_request) %></b>
           <%= @event.jbb_space_requested%>
         </div>
         <br>
         <div class = "actions" >
-          <b>Publico estimado:</b>
+          <b><%= t(:number_visitors) %></b>
           <%= @event.estimated_public%>
         </div>
         <br>
         <div class= "actions spacing" >
-          <b>Descrição:</b>
+          <b><%= t(:description) %></b>
           <%= @event.description %>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b><%= t(:commercial_images) %></b>
+          <%= @event.commercial_use_photos%>
         </div>
         <br>
         <table>
           <tr>
             <td>
               <div class = "actions" >
-                <b>Precisa de energia elétrica?</b>
+                <b><%= t(:need_eletricity) %></b>
                 <%= @event.need_eletricity%>
               </div>
             </td>
             <td>
               <div class = "actions" >
-                <a id="space" >
-                <b>Precisa de água?</b>
+                &nbsp&nbsp&nbsp&nbsp
+                <b><%= t(:need_water) %></b>
                 <%= @event.need_water%>
               </div>
             </td>
             <td>
               <div class = "actions" >
-                <a id="space" >
-                <b>Precisa de servico de limpeza?</b>
+                &nbsp&nbsp&nbsp&nbsp
+                <b><%= t(:need_clean_service) %></b>
                 <%= @event.need_clean_service%>
               </div>
             </td>
@@ -85,28 +90,22 @@
         </table>
         <br>
         <div class= "actions sp" >
-          <b>Outras informações:</b>
+          <b><%= t(:other_informations) %></b>
           <%= @event.other_informations %>
         </div>
         <br>
         <div class= "actions spacing" >
-          <b>Uso comercial de imagens:</b>
-          <%= @event.commercial_use_photos %>
-        </div>
-        <br>
-        <div class= "actions spacing" >
-          <b>Nome da instituição:</b>
+          <b><%= t(:name_institute) %></b>
           <%= @event.name_institute %>
         </div>
         <div class= "actions spacing" >
-          <b>Endereço da instituição:</b>
+          <b><%= t(:institute_address) %></b>
           <%= @event.institute_address %>
         </div>
         <div class= "actions spacing" >
-          <b>CNPJ da instituição:</b>
+          <b><%= t(:institute_cnpj) %></b>
           <%= @event.institute_cnpj %>
-        </div>
-        <br>
+        </div><br>
         <br>
         <%flash.each do |key, value|%>
         <div class="alert alert-<%= key %>"><%= value %></div>
@@ -125,11 +124,11 @@
           </div>
           <%end%>
           <div class = "field" >
-            <%=f.label :Resposta_da_Requisição%>
+            <b><%= t(:jbb_response_to_request) %></b>
             <%=f.text_area :jbb_response_to_request, :cols => "50", :rows => "5", class: 'form-control'%>
           </div>
           <div class = "field" >
-            <%=f.label :Preço_do_Evento%>
+            <b><%= t(:price_payment) %></b>
             <%=f.number_field :price_payment, class: 'form-control'%>
           </div>
 
