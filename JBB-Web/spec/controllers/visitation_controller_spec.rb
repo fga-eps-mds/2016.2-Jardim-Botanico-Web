@@ -9,8 +9,8 @@ RSpec.describe VisitationsController, type: :controller do
 
   #CREATE
   describe "POST create" do  #Still dont test Mailer
-  	it "should successfull create a visitation" do
-  		post :create, :visitation => {  #PRECISO SABER O PORQUE ISSO ACONTECE
+  	it "should fail to create a visitation" do
+  		post :create, :visitation => {
         :status => "Agendado",
         :visitants_amount => "50",
         :groups_age => "20",
@@ -20,6 +20,25 @@ RSpec.describe VisitationsController, type: :controller do
 			}
       expect(response).to have_http_status(:success)
       end
+
+      it "should sucessfully to create a visitation" do
+        post :create, :visitation => {
+          :user_id => @user.id,
+          :date => "15/12/1996",
+          :time => "15:00",
+          :status => "Agendado",
+          :visitants_amount => 50,
+          :visitation_type => "Study",
+          :groups_age => 10,
+          :objective => "objective",
+          :spaces => "space",
+          :has_guide => true,
+          :description => "ahahhahahaaaaaaaaaaaaa",
+          :visitants_paying => 10,
+          :visitation_cost => 100
+  			}
+        end
+
   end
 
 
@@ -31,6 +50,7 @@ RSpec.describe VisitationsController, type: :controller do
       expect(@visitation.status).to eq("Recusado por funcionario")
     end
 
+
     it "should successfull cancel a visitation" do
       get :cancel_visitation_employee, :id => @visitation.id
       @visitation.reload
@@ -41,6 +61,13 @@ RSpec.describe VisitationsController, type: :controller do
       get :accept_visitation_employee, :id => @visitation.id
       @visitation.reload
       expect(@visitation.status).to eq("Agendado")
+    end
+
+    it "should fail to accept a visitation" do
+      @visitation.visitants_amount = -1
+      @visitation.reload
+      get :accept_visitation_employee, :id => @visitation.id
+      # assert_equal 'Visitação não pode ser confirmada', flash[:warning]
     end
   end
 
