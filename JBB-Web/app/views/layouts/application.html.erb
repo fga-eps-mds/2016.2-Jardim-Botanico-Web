@@ -15,6 +15,13 @@
         <a class="navbar-brand page-scroll" href="/<%= @language %>/"><font color = "black">Jardim Botânico Web</font></a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-middle">
+          <a class = "actions" >
+            &nbsp &nbsp &nbsp
+            <%= link_to image_tag("flags/br.svg", size: "28x23", alt: "Português"), :locale => 'pt' %>
+            <%= link_to image_tag("flags/us.svg", size: "28x23", alt: "English"), :locale => 'en' %>
+          </a>
+        </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
           <li>
