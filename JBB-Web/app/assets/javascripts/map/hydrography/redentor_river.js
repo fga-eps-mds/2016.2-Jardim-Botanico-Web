@@ -170,7 +170,7 @@ var redentorCristRiverContentString =
 
 function addRedentorCristRiver(){
     //create the river
-    redentorCristRiver = createRiver(redentorCristRiverCoordinates);
+    redentorCristRiver = createRiver(redentorCristRiverCoordinates, false);
 
     //set the river on map
     redentorCristRiver.setMap(map);

@@ -86,7 +86,7 @@ var taperaRiverArmCoordinates = [
 
 function addTaperaRiverArm(){
     //create the river
-    taperaRiverArm = createRiver(taperaRiverArmCoordinates);
+    taperaRiverArm = createRiver(taperaRiverArmCoordinates, false);
 
     //set the river on map
     taperaRiverArm.setMap(map);

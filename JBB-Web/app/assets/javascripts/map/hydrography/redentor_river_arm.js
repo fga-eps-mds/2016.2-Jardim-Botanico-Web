@@ -33,7 +33,7 @@ var redentorCristRiverArmCoordinates = [
 
 function addRedentorCristRiverArm(){
     //create the river
-    redentorCristRiverArm = createRiver(redentorCristRiverArmCoordinates);
+    redentorCristRiverArm = createRiver(redentorCristRiverArmCoordinates, false);
 
     //set the river on map
     redentorCristRiverArm.setMap(map);

@@ -220,20 +220,20 @@ var cochoRiverCoordinates = [
 ];
 
 var cochoRiverContentString =
-'<div id="content">'+
-'<div id="siteNotice">'+
-'</div>'+
-'<h1 id="firstHeading" class="firstHeading">Corrego do Cocho</h1>'+
-'<div id="bodyContent">'+
-'<p>O <b>Corrego do Cocho</b>, faz divisa com a QI 17 do lago sul' +
-'<p>Leia mais em: <a href="/jbb_spaces/rio">'+
-'Rio</a> '+
-'</div>'+
-'</div>';
+    '<div id="content">'+
+    '<div id="siteNotice">'+
+    '</div>'+
+    '<h1 id="firstHeading" class="firstHeading">Corrego do Cocho</h1>'+
+    '<div id="bodyContent">'+
+    '<p>O <b>Corrego do Cocho</b>, faz divisa com a QI 17 do lago sul' +
+    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
+    'Rio</a> '+
+    '</div>'+
+    '</div>';
 
 function addCochoRiver(){
     //create the river
-    cochoRiver = createRiver(cochoRiverCoordinates);
+    cochoRiver = createRiver(cochoRiverCoordinates, false);
 
     //set the river on map
     cochoRiver.setMap(map);

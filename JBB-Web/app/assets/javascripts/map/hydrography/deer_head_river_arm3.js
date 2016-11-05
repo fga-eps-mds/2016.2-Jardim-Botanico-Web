@@ -19,7 +19,7 @@ var deerHeadRiverArm3Coordinates = [
 
 function addDeerHeadRiverArm3(){
     //create the river
-    deerHeadRiverArm3 = createRiver(deerHeadRiverArm3Coordinates);
+    deerHeadRiverArm3 = createRiver(deerHeadRiverArm3Coordinates, false);
 
     //set the river on map
     deerHeadRiverArm3.setMap(map);

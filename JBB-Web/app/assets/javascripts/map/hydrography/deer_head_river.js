@@ -243,7 +243,7 @@ var deerHeadRiverCoordinates = [
 function addDeerHeadRiver(){
 
   //create the river
-  deerHeadRiver = createRiver(deerHeadRiverCoordinates);
+  deerHeadRiver = createRiver(deerHeadRiverCoordinates, false);
 
   //set the river on map
   deerHeadRiver.setMap(map);

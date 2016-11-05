@@ -575,7 +575,7 @@ var taperaRiverContentString =
 
 function addTaperaRiver(){
     //create the river
-    taperaRiver = createRiver(taperaRiverCoordinates);
+    taperaRiver = createRiver(taperaRiverCoordinates, false);
 
     //set the river on map
     taperaRiver.setMap(map);
