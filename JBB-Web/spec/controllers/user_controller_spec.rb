@@ -73,6 +73,12 @@ RSpec.describe UsersController, type: :controller do
 
 end
 
+  describe "my_request" do
+    it "current user" do
+      sign_in(@user)
+      @user = current_user
+    end
+  end
 
 
 
