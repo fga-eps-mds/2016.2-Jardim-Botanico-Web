@@ -14,7 +14,7 @@ RSpec.describe ApplicationController, type: :controller do
   describe "#current_visitation" do
     it "should return current visitation" do
       visitation = Visitation.new
-      expect(response).to have_http_status(:success)  
+      expect(response).to have_http_status(:success)
     end
   end
 

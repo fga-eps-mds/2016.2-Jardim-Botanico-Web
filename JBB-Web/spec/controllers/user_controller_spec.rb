@@ -38,11 +38,19 @@ RSpec.describe UsersController, type: :controller do
       end
   end
 
-  # describe "GET edit" do
-  #   it "should GET a edit user profile" do
-  #     get :edit
-  #   end
-  # end
+  describe "GET edit" do
+    it "should GET a edit user profile" do
+      get :edit, :id => @user.id
+      expect(response).to redirect_to(home_path)
+    end
+  end
+
+  #INDEX
+  describe "Get show" do  #Dont test PDF
+    it "should show user" do
+      get :show, :id => @user.id
+    end
+  end
 
   describe "PUT update/:id" do
   let(:attr) do
