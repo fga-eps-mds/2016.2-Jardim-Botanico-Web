@@ -31,17 +31,6 @@ var redentorCristRiverArmCoordinates = [
     {lat: -15.921167936381504, lng: -47.889766562730074},
 ];
 
-var redentorCristRiverArmContentString =
-    '<div id="content">'+
-    '<div id="siteNotice">'+
-    '</div>'+
-    '<h1 id="firstHeading" class="firstHeading">Cristo redentor</h1>'+
-    '<div id="bodyContent">'+
-    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
-    'Rio</a> '+
-    '</div>'+
-    '</div>';
-
 function addRedentorCristRiverArm(){
     //create the river
     redentorCristRiverArm = createRiver(redentorCristRiverArmCoordinates);
@@ -51,6 +40,6 @@ function addRedentorCristRiverArm(){
 
     //add a listener to open a infowindow every time the river is clicked
     google.maps.event.addListener(redentorCristRiverArm, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, redentorCristRiverArmContentString);
+        addInfowindow(clicked_location.latLng, redentorCristRiverContentString);
     });
 }

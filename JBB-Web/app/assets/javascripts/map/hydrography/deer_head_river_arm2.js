@@ -55,21 +55,8 @@ var deerHeadRiverArm2Coordinates = [
     {lat: -15.87421367967634, lng: -47.855422301217914},
     {lat: -15.874301396993605, lng: -47.85547594539821},
     {lat: -15.874399433950067, lng: -47.85545448772609},
-    {lat: -15.874507790530645, lng: -47.85554031841457},
-
-var deerHeadRiverArm2ContentString =
-    '<div id="content">'+
-    '<div id="siteNotice">'+
-    '</div>'+
-    '<h1 id="firstHeading" class="firstHeading">Ribeirão Cabeça de Veado</h1>'+
-    '<div id="bodyContent">'+
-    '<p>O <b>Ribeirão Cabeça de Veado</b>, serve de ponto de captação de ' +
-    'água para a CAESB. '+
-    'Esse ribeirão tem 4 braços que dão em 4 estações de captação de recursos hidricos da CAESB'+
-    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
-    'Rio</a> '+
-    '</div>'+
-    '</div>';
+    {lat: -15.874507790530645, lng: -47.85554031841457}
+];
 
 function addDeerHeadRiverArm2(){
     //create the river
@@ -80,6 +67,6 @@ function addDeerHeadRiverArm2(){
 
     //add a listener to open a infowindow every time the river is clicked
     google.maps.event.addListener(deerHeadRiverArm2, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, deerHeadRiverArm2ContentString);
+        addInfowindow(clicked_location.latLng, deerHeadRiverContentString);
     });
 }

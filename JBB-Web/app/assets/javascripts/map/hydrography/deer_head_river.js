@@ -240,20 +240,16 @@ var deerHeadRiverCoordinates = [
     '</div>'+
     '</div>';
 
-    function addDeerHeadRiver(){
+function addDeerHeadRiver(){
 
-      //create the river
-      deerHeadRiver = createRiver(deerHeadRiverCoordinates);
+  //create the river
+  deerHeadRiver = createRiver(deerHeadRiverCoordinates);
 
-      //set the river on map
-      deerHeadRiver.setMap(map);
+  //set the river on map
+  deerHeadRiver.setMap(map);
 
-      //add a listener to open a infowindow every time the river is clicked
-       google.maps.event.addListener(deerHeadRiver, 'click',  function(clicked_location) {
-          addInfowindow(clicked_location.latLng, deerHeadRiverContentString);
-       });
-
-
-    }
-
-  }
+  //add a listener to open a infowindow every time the river is clicked
+   google.maps.event.addListener(deerHeadRiver, 'click',  function(clicked_location) {
+      addInfowindow(clicked_location.latLng, deerHeadRiverContentString);
+   });
+}

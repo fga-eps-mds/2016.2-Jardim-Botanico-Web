@@ -41,19 +41,6 @@ var taperaRiverArm2Coordinates = [
     {lat: -15.90949359689024, lng: -47.88555960170925},
 ];
 
-var taperaRiverArm2ContentString =
-    '<div id="content">'+
-    '<div id="siteNotice">'+
-    '</div>'+
-    '<h1 id="firstHeading" class="firstHeading">Corrego Tapera</h1>'+
-    '<div id="bodyContent">'+
-    '<p>O <b>Corrego Tapera</b>, fica na divisa da estação ecologica do JBB ' +
-    'o território da aeronáutica'+
-    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
-    'Rio</a> '+
-    '</div>'+
-    '</div>';
-
 function addTaperaRiverArm2(){
     //create the river
     taperaRiverArm2 = createRiver(taperaRiverArm2Coordinates);
@@ -63,6 +50,6 @@ function addTaperaRiverArm2(){
 
     //add a listener to open a infowindow every time the river is clicked
     google.maps.event.addListener(taperaRiverArm2, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, taperaRiverArm2ContentString);
+        addInfowindow(clicked_location.latLng, taperaRiverContentString);
     });
 }
