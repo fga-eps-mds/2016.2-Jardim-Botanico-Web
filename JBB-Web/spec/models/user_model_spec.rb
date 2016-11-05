@@ -51,7 +51,7 @@ RSpec.describe User, :type => :model do
           before { @user.name = "" }
 
           it "is invalid" do
-            @user.should_not be_valid
+            @user.should be_invalid
           end
 
           it "adds the correct error message" do
@@ -71,7 +71,7 @@ RSpec.describe User, :type => :model do
           before { @user.email = "" }
 
           it "is invalid" do
-            @user.should_not be_valid
+            @user.should be_invalid
           end
 
           it "adds the correct error message" do

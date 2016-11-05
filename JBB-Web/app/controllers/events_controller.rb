@@ -20,10 +20,6 @@ class EventsController < ApplicationController
     end
   end
 
-  def edit
-    @event = Event.find(params[:id])
-  end
-
   def show_user
     @event = Event.where(user_id: current_user.id)
   end
@@ -58,8 +54,8 @@ class EventsController < ApplicationController
         pdf = EventssPdf.new(@event)
         send_data pdf.render, filename: 'formularios.pdf', type: "application/pdf",
         disposition: "inline"
-      end  
-    end 
+      end
+    end
   end
 
   #refuse_confirmation

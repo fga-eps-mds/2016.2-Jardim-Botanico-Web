@@ -12,11 +12,9 @@ RSpec.describe EventsController, type: :controller do
   	it "should fail to create a event" do
   		post :create, :event => {
         :status => "Agendado",
-        :visitants_amount => "50",
+        :events_amount => "50",
         :groups_age => "20",
-        :has_guide => "true",
         :description => "Descrição da visitação",
-        :visitants_paying => 200
 			}
       expect(response).to have_http_status(:success)
       end
@@ -24,18 +22,23 @@ RSpec.describe EventsController, type: :controller do
       it "should sucessfully to create a event" do
         post :create, :event => {
           :user_id => @user.id,
-          :date => "15/12/1996",
-          :time => "15:00",
+          :date_start => "15/12/2016",
+          :date_end => "15/12/2017",
+          :time_start => "15:30",
+          :time_end => "18:14",
           :status => "Agendado",
-          :visitants_amount => 50,
-          :event_type => "Study",
-          :groups_age => 10,
-          :objective => "objective",
-          :spaces => "space",
-          :has_guide => true,
-          :description => "ahahhahahaaaaaaaaaaaaa",
-          :visitants_paying => 10,
-          :event_cost => 100
+          :jbb_space_requested => "Espaço",
+          :estimated_public => 100,
+          :need_eletricity => true,
+          :need_water => true,
+          :need_clean_service => true,
+          :commercial_use_photos => true,
+          :description => "Parabéns pelo seu evento! ",
+          :other_informations => "Outras informações",
+          :jbb_response_to_request => "Sim",
+          :price_payment => 2000,
+          :name_institute => "Instituto aqui",
+          :institute_address => "Lugar do instituto"
   			}
         end
 
@@ -64,7 +67,7 @@ RSpec.describe EventsController, type: :controller do
     end
 
     it "should fail to accept a event" do
-      @event.visitants_amount = -1
+      @event.estimated_public = -1
       @event.reload
       get :accept_event_employee, :id => @event.id
       # assert_equal 'Visitação não pode ser confirmada', flash[:warning]
@@ -77,20 +80,28 @@ RSpec.describe EventsController, type: :controller do
     it "should delete a event" do
       expect{
           get :delete_event_employee, :id  => @event.id
-      }.to change(Visitation,:count).by(-1)
+      }.to change(Event,:count).by(-1)
     end
   end
 
 
-  #INDEX
-  describe "Index event" do  #Dont test PDF
+  #INDEX EMPLOYEE
+  describe "Index event employee" do  #Dont test PDF
     it "should show each event" do
-      get :index, :id => @event.id
+      get :index_employee, :id => @event.id
       expect(response).to have_http_status(:success)
-      expect(response).to render_template("events/index")
+      expect(response).to render_template("events/index_employee")
     end
   end
 
+  #INDEX USER
+  describe "Index event user" do  #Dont test PDF
+    it "should show each event" do
+      get :index_user, :id => @event.id
+      expect(response).to have_http_status(:success)
+      expect(response).to render_template("events/index_user")
+    end
+  end
 
                                                             # 100% COVERAGE
     #USER CHANGE STATUS
@@ -115,14 +126,13 @@ RSpec.describe EventsController, type: :controller do
   #SHOW VISITS
   describe "Show visits" do
     it "should display all user's visits" do
-      get :show
+      get :show_employee
       expect(response).to have_http_status(:success)
-      expect(response).to render_template("events/show")
+      expect(response).to render_template("events/show_employee")
     end
 
     it "should display just user's event" do
       get :show_user
-
       expect(response).to have_http_status(:success)
       expect(response).to render_template("events/show_user")
     end
