@@ -3,24 +3,24 @@ var markers_on  = false;
 //Shows or remove JBB spaces at the map
 function setJbbSpaces() {
   if(markers_on) {
-    amphitheaterMarker.setMap(null);
-    cactusBoskMarker.setMap(null);
-    centerOfExcellenceMarker.setMap(null);
-    contemplationGardenMarker.setMap(null);
-    evolutionaryGardenMarker.setMap(null);
-    greenHouseMarker.setMap(null);
-    hammockPlaceMarker.setMap(null);
-    healingGardenMarker.setMap(null);
-    infantParkMarker.setMap(null);
-    japaneseGardenMarker.setMap(null);
-    naturalLibraryMarker.setMap(null);
-    orchidGardenMarker.setMap(null);
-    parkingMarker.setMap(null);
-    permacultureMarker.setMap(null);
-    smellsGardenMarker.setMap(null);
-    sunWatchMarker.setMap(null);
-    teaHouseMarker.setMap(null);
-    visitantCenterMarker.setMap(null);
+    amphitheater.setMap(null);
+    cactusBosk.setMap(null);
+    centerOfExcellence.setMap(null);
+    contemplationGarden.setMap(null);
+    evolutionaryGarden.setMap(null);
+    greenHouse.setMap(null);
+    hammockPlace.setMap(null);
+    healingGarden.setMap(null);
+    infantPark.setMap(null);
+    japaneseGarden.setMap(null);
+    naturalLibrary.setMap(null);
+    orchidGarden.setMap(null);
+    parking.setMap(null);
+    permaculture.setMap(null);
+    smellsGarden.setMap(null);
+    sunWatch.setMap(null);
+    teaHouse.setMap(null);
+    visitantCenter.setMap(null);
     markers_on = false;
     infowindow.close();
   }
@@ -36,14 +36,14 @@ function setJbbSpaces() {
     addInfantParkMarker();
     addJapaneseGardenMarker();
     addNaturalLibraryMarker();
-    addOrchidGardenMaker(infowindow);
+    addOrchidGardenMarker(infowindow);
     addParkingMarker();
     addPermacultureMarker();
     addSmellsGardenMarker();
     addSunWatchMarker();
     addTeaHouseMarker();
-    addVisitantCenterMaker();
-    
+    addVisitantCenterMarker();
+
     markers_on = true;
   }
 }

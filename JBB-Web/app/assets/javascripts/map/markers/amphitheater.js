@@ -1,26 +1,8 @@
-var amphitheaterMarker;
+var amphitheater;
 
-function addAmphitheaterMarker(){
-    //set the position in latitude and longitude of the marker
-    var amphitheaterLatLng = {lat: -15.868693, lng: -47.840186};
+var amphitheaterCoordinate = {lat: -15.868693, lng: -47.840186};
 
-    //add the marker at the map in the position previously defined
-    amphitheaterMarker = new google.maps.Marker({
-        position: amphitheaterLatLng,
-        map: map,
-        title: 'Anfiteatro'
-    });
-
-    //add a listener to verify if the marker is clicked
-    amphitheaterMarker.addListener('click', addAmphitheaterInfowindow);
-
-    //set the marker on map
-    amphitheaterMarker.setMap(map);
-}
-
-function addAmphitheaterInfowindow(){
-    //set tea house info, will be used at infowindow
-    var amphitheaterInfowindowContentString =
+var amphitheaterContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -34,10 +16,17 @@ function addAmphitheaterInfowindow(){
     '</div>'+
     '</div>';
 
-    infowindow.close();
+var amphitheaterTitle = 'Anfiteatro';
 
-    //set the infowindow with japanese garden info
-    infowindow.setContent(amphitheaterInfowindowContentString);
+function addAmphitheaterMarker(){
+    //create the jbb space
+    amphitheater = createJbbSpace(amphitheaterCoordinate, amphitheaterTitle);
 
-    infowindow.open(map, amphitheaterMarker);
+    //set the jbb space on map
+    amphitheater.setMap(map);
+
+    //add a listener to open a infowindow every time the jbb space is clicked
+    google.maps.event.addListener(amphitheater, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, amphitheaterContentString);
+    });
 }
