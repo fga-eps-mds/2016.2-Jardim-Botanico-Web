@@ -1,26 +1,8 @@
-var healingGardenMarker;
+var healingGarden;
 
-function addHealingGardenMarker(){
-    //set the position in latitude and longitude of the marker
-    var healingGardenLatLng = {lat: -15.873571, lng: -47.838149};
+var healingGardenCoordinate = {lat: -15.873571, lng: -47.838149};
 
-    //add the marker at the map in the position previously defined
-    healingGardenMarker = new google.maps.Marker({
-        position: healingGardenLatLng,
-        map: map,
-        title: 'Jardim medicinal'
-    });
-
-    //add a listener to verify if the marker is clicked
-    healingGardenMarker.addListener('click', addHealingGardenInfowindow);
-
-    //set the marker on map
-    healingGardenMarker.setMap(map);
-}
-
-function addHealingGardenInfowindow (){
-    //set tea hoJardim Medicinalo, will be used at infowindow
-    var healingGardenInfowindowContentString =
+var healingGardenContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -34,10 +16,17 @@ function addHealingGardenInfowindow (){
     '</div>'+
     '</div>';
 
-    infowindow.close();
+var healingGardenTitle = 'Jardim medicinal';
 
-    //set the infowindow with japanese garden info
-    infowindow.setContent(healingGardenInfowindowContentString);
+function addHealingGardenMarker(){
+    //create the jbb space
+    healingGarden = createJbbSpace(healingGardenCoordinate, healingGardenTitle);
 
-    infowindow.open(map, healingGardenMarker);
+    //set the jbb space on map
+    healingGarden.setMap(map);
+
+    //add a listener to open a infowindow every time the jbb space is clicked
+    google.maps.event.addListener(healingGarden, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, healingGardenContentString);
+    });
 }

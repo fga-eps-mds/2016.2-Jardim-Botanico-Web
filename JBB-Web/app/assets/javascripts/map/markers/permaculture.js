@@ -1,27 +1,8 @@
-var permacultureMarker;
+var permaculture;
 
-function addPermacultureMarker(){
+var permacultureCoordinate = {lat: -15.875759, lng: -47.836626};
 
-    //set the position in latitude and longitude of the marker
-    var permacultureLatLng = {lat: -15.875759, lng: -47.836626};
-
-    //add the marker at the map in the position previously defined
-    permacultureMarker = new google.maps.Marker({
-        position: permacultureLatLng,
-        map: map,
-        title: 'Permacultura'
-    });
-
-    //add a listener to verify if the marker is clicked
-    permacultureMarker.addListener('click', addPermacultureInfowindow);
-
-    //set the marker on map
-    permacultureMarker.setMap(map);
-}
-
-function addPermacultureInfowindow (){
-    //set smells garden info, will be used at infowindow
-    var permacultureInfowindowContentString =
+var permacultureContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -39,10 +20,17 @@ function addPermacultureInfowindow (){
     '</div>'+
     '</div>';
 
-    infowindow.close();
+var permacultureTitle = 'Permacultura';
 
-    //set the infowindow with smells garden info
-    infowindow.setContent(permacultureInfowindowContentString);
+function addPermacultureMarker(){
+    //create the jbb space
+    permaculture = createJbbSpace(permacultureCoordinate, permacultureTitle);
 
-    infowindow.open(map, permacultureMarker);
+    //set the jbb space on map
+    permaculture.setMap(map);
+
+    //add a listener to open a infowindow every time the jbb space is clicked
+    google.maps.event.addListener(permaculture, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, permacultureContentString);
+    });
 }
