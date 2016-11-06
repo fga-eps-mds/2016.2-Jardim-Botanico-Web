@@ -1,3 +1,5 @@
+var ecologicTrail;
+
 var ecologicTrailContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+

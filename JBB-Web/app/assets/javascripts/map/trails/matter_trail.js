@@ -1,3 +1,5 @@
+var matterTrail;
+
 var matterTrailContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
