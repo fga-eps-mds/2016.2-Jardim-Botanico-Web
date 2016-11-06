@@ -43,6 +43,7 @@ function setJbbSpaces() {
     addSunWatchMarker();
     addTeaHouseMarker();
     addVisitantCenterMaker();
+    
     markers_on = true;
   }
 }
