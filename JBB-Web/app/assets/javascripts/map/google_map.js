@@ -4,7 +4,6 @@ $(window).load(function() {
 
 var map;
 var infowindow;
-var trails;
 
 function initialize() {
   var mapOptions = {
@@ -23,17 +22,6 @@ function initialize() {
     infowindow = new google.maps.InfoWindow();
     addJbbVisitantsArea();
     addJbbEcologicalStation();
-}
-
-//Shows or remove trails at map
-function setTrails() {
-  if(trails.trails_on) {
-    trails.setNull();
-  }
-  else {
-    trails.setMap();
-    trails.setListener();
-  }
 }
 
 function loadScript() {

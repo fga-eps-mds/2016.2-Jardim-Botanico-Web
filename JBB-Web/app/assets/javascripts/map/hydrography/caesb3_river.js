@@ -1,4 +1,4 @@
-var caesb3;
+var caesb3River;
 
 var caesb3RiverCoordinates = [
     {lat: -15.887314095825971, lng: -47.84254711121321},

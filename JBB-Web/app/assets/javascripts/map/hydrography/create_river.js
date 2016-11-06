@@ -1,4 +1,3 @@
-
 function createRiver(riverCoordinates, hasCAESBcaptation){
     var river;
 
@@ -8,7 +7,7 @@ function createRiver(riverCoordinates, hasCAESBcaptation){
         strokeWeight: 4,
         strokeColor: '#393'
     };
-    
+
     //add the river at the map in the position previously defined
     if(hasCAESBcaptation){
         river = new google.maps.Polyline({
