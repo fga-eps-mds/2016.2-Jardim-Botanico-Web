@@ -1,6 +1,6 @@
-var southDirtyFieldAreaPolygon;
-function addSouthDirtyFieldAreaPolygon(){
-  var southDirtyFieldAreaPolygonCoords = [
+var southDirtyFieldArea;
+
+var southDirtyFieldAreaCoordinates = [
   {lat: -15.914769975599201, lng: -47.90517266839743},
   {lat: -15.915210193059675, lng: -47.90595762315206},
   {lat: -15.91506574682899, lng: -47.90651552262716},
@@ -20,18 +20,14 @@ function addSouthDirtyFieldAreaPolygon(){
   {lat: -15.914591136896762, lng: -47.90492758154869},
   {lat: -15.914756218684703, lng: -47.90537819266319},
   {lat: -15.914775134717411, lng: -47.90537115186453},
-  {lat: -15.91521879130871, lng: -47.905939780175686}
-  ];
+  {lat: -15.91521879130871, lng: -47.905939780175686},
+];
 
-    // Construct the polygon.
-  southDirtyFieldAreaPolygon = new google.maps.Polygon({
-    paths: southDirtyFieldAreaPolygonCoords,
-    strokeColor: '#6AC5CB',
-    strokeOpacity: 0.1,
-    strokeWeight: 3,
-    fillColor: '#6AC5CB',
-    fillOpacity: 0.50
-  });
+var southDirtyFieldAreaColor = '#6AC5CB';
 
-  southDirtyFieldAreaPolygon.setMap(map);
+function addSouthDirtyFieldArea(){
+  southDirtyFieldArea = createVegetation(southDirtyFieldAreaCoordinates,
+                                        southDirtyFieldAreaColor);
+  
+  southDirtyFieldArea.setMap(map);
 } 

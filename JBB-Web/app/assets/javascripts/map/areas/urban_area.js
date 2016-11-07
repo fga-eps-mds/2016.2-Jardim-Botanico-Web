@@ -1,6 +1,6 @@
-var urbanAreaPolygon;
-function addUrbanAreaPolygon(){
-  var urbanAreaPolygonCoords = [
+var urbanArea;
+
+var urbanAreaCoordinates = [
   {lat: -15.861607788227095, lng: -47.82845377922058},
   {lat: -15.861318818722955, lng: -47.82856106758118},
   {lat: -15.86108145060621, lng: -47.82880783081055},
@@ -9,17 +9,13 @@ function addUrbanAreaPolygon(){
   {lat: -15.861339459415559, lng: -47.82945156097412},
   {lat: -15.861731632173543, lng: -47.82905459403992},
   {lat: -15.861855476043925, lng: -47.828625440597534},
-  ];
+];
 
-  // Construct the polygon.
-  urbanAreaPolygon = new google.maps.Polygon({
-    paths: urbanAreaPolygonCoords,
-    strokeColor: '#DADA84',
-    strokeOpacity: 0.1,
-    strokeWeight: 3,
-    fillColor: '#DADA84',
-    fillOpacity: 0.35
-  });
+var urbanAreaColor = '#DADA84';
+
+function addUrbanArea(){
+  urbanArea = createVegetation(urbanAreaCoordinates,
+                                      urbanAreaColor);  
   
-  urbanAreaPolygon.setMap(map);
+  urbanArea.setMap(map);
 }

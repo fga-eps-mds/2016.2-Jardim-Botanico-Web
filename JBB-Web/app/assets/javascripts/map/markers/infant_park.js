@@ -1,26 +1,8 @@
-var infantParkMarker;
+var infantPark;
 
-function addInfantParkMarker(){
-    //set the position in latitude and longitude of the marker
-    var infantParkLatLng = {lat: -15.873544, lng: -47.835236};
+var infantParkCoordinate = {lat: -15.873544, lng: -47.835236};
 
-    //add the marker at the map in the position previously defined
-    infantParkMarker = new google.maps.Marker({
-        position: infantParkLatLng,
-        map: map,
-        title: 'Parque Infantil/Área de Piquenique'
-    });
-
-    //add a listener to verify if the marker is clicked
-    infantParkMarker.addListener('click', addInfantParkInfowindow);
-
-    //set the marker on map
-    infantParkMarker.setMap(map);
-}
-
-function addInfantParkInfowindow (){
-    //set tea house info, will be used at infowindow
-    var infantParkInfowindowContentString =
+var infantParkContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -33,10 +15,17 @@ function addInfantParkInfowindow (){
     '</div>'+
     '</div>';
 
-    infowindow.close();
+var infantParkTitle = 'Parque Infantil/Área de Piquenique';
 
-    //set the infowindow with japanese garden info
-    infowindow.setContent(infantParkInfowindowContentString);
+function addInfantParkMarker(){
+    //create the jbb space
+    infantPark = createJbbSpace(infantParkCoordinate, infantParkTitle);
 
-    infowindow.open(map, infantParkMarker);
+    //set the jbb space on map
+    infantPark.setMap(map);
+
+    //add a listener to open a infowindow every time the jbb space is clicked
+    google.maps.event.addListener(infantPark, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, infantParkContentString);
+    });
 }

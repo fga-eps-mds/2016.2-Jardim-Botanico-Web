@@ -1,27 +1,8 @@
-var teaHouseMarker;
+var teaHouse;
 
-function addTeaHouseMarker(){
-    //set the position in latitude and longitude of the marker
-    var teaHouseLatLng = {lat: -15.872346, lng: -47.837086};
+var teaHouseCoordinate = {lat: -15.872346, lng: -47.837086};
 
-    //add the marker at the map in the position previously defined
-    teaHouseMarker = new google.maps.Marker({
-        position: teaHouseLatLng,
-        map: map,
-        title: 'Casa de Chá'
-    });
-
-    //add a listener to verify if the marker is clicked
-    teaHouseMarker.addListener('click', addTeaHouseInfowindow);
-
-    //set the marker on map
-    teaHouseMarker.setMap(map);
-}
-
-
-function addTeaHouseInfowindow (){
-    //set tea house info, will be used at infowindow
-    var teaHouseInfowindowContentString =
+var teaHouseContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -35,10 +16,17 @@ function addTeaHouseInfowindow (){
     '</div>'+
     '</div>';
 
-    infowindow.close();
+var teaHouseTitle = 'Casa de Chá';
 
-    //set the infowindow with japanese garden info
-    infowindow.setContent(teaHouseInfowindowContentString);
+function addTeaHouseMarker(){
+    //create the jbb space
+    teaHouse = createJbbSpace(teaHouseCoordinate, teaHouseTitle);
 
-    infowindow.open(map, teaHouseMarker);
+    //set the jbb space on map
+    teaHouse.setMap(map);
+
+    //add a listener to open a infowindow every time the jbb space is clicked
+    google.maps.event.addListener(teaHouse, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, teaHouseContentString);
+    });
 }

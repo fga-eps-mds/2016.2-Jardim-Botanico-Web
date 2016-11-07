@@ -1,26 +1,8 @@
-var evolutionaryGardenMarker;
+var evolutionaryGarden;
 
-function addEvolutionaryGardenMarker(){
-    //set the position in latitude and longitude of the marker
-    var evolutionaryGardenLatLng = {lat: -15.872847, lng: -47.837298};
+var evolutionaryGardenCoordinate = {lat: -15.872847, lng: -47.837298};
 
-    //add the marker at the map in the position previously defined
-    evolutionaryGardenMarker = new google.maps.Marker({
-        position: evolutionaryGardenLatLng,
-        map: map,
-        title: 'Jardim Evolutivo'
-    });
-
-    //add a listener to verify if the marker is clicked
-    evolutionaryGardenMarker.addListener('click', addEvolutionaryGardenInfowindow);
-
-    //set the marker on map
-    evolutionaryGardenMarker.setMap(map);
-}
-
-function addEvolutionaryGardenInfowindow (){
-    //set japanese garden info, will be used at infowindow
-    var evolutionaryGardenInfowindowContentString =
+var evolutionaryGardenContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -42,10 +24,17 @@ function addEvolutionaryGardenInfowindow (){
     '</div>'+
     '</div>';
 
-    infowindow.close();
+var evolutionaryGardenTitle = 'Jardim Evolutivo';
 
-    //set the infowindow with japanese garden info
-    infowindow.setContent(evolutionaryGardenInfowindowContentString);
+function addEvolutionaryGardenMarker(){
+    //create the jbb space
+    evolutionaryGarden = createJbbSpace(evolutionaryGardenCoordinate, evolutionaryGardenTitle);
 
-    infowindow.open(map, evolutionaryGardenMarker);
+    //set the jbb space on map
+    evolutionaryGarden.setMap(map);
+
+    //add a listener to open a infowindow every time the jbb space is clicked
+    google.maps.event.addListener(evolutionaryGarden, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, evolutionaryGardenContentString);
+    });
 }

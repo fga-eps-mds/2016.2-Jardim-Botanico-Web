@@ -1,26 +1,8 @@
-var hammockPlaceMarker;
+var hammockPlace;
 
-function addHammockPlaceMarker(){
-    //set the position in latitude and longitude of the marker
-    var hammockPlaceLatLng = {lat: -15.872893, lng: -47.834558};
+var hammockPlaceCoordinate = {lat: -15.872893, lng: -47.834558};
 
-    //add the marker at the map in the position previously defined
-    hammockPlaceMarker = new google.maps.Marker({
-        position: hammockPlaceLatLng,
-        map: map,
-        title: 'Redário'
-    });
-
-    //add a listener to verify if the marker is clicked
-    hammockPlaceMarker.addListener('click', addHammockPlaceInfowindow);
-
-    //set the marker on map
-    hammockPlaceMarker.setMap(map);
-}
-
-function addHammockPlaceInfowindow (){
-    //set tea house info, will be used at infowindow
-    var hammockPlaceInfowindowContentString =
+var hammockPlaceContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -32,9 +14,17 @@ function addHammockPlaceInfowindow (){
     '</div>'+
     '</div>';
 
-    infowindow.close();
+var hammockPlaceTitle = 'Redário';
 
-    infowindow.setContent(hammockPlaceInfowindowContentString);
+function addHammockPlaceMarker(){
+    //create the jbb space
+    hammockPlace = createJbbSpace(hammockPlaceCoordinate, hammockPlaceTitle);
 
-    infowindow.open(map, hammockPlaceMarker);
+    //set the jbb space on map
+    hammockPlace.setMap(map);
+
+    //add a listener to open a infowindow every time the jbb space is clicked
+    google.maps.event.addListener(hammockPlace, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, hammockPlaceContentString);
+    });
 }

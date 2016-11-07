@@ -1,26 +1,8 @@
-var centerOfExcellenceMarker;
+var centerOfExcellence;
 
-function addCenterOfExcellenceMarker(){
-    //set the position in latitude and longitude of the marker
-    var centerOfExcellenceLatLng = {lat: -15.876439, lng: -47.825293};
+var centerOfExcellenceCoordinate = {lat: -15.876439, lng: -47.825293};
 
-    //add the marker at the map in the position previously defined
-    centerOfExcellenceMarker = new google.maps.Marker({
-        position: centerOfExcellenceLatLng,
-        map: map,
-        title: 'Mirante'
-    });
-
-    //add a listener to verify if the marker is clicked
-    centerOfExcellenceMarker.addListener('click', addCenterOfExcellenceInfowindow);
-
-    //set the marker on map
-    centerOfExcellenceMarker.setMap(map);
-}
-
-function addCenterOfExcellenceInfowindow(){
-    //set tea house info, will be used at infowindow
-    var centerOfExcellenceInfowindowContentString =
+var centerOfExcellenceContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -37,10 +19,17 @@ function addCenterOfExcellenceInfowindow(){
     '</div>'+
     '</div>';
 
-    infowindow.close();
+var centerOfExcellenceTitle = 'Mirante';
 
-    //set the infowindow with japanese garden info
-    infowindow.setContent(centerOfExcellenceInfowindowContentString);
+function addCenterOfExcellenceMarker(){
+    //create the jbb space
+    centerOfExcellence = createJbbSpace(centerOfExcellenceCoordinate, centerOfExcellenceTitle);
 
-    infowindow.open(map, centerOfExcellenceMarker);
+    //set the jbb space on map
+    centerOfExcellence.setMap(map);
+
+    //add a listener to open a infowindow every time the jbb space is clicked
+    google.maps.event.addListener(centerOfExcellence, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, centerOfExcellenceContentString);
+    });
 }

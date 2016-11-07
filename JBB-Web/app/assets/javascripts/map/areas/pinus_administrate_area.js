@@ -1,6 +1,6 @@
-var pinusAdministrateAreaPolygon;
-function addPinusAdministrateAreaPolygon(){
-  var pinusAdministrateAreaPolygonCoords = [
+var pinusAdministrateArea;
+
+var pinusAdministrateAreaCoordinates = [
   {lat: -15.870235401208355, lng: -47.834858894348145},
   {lat: -15.870235401208355, lng: -47.83514857292175},
   {lat: -15.870524357931512, lng: -47.836071252822876},
@@ -25,17 +25,14 @@ function addPinusAdministrateAreaPolygon(){
   {lat: -15.871081630441894, lng: -47.83454775810242},
   {lat: -15.870617236790249, lng: -47.83469796180725},
   {lat: -15.870256040988036, lng: -47.834837436676025},
-  ];
+];
 
-  // Construct the polygon.
-  pinusAdministrateAreaPolygon = new google.maps.Polygon({
-    paths: pinusAdministrateAreaPolygonCoords,
-    strokeColor: '#BAE3A9',
-    strokeOpacity: 0.1,
-    strokeWeight: 3,
-    fillColor: '#BAE3A9',
-    fillOpacity: 0.50
-  });
+var pinusAdministrateAreaColor = '#BAE3A9';
+
+function addPinusAdministrateArea(){
+  pinusAdministrateArea = createVegetation(pinusAdministrateAreaCoordinates,
+                                        pinusAdministrateAreaColor);
+
   
-  pinusAdministrateAreaPolygon.setMap(map);
+  pinusAdministrateArea.setMap(map);
 }

@@ -1,26 +1,8 @@
-var cactusBoskMarker;
+var cactusBosk;
 
-function addCactusBoskMarker(){
-    //set the position in latitude and longitude of the marker
-    var cactusBoskLatLng = {lat: -15.875259, lng: -47.836627};
+var cactusBoskCoordinate = {lat: -15.875259, lng: -47.836627};
 
-    //add the marker at the map in the position previously defined
-    cactusBoskMarker = new google.maps.Marker({
-        position: cactusBoskLatLng,
-        map: map,
-        title: 'Cactário'
-    });
-
-    //add a listener to verify if the marker is clicked
-    cactusBoskMarker.addListener('click', addCactusBoskInfowindow);
-
-    //set the marker on map
-    cactusBoskMarker.setMap(map);
-}
-
-function addCactusBoskInfowindow(){
-    //set tea house info, will be used at infowindow
-    var cactusBoskInfowindowContentString =
+var cactusBoskContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -34,10 +16,17 @@ function addCactusBoskInfowindow(){
     '</div>'+
     '</div>';
 
-    infowindow.close();
+var cactusBoskTitle = 'Cactário';
 
-    //set the infowindow with japanese garden info
-    infowindow.setContent(cactusBoskInfowindowContentString);
+function addCactusBoskMarker(){
+    //create the jbb space
+    cactusBosk = createJbbSpace(cactusBoskCoordinate, cactusBoskTitle);
 
-    infowindow.open(map, cactusBoskMarker);
+    //set the jbb space on map
+    cactusBosk.setMap(map);
+
+    //add a listener to open a infowindow every time the jbb space is clicked
+    google.maps.event.addListener(cactusBosk, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, cactusBoskContentString);
+    });
 }

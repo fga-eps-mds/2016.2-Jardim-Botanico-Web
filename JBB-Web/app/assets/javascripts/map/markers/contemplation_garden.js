@@ -1,26 +1,8 @@
-var contemplationGardenMarker;
+var contemplationGarden;
 
-function addContemplationGardenMarker(){
-    //set the position in latitude and longitude of the marker
-    var contemplationGardenLatLng = {lat: -15.873717, lng: -47.834306};
+var contemplationGardenCoordinate = {lat: -15.873717, lng: -47.834306};
 
-    //add the marker at the map in the position previously defined
-    contemplationGardenMarker = new google.maps.Marker({
-        position: contemplationGardenLatLng,
-        map: map,
-        title: 'Jardim de Contemplação'
-    });
-
-    //add a listener to verify if the marker is clicked
-    contemplationGardenMarker.addListener('click', addContemplationGardenInfowindow);
-
-    //set the marker on map
-    contemplationGardenMarker.setMap(map);
-}
-
-function addContemplationGardenInfowindow (){
-    //set japanese garden info, will be used at infowindow
-    var contemplationGardenInfowindowContentString =
+var contemplationGardenContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -34,10 +16,17 @@ function addContemplationGardenInfowindow (){
     '</div>'+
     '</div>';
 
-    infowindow.close();
+var contemplationGardenTitle = 'Jardim de Contemplação';
 
-    //set the infowindow with japanese garden info
-    infowindow.setContent(contemplationGardenInfowindowContentString);
+function addContemplationGardenMarker(){
+    //create the jbb space
+    contemplationGarden = createJbbSpace(contemplationGardenCoordinate, contemplationGardenTitle);
 
-    infowindow.open(map, contemplationGardenMarker);
+    //set the jbb space on map
+    contemplationGarden.setMap(map);
+
+    //add a listener to open a infowindow every time the jbb space is clicked
+    google.maps.event.addListener(contemplationGarden, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, contemplationGardenContentString);
+    });
 }

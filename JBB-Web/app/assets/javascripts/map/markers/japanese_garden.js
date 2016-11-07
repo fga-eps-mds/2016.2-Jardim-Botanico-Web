@@ -1,27 +1,8 @@
-var japaneseGardenMarker;
+var japaneseGarden;
 
-function addJapaneseGardenMarker(){
+var japaneseGardenCoordinate = {lat: -15.875562, lng: -47.836124};
 
-    //set the position in latitude and longitude of the marker
-    var japaneseGardenLatLng = {lat: -15.875562, lng: -47.836124};
-
-    //add the marker at the map in the position previously defined
-    japaneseGardenMarker = new google.maps.Marker({
-        position: japaneseGardenLatLng,
-        map: map,
-        title: 'Jardim Japonês'
-    });
-
-    //add a listener to verify if the marker is clicked
-    japaneseGardenMarker.addListener('click', addJapaneseGardenInfowindow);
-
-    //set the marker on map
-    japaneseGardenMarker.setMap(map);
-}
-
-function addJapaneseGardenInfowindow (){
-    //set japanese garden info, will be used at infowindow
-    var japaneseGardenInfowindowContentString =
+var japaneseGardenContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -37,10 +18,17 @@ function addJapaneseGardenInfowindow (){
     '</div>'+
     '</div>';
 
-    infowindow.close();
+var japaneseGardenTitle = 'Jardim Japonês';
 
-    //set the infowindow with japanese garden info
-    infowindow.setContent(japaneseGardenInfowindowContentString);
+function addJapaneseGardenMarker(){
+    //create the jbb space
+    japaneseGarden = createJbbSpace(japaneseGardenCoordinate, japaneseGardenTitle);
 
-    infowindow.open(map, japaneseGardenMarker);
+    //set the jbb space on map
+    japaneseGarden.setMap(map);
+
+    //add a listener to open a infowindow every time the jbb space is clicked
+    google.maps.event.addListener(japaneseGarden, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, japaneseGardenContentString);
+    });
 }

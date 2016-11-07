@@ -1,26 +1,8 @@
-var smellsGardenMarker;
+var smellsGarden;
 
-function addSmellsGardenMarker(){
-    //set the position in latitude and longitude of the marker
-    var smellsGardenLatLng = {lat: -15.875609, lng: -47.837040};
+var smellsGardenCoordinate = {lat: -15.875609, lng: -47.837040};
 
-    //add the marker at the map in the position previously defined
-    smellsGardenMarker = new google.maps.Marker({
-        position: smellsGardenLatLng,
-        map: map,
-        title: 'Jardim de Cheiros'
-    });
-
-    //add a listener to verify if the marker is clicked
-    smellsGardenMarker.addListener('click', addSmellsGardenInfowindow);
-
-    //set the marker on map
-    smellsGardenMarker.setMap(map);
-}
-
-function addSmellsGardenInfowindow (){
-    //set smells garden info, will be used at infowindow
-    var smellsGardenInfowindowContentString =
+var smellsGardenContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -36,10 +18,17 @@ function addSmellsGardenInfowindow (){
     '</div>'+
     '</div>';
 
-    infowindow.close();
+var smellsGardenTitle = 'Jardim de Cheiros';
 
-    //set the infowindow with smells garden info
-    infowindow.setContent(smellsGardenInfowindowContentString);
+function addSmellsGardenMarker(){
+    //create the jbb space
+    smellsGarden = createJbbSpace(smellsGardenCoordinate, smellsGardenTitle);
 
-    infowindow.open(map, smellsGardenMarker);
+    //set the jbb space on map
+    smellsGarden.setMap(map);
+
+    //add a listener to open a infowindow every time the jbb space is clicked
+    google.maps.event.addListener(smellsGarden, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, smellsGardenContentString);
+    });
 }

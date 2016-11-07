@@ -1,25 +1,8 @@
-var parkingMarker;
+var parking;
 
-function addParkingMarker(){
-    //set the position in latitude and longitude of the marker
-    var parkingLatLng = {lat: -15.874579, lng: -47.836251};
+var parkingCoordinate = {lat: -15.874579, lng: -47.836251};
 
-    //add the marker at the map in the position previously defined
-    parkingMarker = new google.maps.Marker({
-        position: parkingLatLng,
-        map: map,
-        title: 'Estacionamento'
-    });
-
-    //add a listener to verify if the marker is clicked
-    parkingMarker.addListener('click', addParkingInfowindow);
-
-    //set the marker on map
-    parkingMarker.setMap(map);
-}
-function addParkingInfowindow (){
-    //set parking info, will be used at infowindow
-    var parkingInfowindowContentString =
+var parkingContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -31,10 +14,17 @@ function addParkingInfowindow (){
     '</div>'+
     '</div>';
 
-    infowindow.close();
+var parkingTitle = 'Estacionamento';
 
-    //set the infowindow with parking info
-    infowindow.setContent(parkingInfowindowContentString);
+function addParkingMarker(){
+    //create the jbb space
+    parking = createJbbSpace(parkingCoordinate, parkingTitle);
 
-    infowindow.open(map, parkingMarker);
+    //set the jbb space on map
+    parking.setMap(map);
+
+    //add a listener to open a infowindow every time the jbb space is clicked
+    google.maps.event.addListener(parking, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, parkingContentString);
+    });
 }

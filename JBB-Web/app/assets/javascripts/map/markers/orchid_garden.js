@@ -1,26 +1,8 @@
-var orchidGardenMarker;
+var orchidGarden;
 
-function addOrchidGardenMaker() {
-	//set position
-	var orchidGardenLatLng = {lat: -15.872070, lng: -47.836940};
+var orchidGardenCoordinate = {lat: -15.872070, lng: -47.836940};
 
-	//set marker at map
-	orchidGardenMarker = new google.maps.Marker({
-		position: orchidGardenLatLng,
-		map: map,
-		title: "Orquidário"
-	});
-
-	//add click listener
-	orchidGardenMarker.addListener('click', addOrchidGardenInfowindow);
-
-	//sets on map
-	orchidGardenMarker.setMap(map);
-}
-
-function addOrchidGardenInfowindow (){
-    //set visitants info to use at infowindow
-    var orchidGardenContentString =
+var orchidGardenContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -34,10 +16,17 @@ function addOrchidGardenInfowindow (){
     '</div>'+
     '</div>';
 
-    infowindow.close();
+var orchidGardenTitle = 'Orquidário';
 
-    //set infowindow
-    infowindow.setContent(orchidGardenContentString);
-    
-    infowindow.open(map, orchidGardenMarker);
+function addOrchidGardenMarker(){
+    //create the jbb space
+    orchidGarden = createJbbSpace(orchidGardenCoordinate, orchidGardenTitle);
+
+    //set the jbb space on map
+    orchidGarden.setMap(map);
+
+    //add a listener to open a infowindow every time the jbb space is clicked
+    google.maps.event.addListener(orchidGarden, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, orchidGardenContentString);
+    });
 }
