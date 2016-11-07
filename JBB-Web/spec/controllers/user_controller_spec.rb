@@ -13,6 +13,15 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe "destroy" do
+    it "deletes users" do
+      sign_in(@user)
+      get :destroy
+      expect(session[:user_id]).to be(nil)
+      expect(response).to redirect_to(home_path)
+    end
+  end
+
   describe "POST create" do
   	it "should successfull create a user" do
   		post :create, :user => {
@@ -29,11 +38,19 @@ RSpec.describe UsersController, type: :controller do
       end
   end
 
-  # describe "GET edit" do
-  #   it "should GET a edit user profile" do
-  #     get :edit
-  #   end
-  # end
+  describe "GET edit" do
+    it "should GET a edit user profile" do
+      get :edit, :id => @user.id
+      expect(response).to redirect_to(home_path)
+    end
+  end
+
+  #INDEX
+  describe "Get show" do  #Dont test PDF
+    it "should show user" do
+      get :show, :id => @user.id
+    end
+  end
 
   describe "PUT update/:id" do
   let(:attr) do
@@ -64,6 +81,12 @@ RSpec.describe UsersController, type: :controller do
 
 end
 
+  describe "my_request" do
+    it "current user" do
+      sign_in(@user)
+      @user = current_user
+    end
+  end
 
 
 

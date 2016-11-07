@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-   before_action except: [:new, :create, :show_user, :show_employee, :index_calendar_month] do 
+   before_action except: [:new, :create, :show_user, :show_employee, :index_calendar_month] do
     @event = Event.find(params[:id])
   end
 
@@ -22,9 +22,6 @@ class EventsController < ApplicationController
       flash[:warning] = "Solicitação não efetuada"
       render action: :new
     end
-  end
-
-  def edit
   end
 
   def show_user
@@ -58,8 +55,8 @@ class EventsController < ApplicationController
         pdf = EventssPdf.new(@event)
         send_data pdf.render, filename: 'formularios.pdf', type: "application/pdf",
         disposition: "inline"
-      end  
-    end 
+      end
+    end
   end
 
   #refuse_confirmation

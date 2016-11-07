@@ -36,14 +36,12 @@ RSpec.describe SessionsHelper, :type => :helper do
     end
   end
 
-  describe 'block_access' do
-    it "expect to redirect to home page" do
-      sign_in(@user)
-      sign_out
-      if current_user.present?
-        expect redirect_to home_path
-      end
-    end
-  end
+  # describe '#block_access' do
+  #   it "expect to redirect to home page" do
+  #     current = User.new
+  #     current.current_user = nil
+  #     expect(subject).to redirect_to(home_path)
+  #   end
+  # end
 
 end

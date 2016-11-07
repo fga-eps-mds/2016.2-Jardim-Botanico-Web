@@ -15,17 +15,6 @@ class User < ApplicationRecord
     minimum: 6
   }
 
-  #default_values
-  def set_default
-    self.name = 'no_name'
-    self.cpf = '01234567890'
-    self.email = 'empty@empty.empty'
-    self.birth = '01/01/01'
-    self.gender = 'Prefer to not declare'
-    self.password_digest = 'no_pass'
-    self.is_employee = false
-  end
-
 
   validate :valid_name, :valid_birth, :valid_gender, :valid_email, :valid_cpf
 
