@@ -1,6 +1,6 @@
 var smallPinus;
-function addSmallPinusPolygon(){
-  var smallPinusPolygonCoords = [
+
+  var smallPinusCoordinates = [
   {lat: -15.864889627107752, lng: -47.83863544464111},
   {lat: -15.864755464930333, lng: -47.83904314041138},
   {lat: -15.864621302663625, lng: -47.8394079208374},
@@ -12,15 +12,11 @@ function addSmallPinusPolygon(){
   {lat: -15.864910267434821, lng: -47.83863544464111},
   ];
 
-  // Construct the polygon.
-  smallPinusPolygon = new google.maps.Polygon({
-    paths: smallPinusPolygonCoords,
-    strokeColor: '#BAE3A9',
-    strokeOpacity: 0.1,
-    strokeWeight: 3,
-    fillColor: '#BAE3A9',
-    fillOpacity: 0.35
-  });
+var smallPinusColor = '#BAE3A9';
+
+function addSmallPinus(){
+  smallPinus = createVegetation(smallPinusCoordinates,
+                                    smallPinusColor);
   
-  smallPinusPolygon.setMap(map);
+  smallPinus.setMap(map);
 }

@@ -10,7 +10,7 @@ development:
   password:
   socket: /var/run/postgresql
 
-test:
+test: &test
   <<: *default
   database: travis_ci_test
   username: travis
@@ -22,3 +22,6 @@ production:
   database: jbbweb
   username: jbbweb
   password: <%= ENV['jbbweb_PASSWORD'] %>
+
+cucumber:
+  <<: *test

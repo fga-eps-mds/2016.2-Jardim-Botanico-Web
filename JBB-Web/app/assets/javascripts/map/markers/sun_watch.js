@@ -1,27 +1,8 @@
-var sunWatchMarker;
+var sunWatch;
 
-function addSunWatchMarker(){
+var sunWatchCoordinate = {lat: -15.873392, lng: -47.836761};
 
-    //set the position in latitude and longitude of the marker
-    var sunWatchLatLng = {lat: -15.873392, lng: -47.836761};
-
-    //add the marker at the map in the position previously defined
-    sunWatchMarker = new google.maps.Marker({
-        position: sunWatchLatLng,
-        map: map,
-        title: 'Relógio de Sol'
-    });
-
-    //add a listener to verify if the marker is clicked
-    sunWatchMarker.addListener('click', addSunWatchInfowindow);
-
-    //set the marker on map
-    sunWatchMarker.setMap(map);
-}
-
-function addSunWatchInfowindow (){
-    //set tea house info, will be used at infowindow
-    var sunWatchInfowindowContentString =
+var sunWatchContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -32,10 +13,17 @@ function addSunWatchInfowindow (){
     '</div>'+
     '</div>';
 
-    infowindow.close();
+var sunWatchTitle = 'Relógio de Sol';
 
-    //set the infowindow with japanese garden info
-    infowindow.setContent(sunWatchInfowindowContentString);
+function addSunWatchMarker(){
+    //create the jbb space
+    sunWatch = createJbbSpace(sunWatchCoordinate, sunWatchTitle);
 
-    infowindow.open(map, sunWatchMarker);
+    //set the jbb space on map
+    sunWatch.setMap(map);
+
+    //add a listener to open a infowindow every time the jbb space is clicked
+    google.maps.event.addListener(sunWatch, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, sunWatchContentString);
+    });
 }

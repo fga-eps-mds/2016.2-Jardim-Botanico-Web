@@ -1,6 +1,6 @@
-var visitantsCenterAdministrativeAreaPolygon;
-function addVisitantsCenterAdministrativeAreaPolygon(){
-  var visitantsCenterAdministrativeAreaPolygonCoords = [
+var visitantsCenterAdministrativeArea;
+
+var visitantsCenterAdministrativeAreaCoordinates = [
   {lat: -15.873764772807835, lng: -47.836993932724},
   {lat: -15.873651255969998, lng: -47.83669352531433},
   {lat: -15.8734758207312, lng: -47.83652186393738},
@@ -18,17 +18,13 @@ function addVisitantsCenterAdministrativeAreaPolygon(){
   {lat: -15.873290065605987, lng: -47.83771276473999},
   {lat: -15.873486140455366, lng: -47.83745527267456},
   {lat: -15.873568698229603, lng: -47.837101221084595},
-  ];
+];
 
-    // Construct the polygon.
-  visitantsCenterAdministrativeAreaPolygon = new google.maps.Polygon({
-    paths: visitantsCenterAdministrativeAreaPolygonCoords,
-    strokeColor: '#DCDA7D',
-    strokeOpacity: 0.1,
-    strokeWeight: 3,
-    fillColor: '#DCDA7D',
-    fillOpacity: 0.50
-  });
+var visitantsCenterAdministrativeAreaColor = '#DCDA7D';
 
-  visitantsCenterAdministrativeAreaPolygon.setMap(map);
+function addVisitantsCenterAdministrativeArea(){
+  visitantsCenterAdministrativeArea = createVegetation(visitantsCenterAdministrativeAreaCoordinates,
+                                      visitantsCenterAdministrativeAreaColor);  
+
+  visitantsCenterAdministrativeArea.setMap(map);
 } 

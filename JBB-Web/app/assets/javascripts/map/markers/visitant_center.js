@@ -1,26 +1,8 @@
-var visitantCenterMarker;
+var visitantCenter;
 
-function addVisitantCenterMaker() {
-	//set position
-	var visitantCenterLatLng = {lat:  -15.873780, lng: -47.836607};
+var visitantCenterCoordinate = {lat:  -15.873780, lng: -47.836607};
 
-	//set marker at map
-	visitantCenterMarker = new google.maps.Marker({
-		position: visitantCenterLatLng,
-		map: map,
-		title: "Centro de Visitantes"
-	});
-
-	//add click listener
-	visitantCenterMarker.addListener('click', addVisitantCenterInfowindow);
-
-	//sets on map
-	visitantCenterMarker.setMap(map);
-}
-
-function addVisitantCenterInfowindow (){
-    //set visitants info to use at infowindow
-    var visitantsCenterContentString =
+var visitantCenterContentString =
     '<div id="content">'+
     '<div id="siteNotice">'+
     '</div>'+
@@ -34,10 +16,17 @@ function addVisitantCenterInfowindow (){
     '</div>'+
     '</div>';
 
-    infowindow.close();
-    
-    //set infowindow
-    infowindow.setContent(visitantsCenterContentString);
+var visitantCenterTitle = 'Centro de Visitantes';
 
-    infowindow.open(map, visitantCenterMarker);
+function addVisitantCenterMarker(){
+    //create the jbb space
+    visitantCenter = createJbbSpace(visitantCenterCoordinate, visitantCenterTitle);
+
+    //set the jbb space on map
+    visitantCenter.setMap(map);
+
+    //add a listener to open a infowindow every time the jbb space is clicked
+    google.maps.event.addListener(visitantCenter, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, visitantCenterContentString);
+    });
 }

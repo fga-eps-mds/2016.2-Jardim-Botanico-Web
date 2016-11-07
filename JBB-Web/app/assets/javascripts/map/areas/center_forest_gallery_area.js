@@ -1,6 +1,6 @@
-var centerForestGaleriaAreaPolygon;
-function addCenterForestGaleriaAreaPolygon(){
-  var centerForestGaleriaAreaPolygonCoords = [
+var centerForestGalleryArea;
+
+var centerForestGalleryAreaCoordinates = [
   {lat: -15.890045463397763, lng: -47.842034976929426},
   {lat: -15.890218304485696, lng: -47.84198937937617},
   {lat: -15.890723928229898, lng: -47.842118125736306},
@@ -134,18 +134,13 @@ function addCenterForestGaleriaAreaPolygon(){
   {lat: -15.891156745467013, lng: -47.844785414636135},
   {lat: -15.89063220379965, lng: -47.84420236945152},
   {lat: -15.890054347634958, lng: -47.8437303006649}
-
   ];
 
-    // Construct the polygon.
-  centerForestGaleriaAreaPolygon = new google.maps.Polygon({
-    paths: centerForestGaleriaAreaPolygonCoords,
-    strokeColor: '#2B7A29',
-    strokeOpacity: 0.1,
-    strokeWeight: 3,
-    fillColor: '#2B7A29',
-    fillOpacity: 0.50
-  });
+var centerForestGalleryAreaColor = '#2B7A29';
 
-  centerForestGaleriaAreaPolygon.setMap(map);
-} 
+function addCenterForestGalleryArea(){
+    centerForestGalleryArea = createVegetation(centerForestGalleryAreaCoordinates,
+                                               centerForestGalleryAreaColor);
+
+    centerForestGalleryArea.setMap(map);
+}

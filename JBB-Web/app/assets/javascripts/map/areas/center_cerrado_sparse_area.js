@@ -1,6 +1,6 @@
-var centerCerradoSparseAreaPolygon;
-function addCenterCerradoSparseAreaPolygon(){
-  var centerCerradoSparseAreaPolygonCoords = [
+var centerCerradoSparseArea;
+
+var centerCerradoSparseAreaCoordinates = [
   {lat: -15.889471905065967, lng: -47.85912498860853},
   {lat: -15.892237352541862, lng: -47.858481258444954},
   {lat: -15.895415506123882, lng: -47.85676464467542},
@@ -155,15 +155,12 @@ function addCenterCerradoSparseAreaPolygon(){
   {lat: -15.890549654595086, lng: -47.85784952357062},
   {lat: -15.88939393981776, lng: -47.858235761668766},
   ];
-    // Construct the polygon.
-  centerCerradoSparseAreaPolygon = new google.maps.Polygon({
-    paths: centerCerradoSparseAreaPolygonCoords,
-    strokeColor: '#399E87',
-    strokeOpacity: 0.1,
-    strokeWeight: 3,
-    fillColor: '#399E87',
-    fillOpacity: 0.50
-  });
 
-  centerCerradoSparseAreaPolygon.setMap(map);
-} 
+var centerCerradoSparseAreaColor = '#399E87';
+
+function addCenterCerradoSparseArea(){
+    centerCerradoSparseArea = createVegetation(centerCerradoSparseAreaCoordinates,
+                                               centerCerradoSparseAreaColor);
+
+    centerCerradoSparseArea.setMap(map);
+}

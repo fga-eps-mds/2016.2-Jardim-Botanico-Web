@@ -1,6 +1,6 @@
-var southRupestresAreaTopPolygon;
-function addSouthRupestresAreaTopPolygon(){
-  var southRupestresAreaTopPolygonCoords = [
+var southRupestresAreaTop;
+
+  var southRupestresAreaTopCoordinates = [
   {lat: -15.91617546028432, lng: -47.88852199941175},
   {lat: -15.914937352313892, lng: -47.88852199941175},
   {lat: -15.913699236714677, lng: -47.88852199941175},
@@ -17,18 +17,14 @@ function addSouthRupestresAreaTopPolygon(){
   {lat: -15.915927839300561, lng: -47.89122566609876},
   {lat: -15.915432596417542, lng: -47.889637798361946},
   {lat: -15.916588161245773, lng: -47.88946613698499},
-  {lat: -15.916051649830587, lng: -47.88826450734632}
-  ];
+  {lat: -15.916051649830587, lng: -47.88826450734632},
+];
+  
+var southRupestresAreaTopColor = '#407489';
 
-    // Construct the polygon.
-  southRupestresAreaTopPolygon = new google.maps.Polygon({
-    paths: southRupestresAreaTopPolygonCoords,
-    strokeColor: '#407489',
-    strokeOpacity: 0.1,
-    strokeWeight: 3,
-    fillColor: '#407489',
-    fillOpacity: 0.55
-  });
+function addSouthRupestresAreaTop(){
+  southRupestresAreaTop = createVegetation(southRupestresAreaTopCoordinates,
+                                      southRupestresAreaTopColor);  
 
-  southRupestresAreaTopPolygon.setMap(map);
+  southRupestresAreaTop.setMap(map);
 } 
