@@ -36,7 +36,7 @@
                 <td> <%= l(event.time_start, format: :time_only) %> </td>
                 <td> <%= event.status %> </td>
                 <td> <%= event.jbb_space_requested %> </td>
-                <td><%= link_to t(:show), action: 'index_user', id: event.id %></td>
+                <td><%= link_to t(:show), "/#{I18n.locale}/events/index_user?id=#{event.id}" %></td>
                 <% if (event.status <=> "Aguardando analise") == 0 %>
                 <td>
                   <%= link_to t(:cancel_event), controller: "events",
@@ -50,7 +50,7 @@
           <br>
           <div class="action" >
             <a id="show" >
-            <%= link_to t(:back), "/#{I18n.locale}"+home_url, class: "btn btn-primary" %>
+            <%= link_to t(:back), "/#{I18n.locale}", class: "btn btn-primary" %>
             </div>
             <br><br><br>
           </div>

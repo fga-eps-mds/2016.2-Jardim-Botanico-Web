@@ -59,7 +59,7 @@
 				<br>
 				<div class = "field" >
 					<b><%= t(:space_request) %></b>
-					<%=f.text_field :jbb_space_requested, class: 'form-control', placeholder: 'Digite o nome do espaço'%>
+					<%=f.text_field :jbb_space_requested, class: 'form-control', placeholder: t(:placeholder_space_request)%>
 				</div>
 				<br>
 				<div class="form-inline">
@@ -131,25 +131,25 @@
 				<p><%= t(:case_institution) %></p>
 				<div class="field">
 					<b><%= t(:name_institute) %></b>
-					<%= f.text_field :name_institute, autocomplete: "off", class: 'form-control', placeholder: 'Digite o nome da instituição'%>
+					<%= f.text_field :name_institute, autocomplete: "off", class: 'form-control', placeholder: t(:placeholder_name_institute) %>
 				</div>
 				<br>
 				<div class="field">
 					<b><%= t(:institute_address) %></b>
-					<%= f.text_field :institute_address, autocomplete: "off", class: 'form-control', placeholder: 'Digite o endereço'%>
+					<%= f.text_field :institute_address, autocomplete: "off", class: 'form-control', placeholder: t(:placeholder_institute_address) %>
 				</div>
 				<br>
 				<div class="field">
 					<b><%= t(:institute_cnpj) %></b>
-					<%= f.text_field :institute_cnpj, autocomplete: "off", class: 'form-control', placeholder: 'Digite o CNPJ, Ex: 000.000.000/0000-00'%>
+					<%= f.text_field :institute_cnpj, autocomplete: "off", class: 'form-control', placeholder: t(:placeholder_institute_cnpj) %>
 				</div>
 				<br>
 				<div class="actions">
-					<%= f.submit "Cadastrar", class: "btn btn-primary"%>
+					<%= f.submit t(:register), class: "btn btn-primary"%>
 					<a id="space" >
-					<%= link_to "Visualizar agenda", show_event_calendar_url , class: "btn btn-primary" %>
+					<%= link_to t(:view_schedule), "/#{I18n.locale}"+show_event_calendar_path, class: "btn btn-primary" %>
 					<a id="new" >
-					<%= link_to "Voltar", root_url , class: "btn btn-primary"%>
+					<%= link_to t(:back), "/#{I18n.locale}", class: "btn btn-primary"%>
 				</div>
 				<%end%>
 			</div>

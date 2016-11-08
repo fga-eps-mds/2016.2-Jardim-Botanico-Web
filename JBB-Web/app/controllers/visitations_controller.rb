@@ -81,7 +81,7 @@ class VisitationsController < ApplicationController
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = "Visitação cancelada"
-      redirect_to show_visitation_url
+      redirect_to "/#{I18n.locale}"+show_visitation_path
     else
       flash[:warning] = "Visitação não pode ser cancelada"
       redirect_to "/#{I18n.locale}"+show_visitation_path
