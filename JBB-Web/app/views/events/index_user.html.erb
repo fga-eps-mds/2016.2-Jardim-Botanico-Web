@@ -107,9 +107,6 @@
           <%= @event.institute_cnpj %>
         </div>
         <br> <p>
-        <% if (@event.status <=> "Aguardando confirmacao") == 0 %>
-          <%= link_to "Cancelar Evento", class: "btn btn-warning destroy-btn", controller: "events", action: "cancel_event_user", id: @event %>
-        <% end %>
         <div class= "actions" >
           <b><%= t(:response_to_request) %></b>
           <%= @event.jbb_response_to_request%>
@@ -118,17 +115,10 @@
           <b><%= t(:price_payment) %></b>
           <%= @event.price_payment%>
         </div>
-        <% if (current_user.is_employee)%>
         <div class= "actions" >
           <a id="back_space" >
-          <%= link_to 'Voltar', show_event_url, class: "btn btn-primary"  %>
+          <%= link_to t(:back), "/#{I18n.locale}"+show_event_user_path, class: "btn btn-primary"  %>
         </div>
-        <%else%>
-        <div class= "actions" >
-          <a id="back_space" >
-          <%= link_to 'Voltar', show_event_user_url, class: "btn btn-primary"  %>
-        </div>
-        <%end%>
         <br>
         <br>
       </div>

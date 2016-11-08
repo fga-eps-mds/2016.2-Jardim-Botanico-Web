@@ -133,20 +133,20 @@
           </div>
 
           <div class="actions">
-              <%= link_to 'Voltar', show_event_employee_url, :required => true, class: "btn btn-primary"%>
+              <%= link_to t(:back), "/#{I18n.locale}"+show_event_employee_path, :required => true, class: "btn btn-primary"%>
               <% if (@event.status <=> "Aguardando analise") == 0 %>
-                  <%= link_to "Aceitar Evento", get_accept_event_employee_url(:id => @event.id), class: "btn btn-primary" %>
-                  <%= link_to "Recusar Evento", get_refuse_event_employee_url(:id => @event.id), class: "btn btn-warning destroy-btn" %>
+                  <%= link_to t(:accept_event), "/#{I18n.locale}"+get_accept_event_employee_path(:id => @event.id), class: "btn btn-primary" %>
+                  <%= link_to t(:refuse_event), "/#{I18n.locale}"+get_refuse_event_employee_path(:id => @event.id), class: "btn btn-warning destroy-btn" %>
               <%end%>
               <%if (@event.status <=> "Agendado") == 0%>
-                 <%= link_to "Cancelar Evento", get_cancel_event_employee_url(:id => @event.id), class: "btn btn-warning destroy-btn" %>
+                 <%= link_to t(:cancel_event), "/#{I18n.locale}"+get_cancel_event_employee_path(:id => @event.id), class: "btn btn-warning destroy-btn" %>
               <%end%>
               <% if (@event.status <=> "Cancelado por funcionario") == 0 ||
                   (@event.status <=> "Cancelado pelo usuario") == 0 ||
                   (@event.status <=> "Recusado por funcionario") == 0 %>
-                  <%= link_to "Deletar Evento", get_delete_event_employee_url(:id => @event.id), class: "btn btn-warning destroy-btn" %>
+                  <%= link_to t(:delete_event), "/#{I18n.locale}"+get_delete_event_employee_path(:id => @event.id), class: "btn btn-warning destroy-btn" %>
               <%end%>
-              <%= link_to "Gerar PDF", events_path(format: 'pdf', :id => @event.id), class: "btn btn-primary"%>
+              <%= link_to t(:generate_pdf), events_path(format: 'pdf', :id => @event.id), class: "btn btn-primary"%>
           </div>
         <%end%>
         </div>

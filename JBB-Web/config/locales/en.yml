@@ -135,3 +135,7 @@ en:
     case_institution: "In case of institution:"
     show_event: "Show event"
     cancel_event: "Cancel event"
+    accept_event: "Accept event"
+    refuse_event: "Refuse event"
+    delete_event: "Delete event"
+    generate_pdf: "Generate PDF"

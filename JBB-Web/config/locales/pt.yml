@@ -193,3 +193,7 @@ pt:
     case_institution: "Em Caso de instituição:"
     show_event: "Mostrar eventos"
     cancel_event: "Cancelar evento"
+    accept_event: "Aceitar evento"
+    refuse_event: "Recusar Evento"
+    delete_event: "Deletar evento"
+    generate_pdf: "Gerar PDF"
