@@ -145,7 +145,7 @@
 				</div>
 				<br>
 				<div class="actions">
-					<%= link_to t(:register), "/#{I18n.locale}"+show_event_user_path,class: "btn btn-primary"%>
+					<%= f.submit t(:register), class: "btn btn-primary"%>
 					<a id="space" >
 					<%= link_to t(:view_schedule), "/#{I18n.locale}"+show_event_calendar_path, class: "btn btn-primary" %>
 					<a id="new" >

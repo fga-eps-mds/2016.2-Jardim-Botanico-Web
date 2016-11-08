@@ -17,7 +17,7 @@ class EventsController < ApplicationController
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
       flash[:success] = "Solicitação de evento efetuada com sucesso!"
-      redirect_to show_event_user_url
+      redirect_to "/#{I18n.locale}"+show_event_user_path
     else
       flash[:warning] = "Solicitação não efetuada"
       render action: :new
@@ -38,7 +38,7 @@ class EventsController < ApplicationController
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
       flash[:warning] = "Evento cancelada pelo usuário"
-      redirect_to show_event_user_url
+      redirect_to "/#{I18n.locale}"+show_event_user_path
     end
   end
 
@@ -66,10 +66,10 @@ class EventsController < ApplicationController
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
       flash[:success] = "Evento recusado"
-      redirect_to show_event_employee_url
+      redirect_to "/#{I18n.locale}"+show_event_employee_path
     else
       flash[:warning] = "Evento não pode ser recusado"
-      redirect_to show_event_employee_url
+      redirect_to "/#{I18n.locale}"+show_event_employee_path
     end
   end
 
@@ -79,10 +79,10 @@ class EventsController < ApplicationController
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
       flash[:success] = "Evento cancelado"
-      redirect_to show_event_employee_url
+      redirect_to "/#{I18n.locale}"+show_event_employee_path
     else
       flash[:warning] = "Evento não pode ser cancelado"
-      redirect_to show_event_employee_url
+      redirect_to "/#{I18n.locale}"+show_event_employee_path
     end
   end
 
@@ -95,10 +95,10 @@ class EventsController < ApplicationController
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
       flash[:success] = "Evento confirmado"
-      redirect_to show_event_employee_url
+      redirect_to "/#{I18n.locale}"+show_event_employee_path
     else
       flash[:warning] = "Evento não pode ser confirmado"
-      redirect_to show_event_employee_url
+      redirect_to "/#{I18n.locale}"+show_event_employee_path
     end
   end
 
@@ -107,10 +107,10 @@ class EventsController < ApplicationController
     if @event.destroy
       UserMailer.change_status_event(@event).deliver_now
       flash[:success] = "Evento deletado"
-      redirect_to show_event_employee_url
+      redirect_to "/#{I18n.locale}"+show_event_employee_path
     else
       flash[:warning] = "Evento não pode ser deletado"
-      redirect_to show_event_employee_url
+      redirect_to "/#{I18n.locale}"+show_event_employee_path
     end
   end
 
