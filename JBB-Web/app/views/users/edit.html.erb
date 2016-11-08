@@ -41,17 +41,17 @@
           <% end %>
           <div class="field">
             <%= f.label t(:name) %>
-            <%= f.text_field :name, :required => true, autocomplete: "off", class: 'form-control', placeholder: 'Digite seu nome e sobrenome' %>
+            <%= f.text_field :name, :required => true, autocomplete: "off", class: 'form-control', placeholder: t(:placeholder_name) %>
           </div>
           <br>
           <div class="field">
-            <%= f.label t(:mail) %>
-            <%= f.email_field :email, :required => true, autocomplete: "off", class: 'form-control', placeholder: 'Digite seu email, ex: example@host.com' %>
+            <%= f.label t(:email) %>
+            <%= f.email_field :email, :required => true, autocomplete: "off", class: 'form-control', placeholder: t(:placeholder_email) %>
           </div>
           <br>
           <div class="field">
             <%= f.label t(:password) %>
-            <%= f.password_field :password, :required => true, autocomplete: "off", class: 'form-control' , placeholder: 'Digite sua senha, minimo 5 caracteres' %>
+            <%= f.password_field :password, :required => true, autocomplete: "off", class: 'form-control' , placeholder: t(:placeholder_password) %>
           </div>
           <br>
           <div class="field">
@@ -72,12 +72,13 @@
           <br>
           <div class="form-group">
             <label for="gender"><%=t(:gender)%></label>
-            <%= f.select :gender, ["", "Feminino", "Masculino", "Outro"], :required => true, class: 'form-control' %>
+            <%genders = [["", ""], [t(:female), "Feminino"], [t(:male), "Masculino"], [t(:other), "Outro"]] %>
+            <%= f.select :gender, genders, :required => true, class: 'form-control' %>
           </div>
           <div class="field">
             <%= f.label t(:birth) %>
-            <%= f.text_field :birth, :required => true, autocomplete: "off", id: 'date',class: 'form-control',
-                             placeholder: 'Ex.: dd/mm/aaaa', maxlength: '10',
+            <%= f.text_field :birth, :required => true, autocomplete: "off", id: 'date', class: 'form-control',
+                             value: @user.birth.strftime("%d/%m/%Y"), placeholder: t(:placeholder_birth), maxlength: '10',
                              :onkeypress => "DateMask(this)", :onblur => "ValidateDate(this)"%>
           </div>
           <br>

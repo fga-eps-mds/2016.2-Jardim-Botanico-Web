@@ -17,7 +17,7 @@
         <hr class="primary">
       </div>
        <p>
-        <b> <%= t(:mail) %> </b>
+        <b> <%= t(:email) %> </b>
         <%= current_user.email %>
       </p>
       <p>
@@ -32,11 +32,19 @@
       </p>
       <p>
         <b> <%= t(:gender) %> </b>
-        <%= current_user.gender %>
+        <% if (@user.gender <=> "Feminino") == 0 %>
+        <%= t(:female) %>
+        <%end%>
+        <% if (@user.gender <=> "Masculino") == 0 %>
+        <%= t(:male) %>
+        <%end%>
+        <% if (@user.gender <=> "Outro") == 0 %>
+        <%= t(:other) %>
+        <%end%>
       </p>
       <p>
         <b> <%= t(:birth) %> </b>
-        <%= current_user.birth %>
+        <%= l(current_user.birth, format: :long) %>
       </p>
       <div class="actions">
         <%= link_to  t(:edit), user_edit_path(@language,current_user), class: "btn btn-primary" %>
