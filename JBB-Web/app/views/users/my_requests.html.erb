@@ -21,9 +21,9 @@
         <div class="col-md-6 text-center">
           <div class="service-box">
                 <% if current_user.is_employee %>
-                    <a href="/visitations/show">
+                    <a href="/<%= @language %>/visitations/show">
                   <% else %>
-                    <a href="/visitations/show_user">
+                    <a href="/<%= @language %>/visitations/show_user">
                   <% end%>
             <i class="fa fa-4x fa-map-marker text-primary sr-icons"></i>
             <% if current_user %>
@@ -38,11 +38,11 @@
         </div>
       <div class="col-md-6 text-center">
         <div class="service-box">
-                <% if current_user.is_employee %>
-                    <a href="/events/show_employee">
-                  <% else %>
-                    <a href="/events/show_user">
-                  <% end%>
+            <% if current_user.is_employee %>
+              <a href="/<%= @language %>/events/show_employee">
+            <% else %>
+              <a href="/<%= @language %>/events/show_user">
+            <% end%>
           <i class="fa fa-4x fa-users text-primary sr-icons"></i>
           <% if current_user %>
              <% if current_user.is_employee %>

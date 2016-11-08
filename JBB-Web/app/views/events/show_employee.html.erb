@@ -32,7 +32,7 @@
                             <td> <%= l(event.time_start, format: :time_only) %> </td>
                             <td> <%= event.status %> </td>
                             <td> <%= event.jbb_space_requested %> </td>
-                            <td><%= link_to 'Mostrar', action: 'index_employee', id: event.id %></td>
+                            <td><%= link_to t(:show), "/#{I18n.locale}/events/index_employee?id=#{event.id}" %></td>
                         </tr>
                         <%end%>
                     </table>
@@ -40,7 +40,8 @@
                     <%= @sum_of_payments %>
                 </div>
                 <%= link_to "Gerar PDF", show_event_employee_path(format: 'pdf'), class: "btn btn-primary"%>
-                <%= link_to "Voltar", home_url, class: "btn btn-primary" %>
+                <a id="back_space" >
+                <%= link_to t(:back), home_url, class: "btn btn-primary" %>
             </div>
         </div>
     </div>
