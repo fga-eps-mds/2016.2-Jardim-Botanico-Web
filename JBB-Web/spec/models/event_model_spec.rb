@@ -88,13 +88,6 @@ RSpec.describe Event, :type => :model do
       end
     end
 
-    describe "awaiting_user_confirmation" do
-      it "must return the wanting status" do
-        event = Event.new
-        event.awaiting_user_confirmation == "Aguardando confirmacao do usuario"
-      end
-    end
-
     describe "canceled_by_user" do
       it "must return the canceled by user status" do
         event = Event.new
