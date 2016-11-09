@@ -1,7 +1,6 @@
 class Event < ApplicationRecord
 	belongs_to :user
 
-
 	# validation of dates
 	validates :date_start, presence: true
 	validates :date_end, presence: true
