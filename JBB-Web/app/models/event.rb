@@ -1,15 +1,6 @@
 class Event < ApplicationRecord
 	belongs_to :user
 
-  # schedule 
-  def start_time
-  	self.date_start
-  end
-
-  def end_time
-  	self.date_end
-  end
-
 
 	# validation of dates
 	validates :date_start, presence: true
@@ -35,10 +26,6 @@ class Event < ApplicationRecord
 
 	def canceled_by_employee
 		self.status = "Cancelado por funcionario"
-	end
-
-	def awaiting_user_confirmation
-		self.status = "Aguardando confirmacao do usuario"
 	end
 
 	def canceled_by_user
