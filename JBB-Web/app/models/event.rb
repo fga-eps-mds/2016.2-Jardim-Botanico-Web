@@ -1,13 +1,13 @@
 class Event < ApplicationRecord
 	belongs_to :user
 
-  # schedule
+  # schedule 
   def start_time
-    self.date_start
+  	self.date_start
   end
 
   def end_time
-    self.date_end
+  	self.date_end
   end
 
 
@@ -26,11 +26,11 @@ class Event < ApplicationRecord
 	validates :estimated_public, presence: true, numericality: { greater_than: 0 }
 
 	def set_status_default
-    self.status = "Aguardando analise"
+		self.status = "Aguardando analise"
 	end
 
 	def self.total
-	  self.sum(:price_payment)
+		self.sum(:price_payment)
 	end
 
 	def canceled_by_employee
@@ -38,7 +38,7 @@ class Event < ApplicationRecord
 	end
 
 	def awaiting_user_confirmation
-    self.status = "Aguardando confirmacao do usuario"
+		self.status = "Aguardando confirmacao do usuario"
 	end
 
 	def canceled_by_user
