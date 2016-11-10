@@ -1,61 +1,73 @@
-<body id="page-top">
-  <head>
-    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="css/creative.css" rel="stylesheet">
-  </head>
-  <body id="aplication-body">
-    <section id="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Mostrar Eventos</h2>
-            <hr class="primary">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="css/creative.css" rel="stylesheet">
+</head>
+<body id="aplication-body">
+  <section id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Meus Eventos</h2>
+          <hr class="primary">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+                <% flash.each do |key, value| %>
+                <div class="alert alert-<%= key %>">
+                  <%= value %></div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <div class="col-md-6 col-md-offset-3">
-    </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <% flash.each do |key, value| %>
-          <div class="alert alert-<%= key %>"><%= value %></div>
-          <% end %>
-          <div class="table-hover">
-            <table border=0 class="table" >
-              <tr>
-                <th>Data</th>
-                <th>Hora</th>
-                <th>Status</th>
-                <th>Espaço Solicitado</th>
-              </tr>
-              <% @event.each do |event| %>
-              <tr>
-                <td> <%= event.date_start.strftime("%d/%m/%Y") %> </td>
-                <td> <%= event.time_start.to_s(:time) %> </td>
-                <td> <%= event.status %> </td>
-                <td> <%= event.jbb_space_requested %> </td>
-                <td><%= link_to 'Mostrar', action: 'index_user', id: event.id %></td>
-                <% if (event.status <=> "Aguardando analise") == 0 %>
-                <td>
-                  <%= link_to "Cancelar Evento", controller: "events",
-                  action: "cancel_event_user", id: event %>
-                </td>
-                <%end%>
-              </tr>
+    <div class="col-md-10 col-md-offset-1">
+      <div class="table-hover">
+        <% if !@event.empty?%>
+        <div class="table-hover">
+          <table border=0 class="table" >
+            <tr>
+              <th>Data</th>
+              <th>Hora</th>
+              <th>Status</th>
+              <th>Espaço Solicitado</th>
+            </tr>
+            <% @event.each do |event| %>
+            <tr>
+              <td> <%= event.date_start.strftime("%d/%m/%Y") %> </td>
+              <td> <%= event.time_start.to_s(:time) %> </td>
+              <td> <%= event.status %> </td>
+              <td> <%= event.jbb_space_requested %> </td>
+              <td><%= link_to 'Mostrar', action: 'index_user', id: event.id %></td>
+              <% if (event.status <=> "Aguardando analise") == 0 %>
+              <td>
+                <%= link_to "Cancelar Evento", controller: "events",
+                action: "cancel_event_user", id: event %>
+              </td>
               <%end%>
-            </table>
-          </div>
-          <br>
-          <div class="action" >
-            <a id="show" >
+            </tr>
+            <%end%>
+          </table>
+          <a id="show" >
             <%= link_to "Voltar", home_url, class: "btn btn-primary" %>
+            <% else %>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12 text-center">
+                  <h1>Você não possui eventos agendadas</h1>
+                </div>
+              </div>
             </div>
-            <br><br><br>
+            <br>
+            <% end %>
           </div>
         </div>
       </div>
     </body>
-  </body>
+    
+
 
