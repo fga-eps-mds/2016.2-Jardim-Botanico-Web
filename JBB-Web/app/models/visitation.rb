@@ -14,7 +14,8 @@ class Visitation < ApplicationRecord
   validates :visitants_amount, presence: true
   validate :validate_visitants_amount
 
-
+  
+  # validate the amount of visitors informed by the user
   def validate_visitants_amount
     if (self.visitants_amount > 100)
       errors.add(:visitants_amount, "A quantidade máxima por visitação é de 100 pessoas")
@@ -25,24 +26,26 @@ class Visitation < ApplicationRecord
     end
   end
 
-
-  #status
-  def set_status_default
-    self.status = "Aguardando confirmacao"
-  end
-
-
+  
+  # inform the cost of visitation
   def self.total
     self.sum(:visitation_cost)
   end
 
-
+  
+  # calculate the visitation cost
   def set_visitation_cost
     if (self.visitation_type <=> "Escola publica")
       self.visitation_cost = 0
     else
       self.visitation_cost = (self.visitants_paying * 5)
     end
+  end
+
+
+  #status
+  def set_status_default
+    self.status = "Aguardando confirmacao"
   end
 
 
