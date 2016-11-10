@@ -13,19 +13,19 @@
         <%= form_for :session, url: sign_in_path do |f| %>
         <div class="field">
          <%= f.label :email %><br />
-         <%= f.email_field :email, autofocus: true, :required => true, class: "form-control" %>
+         <%= f.email_field :email, autofocus: true, :required => true, id: "user_email", class: "form-control" %>
         </div>
         <br>
         <div class="field">
         <%= f.label :senha %><br />
-        <%= f.password_field :password, autocomplete: "off", :required => true, class: "form-control" %>
+        <%= f.password_field :password, autocomplete: "off", :required => true, id: "user_password", class: "form-control"%>
         </div>
          <div class="checkbox">
           <label><input type="checkbox">Lembrar-me</label>
         </div>
         <br>
         <div class="actions">
-         <%= f.submit "Entrar", class: "btn btn-primary" %>
+         <%= f.submit "Entrar", id:"entrar", class: "btn btn-primary" %>
           <a id="back_space" >
           <%= link_to "Voltar", home_url, class: "btn btn-primary" %>
         </div>
