@@ -2,7 +2,6 @@ class Phone < ApplicationRecord
 	belongs_to :user, inverse_of: :phones
 
 	validate :valid_phone
-
 	
 	#phone
   def valid_phone
@@ -16,5 +15,4 @@ class Phone < ApplicationRecord
       errors.add(:phone, "Telefone inválido")
     end
   end
-
 end
