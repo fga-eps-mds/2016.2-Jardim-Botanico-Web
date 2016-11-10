@@ -129,6 +129,5 @@ RSpec.describe Event, :type => :model do
         event.date_end
       end
     end
-
   end
 end
