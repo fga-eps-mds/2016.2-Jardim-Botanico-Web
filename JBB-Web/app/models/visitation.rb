@@ -46,6 +46,12 @@ class Visitation < ApplicationRecord
   end
 
 
+  #status
+  def set_status_default
+    self.status = "Aguardando confirmacao"
+  end
+
+
   def canceled_by_employee
     self.status = "Cancelado por funcionario"
   end
