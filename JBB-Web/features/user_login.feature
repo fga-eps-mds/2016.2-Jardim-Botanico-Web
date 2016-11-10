@@ -9,7 +9,6 @@ Scenario: login
 	When I try to login with email and password
 	Then I am redirected to home page
 
-
 Scenario: login with wrong email
 	Given I have accessed the login page
 	And I already have an account
@@ -21,4 +20,3 @@ Scenario: login with wrong password
 	And I already have an account
 	When I try to login with a wrong password
 	Then I get the error message
-
