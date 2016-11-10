@@ -17,7 +17,7 @@ FactoryGirl.define do
     status "Aguardando confirmacao"
     visitants_amount 10
     description "Visita marcada ao JBB sábado"
-    visitants_paying 200
+    visitants_paying 10
   end
 
   factory :event do
