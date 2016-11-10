@@ -3,16 +3,7 @@ Given(/^I have accessed the login page$/) do
 end
 
 Given(/^I already have an account$/) do
-  @user = User.create!
-    {
-  :name => "Nome Sobrenome", 
-  :email => "email@email.com", 
-  :password => "12345", 
-  :cpf => "0404854113", 
-  :phone => "6199999999",
-  :gender => "Masculino",
-  :birth => "01011991"
-  }
+  pending # Write code here that turns the phrase above into concrete actions
 end
 
 When(/^I try to login with a wrong email$/) do
