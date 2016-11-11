@@ -24,7 +24,6 @@ Given(/^I already have an account$/) do
 end
 
 When(/^I try to login with a wrong email$/) do
-<<<<<<< HEAD
   fill_in 'user_email', :with => "adailson@gmail.com"
   fill_in 'user_password', :with => @user.password
   click_button('entrar')
