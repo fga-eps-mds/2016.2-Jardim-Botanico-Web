@@ -45,14 +45,7 @@ class VisitationsController < ApplicationController
     @visitations_sorted = @visitations.sort_by {|visitation| visitation.status}
     @visitation_types = Visitation.all.select(:id, :visitation_type)
     @sum_of_payments = Visitation.total
-    respond_to do |format|
-      format.html
-      format.pdf do
-        pdf = VisitationsPdf.new()
-        send_data pdf.render, filename: 'formularios.pdf', type: "application/pdf",
-        disposition: "inline"
-      end  
-    end
+    select_pdf(VisitationsPdf.new())
   end
 
   #index

@@ -6,6 +6,16 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   private
+  	def select_pdf(pdf_option)
+  		respond_to do |format|
+  		  format.html
+  		  format.pdf do
+  		    pdf = pdf_option
+  		    send_data pdf.render, filename: 'formularios.pdf', type: "application/pdf",
+  		    disposition: "inline"
+  		  end  
+  		end
+  	end
 	def current_visitation
 		@current_visitation ||= Visitation.find(session[:visitation_id])
 		if session[:visitation_id]
