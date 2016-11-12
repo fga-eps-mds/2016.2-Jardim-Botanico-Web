@@ -8,6 +8,7 @@ function setTrails() {
         labiataTrail.setMap(null);
         bikeTourEasy.setMap(null);
         bikeTourMedium.setMap(null);
+        medicinalTrail.setMap(null);
 
         trails_on = false;
         infowindow.close();
@@ -18,6 +19,7 @@ function setTrails() {
         addLabiataTrail();
         addBikeTourEasy();
         addBikeTourMedium();
+        addmedicinalTrail();
 
         trails_on = true;
     }
