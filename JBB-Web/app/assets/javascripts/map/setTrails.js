@@ -7,6 +7,7 @@ function setTrails() {
         matterTrail.setMap(null);
         labiataTrail.setMap(null);
         bikeTourEasy.setMap(null);
+        bikeTourMedium.setMap(null);
 
         trails_on = false;
         infowindow.close();
@@ -16,6 +17,7 @@ function setTrails() {
         addMatterTrail();
         addLabiataTrail();
         addBikeTourEasy();
+        addBikeTourMedium();
 
         trails_on = true;
     }

@@ -653,24 +653,6 @@ var ecologicTrailCoordinates = [
     {lat: -15.881824046823354, lng: -47.83576869963781},
     {lat: -15.88181243761418, lng: -47.83579552172796},
     {lat: -15.881806633009344, lng: -47.83583307265417},
-    {lat: -15.881805343097138, lng: -47.835881352416436},
-    {lat: -15.881704084960491, lng: -47.83590146898405},
-    {lat: -15.881626690173912, lng: -47.83594371377603},
-    {lat: -15.881550585268995, lng: -47.83601881562845},
-    {lat: -15.881504793322291, lng: -47.836107999078195},
-    {lat: -15.881419658976101, lng: -47.83628301322153},
-    {lat: -15.880372632470397, lng: -47.83969196716498},
-    {lat: -15.880358443334611, lng: -47.83981803098868},
-    {lat: -15.88029652709402, lng: -47.83997628132056},
-    {lat: -15.880242350367903, lng: -47.840067476427066},
-    {lat: -15.880132706949006, lng: -47.84015062490653},
-    {lat: -15.879411122818675, lng: -47.84031665325983},
-    {lat: -15.879359525690475, lng: -47.840075254571275},
-    {lat: -15.879284709859652, lng: -47.83977216495259},
-    {lat: -15.879189255138591, lng: -47.839461028706864},
-    {lat: -15.879078321216745, lng: -47.839230358567875},
-    {lat: -15.87877131771916, lng: -47.83878779408042},
-    {lat: -15.878745519084607, lng: -47.838747560945194},
 ];
 
 var ecologicTrailColor = '#15317e';
@@ -683,7 +665,7 @@ function addEcologicTrail(){
     ecologicTrail.setMap(map);
 
     //add a listener to open a infowindow every time the river is clicked
-    google.maps.event.addListener(ecologicTrail, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, ecologicTrailContentString);
-    });
+    // google.maps.event.addListener(ecologicTrail, 'click', function(clicked_location) {
+    //     addInfowindow(clicked_location.latLng, ecologicTrailContentString);
+    // });
 }
