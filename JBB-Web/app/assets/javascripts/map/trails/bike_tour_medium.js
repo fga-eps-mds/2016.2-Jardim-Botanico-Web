@@ -61,7 +61,7 @@ var bikeTourMediumCoordenates = [
 ];
 
 
-var bikeTourMediumColor = '#ccffcc';
+var bikeTourMediumColor = '#660033';
 
 function addBikeTourMedium(){
     //create the river

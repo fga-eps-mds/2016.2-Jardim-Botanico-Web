@@ -3,6 +3,7 @@ var trails_on  = false;
 //Shows or remove trails at map
 function setTrails() {
     if(trails_on) {
+        transcerradoTrail.setMap(null);
         ecologicTrail.setMap(null);
         matterTrail.setMap(null);
         labiataTrail.setMap(null);
@@ -14,6 +15,7 @@ function setTrails() {
         infowindow.close();
     }
     else {
+        addTrancerradoTrail();
         addEcologicTrail();
         addMatterTrail();
         addLabiataTrail();
