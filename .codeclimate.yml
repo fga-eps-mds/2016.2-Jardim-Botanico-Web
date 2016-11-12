@@ -34,6 +34,5 @@ exclude_paths:
 - "JBB-Web/vendor/assets/"
 - "JBB-Web/app/assets/"
 - "JBB-Web/app/assets/channels/"
-- "JBB-Web/app/assets/javascripts/*.js"
 - "JBB-Web/app/assets/jobs/"
 - "JBB-Web/app/assets/mailers/"
