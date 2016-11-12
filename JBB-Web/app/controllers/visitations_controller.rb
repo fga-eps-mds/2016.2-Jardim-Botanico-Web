@@ -65,15 +65,6 @@ class VisitationsController < ApplicationController
   #refuse_confirmation
   def refuse_visitation_employee
     refuse_employee(@visitation)
-    # @visitation.refused_by_employee
-    # if @visitation.save
-    #   UserMailer.change_status_visitation(@visitation).deliver_now
-    #   flash[:success] = "Visitação recusada"
-    #   redirect_to show_visitation_url
-    # else
-    #   flash[:warning] = "Visitação não pode ser recusada"
-    #   redirect_to show_visitation_url
-    # end
   end
 
   #cancel_confirmation
