@@ -21,7 +21,7 @@ function initialize() {
     map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
     infowindow = new google.maps.InfoWindow();
     addJbbVisitantsArea();
-    addJbbEcologicalStation();
+    addJbbEcologicalStation(map);
 }
 
 function loadScript() {

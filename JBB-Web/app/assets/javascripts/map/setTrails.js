@@ -6,13 +6,16 @@ function setTrails() {
         ecologicTrail.setMap(null);
         matterTrail.setMap(null);
         labiataTrail.setMap(null);
+        bikeTourEasy.setMap(null);
 
         trails_on = false;
         infowindow.close();
-    }else{
+    }
+    else {
         addEcologicTrail();
         addMatterTrail();
         addLabiataTrail();
+        addBikeTourEasy();
 
         trails_on = true;
     }

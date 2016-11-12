@@ -1,5 +1,13 @@
 var jbbVisitantsArea;
 
+var coordenadasLat = [];
+var coordenadasLng = [];
+var i=0;
+var k=0;
+var l=0;
+var j=0;
+
+
 var jbbVisitantsAreaCoordinates = [
     //border between JBB visitants area and JBB ecological station
     {lat: -15.866386, lng: -47.842951},
@@ -111,4 +119,18 @@ function addJbbVisitantsArea(){
                                         jbbVisitantsAreaColor);
 
     jbbVisitantsArea.setMap(map);
+    jbbVisitantsArea.addListener('click', showPosition);
+
+
+}
+
+function showPosition(event) {
+    coordenadasLat[i++] = event.latLng.lat();
+    coordenadasLng[j++] = event.latLng.lng();
+    if (i > 4){
+        for (j = 0; j < i; j++) {
+            window.document.write("{lat: ",coordenadasLat[j], ",");
+            window.document.write(" lng: ",coordenadasLng[j], "},<br>");
+        }
+    }
 }
