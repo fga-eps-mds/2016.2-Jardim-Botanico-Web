@@ -50,7 +50,9 @@
           <br>
           <div class="action" >
             <a id="show" >
-            <%= link_to "Voltar", home_url, class: "btn btn-primary" %>
+            <%= link_to "Voltar", user_my_requests_path(current_user), class: "btn btn-primary" %>
+            <a id="back_space_new" >
+            <%= link_to "Novo Evento", events_path, class: "btn btn-primary" %>
             </div>
             <br><br><br>
           </div>
@@ -58,4 +60,3 @@
       </div>
     </body>
   </body>
-

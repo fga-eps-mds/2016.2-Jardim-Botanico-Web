@@ -60,7 +60,11 @@
             <% end %>
           </table>
           <a id="show" >
-          <%= link_to "Voltar", home_url, class: "btn btn-primary" %>
+              <%= link_to "Voltar", user_my_requests_path(current_user), class: "btn btn-primary" %>
+              <a id="back_space_new" >
+            <%= link_to "Nova Visita", new_visitation_path, class: "btn btn-primary" %>
+
+            <!-- <a href="/visitations/new">Nova Visita</a> -->
           <% else %>
           <div class="container">
             <div class="row">
