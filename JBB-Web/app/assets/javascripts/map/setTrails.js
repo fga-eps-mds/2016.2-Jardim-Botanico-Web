@@ -20,6 +20,7 @@ function setTrails() {
         addBikeTourEasy();
         addmedicinalTrail();
         addEcologicTrail();
+        addAcessibleTrail();
 
         trails_on = true;
     }
