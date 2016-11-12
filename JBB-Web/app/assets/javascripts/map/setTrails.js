@@ -6,7 +6,6 @@ function setTrails() {
         transcerradoTrail.setMap(null);
         ecologicTrail.setMap(null);
         matterTrail.setMap(null);
-        labiataTrail.setMap(null);
         bikeTourEasy.setMap(null);
         bikeTourMedium.setMap(null);
         medicinalTrail.setMap(null);
@@ -16,12 +15,11 @@ function setTrails() {
     }
     else {
         addTrancerradoTrail();
-        addEcologicTrail();
-        addMatterTrail();
-        addLabiataTrail();
-        addBikeTourEasy();
         addBikeTourMedium();
+        addMatterTrail();
+        addBikeTourEasy();
         addmedicinalTrail();
+        addEcologicTrail();
 
         trails_on = true;
     }
