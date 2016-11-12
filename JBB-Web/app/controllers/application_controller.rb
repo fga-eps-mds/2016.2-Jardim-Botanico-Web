@@ -21,21 +21,21 @@ class ApplicationController < ActionController::Base
   def refuse_employee (object)
     object.refused_by_employee
     if object.save
-      if object.class == Visitation
-        UserMailer.change_status_visitation(object).deliver_now
-        flash[:success] = "Visita recusada"
-        redirect_to show_visitation_url
-      elsif object.class == Event
-        UserMailer.change_status_event(object).deliver_now
-        flash[:success] = "Evento recusada"
+      if object.class = Event
+        UserMailer.change_status_event(@event).deliver_now
+        flash[:success] = "Evento recusado"
         redirect_to show_event_employee_url
+      elsif object.class = Visitation
+        UserMailer.change_status_visitation(@visitation).deliver_now
+        flash[:success] = "Visitação recusada"
+        redirect_to show_visitation_url
       end
     else
       flash[:warning] = "Erro ao recusar"
-      if object.class == Visitation
-        redirect_to show_visitation_url
-      elsif object.class == Event
+      if object.class = Event
         redirect_to show_event_employee_url
+      elsif object.class = Visitation
+        redirect_to show_visitation_url
       end
     end
   end

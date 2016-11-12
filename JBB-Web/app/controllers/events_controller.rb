@@ -62,16 +62,6 @@ class EventsController < ApplicationController
   #refuse_confirmation
   def refuse_event_employee
     refuse_employee(@event)
-    # @event.refused_by_employee
-    # @event.jbb_response_to_request = (params[:jbb_response_to_request])
-    # if @event.save
-    #   UserMailer.change_status_event(@event).deliver_now
-    #   flash[:success] = "Evento recusado"
-    #   redirect_to show_event_employee_url
-    # else
-    #   flash[:warning] = "Evento não pode ser recusado"
-    #   redirect_to show_event_employee_url
-    # end
   end
 
   #cancel_confirmation
