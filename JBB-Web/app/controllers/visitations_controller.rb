@@ -1,5 +1,5 @@
 class VisitationsController < ApplicationController
-  before_action except: [:home, :new, :create, :show_user, :show, :index_calendar_month] do
+  before_action except: [:home, :new, :create, :show_user, :show_employee, :index_calendar_month] do
     @visitation = Visitation.find(params[:id])
   end
 
@@ -38,17 +38,19 @@ class VisitationsController < ApplicationController
     end
   end
 
+
+  #show
   def show_user
     @visitation = Visitation.where(user_id: current_user.id)
   end
 
-  #show
-  def show
+  def show_employee
     @visitations = Visitation.all
     @visitations_sorted = @visitations.sort_by {|visitation| visitation.status}
     @visitation_types = Visitation.all.select(:id, :visitation_type)
     @sum_of_payments = Visitation.total
   end
+
 
   #index
   def index

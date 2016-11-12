@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   resources :visitations, :except => [:show, :update, :destroy]
 
   get 'visitations/home', as: 'home_visitation'
-  get 'visitations/show', as: 'show_visitation'
+  get 'visitations/show_employee', as: 'show_visitation_employee'
   get 'visitations/show_user', as: 'show_visitation_user'
   get 'visitations/index', as: 'index_visitation'
 
