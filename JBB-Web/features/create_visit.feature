@@ -13,6 +13,7 @@ Scenario: To create a sucessful visit
 	And I click in 'Cadastrar'
 	Then I should see "Solicitação de visita efetuada com sucesso!"
 
+<<<<<<< HEAD
 Scenario: To create a sucessful visit in text box
 	Given I have accessed the login page
 	And I already have an account 
@@ -22,3 +23,5 @@ Scenario: To create a sucessful visit in text box
 	And I fill the new visit form
 	And I click in 'Cadastrar'
 	Then I should see "Solicitação de visita efetuada com sucesso!"
+=======
+>>>>>>> Acceptance Tests

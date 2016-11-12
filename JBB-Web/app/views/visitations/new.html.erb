@@ -13,6 +13,7 @@ u<body id="page-top">
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <div class="col-md-6 col-md-offset-3">
                 <div class = "container">
                     <p><%= t(:fill_update) %></p>
@@ -123,3 +124,116 @@ u<body id="page-top">
                         </div>
                     </div>
                 </body>
+=======
+          </div>
+        </div>
+	<div class="col-md-6 col-md-offset-3">
+		<div class = "container">
+			<p>Preencha as informações abaixo:</p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<% flash.each do |key, value| %>
+				<div class="alert alert-<%= key %>"><%= value %></div>
+				<% end %>
+				<%= form_for @visitation do |f| %>
+				<% if @visitation.errors.any? %>
+				<div id="error_explanation">
+					<div class="alert-error">
+						O formulário contém <%= pluralize(@visitation.errors.count, "erro") %>.
+					</div>
+					<ul>
+						<% @visitation.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+						<%end%>
+					</ul>
+				</div>
+				<%end%>
+				<br>
+				<div class = "field" >
+					<%= f.label :Data %> &nbsp
+					<%= f.date_select :date, default: Date.today %>
+				</div>
+				<br>
+				<div class="field">
+					<%= f.label :Horário %> &nbsp
+					<%= f.time_select :time, minute_step: 15, start_hour: 8, end_hour: 16 %>
+				</div>
+				<br>
+				<div class = "form-inline" >
+					<div class = "form-group">
+						<%= f.label :Objetivo %>
+						<%objectives = [["Educação", "Educacao"],["Pesquisa", "Pesquisa"], ["Lazer", "Lazer"]] %>
+						&nbsp &nbsp
+						<%= f.select :objective, objectives%>
+						&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+						<%= f.label :Espaços_a_visitar %>
+						&nbsp&nbsp
+						<%spaces_jbb = [["Trilhas", "Trilhas"],["Espaços JBB", "Espaco JBB"], ["Ambos", "Ambos"]] %>
+						<%= f.select :spaces, spaces_jbb, class: 'form-control'%>
+					</div>
+				</div>
+				<br>
+				<br>
+				<div class="form-inline">
+					<%= f.label :Quantidade_de_Visitantes%>
+					&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+					<%= f.label :Faixa_etária_dos_visitantes%>
+                    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                    <%= f.label :Visitantes_acima_de_12_anos%>
+				</div>
+					<div class="form-inline">
+					<div class = "form-group" style="width: 180px">
+						<%= f.number_field :visitants_amount, min: 1, max: 100, width: 10, :required => true, class: 'form-control'%>
+					</div>
+					<div class = "form-group" style="width: 180px">
+						<%= f.number_field :groups_age, :required => true, min: 0, max: 100, class: 'form-control' %>
+					</div>
+          <div class = "form-group" style="width: 180px">
+						<%= f.number_field :visitants_paying, :required => true, min: 0, max: 100, class: 'form-control' %>
+					</div>
+				</div>
+				<br>
+				<div class = "field">
+					<%= f.label :Instituição %> <br>
+					<%= f.radio_button(:visitation_type, "Pessoa fisica") %>
+					<%= f.label(:visitation_type, "Pessoa fisica") %>
+					&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+					<%= f.radio_button(:visitation_type, "Escola publica", :onclick=>"showMe('Escolas')") %>
+					<%= f.label(:visitation_type, "Escola publica") %>
+					&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+					<%= f.radio_button(:visitation_type, "Escola privada", :onclick=>"showMe('Escolas')") %>
+					<%= f.label(:visitation_type, "Escola privada") %>
+				</div>
+				<br>
+				<div id="Escolas">
+				<div class = "field">
+					 <%= f.label :Deseja_acompanhamento_de_guia? %> &nbsp &nbsp &nbsp
+					 <%= f.radio_button(:has_guide, true, :checked => true) %>
+					 <%= f.label :Sim %>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+					 <%= f.radio_button(:has_guide, false) %>
+					 <%= f.label :Não %>
+				</div>
+				</div>
+				<br>
+				<div class = "field" >
+					<%=f.label :Descrição%>
+					<%=f.text_area :description, :cols => "50", :rows => "5", :required => true, class: 'form-control'%>
+				</div>
+				<br>
+				<div class="actions">
+					<%= f.submit "Cadastrar", id:'registration', class: "btn btn-primary"%>
+					<a id="space" >
+					<%= link_to "Visualizar agenda", show_visitation_calendar_url , class: "btn btn-primary"%>
+					<a id="back_space_new" >
+					<%= link_to "Voltar", root_url , class: "btn btn-primary" %>
+				</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</body>
+	
+>>>>>>> Acceptance Tests

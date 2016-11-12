@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> Acceptance Tests
 When(/^I try to login with email and password$/) do
   fill_in 'user_email', :with => @user.email
   fill_in 'user_password', :with => @user.password
