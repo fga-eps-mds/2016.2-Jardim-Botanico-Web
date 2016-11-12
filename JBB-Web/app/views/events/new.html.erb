@@ -41,7 +41,7 @@
 				<br>
 				<div class = "field">
 					<%=f.label :Data_de_inicio %>
-					<%=f.date_select(:date_start) %>
+					<%= f.date_field :date_start, min: Date.today, %>
 				</div>
 				<div class="field">
 					<%=f.label :Horário_de_inicio%>
@@ -50,7 +50,7 @@
 				<br>
 				<div class = "field">
 					<%=f.label :Data_de_fim%>
-					<%=f.date_select(:date_end)%>
+					<%= f.date_field :date_end, min: Date.tomorrow %>
 				</div>
 				<div class="field">
 					<%=f.label :Horário_de_fim%>
