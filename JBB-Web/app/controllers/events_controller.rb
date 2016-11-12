@@ -1,4 +1,8 @@
 class EventsController < ApplicationController
+   before_action except: [:new, :create, :show_user, :show_employee, :index_calendar_month] do
+    @event = Event.find(params[:id])
+  end
+
 
   #user
   def new
@@ -13,15 +17,11 @@ class EventsController < ApplicationController
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
       flash[:success] = "Solicitação de evento efetuada com sucesso!"
-      redirect_to show_event_user_url, notice: "Evento criado"
+      redirect_to show_event_user_url
     else
       flash[:warning] = "Solicitação não efetuada"
       render action: :new
     end
-  end
-
-  def edit
-    @event = Event.find(params[:id])
   end
 
   def show_user
@@ -29,18 +29,16 @@ class EventsController < ApplicationController
   end
 
   def index_user
-    @event = Event.find(params[:id])
   end
 
   #cancel_confirmation
   def cancel_event_user
     puts (params[:id])
-    @event = Event.find(params[:id])
     @event.canceled_by_user
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
       flash[:warning] = "Evento cancelada pelo usuário"
-      redirect_to show_event_user_url, notice: "Evento cancelado pelo usuário"
+      redirect_to show_event_user_url
     end
   end
 
@@ -48,31 +46,36 @@ class EventsController < ApplicationController
   def show_employee
     @event = Event.all
     @sum_of_payments = Event.total
-    select_pdf(EventsPdf.new()) 
   end
 
   def index_employee
-    @event = Event.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = EventssPdf.new(@event)
+        send_data pdf.render, filename: 'formularios.pdf', type: "application/pdf",
+        disposition: "inline"
+      end
+    end
   end
 
   #refuse_confirmation
   def refuse_event_employee
-    @event = Event.find(params[:id])
-    @event.refused_by_employee
-    @event.jbb_response_to_request = (params[:jbb_response_to_request])
-    if @event.save
-      UserMailer.change_status_event(@event).deliver_now
-      flash[:success] = "Evento recusado"
-      redirect_to show_event_employee_url
-    else
-      flash[:warning] = "Evento não pode ser recusado"
-      redirect_to show_event_employee_url
-    end
+    refuse_employee(@event)
+    # @event.refused_by_employee
+    # @event.jbb_response_to_request = (params[:jbb_response_to_request])
+    # if @event.save
+    #   UserMailer.change_status_event(@event).deliver_now
+    #   flash[:success] = "Evento recusado"
+    #   redirect_to show_event_employee_url
+    # else
+    #   flash[:warning] = "Evento não pode ser recusado"
+    #   redirect_to show_event_employee_url
+    # end
   end
 
   #cancel_confirmation
   def cancel_event_employee
-    @event = Event.find(params[:id])
     @event.canceled_by_employee
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
@@ -86,7 +89,6 @@ class EventsController < ApplicationController
 
   #accept_event
   def accept_event_employee
-    @event = Event.find(params[:id])
     @event.accepted_by_employee
     puts "====================================================================="
     puts (@jbb_response)
@@ -103,7 +105,6 @@ class EventsController < ApplicationController
 
   #delete_event
   def delete_event_employee
-    @event = Event.find(params[:id])
     if @event.destroy
       UserMailer.change_status_event(@event).deliver_now
       flash[:success] = "Evento deletado"
