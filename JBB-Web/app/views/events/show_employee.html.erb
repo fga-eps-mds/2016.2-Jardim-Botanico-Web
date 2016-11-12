@@ -1,18 +1,13 @@
+
 <body id="page-top">
-    <head>
-      <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
-      <link href="css/creative.css" rel="stylesheet">
-    </head>
-    <body id="aplication-body">
-      <section id="services">
+    <br><br>
+    <div class="col-md-6 col-md-offset-3">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-12 text-center">
-              <h2 class="section-heading">Mostrar Eventos</h2>
-              <hr class="primary">
+            <div class="row">
+                <h1>Mostrar Eventos</h1>
             </div>
-          </div>
         </div>
+    </div>
     <div class="col-md-6 col-md-offset-3">
     </div>
     <div class="container-fluid">
@@ -22,12 +17,12 @@
                 <div class="alert alert-<%= key %>"><%= value %></div>
                 <% end %>
                 <div class="table-hover">
-                    <table border=0 class="table" >
+                    <table border=1 class="table table-bordered" >
                         <tr>
                             <th>Data</th>
                             <th>Hora</th>
                             <th>Status</th>
-                            <th>Espaço Solicitado</th>
+                            <th>EspaÃ§o Solicitado</th>
                         </tr>
                         <% @event.each do |event| %>
                         <tr>
@@ -42,7 +37,7 @@
                     <th>Valor arrecadado: R$</th>
                     <%= @sum_of_payments %>
                 </div>
-                <a id="back_space" >
+                <%= link_to "Gerar PDF", show_event_employee_path(format: 'pdf'), class: "btn btn-primary"%>
                 <%= link_to "Voltar", home_url, class: "btn btn-primary" %>
             </div>
         </div>

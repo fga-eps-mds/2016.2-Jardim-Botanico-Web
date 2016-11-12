@@ -1,5 +1,5 @@
 class VisitationsController < ApplicationController
-  before_action except: [:home, :new, :create, :show_user, :show, :index_calendar_month] do 
+  before_action except: [:home, :new, :create, :show_user, :show, :index_calendar_month] do
     @visitation = Visitation.find(params[:id])
   end
 
@@ -19,7 +19,7 @@ class VisitationsController < ApplicationController
     @visitation.set_status_default
     @visitation.set_visitation_cost
     if @visitation.save
-      UserMailer.change_status(@visitation).deliver_now
+      UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = "Solicitação de visita efetuada com sucesso!"
       redirect_to show_visitation_user_url
     else
@@ -32,7 +32,7 @@ class VisitationsController < ApplicationController
   def cancel_visitation_user
     @visitation.canceled_by_user
     if @visitation.save
-      UserMailer.change_status(@visitation).deliver_now
+      UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:warning] = "Visitação cancelada pelo usuário"
       redirect_to show_visitation_user_url
     end
@@ -58,15 +58,15 @@ class VisitationsController < ApplicationController
         pdf = VisitationsPdf.new(@visitation)
         send_data pdf.render, filename: 'formularios.pdf', type: "application/pdf",
         disposition: "inline"
-      end  
-    end 
+      end
+    end
   end
 
   #refuse_confirmation
   def refuse_visitation_employee
     @visitation.refused_by_employee
     if @visitation.save
-      UserMailer.change_status(@visitation).deliver_now
+      UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = "Visitação recusada"
       redirect_to show_visitation_url
     else
@@ -79,7 +79,7 @@ class VisitationsController < ApplicationController
   def cancel_visitation_employee
     @visitation.canceled_by_employee
     if @visitation.save
-      UserMailer.change_status(@visitation).deliver_now
+      UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = "Visitação cancelada"
       redirect_to show_visitation_url
     else
@@ -103,7 +103,7 @@ class VisitationsController < ApplicationController
   def accept_visitation_employee
     @visitation.accepted_by_employee
     if @visitation.save
-      UserMailer.change_status(@visitation).deliver_now
+      UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = "Visitação confirmada"
       redirect_to show_visitation_url
     else
