@@ -2,20 +2,10 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
- 
+
   include SessionsHelper
 
   private
-  	def select_pdf(pdf_option)
-  		respond_to do |format|
-  		  format.html
-  		  format.pdf do
-  		    pdf = pdf_option
-  		    send_data pdf.render, filename: 'formularios.pdf', type: "application/pdf",
-  		    disposition: "inline"
-  		  end  
-  		end
-  	end
 	def current_visitation
 		@current_visitation ||= Visitation.find(session[:visitation_id])
 		if session[:visitation_id]
@@ -27,4 +17,27 @@ class ApplicationController < ActionController::Base
 		if session[:event_id]
 		end
 	end
+
+  def refuse_employee (object)
+    object.refused_by_employee
+    if object.save
+      if object.class == Visitation
+        UserMailer.change_status_visitation(object).deliver_now
+        flash[:success] = "Visita recusada"
+        redirect_to show_visitation_url
+      elsif object.class == Event
+        UserMailer.change_status_event(object).deliver_now
+        flash[:success] = "Evento recusada"
+        redirect_to show_event_employee_url
+      end
+    else
+      flash[:warning] = "Erro ao recusar"
+      if object.class == Visitation
+        redirect_to show_visitation_url
+      elsif object.class == Event
+        redirect_to show_event_employee_url
+      end
+    end
+  end
+
 end
