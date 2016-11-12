@@ -6,11 +6,11 @@ var matterTrailContentString =
     '</div>'+
     '<h1 id="firstHeading" class="firstHeading">Trilha Matter</h1>'+
     '<div id="bodyContent">'+
-    '<p>A <b>Trilha Matter</b>, ............. ' +
-    '  '+
-    '. '+
-    '<p>Leia mais em: <a href="/trails/matter_trail">'+
-    'Trilha Matter</a> '+
+    '<p>A <b>Trilha Matter</b> é a primeira trilha do JBB,  ' +
+    'asfaltada e com acessibilidade para portadores de necessidades especiais.  '+
+    'Começa na portaria principal atravessando vários tipos de vegetação de Cerrado (denso, típico e ralo). '+
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/trilhas/">'+
+    'Trilhas</a> '+
     '</div>'+
     '</div>';
 

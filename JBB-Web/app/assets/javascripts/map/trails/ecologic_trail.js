@@ -6,11 +6,11 @@ var ecologicTrailContentString =
     '</div>'+
     '<h1 id="firstHeading" class="firstHeading">Trilha Ecológica</h1>'+
     '<div id="bodyContent">'+
-    '<p>A <b>Trilha Ecológica</b>, ............. ' +
-    '  '+
-    '. '+
-    '<p>Leia mais em: <a href="/trails/ecologic_trail">'+
-    'Trilha Ecológica</a> '+
+    '<p>A <b>Trilha Ecológica</b>, é implantada no Cerrado, estimula o visitante à interpretação deste rico Bioma, convidando-o a verificar a ' +
+    ' complexidade e a grandeza da diversidade vegetal da Região Central Brasileira.  Nos 3,5 km de percurso, o  '+
+    'visitante passa por diversas fitofisionomias como cerrado. '+
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/trilhas/">'+
+    'Trilhas</a> '+
     '</div>'+
     '</div>';
 
