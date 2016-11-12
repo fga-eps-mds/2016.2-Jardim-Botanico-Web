@@ -127,7 +127,7 @@ function addJbbVisitantsArea(){
 function showPosition(event) {
     coordenadasLat[i++] = event.latLng.lat();
     coordenadasLng[j++] = event.latLng.lng();
-    if (i > 15){
+    if (i > 5){
         for (j = 0; j < i; j++) {
             window.document.write("{lat: ",coordenadasLat[j], ",");
             window.document.write(" lng: ",coordenadasLng[j], "},<br>");
