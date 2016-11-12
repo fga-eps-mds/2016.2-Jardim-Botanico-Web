@@ -33,7 +33,8 @@ Rails.application.routes.draw do
   get 'visitations/home', as: 'home_visitation'
   get 'visitations/show_employee', as: 'show_visitation_employee'
   get 'visitations/show_user', as: 'show_visitation_user'
-  get 'visitations/index', as: 'index_visitation'
+  get 'visitations/index_employee', as: 'index_visitation_employee'
+  get 'visitations/index_user', as: 'index_visitation_user'
 
   #Visitation Employee
   get 'visitations/accept_visitation_employee', as: 'get_accept_visitation_employee'

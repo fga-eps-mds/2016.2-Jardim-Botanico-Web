@@ -53,7 +53,10 @@ class VisitationsController < ApplicationController
 
 
   #index
-  def index
+  def index_user
+  end
+
+  def index_employee
     respond_to do |format|
       format.html
       format.pdf do

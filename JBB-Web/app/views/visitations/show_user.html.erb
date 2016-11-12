@@ -51,7 +51,7 @@
             <td> <%= visitation.visitants_paying %> </td>
             <td> <%= visitation.visitation_cost %> </td>
             <td> <%= visitation.description %> </td>
-            <td> <%= link_to 'Mostrar', action: 'index', id: visitation %> </td>
+            <td> <%= link_to 'Mostrar', action: 'index_user', id: visitation %> </td>
             <% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
             <td> <%= link_to "Cancelar Visitação", controller: "visitations",
               action: "cancel_visitation_user", id: visitation %> </td>

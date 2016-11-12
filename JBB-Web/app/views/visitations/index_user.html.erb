@@ -71,8 +71,6 @@
            <%= link_to "Deletar Visita", get_delete_visitation_employee_url(:id => @visitation.id), class: "btn btn-warning destroy-btn" %>
        <%end%>
        <%else%>
-        <%= link_to "Gerar PDF", visitations_path(format: 'pdf', :id => @visitation.id), class: "btn btn-primary"%>
-        <a id="back_space_new" >
         <%= link_to 'Voltar', show_visitation_user_url, class: "btn btn-primary"  %>
         <% if (@visitation.status <=> "Aguardando confirmacao") == 0 %>
         <a id="back_space_new" >
