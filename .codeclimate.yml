@@ -5,6 +5,8 @@ engines:
     enabled: true
   eslint:
     enabled: true
+    config:
+      config: .eslintrc
   csslint:
     enabled: true
   duplication:
