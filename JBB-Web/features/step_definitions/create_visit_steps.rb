@@ -4,11 +4,7 @@ end
 
 When(/^I fill the new visit form$/) do
    
-<<<<<<< HEAD
    select('2018', from: 'visitation_date_1i')
-=======
-   select('2016', from: 'visitation_date_1i')
->>>>>>> Acceptance Tests
    select('November', from: 'visitation_date_2i')
    select('11', from: 'visitation_date_3i')
    select('Educação', from: 'visitation_objective')
@@ -25,11 +21,8 @@ end
 When(/^I click in 'Cadastrar'$/) do
    click_button('registration')
 end
-<<<<<<< HEAD
 
 When(/^I am on the create visit page in text box$/) do
   click_on('Agende uma visita')
 end
 
-=======
->>>>>>> Acceptance Tests

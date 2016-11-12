@@ -13,6 +13,7 @@ Scenario: To create a sucessful event
 	And I click in 'Cadastrar'
 	Then I should see "Solicitação de evento efetuada com sucesso!"
 
+<<<<<<< HEAD
 Scenario: To create a sucessful event in text box
 	Given I have accessed the login page
 	And I already have an account 
@@ -24,3 +25,5 @@ Scenario: To create a sucessful event in text box
 	Then I should see "Solicitação de evento efetuada com sucesso!"
 
 
+=======
+>>>>>>> Acceptance Tests
