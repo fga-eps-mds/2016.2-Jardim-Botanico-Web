@@ -18,7 +18,7 @@ RSpec.describe UsersController, type: :controller do
       sign_in(@user)
       get :destroy
       expect(session[:user_id]).to be(nil)
-      expect(response).to redirect_to(home_path)
+      expect(response).to redirect_to("/#{I18n.locale}/")
     end
   end
 
@@ -41,7 +41,7 @@ RSpec.describe UsersController, type: :controller do
   describe "GET edit" do
     it "should GET a edit user profile" do
       get :edit, :id => @user.id
-      expect(response).to redirect_to(home_path)
+      expect(response).to redirect_to("/#{I18n.locale}/")
     end
   end
 
