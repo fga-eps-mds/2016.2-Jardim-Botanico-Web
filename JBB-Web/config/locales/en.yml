@@ -166,3 +166,24 @@ en:
     sucessful_profile_remove: "Profile successfully removed"
     invalid_email_or_password: "Invalid email or password"
     sucessful_logout: "Lougout successful"
+    already_used_cpf: "CPF already registered and cannot be used again."
+    already_used_email: "Email already registered and cannot be used again."
+
+    activerecord:
+        errors:
+            messages:
+                null_phone: "No phone was provided"
+                invalid_phone: "Invalid phone"
+                fill_correct_name: "Fill the name correctly."
+                invalid_characters_in_name: "The user name has invalid characters."
+                numbers_in_name: "The user name has numbers."
+                short_name: "The username is too short."
+                missing_surname: "The user does not have a surname."
+                blank_cpf_field: "CPF field cannot be empty."
+                invalid_cpf_number: "Invalid CPF number."
+                invalid_email_format: "Invalid email format."
+                invalid_email: "Invalid email."
+                blank_gender_field: "Gender field cannot be left blank."
+                invalid_gender: "Invalid gender."
+                too_much_visitors: "The maximum amount for environmental education is 100 people"
+                zero_visitors: "The number of people must be equal to or greater than 1."

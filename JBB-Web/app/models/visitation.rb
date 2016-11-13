@@ -23,9 +23,9 @@ class Visitation < ApplicationRecord
 
   def validate_visitants_amount
     if (self.visitants_amount > 100)
-      errors.add(:visitants_amount, "A quantidade máxima por visitação é de 100 pessoas")
+      errors.add(:visitants_amount, t(:too_much_visitors))
     elsif (self.visitants_amount < 1)
-      errors.add(:visitants_amount, "A quantidade de pessoas não pode ser negativa")
+      errors.add(:visitants_amount, t(:zero_visitors))
     end
   end
 
