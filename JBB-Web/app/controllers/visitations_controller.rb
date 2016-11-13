@@ -73,10 +73,10 @@ class VisitationsController < ApplicationController
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = "Visitação recusada"
-      redirect_to show_visitation_url
+      redirect_to show_visitation_employee_path
     else
       flash[:warning] = "Visitação não pode ser recusada"
-      redirect_to show_visitation_url
+      redirect_to  show_visitation_employee_path
     end
   end
 
@@ -86,10 +86,10 @@ class VisitationsController < ApplicationController
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = "Visitação cancelada"
-      redirect_to show_visitation_url
+      redirect_to show_visitation_employee_path
     else
       flash[:warning] = "Visitação não pode ser cancelada"
-      redirect_to show_visitation_url
+      redirect_to show_visitation_employee_path
     end
   end
 
@@ -97,10 +97,10 @@ class VisitationsController < ApplicationController
   def delete_visitation_employee
     if @visitation.destroy
       flash[:success] = "Visitação deletada"
-      redirect_to show_visitation_url
+      redirect_to show_visitation_employee_path
     else
       flash[:warning] = "Visitação não pode ser deletada"
-      redirect_to show_visitation_url
+      redirect_to show_visitation_employee_path
     end
   end
 
@@ -110,10 +110,10 @@ class VisitationsController < ApplicationController
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = "Visitação confirmada"
-      redirect_to show_visitation_url
+      redirect_to show_visitation_employee_path
     else
       flash[:warning] = "Visitação não pode ser confirmada"
-      redirect_to show_visitation_url
+      redirect_to show_visitation_employee_path
     end
   end
 
