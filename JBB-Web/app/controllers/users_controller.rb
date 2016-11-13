@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       UserMailer.welcome(@user).deliver_now
 			@phone = @user.phones.build(params[:phone])
       session[:user_id] = @user.id
-      flash[:success] = "Cadastro efetuado com sucesso!"
+      flash[:success] = t(:sucessful_user_registration)
       redirect_to "/#{I18n.locale}/"
   	else
   		render 'new'
@@ -35,10 +35,10 @@ class UsersController < ApplicationController
   #Update User
   def update
     if @user.update(user_params)
-      flash[:success] = "Perfil atualizado com sucesso"
+      flash[:success] = t(:sucessful_profile_update)
       redirect_to @user
     else
-      flash[:warning] = "Erro ao atualizar o perfil"
+      flash[:warning] = t(:error_profile_update)
     end
   end
 
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
   def destroy
     current_user.destroy
     session[:user_id] = nil
-    flash[:warning] = "Perfil deletado com sucesso"
+    flash[:warning] = t(:sucessful_profile_remove)
     redirect_to "/#{I18n.locale}/"
   end
 
