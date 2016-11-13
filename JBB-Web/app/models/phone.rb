@@ -8,12 +8,12 @@ class Phone < ApplicationRecord
   def valid_phone
 
     if self.phone == nil
-      errors.add(:phone, t(:null_phone))
+      errors.add(:phone, I18n.t(:null_phone))
       return
     end
 
     if self.phone.length < 8  || self.phone.length > 15
-      errors.add(:phone, t(:invalid_phone))
+      errors.add(:phone, I18n.t(:invalid_phone))
     end
   end
 

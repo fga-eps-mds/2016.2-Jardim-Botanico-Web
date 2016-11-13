@@ -32,63 +32,63 @@ class User < ApplicationRecord
     #user_name
     def valid_name
       if (self.name == nil)
-        errors.add(:name, t(:fill_correct_name))
+        errors.add(:name, I18n.t(:fill_correct_name))
       end
 
       #puts "nome avaliado: #{name}\n\n\n"
       $SPECIAL_CARACTERS.each do |caracter|
         if (self.name.include? caracter)
-          errors.add(:name, t(:invalid_characters_in_name))
+          errors.add(:name, I18n.t(:invalid_characters_in_name))
         end
       end
 
       $NUMBERS.each do |number|
         if (self.name.include? number)
-          errors.add(:name, t(:numbers_in_name))
+          errors.add(:name, I18n.t(:numbers_in_name))
         end
       end
 
       if (self.name.length < 3)
-        errors.add(:name, t(:short_name))
+        errors.add(:name, I18n.t(:short_name))
       end
 
       unless (self.name.include? ' ')
-        errors.add(:name, t(:missing_surname))
+        errors.add(:name, I18n.t(:missing_surname))
       end
 
     end
 
     #cpf
     validates :cpf, uniqueness: {
-      message: t(:already_used_cpf)
+      message: I18n.t(:already_used_cpf)
     }
 
     def valid_cpf
       if (self.cpf == nil)
-        errors.add(:cpf, t(:blank_cpf_field))
+        errors.add(:cpf, I18n.t(:blank_cpf_field))
       elsif ((CPF.valid?(self.cpf)) == false)
-        errors.add(:cpf, t(:invalid_cpf_number))
+        errors.add(:cpf, I18n.t(:invalid_cpf_number))
       end
     end
 
     #email
     validates :email, uniqueness: {
-      message: t(:already_used_email)
+      message: I18n.t(:already_used_email)
     }
 
     def valid_email
       if (self.email == nil)
-        errors.add(:email, t(:blank_email))
+        errors.add(:email, I18n.t(:blank_email))
       end
 
       unless (validates_format_of :email,:with =>
         /[0-9a-z][0-9a-z.]+[0-9a-z]@[0-9a-z][0-9a-z.-]+[0-9a-z]/i)
 
-        errors.add(:email, t(:invalid_email_format))
+        errors.add(:email, I18n.t(:invalid_email_format))
       end
 
       if (self.email.length < 10 || self.email.length > 255)
-        errors.add(:email, t(:invalid_email))
+        errors.add(:email, I18n.t(:invalid_email))
       end
     end
 
@@ -126,7 +126,7 @@ class User < ApplicationRecord
     #gender
     def valid_gender
       if (self.gender == nil)
-        errors.add(:gender, t(:blank_gender_field))
+        errors.add(:gender, I18n.t(:blank_gender_field))
       end
 
       unless ((gender.capitalize <=> 'Masculino') == 0 ||
@@ -134,7 +134,7 @@ class User < ApplicationRecord
               (gender.capitalize <=> 'Outro') == 0
               )
 
-        errors.add(:gender, t(:invalid_gender))
+        errors.add(:gender, I18n.t(:invalid_gender))
       end
     end
 
