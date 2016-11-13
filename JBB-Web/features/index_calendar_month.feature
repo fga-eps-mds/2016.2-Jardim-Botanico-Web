@@ -5,5 +5,5 @@ Feature: viewer calendar month visit index
   
   Scenario: To view the month calendar visit page
   	Given I am on the home page
-  	When I press 'Visita'
-  	Then I should see "Calendário de Visitas"	
+  	When I press 'Educação Ambiental'
+  	Then I should see "Calendário de Educações Ambientais"	
