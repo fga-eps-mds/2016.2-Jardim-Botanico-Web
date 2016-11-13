@@ -57,7 +57,7 @@
         <br> <p>
         <% if (current_user.is_employee)%>
         <div class= "actions" >
-         <%= link_to 'Voltar', show_visitation_url, class: "btn btn-primary"  %>
+         <%= link_to 'Voltar', show_visitation_employee_path, class: "btn btn-primary"  %>
        <% if (@visitation.status <=> "Aguardando confirmacao") == 0 %>
            <%= link_to "Aceitar Visita", get_accept_visitation_employee_url(:id => @visitation.id), class: "btn btn-primary" %>
            <%= link_to "Recusar Visita", get_refuse_visitation_employee_url(:id => @visitation.id), class: "btn btn-warning destroy-btn" %>

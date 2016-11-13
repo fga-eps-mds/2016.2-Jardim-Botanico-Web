@@ -10,7 +10,12 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Minhas requisições</h2>
+            <% if current_user.is_employee %>
+              <h2 class="section-heading">Requisições</h2>
+            <% else %>
+              <h2 class="section-heading">Minhas requisições</h2>
+            <% end%>
+
           <hr class="primary">
         </div>
       </div>
@@ -21,7 +26,7 @@
         <div class="col-md-6 text-center">
           <div class="service-box">
                 <% if current_user.is_employee %>
-                    <a href="/visitations/show">
+                    <a href="/visitations/show_employee">
                   <% else %>
                     <a href="/visitations/show_user">
                   <% end%>
