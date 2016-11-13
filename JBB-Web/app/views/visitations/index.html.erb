@@ -71,7 +71,7 @@
                                     <%= link_to t(:remove_visit), "/#{I18n.locale}"+get_delete_visitation_employee_path(:id => @visitation.id), class: "btn btn-warning destroy-btn" %>
                                     <%end%>
                                     <%else%>
-                                    <%= link_to "Gerar PDF", visitations_path(format: 'pdf', :id => @visitation.id), class: "btn btn-primary"%>
+                                    <%= link_to t(:generate_pdf), visitations_path(format: 'pdf', :id => @visitation.id), class: "btn btn-primary"%>
                                     <a id="back_space_new" >
                                         <%= link_to 'Voltar', "/#{I18n.locale}"+show_visitation_user_path, class: "btn btn-primary"  %>
                                         <% if (@visitation.status <=> "Aguardando confirmacao") == 0 %>

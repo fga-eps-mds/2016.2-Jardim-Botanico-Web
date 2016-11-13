@@ -61,6 +61,4 @@ class ApplicationController < ActionController::Base
   def use_locale_from_cookie
     I18n.locale = cookies[:JBB_Web_locale]
   end
-
->>>>>>> Fix the redirect_to bug in controllers
 end

@@ -92,7 +92,7 @@ $(document).on('click', '.dropdown-menu li a', function () {
             </div>
             <br>
             <p>
-            <%= link_to "Gerar PDF", show_visitation_path(format: 'pdf'), class: "btn btn-primary"%>
+            <%= link_to t(:generate_pdf), show_visitation_path(format: 'pdf'), class: "btn btn-primary"%>
             <%= link_to t(:back), "/#{I18n.locale}", class: "btn btn-primary" %>
           </div>
         </div>
