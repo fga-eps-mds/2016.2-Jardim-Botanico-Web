@@ -59,9 +59,8 @@ $(document).on('click', '.dropdown-menu li a', function () {
                     <td> <%= visitation.status %> </td>
                     <td> <%= visitation.visitants_amount %> </td>
                     <td> <%= visitation.visitants_paying %> </td>
-                    <th>Preço da visita: R$</th>
-                    <%= visitation.visitation_cost %>
-                    <th>,00</th>
+                    <th>Preço da visita:
+                     R$ <%= visitation.visitation_cost %> ,00</th>
                     <td> <%= visitation.description %> </td>
                     <td> <%= link_to 'Mostrar', action: 'index_employee', id: visitation %> </td>
                     <% if (visitation.status <=> "Aguardando confirmacao") == 0 %>

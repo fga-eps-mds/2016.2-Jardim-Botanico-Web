@@ -19,7 +19,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <b>Data e hora de início</b>
+        <b>Começa em</b>
         <div class = "actions">
           <b>Dia: </b>
           <%= @event.date_start.strftime("%d/%m/%Y") %>
@@ -29,7 +29,7 @@
           <%= @event.time_start.to_s(:time) %>
         </div>
         <br>
-        <b>Data e hora de fim</b>
+        <b>Termina em:</b>
         <div class = "actions">
           <b>Dia:</b>
           <%= @event.date_end.strftime("%d/%m/%Y") %>
@@ -63,22 +63,20 @@
           <tr>
             <td>
               <div class = "actions" >
-                <b>Precisa de energia elétrica?</b>
-                <%= @event.need_eletricity%>
+                <b>Precisa de energia elétrica?</b> &nbsp
+                <%= @event.need_eletricity%> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
               </div>
             </td>
             <td>
               <div class = "actions" >
-                <a id="space" >
-                <b>Precisa de água?</b>
-                <%= @event.need_water%>
+                <b>Precisa de água?</b> &nbsp
+                <%= @event.need_water%> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
               </div>
             </td>
             <td>
               <div class = "actions" >
-                <a id="space" >
-                <b>Precisa de servico de limpeza?</b>
-                <%= @event.need_clean_service%>
+                <b>Precisa de servico de limpeza?</b> &nbsp
+                <%= @event.need_clean_service%> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
               </div>
             </td>
           </tr>
@@ -128,11 +126,13 @@
             <%=f.label :Resposta_da_Requisição%>
             <%=f.text_area :jbb_response_to_request, :cols => "50", :rows => "5", class: 'form-control'%>
           </div>
+          <br>
           <div class = "field" >
             <%=f.label :Preço_do_Evento%>
             <%=f.number_field :price_payment, class: 'form-control'%>
           </div>
-
+          <br>
+          <br>
           <div class="actions">
               <%= link_to 'Voltar', show_event_employee_url, :required => true, class: "btn btn-primary"%>
               <% if (@event.status <=> "Aguardando analise") == 0 %>

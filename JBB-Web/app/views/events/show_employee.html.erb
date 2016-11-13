@@ -17,12 +17,12 @@
                 <div class="alert alert-<%= key %>"><%= value %></div>
                 <% end %>
                 <div class="table-hover">
-                    <table border=1 class="table table-bordered" >
+                    <table border=0 class="table" >
                         <tr>
                             <th>Data</th>
                             <th>Hora</th>
                             <th>Status</th>
-                            <th>EspaÃ§o Solicitado</th>
+                            <th>Espaço Solicitado</th>
                         </tr>
                         <% @event.each do |event| %>
                         <tr>
@@ -35,7 +35,7 @@
                         <%end%>
                     </table>
                     <th>Valor arrecadado: R$</th>
-                    <%= @sum_of_payments %>
+                    <%= @sum_of_payments %> <br> <br>
                 </div>
                 <%= link_to "Gerar PDF", show_event_employee_path(format: 'pdf'), class: "btn btn-primary"%>
                 <%= link_to "Voltar", user_my_requests_url(current_user), class: "btn btn-primary" %>
