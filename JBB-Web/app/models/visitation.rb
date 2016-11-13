@@ -26,13 +26,11 @@ class Visitation < ApplicationRecord
     end
   end
 
-  
   # inform the cost of visitation
   def self.total
     self.sum(:visitation_cost)
   end
 
-  
   # calculate the visitation cost
   def set_visitation_cost
     if (self.visitation_type <=> "Escola publica")
@@ -41,7 +39,6 @@ class Visitation < ApplicationRecord
       self.visitation_cost = (self.visitants_paying * 5)
     end
   end
-
 
   #status
   def set_status_default
@@ -67,5 +64,4 @@ class Visitation < ApplicationRecord
   def accepted_by_employee
     self.status = "Agendado"
   end
-
 end
