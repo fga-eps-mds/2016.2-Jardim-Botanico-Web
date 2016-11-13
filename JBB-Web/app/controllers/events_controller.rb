@@ -16,10 +16,10 @@ class EventsController < ApplicationController
     @event.set_status_default
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
-      flash[:success] = "Solicitação de evento efetuada com sucesso!"
-      redirect_to show_event_user_url
+      flash[:success] = t(:successful_event_request)
+      redirect_to "/#{I18n.locale}"+show_event_user_path
     else
-      flash[:warning] = "Solicitação não efetuada"
+      flash[:warning] = t(:request_not_made)
       render action: :new
     end
   end
@@ -37,8 +37,8 @@ class EventsController < ApplicationController
     @event.canceled_by_user
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
-      flash[:warning] = "Evento cancelada pelo usuário"
-      redirect_to show_event_user_url
+      flash[:warning] = t(:event_canceled_user)
+      redirect_to "/#{I18n.locale}"+show_event_user_path
     end
   end
 
@@ -65,11 +65,11 @@ class EventsController < ApplicationController
     @event.jbb_response_to_request = (params[:jbb_response_to_request])
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
-      flash[:success] = "Evento recusado"
-      redirect_to show_event_employee_url
+      flash[:success] = t(:event_refused)
+      redirect_to "/#{I18n.locale}"+show_event_employee_path
     else
-      flash[:warning] = "Evento não pode ser recusado"
-      redirect_to show_event_employee_url
+      flash[:warning] = t(:not_objectionable_event)
+      redirect_to "/#{I18n.locale}"+show_event_employee_path
     end
   end
 
@@ -78,11 +78,11 @@ class EventsController < ApplicationController
     @event.canceled_by_employee
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
-      flash[:success] = "Evento cancelado"
-      redirect_to show_event_employee_url
+      flash[:success] = t(:event_canceled)
+      redirect_to "/#{I18n.locale}"+show_event_employee_path
     else
-      flash[:warning] = "Evento não pode ser cancelado"
-      redirect_to show_event_employee_url
+      flash[:warning] = t(:not_cancellable_event)
+      redirect_to "/#{I18n.locale}"+show_event_employee_path
     end
   end
 
@@ -94,11 +94,11 @@ class EventsController < ApplicationController
     @event.jbb_response_to_request = (@jbb_response)
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
-      flash[:success] = "Evento confirmado"
-      redirect_to show_event_employee_url
+      flash[:success] = t(:event_confirmed)
+      redirect_to "/#{I18n.locale}"+show_event_employee_path
     else
-      flash[:warning] = "Evento não pode ser confirmado"
-      redirect_to show_event_employee_url
+      flash[:warning] = t(:not_confirmable_event)
+      redirect_to "/#{I18n.locale}"+show_event_employee_path
     end
   end
 
@@ -106,11 +106,11 @@ class EventsController < ApplicationController
   def delete_event_employee
     if @event.destroy
       UserMailer.change_status_event(@event).deliver_now
-      flash[:success] = "Evento deletado"
-      redirect_to show_event_employee_url
+      flash[:success] = t(:event_removed)
+      redirect_to "/#{I18n.locale}"+show_event_employee_path
     else
-      flash[:warning] = "Evento não pode ser deletado"
-      redirect_to show_event_employee_url
+      flash[:warning] = t(:not_removable_event)
+      redirect_to "/#{I18n.locale}"+show_event_employee_path
     end
   end
 

@@ -29,6 +29,6 @@ var smallDrainCerradoColor = '#65B494';
 function addSmallDrainCerrado(){
   smallDrainCerrado = createVegetation(smallDrainCerradoCoordinates,
                                        smallDrainCerradoColor);
-  
+
   smallDrainCerrado.setMap(map);
 }

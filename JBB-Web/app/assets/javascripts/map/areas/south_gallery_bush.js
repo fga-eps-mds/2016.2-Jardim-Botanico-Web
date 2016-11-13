@@ -75,6 +75,6 @@ var southGalleryBushColor = '#A0A378';
 function addSouthGalleryBush(){
   southGalleryBush = createVegetation(southGalleryBushCoordinates,
                                         southGalleryBushColor);
-  
+
   southGalleryBush.setMap(map);
 }

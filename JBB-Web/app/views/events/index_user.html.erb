@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <body id="page-top">
   <head>
-    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="css/creative.css" rel="stylesheet">
   </head>
   <body id="aplication-body">
@@ -9,7 +9,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Informação do Evento</h2>
+            <h2 class="section-heading"><%= t(:event_information) %></h2>
             <hr class="primary">
           </div>
         </div>
@@ -19,58 +19,48 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <b>Data e hora de início</b>
+        <b><%= t(:date_time_start) %></b>
         <div class = "actions">
-          <b>Dia: </b>
-          <%= @event.date_start.strftime("%d/%m/%Y") %>
+          <b><%= t(:date_schedule) %></b>
+          <%= l(@event.date_start, format: :long) %>
         </div>
         <div class = "actions">
-          <b>Hora: </b>
-          <%= @event.time_start.to_s(:time) %>
-        </div>
-        <br>
-        <b>Data e hora de fim</b>
-        <div class = "actions">
-          <b>Dia:</b>
-          <%= @event.date_end.strftime("%d/%m/%Y") %>
-        </div>
-        <div class = "actions">
-          <b>Hora:</b>
-          <%= @event.time_end.to_s(:time) %>
+          <b><%= t(:time_schedule) %></b>
+          <%= l(@event.time_start, format: :time_only) %>
         </div>
         <br>
+        <b><%= t(:date_time_end) %></b>
         <div class = "actions">
-          <b>Status:</b>
+          <b><%= t(:date_schedule) %></b>
+          <%= l(@event.date_end, format: :long) %>
+        </div>
+        <div class = "actions">
+          <b><%= t(:time_schedule) %></b>
+          <%= l(@event.time_end, format: :time_only) %>
+        </div>
+        <br>
+        <div class = "actions">
+          <b><%= t(:status) %></b>
           <%= @event.status %>
         </div>
         <br>
         <div class = "actions" >
-          <b>Espaço solicitado:</b>
+          <b><%= t(:space_request) %></b>
           <%= @event.jbb_space_requested%>
         </div>
         <br>
         <div class = "actions" >
-          <b>Publico estimado:</b>
+          <b><%= t(:number_visitors) %></b>
           <%= @event.estimated_public%>
         </div>
         <br>
         <div class= "actions spacing" >
-          <b>Descrição:</b>
+          <b><%= t(:description) %></b>
           <%= @event.description %>
         </div>
         <br>
         <div class = "actions" >
-          <b>Espaço solicitado:</b>
-          <%= @event.jbb_space_requested%>
-        </div>
-        <br>
-        <div class = "actions" >
-          <b>Publico estimado:</b>
-          <%= @event.estimated_public%>
-        </div>
-        <br>
-        <div class = "actions" >
-          <b>Uso Comercial de imagem:</b>
+          <b><%= t(:commercial_images) %></b>
           <%= @event.commercial_use_photos%>
         </div>
         <br>
@@ -78,21 +68,21 @@
           <tr>
             <td>
               <div class = "actions" >
-                <b>Precisa de energia elétrica?</b>
+                <b><%= t(:need_eletricity) %></b>
                 <%= @event.need_eletricity%>
               </div>
             </td>
             <td>
               <div class = "actions" >
                 &nbsp&nbsp&nbsp&nbsp
-                <b>Precisa de água?</b>
+                <b><%= t(:need_water) %></b>
                 <%= @event.need_water%>
               </div>
             </td>
             <td>
               <div class = "actions" >
                 &nbsp&nbsp&nbsp&nbsp
-                <b>Precisa de servico de limpeza?</b>
+                <b><%= t(:need_clean_service) %></b>
                 <%= @event.need_clean_service%>
               </div>
             </td>
@@ -100,50 +90,35 @@
         </table>
         <br>
         <div class= "actions sp" >
-          <b>Outras informações:</b>
+          <b><%= t(:other_informations) %></b>
           <%= @event.other_informations %>
         </div>
         <br>
         <div class= "actions spacing" >
-          <b>Uso comercial de imagens:</b>
-          <%= @event.commercial_use_photos %>
-        </div>
-        <br>
-        <div class= "actions spacing" >
-          <b>Nome da instituição:</b>
+          <b><%= t(:name_institute) %></b>
           <%= @event.name_institute %>
         </div>
         <div class= "actions spacing" >
-          <b>Endereço da instituição:</b>
+          <b><%= t(:institute_address) %></b>
           <%= @event.institute_address %>
         </div>
         <div class= "actions spacing" >
-          <b>CNPJ da instituição:</b>
+          <b><%= t(:institute_cnpj) %></b>
           <%= @event.institute_cnpj %>
         </div>
         <br> <p>
-        <% if (@event.status <=> "Aguardando confirmacao") == 0 %>
-          <%= link_to "Cancelar Evento", class: "btn btn-warning destroy-btn", controller: "events", action: "cancel_event_user", id: @event %>
-        <% end %>
         <div class= "actions" >
-          <b>Resposta do Jardim Botânico:</b>
+          <b><%= t(:response_to_request) %></b>
           <%= @event.jbb_response_to_request%>
         </div>
         <div>
-          <b>Pagamento:</b>
+          <b><%= t(:price_payment) %></b>
           <%= @event.price_payment%>
         </div>
-        <% if (current_user.is_employee)%>
         <div class= "actions" >
           <a id="back_space" >
-          <%= link_to 'Voltar', show_event_url, class: "btn btn-primary"  %>
+          <%= link_to t(:back), "/#{I18n.locale}"+show_event_user_path, class: "btn btn-primary"  %>
         </div>
-        <%else%>
-        <div class= "actions" >
-          <a id="back_space" >
-          <%= link_to 'Voltar', show_event_user_url, class: "btn btn-primary"  %>
-        </div>
-        <%end%>
         <br>
         <br>
       </div>

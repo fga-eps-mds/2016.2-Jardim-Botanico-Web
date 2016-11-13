@@ -1,0 +1,243 @@
+pt:
+    date:
+        abbr_day_names:
+        - Dom
+        - Seg
+        - Ter
+        - Qua
+        - Qui
+        - Sex
+        - Sáb
+        abbr_month_names:
+        -
+        - Jan
+        - Fev
+        - Mar
+        - Abr
+        - Mai
+        - Jun
+        - Jul
+        - Ago
+        - Set
+        - Out
+        - Nov
+        - Dez
+        day_names:
+        - Domingo
+        - Segunda-feira
+        - Terça-feira
+        - Quarta-feira
+        - Quinta-feira
+        - Sexta-feira
+        - Sábado
+        formats:
+          default: "%d/%m/%Y"
+          long: "%d de %B de %Y"
+          short: "%d de %B"
+        month_names:
+        -
+        - Janeiro
+        - Fevereiro
+        - Março
+        - Abril
+        - Maio
+        - Junho
+        - Julho
+        - Agosto
+        - Setembro
+        - Outubro
+        - Novembro
+        - Dezembro
+        order:
+        - :day
+        - :month
+        - :year
+
+    time:
+        am: ''
+        pm: ''
+        formats:
+          default: "%a, %d de %B de %Y, %H:%M:%S %z"
+          long: "%d de %B de %Y, %H:%M"
+          short: "%d de %B, %H:%M"
+          time_only: "%H:%M"
+
+    welcome_to_jbb: "BEM VINDO AO JARDIM BOTÂNICO"
+    jbb: "Jardim Botânico de Brasilía"
+    know_more: "Saiba mais sobre nós!"
+    know_trails: "Conheça um pouco mais sobre as nossas trilhas!"
+    know_trails2: "O Jardim Botânico de Brasília é predominantemente composto por vegetação do Cerrado, em excelente estado de conservação que pode ser apreciada nas Trilhas Interpretativas abertas à visitação pública. Por conta dessa característica, o JBB é conhecido como o “Jardim do Cerrado”. A área acessível à visitação é composta pelo Centro de Visitantes, Centro de Excelência do Cerrado, área de Piquenique, Orquidário, Cactário, Biblioteca, Permacultura, Anfiteatro, Trilhas Interpretativas e Jardins Temáticos."
+    where_walk: "Saiba por onde andar"
+    appointment_book: "Veja nossa agenda e saiba o melhor dia para o seu evento e/ou educação ambiental"
+    visit: "Educação Ambiental"
+    event: "Evento"
+    slogan: "Somos mais do que um simples jardim"
+    manage_visit: "Gerencie educações ambientais"
+    manage_visit2: "Gerencie educações ambientais agendadas"
+    make_visit: "Agende uma educação ambiental"
+    make_visit2: "Faça uma educação ambiental conosco para conhecer melhor as nossas trilhas e a nossa beleza natural."
+    manage_event: "Gerencie eventos"
+    manage_event2: "Gerencie eventos agendados"
+    make_event: "Agende um evento"
+    make_event2: "Faça um evento conosco e desfrute dos melhores locais do nosso Jardim Botânico."
+    education: "Educação Ambiental"
+    education2: "Entre em contato com a natureza e saiba como preservá-la."
+    spaces: "Espaço JBB"
+    all_spaces: "Anfiteatro, Biblioteca da Natureza, Centro de Visitantes, trilhas, restaurantes e outras muitas atrações."
+    space1: "Jardim Japonês"
+    space2: "Jardim Evolutivo"
+    space3: "Relógio de Sol"
+    space4: "Estufas"
+    space5: "Casa de Chá"
+    space6: "Cactário"
+    social_media: "Acompanhe as nossas redes sociais"
+    contact: "Fale conosco!"
+    contact2: "Gostaria de entrar em contato com a gente?"
+    contact3: "Assessoria de Comunicação Social: "
+    phone: "Telefone"
+    hello: "Olá, "
+    requests: "Minhas Requisições"
+    sign_out: "Sair"
+    sign_in: "Entrar"
+    sign_up: "Cadastrar"
+    profile: "Perfil de "
+    gender: "Gênero"
+    male: "Masculino"
+    female: "Feminino"
+    other: "Outro"
+    birth: "Data de nascimento"
+    placeholder_birth: "Ex.: dd/mm/aaaa"
+    email: "Email"
+    placeholder_email: "Digite seu email, ex: example@host.com"
+    edit: "Editar"
+    back: "Voltar"
+    exclude: "Excluir minha conta"
+    update: "Atualizar"
+    update_profile: "Atulização de Perfil"
+    name: "Nome"
+    placeholder_name: "Digite seu nome e sobrenome"
+    password: "Senha"
+    placeholder_password: "Digite sua senha, minimo 5 caracteres"
+    fill_update: "Preencha as informações abaixo:"
+    form_has: "O formulário contém"
+    confirm_delete_user: "Tem certeza que deseja excluir sua conta?"
+    sign_up_user: "Cadastro de Usuários"
+    remember_me: "Lembrar-me"
+    sign_up_now: "Cadastre-se agora"
+    visit_request: "Requisição de Educação Ambiental"
+    date_schedule: "Data"
+    time_schedule: "Horário"
+    objective_visit: "Objetivo"
+    education: "Educação"
+    research: "Pesquisa"
+    recreation: "Lazer"
+    spaces_to_visit: "Espaços a visitar"
+    tracks: "Trilhas"
+    both_options: "Ambos"
+    number_visitors: "Quantidade de visitantes"
+    age_of_visitors: "Faixa etária dos visitantes"
+    visitors_over_12_years: "Visitantes acima de 12 anos"
+    institution: "Instituição"
+    physical_person: "Pessoa física"
+    public_school: "Escola pública"
+    private_school: "Escola privada"
+    want_guide: "Deseja acompanhamento de guia?"
+    yes_answer: "Sim"
+    no_answer: "Não"
+    description: "Descrição"
+    register: "Cadastrar"
+    back: "Voltar"
+    view_schedule: "Visualizar agenda"
+    visit_calendar: "Calendário de Educações Ambientais"
+    event_calendar: "Calendário de Eventos"
+    search_by_month: "Pesquisar por mês"
+    search_by_week: "Pesquisar por semana"
+    create_visit: "Criar educação ambiental"
+    create_event: "Criar evento"
+    information_visit: "Informação de Educação Ambiental"
+    visit_price: "Preço da educação ambiental (R$)"
+    number_paying_visitors: "Quantidade de visitantes pagantes"
+    acept_visit: "Aceitar educação ambiental"
+    refuse_visit: "Recusar educação ambiental"
+    cancel_visit: "Cancelar educação ambiental"
+    remove_visit: "Deletar educação ambiental"
+    show_visitations: "Mostrar Educações Ambientais Agendadas"
+    show: "Mostrar"
+    my_visitations: "Minhas Educações Ambientais Agendadas"
+    no_scheduled_visits: "Você não tem educações ambientais agendadas"
+    viewing_editing_visits: "Visualize e edite suas educações ambientais facilmente"
+    viewing_editing_events: "Visualize e edite seus eventos facilmente"
+    space_request: "Espaço solicitado"
+    placeholder_space_request: "Digite o nome do espaço"
+    commercial_images: "Uso Comercial de imagem?"
+    need_eletricity: "Precisa de energia elétrica?"
+    need_water: "Precisa de água?"
+    need_clean_service: "Precisa de servico de limpeza?"
+    other_informations: "Outras informações"
+    name_institute: "Nome da instituição"
+    placeholder_name_institute: "Digite o nome da instituição"
+    institute_address: "Endereço da instituição"
+    placeholder_institute_address: "Digite o endereço da instituição"
+    institute_cnpj: "CNPJ da instituição"
+    placeholder_institute_cnpj: "Digite o CNPJ. Ex.: 000.000.000/0000-00"
+    jbb_response_to_request: "Resposta do Jardim Botânico"
+    price_payment: "Pagamento"
+    event_information: "Informação do Evento"
+    date_time_start: "Data e hora de início"
+    date_time_end: "Data e hora de fim"
+    event_request: "Requisição de Evento"
+    date_to_start: "Data do inicio"
+    date_to_end: "Data do fim"
+    time_to_start: "Hora do inicio"
+    time_to_end: "Hora do fim"
+    case_institution: "Em Caso de instituição:"
+    show_event: "Mostrar eventos"
+    cancel_event: "Cancelar evento"
+    accept_event: "Aceitar evento"
+    refuse_event: "Recusar Evento"
+    delete_event: "Deletar evento"
+    generate_pdf: "Gerar PDF"
+    successful_event_request: "Solicitação de evento efetuada com sucesso!"
+    request_not_made: "Solicitação não efetuada"
+    event_canceled_user: "Evento cancelado pelo usuário"
+    event_refused: "Evento recusado"
+    not_objectionable_event: "Evento não pode ser recusado"
+    event_canceled: "Evento cancelado"
+    not_cancellable_event: "Evento não pode ser cancelado"
+    event_confirmed: "Evento confirmado"
+    not_confirmable_event: "Evento não pode ser confirmado"
+    event_removed: "Evento removido"
+    not_removable_event: "Evento não pode ser removido"
+    successful_visitation_request: "Solicitação de evento efetuada com sucesso!"
+    visitation_canceled_user: "Evento cancelado pelo usuário"
+    visitation_refused: "Evento recusado"
+    not_objectionable_visitation: "Evento não pode ser recusado"
+    visitation_canceled: "Evento cancelado"
+    not_cancellable_visitation: "Evento não pode ser cancelado"
+    visitation_confirmed: "Evento confirmado"
+    not_confirmable_visitation: "Evento não pode ser confirmado"
+    visitation_removed: "Evento removido"
+    not_removable_visitation: "Evento não pode ser removido"
+    sucessful_user_registration: "Cadastro efetuado com sucesso!"
+    sucessful_profile_update: "Perfil atualizado com sucesso!"
+    error_profile_update: "Erro ao atualizar o perfil"
+    sucessful_profile_remove: "Perfil removido com sucesso"
+    invalid_email_or_password: "Email ou senha inválidos"
+    sucessful_logout: "Logout efetuado com sucesso"
+    already_used_cpf: "CPF já cadastrado e não pode ser usado novamente."
+    already_used_email: "Email já cadastrado e não pode ser usado novamente."
+    null_phone: "Nenhum telefone foi fornecido."
+    invalid_phone: "Telefone inválido."
+    fill_correct_name: "Preencha o nome corretamente."
+    invalid_characters_in_name: "O nome do usuário possui caracteres inválidos."
+    numbers_in_name: "O nome do usuário possui números."
+    short_name: "O nome do usuário é muito curto."
+    missing_surname: "O usuário não possui sobrenome."
+    blank_cpf_field: "Campo CPF não pode ficar em branco."
+    invalid_cpf_number: "Número de CPF inválido."
+    invalid_email_format: "Formato de email inválido."
+    invalid_email: "Email inválido."
+    blank_gender_field: "Campo gênero não pode ficar em branco."
+    invalid_gender: "Gênero inválido."
+    too_much_visitors: "A quantidade máxima por educação ambiental é de 100 pessoas."
+    zero_visitors: "A quantidade de pessoas deve ser igual ou maior do que 1."

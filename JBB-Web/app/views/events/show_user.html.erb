@@ -1,6 +1,6 @@
 <body id="page-top">
   <head>
-    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="css/creative.css" rel="stylesheet">
   </head>
   <body id="aplication-body">
@@ -8,7 +8,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Mostrar Eventos</h2>
+            <h2 class="section-heading"><%= t(:show_event) %></h2>
             <hr class="primary">
           </div>
         </div>
@@ -25,21 +25,21 @@
           <div class="table-hover">
             <table border=0 class="table" >
               <tr>
-                <th>Data</th>
-                <th>Hora</th>
-                <th>Status</th>
-                <th>Espaço Solicitado</th>
+                <th><%= t(:date_schedule) %></th>
+                <th><%= t(:time_schedule) %></th>
+                <th><%= t(:status) %></th>
+                <th><%= t(:space_request) %></th>
               </tr>
               <% @event.each do |event| %>
               <tr>
-                <td> <%= event.date_start.strftime("%d/%m/%Y") %> </td>
-                <td> <%= event.time_start.to_s(:time) %> </td>
+                <td> <%= l(event.date_start, format: :long) %> </td>
+                <td> <%= l(event.time_start, format: :time_only) %> </td>
                 <td> <%= event.status %> </td>
                 <td> <%= event.jbb_space_requested %> </td>
-                <td><%= link_to 'Mostrar', action: 'index_user', id: event.id %></td>
+                <td><%= link_to t(:show), "/#{I18n.locale}/events/index_user?id=#{event.id}" %></td>
                 <% if (event.status <=> "Aguardando analise") == 0 %>
                 <td>
-                  <%= link_to "Cancelar Evento", controller: "events",
+                  <%= link_to t(:cancel_event), controller: "events",
                   action: "cancel_event_user", id: event %>
                 </td>
                 <%end%>
@@ -50,7 +50,7 @@
           <br>
           <div class="action" >
             <a id="show" >
-            <%= link_to "Voltar", home_url, class: "btn btn-primary" %>
+            <%= link_to t(:back), home_url, class: "btn btn-primary" %>
             </div>
             <br><br><br>
           </div>
@@ -58,4 +58,3 @@
       </div>
     </body>
   </body>
-

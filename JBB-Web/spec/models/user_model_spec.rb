@@ -30,6 +30,7 @@ RSpec.describe User, :type => :model do
         expect(User.new(subject)).not_to be_valid
         subject["name"] = "ab"
         expect(User.new(subject)).not_to be_valid
+
       end
     end
 
@@ -40,47 +41,12 @@ RSpec.describe User, :type => :model do
        end
      end
 
+    # describe "birth" do
+    #   it "must be given" do
+    #     subject["birth"] = ""
+    #     expect(User.new(subject)).not_to be_valid
+    #   end
+    # end
 
-   end
-
-  describe User do
-    describe "validate name" do
-      describe "name" do
-
-        context "when blank" do
-          before { @user.name = "" }
-
-          it "is invalid" do
-            @user.should be_invalid
-          end
-
-          it "adds the correct error message" do
-            @user.valid?
-            @user.errors.messages[:name].should include("Usuário possui nome muito curto.", "Usuário não possui último nome.")
-          end
-        end
-      end
-    end
   end
-
-  describe User do
-    describe "validate email" do
-      describe "email" do
-
-        context "when blank" do
-          before { @user.email = "" }
-
-          it "is invalid" do
-            @user.should be_invalid
-          end
-
-          it "adds the correct error message" do
-            @user.valid?
-            @user.errors.messages[:email].should include("is invalid", "Email inválido.")
-          end
-        end
-      end
-    end
-  end
-
 end

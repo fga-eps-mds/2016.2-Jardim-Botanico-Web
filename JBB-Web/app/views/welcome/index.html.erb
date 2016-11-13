@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
     <!-- Theme CSS -->
     <link href="css/creative.min.css" rel="stylesheet">
     <!-- Awesome Icons   -->
@@ -15,10 +15,10 @@
   <header>
     <div class="header-content">
       <div class="header-content-inner">
-        <h1 id="HomeHeanding"> Bem vindos ao Jardim Botânico</h1>
+        <h1 id="HomeHeanding"> <%=t(:welcome_to_jbb)%></h1>
         <hr>
-        <p><b><font color ="white">Jardim Botânico de Brasilía</font></b></p>
-			<a href="#about" class="btn btn-primary btn-xl page-scroll">Saiba mais sobre nós!</a>
+        <p><b><font color ="white"><%=t(:jbb)%></font></b></p>
+			<a href="#about" class="btn btn-primary btn-xl page-scroll"><%=t(:know_more)%></a>
       </div>
     </div>
   </header>
@@ -26,10 +26,10 @@
     <div class="container">
       <div class="row">
         <div class ="col-lg-8 col-lg-offset-2 text-center">
-          <h2 class="section-heading">Conheça um pouco mais sobre as nossas trilhas!</h2>
+          <h2 class="section-heading"><%=t(:know_trails)%></h2>
           <hr class="light">
-          <p class="text-faded">O Jardim Botânico de Brasília é predominantemente composto por vegetação do Cerrado, em excelente estado de conservação que pode ser apreciada nas Trilhas Interpretativas abertas à visitação pública. Por conta dessa característica, o JBB é conhecido como o “Jardim do Cerrado”. A área acessível à visitação é composta pelo Centro de Visitantes, Centro de Excelência do Cerrado, área de Piquenique, Orquidário, Cactário, Biblioteca, Permacultura, Anfiteatro, Trilhas Interpretativas e Jardins Temáticos.</p>
-          <a href ="/maps/jbb_map/" class="page-scroll btn btn-default btn-xl sr-button">Saiba por onde andar</a>
+          <p class="text-faded"><%=t(:know_trails2)%></p>
+          <a href ="/<%= @language %>/maps/jbb_map/" class="page-scroll btn btn-default btn-xl sr-button"><%=t(:where_walk)%></a>
         </div>
       </div>
     </div>
@@ -37,17 +37,17 @@
   <aside class="bg-dark">
   <div class="container text-center">
       <div class="call-to-action">
-        <h2>Veja nossa agenda e saiba o melhor dia para o seu evento e/ou visita</h2>
+        <h2><%=t(:appointment_book)%></h2>
       </div>
-      <a  id="calendar_index" href="http://localhost:3000/events/index_calendar_month" class="evento fa fa-calendar fa-3x sr-icons"> <h4><b><font color ="white">Evento</font></b></h4></a>
-      <a id="calendar_index" href="http://localhost:3000/visitations/index_calendar_month" class="visita fa fa-calendar-o fa-3x sr-icons"> <h4><b><font color ="white">Visita</font></b></h4> </a>
+      <a  id="calendar_index" href="/<%= @language %>/events/index_calendar_month" class="fa fa-calendar fa-3x sr-icons"> <h4><b><font color ="white"><%=t(:event)%></font></b></h4></a>
+      <a  id="calendar_index" href="/<%= @language %>/visitations/index_calendar_month" class="fa fa-calendar-o fa-3x sr-icons"> <h4><b><font color ="white"><%=t(:visit)%></font></b></h4> </a>
     </div>
   </aside>
   <section id="services">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Somos mais do que um simples jardim</h2>
+          <h2 class="section-heading"><%=t(:slogan)%></h2>
           <hr class="primary">
         </div>
       </div>
@@ -61,25 +61,25 @@
           <div class="service-box">
               <% if current_user %>
                 <% if current_user.is_employee %>
-                  <a href="/visitations/show">
+                  <a href="/<%= @language %>/visitations/show">
                   <% else %>
-                  <a href="/visitations/new">
+                  <a href="/<%= @language %>/visitations/new">
                   <% end%>
               <% else %>
-                <a href="/sign_in">
+                <a href="/<%= @language %>/sign_in">
             <% end %>
             <i class="fa fa-4x fa-map-marker text-primary sr-icons"></i>
             <% if current_user %>
              <% if current_user.is_employee %>
-             <h3>Gerencie visitas</h3>
-            <p class="text-muted">Gerencie visitas agendadas.</p>
+             <h3><%=t(:manage_visit)%></h3>
+            <p class="text-muted"><%=t(:manage_visit2)%></p>
              <% else %>
-            <h3>Agende uma visita</h3>
-            <p class="text-muted">Faça uma visita conosco para conhecer melhor as nossas trilhas e a nossa beleza natural.</p>
+            <h3><%=t(:make_visit)%></h3>
+            <p class="text-muted"><%=t(:make_visit2)%></p>
             <% end%>
             <% else %>
-            <h3>Agende uma visita</h3>
-            <p class="text-muted">Faça uma visita conosco para conhecer melhor as nossas trilhas e a nossa beleza natural.</p>
+            <h3><%=t(:make_visit)%></h3>
+            <p class="text-muted"><%=t(:make_visit2)%></p>
             <% end%>
           </div>
         </div>
@@ -87,41 +87,41 @@
         <div class="service-box">
                 <% if current_user %>
                   <% if current_user.is_employee %>
-                  <a href="/events/show_employee">
+                  <a href="/<%= @language %>/events/show_employee">
                   <% else %>
-                  <a href="/events/new">
+                  <a href="/<%= @language %>/events/new">
                   <% end%>
                 <% else %>
-                  <a href="/sign_in">
+                  <a href="/<%= @language %>/sign_in">
               <% end %>
           <i class="fa fa-4x fa-users text-primary sr-icons"></i>
           <% if current_user %>
              <% if current_user.is_employee %>
-             <h3>Gerencie eventos</h3>
-            <p class="text-muted">Gerencie eventos agendados.</p>
+             <h3><%=t(:manage_event)%></h3>
+            <p class="text-muted"><%=t(:manage_event2)%></p>
              <% else %>
-            <h3>Agende um evento</h3>
-            <p class="text-muted">Faça um evento conosco e desfrute dos melhores locais do nosso Jardim Botânico.</p>
+            <h3><%=t(:make_event)%></h3>
+            <p class="text-muted"><%=t(:make_event2)%></p>
             <% end%>
             <% else %>
-            <h3>Agende um evento</h3>
-            <p class="text-muted">Faça um evento conosco e desfrute dos melhores locais do nosso Jardim Botânico.</p>
+            <h3><%=t(:make_event)%></h3>
+            <p class="text-muted"><%=t(:make_event2)%></p>
             <% end%>
         </div>
       </div>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="service-box">
             <i class="fa fa-4x fa-tree text-primary sr-icons"></i>
-            <h3>Educação Ambiental</h3>
-            <p class="text-muted">Entre em contato com a natureza e saiba como preservá-la.</p>
+            <h3><%=t(:education)%></h3>
+            <p class="text-muted"><%=t(:education2)%></p>
           </div>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
         <div class="service-box">
           <i class="fa fa-4x fa-map-signs text-pri/maps/jbb_mapmary sr-icons"></i>
-          <h3>Espaço JBB</h3>
-          <a href="/maps/jbb_map/">
-          <p class="text-muted">Anfiteatro, biblioteca da natureza, centro de visitantes, trilhas, restaurantes e outras muitas atrações.</p>
+          <h3><%=t(:spaces)%></h3>
+          <a href="/<%= @language %>/maps/jbb_map/">
+          <p class="text-muted"><%=t(:all_spaces)%></p>
         </div>
       </div>
     </div>
@@ -131,89 +131,89 @@
     <div class="container-fluid">
         <div class="row no-gutter popup-gallery">
             <div class="col-lg-4 col-sm-6">
-                <a href="assets/portfolio/fullsize/1.jpg" class="portfolio-box">
-                    <img src="assets/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">
+                <a href="/assets/portfolio/fullsize/1.jpg" class="portfolio-box">
+                    <img src="/assets/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
                             <div class="project-category text-faded">
                             </div>
                             <div class="project-name">
-                                Jardim Japonês
+                                <%=t(:space1)%>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a href="assets/portfolio/fullsize/2.jpg" class="portfolio-box">
-                    <img src="assets/portfolio/thumbnails/2.jpg" class="img-responsive" alt="">
+                <a href="/assets/portfolio/fullsize/2.jpg" class="portfolio-box">
+                    <img src="/assets/portfolio/thumbnails/2.jpg" class="img-responsive" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
                             <div class="project-category text-faded">
 
                             </div>
                             <div class="project-name">
-                                Jardim Evolutivo
+                                <%=t(:space2)%>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a href="assets/portfolio/fullsize/3.jpg" class="portfolio-box">
-                    <img src="assets/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
+                <a href="/assets/portfolio/fullsize/3.jpg" class="portfolio-box">
+                    <img src="/assets/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
                             <div class="project-category text-faded">
 
                             </div>
                             <div class="project-name">
-                                Relógio de sol
+                                <%=t(:space3)%>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a href="assets/portfolio/fullsize/4.jpg" class="portfolio-box">
-                    <img src="assets/portfolio/thumbnails/4.jpg" class="img-responsive" alt="">
+                <a href="/assets/portfolio/fullsize/4.jpg" class="portfolio-box">
+                    <img src="/assets/portfolio/thumbnails/4.jpg" class="img-responsive" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
                             <div class="project-category text-faded">
 
                             </div>
                             <div class="project-name">
-                                Estufas
+                                <%=t(:space4)%>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a href="assets/portfolio/fullsize/5.jpg" class="portfolio-box">
-                    <img src="assets/portfolio/thumbnails/5.jpg" class="img-responsive" alt="">
+                <a href="/assets/portfolio/fullsize/5.jpg" class="portfolio-box">
+                    <img src="/assets/portfolio/thumbnails/5.jpg" class="img-responsive" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
                             <div class="project-category text-faded">
 
                             </div>
                             <div class="project-name">
-                                Casa de chá
+                                <%=t(:space5)%>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-sm-6">
-                <a href="assets/portfolio/fullsize/6.jpg" class="portfolio-box">
-                    <img src="assets/portfolio/thumbnails/6.jpg" class="img-responsive" alt="">
+                <a href="/assets/portfolio/fullsize/6.jpg" class="portfolio-box">
+                    <img src="/assets/portfolio/thumbnails/6.jpg" class="img-responsive" alt="">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
                             <div class="project-category text-faded">
 
                             </div>
                             <div class="project-name">
-                                Cactário
+                                <%=t(:space6)%>
                             </div>
                         </div>
                     </div>
@@ -225,7 +225,7 @@
 <aside class="bg-dark">
   <div class="container text-center">
     <div class="call-to-action">
-      <h2>Acompanhe as nossas redes sociais</h2>
+      <h2><%=t(:social_media)%></h2>
     </div>
     <a id="facebook_icon" href="https://www.facebook.com/jardimbotanicodebrasiliajbb" class="fa fa-facebook-official fa-3x sr-icons"></a>
     <a id="instagram_icon" href="https://www.instagram.com/jardimbotanicodebrasilia/" class="fa fa-instagram fa-3x sr-icons"></a>
@@ -236,18 +236,18 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 text-center">
-        <h2 class="section-heading">Fale conosco!</h2>
+        <h2 class="section-heading"><%=t(:contact)%></h2>
         <hr class="primary">
-        <p>Gostaria de entrar em contato com a gente?</p>
+        <p><%=t(:contact2)%></p>
       </div>
       <div class="col-lg-4 col-lg-offset-2 text-center">
           <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-          <h5> Assessoria de Comunicação Social: </h5>
+          <h5><%=t(:contact3)%></h5>
           <p><a href="mailto:ascom@jbb.df.gov.br">ascom@jbb.df.gov.br</a></p>
       </div>
       <div class="col-lg-4 text-center">
         <i class="fa fa-phone fa-3x sr-contact"></i>
-        <h5> Telefone: </h5>
+        <h5><%=t(:phone)%></h5>
         <p>(61) 3366-5597</p>
       </div>
     </div>

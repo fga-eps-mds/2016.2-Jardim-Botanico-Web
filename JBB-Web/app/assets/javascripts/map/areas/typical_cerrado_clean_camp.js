@@ -66,6 +66,6 @@ var typicalCerradoCleanCampColor = '#D3D6A1';
 
 function addTypicalCerradoCleanCamp(){
   typicalCerradoCleanCamp = createVegetation(typicalCerradoCleanCampCoordinates,
-                                      typicalCerradoCleanCampColor);  
+                                      typicalCerradoCleanCampColor);
   typicalCerradoCleanCamp.setMap(map);
 }

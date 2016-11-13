@@ -17,6 +17,6 @@ var southEucalyptusEightColor = '#A1BF77';
 function addSouthEucalyptusEight(){
   southEucalyptusEight = createVegetation(southEucalyptusEightCoordinates,
                                         southEucalyptusEightColor);
-  
+
   southEucalyptusEight.setMap(map);
 }

@@ -3,7 +3,7 @@
     <br>
     <br>
     <head>
-      <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+      <link href="/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
       <link href="css/creative.css" rel="stylesheet">
     </head>
   <div class="container">
@@ -13,11 +13,11 @@
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading">Perfil de <%= current_user.name %></h2>
+        <h2 class="section-heading"><%= t(:profile) %><%= current_user.name %></h2>
         <hr class="primary">
       </div>
        <p>
-        <b> Email: </b>
+        <b> <%= t(:email) %> </b>
         <%= current_user.email %>
       </p>
       <p>
@@ -25,25 +25,33 @@
         <%= current_user.cpf %>
       </p>
       <p>
-        <b> Telefone: </b>
+        <b> <%= t(:phone) %> </b>
         <% current_user.phones.each do |p| %>
           <%= p.phone %>
         <% end %>
       </p>
       <p>
-        <b> Gênero: </b>
-        <%= current_user.gender %>
+        <b> <%= t(:gender) %> </b>
+        <% if (@user.gender <=> "Feminino") == 0 %>
+        <%= t(:female) %>
+        <%end%>
+        <% if (@user.gender <=> "Masculino") == 0 %>
+        <%= t(:male) %>
+        <%end%>
+        <% if (@user.gender <=> "Outro") == 0 %>
+        <%= t(:other) %>
+        <%end%>
       </p>
       <p>
-        <b> Data de Nascimento: </b>
-        <%= current_user.birth %>
+        <b> <%= t(:birth) %> </b>
+        <%= l(current_user.birth, format: :long) %>
       </p>
       <div class="actions">
-        <%= link_to "Editar", user_edit_path(current_user), class: "btn btn-primary" %>
+        <%= link_to  t(:edit), user_edit_path(@language,current_user), class: "btn btn-primary" %>
         <a id="space" >
-        <%= link_to "Voltar", home_path, class: "btn btn-primary" %>
+        <a href="/<%= @language %>/" class="btn btn-primary"><%=t(:back)%></a>
         <a id="new" >
-        <%= link_to "Excluir minha conta", current_user, method: :delete, data: { confirm: "Tem certeza que deseja excluir sua conta?" }, class: "btn btn-warning destroy-btn"%>
+        <%= link_to t(:exclude), current_user, method: :delete, data: { confirm: t(:confirm_delete_user) }, class: "btn btn-warning destroy-btn"%>
       </div>
       </div>
     </div>

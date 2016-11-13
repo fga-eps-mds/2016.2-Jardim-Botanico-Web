@@ -17,6 +17,6 @@ var smallPinusColor = '#BAE3A9';
 function addSmallPinus(){
   smallPinus = createVegetation(smallPinusCoordinates,
                                     smallPinusColor);
-  
+
   smallPinus.setMap(map);
 }

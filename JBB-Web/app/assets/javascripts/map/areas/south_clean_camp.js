@@ -68,4 +68,4 @@ function addSouthCleanCamp(){
                                         southCleanCampColor);
 
   southCleanCamp.setMap(map);
-} 
+}

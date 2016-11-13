@@ -20,10 +20,10 @@ class VisitationsController < ApplicationController
     @visitation.set_visitation_cost
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
-      flash[:success] = "Solicitação de visita efetuada com sucesso!"
-      redirect_to show_visitation_user_url
+      flash[:success] = t(:successful_visit_request)
+      redirect_to "/#{I18n.locale}"+show_visitation_user_path
     else
-      flash[:warning] = "Solicitação não efetuada"
+      flash[:warning] = t(:request_not_made)
       render action: :new
     end
   end
@@ -33,8 +33,8 @@ class VisitationsController < ApplicationController
     @visitation.canceled_by_user
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
-      flash[:warning] = "Visitação cancelada pelo usuário"
-      redirect_to show_visitation_user_url
+      flash[:warning] = t(:visitation_canceled_user)
+      redirect_to "/#{I18n.locale}"+show_visitation_user_path
     end
   end
 
@@ -67,11 +67,11 @@ class VisitationsController < ApplicationController
     @visitation.refused_by_employee
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
-      flash[:success] = "Visitação recusada"
-      redirect_to show_visitation_url
+      flash[:success] = t(:visitation_refused)
+      redirect_to "/#{I18n.locale}"+show_visitation_path
     else
-      flash[:warning] = "Visitação não pode ser recusada"
-      redirect_to show_visitation_url
+      flash[:warning] = t(:not_objectionable_visitation)
+      redirect_to "/#{I18n.locale}"+show_visitation_path
     end
   end
 
@@ -80,22 +80,22 @@ class VisitationsController < ApplicationController
     @visitation.canceled_by_employee
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
-      flash[:success] = "Visitação cancelada"
-      redirect_to show_visitation_url
+      flash[:success] = t(:visitation_canceled)
+      redirect_to "/#{I18n.locale}"+show_visitation_path
     else
-      flash[:warning] = "Visitação não pode ser cancelada"
-      redirect_to show_visitation_url
+      flash[:warning] = t(:not_cancellable_visitation)
+      redirect_to "/#{I18n.locale}"+show_visitation_path
     end
   end
 
   #delete_visitation
   def delete_visitation_employee
     if @visitation.destroy
-      flash[:success] = "Visitação deletada"
-      redirect_to show_visitation_url
+      flash[:success] = t(:visitation_removed)
+      redirect_to "/#{I18n.locale}"+show_visitation_path
     else
-      flash[:warning] = "Visitação não pode ser deletada"
-      redirect_to show_visitation_url
+      flash[:warning] = t(:not_removable_visitation)
+      redirect_to "/#{I18n.locale}"+show_visitation_path
     end
   end
 
@@ -104,11 +104,11 @@ class VisitationsController < ApplicationController
     @visitation.accepted_by_employee
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
-      flash[:success] = "Visitação confirmada"
-      redirect_to show_visitation_url
+      flash[:success] = t(:visitation_confirmed)
+      redirect_to "/#{I18n.locale}"+show_visitation_path
     else
-      flash[:warning] = "Visitação não pode ser confirmada"
-      redirect_to show_visitation_url
+      flash[:warning] = t(:not_confirmable_visitation)
+      redirect_to "/#{I18n.locale}"+show_visitation_path
     end
   end
 

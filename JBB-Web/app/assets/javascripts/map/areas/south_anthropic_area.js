@@ -96,4 +96,4 @@ function addSouthAnthropicArea(){
                                         southAnthropicAreaColor);
 
   southAnthropicArea.setMap(map);
-} 
+}

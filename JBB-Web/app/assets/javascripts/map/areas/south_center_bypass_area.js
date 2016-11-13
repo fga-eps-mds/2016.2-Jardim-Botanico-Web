@@ -32,4 +32,4 @@ function addSouthCenterBypassArea(){
                                               southCenterBypassArea);
 
   southCenterBypassArea.setMap(map);
-} 
+}
