@@ -3,3 +3,6 @@ When(/^I press 'Evento'$/) do
 end
 
 
+When(/^I press 'Voltar'$/) do
+  page.find('.back').click
+end
