@@ -629,4 +629,8 @@ fieldset[disabled] .btn-danger.active {
   margin: 500px;
 }
 
+#legend {
+  margin: 25px;
+}
+
 /*# sourceMappingURL=bootstrap-theme.css.map */
