@@ -13,7 +13,7 @@ var smellsGardenContentString =
     'Seus canteiros formam um desenho com linhas sinuosas ,'+
     'em perfeita harmonia com o ambiente. Proporciona múltiplas intervenções '+
     'pedagógicas em percurso sensorial e a descoberta de sabores cheiros e texturas. '+
-    '<p>Leia mais em: <a href="/jbb_spaces/smells_garden"> '+
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/jardins-do-jardim/"> '+
     'Jardim de Cheiros</a> '+
     '</div>'+
     '</div>';

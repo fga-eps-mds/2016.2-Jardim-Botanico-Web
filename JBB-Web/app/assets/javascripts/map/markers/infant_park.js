@@ -10,7 +10,7 @@ var infantParkContentString =
     '<div id="bodyContent">'+
     '<p>O <b>Parque Infantil/Área de Piquenique</b>, um ótimo local para ficar com a família. ' +
     'Traga sua comida, e não esqueça de limpar depois! '+
-    '<p>Leia mais em:  <a href="/jbb_spaces/infant_park">'+
+    '<p>Leia mais em:  <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/piquenique/">'+
     'Parque Infantil/Área de Piquenique</a> '+
     '</div>'+
     '</div>';

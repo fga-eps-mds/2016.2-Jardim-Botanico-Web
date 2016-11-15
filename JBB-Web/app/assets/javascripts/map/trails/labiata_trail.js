@@ -14,7 +14,7 @@ var labiataTrailContentString =
     'A espécie foi salva da ameaça de extinção com ajuda do laboratório e do '+
     'banco de germoplasma do JBB, que produziu 100.000 plantas in vitro e '+
     'disseminou pelo do Distrito Federal. '+
-    '<p>Leia mais em: <a href="/trails/labiata_trail">'+
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/trilhas/">'+
     'Trilha Labiata</a> '+
     '</div>'+
     '</div>';

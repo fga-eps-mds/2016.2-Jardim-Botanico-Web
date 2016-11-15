@@ -13,7 +13,7 @@ var matterTrailContentString =
     'passa pelo anfiteatro e retorna à portaria principal,'+
     'margeada pelo cerrado denso. A vegetação possui ampla identificação'+
     'botânica proporcionando visitação autoguiada.'+
-    '<p>Leia mais em: <a href="/trails/matter_trail">'+
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/trilhas/">'+
     'Trilha Matter</a> '+
     '</div>'+
     '</div>';

@@ -19,7 +19,7 @@ var evolutionaryGardenContentString =
     'separadas das dicotiledôneas, os dois grandes grupos da divisão botânica'+
     'das plantas. É um excelente instrumento didático para a educação ambiental,'+
     'proporcionando conhecimentos de botânica, ecologia e paisagismo.'+
-    '<p>Leia mais em: <a href="/jbb_spaces/contemplation_garden">'+
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/jardins-do-jardim/">'+
     'Jardim Evolutivo</a> '+
     '</div>'+
     '</div>';

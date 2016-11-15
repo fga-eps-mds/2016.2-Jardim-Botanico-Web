@@ -11,7 +11,7 @@ var healingGardenContentString =
     '<p>O <b>Jardim Medicinal</b>, acompanha o caminho de diversas espécies ' +
     'da flora nativa com uso medicinal, identificadas com '+
     'nomes científicos e populares. '+
-    '<p>Leia mais em:  <a href="/jbb_spaces/healing_garden">'+
+    '<p>Leia mais em:  <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/horto-medicinal/">'+
     'Jardim Medicinal</a> '+
     '</div>'+
     '</div>';
