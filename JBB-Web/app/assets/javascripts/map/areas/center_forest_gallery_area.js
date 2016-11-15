@@ -42,7 +42,6 @@ var centerForestGalleryAreaCoordinates = [
   {lat: -15.907406007153476, lng: -47.836366589181125},
   {lat: -15.907456952197114, lng: -47.836703206412494},
   {lat: -15.907507109005094, lng: -47.83708973787725},
-
   {lat: -15.907530467806943, lng: -47.83724903602888},
   {lat: -15.90730906095935, lng: -47.83743850903193},
   {lat: -15.907102701057347, lng: -47.83784620480219},
@@ -134,7 +133,23 @@ var centerForestGalleryAreaCoordinates = [
   {lat: -15.891156745467013, lng: -47.844785414636135},
   {lat: -15.89063220379965, lng: -47.84420236945152},
   {lat: -15.890054347634958, lng: -47.8437303006649}
-  ];
+];
+
+var centerForestGalleyAreaContentString =
+   '<div id="content">'+
+   '<div id="siteNotice">'+
+   '</div>'+
+   '<h1 id="firstHeading" class="firstHeading">Mata de Galeria</h1>'+
+   '<div id="bodyContent">'+
+   '<p>Ou <b>Vegetação Ripária</b>, É a vegetação que acompanha os córregos  ' +
+   'Cabeça de Veado, Taquara, e Tapera, e abrange 5% da área da EEJBB, com trechos inundáveis e outros não inundáveis '+
+   'trechos inundáveis e outros não inundáveis. '+
+   'A mata de galeria do córrego Cabeça de Veado (MCV) tem aproximadamente 6.000 ' +
+   'metros de extensão, com largura que varia de 5 a 50 metros.'
+   '<p>Leia mais em: <a href="/jbb_spaces/vegetation">'+
+   'Vegetação</a> '+
+   '</div>'+
+   '</div>';
 
 var centerForestGalleryAreaColor = '#2B7A29';
 
@@ -143,4 +158,7 @@ function addCenterForestGalleryArea(){
                                                centerForestGalleryAreaColor);
 
     centerForestGalleryArea.setMap(map);
+
+    google.maps.event.addListener(centerForestGalleryArea, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, centerForestGalleryAreaContentString);
 }
