@@ -6,9 +6,13 @@ var matterTrailContentString =
     '</div>'+
     '<h1 id="firstHeading" class="firstHeading">Trilha Matter</h1>'+
     '<div id="bodyContent">'+
-    '<p>A <b>Trilha Matter</b>, ............. ' +
-    '  '+
-    '. '+
+    '<p>A <b>Trilha Matter</b>,' +
+    'Trilha asfaltada que começa na portaria principal, '+
+    'passa por uma mata seca, pelo cerrado denso, '+
+    'chega ao Centro de Visitantes, e em sequencia'+
+    'passa pelo anfiteatro e retorna à portaria principal,'+
+    'margeada pelo cerrado denso. A vegetação possui ampla identificação'+
+    'botânica proporcionando visitação autoguiada.'+
     '<p>Leia mais em: <a href="/trails/matter_trail">'+
     'Trilha Matter</a> '+
     '</div>'+
