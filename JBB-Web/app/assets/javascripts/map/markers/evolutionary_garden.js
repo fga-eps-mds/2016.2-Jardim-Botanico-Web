@@ -34,7 +34,7 @@ function addEvolutionaryGardenMarker(){
     evolutionaryGarden.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(evolutionaryGarden, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, evolutionaryGardenContentString);
+    google.maps.event.addListener(evolutionaryGarden, 'click', function() {
+        addInfowindowMarkers(evolutionaryGarden, evolutionaryGardenContentString);
     });
 }

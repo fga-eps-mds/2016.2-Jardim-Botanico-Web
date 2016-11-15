@@ -26,7 +26,7 @@ function addGreenHouseMarker(){
     greenHouse.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(greenHouse, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, greenHouseContentString);
+    google.maps.event.addListener(greenHouse, 'click', function() {
+        addInfowindowMarkers(greenHouse, greenHouseContentString);
     });
 }

@@ -26,7 +26,7 @@ function addCactusBoskMarker(){
     cactusBosk.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(cactusBosk, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, cactusBoskContentString);
+    google.maps.event.addListener(cactusBosk, 'click', function() {
+        addInfowindowMarkers(cactusBosk, cactusBoskContentString);
     });
 }

@@ -26,7 +26,7 @@ function addTeaHouseMarker(){
     teaHouse.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(teaHouse, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, teaHouseContentString);
+    google.maps.event.addListener(teaHouse, 'click', function() {
+        addInfowindowMarkers(teaHouse, teaHouseContentString);
     });
 }

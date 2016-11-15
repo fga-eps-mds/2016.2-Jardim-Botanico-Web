@@ -30,7 +30,7 @@ function addPermacultureMarker(){
     permaculture.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(permaculture, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, permacultureContentString);
+    google.maps.event.addListener(permaculture, 'click', function() {
+        addInfowindowMarkers(permaculture, permacultureContentString);
     });
 }

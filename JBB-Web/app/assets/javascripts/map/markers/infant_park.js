@@ -25,7 +25,7 @@ function addInfantParkMarker(){
     infantPark.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(infantPark, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, infantParkContentString);
+    google.maps.event.addListener(infantPark, 'click', function() {
+        addInfowindowMarkers(infantPark, infantParkContentString);
     });
 }

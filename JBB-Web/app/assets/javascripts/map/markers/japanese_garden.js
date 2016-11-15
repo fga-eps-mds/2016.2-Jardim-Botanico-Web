@@ -28,7 +28,7 @@ function addJapaneseGardenMarker(){
     japaneseGarden.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(japaneseGarden, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, japaneseGardenContentString);
+    google.maps.event.addListener(japaneseGarden, 'click', function() {
+        addInfowindowMarkers(japaneseGarden, japaneseGardenContentString);
     });
 }

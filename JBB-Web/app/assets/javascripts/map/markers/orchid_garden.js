@@ -26,7 +26,7 @@ function addOrchidGardenMarker(){
     orchidGarden.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(orchidGarden, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, orchidGardenContentString);
+    google.maps.event.addListener(orchidGarden, 'click', function() {
+        addInfowindowMarkers(orchidGarden, orchidGardenContentString);
     });
 }

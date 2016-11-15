@@ -28,7 +28,7 @@ function addSmellsGardenMarker(){
     smellsGarden.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(smellsGarden, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, smellsGardenContentString);
+    google.maps.event.addListener(smellsGarden, 'click', function() {
+        addInfowindowMarkers(smellsGarden, smellsGardenContentString);
     });
 }

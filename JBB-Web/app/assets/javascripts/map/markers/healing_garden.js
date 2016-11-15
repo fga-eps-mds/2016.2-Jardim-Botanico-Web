@@ -26,7 +26,7 @@ function addHealingGardenMarker(){
     healingGarden.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(healingGarden, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, healingGardenContentString);
+    google.maps.event.addListener(healingGarden, 'click', function() {
+        addInfowindowMarkers(healingGarden, healingGardenContentString);
     });
 }

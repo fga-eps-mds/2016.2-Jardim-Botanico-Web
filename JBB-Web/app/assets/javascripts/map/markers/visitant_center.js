@@ -26,7 +26,7 @@ function addVisitantCenterMarker(){
     visitantCenter.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(visitantCenter, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, visitantCenterContentString);
+    google.maps.event.addListener(visitantCenter, 'click', function() {
+        addInfowindowMarkers(visitantCenter, visitantCenterContentString);
     });
 }

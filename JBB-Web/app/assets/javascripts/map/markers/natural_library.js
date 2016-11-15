@@ -27,7 +27,7 @@ function addNaturalLibraryMarker(){
     naturalLibrary.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(naturalLibrary, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, naturalLibraryContentString);
+    google.maps.event.addListener(naturalLibrary, 'click', function() {
+        addInfowindowMarkers(naturalLibrary, naturalLibraryContentString);
     });
 }

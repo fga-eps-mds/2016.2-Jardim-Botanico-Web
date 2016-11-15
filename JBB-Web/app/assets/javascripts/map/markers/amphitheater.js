@@ -26,7 +26,7 @@ function addAmphitheaterMarker(){
     amphitheater.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(amphitheater, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, amphitheaterContentString);
+    google.maps.event.addListener(amphitheater, 'click', function() {
+        addInfowindowMarkers(amphitheater, amphitheaterContentString);
     });
 }
