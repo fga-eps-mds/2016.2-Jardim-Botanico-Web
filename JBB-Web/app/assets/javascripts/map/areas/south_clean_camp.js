@@ -1,4 +1,5 @@
 var southCleanCamp;
+
 var southCleanCampCoordinates = [
   {lat: -15.930706606597253, lng: -47.901322767284},
   {lat: -15.923072038230673, lng: -47.90544264164055},
