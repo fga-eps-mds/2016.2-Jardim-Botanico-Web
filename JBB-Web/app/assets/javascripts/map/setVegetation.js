@@ -8,7 +8,7 @@ function removeVegetationEcologicalStation(){
     centerCerradoSparseAreaLeft.setMap(null);
     centerCerradoSparseAreaRightUp.setMap(null);
     centerCerradoSparseAreaRight.setMap(null);
-    centerCerradoSparseArea.setMap(null); 
+    centerCerradoSparseArea.setMap(null);
     centerForestGalleryArea.setMap(null);
     centerGroundAreaRight.setMap(null);
     centerGroundMurundunsAreaCenter.setMap(null);
