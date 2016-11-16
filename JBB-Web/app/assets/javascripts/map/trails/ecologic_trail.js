@@ -18,7 +18,7 @@ var ecologicTrailContentString =
     'as características de alguns animais do Cerrado. '+
     'Com bastante atenção, e um pouco de sorte, pode-se avistar um tamanduá, '+
     'tatu ou outro representante da nossa fauna. '+
-    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/trilhas/">'+
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/trilhas/" target="_blank">'+
     'Trilha Ecológica</a> '+
     '</div>'+
     '</div>';

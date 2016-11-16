@@ -11,8 +11,6 @@ var cactusBoskContentString =
     '<p>O <b>Cactário</b>, ficam em exposição os indivíduos em ' +
     'período de floração, dos aproximados 190 espécimes '+
     'da flora brasileira e de outros países. '+
-    '<p>Leia mais em:  <a href="/jbb_spaces/cactus_bosk">'+
-    'Cactário</a> '+
     '</div>'+
     '</div>';
 

@@ -15,7 +15,7 @@ var permacultureContentString =
     'fossa ecológica, horta e jardim em pequenos espaços, etc. '+
     'Tecnologias milenares e inovadoras para garantir a sustentabilidade '+
     'não só do processo construtivo, mas também da ocupação.'+
-    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/permacultura/"> '+
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/permacultura/" target="_blank"> '+
     'Permacultura</a> '+
     '</div>'+
     '</div>';

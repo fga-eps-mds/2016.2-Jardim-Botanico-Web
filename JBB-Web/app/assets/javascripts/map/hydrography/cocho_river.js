@@ -230,8 +230,6 @@ var cochoRiverContentString =
     'Unidade de Conservação de Proteção Integral, que permite apenas uso '+
     'indireto dos recursos, <b>é proibida sua visitação</b> em geral, '+
     'inclusive por ciclistas ou banhistas.'+
-    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
-    'Rio</a> '+
     '</div>'+
     '</div>';
 

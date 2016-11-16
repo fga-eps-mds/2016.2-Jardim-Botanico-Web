@@ -12,7 +12,7 @@ var naturalLibraryContentString =
     'livros didáticos, gibis e brinquedos com temática ambiental que '+
     'estimulam a imaginação. Há ainda uma Sala Verde para exposição '+
     'de vídeos ambientais e um espaço para realização de oficinas.'+
-    '<p>Leia mais em:  <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/biblioteca-da-natureza/">'+
+    '<p>Leia mais em:  <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/biblioteca-da-natureza/" target="_blank">'+
     'Biblioteca da Natureza</a> '+
     '</div>'+
     '</div>';

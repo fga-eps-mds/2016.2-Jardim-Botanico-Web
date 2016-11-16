@@ -11,8 +11,6 @@ var greenHouseContentString =
     '<p>As <b>Estufas</b>, conjunto de quiosques onde estão alocadas as coleções ' +
     'de aráceas, bromeliáceas e outras famílias botânicas, '+
     'permitindo o acesso dos visitantes. '+
-    '<p>Leia mais em:  <a href="/jbb_spaces/green_house">'+
-    'Estufas</a> '+
     '</div>'+
     '</div>';
 

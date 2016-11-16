@@ -239,8 +239,6 @@ var deerHeadRiverCoordinates = [
     'As águas deste córrego, bem como de seus tributários, '+
     'são de classe especial, destinada ao consumo humano e animal, '+
     'e desta forma <b>não é permitido seu uso por banhistas.</b>'+
-    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
-    'Rio</a> '+
     '</div>'+
     '</div>';
 

@@ -9,8 +9,6 @@ var hammockPlaceContentString =
     '<h1 id="firstHeading" class="firstHeading">Redário</h1>'+
     '<div id="bodyContent">'+
     '<p>O <b>Redário</b>, venha aproveitar nosso espaço para relaxar '+
-    '<p>Leia mais em:  <a href="/jbb_spaces/hammock_place">'+
-    'Redário</a> '+
     '</div>'+
     '</div>';
 

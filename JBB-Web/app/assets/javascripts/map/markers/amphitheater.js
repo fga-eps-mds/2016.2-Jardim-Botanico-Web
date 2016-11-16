@@ -11,7 +11,7 @@ var amphitheaterContentString =
     '<p>O <b>Anfiteatro</b>, localizado junto à Alameda das Nações ' +
     'e dos Estados, foi criado para '+
     'a realização de grandes eventos.'+
-    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/anfiteatro/">'+
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/anfiteatro/" target="_blank">'+
     'Anfiteatro</a> '+
     '</div>'+
     '</div>';

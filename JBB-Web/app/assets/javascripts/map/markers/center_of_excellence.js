@@ -14,7 +14,7 @@ var centerOfExcellenceContentString =
     'e boa parte da Estação Ecológica Jardim Botânico – EEJBB. '+
     'Em período de seca, época com grande risco de incêndios, bombeiros '+
     'e brigadistas assumem este posto para monitorar a ocorrência de fogo. '+
-    '<p>Leia mais em:  <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/centro-de-excelencia-do-cerrado/">'+
+    '<p>Leia mais em:  <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/centro-de-excelencia-do-cerrado/" target="_blank">'+
     'Mirante</a> '+
     '</div>'+
     '</div>';

@@ -11,7 +11,7 @@ var orchidGardenContentString =
     '<p>O <b>Orquidário</b>, abriga uma coleção de orquídeas composta por ' +
     'espécies nativas da flora brasileira, ' +
     'com ênfase para as do bioma Cerrado.' +
-    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/orquidario/">'+
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/orquidario/" target="_blank">'+
     'Orquidário</a> '+
     '</div>'+
     '</div>';
