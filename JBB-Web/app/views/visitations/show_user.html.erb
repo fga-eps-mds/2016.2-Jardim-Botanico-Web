@@ -57,7 +57,9 @@
             <% end %>
           </table>
           <a id="show" >
-          <%= link_to t(:back), "/#{I18n.locale}", class: "btn btn-primary" %>
+          <%= link_to t(:back), user_my_requests_path(current_user), class: "btn btn-primary" %>
+              <a id="back_space_new" >
+            <%= link_to "Nova Visita", new_visitation_path, class: "btn btn-primary" %>
           <% else %>
           <div class="container">
             <div class="row">

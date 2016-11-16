@@ -1,5 +1,5 @@
 class VisitationsController < ApplicationController
-  before_action except: [:home, :new, :create, :show_user, :show, :index_calendar_month] do
+  before_action except: [:home, :new, :create, :show_user, :show_employee, :index_calendar_month] do
     @visitation = Visitation.find(params[:id])
   end
 
@@ -38,20 +38,25 @@ class VisitationsController < ApplicationController
     end
   end
 
+
+  #show
   def show_user
     @visitation = Visitation.where(user_id: current_user.id)
   end
 
-  #show
-  def show
+  def show_employee
     @visitations = Visitation.all
     @visitations_sorted = @visitations.sort_by {|visitation| visitation.status}
     @visitation_types = Visitation.all.select(:id, :visitation_type)
     @sum_of_payments = Visitation.total
   end
 
+
   #index
-  def index
+  def index_user
+  end
+
+  def index_employee
     respond_to do |format|
       format.html
       format.pdf do
@@ -68,10 +73,10 @@ class VisitationsController < ApplicationController
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = t(:visitation_refused)
-      redirect_to "/#{I18n.locale}"+show_visitation_path
+      redirect_to "/#{I18n.locale}"+show_visitation_employee_path
     else
       flash[:warning] = t(:not_objectionable_visitation)
-      redirect_to "/#{I18n.locale}"+show_visitation_path
+      redirect_to "/#{I18n.locale}"+show_visitation_employee_path
     end
   end
 
@@ -81,10 +86,10 @@ class VisitationsController < ApplicationController
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = t(:visitation_canceled)
-      redirect_to "/#{I18n.locale}"+show_visitation_path
+      redirect_to "/#{I18n.locale}"+show_visitation_employee_path
     else
       flash[:warning] = t(:not_cancellable_visitation)
-      redirect_to "/#{I18n.locale}"+show_visitation_path
+      redirect_to "/#{I18n.locale}"+show_visitation_employee_path
     end
   end
 
@@ -92,10 +97,10 @@ class VisitationsController < ApplicationController
   def delete_visitation_employee
     if @visitation.destroy
       flash[:success] = t(:visitation_removed)
-      redirect_to "/#{I18n.locale}"+show_visitation_path
+      redirect_to "/#{I18n.locale}"+show_visitation_employee_path
     else
       flash[:warning] = t(:not_removable_visitation)
-      redirect_to "/#{I18n.locale}"+show_visitation_path
+      redirect_to "/#{I18n.locale}"+show_visitation_employee_path
     end
   end
 
@@ -105,10 +110,10 @@ class VisitationsController < ApplicationController
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = t(:visitation_confirmed)
-      redirect_to "/#{I18n.locale}"+show_visitation_path
+      redirect_to "/#{I18n.locale}"+show_visitation_employee_path
     else
       flash[:warning] = t(:not_confirmable_visitation)
-      redirect_to "/#{I18n.locale}"+show_visitation_path
+      redirect_to "/#{I18n.locale}"+show_visitation_employee_path
     end
   end
 

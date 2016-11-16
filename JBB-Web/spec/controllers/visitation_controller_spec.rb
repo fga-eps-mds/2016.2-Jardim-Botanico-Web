@@ -85,9 +85,9 @@ RSpec.describe VisitationsController, type: :controller do
   #INDEX
   describe "Index visitation" do  #Dont test PDF
     it "should show each visitation" do
-      get :index, :id => @visitation.id
+      get :index_employee, :id => @visitation.id
       expect(response).to have_http_status(:success)
-      expect(response).to render_template("visitations/index")
+      expect(response).to render_template("visitations/index_employee")
     end
   end
 
@@ -115,9 +115,9 @@ RSpec.describe VisitationsController, type: :controller do
   #SHOW VISITS
   describe "Show visits" do
     it "should display all user's visits" do
-      get :show
+      get :show_employee
       expect(response).to have_http_status(:success)
-      expect(response).to render_template("visitations/show")
+      expect(response).to render_template("visitations/show_employee")
     end
 
     it "should display just user's visitation" do

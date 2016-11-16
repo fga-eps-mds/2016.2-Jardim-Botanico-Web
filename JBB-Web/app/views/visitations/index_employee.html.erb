@@ -1,0 +1,87 @@
+<body>
+    <head>
+      <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+      <link href="css/creative.css" rel="stylesheet">
+    </head>
+    <body id="aplication-body">
+      <section id="services">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading">Informação de Visita</h2>
+              <hr class="primary">
+            </div>
+          </div>
+        </div>
+  <div class="col-md-6 col-md-offset-3">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <br>
+        <div class = "actions" >
+          <b>Dia:</b>
+          <%= @visitation.date.strftime("%d/%m/%Y") %>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Hora:</b>
+          <%= @visitation.time.to_s(:time) %>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Status:</b>
+          <%= @visitation.status %>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Quantidade de Visitantes:</b>
+          <%= @visitation.visitants_amount %>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Quantidade de Visitantes Pagantes:</b>
+          <%= @visitation.visitants_paying %>
+        </div>
+        <br>
+        <div class = "actions" >
+          <b>Preço da Visita:</b>
+          <%= @visitation.visitation_cost %>
+        </div>
+        <br>
+        <div class= "actions" >
+          <b>Descrição:</b>
+          <%= @visitation.description %>
+        </div>
+
+        <br> <p>
+        <% if (current_user.is_employee)%>
+        <div class= "actions" >
+         <%= link_to 'Voltar', show_visitation_employee_path, class: "btn btn-primary"  %>
+       <% if (@visitation.status <=> "Aguardando confirmacao") == 0 %>
+           <%= link_to "Aceitar Visita", get_accept_visitation_employee_url(:id => @visitation.id), class: "btn btn-primary" %>
+           <%= link_to "Recusar Visita", get_refuse_visitation_employee_url(:id => @visitation.id), class: "btn btn-warning destroy-btn" %>
+       <%end%>
+       <%if (@visitation.status <=> "Agendado") == 0%>
+          <%= link_to "Cancelar Visita", get_cancel_visitation_employee_url(:id => @visitation.id), class: "btn btn-warning destroy-btn" %>
+       <%end%>
+       <% if (@visitation.status <=> "Cancelado por funcionario") == 0 ||
+           (@visitation.status <=> "Cancelado pelo usuario") == 0 ||
+           (@visitation.status <=> "Recusado por funcionario") == 0 %>
+           <%= link_to "Deletar Visita", get_delete_visitation_employee_url(:id => @visitation.id), class: "btn btn-warning destroy-btn" %>
+       <%end%>
+       <%else%>
+        <%= link_to "Gerar PDF", visitations_path(format: 'pdf', :id => @visitation.id), class: "btn btn-primary"%>
+        <a id="back_space_new" >
+        <%= link_to 'Voltar', show_visitation_employee_url, class: "btn btn-primary"  %>
+        <% if (@visitation.status <=> "Aguardando confirmacao") == 0 %>
+        <a id="back_space_new" >
+        <br><br>
+           <%= link_to "Cancelar Visita", get_cancel_visitation_user_url(:id => @visitation.id), class: "btn btn-warning destroy-btn" %>
+        <% end %>
+       </div>
+       <%end%>
+     </div>
+   </div>
+ </div>
+</body>
