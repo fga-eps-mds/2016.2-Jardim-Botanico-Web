@@ -22,3 +22,7 @@ When(/^I fill the new event form$/) do
    fill_in 'event_institute_address', :with => "Endereço da Instituição"
    fill_in 'event_institute_cnpj', :with => "62.212.097/0001-53"
 end
+
+When(/^I am on the create event page in text box$/) do
+  click_on('Agende um evento')
+end
