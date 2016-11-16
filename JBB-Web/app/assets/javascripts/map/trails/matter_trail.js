@@ -12,7 +12,7 @@ var matterTrailContentString =
     'chega ao Centro de Visitantes, e em sequencia'+
     'passa pelo anfiteatro e retorna à portaria principal,'+
     'margeada pelo cerrado denso. A vegetação possui ampla identificação'+
-    'botânica proporcionando visitação autoguiada.'+
+    'botânica proporcionando visitação autoguiada. A extensão dessa trilha é de: 4,439 KM'+
     '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/trilhas/" target="_blank">'+
     'Trilha Matter</a> '+
     '</div>'+

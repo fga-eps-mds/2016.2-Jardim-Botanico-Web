@@ -17,7 +17,7 @@ var ecologicTrailContentString =
     'Em seu último trecho abriga a trilha da Fauna, propícia a conhecer '+
     'as características de alguns animais do Cerrado. '+
     'Com bastante atenção, e um pouco de sorte, pode-se avistar um tamanduá, '+
-    'tatu ou outro representante da nossa fauna. '+
+    'tatu ou outro representante da nossa fauna.  A extensão dessa trilha é de: 4,565 KM '+
     '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/trilhas/" target="_blank">'+
     'Trilha Ecológica</a> '+
     '</div>'+
