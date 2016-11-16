@@ -26,3 +26,4 @@ Feature: viewer calendar event index
   	And I press 'Pesquisar por semana'
   	And I press 'Voltar'
   	Then I should see "Bem vindos ao Jardim Botânico" 	
+  	Then I should see "Calendário de Eventos"	

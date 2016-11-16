@@ -14,6 +14,9 @@ Scenario: To create a sucessful event
 	Then I should see "Solicitação de evento efetuada com sucesso!"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Acceptance Tests
 Scenario: To create a sucessful event in text box
 	Given I have accessed the login page
 	And I already have an account 
@@ -25,5 +28,8 @@ Scenario: To create a sucessful event in text box
 	Then I should see "Solicitação de evento efetuada com sucesso!"
 
 
+<<<<<<< HEAD
+=======
+>>>>>>> Acceptance Tests
 =======
 >>>>>>> Acceptance Tests
