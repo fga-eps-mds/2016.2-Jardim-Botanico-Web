@@ -78,7 +78,7 @@
             <p class="text-muted">Faça uma visita conosco para conhecer melhor as nossas trilhas e a nossa beleza natural.</p>
             <% end%>
             <% else %>
-            <h3>Agende uma visita</h3>
+            <h3 id="visitation_id">Agende uma visita</h3>
             <p class="text-muted">Faça uma visita conosco para conhecer melhor as nossas trilhas e a nossa beleza natural.</p>
             <% end%>
           </div>
@@ -97,29 +97,29 @@
           <i class="fa fa-4x fa-users text-primary sr-icons"></i>
           <% if current_user %>
              <% if current_user.is_employee %>
-             <h3>Gerencie eventos</h3>
+             <h3 >Gerencie eventos</h3>
             <p class="text-muted">Gerencie eventos agendados.</p>
              <% else %>
-            <h3>Agende um evento</h3>
+            <h3 id="event_current_user_id">Agende um evento</h3>
             <p class="text-muted">Faça um evento conosco e desfrute dos melhores locais do nosso Jardim Botânico.</p>
             <% end%>
             <% else %>
-            <h3>Agende um evento</h3>
+            <h3 id="event_id">Agende um evento</h3>
             <p class="text-muted">Faça um evento conosco e desfrute dos melhores locais do nosso Jardim Botânico.</p>
             <% end%>
         </div>
       </div>
         <div class="col-lg-3 col-md-6 text-center">
           <div class="service-box">
-            <i class="fa fa-4x fa-tree text-primary sr-icons"></i>
-            <h3>Educação Ambiental</h3>
+            <i class="fa fa-4x fa-tree text-primary sr-icons education_id "></i>
+            <h3 >Educação Ambiental</h3>
             <p class="text-muted">Entre em contato com a natureza e saiba como preservá-la.</p>
           </div>
       </div>
       <div class="col-lg-3 col-md-6 text-center">
         <div class="service-box">
           <i class="fa fa-4x fa-map-signs text-pri/maps/jbb_mapmary sr-icons"></i>
-          <h3>Espaço JBB</h3>
+          <h3 id="maps_id">Espaço JBB</h3>
           <a href="/maps/jbb_map/">
           <p class="text-muted">Anfiteatro, biblioteca da natureza, centro de visitantes, trilhas, restaurantes e outras muitas atrações.</p>
         </div>

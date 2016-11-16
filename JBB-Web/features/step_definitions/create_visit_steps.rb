@@ -21,3 +21,8 @@ end
 When(/^I click in 'Cadastrar'$/) do
    click_button('registration')
 end
+
+When(/^I am on the create visit page in text box$/) do
+  click_on('Agende uma visita')
+end
+
