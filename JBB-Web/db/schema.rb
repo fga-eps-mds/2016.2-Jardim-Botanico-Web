@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161110221428) do
+ActiveRecord::Schema.define(version: 20161117100129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +26,6 @@ ActiveRecord::Schema.define(version: 20161110221428) do
     t.integer  "estimated_public"
     t.string   "need_eletricity"
     t.string   "need_water"
-    t.string   "need_clean_service"
-    t.string   "commercial_use_photos"
     t.string   "description"
     t.string   "other_informations"
     t.string   "jbb_response_to_request"

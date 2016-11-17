@@ -93,18 +93,6 @@
 								<%= f.radio_button(:need_water, "Nao") %>
 								<%= f.label(:need_water, t(:no_answer)) %>
 							</tr>
-							<tr>
-								&nbsp&nbsp&nbsp&nbsp
-								<br>
-								<b><%= t(:need_clean_service) %></b>
-								&nbsp
-								<br>
-								<%= f.radio_button(:need_clean_service, "Sim")%>
-								<%= f.label(:need_clean_service, t(:yes_answer))%>
-								<br>
-								<%= f.radio_button(:need_clean_service, "Nao") %>
-								<%= f.label(:need_clean_service, t(:no_answer)) %>
-							</tr>
 						</td>
 					</table>
 				</div>
@@ -112,15 +100,6 @@
 				<div class = "field" >
 					<b><%= t(:other_informations) %></b>
 					<%=f.text_area :other_informations, :cols => "50", :rows => "5", class: 'form-control'%>
-				</div>
-				<br>
-				<div class = "field" >
-					<b><%= t(:commercial_images) %></b>
-					&nbsp
-					<%= f.radio_button(:commercial_use_photos, "Sim")%>
-					<%= f.label(:commercial_use_photos, t(:yes_answer))%>
-					<%= f.radio_button(:commercial_use_photos, "Nao") %>
-					<%= f.label(:commercial_use_photos, t(:no_answer)) %>
 				</div>
 				<br>
 				<div class = "field" >
