@@ -31,4 +31,9 @@ function addSmallDrainCerrado(){
                                        smallDrainCerradoColor);
 
   smallDrainCerrado.setMap(map);
+
+  //add a listener to open a infowindow every time the river is clicked
+  google.maps.event.addListener(smallDrainCerrado, 'click', function(clicked_location) {
+      addInfowindow(clicked_location.latLng, cerradoSensuStrictuContentString);
+  });
 }

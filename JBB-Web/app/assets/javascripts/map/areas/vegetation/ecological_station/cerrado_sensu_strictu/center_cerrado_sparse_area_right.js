@@ -27,4 +27,9 @@ function addCenterCerradoSparseAreaRight(){
                                                     centerCerradoSparseAreaRightColor);
 
     centerCerradoSparseAreaRight.setMap(map);
+
+    //add a listener to open a infowindow every time the river is clicked
+    google.maps.event.addListener(centerCerradoSparseAreaRight, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, cerradoSensuStrictuContentString);
+    });
 }
