@@ -127,11 +127,13 @@
             <b><%= t(:jbb_response_to_request) %></b>
             <%=f.text_area :jbb_response_to_request, :cols => "50", :rows => "5", class: 'form-control'%>
           </div>
+          <br>
           <div class = "field" >
             <b><%= t(:price_payment) %></b>
             <%=f.number_field :price_payment, class: 'form-control'%>
           </div>
-
+          <br>
+          <br>
           <div class="actions">
               <%= link_to t(:back), "/#{I18n.locale}"+show_event_employee_path, :required => true, class: "btn btn-primary"%>
               <% if (@event.status <=> "Aguardando analise") == 0 %>

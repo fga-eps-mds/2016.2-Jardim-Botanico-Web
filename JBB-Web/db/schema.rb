@@ -89,4 +89,5 @@ ActiveRecord::Schema.define(version: 20161110221428) do
     t.index ["status"], name: "index_visitations_on_status", using: :btree
     t.index ["user_id"], name: "index_visitations_on_user_id", using: :btree
   end
+
 end

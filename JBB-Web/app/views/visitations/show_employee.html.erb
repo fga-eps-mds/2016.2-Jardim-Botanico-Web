@@ -60,7 +60,7 @@ $(document).on('click', '.dropdown-menu li a', function () {
                     <td> <%= visitation.visitants_paying %> </td>
                     <%= visitation.visitation_cost %>
                     <td> <%= visitation.description %> </td>
-                    <td> <%= link_to t(:show), action: 'index', id: visitation %> </td>
+                    <td> <%= link_to t(:show), action: 'index_employee', locale: @language, id: visitation %> </td>
                     <% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
                       <td> <%= link_to t(:acept_visit), controller: "visitations",
                         action: "accept_visitation_employee", id: visitation %> </td>
@@ -92,8 +92,8 @@ $(document).on('click', '.dropdown-menu li a', function () {
             </div>
             <br>
             <p>
-            <%= link_to t(:generate_pdf), show_visitation_path(format: 'pdf'), class: "btn btn-primary"%>
-            <%= link_to t(:back), "/#{I18n.locale}", class: "btn btn-primary" %>
+            <%= link_to t(:generate_pdf), show_visitation_employee_path(format: 'pdf'), class: "btn btn-primary"%>
+            <%= link_to t(:back), "/#{@language}/users/my_requests/#{current_user.id}", class: "btn btn-primary" %>
           </div>
         </div>
       </div>

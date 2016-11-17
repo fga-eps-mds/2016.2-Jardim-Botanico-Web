@@ -14,15 +14,15 @@ class Visitation < ApplicationRecord
   validates :visitants_amount, presence: true
   validate :validate_visitants_amount
 
-  
+
   # validate the amount of visitors informed by the user
   def validate_visitants_amount
     if (self.visitants_amount > 100)
-      errors.add(:visitants_amount, "A quantidade máxima por visitação é de 100 pessoas")
+      errors.add(:visitants_amount, I18n.t(:too_much_visitors))
     elsif (self.visitants_amount < 1)
-      errors.add(:visitants_amount, "A quantidade de pessoas não pode ser negativa")
+      errors.add(:visitants_amount, I18n.t(:zero_visitors))
     elsif (self.visitants_amount < self.visitants_paying)
-      errors.add(:visitants_amount, "A quantidade de pagantes não pode ser maior que o total de visitantes")
+      errors.add(:visitants_amount, I18n.t(:more_paying_than_visitors))
     end
   end
 

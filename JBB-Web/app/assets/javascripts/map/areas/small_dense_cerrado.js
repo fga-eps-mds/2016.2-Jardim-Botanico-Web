@@ -1,6 +1,6 @@
 var smallDenseCerrado;
 
-var smallDenseCerradoCoordinates = [ 
+var smallDenseCerradoCoordinates = [
   {lat: -15.876406601150908, lng: -47.84322738647461},
   {lat: -15.876158931215373, lng: -47.843613624572754},
   {lat: -15.875663590430824, lng: -47.84402132034302},
