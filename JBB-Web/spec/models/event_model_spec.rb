@@ -88,13 +88,6 @@ RSpec.describe Event, :type => :model do
       end
     end
 
-    describe "awaiting_user_confirmation" do
-      it "must return the wanting status" do
-        event = Event.new
-        event.awaiting_user_confirmation == "Aguardando confirmacao do usuario"
-      end
-    end
-
     describe "canceled_by_user" do
       it "must return the canceled by user status" do
         event = Event.new
@@ -115,20 +108,5 @@ RSpec.describe Event, :type => :model do
         event.accepted_by_employee == "Agendado"
       end
     end
-
-    describe "start_time" do
-      it "must return the initial time" do
-        event = Event.new
-        event.date_start
-      end
-    end
-
-    describe "end_time" do
-      it "must return the final time" do
-        event = Event.new
-        event.date_end
-      end
-    end
-
   end
 end

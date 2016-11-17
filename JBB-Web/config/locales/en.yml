@@ -184,3 +184,5 @@ en:
     too_much_visitors: "The maximum amount for environmental education is 100 people."
     zero_visitors: "The number of people must be equal to or greater than 1."
     just_request: "Requests"
+    more_paying_than_visitors: "The amount of paying cannot be greater than the total of visitors"
+    blank_email_field: "Email field cannot be empty."
