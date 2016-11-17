@@ -75,11 +75,6 @@ class User < ApplicationRecord
     message: I18n.t(:already_used_email)
   }
 
-  def valid_email
-    if (self.email == nil)
-      errors.add(:email, I18n.t(:blank_email))
-  end
-
 
   def valid_cpf
     if (self.cpf == nil)
@@ -111,33 +106,21 @@ class User < ApplicationRecord
 
 
 
-    #gender
+  #gender
   def valid_gender
     if (self.gender == nil)
       errors.add(:gender, I18n.t(:blank_gender_field))
     end
 
     unless ((gender.capitalize <=> 'Masculino') == 0 ||
-            (gender.capitalize <=> 'Feminino') == 0 ||
-            (gender.capitalize <=> 'Outro') == 0
-            )
+      (gender.capitalize <=> 'Feminino') == 0 ||
+      (gender.capitalize <=> 'Outro') == 0
+      )
 
       errors.add(:gender, I18n.t(:invalid_gender))
     end
   end
 
-  #gender
-  def valid_gender
-    if (self.gender == nil)
-      errors.add(:gender, "Campo gênero não pode ficar em branco.")
-    end
-
-    unless ((gender.capitalize <=> 'Masculino') == 0 ||
-      (gender.capitalize <=> 'Feminino') == 0 ||
-      (gender.capitalize <=> 'Outro') == 0 )
-      errors.add(:gender, "Gênero inválido")
-    end
-  end
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
