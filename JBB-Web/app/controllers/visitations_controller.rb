@@ -49,6 +49,8 @@ class VisitationsController < ApplicationController
     @visitations_sorted = @visitations.sort_by {|visitation| visitation.status}
     @visitation_types = Visitation.all.select(:id, :visitation_type)
     @sum_of_payments = Visitation.total
+
+    select_pdf(VisitationsPdf.new())
   end
 
 
