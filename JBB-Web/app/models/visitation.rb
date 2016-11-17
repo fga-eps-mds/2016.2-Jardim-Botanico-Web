@@ -22,7 +22,7 @@ class Visitation < ApplicationRecord
   validates :visitants_amount, presence: true
 
   def validate_visitants_amount
-    if (self.visitants_amount > 100)
+    if (self.visitants_amount > 45)
       errors.add(:visitants_amount, I18n.t(:too_much_visitors))
     elsif (self.visitants_amount < 1)
       errors.add(:visitants_amount, I18n.t(:zero_visitors))
