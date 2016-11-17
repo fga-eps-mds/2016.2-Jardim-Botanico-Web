@@ -60,7 +60,7 @@ $(document).on('click', '.dropdown-menu li a', function () {
                     <td> <%= visitation.visitants_paying %> </td>
                     <%= visitation.visitation_cost %>
                     <td> <%= visitation.description %> </td>
-                    <td> <%= link_to t(:show), action: 'index_employee', id: visitation %> </td>
+                    <td> <%= link_to t(:show), action: 'index_employee', locale: @language, id: visitation %> </td>
                     <% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
                       <td> <%= link_to t(:acept_visit), controller: "visitations",
                         action: "accept_visitation_employee", id: visitation %> </td>

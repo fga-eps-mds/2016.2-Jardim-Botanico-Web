@@ -11,7 +11,7 @@
       <div class="row">
         <div class="col-lg-12 text-center">
             <% if current_user.is_employee %>
-              <h2 class="section-heading">Requisições</h2>
+              <h2 class="section-heading"><%= t(:just_request) %></h2>
             <% else %>
               <h2 class="section-heading"><%= t(:requests) %></h2>
             <% end%>

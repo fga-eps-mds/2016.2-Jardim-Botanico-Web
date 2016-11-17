@@ -241,3 +241,4 @@ pt:
     invalid_gender: "Gênero inválido."
     too_much_visitors: "A quantidade máxima por educação ambiental é de 100 pessoas."
     zero_visitors: "A quantidade de pessoas deve ser igual ou maior do que 1."
+    just_request: "Requisições"
