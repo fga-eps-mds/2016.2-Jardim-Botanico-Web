@@ -25,8 +25,8 @@
                         </div>
                         <br>
                         <div class = "actions" >
-                            <b><%= t(:time_schedule) %></b>
-                            <%= l(@visitation.time, format: :time_only) %>
+                            <b><%= t(:scheduled_period) %></b>
+                            <%= @visitation.period %>
                         </div>
                         <br>
                         <div class = "actions" >

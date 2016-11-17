@@ -44,7 +44,7 @@ $(document).on('click', '.dropdown-menu li a', function () {
                 <br /> <br />
                 <tr>
                   <th><%= t(:date_schedule) %></th>
-                  <th><%= t(:time_schedule) %></td>
+                  <th><%= t(:scheduled_period) %></td>
                   <th><%= t(:status) %></th>
                   <th><%= t(:number_visitors) %></th>
                   <th><%= t(:number_paying_visitors) %></th>
@@ -54,7 +54,7 @@ $(document).on('click', '.dropdown-menu li a', function () {
                 <% @visitations_sorted.each do |visitation| %>
                   <tr>
                     <td> <%= l(visitation.date, format: :long) %> </td>
-                    <td> <%= l(visitation.time, format: :time_only) %> </td>
+                    <td> <%= visitation.period %> </td>
                     <td> <%= visitation.status %> </td>
                     <td> <%= visitation.visitants_amount %> </td>
                     <td> <%= visitation.visitants_paying %> </td>

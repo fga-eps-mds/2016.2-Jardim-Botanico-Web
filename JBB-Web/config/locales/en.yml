@@ -186,3 +186,6 @@ en:
     just_request: "Requests"
     yes_answer_guide: "Yes, there are untill 45 people, over 10 yeas"
     inclusion_grup: "Inclusion Group"
+    scheduled_period: "Scheduled period"
+    morning_period: "Morning"
+    afternoon_period: "Afternoon"

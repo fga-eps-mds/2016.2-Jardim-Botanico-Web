@@ -30,7 +30,7 @@ class VisitationsPdf < Prawn::Document
 		@visitations.map do |visitation|
 			text "Dia: #{visitation.date.to_s}", :style => :bold
 			move_down 2
-			text "Hora: #{visitation.time.to_s}", :style => :bold
+			text "Periodo: #{visitation.period.to_s}", :style => :bold
 			move_down 2
 			text "Status: #{visitation.status.to_s}"
 			move_down 2

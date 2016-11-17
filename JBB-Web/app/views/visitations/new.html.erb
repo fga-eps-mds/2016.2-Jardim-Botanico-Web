@@ -43,9 +43,13 @@ u<body id="page-top">
                             <%= f.date_select :date, default: Date.today %>
                         </div>
                         <br>
-                        <div class="field">
-                            <h0><b><%= t(:time_schedule) %></b></h0> &nbsp
-                            <%= f.time_select :time, minute_step: 15, start_hour: 8, end_hour: 16 %>
+                        <div class = "field">
+                            <h0><b><%= t(:scheduled_period) %></b></h0> <br>
+                            <%= f.radio_button(:period, "Matutino") %>
+                            <%= f.label(:period, t(:morning_period)) %>
+                            &nbsp &nbsp &nbsp
+                            <%= f.radio_button(:period, "Vespertino") %>
+                            <%= f.label(:period, t(:afternoon_period)) %>
                         </div>
                         <br>
                         <div class = "form-inline" >

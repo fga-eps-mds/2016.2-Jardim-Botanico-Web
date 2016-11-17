@@ -244,3 +244,6 @@ pt:
     just_request: "Requisições"
     yes_answer_guide: "Sim, são até 45 pessoas, acima de 10 anos"
     inclusion_grup: "Grupo de Inclusão"
+    scheduled_period: "Periodo Agendado"
+    morning_period: "Matutino"
+    afternoon_period: "Vespertino"

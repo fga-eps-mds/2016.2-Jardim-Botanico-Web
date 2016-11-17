@@ -9,9 +9,6 @@ class Visitation < ApplicationRecord
 	# validation of date
 	validates :date, presence: true
 
-  # validation of time
-  validates :time, presence: true
-
   #validation of visitants_paying
   validates :visitants_paying, presence: true
 
