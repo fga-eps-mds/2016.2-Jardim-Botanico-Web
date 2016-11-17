@@ -93,7 +93,7 @@ $(document).on('click', '.dropdown-menu li a', function () {
             <br>
             <p>
             <%= link_to t(:generate_pdf), show_visitation_employee_path(format: 'pdf'), class: "btn btn-primary"%>
-            <%= link_to t(:back), user_my_requests_url(current_user), class: "btn btn-primary" %>
+            <%= link_to t(:back), "/#{@language}/users/my_requests/#{current_user.id}", class: "btn btn-primary" %>
           </div>
         </div>
       </div>

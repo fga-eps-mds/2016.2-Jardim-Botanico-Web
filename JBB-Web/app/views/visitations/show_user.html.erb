@@ -48,7 +48,7 @@
             <td> <%= visitation.visitants_paying %> </td>
             <td> <%= visitation.visitation_cost %> </td>
             <td> <%= visitation.description %> </td>
-            <td> <%= link_to t(:show), "/#{I18n.locale}/visitations?id=#{visitation.id}" %> </td>
+            <td> <%= link_to t(:show), "/#{I18n.locale}/visitations/index_user?id=#{visitation.id}" %> </td>
             <% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
             <td> <%= link_to t(:cancel_visit), controller: "visitations",
               action: "cancel_visitation_user", id: visitation %> </td>
@@ -57,7 +57,7 @@
             <% end %>
           </table>
           <a id="show" >
-          <%= link_to t(:back), user_my_requests_path(current_user), class: "btn btn-primary" %>
+          <%= link_to t(:back), "/#{@language}/users/my_requests/#{current_user.id}", class: "btn btn-primary" %>
               <a id="back_space_new" >
             <%= link_to "Nova Visita", new_visitation_path, class: "btn btn-primary" %>
           <% else %>

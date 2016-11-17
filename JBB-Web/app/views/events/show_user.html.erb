@@ -50,7 +50,7 @@
           <br>
           <div class="action" >
             <a id="show" >
-            <%= link_to t(:back), user_my_requests_path(current_user), class: "btn btn-primary" %>
+            <%= link_to t(:back), "/#{@language}/users/my_requests/#{current_user.id}", class: "btn btn-primary" %>
             <a id="back_space_new" >
             <%= link_to "Novo Evento", events_path, class: "btn btn-primary" %>
             </div>
