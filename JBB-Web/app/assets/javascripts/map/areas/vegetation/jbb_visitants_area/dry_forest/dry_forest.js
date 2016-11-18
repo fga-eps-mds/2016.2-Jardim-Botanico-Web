@@ -35,4 +35,9 @@ function addDryForest(){
     dryForest = createVegetation(dryForestCoordinates, dryForestColor);
 
     dryForest.setMap(map);
+
+    //add a listener to open a infowindow every time the river is clicked
+    google.maps.event.addListener(dryForest, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, dryForestContentString);
+    });
 }
