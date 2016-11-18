@@ -67,25 +67,26 @@ u<body id="page-top">
                         </div>
                         <br>
                         <div class="form-inline">
-                            <h0><b><%= t(:number_visitors) %></b></h0> &nbsp
-                            <div class = "form-group" style="width: 180px">
+                            <h0><b><%= t(:number_visitors) %></b></h0> &nbsp &nbsp
+                            <div class = "form-group" style="width: 100px">
                                 <%= f.number_field :visitants_amount, min: 1, max: 45, width: 10, :required => true, class: 'form-control'%>
                             </div>
-                            <br>
-                            <h0><b><%= t(:age_of_visitors) %></b></h0> &nbsp
+
+                            <h0><b><%= t(:age_of_visitors) %></b></h0> &nbsp &nbsp
                             <div class = "form-group" style="width: 180px">
                                 <%= f.number_field :groups_age, :required => true, min: 10, max: 100, class: 'form-control' %>
                             </div>
                             <br>
+                            <br>
                             <h0><b><%= t(:visitors_over_12_years) %></b></h0>
-                            <div class = "form-group" style="width: 180px">
+                            <div class = "form-group" style="width: 180px"> &nbsp &nbsp
                                 <%= f.number_field :visitants_paying, :required => true, min: 0, max: 45, class: 'form-control' %>
                             </div>
                         </div>
                         <br>
                         <div class = "field">
                             <h0><b><%= t(:social_reason) %></b></h0> <br>
-                            <%= f.radio_button(:visitation_type, "Pessoa fisica") %>
+                            <%= f.radio_button(:visitation_type, "Grupo de Inclusão") %>
                             <%= f.label(:visitation_type, t(:inclusion_grup)) %>
                             &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
                             <%= f.radio_button(:visitation_type, "Escola publica", :onclick=>"showMe('Escolas')") %>
@@ -97,11 +98,11 @@ u<body id="page-top">
                         <br>
                         <div id="Escolas">
                             <div class = "field">
-                                <h0><b><%= t(:want_guide) %></b></h0> &nbsp &nbsp &nbsp
-                                <%= f.radio_button(:has_guide, true, :checked => true) %>
-                                <%= f.label t(:yes_answer_guide) %>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                                <%= f.radio_button(:has_guide, false) %>
-                                <%= f.label t(:no_answer) %>
+                                <h0><b><%= t(:want_guide) %></b></h0> <br>
+                                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= f.radio_button(:has_guide, true, :checked => true) %>
+                                <%= f.label t(:yes_answer_guide) %> <br>
+                                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= f.radio_button(:has_guide, false) %>
+                                <%= f.label t(:no_answer_guide) %>
                             </div>
                         </div>
                         <br>

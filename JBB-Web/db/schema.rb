@@ -49,15 +49,6 @@ ActiveRecord::Schema.define(version: 20161008181353) do
     t.index ["user_id"], name: "index_phones_on_user_id", using: :btree
   end
 
-  create_table "trails", force: :cascade do |t|
-    t.string   "trail_name"
-    t.float    "length"
-    t.string   "locomotion"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "name"
@@ -76,6 +67,7 @@ ActiveRecord::Schema.define(version: 20161008181353) do
   end
 
   create_table "visitations", force: :cascade do |t|
+    t.string   "period"
     t.integer  "user_id"
     t.string   "status"
     t.date     "date"
