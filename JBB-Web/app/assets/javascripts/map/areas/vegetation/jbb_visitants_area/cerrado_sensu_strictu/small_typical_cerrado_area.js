@@ -18,7 +18,10 @@ var smallTypicalCerradoAreaColor = '#D3D6A1';
 function addSmallTypicalCerradoArea(){
   smallTypicalCerradoArea = createVegetation(smallTypicalCerradoAreaCoordinatess,
                                         smallTypicalCerradoAreaColor);
-
-
   smallTypicalCerradoArea.setMap(map);
+
+  //add a listener to open a infowindow every time the river is clicked
+  google.maps.event.addListener(smallTypicalCerradoArea, 'click', function(clicked_location) {
+      addInfowindow(clicked_location.latLng, cerradoSensuStrictuContentString);
+  });
 }
