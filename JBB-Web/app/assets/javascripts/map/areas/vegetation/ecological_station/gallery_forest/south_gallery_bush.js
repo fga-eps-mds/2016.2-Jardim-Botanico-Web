@@ -77,4 +77,9 @@ function addSouthGalleryBush(){
                                         southGalleryBushColor);
 
   southGalleryBush.setMap(map);
+
+  //add a listener to open a infowindow every time the river is clicked
+  google.maps.event.addListener(southGalleryBush, 'click', function(clicked_location) {
+      addInfowindow(clicked_location.latLng, galleryForestContentString);
+  });
 }

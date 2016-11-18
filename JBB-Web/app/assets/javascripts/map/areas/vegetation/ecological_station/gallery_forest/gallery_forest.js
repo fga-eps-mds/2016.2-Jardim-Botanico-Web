@@ -1,4 +1,4 @@
-var galleyForestContentString =
+var galleryForestContentString =
  '<div id="content">'+
  '<div id="siteNotice">'+
  '</div>'+
@@ -12,4 +12,4 @@ var galleyForestContentString =
  '<p>Leia mais em: <a href="/jbb_spaces/vegetation">'+
  'Vegetação</a> '+
  '</div>'+
- '</div>'+
+ '</div>';

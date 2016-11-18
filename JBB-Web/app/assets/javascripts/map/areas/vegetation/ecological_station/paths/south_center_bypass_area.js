@@ -32,4 +32,9 @@ function addSouthCenterBypassArea(){
                                               southCenterBypassArea);
 
   southCenterBypassArea.setMap(map);
+
+  //add a listener to open a infowindow every time the river is clicked
+  google.maps.event.addListener(southBypassArea, 'click', function(clicked_location) {
+      addInfowindow(clicked_location.latLng, pathsContentString);
+  });
 }

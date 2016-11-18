@@ -145,6 +145,6 @@ function addCenterForestGalleryArea(){
 
     //add a listener to open a infowindow every time the river is clicked
     google.maps.event.addListener(centerForestGalleryArea, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, galleyForestContentString);
+        addInfowindow(clicked_location.latLng, galleryForestContentString);
     });
 }
