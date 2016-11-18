@@ -155,7 +155,7 @@ pt:
     create_visit: "Criar educação ambiental"
     create_event: "Criar evento"
     information_visit: "Informação de Educação Ambiental"
-    visit_price: "Preço da educação ambiental (R$)"
+    visit_price: "Preço (R$)"
     number_paying_visitors: "Quantidade de visitantes pagantes"
     acept_visit: "Aceitar educação ambiental"
     refuse_visit: "Recusar educação ambiental"
@@ -264,3 +264,4 @@ pt:
     orientation3: "Usar filtro solar e repelente."
     successful_visit_request: "Educação Ambiental solicitada com sucesso"
     new_enviromental_education: "Nova Educação Ambiental"
+    value_raised: "Valor arrecadado"

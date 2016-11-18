@@ -1,11 +1,6 @@
 class Visitation < ApplicationRecord
   belongs_to :user
 
-
-  def start_time
-    self.date
-  end
-
 	# validation of date
 	validates :date, presence: true
 
@@ -31,12 +26,20 @@ class Visitation < ApplicationRecord
     self.status = "Aguardando confirmacao"
   end
 
-  def self.total
-    self.sum(:visitation_cost)
+  def self.initial_cost
+    return 0
+  end
+
+  def amount_payed
+    if (self.status <=> "Agendado") == 0
+      return self.visitation_cost
+    else
+      return 0
+    end
   end
 
   def set_visitation_cost
-    if (self.visitation_type <=> "Escola publica")
+    if (self.visitation_type <=> "Escola publica") == 0
       self.visitation_cost = 0
     else
       self.visitation_cost = (self.visitants_paying * 5)

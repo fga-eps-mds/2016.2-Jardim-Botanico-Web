@@ -48,7 +48,10 @@ class VisitationsController < ApplicationController
     @visitations = Visitation.all
     @visitations_sorted = @visitations.sort_by {|visitation| visitation.status}
     @visitation_types = Visitation.all.select(:id, :visitation_type)
-    @sum_of_payments = Visitation.total
+    @sum_of_payments = Visitation.initial_cost
+    @visitations.each do |visit|
+      @sum_of_payments += visit.amount_payed
+    end
 
     select_pdf(VisitationsPdf.new())
   end

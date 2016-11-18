@@ -38,7 +38,7 @@ $(document).on('click', '.dropdown-menu li a', function () {
               </ul>
             </div>
           </div>
-          <div class="col-md-10 col-md-offset-1">
+          <!-- <div class="col-md-10 col-md-offset-1"> -->
             <div class="table-hover">
               <table border=0 class="table" >
                 <br /> <br />
@@ -58,7 +58,7 @@ $(document).on('click', '.dropdown-menu li a', function () {
                     <td> <%= visitation.status %> </td>
                     <td> <%= visitation.visitants_amount %> </td>
                     <td> <%= visitation.visitants_paying %> </td>
-                    <%= visitation.visitation_cost %>
+                    <td>  <%= visitation.visitation_cost %> </td>
                     <td> <%= visitation.description %> </td>
                     <td> <%= link_to t(:show), action: 'index_employee', locale: @language, id: visitation %> </td>
                     <% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
@@ -86,13 +86,16 @@ $(document).on('click', '.dropdown-menu li a', function () {
                  <% end %>
                <% end %>
               </table>
-              <th>Valor arrecadado: R$</th>
+              <th><%=t(:value_raised)%>: R$</th>
               <%= @sum_of_payments %>
               <th>,00</th>
-            </div>
+            <!-- </div> -->
+            <br>
+            <br>
             <br>
             <p>
             <%= link_to t(:generate_pdf), show_visitation_employee_path(format: 'pdf'), class: "btn btn-primary"%>
+            <a id="back_space_new" ></a>
             <%= link_to t(:back), "/#{@language}/users/my_requests/#{current_user.id}", class: "btn btn-primary" %>
           </div>
         </div>
