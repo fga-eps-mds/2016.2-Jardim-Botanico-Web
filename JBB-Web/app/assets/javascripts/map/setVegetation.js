@@ -1,14 +1,20 @@
 var vegetation_on = false ;
 
 function removeVegetationEcologicalStation(){
-    centerBypassAreaCenter.setMap(null);
-    centerBypassAreaLeft.setMap(null);
-    centerBypassAreaRight.setMap(null);
-    centerBypassAreaUp.setMap(null);
+    //cerrado sensu strictu
     centerCerradoSparseAreaLeft.setMap(null);
     centerCerradoSparseAreaRightUp.setMap(null);
     centerCerradoSparseAreaRight.setMap(null);
     centerCerradoSparseArea.setMap(null);
+    centerTypicalCerradoAreaUp.setMap(null);
+    centerTypicalCerradoArea.setMap(null);
+    drainCerradoSouth.setMap(null);
+    smallDrainCerrado.setMap(null);
+
+    centerBypassAreaCenter.setMap(null);
+    centerBypassAreaLeft.setMap(null);
+    centerBypassAreaRight.setMap(null);
+    centerBypassAreaUp.setMap(null);
     centerForestGalleryArea.setMap(null);
     centerGroundAreaRight.setMap(null);
     centerGroundMurundunsAreaCenter.setMap(null);
@@ -16,11 +22,7 @@ function removeVegetationEcologicalStation(){
     centerGroundMurundunsAreaRight.setMap(null);
     centerGroundMurundunsArea.setMap(null);
     centerThickArea.setMap(null);
-    centerTypicalCerradoAreaUp.setMap(null);
-    centerTypicalCerradoArea.setMap(null);
-    drainCerradoSouth.setMap(null);
     dirtyFieldTypicalCerrado.setMap(null);
-    smallDrainCerrado.setMap(null);
     smallRockCerrado.setMap(null);
     southAnthropicArea.setMap(null);
     southBypassArea.setMap(null);
@@ -33,26 +35,28 @@ function removeVegetationEcologicalStation(){
 }
 
 function addVegetationEcologicalStation(){
-    addCenterBypassAreaCenter();
-    addCenterBypassAreaLeft();
-    addCenterBypassAreaRight();
-    addCenterBypassAreaUp();
+    //cerrado sensu strictu
     addCenterCerradoSparseAreaLeft();
     addCenterCerradoSparseAreaRightUp();
     addCenterCerradoSparseAreaRight();
     addCenterCerradoSparseArea();
+    addCenterTypicalCerradoAreaUp();
+    addCenterTypicalCerradoArea();
+    addDrainCerradoSouth();
+    addSmallDrainCerrado();
+
+    addCenterBypassAreaCenter();
+    addCenterBypassAreaLeft();
+    addCenterBypassAreaRight();
+    addCenterBypassAreaUp();
     addCenterForestGalleryArea();
     addCenterGroundAreaRight();
     addCenterGroundMurundunsAreaCenter();
     addCenterGroundMurundunsAreaLeft();
     addCenterGroundMurundunsAreaRight();
     addCenterGroundMurundunsArea();
-    addCenterThickArea();
-    addCenterTypicalCerradoAreaUp();
-    addCenterTypicalCerradoArea();
-    addDrainCerradoSouth();
+    addCenterThickArea(); //CERRADÃO
     addDirtyFieldTypicalCerrado();
-    addSmallDrainCerrado();
     addSmallRockCerrado();
     addSouthAnthropicArea();
     addSouthBypassArea();
