@@ -28,4 +28,9 @@ function addCenterBypassAreaLeft(){
                                             centerBypassAreaLeftColor);
 
     centerBypassAreaLeft.setMap(map);
+
+    //add a listener to open a infowindow every time the river is clicked
+    google.maps.event.addListener(centerBypassAreaLeft, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, pathsContentString);
+    });
 }
