@@ -1,10 +1,11 @@
 function removeVegetationVisitantsArea(){
+    removeVegetationVisitantsAreaCampFormations();
+
     administrateAreaEvolutionGardem.setMap(null);
     anthropicAreaEvolutionGardem.setMap(null);
     anthropicArea.setMap(null);
     anthropicAreaAdministrate.setMap(null);
     centerGalleryBush.setMap(null);
-    cleanCamp.setMap(null);
     denseCerrado.setMap(null);
     dryForest.setMap(null);
     eucalyptusTypicalCerrado.setMap(null);
@@ -16,9 +17,6 @@ function removeVegetationVisitantsArea(){
     smallTypicalCerradoArea.setMap(null);
     smallPinus.setMap(null);
     typicalCerradoDryForest.setMap(null);
-    typicalCerradoCleanCamp.setMap(null);
-    southDirtyFieldArea.setMap(null);
-    southDirtyField.setMap(null);
     southEucalyptusOne.setMap(null);
     southEucalyptusTwo.setMap(null);
     southEucalyptusThree.setMap(null);
@@ -36,12 +34,13 @@ function removeVegetationVisitantsArea(){
 }
 
 function addVegetationVisitantsArea(){
+    addVegetationVisitantsAreaCampFormations();
+
     addAdministrateAreaEvolutionGardem();
     addAnthropicAreaEvolutionGardem();
     addAnthropicArea();
     addAnthropicAreaAdministrate();
     addCenterGalleryBush();
-    addCleanCamp();
     addDenseCerrado();
     addDryForest();
     addEucalyptusTypicalCerrado();
@@ -52,8 +51,6 @@ function addVegetationVisitantsArea(){
     addSmallDenseCerrado();
     addSmallTypicalCerradoArea();
     addSmallPinus();
-    addSouthDirtyFieldArea();
-    addSouthDirtyField();
     addSouthEucalyptusOne();
     addSouthEucalyptusTwo();
     addSouthEucalyptusThree();
@@ -67,7 +64,6 @@ function addVegetationVisitantsArea(){
     addSouthEucalyptusEleven();
     addSouthTypicalCerradoArea();
     addTypicalCerradoDryForest();
-    addTypicalCerradoCleanCamp();
     addVisitantsCenterAdministrativeArea();
     addUrbanArea();
 }
