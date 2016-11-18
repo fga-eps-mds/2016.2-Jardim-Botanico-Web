@@ -26,4 +26,9 @@ function addCleanCamp(){
     cleanCamp = createVegetation(cleanCampCoordinates, cleanCampColor);
 
     cleanCamp.setMap(map);
+
+    //add a listener to open a infowindow every time the river is clicked
+    google.maps.event.addListener(cleanCamp, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, campFormationsContentString);
+    });
 }

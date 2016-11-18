@@ -30,4 +30,9 @@ function addSouthDirtyFieldArea(){
                                         southDirtyFieldAreaColor);
 
   southDirtyFieldArea.setMap(map);
+
+  //add a listener to open a infowindow every time the river is clicked
+  google.maps.event.addListener(southDirtyFieldArea, 'click', function(clicked_location) {
+      addInfowindow(clicked_location.latLng, campFormationsContentString);
+  });
 }
