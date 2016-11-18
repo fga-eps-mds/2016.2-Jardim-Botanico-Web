@@ -31,4 +31,9 @@ function addDirtyFieldTypicalCerrado(){
                                                 dirtyFieldTypicalCerradoColor);
 
     dirtyFieldTypicalCerrado.setMap(map);
+
+    //add a listener to open a infowindow every time the river is clicked
+    google.maps.event.addListener(dirtyFieldTypicalCerrado, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, campFormationsContentString);
+    });
 }
