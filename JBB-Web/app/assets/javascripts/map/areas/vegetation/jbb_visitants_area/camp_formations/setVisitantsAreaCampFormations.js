@@ -4,6 +4,7 @@ function removeVegetationVisitantsAreaCampFormations(){
     smallCleanCamp.setMap(null);
     southDirtyFieldArea.setMap(null);
     southDirtyField.setMap(null);
+    southSmallCleanCamp.setMap(null);
     typicalCerradoCleanCamp.setMap(null);
 
 }
@@ -14,5 +15,6 @@ function addVegetationVisitantsAreaCampFormations(){
     addSmallCleanCamp();
     addSouthDirtyFieldArea();
     addSouthDirtyField();
+    addSouthSmallCleanCamp();
     addTypicalCerradoCleanCamp();
 }

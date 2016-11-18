@@ -21,6 +21,5 @@ function addSmallCleanCamp(){
   google.maps.event.addListener(smallCleanCamp, 'click', function(clicked_location) {
       addInfowindow(clicked_location.latLng, campFormationsContentString);
   });
-
 }
 
