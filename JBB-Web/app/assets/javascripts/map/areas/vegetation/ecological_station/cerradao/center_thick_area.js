@@ -38,4 +38,9 @@ function addCenterThickArea(){
                                        centerThickAreaColor);
 
     centerThickArea.setMap(map);
+
+    //add a listener to open a infowindow every time the river is clicked
+    google.maps.event.addListener(centerThickArea, 'click', function(clicked_location) {
+        addInfowindow(clicked_location.latLng, cerradaoContentString);
+    });
 }
