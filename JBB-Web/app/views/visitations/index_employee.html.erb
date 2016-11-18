@@ -72,7 +72,7 @@
                                     <%end%>
                                     <%else%>
                                     <a id="back_space_new" >
-                                        <%= link_to 'Voltar', "/#{I18n.locale}"+show_visitation_user_path, class: "btn btn-primary"  %>
+                                        <%= link_to 'Voltar', "/#{I18n.locale}"+show_visitation_employee_path, class: "btn btn-primary"  %>
                                         <% if (@visitation.status <=> "Aguardando confirmacao") == 0 %>
                                         <a id="back_space_new" >
                                             <br><br>

@@ -55,31 +55,15 @@
                         </div>
 
                         <br> <p>
-                            <% if (current_user.is_employee)%>
-                            <div class= "actions" >
-                                <%= link_to 'Voltar', show_visitation_url, class: "btn btn-primary"  %>
-                                <% if (@visitation.status <=> "Aguardando confirmacao") == 0 %>
-                                <%= link_to t(:acept_visit), "/#{I18n.locale}"+get_accept_visitation_employee_path(:id => @visitation.id), class: "btn btn-primary" %>
-                                <%= link_to t(:refuse_visit), "/#{I18n.locale}"+get_refuse_visitation_employee_path(:id => @visitation.id), class: "btn btn-warning destroy-btn" %>
-                                <%end%>
-                                <%if (@visitation.status <=> "Agendado") == 0%>
-                                <%= link_to t(:cancel_visit), "/#{I18n.locale}"+get_cancel_visitation_employee_path(:id => @visitation.id), class: "btn btn-warning destroy-btn" %>
-                                <%end%>
-                                <% if (@visitation.status <=> "Cancelado por funcionario") == 0 ||
-                                    (@visitation.status <=> "Cancelado pelo usuario") == 0 ||
-                                    (@visitation.status <=> "Recusado por funcionario") == 0 %>
-                                    <%= link_to t(:remove_visit), "/#{I18n.locale}"+get_delete_visitation_employee_path(:id => @visitation.id), class: "btn btn-warning destroy-btn" %>
-                                    <%end%>
-                                    <%else%>
+                                    <%= link_to t(:generate_pdf), visitations_path(format: 'pdf', :id => @visitation.id), class: "btn btn-primary"%>
                                     <a id="back_space_new" >
-                                        <%= link_to 'Voltar', "/#{I18n.locale}"+show_visitation_user_path, class: "btn btn-primary"  %>
+                                        <%= link_to t(:back), "/#{I18n.locale}"+show_visitation_user_path, class: "btn btn-primary"  %>
                                         <% if (@visitation.status <=> "Aguardando confirmacao") == 0 %>
                                         <a id="back_space_new" >
                                             <br><br>
                                             <%= link_to t(:cancel_visit), "/#{I18n.locale}"+get_cancel_visitation_user_path(:id => @visitation.id), class: "btn btn-warning destroy-btn" %>
                                             <% end %>
                                         </div>
-                                        <%end%>
                                     </div>
                                 </div>
                             </div>

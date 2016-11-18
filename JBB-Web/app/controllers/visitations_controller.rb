@@ -1,5 +1,5 @@
 class VisitationsController < ApplicationController
-  before_action except: [:home, :new, :create, :show_user, :show_employee, :index_calendar_month] do
+  before_action except: [:home, :new, :create, :show_user, :show_employee, :index_calendar_month, :advices] do
     @visitation = Visitation.find(params[:id])
   end
 
@@ -21,7 +21,7 @@ class VisitationsController < ApplicationController
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = t(:successful_visit_request)
-      redirect_to "/#{I18n.locale}"+show_visitation_user_path
+      redirect_to "/#{I18n.locale}/visitations/advices"
     else
       flash[:warning] = t(:request_not_made)
       render action: :new
