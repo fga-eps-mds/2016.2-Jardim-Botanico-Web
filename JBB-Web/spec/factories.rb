@@ -30,13 +30,6 @@ FactoryGirl.define do
     estimated_public 50
    end
 
-   factory :trail do
-     trail_name "Trilha da Mata"
-     length 5.5
-     locomotion "Carro"
-     description "Trilha asfaltada mata fechada e habitat típico do cerrado"
-    end
-
     factory :phone do
       phone "6181380209"
     end
