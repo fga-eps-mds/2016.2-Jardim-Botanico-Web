@@ -10,7 +10,8 @@ var visitantCenterContentString =
     '<div id="bodyContent">'+
     '<p>O <b>Centro de Visitantes</b>, é onde o visitante se' +
     'informa sobre projetos, exposições, pesquisas, espaços de visitação, materiais' +
-    'bibliográficos, eventos e visita orientada. ' +
+    'bibliográficos, eventos e visita orientada. <br><br>' +
+    '<img src="/assets/portfolio/fullsize/12.jpg" class="img-responsive" alt="" style="width: 550px;height: 250px;">' +
     '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/centro-de-visitantes/" target="_blank">'+
     'Centro de Visitação</a> '+
     '</div>'+

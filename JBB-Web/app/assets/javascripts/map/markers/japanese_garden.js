@@ -12,7 +12,8 @@ var japaneseGardenContentString =
     'e harmonia entre seus elementos compostos no espaço. '+
     'Os elementos filosóficos e simbólicos - a água, as pedras, as plantas'+
     '- são mais importantes que seus aspectos visuais. '+
-    'É um convite à contemplação, transmite paz e espiritualidade. '+
+    'É um convite à contemplação, transmite paz e espiritualidade. <br><br>'+
+    '<img src="/assets/portfolio/fullsize/1.jpg" class="img-responsive" alt="" style="width: 550px;height: 250px;">' +
     '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/jardins-do-jardim/" target="_blank">'+
     'Jardim Japonês</a> '+
     '</div>'+

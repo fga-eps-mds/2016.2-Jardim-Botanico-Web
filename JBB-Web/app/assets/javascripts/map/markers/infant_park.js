@@ -9,7 +9,8 @@ var infantParkContentString =
     '<h1 id="firstHeading" class="firstHeading">Parque Infantil/Área de Piquenique</h1>'+
     '<div id="bodyContent">'+
     '<p>O <b>Parque Infantil/Área de Piquenique</b>, um ótimo local para ficar com a família. ' +
-    'Traga sua comida, e não esqueça de limpar depois! '+
+    'Traga sua comida, e não esqueça de limpar depois! <br><br>'+
+    '<img src="/assets/portfolio/fullsize/9.jpg" class="img-responsive" alt="" style="width: 550px;height: 250px;">' +
     '<p>Leia mais em:  <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/piquenique/" target="_blank">'+
     'Parque Infantil/Área de Piquenique</a> '+
     '</div>'+

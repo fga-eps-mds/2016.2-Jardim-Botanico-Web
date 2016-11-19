@@ -9,7 +9,8 @@ var sunWatchContentString =
     '<h1 id="firstHeading" class="firstHeading">Relógio de Sol</h1>'+
     '<div id="bodyContent">'+
     '<p>Visite o <b>Relógio de Sol</b>, venha se conectar com a natureza ' +
-    'sem utilizar eletrônicos! '+
+    'sem utilizar eletrônicos! <br><br>'+
+    '<img src="/assets/portfolio/fullsize/3.jpg" class="img-responsive" alt="" style="width: 550px;height: 250px;">'
     '</div>'+
     '</div>';
 
@@ -27,3 +28,4 @@ function addSunWatchMarker(){
         addInfowindowMarkers(sunWatch, sunWatchContentString);
     });
 }
+ 

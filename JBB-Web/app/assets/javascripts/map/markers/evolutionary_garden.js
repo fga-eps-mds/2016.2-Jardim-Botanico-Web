@@ -18,7 +18,8 @@ var evolutionaryGardenContentString =
     'Também, por uma linha imaginária, as plantas monocotiledôneas são'+
     'separadas das dicotiledôneas, os dois grandes grupos da divisão botânica'+
     'das plantas. É um excelente instrumento didático para a educação ambiental,'+
-    'proporcionando conhecimentos de botânica, ecologia e paisagismo.'+
+    'proporcionando conhecimentos de botânica, ecologia e paisagismo. <br><br>'+
+    '<img src="/assets/portfolio/fullsize/2.jpg" class="img-responsive" alt="" style="width: 550px;height: 250px;">' +
     '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/jardins-do-jardim/" target="_blank">'+
     'Jardim Evolutivo</a> '+
     '</div>'+

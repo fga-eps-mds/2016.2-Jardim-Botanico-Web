@@ -10,7 +10,8 @@ var teaHouseContentString =
     '<div id="bodyContent">'+
     '<p>O <b>Casa de Chá</b>, é um espaço destinado a futuro restaurante ' +
     'Sua proximidade com o lago do Jardim Evolutivo, '+
-    'torna-se um excelente ponto para sua observação. '+
+    'torna-se um excelente ponto para sua observação. <br><br> '+
+        '<img src="/assets/portfolio/fullsize/7.JPG" class="img-responsive" alt="" style="width: 550px;height: 250px;">' +
     '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/jardins-do-jardim/" target="_blank">'+
     'Casa de Chá</a> '+
     '</div>'+

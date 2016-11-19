@@ -10,7 +10,8 @@ var contemplationGardenContentString =
     '<div id="bodyContent">'+
     '<p>O <b>Jardim de Contemplação</b>, Este jardim dispõe em coleções ' +
     'espécies vegetais de diferentes biomas brasileiros, '+
-    'onde se pode apreciar a riqueza da nossa biodiversidade.'+
+    'onde se pode apreciar a riqueza da nossa biodiversidade. <br><br>'+
+    '<img src="/assets/portfolio/fullsize/17.jpg" class="img-responsive" alt="" style="width: 550px;height: 250px;">' +
     '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/jardins-do-jardim/" target="_blank">'+
     'Jardim de Contemplação</a> '+
     '</div>'+

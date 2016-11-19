@@ -10,7 +10,8 @@ var greenHouseContentString =
     '<div id="bodyContent">'+
     '<p>As <b>Estufas</b>, conjunto de quiosques onde estão alocadas as coleções ' +
     'de aráceas, bromeliáceas e outras famílias botânicas, '+
-    'permitindo o acesso dos visitantes. '+
+    'permitindo o acesso dos visitantes. <br><br>'+
+    '<img src="/assets/portfolio/fullsize/14.jpg" class="img-responsive" alt="" style="width: 550px;height: 250px;">' +
     '</div>'+
     '</div>';
 
