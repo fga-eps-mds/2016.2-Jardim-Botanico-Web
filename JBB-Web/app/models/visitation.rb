@@ -1,8 +1,19 @@
 class Visitation < ApplicationRecord
   belongs_to :user
 
+  # validation of period
+	validates :period, presence: true
+
 	# validation of date
 	validates :date, presence: true
+
+  validate :not_mondays
+
+  def not_mondays
+    if (self.date.wday == 1)
+      errors.add(:date, "not mondays satan")
+    end
+  end
 
   #validation of visitants_paying
   validates :visitants_paying, presence: true
@@ -12,14 +23,6 @@ class Visitation < ApplicationRecord
 
   #validation of visitants_amout
   validates :visitants_amount, presence: true
-
-  def validate_visitants_amount
-    if (self.visitants_amount > 45)
-      errors.add(:visitants_amount, I18n.t(:too_much_visitors))
-    elsif (self.visitants_amount < 1)
-      errors.add(:visitants_amount, I18n.t(:zero_visitors))
-    end
-  end
 
   #status
   def set_status_default

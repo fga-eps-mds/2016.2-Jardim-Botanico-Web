@@ -24,7 +24,7 @@ class VisitationsController < ApplicationController
       redirect_to "/#{I18n.locale}/visitations/advices"
     else
       flash[:warning] = t(:request_not_made)
-      render action: :new
+      redirect_to "/#{I18n.locale}/visitations/new"
     end
   end
 

@@ -33,14 +33,14 @@ u<body id="page-top">
                             <ul>
                                 <% @visitation.errors.full_messages.each do |msg| %>
                                 <li><%= msg %></li>
-                                <%end%>
+                                <% end %>
                             </ul>
                         </div>
-                        <%end%>
+                        <% end %>
                         <br>
                         <div class = "field" >
                             <h0><b><%= t(:date_schedule) %></b></h0> &nbsp
-                            <%= f.date_select :date, default: Date.today %>
+                            <%= f.date_select :date, default: Date.today, start_year: Date.today.year %>
                         </div>
                         <br>
                         <div class = "field">
