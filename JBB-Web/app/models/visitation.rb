@@ -11,7 +11,7 @@ class Visitation < ApplicationRecord
 
   def not_mondays
     if (self.date.wday == 1)
-      errors.add(:date, "not mondays satan")
+      errors.add(:date, I18n.t(:not_mondays))
     end
   end
 

@@ -207,3 +207,4 @@ en:
     successful_visit_request: "Sucessfull Environmental Education request"
     new_enviromental_education: "New Environmental Education"
     value_raised: "Value raised"
+    not_mondays: "It's not possible to schedule Environmental Education at mondays"

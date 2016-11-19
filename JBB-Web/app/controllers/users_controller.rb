@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action only: [:edit, :update, :show] do 
+  before_action only: [:edit, :update, :show] do
     @user = User.find(params[:id])
   end
 

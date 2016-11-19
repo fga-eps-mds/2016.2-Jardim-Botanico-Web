@@ -265,3 +265,4 @@ pt:
     successful_visit_request: "Educação Ambiental solicitada com sucesso"
     new_enviromental_education: "Nova Educação Ambiental"
     value_raised: "Valor arrecadado"
+    not_mondays: "Não é possível marcar Educações Ambientais nas segundas-feiras"
