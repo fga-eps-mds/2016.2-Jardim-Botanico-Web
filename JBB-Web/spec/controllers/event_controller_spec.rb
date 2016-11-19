@@ -31,8 +31,6 @@ RSpec.describe EventsController, type: :controller do
           :estimated_public => 100,
           :need_eletricity => true,
           :need_water => true,
-          :need_clean_service => true,
-          :commercial_use_photos => true,
           :description => "Parabéns pelo seu evento! ",
           :other_informations => "Outras informações",
           :jbb_response_to_request => "Sim",

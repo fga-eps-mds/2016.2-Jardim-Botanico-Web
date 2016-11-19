@@ -118,9 +118,8 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:name, :date_start, :date_end, :time_start,
                                   :time_end, :status, :description, :need_eletricity,
-                                  :need_water, :need_clean_service, :people_amount,
-                                  :jbb_space_requested, :estimated_public,
-                                  :commercial_use_photos, :other_informations,
+                                  :need_water, :people_amount, :jbb_space_requested,
+                                  :estimated_public, :other_informations,
                                   :jbb_response_to_request, :name_institute,
                                   :institute_address, :institute_cnpj, :price_payment)
   end
