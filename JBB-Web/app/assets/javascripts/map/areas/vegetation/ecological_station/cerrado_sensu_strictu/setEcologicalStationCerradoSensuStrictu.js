@@ -8,6 +8,8 @@ function removeVegetationEcologicalStationCerradoSensuStrictu(){
     centerTypicalCerradoArea.setMap(null);
     drainCerradoSouth.setMap(null);
     smallDrainCerrado.setMap(null);
+    typicalCerradoWest.setMap(null);
+    typicalCerradoWestRight.setMap(null);
 }
 
 function addVegetationEcologicalStationCerradoSensuStrictu(){
@@ -20,4 +22,6 @@ function addVegetationEcologicalStationCerradoSensuStrictu(){
     addCenterTypicalCerradoArea();
     addDrainCerradoSouth();
     addSmallDrainCerrado();
+    addTypicalCerradoWest();
+    addTypicalCerradoWestRight();
 }

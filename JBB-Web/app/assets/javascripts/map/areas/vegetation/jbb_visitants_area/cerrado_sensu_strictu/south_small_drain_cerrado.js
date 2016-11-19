@@ -54,4 +54,3 @@ function addSouthSmallDrainCerrado(){
   	addInfowindow(clicked_location.latLng, cerradoSensuStrictuContentString);
   });
 }
-}
