@@ -1,6 +1,7 @@
 function removeVegetationVisitationsAreaCerradoSensuStrictu(){
     //cerrado sensu strictu
     denseCerrado.setMap(null);
+    dirtyFieldTypicalCerrado.setMap(null);
     smallDenseCerrado.setMap(null);
     smallTypicalCerradoArea.setMap(null);
     southSmallDrainCerrado.setMap(null);
@@ -9,9 +10,10 @@ function removeVegetationVisitationsAreaCerradoSensuStrictu(){
 
 function addVegetationVisitationsAreaCerradoSensuStrictu(){
     //cerrado sensu strictu
-    denseCerrado.setMap(null);
-    smallDenseCerrado.setMap(null);
-    smallTypicalCerradoArea.setMap(null);
-    southSmallDrainCerrado.setMap(null);
-    southTypicalCerradoArea.setMap(null);
+    addDenseCerrado();
+    addDirtyFieldTypicalCerrado();
+    addSmallDenseCerrado();
+    addSmallTypicalCerradoArea();
+    addSouthSmallDrainCerrado();
+    addSouthTypicalCerradoArea();
 }

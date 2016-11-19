@@ -5,6 +5,8 @@ function removeVegetationVisitantsArea(){
     anthropicAreaEvolutionGardem.setMap(null);
     anthropicArea.setMap(null);
     anthropicAreaAdministrate.setMap(null);
+    centerEucalyptusArea.setMap(null);
+    centerDirtyField.setMap(null);
     centerGalleryBush.setMap(null);
     denseCerrado.setMap(null);
     dryForest.setMap(null);
@@ -40,6 +42,8 @@ function addVegetationVisitantsArea(){
     addAnthropicAreaEvolutionGardem();
     addAnthropicArea();
     addAnthropicAreaAdministrate();
+    addCenterEucalyptusArea();
+    addCenterDirtyField();
     addCenterGalleryBush();
     addDenseCerrado();
     addDryForest();
