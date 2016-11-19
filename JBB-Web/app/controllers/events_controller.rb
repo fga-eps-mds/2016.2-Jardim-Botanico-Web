@@ -46,7 +46,8 @@ class EventsController < ApplicationController
   def show_employee
     @event = Event.all
     @sum_of_payments = Event.total
-    select_pdf(EventsPdf.new())
+    period = params[:period]
+    select_pdf(EventsPdf.new(period))
   end
 
   def index_employee

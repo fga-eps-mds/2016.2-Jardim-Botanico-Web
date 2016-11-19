@@ -244,3 +244,5 @@ pt:
     just_request: "Requisições"
     more_paying_than_visitors: "A quantidade de pagantes não pode ser maior que o total de visitantes"
     blank_email_field: "O campo email não pode ficar em branco."
+    generate_pdf_last_week: "Gerar PDF com os dados da semana passada"
+    generate_pdf_next_month: "Gerar PDF com os dados do próximo mês"

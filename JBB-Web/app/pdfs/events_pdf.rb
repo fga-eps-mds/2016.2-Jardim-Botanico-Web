@@ -1,7 +1,14 @@
 class EventsPdf < Prawn::Document
-	def initialize()
+	def initialize(period)
+
 		super(top_margin: 70)
-		@evets = Event.all
+    #set the date range for the pdf
+    if period == "last_week"
+      @events = Event.where(date_start: 1.week.ago.beginning_of_week..1.week.ago.end_of_week)
+    else period == "next_month"
+      @events = Event.where(date_start: 1.month.from_now.beginning_of_month..1.month.from_now.end_of_month)
+    end
+
 		header
 		move_down 50
 		list_events
@@ -25,18 +32,18 @@ class EventsPdf < Prawn::Document
 		 transparent(0) { stroke_bounds }
 		end
 	end
-	
+
 	def list_events
-		@evets.map do |event|
+		@events.map do |event|
 			text "Data e hora do início", :style => :bold
 			move_down 1
-			text "Dia: #{event.date_start}"
-			text "Hora #{event.time_start.to_s}"
+			text "Dia: #{I18n.l(event.date_start, format: :long)}"
+			text "Hora #{I18n.l(event.time_start, format: :time_only)}"
 			move_down 2
 			text "Data e hora do fim", :style => :bold
 			move_down 1
-			text "Dia: #{event.date_end}"
-			text "Hora #{event.time_end}"
+			text "Dia: #{I18n.l(event.date_end, format: :long)}"
+			text "Hora #{I18n.l(event.time_end, format: :time_only)}"
 			move_down 2
 			text "Status: #{event.status}"
 			move_down 1
@@ -46,18 +53,12 @@ class EventsPdf < Prawn::Document
 			move_down 1
 			text "Descrição: #{event.description}"
 			move_down 1
-			text "Uso comercial de imagem? #{event.commercial_use_photos}"
-			move_down 1
 			text "Precisa de energia elétrica? #{event.need_eletricity}"
 			move_down 1
 			text "Precisa de água? #{event.need_water}"
 			move_down 1
-			text "Precisa de servico de limpeza? #{event.need_clean_service}"
-			move_down 1
 			text "Outras informações: #{event.other_informations}"
 			move_down 1
-			text "Uso comercial de imagem? #{event.commercial_use_photos}"
-			move_down 3
 			text "Em caso de instituição:"
 			move_down 2
 			text "Nome: #{event.name_institute}"
