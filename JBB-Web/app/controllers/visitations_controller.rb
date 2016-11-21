@@ -1,5 +1,5 @@
 class VisitationsController < ApplicationController
-  before_action except: [:home, :new, :create, :show_user, :show_employee, :index_calendar_month, :advices] do
+  before_action except: [:home, :new, :create, :show_user, :show_employee, :index_calendar_month, :advices, :index_calendar_week] do
     @visitation = Visitation.find(params[:id])
   end
 

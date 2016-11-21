@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-   before_action except: [:new, :create, :show_user, :show_employee, :index_calendar_month] do
+   before_action except: [:new, :create, :show_user, :show_employee, :index_calendar_month, :index_calendar_week] do
     @event = Event.find(params[:id])
   end
 
