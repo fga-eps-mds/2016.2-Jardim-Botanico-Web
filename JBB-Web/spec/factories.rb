@@ -13,7 +13,7 @@ FactoryGirl.define do
 
   factory :visitation do
     date "16/11/2016"
-    time "12:50"
+    period "Matutino"
     status "Aguardando confirmacao"
     visitants_amount 10
     description "Visita marcada ao JBB sábado"
