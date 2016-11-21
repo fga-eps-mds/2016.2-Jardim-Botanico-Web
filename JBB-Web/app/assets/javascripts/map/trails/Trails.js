@@ -22,9 +22,6 @@ class Trails {
         strokeOpacity: 1,
         strokeWeight: 3
     });
-
-
-
   }
 
 
@@ -40,7 +37,6 @@ class Trails {
       infowindow.setPosition({lat: -15.875535627259856, lng: -47.83130550387796});
       infowindow.open(map, this.ecologicTrailPolyline);
     });
-
   }
 
 

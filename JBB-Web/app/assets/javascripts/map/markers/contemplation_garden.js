@@ -10,8 +10,9 @@ var contemplationGardenContentString =
     '<div id="bodyContent">'+
     '<p>O <b>Jardim de Contemplação</b>, Este jardim dispõe em coleções ' +
     'espécies vegetais de diferentes biomas brasileiros, '+
-    'onde se pode apreciar a riqueza da nossa biodiversidade.'+
-    '<p>Leia mais em: <a href="/jbb_spaces/contemplation_garden">'+
+    'onde se pode apreciar a riqueza da nossa biodiversidade. <br><br>'+
+    '<img src="/assets/portfolio/fullsize/17.jpg" class="img-responsive" alt="" style="width: 550px;height: 250px;">' +
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/jardins-do-jardim/" target="_blank">'+
     'Jardim de Contemplação</a> '+
     '</div>'+
     '</div>';
@@ -26,7 +27,7 @@ function addContemplationGardenMarker(){
     contemplationGarden.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(contemplationGarden, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, contemplationGardenContentString);
+    google.maps.event.addListener(contemplationGarden, 'click', function() {
+        addInfowindowMarkers(contemplationGarden, contemplationGardenContentString);
     });
 }

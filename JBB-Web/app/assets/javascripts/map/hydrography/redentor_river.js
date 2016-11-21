@@ -163,8 +163,6 @@ var redentorCristRiverContentString =
     '</div>'+
     '<h1 id="firstHeading" class="firstHeading">Cristo redentor</h1>'+
     '<div id="bodyContent">'+
-    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
-    'Rio</a> '+
     '</div>'+
     '</div>';
 

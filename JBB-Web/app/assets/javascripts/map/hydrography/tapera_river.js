@@ -566,10 +566,14 @@ var taperaRiverContentString =
     '</div>'+
     '<h1 id="firstHeading" class="firstHeading">Corrego Tapera</h1>'+
     '<div id="bodyContent">'+
-    '<p>O <b>Corrego Tapera</b>, fica na divisa da estação ecologica do JBB ' +
-    'o território da aeronáutica'+
-    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
-    'Rio</a> '+
+    '<p>O <b>O córrego Cachere e o córrego Tapera</b>, afluentes do córrego Taquara, '+
+    'são cursos d’água com nascentes dentro da EEJBB. O córrego Tapera ocorre '+
+    'na região do Cristo Redentor e deságua na margem direita do córrego Taquara.'+
+    'Entretanto, possuem menor descarga fluvial que o córrego Cabeça de Veado. '+
+    'O ribeirão do Gama é outro afluente do Lago Paranoá.'+
+    'Por estar situado numa Estação Ecológica, Unidade de Conservação de '+
+    'Proteção Integral, que permite apenas uso indireto dos recursos, '+
+    '<b>é proibida sua visitação</b> em geral, inclusive por ciclistas ou banhistas.'+
     '</div>'+
     '</div>';
 

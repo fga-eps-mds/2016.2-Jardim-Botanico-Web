@@ -11,8 +11,9 @@ var naturalLibraryContentString =
     '<p>O <b>Biblioteca da Natureza</b>, Possui acervo literário infanto-juvenil, ' +
     'livros didáticos, gibis e brinquedos com temática ambiental que '+
     'estimulam a imaginação. Há ainda uma Sala Verde para exposição '+
-    'de vídeos ambientais e um espaço para realização de oficinas.'+
-    '<p>Leia mais em:  <a href="/jbb_spaces/narural_library">'+
+    'de vídeos ambientais e um espaço para realização de oficinas. <br><br>'+
+    '<img src="/assets/portfolio/fullsize/10.jpg" class="img-responsive" alt="" style="width: 550px;height: 250px;">' +
+    '<p>Leia mais em:  <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/biblioteca-da-natureza/" target="_blank">'+
     'Biblioteca da Natureza</a> '+
     '</div>'+
     '</div>';
@@ -27,7 +28,7 @@ function addNaturalLibraryMarker(){
     naturalLibrary.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(naturalLibrary, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, naturalLibraryContentString);
+    google.maps.event.addListener(naturalLibrary, 'click', function() {
+        addInfowindowMarkers(naturalLibrary, naturalLibraryContentString);
     });
 }

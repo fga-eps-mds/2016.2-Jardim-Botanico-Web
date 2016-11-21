@@ -6,10 +6,15 @@ var labiataTrailContentString =
     '</div>'+
     '<h1 id="firstHeading" class="firstHeading">Trilha Labiata</h1>'+
     '<div id="bodyContent">'+
-    '<p>A <b>Trilha labiata</b>, ............. ' +
-    '  '+
-    '. '+
-    '<p>Leia mais em: <a href="/trails/labiata_trail">'+
+    '<p>A <b>Trilha labiata</b>,' +
+    'Criada em 2009 para facilitar o acesso à Escola de Administração Fazendária '+
+    '- ESAF, leva o nome da orquídea Cattleya labiat, natural da Mata Atlântica. '+
+    'Nesta pequena trilha de mata seca, pode-se encontrar diversos exemplares '+
+    'desta orquídea introduzidos ao longo do caminho. '+
+    'A espécie foi salva da ameaça de extinção com ajuda do laboratório e do '+
+    'banco de germoplasma do JBB, que produziu 100.000 plantas in vitro e '+
+    'disseminou pelo do Distrito Federal.  A extensão dessa trilha é de: 0,239 KM '+
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/trilhas/" target="_blank">'+
     'Trilha Labiata</a> '+
     '</div>'+
     '</div>';

@@ -10,8 +10,9 @@ var teaHouseContentString =
     '<div id="bodyContent">'+
     '<p>O <b>Casa de Chá</b>, é um espaço destinado a futuro restaurante ' +
     'Sua proximidade com o lago do Jardim Evolutivo, '+
-    'torna-se um excelente ponto para sua observação. '+
-    '<p>Leia mais em: <a href="/jbb_spaces/tea_house">'+
+    'torna-se um excelente ponto para sua observação. <br><br> '+
+        '<img src="/assets/portfolio/fullsize/7.JPG" class="img-responsive" alt="" style="width: 550px;height: 250px;">' +
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/jardins-do-jardim/" target="_blank">'+
     'Casa de Chá</a> '+
     '</div>'+
     '</div>';
@@ -26,7 +27,7 @@ function addTeaHouseMarker(){
     teaHouse.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(teaHouse, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, teaHouseContentString);
+    google.maps.event.addListener(teaHouse, 'click', function() {
+        addInfowindowMarkers(teaHouse, teaHouseContentString);
     });
 }
