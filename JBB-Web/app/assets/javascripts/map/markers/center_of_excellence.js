@@ -13,8 +13,9 @@ var centerOfExcellenceContentString =
     'pontos mais altos do JBB permite avistar a silhueta de Brasília '+
     'e boa parte da Estação Ecológica Jardim Botânico – EEJBB. '+
     'Em período de seca, época com grande risco de incêndios, bombeiros '+
-    'e brigadistas assumem este posto para monitorar a ocorrência de fogo. '+
-    '<p>Leia mais em:  <a href="/jbb_spaces/center_of_excellence">'+
+    'e brigadistas assumem este posto para monitorar a ocorrência de fogo. <br><br>'+
+    '<img src="/assets/portfolio/fullsize/11.jpg" class="img-responsive" alt="" style="width: 550px;height: 250px;">' +
+    '<p>Leia mais em:  <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/centro-de-excelencia-do-cerrado/" target="_blank">'+
     'Mirante</a> '+
     '</div>'+
     '</div>';
@@ -29,7 +30,7 @@ function addCenterOfExcellenceMarker(){
     centerOfExcellence.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(centerOfExcellence, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, centerOfExcellenceContentString);
+    google.maps.event.addListener(centerOfExcellence, 'click', function() {
+        addInfowindowMarkers(centerOfExcellence, centerOfExcellenceContentString);
     });
 }

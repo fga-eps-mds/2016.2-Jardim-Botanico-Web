@@ -10,9 +10,8 @@ var cactusBoskContentString =
     '<div id="bodyContent">'+
     '<p>O <b>Cactário</b>, ficam em exposição os indivíduos em ' +
     'período de floração, dos aproximados 190 espécimes '+
-    'da flora brasileira e de outros países. '+
-    '<p>Leia mais em:  <a href="/jbb_spaces/cactus_bosk">'+
-    'Cactário</a> '+
+    'da flora brasileira e de outros países. <br><br>'+
+    '<img src="/assets/portfolio/fullsize/6.jpg" class="img-responsive" alt="" style="width: 550px;height: 250px;">' +
     '</div>'+
     '</div>';
 
@@ -26,7 +25,7 @@ function addCactusBoskMarker(){
     cactusBosk.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(cactusBosk, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, cactusBoskContentString);
+    google.maps.event.addListener(cactusBosk, 'click', function() {
+        addInfowindowMarkers(cactusBosk, cactusBoskContentString);
     });
 }

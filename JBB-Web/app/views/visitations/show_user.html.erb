@@ -32,7 +32,7 @@
           <br /> <br />
           <tr>
             <th><%= t(:date_schedule) %></th>
-            <th><%= t(:time_schedule) %></td>
+            <th><%= t(:scheduled_period) %></td>
             <th><%= t(:status) %></th>
             <th><%= t(:number_visitors) %></th>
             <th><%= t(:number_paying_visitors) %></th>
@@ -42,14 +42,14 @@
           <% @visitation.each do |visitation| %>
           <tr>
             <td> <%= l(visitation.date, format: :long) %> </td>
-            <td> <%= l(visitation.time, format: :time_only) %> </td>
+            <td> <%= visitation.period %> </td>
             <td> <%= visitation.status %> </td>
             <td> <%= visitation.visitants_amount %> </td>
             <td> <%= visitation.visitants_paying %> </td>
             <td> <%= visitation.visitation_cost %> </td>
             <td> <%= visitation.description %> </td>
             <td> <%= link_to t(:show), "/#{I18n.locale}/visitations/index_user?id=#{visitation.id}" %> </td>
-            <% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
+            <% if (visitation.status <=> "Aguardando confirmacao") == 0 || (visitation.status <=> "Agendado") == 0 %>
             <td> <%= link_to t(:cancel_visit), controller: "visitations",
               action: "cancel_visitation_user", id: visitation %> </td>
               <% end %>
@@ -57,17 +57,21 @@
             <% end %>
           </table>
           <a id="show" >
-          <%= link_to t(:back), "/#{@language}/users/my_requests/#{current_user.id}", class: "btn btn-primary" %>
-              <a id="back_space_new" >
-            <%= link_to "Nova Visita", new_visitation_path, class: "btn btn-primary" %>
           <% else %>
-          <div class="container">
-            <div class="row">
-              <h1><%= t(:no_scheduled_visits) %></h1>
-            </div>
-          </div>
+                <div class="row">
+                  <div class="col-lg-12 text-center">
+                     <h2 class="section-heading"><%= t(:no_scheduled_visits) %></h2>
+                  </div>
+                </div>
           <br>
           <% end %>
+          <br> <br>
+          <a id="back_space_new" >
+          <%= link_to t(:back), "/#{@language}/users/my_requests/#{current_user.id}", class: "btn btn-primary" %>
+          <a id="back_space_new" >
+          <a id="back_space_new" >
+            <a id="back_space_new" >
+          <%= link_to t(:new_enviromental_education), "/#{@language}"+new_visitation_path, class: "btn btn-primary" %>
         </div>
       </div>
     </div>

@@ -1,7 +1,14 @@
 class VisitationsPdf < Prawn::Document
-	def initialize()
+	def initialize(period)
 		super(top_margin: 70)
-		@visitations = Visitation.all
+		# @visitations = Visitation.all
+		#set the date range for the pdf
+		if period == "next_week"
+			@visitations = Visitation.where(date: 1.week.from_now.beginning_of_week..1.week.from_now.end_of_week)
+			
+		else period == "last_month"
+			@visitations = Visitation.where(date: 1.month.ago.beginning_of_month..1.month.ago.end_of_month)
+		end
 		header		
 		move_down 50
 		list_visits
@@ -10,27 +17,27 @@ class VisitationsPdf < Prawn::Document
 	def header
 		y_position = 720
 		bounding_box([0, y_position], :width => 90, :height => 100) do
-		 image "app/assets/images/pdf/logo_brasilia.jpg", :position => :left,  :width => 80, :height => 100
-		 transparent(0.0) { stroke_bounds }
+			image "app/assets/images/pdf/logo_brasilia.jpg", :position => :left,  :width => 80, :height => 100
+			transparent(0.0) { stroke_bounds }
 		end
 		bounding_box([90, y_position], :width => 360, :height => 120) do
 			move_down 30
 			text "Jardim Botânico de Brasília", :align => :center, :size => 18
 			move_down 10
 			text "Relatório de Visitas", :align => :center, :size => 18
-		 transparent(0.0) { stroke_bounds }
+			transparent(0.0) { stroke_bounds }
 		end
 		bounding_box([450, y_position], :width => 90, :height => 100) do
-		 image "app/assets/images/pdf/logo_JBB.jpg", :position => :right,  :width => 90, :height => 100
-		 transparent(0) { stroke_bounds }
+			image "app/assets/images/pdf/logo_JBB.jpg", :position => :right,  :width => 90, :height => 100
+			transparent(0) { stroke_bounds }
 		end
 	end
 
 	def list_visits
 		@visitations.map do |visitation|
-			text "Dia: #{visitation.date.to_s}", :style => :bold
+			text "Dia: #{I18n.l(visitation.date, format: :long)}"
 			move_down 2
-			text "Hora: #{visitation.time.to_s}", :style => :bold
+			text "Periodo: #{visitation.period.to_s}"
 			move_down 2
 			text "Status: #{visitation.status.to_s}"
 			move_down 2

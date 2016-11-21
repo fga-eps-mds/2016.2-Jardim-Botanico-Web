@@ -1,5 +1,5 @@
 class VisitationsController < ApplicationController
-  before_action except: [:home, :new, :create, :show_user, :show_employee, :index_calendar_month] do
+  before_action except: [:home, :new, :create, :show_user, :show_employee, :index_calendar_month, :advices, :index_calendar_week] do
     @visitation = Visitation.find(params[:id])
   end
 
@@ -21,10 +21,10 @@ class VisitationsController < ApplicationController
     if @visitation.save
       UserMailer.change_status_visitation(@visitation).deliver_now
       flash[:success] = t(:successful_visit_request)
-      redirect_to "/#{I18n.locale}"+show_visitation_user_path
+      redirect_to "/#{I18n.locale}/visitations/advices"
     else
       flash[:warning] = t(:request_not_made)
-      render action: :new
+      render 'new'
     end
   end
 
@@ -48,9 +48,12 @@ class VisitationsController < ApplicationController
     @visitations = Visitation.all
     @visitations_sorted = @visitations.sort_by {|visitation| visitation.status}
     @visitation_types = Visitation.all.select(:id, :visitation_type)
-    @sum_of_payments = Visitation.total
-
-    select_pdf(VisitationsPdf.new())
+    @sum_of_payments = Visitation.initial_cost
+    @visitations.each do |visit|
+      @sum_of_payments += visit.amount_payed
+    end
+    period = params[:period]
+    select_pdf(VisitationsPdf.new(period))
   end
 
 
@@ -59,14 +62,6 @@ class VisitationsController < ApplicationController
   end
 
   def index_employee
-    respond_to do |format|
-      format.html
-      format.pdf do
-        pdf = VisitationsPdf.new(@visitation)
-        send_data pdf.render, filename: 'formularios.pdf', type: "application/pdf",
-        disposition: "inline"
-      end
-    end
   end
 
   #refuse_confirmation
@@ -127,7 +122,7 @@ class VisitationsController < ApplicationController
   #parameters
   private
   def visitation_params
-    params.require(:visitation).permit(:date, :time, :status, :visitants_amount,
+    params.require(:visitation).permit(:date, :period, :status, :visitants_amount,
                                        :visitation_type, :groups_age, :objective,
                                        :spaces, :has_guide, :description,
                                        :visitants_paying, :visitation_cost)

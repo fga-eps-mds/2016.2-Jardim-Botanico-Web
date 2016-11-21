@@ -40,10 +40,11 @@ Rails.application.routes.draw do
     resources :visitations, :except => [:show, :update, :destroy]
 
     get 'visitations/home', as: 'home_visitation'
-    get 'visitations/show_employee', as: 'show_visitation_employee'
+      get 'visitations/show_employee', as: 'show_visitation_employee'
     get 'visitations/show_user', as: 'show_visitation_user'
     get 'visitations/index_employee', as: 'index_visitation_employee'
     get 'visitations/index_user', as: 'index_visitation_user'
+    get 'visitations/user_information', as: 'visitations_user_information'
 
     #Visitation Employee
     get 'visitations/accept_visitation_employee', as: 'get_accept_visitation_employee'
@@ -59,6 +60,7 @@ Rails.application.routes.draw do
     post 'visitations/delete_visitation_employee', as: 'post_delete_visitation_employee'
 
     #Visitation User
+    get 'visitations/advices', as: 'get_visitation_advices'
     get 'visitations/cancel_visitation_user', as: 'get_cancel_visitation_user'
     post 'visitations/cancel_visitation_user', as: 'post_cancel_visitation_user'
 
@@ -80,6 +82,7 @@ Rails.application.routes.draw do
     get 'events/show_user', as: 'show_event_user'
     get 'events/show_employee', as: 'show_event_employee'
     get 'events/index_user'
+    get 'events/user_information', as: 'events_user_information'
     get 'events/index_employee', as: 'index_event_employee'
     post 'events/index_employee', as: 'index_event_employee_save'
 

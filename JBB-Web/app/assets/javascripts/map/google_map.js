@@ -32,4 +32,5 @@ function loadScript() {
   '&libraries=drawing'+
   '&callback=initialize';
   document.body.appendChild(script);
-}
+} 
+

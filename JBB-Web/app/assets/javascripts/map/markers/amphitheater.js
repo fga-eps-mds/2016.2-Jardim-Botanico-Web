@@ -10,9 +10,10 @@ var amphitheaterContentString =
     '<div id="bodyContent">'+
     '<p>O <b>Anfiteatro</b>, localizado junto à Alameda das Nações ' +
     'e dos Estados, foi criado para '+
-    'a realização de grandes eventos.'+
-    '<p>Leia mais em: <a href="/jbb_spaces/amphitheater">'+
-    'Anfiteatro</a> '+
+    'a realização de grandes eventos.<br><br>'+
+    '<img src="/assets/portfolio/fullsize/8.jpg" class="img-responsive" alt="" style="width: 550px;height: 250px;">' +
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/anfiteatro/" target="_blank">'+
+    'Anfiteatro</a> <br><br>'+
     '</div>'+
     '</div>';
 
@@ -26,7 +27,7 @@ function addAmphitheaterMarker(){
     amphitheater.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(amphitheater, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, amphitheaterContentString);
+    google.maps.event.addListener(amphitheater, 'click', function() {
+        addInfowindowMarkers(amphitheater, amphitheaterContentString);
     });
 }

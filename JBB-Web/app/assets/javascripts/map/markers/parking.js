@@ -24,7 +24,7 @@ function addParkingMarker(){
     parking.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(parking, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, parkingContentString);
+    google.maps.event.addListener(parking, 'click', function() {
+        addInfowindowMarkers(parking, parkingContentString);
     });
 }

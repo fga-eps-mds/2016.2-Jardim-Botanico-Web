@@ -9,7 +9,8 @@ var sunWatchContentString =
     '<h1 id="firstHeading" class="firstHeading">Relógio de Sol</h1>'+
     '<div id="bodyContent">'+
     '<p>Visite o <b>Relógio de Sol</b>, venha se conectar com a natureza ' +
-    'sem utilizar eletrônicos! '+
+    'sem utilizar eletrônicos! <br><br>'+
+    '<img src="/assets/portfolio/fullsize/3.jpg" class="img-responsive" alt="" style="width: 550px;height: 250px;">'
     '</div>'+
     '</div>';
 
@@ -23,7 +24,8 @@ function addSunWatchMarker(){
     sunWatch.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(sunWatch, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, sunWatchContentString);
+    google.maps.event.addListener(sunWatch, 'click', function() {
+        addInfowindowMarkers(sunWatch, sunWatchContentString);
     });
 }
+ 

@@ -18,6 +18,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
+                        <div class = "actions">
+                          <b><%= t(:user_info) %></b>
+                          <td><%= link_to @visitation.user.name, "/#{I18n.locale}/visitations/user_information?id=#{@visitation.id}" %></td>
+                        </div>
                         <br>
                         <div class = "actions" >
                             <b><%= t(:date_schedule) %></b>
@@ -25,8 +29,13 @@
                         </div>
                         <br>
                         <div class = "actions" >
-                            <b><%= t(:time_schedule) %></b>
-                            <%= l(@visitation.time, format: :time_only) %>
+                            <b><%= t(:scheduled_period) %></b>
+                            <%= @visitation.period %>
+                        </div>
+                        <br>
+                        <div class = "actions" >
+                            <b><%= t(:social_reason) %></b>
+                            <%= @visitation.visitation_type %>
                         </div>
                         <br>
                         <div class = "actions" >
@@ -71,9 +80,8 @@
                                     <%= link_to t(:remove_visit), "/#{I18n.locale}"+get_delete_visitation_employee_path(:id => @visitation.id), class: "btn btn-warning destroy-btn" %>
                                     <%end%>
                                     <%else%>
-                                    <%= link_to t(:generate_pdf), visitations_path(format: 'pdf', :id => @visitation.id), class: "btn btn-primary"%>
                                     <a id="back_space_new" >
-                                        <%= link_to 'Voltar', "/#{I18n.locale}"+show_visitation_user_path, class: "btn btn-primary"  %>
+                                        <%= link_to 'Voltar', "/#{I18n.locale}"+show_visitation_employee_path, class: "btn btn-primary"  %>
                                         <% if (@visitation.status <=> "Aguardando confirmacao") == 0 %>
                                         <a id="back_space_new" >
                                             <br><br>

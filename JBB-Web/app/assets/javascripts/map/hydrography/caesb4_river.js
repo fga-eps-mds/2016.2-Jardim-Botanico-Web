@@ -52,8 +52,6 @@ var caesb4RiverContentString =
     '<p>O <b>Ribeirão Cabeça de Veado</b>, serve de ponto de captação de ' +
     'água para a CAESB. '+
     'Esse braço do ribeirão da na estação de captação de recursos hidricos Cabeça de Veado IV'+
-    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
-    'Rio</a> '+
     '</div>'+
     '</div>';
 

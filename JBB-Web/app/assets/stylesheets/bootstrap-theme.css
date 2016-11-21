@@ -585,11 +585,11 @@ fieldset[disabled] .btn-danger.active {
           box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 1px 0 rgba(255, 255, 255, .1);
 }
 
-#facebook_icon, #instagram_icon, #twitter_icon, #calendar_index {
+#facebook_icon, #instagram_icon, #twitter_icon {
   margin: 5px;
 }
 
-#space {
+#space, #calendar_index {
   margin: 10px;
 }
 
@@ -627,6 +627,10 @@ fieldset[disabled] .btn-danger.active {
 
 #show {
   margin: 500px;
+}
+
+#legend {
+  margin: 25px;
 }
 
 /*# sourceMappingURL=bootstrap-theme.css.map */

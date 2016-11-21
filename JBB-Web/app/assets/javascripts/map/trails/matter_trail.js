@@ -6,10 +6,14 @@ var matterTrailContentString =
     '</div>'+
     '<h1 id="firstHeading" class="firstHeading">Trilha Matter</h1>'+
     '<div id="bodyContent">'+
-    '<p>A <b>Trilha Matter</b>, ............. ' +
-    '  '+
-    '. '+
-    '<p>Leia mais em: <a href="/trails/matter_trail">'+
+    '<p>A <b>Trilha Matter</b>,' +
+    'Trilha asfaltada que começa na portaria principal, '+
+    'passa por uma mata seca, pelo cerrado denso, '+
+    'chega ao Centro de Visitantes, e em sequencia'+
+    'passa pelo anfiteatro e retorna à portaria principal,'+
+    'margeada pelo cerrado denso. A vegetação possui ampla identificação'+
+    'botânica proporcionando visitação autoguiada. A extensão dessa trilha é de: 4,439 KM'+
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/trilhas/" target="_blank">'+
     'Trilha Matter</a> '+
     '</div>'+
     '</div>';
