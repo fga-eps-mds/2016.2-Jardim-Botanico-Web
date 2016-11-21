@@ -61,7 +61,7 @@
           <div class="service-box">
               <% if current_user %>
                 <% if current_user.is_employee %>
-                  <a href="/<%= @language %>/visitations/show">
+                  <a href="/<%= @language %>/visitations/show_employee">
                   <% else %>
                   <a href="/<%= @language %>/visitations/new">
                   <% end%>
@@ -78,7 +78,7 @@
             <p class="text-muted"><%=t(:make_visit2)%></p>
             <% end%>
             <% else %>
-            <h3><%=t(:make_visit)%></h3>
+            <h3 id="visitation_id"><%=t(:make_visit)%></h3>
             <p class="text-muted"><%=t(:make_visit2)%></p>
             <% end%>
           </div>
@@ -100,11 +100,11 @@
              <h3><%=t(:manage_event)%></h3>
             <p class="text-muted"><%=t(:manage_event2)%></p>
              <% else %>
-            <h3><%=t(:make_event)%></h3>
+            <h3 id="event_current_user_id"><%=t(:make_event)%></h3>
             <p class="text-muted"><%=t(:make_event2)%></p>
             <% end%>
             <% else %>
-            <h3><%=t(:make_event)%></h3>
+            <h3 id="event_id"><%=t(:make_event)%></h3>
             <p class="text-muted"><%=t(:make_event2)%></p>
             <% end%>
         </div>
@@ -120,7 +120,7 @@
         <div class="service-box">
           <a href="/<%= @language %>/maps/jbb_map/">
           <i class="fa fa-4x fa-map-signs text-primary sr-icons"></i>
-          <h3><%=t(:spaces)%></h3>
+          <h3 id="maps_id"><%=t(:spaces)%></h3>
           <a href="/<%= @language %>/maps/jbb_map/">
           <p class="text-muted"><%=t(:all_spaces)%></p>
         </div>

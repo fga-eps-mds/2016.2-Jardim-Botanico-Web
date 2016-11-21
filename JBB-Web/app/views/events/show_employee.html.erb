@@ -43,11 +43,11 @@
                         <%end%>
                     </table>
                     <th>Valor arrecadado: R$</th>
-                    <%= @sum_of_payments %>
+                    <%= @sum_of_payments %> <br> <br>
                 </div>
                 <%= link_to t(:generate_pdf), show_event_employee_path(format: 'pdf'), class: "btn btn-primary"%>
                 <a id="back_space" >
-                <%= link_to t(:back), home_url, class: "btn btn-primary" %>
+                <%= link_to t(:back), "/#{@language}/users/my_requests/#{current_user.id}", class: "btn btn-primary" %>
             </div>
         </div>
     </div>
