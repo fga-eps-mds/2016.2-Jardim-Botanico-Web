@@ -19,6 +19,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
+        <div class = "actions">
+          <b><%= t(:user_info) %></b>
+          <td><%= link_to @event.user.name, "/#{I18n.locale}/events/user_information?id=#{@event.id}" %></td>
+        </div>
+        <br>
         <b><%= t(:date_time_start) %></b>
         <div class = "actions">
           <b><%= t(:date_schedule) %></b>

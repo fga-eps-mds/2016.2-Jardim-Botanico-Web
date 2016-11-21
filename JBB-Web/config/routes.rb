@@ -80,6 +80,7 @@ Rails.application.routes.draw do
     get 'events/show_user', as: 'show_event_user'
     get 'events/show_employee', as: 'show_event_employee'
     get 'events/index_user'
+    get 'events/user_information', as: 'user_information'
     get 'events/index_employee', as: 'index_event_employee'
     post 'events/index_employee', as: 'index_event_employee_save'
 

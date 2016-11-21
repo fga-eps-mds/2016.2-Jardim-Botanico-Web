@@ -1,7 +1,5 @@
-
 <body id="page-top">
     <br><br>
-    <div class="col-md-6 col-md-offset-3">
     <head>
       <link href="/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
       <link href="css/creative.css" rel="stylesheet">
@@ -25,12 +23,13 @@
                 <div class="alert alert-<%= key %>"><%= value %></div>
                 <% end %>
                 <div class="table-hover">
-                    <table border=1 class="table table-bordered" >
+                    <table border=0 class="table" >
                         <tr>
                             <th><%= t(:date_schedule) %></th>
                             <th><%= t(:time_schedule) %></th>
                             <th><%= t(:status) %></th>
                             <th><%= t(:space_request) %></th>
+                            <th><%= t(:user_info) %></th>
                         </tr>
                         <% @event.each do |event| %>
                         <tr>
@@ -38,6 +37,7 @@
                             <td> <%= l(event.time_start, format: :time_only) %> </td>
                             <td> <%= event.status %> </td>
                             <td> <%= event.jbb_space_requested %> </td>
+                            <td><%= link_to event.user.name, "/#{I18n.locale}/events/user_information?id=#{event.user.id}" %></td>
                             <td><%= link_to t(:show), "/#{I18n.locale}/events/index_employee?id=#{event.id}" %></td>
                         </tr>
                         <%end%>

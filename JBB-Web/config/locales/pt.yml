@@ -244,3 +244,4 @@ pt:
     just_request: "Requisições"
     more_paying_than_visitors: "A quantidade de pagantes não pode ser maior que o total de visitantes"
     blank_email_field: "O campo email não pode ficar em branco."
+    user_info: "Informações do usuario"
