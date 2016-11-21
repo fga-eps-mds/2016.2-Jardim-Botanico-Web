@@ -49,7 +49,7 @@
             <td> <%= visitation.visitation_cost %> </td>
             <td> <%= visitation.description %> </td>
             <td> <%= link_to t(:show), "/#{I18n.locale}/visitations/index_user?id=#{visitation.id}" %> </td>
-            <% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
+            <% if (visitation.status <=> "Aguardando confirmacao") == 0 || (visitation.status <=> "Agendado") == 0 %>
             <td> <%= link_to t(:cancel_visit), controller: "visitations",
               action: "cancel_visitation_user", id: visitation %> </td>
               <% end %>
