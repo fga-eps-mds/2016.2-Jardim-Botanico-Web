@@ -52,8 +52,8 @@ class VisitationsController < ApplicationController
     @visitations.each do |visit|
       @sum_of_payments += visit.amount_payed
     end
-
-    select_pdf(VisitationsPdf.new())
+    period = params[:period]
+    select_pdf(VisitationsPdf.new(period))
   end
 
 
@@ -62,14 +62,6 @@ class VisitationsController < ApplicationController
   end
 
   def index_employee
-    respond_to do |format|
-      format.html
-      format.pdf do
-        pdf = VisitationsPdf.new(@visitation)
-        send_data pdf.render, filename: 'formularios.pdf', type: "application/pdf",
-        disposition: "inline"
-      end
-    end
   end
 
   #refuse_confirmation

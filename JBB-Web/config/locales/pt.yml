@@ -266,3 +266,5 @@ pt:
     new_enviromental_education: "Nova Educação Ambiental"
     value_raised: "Valor arrecadado"
     not_mondays: "Não é possível marcar Educações Ambientais nas segundas-feiras"
+    generate_pdf_next_week: "Gerar PDF com os dados da próxima"
+    generate_pdf_last_month: "Gerar PDF com os dados do mês anterior"

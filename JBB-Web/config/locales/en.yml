@@ -208,3 +208,5 @@ en:
     new_enviromental_education: "New Environmental Education"
     value_raised: "Value raised"
     not_mondays: "It's not possible to schedule Environmental Education at mondays"
+    generate_pdf_next_week: "Generate PDF with data from the next week"
+    generate_pdf_last_month: "Generate PDF with data from the last month"
