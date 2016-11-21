@@ -4,7 +4,7 @@ class CreateVisitations < ActiveRecord::Migration[5.0]
 	    t.belongs_to :user
       t.string :status
       t.date :date
-      t.time :time
+      t.string :period
       t.integer :visitants_amount
       t.string :description
 

@@ -11,6 +11,7 @@ RSpec.describe VisitationsController, type: :controller do
   describe "POST create" do  #Still dont test Mailer
   	it "should fail to create a visitation" do
   		post :create, :visitation => {
+        :date => "15/12/1996",
         :status => "Agendado",
         :visitants_amount => "50",
         :groups_age => "20",
@@ -25,7 +26,7 @@ RSpec.describe VisitationsController, type: :controller do
         post :create, :visitation => {
           :user_id => @user.id,
           :date => "15/12/1996",
-          :time => "15:00",
+          :period => "Matutino",
           :status => "Agendado",
           :visitants_amount => 50,
           :visitation_type => "Study",

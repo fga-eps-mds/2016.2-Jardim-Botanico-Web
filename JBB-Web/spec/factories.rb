@@ -13,7 +13,7 @@ FactoryGirl.define do
 
   factory :visitation do
     date "16/11/2016"
-    time "12:50"
+    period "Matutino"
     status "Aguardando confirmacao"
     visitants_amount 10
     description "Visita marcada ao JBB sábado"
@@ -29,13 +29,6 @@ FactoryGirl.define do
     description "Passeio escolar"
     estimated_public 50
    end
-
-   factory :trail do
-     trail_name "Trilha da Mata"
-     length 5.5
-     locomotion "Carro"
-     description "Trilha asfaltada mata fechada e habitat típico do cerrado"
-    end
 
     factory :phone do
       phone "6181380209"

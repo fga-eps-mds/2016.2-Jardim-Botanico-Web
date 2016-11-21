@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20161110221428) do
   end
 
   create_table "visitations", force: :cascade do |t|
+    t.string   "period"
     t.integer  "user_id"
     t.string   "status"
     t.date     "date"

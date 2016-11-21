@@ -13,7 +13,6 @@ u<body id="page-top">
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
             <div class="col-md-6 col-md-offset-3">
                 <div class = "container">
                     <p><%= t(:fill_update) %></p>
@@ -34,19 +33,23 @@ u<body id="page-top">
                             <ul>
                                 <% @visitation.errors.full_messages.each do |msg| %>
                                 <li><%= msg %></li>
-                                <%end%>
+                                <% end %>
                             </ul>
                         </div>
-                        <%end%>
+                        <% end %>
                         <br>
                         <div class = "field" >
                             <h0><b><%= t(:date_schedule) %></b></h0> &nbsp
-                            <%= f.date_select :date, default: Date.today %>
+                            <%= f.date_select :date, default: Date.today, start_year: Date.today.year %>
                         </div>
                         <br>
-                        <div class="field">
-                            <h0><b><%= t(:time_schedule) %></b></h0> &nbsp
-                            <%= f.time_select :time, minute_step: 15, start_hour: 8, end_hour: 16 %>
+                        <div class = "field">
+                            <h0><b><%= t(:scheduled_period) %></b></h0> <br>
+                            <%= f.radio_button(:period, "Matutino") %>
+                            <%= f.label(:period, t(:morning_period)) %>
+                            &nbsp &nbsp &nbsp
+                            <%= f.radio_button(:period, "Vespertino") %>
+                            <%= f.label(:period, t(:afternoon_period)) %>
                         </div>
                         <br>
                         <div class = "form-inline" >
@@ -64,26 +67,27 @@ u<body id="page-top">
                         </div>
                         <br>
                         <div class="form-inline">
-                            <h0><b><%= t(:number_visitors) %></b></h0> &nbsp
+                            <h0><b><%= t(:number_visitors) %></b></h0> &nbsp &nbsp
+                            <div class = "form-group" style="width: 100px">
+                                <%= f.number_field :visitants_amount, min: 1, max: 45, width: 10, :required => true, class: 'form-control'%>
+                            </div>
+
+                            <h0><b><%= t(:age_of_visitors) %></b></h0> &nbsp &nbsp
                             <div class = "form-group" style="width: 180px">
-                                <%= f.number_field :visitants_amount, min: 1, max: 100, width: 10, :required => true, class: 'form-control'%>
+                                <%= f.number_field :groups_age, :required => true, min: 10, max: 100, class: 'form-control' %>
                             </div>
                             <br>
-                            <h0><b><%= t(:age_of_visitors) %></b></h0> &nbsp
-                            <div class = "form-group" style="width: 180px">
-                                <%= f.number_field :groups_age, :required => true, min: 0, max: 100, class: 'form-control' %>
-                            </div>
                             <br>
                             <h0><b><%= t(:visitors_over_12_years) %></b></h0>
-                            <div class = "form-group" style="width: 180px">
-                                <%= f.number_field :visitants_paying, :required => true, min: 0, max: 100, class: 'form-control' %>
+                            <div class = "form-group" style="width: 180px"> &nbsp &nbsp
+                                <%= f.number_field :visitants_paying, :required => true, min: 0, max: 45, class: 'form-control' %>
                             </div>
                         </div>
                         <br>
                         <div class = "field">
-                            <h0><b><%= t(:institution) %></b></h0> <br>
-                            <%= f.radio_button(:visitation_type, "Pessoa fisica") %>
-                            <%= f.label(:visitation_type, t(:physical_person)) %>
+                            <h0><b><%= t(:social_reason) %></b></h0> <br>
+                            <%= f.radio_button(:visitation_type, "Grupo de Inclusão") %>
+                            <%= f.label(:visitation_type, t(:inclusion_grup)) %>
                             &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
                             <%= f.radio_button(:visitation_type, "Escola publica", :onclick=>"showMe('Escolas')") %>
                             <%= f.label(:visitation_type, t(:public_school)) %>
@@ -94,11 +98,11 @@ u<body id="page-top">
                         <br>
                         <div id="Escolas">
                             <div class = "field">
-                                <h0><b><%= t(:want_guide) %></b></h0> &nbsp &nbsp &nbsp
-                                <%= f.radio_button(:has_guide, true, :checked => true) %>
-                                <%= f.label t(:yes_answer) %>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                                <%= f.radio_button(:has_guide, false) %>
-                                <%= f.label t(:no_answer) %>
+                                <h0><b><%= t(:want_guide) %></b></h0> <br>
+                                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= f.radio_button(:has_guide, true, :checked => true) %>
+                                <%= f.label t(:yes_answer_guide) %> <br>
+                                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <%= f.radio_button(:has_guide, false) %>
+                                <%= f.label t(:no_answer_guide) %>
                             </div>
                         </div>
                         <br>

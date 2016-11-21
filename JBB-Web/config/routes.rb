@@ -60,6 +60,7 @@ Rails.application.routes.draw do
     post 'visitations/delete_visitation_employee', as: 'post_delete_visitation_employee'
 
     #Visitation User
+    get 'visitations/advices', as: 'get_visitation_advices'
     get 'visitations/cancel_visitation_user', as: 'get_cancel_visitation_user'
     post 'visitations/cancel_visitation_user', as: 'post_cancel_visitation_user'
 

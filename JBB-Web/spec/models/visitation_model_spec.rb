@@ -7,7 +7,7 @@ RSpec.describe Visitation, :type => :model do
     @visitation = FactoryGirl.create(:visitation,user_id:@user.id)
   end
 
-  it { expect(@visitation).to respond_to(:status, :date, :time, :visitants_amount, :description) }
+  it { expect(@visitation).to respond_to(:status, :date, :period, :visitants_amount, :description) }
 
   it { expect(@visitation).to be_valid }
 
@@ -53,9 +53,9 @@ RSpec.describe Visitation, :type => :model do
       end
     end
 
-    describe "date" do
+    describe "period" do
       it "must be given" do
-        subject["date"] = ""
+        subject["period"] = ""
         expect(Visitation.new(subject)).not_to be_valid
       end
     end

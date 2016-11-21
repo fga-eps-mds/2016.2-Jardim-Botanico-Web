@@ -38,13 +38,13 @@ $(document).on('click', '.dropdown-menu li a', function () {
               </ul>
             </div>
           </div>
-          <div class="col-md-10 col-md-offset-1">
+          <!-- <div class="col-md-10 col-md-offset-1"> -->
             <div class="table-hover">
               <table border=0 class="table" >
                 <br /> <br />
                 <tr>
                   <th><%= t(:date_schedule) %></th>
-                  <th><%= t(:time_schedule) %></td>
+                  <th><%= t(:scheduled_period) %></td>
                   <th><%= t(:status) %></th>
                   <th><%= t(:number_visitors) %></th>
                   <th><%= t(:number_paying_visitors) %></th>
@@ -55,11 +55,11 @@ $(document).on('click', '.dropdown-menu li a', function () {
                 <% @visitations_sorted.each do |visitation| %>
                   <tr>
                     <td> <%= l(visitation.date, format: :long) %> </td>
-                    <td> <%= l(visitation.time, format: :time_only) %> </td>
+                    <td> <%= visitation.period %> </td>
                     <td> <%= visitation.status %> </td>
                     <td> <%= visitation.visitants_amount %> </td>
                     <td> <%= visitation.visitants_paying %> </td>
-                    <td> <%= visitation.visitation_cost %> </td>
+                    <td>  <%= visitation.visitation_cost %> </td>
                     <td> <%= visitation.description %> </td>
                     <td><%= link_to visitation.user.name, "/#{I18n.locale}/visitations/user_information?id=#{visitation.id}" %></td>
                     <td> <%= link_to t(:show), action: 'index_employee', locale: @language, id: visitation %> </td>
@@ -88,13 +88,18 @@ $(document).on('click', '.dropdown-menu li a', function () {
                  <% end %>
                <% end %>
               </table>
-              <th>Valor arrecadado: R$</th>
+              <th><%=t(:value_raised)%>: R$</th>
               <%= @sum_of_payments %>
               <th>,00</th>
-            </div>
+            <br>
+            <br>
             <br>
             <p>
-            <%= link_to t(:generate_pdf), show_visitation_employee_path(format: 'pdf'), class: "btn btn-primary"%>
+            <%= link_to t(:generate_pdf_next_week), show_visitation_employee_path(format: 'pdf', period: "next_week"), class: "btn btn-primary"%>
+            <br><br>
+            <%= link_to t(:generate_pdf_last_month), show_visitation_employee_path(format: 'pdf', period: "last_month"), class: "btn btn-primary"%>
+
+            <a id="back_space_new" ></a>
             <%= link_to t(:back), "/#{@language}/users/my_requests/#{current_user.id}", class: "btn btn-primary" %>
           </div>
         </div>
