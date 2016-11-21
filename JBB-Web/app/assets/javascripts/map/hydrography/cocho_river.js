@@ -225,9 +225,11 @@ var cochoRiverContentString =
     '</div>'+
     '<h1 id="firstHeading" class="firstHeading">Corrego do Cocho</h1>'+
     '<div id="bodyContent">'+
-    '<p>O <b>Corrego do Cocho</b>, faz divisa com a QI 17 do lago sul' +
-    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
-    'Rio</a> '+
+    '<p>O <b>Corrego do Cocho</b>, situado no limite da EEJBB com a área da '+
+    'aeronáutica (VI COMAR). Por estar situado numa Estação Ecológica, '+
+    'Unidade de Conservação de Proteção Integral, que permite apenas uso '+
+    'indireto dos recursos, <b>é proibida sua visitação</b> em geral, '+
+    'inclusive por ciclistas ou banhistas.'+
     '</div>'+
     '</div>';
 

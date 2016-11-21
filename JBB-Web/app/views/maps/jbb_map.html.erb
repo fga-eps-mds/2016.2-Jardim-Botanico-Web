@@ -1,14 +1,70 @@
-<br>
-<br>
-<br>
+<br><br><br>
 <div id="center">
-    <div id="map-container">
-        <div id="map-canvas"></div>
-    </div>
-    <br>
-    <input type="button" value="Filtrar espaços JBB" onclick="setJbbSpaces();" class="btn btn-primary">
-    <input type="button" value="Filtrar rios JBB" onclick="setJbbRivers();" class="btn btn-primary">
-    <input type="button" value="Vegetação" onclick="setVegetation();" class="btn btn-primary">
-    <input type="button" value="Trilhas" onclick="setTrails();" class="btn btn-primary">
-    <%= link_to "Voltar", home_url, class: "btn btn-primary" %>
+	<div id="map-container">
+		<div id="map-canvas"></div>
+	</div>
+	<div id= "legend" >
+	<div class='my-legend'>
+		<div class='legend-title'>Legenda das trilhas do JBB </div>
+		<div class='legend-scale'>
+			<ul class='legend-labels'>
+				<li><span style='background:#EF9C87;'></span>Estação Ecológica - Área proibida</li>
+				<li><span style='background:#79CAAF;'></span>Área Verde - Área de Visitação</li>
+				<div class='legend-source'>Fonte: <a href="http://www.jardimbotanico.df.gov.br/" target="_blank">Jardim Bôtanico de Brasília</a></div>
+			</ul>
+			<a id= "new" >
+			<a id= "space" >
+			<input type="button" value="Filtrar espaços JBB" onclick="setJbbSpaces();" class="btn btn-primary">
+			<a id= "space" >
+			<input type="button" value="Filtrar rios JBB" onclick="setJbbRivers();" class="btn btn-primary">
+			<a id= "space" >
+			<input type="button" value="Vegetação" onclick="setVegetation();" class="btn btn-primary">
+			<a id= "space" >
+			<input type="button" value="Trilhas" onclick="setTrails();" class="btn btn-primary">
+			</div>	
+		</div>
+	</div>
+		<a id= "map" >
+		<%= link_to "Voltar", home_url, class: "btn btn-primary" %>
 </div>
+<br>
+
+<style type='text/css'>
+	.my-legend .legend-title {
+		text-align: left;
+		margin-bottom: 5px;
+		font-weight: bold;
+		font-size: 120%;
+	}
+	.my-legend .legend-scale ul {
+		margin: 0;
+		margin-bottom: 5px;
+		padding: 0;
+		float: left;
+		list-style: none;
+	}
+	.my-legend .legend-scale ul li {
+		font-size: 100%;
+		list-style: none;
+		margin-left: 0;
+		line-height: 18px;
+		margin-bottom: 2px;
+	}
+	.my-legend ul.legend-labels li span {
+		display: block;
+		float: left;
+		height: 16px;
+		width: 30px;
+		margin-right: 5px;
+		margin-left: 0;
+		border: 1px solid #999;
+	}
+	.my-legend .legend-source {
+		font-size: 90%;
+		color: #999;
+		clear: both;
+	}
+	.my-legend a {
+		color: #777;
+	}
+</style>

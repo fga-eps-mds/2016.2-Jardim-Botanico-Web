@@ -6,13 +6,23 @@ var ecologicTrailContentString =
     '</div>'+
     '<h1 id="firstHeading" class="firstHeading">Trilha Ecológica</h1>'+
     '<div id="bodyContent">'+
-    '<p>A <b>Trilha Ecológica</b>, ............. ' +
-    '  '+
-    '. '+
-    '<p>Leia mais em: <a href="/trails/ecologic_trail">'+
+    '<p>A <b>Trilha Ecológica</b>,' +
+    ' Aberta no meio do cerrado, estimula a interpretação e o visitante '+
+    'tem oportunidade de verificar a complexidade e a grandeza de diversidade '+
+    'vegetal da região, em 3,5 km de percurso. '+
+    'Passa por diversos tipos fisionômicos, como cerrado denso, '+
+    'cerrado sentido restrito, campo limpo, campo sujo e mata de galeria, '+
+    'onde há uma das nascentes do córrego Cabeça de Veado, '+
+    'importante manancial de abastecimento hídrico de Brasília. '+
+    'Em seu último trecho abriga a trilha da Fauna, propícia a conhecer '+
+    'as características de alguns animais do Cerrado. '+
+    'Com bastante atenção, e um pouco de sorte, pode-se avistar um tamanduá, '+
+    'tatu ou outro representante da nossa fauna.  A extensão dessa trilha é de: 4,565 KM '+
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/trilhas/" target="_blank">'+
     'Trilha Ecológica</a> '+
     '</div>'+
     '</div>';
+
 
 var ecologicTrailCoordinates = [
     {lat: -15.876003105387605, lng: -47.835300922524766},

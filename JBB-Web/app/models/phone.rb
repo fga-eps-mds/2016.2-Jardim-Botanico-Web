@@ -16,5 +16,4 @@ class Phone < ApplicationRecord
       errors.add(:phone, I18n.t(:invalid_phone))
     end
   end
-
 end

@@ -210,3 +210,5 @@ en:
     not_mondays: "It's not possible to schedule Environmental Education at mondays"
     generate_pdf_next_week: "Generate PDF with data from the next week"
     generate_pdf_last_month: "Generate PDF with data from the last month"
+    more_paying_than_visitors: "The amount of paying cannot be greater than the total of visitors"
+    blank_email_field: "Email field cannot be empty."

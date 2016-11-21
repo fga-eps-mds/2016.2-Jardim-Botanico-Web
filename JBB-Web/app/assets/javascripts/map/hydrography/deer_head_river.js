@@ -232,11 +232,13 @@ var deerHeadRiverCoordinates = [
     '</div>'+
     '<h1 id="firstHeading" class="firstHeading">Ribeirão Cabeça de Veado</h1>'+
     '<div id="bodyContent">'+
-    '<p>O <b>Ribeirão Cabeça de Veado</b>, serve de ponto de captação de ' +
-    'água para a CAESB. '+
-    'Esse ribeirão tem 4 braços que dão em 4 estações de captação de recursos hidricos da CAESB'+
-    '<p>Leia mais em: <a href="/jbb_spaces/rio">'+
-    'Rio</a> '+
+    '<p>O <b>Ribeirão Cabeça de Veado</b> é o mais importante curso d’água existente '+
+    'dentro da Estação e possui quatro nascentes principais que nascem dentro '+
+    'da área protegida - nas quais existem captações de água da CAESB - '+
+    'e segue em direção Norte até a sua foz no lago Paranoá.'+
+    'As águas deste córrego, bem como de seus tributários, '+
+    'são de classe especial, destinada ao consumo humano e animal, '+
+    'e desta forma <b>não é permitido seu uso por banhistas.</b>'+
     '</div>'+
     '</div>';
 

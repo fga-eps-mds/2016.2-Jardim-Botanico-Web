@@ -10,8 +10,9 @@ var healingGardenContentString =
     '<div id="bodyContent">'+
     '<p>O <b>Jardim Medicinal</b>, acompanha o caminho de diversas espécies ' +
     'da flora nativa com uso medicinal, identificadas com '+
-    'nomes científicos e populares. '+
-    '<p>Leia mais em:  <a href="/jbb_spaces/healing_garden">'+
+    'nomes científicos e populares. <br><br>'+
+    '<img src="/assets/portfolio/fullsize/15.jpg" class="img-responsive" alt="" style="width: 550px;height: 250px;">' +
+    '<p>Leia mais em:  <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/horto-medicinal/" target="_blank">'+
     'Jardim Medicinal</a> '+
     '</div>'+
     '</div>';
@@ -26,7 +27,7 @@ function addHealingGardenMarker(){
     healingGarden.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(healingGarden, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, healingGardenContentString);
+    google.maps.event.addListener(healingGarden, 'click', function() {
+        addInfowindowMarkers(healingGarden, healingGardenContentString);
     });
 }

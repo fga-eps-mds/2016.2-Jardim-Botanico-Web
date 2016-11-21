@@ -14,8 +14,9 @@ var permacultureContentString =
     'técnicas de bioconstrução, captação de água da chuva, '+
     'fossa ecológica, horta e jardim em pequenos espaços, etc. '+
     'Tecnologias milenares e inovadoras para garantir a sustentabilidade '+
-    'não só do processo construtivo, mas também da ocupação.'+
-    '<p>Leia mais em: <a href="/jbb_spaces/smells_garden"> '+
+    'não só do processo construtivo, mas também da ocupação. <br><br>'+
+    '<img src="/assets/portfolio/fullsize/19.jpg" class="img-responsive" alt="" style="width: 550px;height: 250px;">' +
+    '<p>Leia mais em: <a href="http://www.jardimbotanico.df.gov.br/espacos-jbb/permacultura/" target="_blank"> '+
     'Permacultura</a> '+
     '</div>'+
     '</div>';
@@ -30,7 +31,7 @@ function addPermacultureMarker(){
     permaculture.setMap(map);
 
     //add a listener to open a infowindow every time the jbb space is clicked
-    google.maps.event.addListener(permaculture, 'click', function(clicked_location) {
-        addInfowindow(clicked_location.latLng, permacultureContentString);
+    google.maps.event.addListener(permaculture, 'click', function() {
+        addInfowindowMarkers(permaculture, permacultureContentString);
     });
 }

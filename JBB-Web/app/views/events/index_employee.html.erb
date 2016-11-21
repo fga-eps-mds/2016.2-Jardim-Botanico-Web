@@ -148,6 +148,7 @@
                   (@event.status <=> "Recusado por funcionario") == 0 %>
                   <%= link_to t(:delete_event), "/#{I18n.locale}"+get_delete_event_employee_path(:id => @event.id), class: "btn btn-warning destroy-btn" %>
               <%end%>
+              <%= link_to t(:generate_pdf), events_path(format: 'pdf', :id => @event.id), class: "btn btn-primary"%>
           </div>
         <%end%>
         </div>
