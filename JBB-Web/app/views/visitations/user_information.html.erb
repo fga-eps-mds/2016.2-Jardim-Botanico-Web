@@ -1,0 +1,55 @@
+<body id="aplication-body">
+    <br>
+    <br>
+    <br>
+    <head>
+      <link href="/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+      <link href="css/creative.css" rel="stylesheet">
+    </head>
+  <div class="container">
+  	<div class="row">
+      <div class="col-md-6 col-md-offset-3">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading"><%= t(:profile) %><%= @visitation.user.name %></h2>
+        <hr class="primary">
+      </div>
+       <p>
+        <b> <%= t(:email) %> </b>
+        <%= @visitation.user.email %>
+      </p>
+      <p>
+        <b> CPF: </b>
+        <%= @visitation.user.cpf %>
+      </p>
+      <p>
+        <b> <%= t(:phone) %> </b>
+        <% @visitation.user.phones.each do |p| %>
+          <%= p.phone %>
+        <% end %>
+      </p>
+      <p>
+        <b> <%= t(:gender) %> </b>
+        <% if (@visitation.user.gender <=> "Feminino") == 0 %>
+        <%= t(:female) %>
+        <%end%>
+        <% if (@visitation.user.gender <=> "Masculino") == 0 %>
+        <%= t(:male) %>
+        <%end%>
+        <% if (@visitation.user.gender <=> "Outro") == 0 %>
+        <%= t(:other) %>
+        <%end%>
+      </p>
+      <p>
+        <b> <%= t(:birth) %> </b>
+        <%= l(@visitation.user.birth, format: :long) %>
+      </p>
+      <div class="actions">
+      <%= link_to t(:back), "/#{I18n.locale}"+show_visitation_employee_path, :required => true, class: "btn btn-primary"%>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>

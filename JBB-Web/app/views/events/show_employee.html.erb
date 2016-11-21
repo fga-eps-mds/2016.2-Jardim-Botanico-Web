@@ -37,7 +37,7 @@
                             <td> <%= l(event.time_start, format: :time_only) %> </td>
                             <td> <%= event.status %> </td>
                             <td> <%= event.jbb_space_requested %> </td>
-                            <td><%= link_to event.user.name, "/#{I18n.locale}/events/user_information?id=#{event.user.id}" %></td>
+                            <td><%= link_to event.user.name, "/#{I18n.locale}/events/user_information?id=#{event.id}" %></td>
                             <td><%= link_to t(:show), "/#{I18n.locale}/events/index_employee?id=#{event.id}" %></td>
                         </tr>
                         <%end%>

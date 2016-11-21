@@ -50,6 +50,7 @@ $(document).on('click', '.dropdown-menu li a', function () {
                   <th><%= t(:number_paying_visitors) %></th>
                   <th><%= t(:visit_price) %></th>
                   <th><%= t(:description) %></th>
+                  <th><%= t(:user_info) %></th>
                 </tr>
                 <% @visitations_sorted.each do |visitation| %>
                   <tr>
@@ -58,8 +59,9 @@ $(document).on('click', '.dropdown-menu li a', function () {
                     <td> <%= visitation.status %> </td>
                     <td> <%= visitation.visitants_amount %> </td>
                     <td> <%= visitation.visitants_paying %> </td>
-                    <%= visitation.visitation_cost %>
+                    <td> <%= visitation.visitation_cost %> </td>
                     <td> <%= visitation.description %> </td>
+                    <td><%= link_to visitation.user.name, "/#{I18n.locale}/visitations/user_information?id=#{visitation.id}" %></td>
                     <td> <%= link_to t(:show), action: 'index_employee', locale: @language, id: visitation %> </td>
                     <% if (visitation.status <=> "Aguardando confirmacao") == 0 %>
                       <td> <%= link_to t(:acept_visit), controller: "visitations",
