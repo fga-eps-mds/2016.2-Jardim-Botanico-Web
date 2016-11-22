@@ -5,13 +5,13 @@ var acessibleTrailContentString =
     '<div id="siteNotice">'+
     '</div>'+
     '<h1 id="firstHeading" class="firstHeading">Trilha Cadeirantes</h1>'+
-    '<div id="bodyContent">'+
-    '<p>A <b>Trilha Cadeirantes</b>, ............. ' +
-    '  '+
-    '. '+
-    '<p>Leia mais em: <a href="/trails/acessible_trail">'+
-    'Trilha Cadeirantes</a> '+
-    '</div>'+
+    // '<div id="bodyContent">'+
+    // '<p>A <b>Trilha Cadeirantes</b>, ............. ' +
+    // '  '+
+    // '. '+
+    // '<p>Leia mais em: <a href="/trails/acessible_trail">'+
+    // 'Trilha Cadeirantes</a> '+
+    // '</div>'+
     '</div>';
 
 var acessibleTrailCoordinates = [

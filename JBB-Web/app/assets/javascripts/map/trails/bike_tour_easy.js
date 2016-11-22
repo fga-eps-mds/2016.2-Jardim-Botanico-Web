@@ -5,13 +5,13 @@ var bikeTourEasyContentString =
   '<div id="siteNotice">'+
   '</div>'+
   '<h1 id="firstHeading" class="firstHeading">Circuito de Bicicletas Fácil</h1>'+
-  '<div id="bodyContent">'+
-  '<p>O <b>Circuito de Bicicletas Fácil</b>, ............. ' +
-  '  '+
-  '. '+
-  '<p>Leia mais em: <a href="/trails/bike_tour_easy">'+
-  'Circuito de Bicicletas Fácil</a> '+
-  '</div>'+
+  // '<div id="bodyContent">'+
+  // '<p>O <b>Circuito de Bicicletas Fácil</b>, ............. ' +
+  // '  '+
+  // '. '+
+  // '<p>Leia mais em: <a href="/trails/bike_tour_easy">'+
+  // 'Circuito de Bicicletas Fácil</a> '+
+  // '</div>'+
   '</div>';
 
 var bikeTourEasyCoordenates = [

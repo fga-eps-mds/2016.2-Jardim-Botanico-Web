@@ -5,13 +5,13 @@ var bikeTourMediumContentString =
   '<div id="siteNotice">'+
   '</div>'+
   '<h1 id="firstHeading" class="firstHeading">Circuito de Bicicletas Médio</h1>'+
-  '<div id="bodyContent">'+
-  '<p>O <b>Circuito de Bicicletas Médio</b>, ............. ' +
-  '  '+
-  '. '+
-  '<p>Leia mais em: <a href="/trails/bike_tour_medium">'+
-  'Circuito de Bicicletas Médio</a> '+
-  '</div>'+
+  // '<div id="bodyContent">'+
+  // '<p>O <b>Circuito de Bicicletas Médio</b>, ............. ' +
+  // '  '+
+  // '. '+
+  // '<p>Leia mais em: <a href="/trails/bike_tour_medium">'+
+  // 'Circuito de Bicicletas Médio</a> '+
+  // '</div>'+
   '</div>';
 
 var bikeTourMediumCoordenates = [

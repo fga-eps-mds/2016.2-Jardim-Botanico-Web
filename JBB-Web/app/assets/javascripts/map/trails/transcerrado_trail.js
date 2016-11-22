@@ -5,13 +5,13 @@ var transcerradoTrailContentString =
   '<div id="siteNotice">'+
   '</div>'+
   '<h1 id="firstHeading" class="firstHeading">Trilha Transcerrado</h1>'+
-  '<div id="bodyContent">'+
-  '<p>A <b>Trilha Transcerrado</b>, ............. ' +
-  '  '+
-  '. '+
-  '<p>Leia mais em: <a href="/trails/transcerrado_trail">'+
-  'Trilha Transcerrado</a> '+
-  '</div>'+
+  // '<div id="bodyContent">'+
+  // '<p>A <b>Trilha Transcerrado</b>, ............. ' +
+  // '  '+
+  // '. '+
+  // '<p>Leia mais em: <a href="/trails/transcerrado_trail">'+
+  // 'Trilha Transcerrado</a> '+
+  // '</div>'+
   '</div>';
 
 var transcerradoTrailCoordenates = [

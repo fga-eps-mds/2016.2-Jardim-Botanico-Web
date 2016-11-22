@@ -5,13 +5,13 @@ var medicinalTrailContentString =
   '<div id="siteNotice">'+
   '</div>'+
   '<h1 id="firstHeading" class="firstHeading">Trilha Horto Medicinal</h1>'+
-  '<div id="bodyContent">'+
-  '<p>A <b>Trilha Horto Medicinal</b>, ............. ' +
-  '  '+
-  '. '+
-  '<p>Leia mais em: <a href="/trails/medicinal_trail">'+
-  'Trilha Horto Medicinal</a> '+
-  '</div>'+
+  // '<div id="bodyContent">'+
+  // '<p>A <b>Trilha Horto Medicinal</b>, ............. ' +
+  // '  '+
+  // '. '+
+  // '<p>Leia mais em: <a href="/trails/medicinal_trail">'+
+  // 'Trilha Horto Medicinal</a> '+
+  // '</div>'+
   '</div>';
 
 var medicinalTrailCoordenates = [
