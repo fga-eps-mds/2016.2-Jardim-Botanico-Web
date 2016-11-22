@@ -1,5 +1,13 @@
 var jbbVisitantsArea;
 
+var coordenadasLat = [];
+var coordenadasLng = [];
+var i=0;
+var k=0;
+var l=0;
+var j=0;
+
+
 var jbbVisitantsAreaCoordinates = [
     //border between JBB visitants area and JBB ecological station
     {lat: -15.866386, lng: -47.842951},
@@ -111,4 +119,6 @@ function addJbbVisitantsArea(){
                                         jbbVisitantsAreaColor);
 
     jbbVisitantsArea.setMap(map);
+
+
 }

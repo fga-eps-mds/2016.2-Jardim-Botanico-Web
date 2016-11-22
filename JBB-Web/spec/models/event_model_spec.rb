@@ -108,5 +108,19 @@ RSpec.describe Event, :type => :model do
         event.accepted_by_employee == "Agendado"
       end
     end
+
+    describe "start_time" do
+      it "must return the initial time" do
+        event = Event.new
+        event.date_start
+      end
+    end
+
+    describe "end_time" do
+      it "must return the final time" do
+        event = Event.new
+        event.date_end
+      end
+    end
   end
 end
