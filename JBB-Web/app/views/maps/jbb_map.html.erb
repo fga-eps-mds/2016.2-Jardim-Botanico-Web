@@ -21,11 +21,11 @@
 			<input type="button" value="Vegetação" onclick="setVegetation();" class="btn btn-primary">
 			<a id= "space" >
 			<input type="button" value="Trilhas" onclick="setTrails();" class="btn btn-primary">
-			</div>	
+			</div>
 		</div>
 	</div>
-		<a id= "map" >
-		<%= link_to "Voltar", home_url, class: "btn btn-primary" %>
+		<a id= "map" > </a>
+    <a href="/<%= @language %>/" class = "btn btn-primary"> <%= t(:back) %> </a>
 </div>
 <br>
 

@@ -1,4 +1,7 @@
-$(window).load(function() {
+document.addEventListener("turbolinks:load", function() {
+  initialize();
+})
+$(window).load('page:change', function() {
   loadScript();
 });
 
@@ -32,5 +35,4 @@ function loadScript() {
   '&libraries=drawing'+
   '&callback=initialize';
   document.body.appendChild(script);
-} 
-
+}
