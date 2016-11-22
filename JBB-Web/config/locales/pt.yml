@@ -264,6 +264,7 @@ pt:
     orientation3: "Usar filtro solar e repelente."
     successful_visit_request: "Educação Ambiental solicitada com sucesso"
     new_enviromental_education: "Nova Educação Ambiental"
+    new_event: "Novo Evento"
     value_raised: "Valor arrecadado"
     not_mondays: "Não é possível marcar Educações Ambientais nas segundas-feiras"
     generate_pdf_next_week: "Gerar PDF com os dados da próxima"
@@ -274,3 +275,5 @@ pt:
     generate_pdf_next_month: "Gerar PDF com os dados do próximo mês"
     event_payment_possibility: "IMPORTANTE: A realização de evento no Jardim Botânico poderá estar sujeita à pagamento para o uso do espaço"
     user_info: "Informações do usuario"
+    no_scheduled_event: "Nenhum Evento Agendado"
+    no_scheduled_visits: "Nenhuma Educação Ambiental Agendada"

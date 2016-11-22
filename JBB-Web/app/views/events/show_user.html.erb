@@ -22,6 +22,7 @@
           <% flash.each do |key, value| %>
           <div class="alert alert-<%= key %>"><%= value %></div>
           <% end %>
+          <% if !@event.empty?%>
           <div class="table-hover">
             <table border=0 class="table" >
               <tr>
@@ -46,13 +47,25 @@
               </tr>
               <%end%>
             </table>
+            <a id="show" >
+          <br> <br>
           </div>
+          <% else %>
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading"><%= t(:no_scheduled_event) %></h2>
+            </div>
+          </div>
+          <% end %>
           <br>
           <div class="action" >
             <a id="show" >
+            <a id="back_space_new" >
             <%= link_to t(:back), "/#{@language}/users/my_requests/#{current_user.id}", class: "btn btn-primary" %>
             <a id="back_space_new" >
-            <%= link_to "Novo Evento", events_path, class: "btn btn-primary" %>
+            <a id="back_space_new" >
+            <a id="back_space_new" >
+            <%= link_to t(:new_event), events_path, class: "btn btn-primary" %>
             </div>
             <br><br><br>
           </div>
