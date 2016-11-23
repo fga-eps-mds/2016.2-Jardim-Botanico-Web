@@ -15,7 +15,7 @@
       </div>
       <div class="col-md-6 col-md-offset-3">
         <div class="actions">
-          <%= link_to t(:search_by_week), "/#{I18n.locale}"+show_event_calendar_week_path, class: "btn btn-primary"%>
+          <%= link_to t(:search_by_week), "/#{I18n.locale}"+show_event_calendar_week_path, class: "btn btn-primary week"%>
         </div>
         <br>
         <%= month_calendar events: @events do |date, events| %>

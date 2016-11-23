@@ -4,12 +4,12 @@ When(/^I am on the create event page$/) do
 end
 
 When(/^I fill the new event form$/) do
-   select('2017', from: 'event_date_start_1i')
-   select('November', from: 'event_date_start_2i')
-   select('20', from: 'event_date_start_3i')
-   select('2017', from: 'event_date_end_1i')
-   select('November', from: 'event_date_end_2i')
-   select('25', from: 'event_date_end_3i')
+   select('2018', from: 'event_date_start_1i')
+   select('Novembro', from: 'event_date_start_2i')
+   select('11', from: 'event_date_start_3i')
+   select('2018', from: 'event_date_end_1i')
+   select('Novembro', from: 'event_date_end_2i')
+   select('30', from: 'event_date_end_3i')
    fill_in 'event_jbb_space_requested', :with => "Espaço Jardim Botânico Web"
    fill_in 'event_estimated_public', :with => "100"
    choose('event_need_eletricity_sim')

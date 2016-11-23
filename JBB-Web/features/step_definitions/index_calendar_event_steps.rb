@@ -1,5 +1,5 @@
 When(/^I press 'Evento'$/) do
-  page.find('.evento').click
+  page.find('.event').click
 end
 
 
