@@ -5,7 +5,7 @@ end
 When(/^I fill the new visit form$/) do
    
    select('2018', from: 'visitation_date_1i')
-   select('November', from: 'visitation_date_2i')
+   select('Novembro', from: 'visitation_date_2i')
    select('11', from: 'visitation_date_3i')
    select('Educação', from: 'visitation_objective')
    select('Trilhas', from: 'visitation_spaces')
@@ -23,6 +23,9 @@ When(/^I click in 'Cadastrar'$/) do
 end
 
 When(/^I am on the create visit page in text box$/) do
-  click_on('Agende uma visita')
+  click_on('Agende uma educação ambiental')
 end
 
+When(/^I press 'Educação Ambiental'$/) do
+  page.find('.education').click
+end
