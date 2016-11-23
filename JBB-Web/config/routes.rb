@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     root 'welcome#index', :as => 'home'
     root 'welcome#index', :as => 'root'
 
+    get '/education_choice' => 'welcome#education_choice'
+
 
     #users
     get '/users/new' => 'users#new'
