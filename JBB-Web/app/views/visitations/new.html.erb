@@ -72,7 +72,7 @@ u<body id="page-top">
                                 <%= f.number_field :visitants_amount, min: 1, max: 45, width: 10, :required => true, class: 'form-control'%>
                             </div>
 
-                            <h0><b><%= t(:age_of_visitors) %></b></h0> &nbsp &nbsp
+                            <h0><b><%= t(:age_of_visitors) %></b></h0> &nbsp 
                             <div class = "form-group" style="width: 180px">
                                 <%= f.number_field :groups_age, :required => true, min: 10, max: 100, class: 'form-control' %>
                             </div>
@@ -115,7 +115,7 @@ u<body id="page-top">
                             <%= f.submit t(:register), class: "btn btn-primary"%>
                             <a id="space" >
                                 <%= link_to t(:view_schedule), "/#{I18n.locale}"+show_visitation_calendar_path, class: "btn btn-primary"%>
-                                <a id="back_space_new" >
+                                <a id="new" >
                                     <%= link_to t(:back), "/#{I18n.locale}/" , class: "btn btn-primary" %>
                                 </div>
                                 <% end %>
