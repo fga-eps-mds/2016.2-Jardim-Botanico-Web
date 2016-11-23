@@ -65,7 +65,7 @@
 				</div>
 				<br>
 				<div class="form-inline">
-					<b><%= t(:number_visitors) %></b>
+					<b><%= t(:number_visitors) %></b> &nbsp&nbsp&nbsp
 					<div class = "form-group" style="width: 200px">
 						<%= f.number_field :estimated_public, min: 1, width: 10, :required => true, class: 'form-control'%>
 					</div>
@@ -75,26 +75,25 @@
 					<table border = '0'>
 						<td>
 							<tr>
-								<b><%= t(:need_eletricity) %></b>
-								&nbsp
-								<br>
-								<%= f.radio_button(:need_eletricity, "Sim")%>
-								<%= f.label(:need_eletricity, t(:yes_answer))%><br>
-								<%= f.radio_button(:need_eletricity, "Nao") %>
-								<%= f.label(:need_eletricity, t(:no_answer))%>
+                <div class = "form-inline">
+                  <b><%= t(:need_eletricity) %></b>
+                  <a id="back_space_new" > </a> &nbsp&nbsp&nbsp&nbsp&nbsp
+  								<b><%= t(:need_water) %></b>
+                </div>
 							</tr>
 							<tr>
-								&nbsp&nbsp&nbsp&nbsp
-								<br>
-								<b><%= t(:need_water) %></b>
-								&nbsp
-								<br>
-								<%= f.radio_button(:need_water, "Sim")%>
-								<%= f.label(:need_water, t(:yes_answer))%>
-								<br>
-								<%= f.radio_button(:need_water, "Nao") %>
-								<%= f.label(:need_water, t(:no_answer)) %>
-							</tr>
+                <div class = "form-inline">
+                  <%= f.radio_button(:need_eletricity, "Sim")%>
+  								<%= f.label(:need_eletricity, t(:yes_answer))%> &nbsp&nbsp&nbsp&nbsp
+  								<%= f.radio_button(:need_eletricity, "Nao") %>
+  								<%= f.label(:need_eletricity, t(:no_answer))%>
+                  <a id="back_space_new" > </a>
+  								<%= f.radio_button(:need_water, "Sim")%>
+  								<%= f.label(:need_water, t(:yes_answer))%> &nbsp&nbsp&nbsp&nbsp
+  								<%= f.radio_button(:need_water, "Nao") %>
+  								<%= f.label(:need_water, t(:no_answer)) %>
+                </div>
+  						</tr>
 						</td>
 					</table>
 				</div>
