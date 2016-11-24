@@ -1,4 +1,4 @@
-u<body id="page-top">
+<body id="page-top">
     <head>
         <link href="/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
         <link href="css/creative.css" rel="stylesheet">
@@ -13,7 +13,6 @@ u<body id="page-top">
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
             <div class="col-md-6 col-md-offset-3">
                 <div class = "container">
                     <p><%= t(:fill_update) %></p>
@@ -113,7 +112,7 @@ u<body id="page-top">
                         </div>
                         <br>
                         <div class="actions">
-                            <%= f.submit t(:register), class: "btn btn-primary"%>
+                            <%= f.submit t(:register), id:'registration', class: "btn btn-primary"%>
                             <a id="space" >
                                 <%= link_to t(:view_schedule), "/#{I18n.locale}"+show_visitation_calendar_path, class: "btn btn-primary"%>
                                 <a id="new" >
@@ -123,4 +122,4 @@ u<body id="page-top">
                             </div>
                         </div>
                     </div>
-                </body>
+</body>

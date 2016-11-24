@@ -4,6 +4,8 @@ end
 
 When(/^I fill the new visit form$/) do
    
+
+   select('2018', from: 'visitation_date_1i')
    select('2018', from: 'visitation_date_1i')
    select('Novembro', from: 'visitation_date_2i')
    select('11', from: 'visitation_date_3i')
