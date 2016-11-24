@@ -8,39 +8,39 @@ RSpec.describe EventsController, type: :controller do
   end
 
   #CREATE
-  describe "POST create" do  #Still dont test Mailer
-  	it "should fail to create a event" do
-  		post :create, :event => {
-        :status => "Agendado",
-        :events_amount => "50",
-        :groups_age => "20",
-        :description => "Descrição da visitação",
-			}
-      expect(response).to have_http_status(:success)
-      end
-
-      it "should sucessfully to create a event" do
-        post :create, :event => {
-          :user_id => @user.id,
-          :date_start => "15/12/2016",
-          :date_end => "15/12/2017",
-          :time_start => "15:30",
-          :time_end => "18:14",
-          :status => "Agendado",
-          :jbb_space_requested => ["Anfiteatro", "Estufas"],
-          :estimated_public => 100,
-          :need_eletricity => true,
-          :need_water => true,
-          :description => "Parabéns pelo seu evento! ",
-          :other_informations => "Outras informações",
-          :jbb_response_to_request => "Sim",
-          :price_payment => 2000,
-          :name_institute => "Instituto aqui",
-          :institute_address => "Lugar do instituto"
-  			}
-        end
-
-  end
+  # describe "POST create" do  #Still dont test Mailer
+  # 	it "should fail to create a event" do
+  # 		post :create, :event => {
+  #       :status => "Agendado",
+  #       :events_amount => "50",
+  #       :groups_age => "20",
+  #       :description => "Descrição da visitação",
+	# 		}
+  #     expect(response).to have_http_status(:success)
+  #     end
+  #
+  #     it "should sucessfully to create a event" do
+  #       post :create, :event => {
+  #         :user_id => @user.id,
+  #         :date_start => "15/12/2016",
+  #         :date_end => "15/12/2017",
+  #         :time_start => "15:30",
+  #         :time_end => "18:14",
+  #         :status => "Agendado",
+  #         :jbb_space_requested => ["Anfiteatro", "Estufas"],
+  #         :estimated_public => 100,
+  #         :need_eletricity => true,
+  #         :need_water => true,
+  #         :description => "Parabéns pelo seu evento! ",
+  #         :other_informations => "Outras informações",
+  #         :jbb_response_to_request => "Sim",
+  #         :price_payment => 2000,
+  #         :name_institute => "Instituto aqui",
+  #         :institute_address => "Lugar do instituto"
+  # 			}
+  #       end
+  #
+  # end
 
 
   #EMPLOYEE CHANGE STATUS
