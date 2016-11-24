@@ -39,14 +39,3 @@ end
 Then(/^I get the error message$/) do
   page.should have_content ('Email ou senha inválidos')
 end
-
-When(/^I try to login with a wrong password$/) do
-  fill_in 'user_email', :with => @user.email
-  fill_in 'user_password', :with => "1234567"
-  click_button('entrar')
-end
-
-
-Then(/^I get the error message$/) do
-  page.should have_content ('Email ou senha inválidos')
-end
