@@ -27,3 +27,4 @@ Feature: viewer calendar event index
   	And I press 'Voltar'
   	Then I should see "BEM VINDO AO JARDIM BOTÂNICO" 	
 
+
