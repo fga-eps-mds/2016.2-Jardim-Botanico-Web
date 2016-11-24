@@ -14,6 +14,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user_id = current_user.id
     @event.set_status_default
+    @event.jbb_space_requested = params[:jbb_space_requested].join(', ')
     if @event.save
       UserMailer.change_status_event(@event).deliver_now
       flash[:success] = t(:successful_event_request)

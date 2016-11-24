@@ -213,8 +213,6 @@ en:
     generate_pdf_last_month: "Generate PDF with data from the last month"
     more_paying_than_visitors: "The amount of paying cannot be greater than the total of visitors"
     blank_email_field: "Email field cannot be empty."
-    generate_pdf_last_week: "Generate PDF with data from the last week"
-    generate_pdf_next_month: "Generate PDF with data from the next month"
     event_payment_possibility: "IMPORTANT: The holding of event in the Jardim Botânico may be subject to payment for the use of space"
     user_info: "User information"
     no_scheduled_event: "No Scheduled Events"
@@ -231,3 +229,4 @@ en:
     trails: "Trails"
     map_legend: "Legend of JBB Areas"
     source: "Source"
+    dont_know_jbb_spaces: "I don't know the spaces of the Jardim Botânico"
