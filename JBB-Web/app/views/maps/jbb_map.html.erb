@@ -5,22 +5,22 @@
 	</div>
 	<div id= "legend" >
 	<div class='my-legend'>
-		<div class='legend-title'>Legenda das trilhas do JBB </div>
+		<div class='legend-title'><%=t(:map_legend)%></div>
 		<div class='legend-scale'>
 			<ul class='legend-labels'>
-				<li><span style='background:#EF9C87;'></span>Estação Ecológica - Área proibida</li>
-				<li><span style='background:#79CAAF;'></span>Área Verde - Área de Visitação</li>
-				<div class='legend-source'>Fonte: <a href="http://www.jardimbotanico.df.gov.br/" target="_blank">Jardim Bôtanico de Brasília</a></div>
+				<li><span style='background:#EF9C87;'></span><%=t(:ecological_station)%></li>
+				<li><span style='background:#79CAAF;'></span><%=t(:visitants_area)%></li>
+				<div class='legend-source'><%=t(:source)+":"%> <a href="http://www.jardimbotanico.df.gov.br/" target="_blank"><%=t(:jbb)%></a></div>
 			</ul>
 			<a id= "new" >
 			<a id= "space" >
-			<input type="button" value="Filtrar espaços JBB" onclick="setJbbSpaces();" class="btn btn-primary">
+			<input type="button" value="<%=t(:spaces)%>" onclick="setJbbSpaces();" class="btn btn-primary">
 			<a id= "space" >
-			<input type="button" value="Filtrar rios JBB" onclick="setJbbRivers();" class="btn btn-primary">
+			<input type="button" value="<%=t(:rivers)%>" onclick="setJbbRivers();" class="btn btn-primary">
 			<a id= "space" >
-			<input type="button" value="Vegetação" onclick="setVegetation();" class="btn btn-primary">
+			<input type="button" value="<%=t(:vegetation)%>" onclick="setVegetation();" class="btn btn-primary">
 			<a id= "space" >
-			<input type="button" value="Trilhas" onclick="setTrails();" class="btn btn-primary">
+			<input type="button" value="<%=t(:trails)%>" onclick="setTrails();" class="btn btn-primary">
 			</div>
 		</div>
 	</div>
