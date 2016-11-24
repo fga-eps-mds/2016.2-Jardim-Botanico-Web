@@ -27,7 +27,7 @@ RSpec.describe EventsController, type: :controller do
           :time_start => "15:30",
           :time_end => "18:14",
           :status => "Agendado",
-          :jbb_space_requested => "Espaço",
+          :jbb_space_requested => ["Anfiteatro", "Estufas"],
           :estimated_public => 100,
           :need_eletricity => true,
           :need_water => true,

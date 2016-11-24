@@ -58,12 +58,66 @@
 					<b><%= t(:time_to_end) %></b>
 					<%=f.time_select(:time_end, minute_step: 15, start_hour: 8, end_hour: 16)%>
 				</div>
-				<br>
-				<div class = "field" >
-					<b><%= t(:space_request) %></b>
-					<%=f.text_field :jbb_space_requested, class: 'form-control', placeholder: t(:placeholder_space_request)%>
-				</div>
-				<br>
+        <br>
+				<b><%= t(:space_request) %></b>
+        <div class = "checkbox" >
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= check_box_tag("jbb_space_requested[]", value = "Anfiteatro") %>
+          <%= label_tag("jbb_space_requested[]", "Anfiteatro") %>
+          <br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= check_box_tag("jbb_space_requested[]", value = "Área de Piquenique") %>
+          <%= label_tag("jbb_space_requested[]", "Área de Piquenique") %>
+          <br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= check_box_tag("jbb_space_requested[]", value = "Biblioteca da Natureza") %>
+          <%= label_tag("jbb_space_requested[]", "Biblioteca da Natureza") %>
+          <br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= check_box_tag("jbb_space_requested[]", value = "Casa de Chá") %>
+          <%= label_tag("jbb_space_requested[]", "Casa de Chá") %>
+          <br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= check_box_tag("jbb_space_requested[]", value = "Centro de Excelência do Cerrado") %>
+          <%= label_tag("jbb_space_requested[]", "Centro de Excelência do Cerrado") %>
+          <br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= check_box_tag("jbb_space_requested[]", value = "Centro de Visitantes") %>
+          <%= label_tag("jbb_space_requested[]", "Centro de Visitantes") %>
+          <br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= check_box_tag("jbb_space_requested[]", value = "Estufas") %>
+          <%= label_tag("jbb_space_requested[]", "Estufas") %>
+          <br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= check_box_tag("jbb_space_requested[]", value = "Horto Medicinal") %>
+          <%= label_tag("jbb_space_requested[]", "Horto Medicinal") %>
+          <br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= check_box_tag("jbb_space_requested[]", value = "Jardim de Cheiros") %>
+          <%= label_tag("jbb_space_requested[]", "Jardim de Cheiros") %>
+          <br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= check_box_tag("jbb_space_requested[]", value = "Jardim Evolutivo") %>
+          <%= label_tag("jbb_space_requested[]", "Jardim Evolutivo") %>
+          <br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= check_box_tag("jbb_space_requested[]", value = "Jardim Japonês") %>
+          <%= label_tag("jbb_space_requested[]", "Jardim Japonês") %>
+          <br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= check_box_tag("jbb_space_requested[]", value = "Orquidário") %>
+          <%= label_tag("jbb_space_requested[]", "Orquidário") %>
+          <br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= check_box_tag("jbb_space_requested[]", value = "Unidade de Permacultura") %>
+          <%= label_tag("jbb_space_requested[]", "Unidade de Permacultura") %>
+          <br><br>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <%= check_box_tag("jbb_space_requested[]", value = "Não conheço os espaços do Jardim Botânico") %>
+          <%= label_tag("jbb_space_requested[]", "Não conheço os espaços do Jardim Botânico") %>
+          <br><br>
+        </div>
 				<div class="form-inline">
 					<b><%= t(:number_visitors) %></b> &nbsp&nbsp&nbsp
 					<div class = "form-group" style="width: 200px">
