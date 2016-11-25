@@ -28,4 +28,3 @@ function addDirtyFieldTypicalCerrado(){
       addInfowindow(clicked_location.latLng, cerradoSensuStrictuContentString);
   });
 }
-}
