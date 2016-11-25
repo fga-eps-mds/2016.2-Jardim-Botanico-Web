@@ -289,3 +289,4 @@ pt:
     source: "Fonte"
     dont_know_jbb_spaces: "Não conheço os espaços do Jardim Botânico"
     analyze_order: "Analisar Pedido"
+    invalid_birth: "Data de nascimento inválida"

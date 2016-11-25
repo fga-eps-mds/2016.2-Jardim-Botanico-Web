@@ -77,6 +77,19 @@ class User < ApplicationRecord
 
 
   def valid_cpf
+    if ((self.cpf <=> '111.111.111-11') == 0 ||
+      (self.cpf <=> '222.222.222-22') == 0 ||
+      (self.cpf <=> '333.333.333-33') == 0 ||
+      (self.cpf <=> '444.444.444-44') == 0 ||
+      (self.cpf <=> '555.555.555-55') == 0 ||
+      (self.cpf <=> '666.666.666-66') == 0 ||
+      (self.cpf <=> '777.777.777-77') == 0 ||
+      (self.cpf <=> '888.888.888-88') == 0 ||
+      (self.cpf <=> '999.999.999-99') == 0 ||
+      (self.cpf <=> '000.000.000-00') == 0 )
+      errors.add(:cpf, I18n.t(:invalid_cpf_number))
+    end
+
     if (self.cpf == nil)
       errors.add(:cpf, I18n.t(:blank_cpf_field))
     elsif ((CPF.valid?(self.cpf)) == false)
@@ -121,7 +134,7 @@ class User < ApplicationRecord
     end
   end
 
-
+  #Password
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
     BCrypt::Engine.cost

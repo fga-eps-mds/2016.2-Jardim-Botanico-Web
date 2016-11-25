@@ -231,3 +231,4 @@ en:
     source: "Source"
     dont_know_jbb_spaces: "I don't know the spaces of the Jardim Botânico"
     analyze_order: "Analyze Order"
+    invalid_birth: "Invalid birth date"
