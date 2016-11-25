@@ -27,7 +27,9 @@
       <% end %>
       <% end %>
    <div class= "actions" >
+     <%if current_user%>
       <%= link_to t(:create_visit), "/#{I18n.locale}"+new_visitation_path, class: "btn btn-primary"%>
+      <%end%>
     <a id="calendar" >
       <%= link_to t(:back), "/#{I18n.locale}", class: "btn btn-primary"%>
     </div>
