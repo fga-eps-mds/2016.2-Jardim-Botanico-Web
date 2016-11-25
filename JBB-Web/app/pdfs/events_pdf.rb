@@ -3,10 +3,10 @@ class EventsPdf < Prawn::Document
 
 		super(top_margin: 70)
     #set the date range for the pdf
-    if period == "last_week"
-      @events = Event.where(date_start: 1.week.ago.beginning_of_week..1.week.ago.end_of_week)
-    else period == "next_month"
-      @events = Event.where(date_start: 1.month.from_now.beginning_of_month..1.month.from_now.end_of_month)
+    if period == "next_week"
+      @events = Event.where(date_start: 1.week.from_now.beginning_of_week..1.week.from_now.end_of_week)
+    else period == "last_month"
+      @events = Event.where(date_start: 1.month.ago.beginning_of_month..1.month.ago.end_of_month)
     end
 
 		header

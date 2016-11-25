@@ -21,6 +21,7 @@ FactoryGirl.define do
   end
 
   factory :event do
+    jbb_space_requested ["Biblioteca da Natureza", "Casa de Chá"]
     status "Confirmado"
     date_start "16/11/2016"
     date_end "16/11/2016"
