@@ -11,7 +11,7 @@ class UserMailer < ApplicationMailer
     @user = User.find(visitation.user_id)
     @visitation = visitation
     @url  = 'http://107.170.58.101:3000/'
-  	mail(to: @user.email, subject: "Seu status de visita foi alterado")
+  	mail(to: @user.email, subject: "Seu status de Educação Ambiental foi alterado")
   end
 
   def change_status_event(event)
@@ -20,4 +20,4 @@ class UserMailer < ApplicationMailer
     @url  = 'http://107.170.58.101:3000/'
     mail(to: @user.email, subject: "Seu status de evento foi alterado")
   end
-end 
+end

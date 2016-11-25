@@ -277,7 +277,7 @@ pt:
     no_scheduled_visits: "Nenhuma Educação Ambiental Agendada"
     education_choices: "Escolhas de Educação"
     cerrados_fauna: "Fauna do Cerrado"
-    carrados_flora: "Flora do Cerrado"
+    cerrados_flora: "Flora do Cerrado"
     know_more_fauna: "Saiba mais sobre a Fauna do Cerrado e sua linda diveridade"
     know_more_flora: "Saiba mais sobre a Flora de Cerrado e suas formaçoes florestais"
     ecological_station: "Estação Ecológica - Área proibida"
