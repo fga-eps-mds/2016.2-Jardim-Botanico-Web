@@ -38,7 +38,7 @@
                             <td> <%= event.status %> </td>
                             <td> <%= event.jbb_space_requested %> </td>
                             <td><%= link_to event.user.name, "/#{I18n.locale}/events/user_information?id=#{event.id}" %></td>
-                            <td><%= link_to t(:show), "/#{I18n.locale}/events/index_employee?id=#{event.id}" %></td>
+                            <td><%= link_to t(:analyze_order), "/#{I18n.locale}/events/index_employee?id=#{event.id}" %></td>
                         </tr>
                         <%end%>
                     </table>
