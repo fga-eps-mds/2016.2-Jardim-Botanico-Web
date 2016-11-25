@@ -29,8 +29,6 @@ $(document).on('click', '.dropdown-menu li a', function () {
           <% end %>
           <div class="container">
             <div class="dropdown">
-              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tipos de visitações
-                <span class="caret"></span></button>
               <ul class="dropdown-menu">
                 <% @visitation_types.each do |p| %>
                   <li><a href="#"> <%= p.visitation_type %> </a></li>
